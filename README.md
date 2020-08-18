@@ -58,6 +58,9 @@
 
 
 ### Riverbed Technology (2012-2016)
+
+Lead writer for AppResponse Xpert, the highest-revenue product in SteelCentral product line for network and application performance monitoring. Topics include:
+
 * Rewrote and expanded Metrics Reference with in-depth explanations and graphics to describe exactly how application, transport, and network metrics are calculated
 
 * Web Transaction Analysis feature for performing in-depth analysis of web page usage
@@ -69,6 +72,8 @@
 * Information architecture and topic templates for new help infrastructure based on “Every Page is Page One” principles
 
 ### OPNET Technologies (1999-2012)
+
+Lead writer for AppResponse Xpert and AppTransaction Xpert, the highest-revenue products in OPNET's industry-leading product line of APM solutions. Extensive experience writing documentation for application developers and other technical audiences. Topics include:
 
 * Application troubleshooting by analyzing network and tier delays
 
