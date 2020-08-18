@@ -42,7 +42,7 @@
 
 * Primary writer for the [Server Visibility](https://docs.appdynamics.com/display/PRO44/Server+Visibility), [Network Visibility](https://docs.appdynamics.com/display/PRO44/Network+Visibility), and Docker Visibility products 
 
-* Wrote entire Network Visibility doc set from scratch for v1 release. Doc includes [Setup/Install Workflows](https://docs.appdynamics.com/display/PRO44/Set+Up+Network+Visibility), [Network Troubleshooting Workflows](https://docs.appdynamics.com/display/PRO44/Network+Visibility+Workflows+and+Example+Use+Cases), [Metric References](https://docs.appdynamics.com/display/PRO44/Network+Visibility+Metrics), and [Concepts](https://docs.appdynamics.com/display/PRO44/Network+Visibility+Concepts)'
+* Wrote entire Network Visibility doc set from scratch for v1 release. Doc includes [Setup/Install Workflows](https://docs.appdynamics.com/display/PRO44/Set+Up+Network+Visibility), [Network Troubleshooting Workflows](https://docs.appdynamics.com/display/PRO44/Network+Visibility+Workflows+and+Example+Use+Cases), [Metric References](https://docs.appdynamics.com/display/PRO44/Network+Visibility+Metrics), and [Concepts](https://docs.appdynamics.com/display/PRO44/Network+Visibility+Concepts)
  
 
 * Documented [Tier Metric Correlator](https://docs.appdynamics.com/display/PRO44/Tier+Metric+Correlator) feature that enables DevOps engineers to identify performance outliers in blue-green deployment scenarios
