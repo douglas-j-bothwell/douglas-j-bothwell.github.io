@@ -4,7 +4,7 @@
 
 ### UCSC Silicon Valley Extension
 
-* [Completed sections (PDF)](./pdf/doug_bothwell_uc_silicon_valley_extension_completed_sections.2019-05.pdf)
+* [Completed sections](./pdf/doug-bothwell-ucsc-sv.completed-sections.2020-08-17.png)
 
 * [Certificate in Computer Programming -- April 2019](./pdf/doug-bothwell-ucsc-certificate-computer-programming.png)
 
@@ -23,14 +23,14 @@
 
    * Reviewing Swagger specs for grammer, consistency, and usability (_in progress_)
 
-* Wrote, tested, and deployed [Express demo utility](./devsamples/express-workflow-demo/README.md) in Python that
+* Wrote, tested, and deployed Express demo utility in Python that
    * Generates sample event and metric data based on parameterized randomization
    * Supports customization of hostnames, metrics, events, and anomaly severity levels
    * Sends generated data to Express ingestion API
 
 * Evaluated Oxygen XML as a possible authoring tool
 
-* Created [XML repo](./devsamples/oxygen-dita-example/README.md) that illustrates how you can perform various tasks using DITA and Oxygen:
+* Created XML repo that illustrates how you can perform various tasks using DITA and Oxygen:
 
    * Define global variables for company and product names
 
