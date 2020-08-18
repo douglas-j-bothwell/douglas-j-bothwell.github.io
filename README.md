@@ -47,7 +47,6 @@
 
 * Documented [Tier Metric Correlator](https://docs.appdynamics.com/display/PRO44/Tier+Metric+Correlator) feature that enables DevOps engineers to identify performance outliers in blue-green deployment scenarios
 
-
 * Collected, edited, and organized new and legacy content into a new Monitoring Cloud Applications doc set to highlight AppDynamics cloud monitoring capabilities
 
 * Tested and documented workflows for monitoring applications in Pivotal Cloud Foundry using AppDynamics
@@ -61,7 +60,7 @@
 
 Lead writer for AppResponse Xpert, the highest-revenue product in SteelCentral product line for network and application performance monitoring. Topics include:
 
-* Rewrote and expanded Metrics Reference with in-depth explanations and graphics to describe exactly how application, transport, and network metrics are calculated
+* Metrics Reference with in-depth explanations and graphics to describe exactly how application, transport, and network metrics are calculated
 
 * Web Transaction Analysis feature for performing in-depth analysis of web page usage
 
