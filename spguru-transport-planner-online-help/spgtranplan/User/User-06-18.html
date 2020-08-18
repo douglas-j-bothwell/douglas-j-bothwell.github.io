@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:04" />
+    <title>Topology Constraints Data Files</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-06-01.html"> Importing and Exporting Data</a> > <a href="User-06-04.html">Data File Formats</a> > Topology Constraints Data Files</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp262451"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Topology Constraints Data Files
+</h2>
+
+ 
+
+<a name="wp262473"> </a><p class="pBody">
+Topology Constraints data files are used to import/export the topology constraints for a specific traffic matrix. Topology restraints are useful when you want to force a design action (such as routing or dimensioning) route connections using specific paths, without having to specify an entire path. For more information about specifying topology constraints, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-14.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-14.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Topological Routing Constraints</u></a>.
+</p>
+<a name="wp262484"> </a><p class="pBody">
+A topology constraints file expresses constraints as nodes that should or should not be present in the route of a connection. The file format and other requirements are described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-18.html#wp262498');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-18.html#wp262498', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;5-13</u></a> and <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-18.html#wp262486');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-18.html#wp262486', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Topology Constraints Files: Additional Requirements</u></a>. 
+</p>
+<a name="wp262589"> </a><p class="pFigCaption">
+Figure&#160;5-18   Topology Constraints Data File
+</p>
+<a name="wp262593"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-06-18-18.jpg" height="103" width="530" id="wp262591" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp262485"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp262498table262496">
+  <caption><a name="wp262498"> </a><div class="ptblcaption">
+Table&#160;5-13   Topology Constraints Data Files Format&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp262502"> </a><div class="pCellHeading">
+Key word
+</div>
+</th>
+    <th><a name="wp262504"> </a><div class="pCellHeading">
+Explanation
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp262506"> </a><div class="pCellBody">
+From
+</div>
+</td>
+    <td><a name="wp262508"> </a><div class="pCellBody">
+Source node of the connection.
+</div>
+<a name="wp262884"> </a><div class="pCellBody">
+If the file includes a &quot;To&quot; column, the obliged or forbidden nodes are set for each connection between the &quot;From&quot; and &quot;To&quot; nodes. Otherwise, the obliged or forbidden nodes are set for each connection with the &quot;From&quot; node as an end point.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp262510"> </a><div class="pCellBody">
+To <br />(<em class="cEmphasis">optional</em>)
+</div>
+</td>
+    <td><a name="wp262512"> </a><div class="pCellBody">
+Destination node of the connection.
+</div>
+<a name="wp262896"> </a><div class="pCellBody">
+If this column is defined in the header, you must specify a destination node every line. If a line does not include this value, it is skipped.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp262514"> </a><div class="pCellBody">
+Service Designation<br />(<em class="cEmphasis">optional</em>)
+</div>
+</td>
+    <td><a name="wp262516"> </a><div class="pCellBody">
+If this column is defined in the header, the obliged or forbidden nodes are set for a connection only if it has the specified service designation name.
+</div>
+<a name="wp262937"> </a><div class="pCellBody">
+If a line does not include this field, the obliged or forbidden nodes are set for connections without a service designation name.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp262518"> </a><div class="pCellBody">
+Obliged or Forbidden
+</div>
+</td>
+    <td><a name="wp262520"> </a><div class="pCellBody">
+The obliged (keyword &quot;Obliged&quot; in the header) or forbidden (keyword &quot;Forbidden&quot;) nodes of a connection, specified as a comma-separated list of nodes. 
+</div>
+<a name="wp263169"> </a><div class="pCellBody">
+The obliged (or forbidden) nodes for the working path and protecting path must be filled in on the same line, separated by two commas (these separating commas appear as an empty cell in a spreadsheet).
+</div>
+<a name="wp272289"> </a><div class="pCellBody">
+For information about additional requirements, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-18.html#wp262486');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-18.html#wp262486', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Topology Constraints Files: Additional Requirements</u></a>.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp262826"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 5-13	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+<a name="wp262486"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Topology Constraints Files: Additional Requirements
+</h3>
+<a name="wp262616"> </a><p class="pBody">
+Note the following requirements for constraints files (in addition to the requirements list in <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-18.html#wp262498');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-18.html#wp262498', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;5-13-Topology Constraints Data Files Format</u> </a>):
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp262731"> </a><div class="pSmartList1"><li>If a line does not include a &quot;From&quot;, &quot;To&quot;, &quot;Obliged&quot; or &quot;Forbidden&quot; field, the import engine skips that line.</li></div>
+<a name="wp262732"> </a><div class="pSmartList1"><li>If the &quot;To&quot; column is defined in the header, you must specify a value for this column in at every line; if a line does not include this value, it is skipped.</li></div>
+<a name="wp262734"> </a><div class="pSmartList1"><li>You do not need to fill in the &quot;Obliged&quot; or &quot;Forbidden&quot; columns for every connection.</li></div>
+<a name="wp262735"> </a><div class="pSmartList1"><li>Obliged or forbidden node lists do not affect the protection type of connections. This means that you can import obliged or forbidden nodes for the protecting path of a connection, even if the protection type of the traffic matrix is set to no protection.</li></div>
+<a name="wp262736"> </a><div class="pSmartList1"><li>You cannot change the obliged or forbidden node lists of a connection that is already groomed or accommodated in the network.</li></div>
+<a name="wp262737"> </a><div class="pSmartList1"><li>You cannot specify a non-grooming node as an obliged node for a DCL connection.</li></div>
+<a name="wp267145"> </a><div class="pSmartList1"><li>You cannot specify the same node as an obliged node and as a forbidden node for the same connection. For example, if a node is defined for the obliged nodes of a working path, but is already defined as a forbidden node for the same path, the node is not set as an obliged node.</li></div>
+</ul></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_22_imp.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

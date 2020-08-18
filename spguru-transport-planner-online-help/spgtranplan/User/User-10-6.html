@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:14" />
+    <title>Use Existing Capacity/Add New Capacity Settings: Effects</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-10-1.html"> Grooming LOP to DCL Traffic</a> > <a href="User-10-3.html">Groom LOP to DCL Traffic Dialog Box</a> > Use Existing Capacity/Add New Capacity Settings: Effects</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp951107"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Use Existing Capacity/Add New Capacity Settings: Effects
+</h2>
+
+ 
+
+<a name="wp951112"> </a><p class="pBody">
+The following settings in the <a href="javascript:WWHClickedPopup('wdm_user', 'User-10-3.html#wp950934');" onMouseOver="WWHShowPopup('wdm_user', 'User-10-3.html#wp950934', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Groom LOP to DCL Traffic Dialog Box</u></a> affect how the LOP grooming operation uses network capacity:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp951116"> </a><div class="pSmartList1"><li><a href="javascript:WWHClickedPopup('wdm_user', 'User-10-4.html#wp951031');" onMouseOver="WWHShowPopup('wdm_user', 'User-10-4.html#wp951031', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Use existing capacity</u></a>&#8212;If this option is selected, the grooming operation can set up the LOP traffic using existing capacity (non-native DCL connections that are already set up). </li></div>
+<a name="wp951120"> </a><div class="pSmartList1"><li><a href="javascript:WWHClickedPopup('wdm_user', 'User-10-4.html#wp951039');" onMouseOver="WWHShowPopup('wdm_user', 'User-10-4.html#wp951039', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Add new capacity</u></a>&#8212;If this option is selected, the grooming operation creates a new DCL traffic matrix to support the LOP traffic.</li></div>
+</ul></div>
+<a name="wp951124"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('wdm_user', 'User-10-6.html#wp951131');" onMouseOver="WWHShowPopup('wdm_user', 'User-10-6.html#wp951131', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;9-4</u></a> lists the effects of different settings for these options.
+</p>
+<a name="wp951186"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp951131table951125">
+  <caption><a name="wp951131"> </a><div class="ptblcaption">
+Table&#160;9-4   Effects of Use Existing Capacity/Add New Capacity Settings on LOP Traffic Grooming&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th>&#160;</th>
+    <th><a name="wp951139"> </a><div class="pCellBodyCenter">
+<b class="cBold">Use Existing Capacity = Not Selected</b>
+</div>
+</th>
+    <th><a name="wp951141"> </a><div class="pCellBodyCenter">
+<b class="cBold">Use Existing Capacity = Selected</b>
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp951143"> </a><div class="pCellBody">
+<b class="cBold">Add New Capacity = <br />Not Selected</b>
+</div>
+</td>
+    <td><a name="wp951145"> </a><div class="pCellBody">
+The LOP traffic will not be groomed or set up because no existing or new capacity can be used. 
+</div>
+<a name="wp951146"> </a><div class="pCellBody">
+This combination is not useful.
+</div>
+</td>
+    <td><a name="wp951148"> </a><div class="pCellBody">
+The grooming algorithm tries to route the selected LOP traffic using existing capacity (non-native DCL connections that are already set up). 
+</div>
+<a name="wp951152"> </a><div class="pCellBody">
+Result: the <a href="javascript:WWHClickedPopup('wdm_user', 'User-10-4.html#wp951006');" onMouseOver="WWHShowPopup('wdm_user', 'User-10-4.html#wp951006', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">% Routed</u></a> cell shows the percentage of LOP traffic that could be routed, and the remaining traffic remains unrouted.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp951154"> </a><div class="pCellBody">
+<b class="cBold">Add New Capacity =<br />Selected</b>
+</div>
+</td>
+    <td><a name="wp951156"> </a><div class="pCellBody">
+The selected LOP traffic is groomed into a new DCL traffic matrix without considering the existing capacity. 
+</div>
+<a name="wp951160"> </a><div class="pCellBody">
+Result: the <a href="javascript:WWHClickedPopup('wdm_user', 'User-10-4.html#wp951011');" onMouseOver="WWHShowPopup('wdm_user', 'User-10-4.html#wp951011', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Groomed</u></a> cell is set to &quot;Yes&quot; and the <a href="javascript:WWHClickedPopup('wdm_user', 'User-10-3.html#wp950962');" onMouseOver="WWHShowPopup('wdm_user', 'User-10-3.html#wp950962', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Result</u></a> cell shows the name of the created DCL traffic matrix.
+</div>
+</td>
+    <td><a name="wp951165"> </a><div class="pCellBody">
+The grooming algorithm tries to route the selected LOP traffic using existing capacity. 
+</div>
+<a name="wp951169"> </a><div class="pCellBody">
+If all traffic could be routed, the <a href="javascript:WWHClickedPopup('wdm_user', 'User-10-4.html#wp951006');" onMouseOver="WWHShowPopup('wdm_user', 'User-10-4.html#wp951006', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">% Routed</u></a> field shows 100%, the <a href="javascript:WWHClickedPopup('wdm_user', 'User-10-4.html#wp951011');" onMouseOver="WWHShowPopup('wdm_user', 'User-10-4.html#wp951011', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Groomed</u></a> cell shows &quot;No&quot;, and no new DCL traffic matrix is created. 
+</div>
+<a name="wp951173"> </a><div class="pCellBody">
+If all traffic could not be routed this way, the remaining LOP traffic is groomed into a new DCL traffic matrix, the <a href="javascript:WWHClickedPopup('wdm_user', 'User-10-4.html#wp951011');" onMouseOver="WWHShowPopup('wdm_user', 'User-10-4.html#wp951011', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Groomed</u></a> field is set to &quot;Yes&quot;, and the <a href="javascript:WWHClickedPopup('wdm_user', 'User-10-3.html#wp950962');" onMouseOver="WWHShowPopup('wdm_user', 'User-10-3.html#wp950962', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Result</u></a> cell shows the name of the created DCL traffic matrix.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="3" rowspan="1"><a name="wp951181"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 9-4	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_32_grm_lop.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

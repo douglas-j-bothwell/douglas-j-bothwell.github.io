@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:27" />
+    <title>Routing Cost</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-07-01.html"> Routing</a> > <a href="User-07-02.html">Route DCL/OCH Traffic Dialog Box</a> > Routing Cost</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp255679"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Routing Cost
+</h2>
+
+ 
+
+<a name="wp253430"> </a><p class="pBody">
+You can specify one of the following cost functions when routing an OCH traffic matrix. These functions use different methods to calculate link costs and thereby determine the lowest-cost path.
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp275433"> </a><div class="pSmartList1"><li>Fiber Length&#8212;The lowest-cost path is the path with the shortest fiber length.</li></div>
+<a name="wp252290"> </a><div class="pSmartList1"><li>Hop Count&#8212;The lowest-cost path is the one with the fewest hops. If multiple paths have the same number of hops, SP&#160;Guru&#160;Transport&#160;Planner finds the path with the shortest fiber length.</li></div>
+<a name="wp275452"> </a><div class="pSmartList1"><li>Least Used&#8212;The cost of a link is set to be inversely proportional to its unused capacity. Specifically, link cost is 1 divided by the unused link capacity.</li></div>
+<a name="wp275468"> </a><div class="pSmartList1"><li>Maximum Availability&#8212;Using the availability properties (see <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-25.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-25.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Availability Settings</u></a>), SP&#160;Guru&#160;Transport&#160;Planner calculates the availability of each link and calculates the path with the highest availability.</li></div>
+<a name="wp275440"> </a><div class="pSmartList1"><li>Real Cost&#8212;SP&#160;Guru&#160;Transport&#160;Planner calculates the per-capacity-unit routing cost on each link to determine the shortest (lowest-cost) path, using the cost parameters specified in the Equipment Properties (described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-09.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-09.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Network Properties</u></a>).</li></div>
+<a name="wp276990"> </a><div class="pSmartList1"><li>User Specified&#8212;You can override the routing behavior by specifying a custom cost for a link; see <a href="javascript:WWHClickedPopup('wdm_user', 'User-05-03.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-05-03.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Link Browser</u></a> for details.</li></div>
+<a name="wp300111"> </a><div class="pSmartList1"><li>Combined Metric&#8212;To determine the lowest-cost path, SP&#160;Guru&#160;Transport&#160;Planner determines routing costs using the following formula:</li></div>
+<a name="wp300120"> </a><p class="pBodyRelative">
+&lt;<em class="cEmphasis">routing_cost</em>&gt; = &lt;<em class="cEmphasis">multiplier_for_hop_count</em>&gt; * &lt;<em class="cEmphasis">hop_count</em>&gt; +<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &lt;<em class="cEmphasis">multiplier_for_fiber_length</em>&gt; * &lt;<em class="cEmphasis">fiber_length</em>&gt;
+</p>
+<a name="wp300119"> </a><p class="pBodyRelative">
+The combined routing cost metric is available at all layers. By default, the hop count of a link at any individual layer equals one. Using the detailed routing options, you can choose to count each in-line regenerator on a link as an extra hop. The fiber length is based on the underlying OTS links. For more information, see the following section. 
+</p>
+</ul></div>
+<a name="wp300168"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Detailed Routing Cost Options
+</h3>
+<a name="wp300172"> </a><p class="pBody">
+To specify detailed routing-cost options, click the &quot;...&quot; button (next to Routing Cost&quot; in the <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-02.html#wp300072');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-02.html#wp300072', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Route DCL/OCH Traffic Dialog Box</u></a>. The options in this dialog box are described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-06.html#wp300603');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-06.html#wp300603', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;6-3-Detailed Routing Cost Options Dialog Box</u> </a>.
+</p>
+<a name="wp300181"> </a><p class="pFigCaption">
+Figure&#160;6-6   Detailed Routing Cost Options Dialog Box
+</p>
+<a name="wp300184"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-07-06-06.jpg" height="228" width="530" id="wp300183" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp300185"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp300603table300257">
+  <caption><a name="wp300603"> </a><div class="ptblcaption">
+Table&#160;6-3   Detailed Routing Cost Options Dialog Box
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp300607"> </a><div class="pCellHeading">
+Options For
+</div>
+</th>
+    <th><a name="wp300609"> </a><div class="pCellHeading">
+Explanation
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp300611"> </a><div class="pCellBody">
+Hop Count:
+</div>
+</td>
+    <td>&#160;</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp300615"> </a><div class="pCellBody">
+&#160;&#160;&#160;&#160;Count In-Line Regenerator as a Hop
+</div>
+</td>
+    <td><a name="wp300617"> </a><div class="pCellBody">
+When enabled, this option counts each in-line regenerator on a link as an extra hop. 
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp300619"> </a><div class="pCellBody">
+Real Cost:
+</div>
+</td>
+    <td>&#160;</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp300623"> </a><div class="pCellBody">
+&#160;&#160;&#160;&#160;Do Not Include Lower Layer Costs
+</div>
+</td>
+    <td><a name="wp300625"> </a><div class="pCellBody">
+When this option is selected, the per-link cost is derived from the cost model but does not include the cost of equipment on lower layers (that is, lower than the layer on which traffic is routed). For example, if you are routing a DCL traffic matrix, the cost of the optical equipment in the underlying OCH layer is considered.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp300627"> </a><div class="pCellBody">
+&#160;&#160;&#160;&#160;Include Lower Layer Costs
+</div>
+</td>
+    <td><a name="wp300629"> </a><div class="pCellBody">
+When this option is selected, the per-link cost is derived from the cost model and includes the proportional cost of equipment on lower layers. If traffic is protected on lower layers, the cost of the resources required for the protection traffic is not considered.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp300631"> </a><div class="pCellBody">
+&#160;&#160;&#160;&#160;Include Lower Layer Costs and Protection
+</div>
+</td>
+    <td><a name="wp300633"> </a><div class="pCellBody">
+When this option is selected, the per-link cost is derived from the cost model and includes the proportional cost of equipment in lower layers. If traffic is protected on lower layers, the cost of the resources required for the protection traffic is also considered.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp300716"> </a><div class="pCellBody">
+User Specified:
+</div>
+</td>
+    <td>&#160;</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp300635"> </a><div class="pCellBody">
+&#160;&#160;&#160;&#160;Use User Specified Costs per Layer
+</div>
+</td>
+    <td><a name="wp300637"> </a><div class="pCellBody">
+When this option is selected, the per-link cost is equal to the user-specified cost that you have set in the layer on which you are routing the traffic.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp300639"> </a><div class="pCellBody">
+&#160;&#160;&#160;&#160;Derive User Specified Costs from <br />&#160;&#160;&#160;&#160;OTS Layer
+</div>
+</td>
+    <td><a name="wp300641"> </a><div class="pCellBody">
+When this option is selected, the per-link cost is derived from the user-specified cost of OTS links. The cost of a higher-layer link is the sum of the user-specified costs of the supporting OTS links.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp300742"> </a><div class="pCellBody">
+Combined Metric:
+</div>
+</td>
+    <td>&#160;</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp300643"> </a><div class="pCellBody">
+&#160;&#160;&#160;&#160;Multiplier for Hop Count
+</div>
+</td>
+    <td><a name="wp300645"> </a><div class="pCellBody">
+Multiplier applied to the number of hops on a link to obtain the combined routing metric (see <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-06.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-06.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Routing Cost</u></a>).
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp300647"> </a><div class="pCellBody">
+&#160;&#160;&#160;&#160;Multiplier for Fiber Length
+</div>
+</td>
+    <td><a name="wp300649"> </a><div class="pCellBody">
+Multiplier applied to the fiber length of a link to obtain the combined routing metric (see <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-06.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-06.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Routing Cost</u></a>).
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp300794"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 6-3	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_25_rte.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

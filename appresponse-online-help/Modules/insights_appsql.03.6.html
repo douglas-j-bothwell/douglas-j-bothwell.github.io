@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Database Activity Snapshot Insight</title>
+    <link rel="StyleSheet" href="css/insights_appsql.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_al_module_appsql_splash.html"> Database Performance</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="insights_appsql.03.1.html">Database Insights</a> &gt; Database Activity Snapshot Insight</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="1151112">Database Activity Snapshot Insight</a></div>
+      <div class="bodyIntro"><a name="1151113">The Database Activity Snapshot insight is useful when you troubleshoot specific database queries. You can use this insight to identify potential database locks that might act as bottlenecks. In the following figure, the insight shows a potential lock because the DB response to the selected query (highlighted on left) does not start until another query ends.</a></div>
+      <div class="figCaptionPage">
+        <span class="bold">Figure&nbsp;5     </span><a name="1151115">Database Activity Snapshot Insight</a></div>
+      <div class="figAnchor"><a name="1151138"><img class="Default" src="images/insights_appsql.03.6.1.jpg" width="627" height="370" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1151139">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="1154188">The following steps describe the general workflow for this insight:</a></div>
+      <div class="procCaption" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1154189&quot;);">
+        <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1154189", false);</script>Procedure&nbsp;4    <a name="1154189">To identify potential database locks using the Database Statement Snapshot insight:</a></div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1154189", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1154195">In the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('modules', 'insights_appsql.03.4.html', '');" title="Database Troubleshooting Insight">Database Troubleshooting Insight</a></span> or the <span class="HTBlue"><a href="javascript:WWHClickedPopup('modules', 'insights_appsql.03.5.html', '');" title="Database Statement Troubleshooting Insight">Database Statement Troubleshooting Insight</a></span>, select a slow database query that you suspect might be affected by a database lock.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1154197">Right-click on the query and choose Identify Lock.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepResult_inner" style="width: 18.72pt; white-space: nowrap">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="1154198">The Database Statement Snapshot insight appears. This insight shows:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1154199">The selected query (highlighted on left).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1154200">The observation window (red dashed vertical lines), which is typically set to the time span of the selected query.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1154201">Other queries to the same database that occurred (partially or entirely) within the observation window. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBulletCont"><a name="1154202">Note the following:</a></div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1154203">The visible time window includes the full time span of all displayed queries, from the earliest query (start time) to the latest (end time). </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1154204">A query that occurred within the visible time window will not necessarily appear. A query appears only if some part occurred during the observation window.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1154205">Look for potential locks that coincide with significant events in the selected query (query start, DB response start, query end).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1154206">If you see potential locks, investigate both the "locking" and selected queries to determine what effect—if any—the potential lock has on the selected query.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	5.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1154207">To view earlier or later queries, click the Forward and Back buttons to move the observation window: one full observation window size (</a><span class="bold">&lt;&lt;</span> or <span class="bold">&gt;&gt;</span>) or one-half the window size (<span class="bold">&lt;</span> or<span class="bold"> &gt;</span>). </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="1154208">Note the following:</a></div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1156190">When you move the observation window, the insight updates the set of displayed queries automatically. This is intended behavior: the insight is designed to show queries that occurred </a><span class="italic">during the current observation window</span>. As the window changes, the queries shown in the insight change as well. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1156191">As you move the observation window outside the time span of the selected query, this changes the workflow. You are no longer troubleshooting the query you selected to open the insight; you are now viewing earlier or later queries. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1155079">The insight shows potential locks for the selected query only; potential locks for other queries are not shown. If the selected query (highlighted on left) does not appear in the insight, you will not see any potential locks. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap">End of Procedure 4</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1154211">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1156530">&nbsp;</a></div>
+      <div class="procSpaceAfter"><a name="1152955">&nbsp;</a></div>
+      <div class="figSpaceAfter"><a name="1151155">&nbsp;</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          // Add related topics
+          //
+          WWHAddRelatedTopic("Important Notes", "modules", "insights_appsql.03.1.html#1115401");
+          WWHAddRelatedTopic("Database Browsing Insight", "modules", "insights_appsql.03.2.html");
+          WWHAddRelatedTopic("Database Performance Insight", "modules", "insights_appsql.03.3.html");
+          WWHAddRelatedTopic("Database Troubleshooting Insight", "modules", "insights_appsql.03.4.html");
+          WWHAddRelatedTopic("Database Statement Troubleshooting Insight", "modules", "insights_appsql.03.5.html");
+          WWHAddRelatedTopic("Database Activity Snapshot Insight", "modules", "insights_appsql.03.6.html");
+          WWHAddRelatedTopic("Auditing Actions and Users of Database Performance Insights", "modules", "insights_appsql.03.7.html");
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

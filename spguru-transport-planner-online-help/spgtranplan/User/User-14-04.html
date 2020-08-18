@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:40" />
+    <title>Hardware File Formats</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-14-01.html"> Hardware Configurator</a> > Hardware File Formats</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp140476"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Hardware File Formats
+</h2>
+
+ 
+
+
+<a name="wp136072"> </a><p class="pBody">
+You must create .csv files that specify the candidate equipment that SP&#160;Guru&#160;Transport&#160;Planner will process. Normally, there are two files: one that specifies the devices and one that specifies the cards. You can define different devices or cards in one file or in multiple files (for example, one device file per vendor or SP&#160;Guru&#160;Transport&#160;Planner type).
+</p>
+<a name="wp136068"> </a><p class="pBody">
+The devices are related to the different equipment types used in SP&#160;Guru&#160;Transport&#160;Planner. You must ensure that the correct SP&#160;Guru&#160;Transport&#160;Planner type is used in SP&#160;Guru&#160;Transport&#160;Planner and that the device file lists equipment that matches the SP&#160;Guru&#160;Transport&#160;Planner type. Each device has a number of slots of a specific type. The card file defines which cards fit in which slot type.
+</p>
+<a name="wp136083"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp136105table136103">
+  <caption><a name="wp136105"> </a><div class="ptblcaption">
+Table&#160;13-1   Equipment Types Used in SP&#160;Guru&#160;Transport&#160;Planner&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp136109"> </a><div class="pCellHeading">
+Abbreviation
+</div>
+</th>
+    <th><a name="wp136111"> </a><div class="pCellHeading">
+Equipment Type
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136165"> </a><div class="pCellBody">
+TM
+</div>
+</td>
+    <td><a name="wp136169"> </a><div class="pCellBody">
+SONET/ SDH Terminal Multiplexer
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136113"> </a><div class="pCellBody">
+DXC
+</div>
+</td>
+    <td><a name="wp136115"> </a><div class="pCellBody">
+SONET/ SDH Digital Cross-Connect
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136117"> </a><div class="pCellBody">
+ADM
+</div>
+</td>
+    <td><a name="wp136119"> </a><div class="pCellBody">
+SONET/ SDH Add/Drop Multiplexer
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136121"> </a><div class="pCellBody">
+IXC
+</div>
+</td>
+    <td><a name="wp136123"> </a><div class="pCellBody">
+Integrated Optical/Digital Cross-Connect
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136125"> </a><div class="pCellBody">
+OXC
+</div>
+</td>
+    <td><a name="wp136127"> </a><div class="pCellBody">
+Optical Cross-Connect
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136129"> </a><div class="pCellBody">
+OXCT
+</div>
+</td>
+    <td><a name="wp136131"> </a><div class="pCellBody">
+Optical Cross-Connect&#8212;Transparent
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136133"> </a><div class="pCellBody">
+WP-OXC
+</div>
+</td>
+    <td><a name="wp136135"> </a><div class="pCellBody">
+Transparent Wavelength Plane OXC
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136137"> </a><div class="pCellBody">
+INT-OXC
+</div>
+</td>
+    <td><a name="wp136139"> </a><div class="pCellBody">
+WP-OXC with Integrated Fiber Ports
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136141"> </a><div class="pCellBody">
+OADM
+</div>
+</td>
+    <td><a name="wp136143"> </a><div class="pCellBody">
+Optical Add/Drop Multiplexer
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136145"> </a><div class="pCellBody">
+INT-OADM
+</div>
+</td>
+    <td><a name="wp136147"> </a><div class="pCellBody">
+OADM with Integrated Fiber Ports
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136149"> </a><div class="pCellBody">
+PP
+</div>
+</td>
+    <td><a name="wp136151"> </a><div class="pCellBody">
+Patch Panel
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136153"> </a><div class="pCellBody">
+WDMTM
+</div>
+</td>
+    <td><a name="wp136155"> </a><div class="pCellBody">
+WDM Terminal Multiplexer
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136157"> </a><div class="pCellBody">
+OA
+</div>
+</td>
+    <td><a name="wp136159"> </a><div class="pCellBody">
+Optical Amplifier
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136161"> </a><div class="pCellBody">
+REG
+</div>
+</td>
+    <td><a name="wp136163"> </a><div class="pCellBody">
+Regenerator
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp136193"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 13-1	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+<a name="wp136099"> </a><p class="pBody">
+All equipment is considered node equipment, except the last three types (WDMTM, OA, and REG); these form a WDM line system (LS) and are considered part of the link equipment. You must define these three devices separately in the file; however, HCON optimizes and configures the three devices together as one device: LS.
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_41_hcon.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

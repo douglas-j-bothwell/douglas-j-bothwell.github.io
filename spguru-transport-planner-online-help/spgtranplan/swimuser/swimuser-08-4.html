@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:37:59" />
+    <title>Costs in the OCH (Optical) Layer </title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="swimuser-08-1.html"> Transport-Layer Cost Allocation</a> > <a href="swimuser-08-3.html">Cost Modelling in SP&#160;Guru&#160;Transport&#160;Planner</a> > Costs in the OCH (Optical) Layer </font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp929481"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Costs in the OCH (Optical) Layer 
+</h2>
+
+ 
+
+<a name="wp929702"> </a><p class="pBody">
+The direct cost for an optical route includes a dedicated node cost and a dedicated link cost.
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp929703"> </a><div class="pSmartList1"><li>The <em class="cEmphasis">dedicated node cost</em> is calculated using the following formula:</li></div>
+<a name="wp929704"> </a><p class="pBodyRelative">
+<code class="cCode">dedicated_node_cost =  <br />&#160;&#160;&#160;optical_tributary_port_cost_at_source_node +<br />&#160;&#160;&#160;optical_tributary_port_cost_at_dest_node + <br />&#160;&#160;&#160;trunk_port_cost_at_source_node + <br />&#160;&#160;&#160;trunk_port_cost_at_dest_node + <br />&#160;&#160;&#160;SONET_cost_at_source_node + <br />&#160;&#160;&#160;SONET_cost_at_dest_node </code>
+</p>
+<a name="wp929710"> </a><p class="pBodyRelative">
+The port costs depend on the node types used, such as OXCs or patch panels.
+</p>
+<a name="wp929711"> </a><p class="pBodyRelative">
+The dedicated node cost includes SONET costs (for example, the cost of a DXC trunk port or an SDH terminal multiplexer) only if a connection supports SONET traffic.
+</p>
+<a name="wp929712"> </a><div class="pSmartList1"><li>The dedicated link cost is calculated using the following formula:</li></div>
+<a name="wp929713"> </a><p class="pBodyRelative">
+<code class="cCode">dedicated link cost =  <br />&#160;&#160;&#160;(long_reach_transponder_cost +<br />&#160;&#160;&#160;&#160;WDM_channel_card_cost + <br />&#160;&#160;&#160;&#160;regenerator_cost)*<br />&#160;&#160;&#160;number_of_optical_channels_in_route </code>
+</p>
+<a name="wp929716"> </a><p class="pBodyRelative">
+ All these costs are determined by the bit rate of the optical connection. 
+</p>
+</ul></div>
+<a name="wp929718"> </a><p class="pBody">
+The indirect cost for an optical route also includes an indirect node cost and an indirect link cost.
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp929719"> </a><div class="pSmartList1"><li>The<em class="cEmphasis"> indirect node cost</em> is calculated using the base cost of the optical switching devices (such as OXCs) along the route and the number of available ports on the devices. For example, if two trunk ports are needed on an OXC with 64 ports, the indirect node cost is obtained by dividing the OXC base cost by 32. </li></div>
+<a name="wp929810"> </a><div class="pSmartList1"><li>The indirect link cost is calculated using the following formula:</li></div>
+<a name="wp929879"> </a><p class="pBodyRelative">
+<code class="cCode">Indirect_link_cost =  <br />&#160;&#160;&#160;((cable_cost / fibers_per_cable) + fiber_cost) /  <br />&#160;&#160;&#160;&#160;wavelengths_per_fiber</code>
+</p>
+<a name="wp929923"> </a><p class="pBodyRelative">
+In which:
+</p>
+<a name="wp929880"> </a><p class="pBodyRelative">
+<code class="cCode">cable_cost = fixed_cost_per_cable + <br />&#160;&#160;&#160;cost_per_length_unit_of_cable + <br />&#160;&#160;&#160;cost_per_regeneration_and_amplification site</code>
+</p>
+<a name="wp929817"> </a><p class="pBodyRelative">
+<code class="cCode">fiber_cost = fixed_cost_per_fiber + <br />&#160;&#160;&#160;cost_per_length_unit_of_fiber +<br />&#160;&#160;&#160;_WDM_terminal_mux_costs_at_fiber_endpoints +<br />&#160;&#160;&#160;_amplifier_and_regenerator_cost_along_fiber</code>
+</p>
+</ul></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/swim_26_tlcost.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

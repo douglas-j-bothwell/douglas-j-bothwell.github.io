@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Scripting API</title>
+    <link rel="StyleSheet" href="css/ACE_44_scripts.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ACE_44_scripts.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_visualizing_apps_splash.html#331194">Visualizing Applications</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ACE_44_scripts.20.001.html#331194">Scripts for Filtering, Analyzing, and Visualizing</a> &gt; Scripting API</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1"><a name="331194">Scripting API</a></div>
+      <div class="body"><a name="107789">The scripting application programming interface (API) is a set of classes, methods, properties, and functions that support the creation of scripts.</a></div>
+      <div class="bodyIntro"><a name="512873">You can use the API to</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="275702">Iterate over objects such as tier pairs, connections, and packets</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="379943">Obtain information from the objects, such as:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="379944">Protocol attributes (for example, TCP Sequence numbers)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="379945">Information that AppTransaction&nbsp;Xpert</a><span style="font-size: 9.0pt"> </span>calculates for every packets (for example, whether or not a packet is a retransmission)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="275706">The ASCII decode</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="275707">Binary packet data</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="275708">Operate on objects (exclude, delete, and so on)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="275709">Obtain information from the user</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="314548">Show calculated results within AppTransaction&nbsp;Xpert (for example, add a time-varying graph)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="83565">The classes and functions of the scripting API are contained in a module named Ace_Tool.</a></div>
+      <div class="body"><a name="1136025">Additional classes and functions are contained in the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.139.html#1133852', '');" title="Ace_Tool_Contributed Module">Ace_Tool_Contributed Module</a></span>.</div>
+      <div class="h2NoBreak"><a name="341278">Ace_Tool Classes</a></div>
+      <div class="bodyIntro"><a name="57824">The Ace_Tool module defines several classes used to create logic scripts. The following figure shows the class hierarchy. </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.004.html#86519', '');" title="Scripting API">Table&nbsp;17-1</a></span> lists the classes and provides a link to a full description of each.</div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;17-7   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="57832">Ace_Tool Class Hierarchy</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1110395"><img class="Default" src="images/ACE_44_scripts.20.004.1.jpg" width="220" height="340" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1110396">&nbsp;</a></div>
+      <div class="tblAnchor"><a name="291840">&nbsp;</a></div>
+      <table class="tableNarrow" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="">
+              <tr style="vertical-align: baseline;">
+                <td>
+                  <div class="tblCaption_inner" style="width: 61.2pt; white-space: nowrap;">Table&nbsp;17-1   </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="86519">Summary of Ace_Tool Classes&nbsp;</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 127.60848pt">
+            <div class="tblHead"><a name="86523">Class</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 255.5172pt">
+            <div class="tblHead"><a name="86525">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.008.html#258969', '');" title="Component Class" name="86529">Component Class</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="388523">Base class for application components.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.009.html#58162', '');" title="Connection Class" name="86536">Connection Class</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="86539">Provides access to connections.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.025.html#1110550', '');" title="Dependency Class" name="659728">Dependency Class</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="659730">Provides access to dependencies.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.033.html#1110833', '');" title="Depends_On Class" name="659724">Depends_On Class</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="659726">Enumerator class defining constants that specify dependency types.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.034.html#287435', '');" title="Draw_Style Class" name="86543">Draw_Style Class</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="86546">Enumerator class defining constants that specify draw style options for graphs.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.035.html#292954', '');" title="Message Class" name="86550">Message Class</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="86553">Provides access to and control of messages.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.053.html#293008', '');" title="Network_Packet Class" name="86557">Network_Packet Class</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="86560">Provides access to and control of packets (frames).</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.076.html#296620', '');" title="Pref_Type Class" name="86564">Pref_Type Class</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="86567">Enumerator class defining constants that specify data types for input parameter dialog boxes.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.077.html#293062', '');" title="Protocol_Info Class" name="86571">Protocol_Info Class</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="86574">Provides access to the protocol layers of a packet.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.088.html#293116', '');" title="Task Class" name="86578">Task Class</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="86581">Provides access to and control of tasks.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.117.html#293170', '');" title="Tier Class" name="206444">Tier Class</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="206446">Provides access to tiers.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.119.html#293224', '');" title="Tier_Pair Class" name="206466">Tier_Pair Class</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="206468">Provides access to tier pairs.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.129.html#293278', '');" title="Transaction Class" name="206470">Transaction Class</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="206472">Provides access to transactions.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.135.html#1112822', '');" title="Visualization_Manager Class" name="659732">Visualization_Manager Class</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="659734">Provides access to and control of visualizations.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="h2NoBreak"><a name="314094">Ace_Tool Functions</a></div>
+      <div class="bodyIntro"><a name="1207916">The Ace_Tool module defines some support functions you can use in scripts. These functions are</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.005.html#315485', '');" title="create_graph()" name="1207920">create_graph()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.006.html#367998', '');" title="get_current_task()" name="1207924">get_current_task()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.007.html#1152503', '');" title="get_time_bounds()" name="1157959">get_time_bounds()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

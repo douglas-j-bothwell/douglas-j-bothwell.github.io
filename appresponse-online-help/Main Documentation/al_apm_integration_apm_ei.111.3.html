@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>AppNetwork Path Analysis Insight</title>
+    <link rel="StyleSheet" href="css/al_apm_integration_apm_ei.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_al_apm_integration_splash.html">Integration with Other Riverbed Solutions</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="al_apm_integration_apm_ei.111.1.html">NetSensor Integration</a> &gt; AppNetwork Path Analysis Insight</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="989661">AppNetwork Path Analysis Insight</a></div>
+      <div class="bodyIntro"><a name="989662">The AppNetwork Path Analysis Insight is useful for analyzing a specific end-to-end network path. You can use this Insight to </a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989663">View a topology of the hopes and paths between the two IPs, and to see the paths for which hop-delay metrics are—and are not—available.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989664">Identify devices and interfaces (including Layer-2 devices) in the path that have less-than-optimal performance. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989665">Compare the performance of individual hops in the path. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyIntro"><a name="989666">This Insight groups SNMP data into tables (one row per hop and, where applicable, per interface) so you can compare the performance at each hop. You can compare hops based on criteria such as round-trip times between hops and per-hop/per-interface performance. </a></div>
+      <div class="bodyNote">
+        <span class="bold">Note: </span><a name="989667">Although the data displayed in this Insight is historical and corresponds to the project time, the application path is determined for the current network. Thus, it should be considered a possible path and not necessarily the exact path at the time of interest.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;2     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="989668">AppNetwork Path Analysis Insight</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="989672"><img class="Default" src="images/al_apm_integration_apm_ei.111.3.1.jpg" width="674" height="259" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="989673">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="989674">Prerequisites</a></div>
+      <div class="bodyIntro"><a name="989675">For best results, it is good practice to do the following:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989676">Let NetSensor collect data in AppPath Analysis mode for at least one hour. This will ensure that it has had enough time to collect a sufficient set of network metrics. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989677">Let NetSensor run overnight after discovering new devices. This lets it do a better job of inferring links for Layer 2 devices in the path.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="989679">Metrics</a></div>
+      <div class="bodyIntro"><a name="989680">This insight displays two different types of metrics:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989681">Hop Delays are calculated once, when the path was calculated, and are not affected by the project time. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="989682">Hop Delay metrics are computed as follows: </a></div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="989683">Hop Delays are not calculated for any devices/systems for which RTT Samples are not reliable. Typically layer-two devices that were inferred to be in the path do not have reliable RTT Samples.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="989684">To gather RTT samples, NetSensor connects to the device closest to the end point and uses the standard traceroute tool on the node.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="989685">The insight calculates the mean of the samples for a hop and then subtracts this mean from the previous hop for which RTT Samples are reliable. This is used as the Hop Delay between the current and the previous hop.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="989686">RTT Samples are considered reliable if both of the following conditions are true:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSubCont"><a name="989687">The previous hop is an end point, or is one of the points from which the traceroute was issued.</a></div>
+      <div class="listBulletSubCont"><a name="989688">The samples do not appear to have been artificially delayed, thereby causing a negative value as a result of the subtraction.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989689">The insight imports sampled metrics from NetSensor, typically through SNMP polling. Note the following:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="989690">Unlike Hop Delay metrics, sampled metrics are based on the current project time. Therefore, these two sets of metrics might not cover the same time period.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="989691">Threshold violations for sampled metrics are based on the peak value for each metric within the current project time. The peak value is</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSubCont"><a name="989692">the maximum of all raw samples (if the project time is recent and fairly short), </a></div>
+      <div class="listBulletSubCont"><a name="989693">or</a></div>
+      <div class="listBulletSubCont"><a name="989694">the maximum of all aggregated samples (if the project time is older or spans multiple days).</a></div>
+      <div class="listBulletCont"><a name="989695">Refer to the NetSensor documentation for descriptions of sampled metrics (such as Interface Incoming/Outgoing Utilization, CPU Utilization, and so on). </a></div>
+      <div class="h2NoBreak"><a name="989698">Metric Thresholds</a></div>
+      <div class="bodyIntro"><a name="989699">Each metric has a Warning and a Critical threshold setting. The insight colors objects and thresholds as follows:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989700">Green = The metric is below the Warning threshold.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989701">Yellow = The metric is equal to the Warning threshold, but still less than the Critical threshold.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989702">Red = The metric is equal to or greater than the Critical threshold.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989703">Gray = There is no metric data available for the object.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="989704">If a hop has multiple threshold settings defined, the icon is red (if any threshold is critical) or yellow (if one threshold is a warning and none are critical).</a></div>
+      <div class="body"><a name="989705">You can change thresholds after the path is generated. The insight then re-applies all thresholds and redraws all screens with the appropriate colors.</a></div>
+      <div class="h2NoBreak"><a name="989706">Workflow Description</a></div>
+      <div class="bodyIntro"><a name="989707">The following steps outline the general workflow for this Insight.</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="989708">Identify an IP Conversation whose network path you want to analyze. IP conversations with high rates of packet loss and/or retransmissions are often good candidates for investigation. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="989709">In the insight, chart, or table window, right-click on the IP conversation of interest and choose Analyze&nbsp;In&nbsp;&gt; Element&nbsp;Polling&nbsp;&gt; Application&nbsp;Path&nbsp;Analysis. This allows an end-to-end workflow in which you</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">a)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="989713">Search for problematic IP conversations in the Desktop Console.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">b)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="989714">Send the end points to the AppNetwork Path Analysis Insight.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><a name="989715">If you already know the end-point IPs of the path you want to investigate, you can open the insight directly (Insights&nbsp;&gt; Element&nbsp;Polling&nbsp;&gt; AppNetwork&nbsp;Path&nbsp;Analysis); when the insight opens, click the New Button in the top-left corner and enter the two IPs manually. </a></div>
+      <div class="listNumCont"><span class="dingbats"><a name="989716">➥</a></span><span class="bold" style="color: #000000">&nbsp;</span>When APM&nbsp;Element&nbsp;Insight receives the two end points, it polls the network and determines the path between the two points.</div>
+      <div class="listNumCont"><span class="bold"><a name="989717">Note—</a></span>Path analysis could take several minutes if there are problems with login credentials for devices in the path.</div>
+      <div class="listNumCont"><span class="dingbats"><a name="989718">➥</a></span><span class="bold" style="color: #000000">&nbsp;</span>After NetSensor determines a network path:</div>
+      <div class="listNumSubCont"><a name="989719">• The Forward Path and Return Path hop lists are populated. </a></div>
+      <div class="listNumSubCont"><a name="989720">• Links to various SNMP Comparison views that might be useful are added under the Additional Insights tab. </a></div>
+      <div class="listNumSubCont"><a name="989721">• Information about devices on the path is added under the System Details tab.</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="989722">Analyze the network path using the panes and tabbed pages:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'al_apm_integration_apm_ei.111.3.html#989752', '');" title="AppNetwork Path Analysis Insight" name="989726">Topology Pane (Top)</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'al_apm_integration_apm_ei.111.3.html#989770', '');" title="AppNetwork Path Analysis Insight" name="989730">Path Summary</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'al_apm_integration_apm_ei.111.3.html#989788', '');" title="AppNetwork Path Analysis Insight" name="989734">Path Delay Analysis</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'al_apm_integration_apm_ei.111.3.html#989802', '');" title="AppNetwork Path Analysis Insight" name="989738">Path System/Device Types</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'al_apm_integration_apm_ei.111.3.html#989811', '');" title="AppNetwork Path Analysis Insight" name="989742">Path Generation Details</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'al_apm_integration_apm_ei.111.3.html#989814', '');" title="AppNetwork Path Analysis Insight" name="989746">Threshold Settings Tab</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="989750">If you see unexpected results, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'al_apm_integration_apm_ei.111.3.html#989824', '');" title="AppNetwork Path Analysis Insight">Troubleshooting this Insight</a></span>.</div>
+      <div class="h2NoBreak"><a name="989752">Topology Pane (Top)</a></div>
+      <div class="bodyIntro"><a name="989753">The topology pane uses the following conventions to visualize the network path:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989754">NetSensor computes two paths for each request: the forward path (source ==&gt; destination) and the return path (destination ==&gt; source). The arrows in the topology visualize the links between the two IPs.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989755">The insight colors each hop and link based on its threshold settings and the metric calculated for the current project time. To view metric information in a tooltip, rest the cursor over the hop or link.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989756">Links are displayed as follows:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="989757">Solid blue line = a link for which there is no Hop Delay metric available</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="989758">Dotted line = multiple links for which a Hop Delay was calculated. The end points of the dotted line represent the two hops used to calculate the delay; for more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'al_apm_integration_apm_ei.111.3.html#989698', '');" title="AppNetwork Path Analysis Insight">Metric Thresholds</a></span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSubCont"><a name="989762">A dotted line (hop delay calculated) can span several solid lines (no hop delay calculated) when hop-delay metrics are not available for some links in a path. </a></div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap">Figure&nbsp;3    </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="989763">Link Coloring: Example</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="989767"><img class="Default" src="images/al_apm_integration_apm_ei.111.3.2.jpg" width="513" height="113" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="989768">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="989770">Path Summary </a></div>
+      <div class="body"><a name="989771">The metrics for the devices/systems and links are compared to the Threshold settings and compliance ratios displayed in this tab. For details about each metric, click View. The insight either switches to a different tabbed page or opens a secondary insight to compare the metric thresholds.</a></div>
+      <div class="body"><a name="989772">To examine possible correlations between performance at a specific hop or interface vs. performance along the entire path, click the View button next to System Performance or Interface Performance. This opens a corresponding secondary Insight that shows metrics for all observed hops and interfaces in the network path. To compare hop-versus-path performance:</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="989773">In the Hop List, select a metric cell (or use Ctrl-click to select multiple metric cells).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><span class="dingbats"><a name="989774">➥</a></span><span class="bold" style="color: #000000">&nbsp;</span>The hop time-series chart (center) shows data for the selected hops.</div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="989775">Compare the hop data to the network time-series chart (bottom). By default, this chart shows Response Time Composition for the network, which can help you correlate delays to specific hops in the path. To compare hop data against a specific AppResponse metric, click the Comparison to Reference Metric tab and choose the metric you are interested in.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><span class="bold"><a name="989779">Note—</a></span>The secondary Insights treat the source of the application path as a server and the destination as a client. This might produce some odd metrics if the source is actually a client.</div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap">Figure&nbsp;4    </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="989781">Secondary Insight (Interface Performance Comparison)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="989785"><img class="Default" src="images/al_apm_integration_apm_ei.111.3.3.jpg" width="647" height="435" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="989786">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="989788">Path Delay Analysis </a></div>
+      <div class="bodyIntro"><a name="989789">Shows the forward and return paths in tabular format. The column headers are:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989790">Hop — The relative hop number for this path</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989791">System Name – Primary name of this device/system as managed within NetSensor</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989792">Interface – Outbound interface used on this node</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989793">Hop Delay – Cell color is based on the defined threshold. For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'al_apm_integration_apm_ei.111.3.html#989698', '');" title="AppNetwork Path Analysis Insight">Metric Thresholds</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989797">RTT Samples – Cell color is based on the defined threshold. For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'al_apm_integration_apm_ei.111.3.html#989698', '');" title="AppNetwork Path Analysis Insight">Metric Thresholds</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="989802">Path System/Device Types</a></div>
+      <div class="bodyIntro"><a name="989803">Shows the summary of what each device/system type on the path. The column headers are:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989804">Forward Hop – Relative hop number on the forward path. If no value is displayed, the device or system did not participate in the forward path.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989805">Return Hop – Relative hop number on the return path. If no value is displayed, the device or system did not participate in the return path.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989806">System Name – Primary name of this device/system as managed within NetSensor</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989807">Uptime – Device uptime at the end of the current project time (“To” field in the Desktop Console)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989808">Location – Polled from the system/device MIB</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989809">Description – Polled from the system/device MIB</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="989811">Path Generation Details</a></div>
+      <div class="body"><a name="989812">This page displays a summary of how the path was generated. This information is useful when the path could not be generated.</a></div>
+      <div class="h2NoBreak"><a name="989814">Threshold Settings Tab</a></div>
+      <div class="body"><a name="989815">It shows the currently in effect threshold settings. If these are changed, the change is a local operation applied to this generated path only. It is not a global change that affects all paths. </a></div>
+      <div class="body"><a name="989822">For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'al_apm_integration_apm_ei.111.3.html#989679', '');" title="AppNetwork Path Analysis Insight">Metrics</a></span> and <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'al_apm_integration_apm_ei.111.3.html#989698', '');" title="AppNetwork Path Analysis Insight">Metric Thresholds</a></span>.</div>
+      <div class="h2NoBreak"><a name="989824">Troubleshooting this Insight</a></div>
+      <div class="h4"><span class="Emphasis"><a name="989825">Problem:</a></span></div>
+      <div class="body"><a name="989826">The AppNetwork Path Analysis Insight is having trouble obtaining an application path.</a></div>
+      <div class="h4"><a name="989827">Solution: </a></div>
+      <div class="bodyIntro"><a name="989828">Do the following:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="989829">Make sure that NetSensor is configured with authentication and login information for all devices in the network that might be part of the path.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          // Add related topics
+          //
+          WWHAddRelatedTopic("NetSensor Integration", "main_doc", "al_apm_integration_apm_ei.111.1.html");
+          WWHAddRelatedTopic("NetSensor Integration", "main_doc", "al_apm_integration_apm_ei.111.1.html");
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

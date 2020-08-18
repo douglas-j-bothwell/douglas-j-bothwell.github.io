@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Using the Command Line Interface</title>
+    <link rel="StyleSheet" href="css/AGCH05-Config_Maintenance.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_admin_guide_splash.html">Administrator Guide</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="AGCH05-Config_Maintenance.11.01.html">Administration and Maintenance</a> &gt; Using the Command Line Interface</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="950452">Using the Command Line Interface</a></div>
+      <div class="bodyIntro"><a name="967764">The AppResponse Appliance command line interface (CLI) is used during the initial installation. (See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', '_10_ace_live_appliance_install_guide.14.5.html#951322', '');" title="Configuring the Appliance">Command Line Interface</a></span>.) After installation, the CLI can be used to change configuration parameters and run various commands to maintain appliance operation. These functions include:</div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH05-Config_Maintenance.11.06.html', '');" title="Managing User Accounts" name="967771">Managing User Accounts</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH05-Config_Maintenance.11.09.html', '');" title="Configuring Network Parameters" name="967775">Configuring Network Parameters</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH05-Config_Maintenance.11.10.html', '');" title="Configuring Outgoing Email Parameters" name="950471">Configuring Outgoing Email Parameters</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH05-Config_Maintenance.11.10.html#950905', '');" title="Configuring Outgoing Email Parameters" name="950475">Running Diagnostics and Viewing Error Logs</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH05-Config_Maintenance.11.11.html', '');" title="Checking the Factory Settings" name="950479">Checking the Factory Settings</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH05-Config_Maintenance.11.12.html', '');" title="Halting or Rebooting the Appliance from the CLI" name="950483">Halting or Rebooting the Appliance from the CLI</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'APC_softwareupdate.html', '');" title="Software Updates Using the CLI" name="950487">Software Updates Using the CLI</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH05-Config_Maintenance.11.13.html', '');" title="Setting Up Private-Address to AS-Number Maps" name="950491">Setting Up Private-Address to AS-Number Maps</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH05-Config_Maintenance.11.14.html', '');" title="Configuring SYSLOG Alert Destinations" name="950495">Configuring SYSLOG Alert Destinations</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="950496">Accessing the Command Line Interface</a></div>
+      <div class="bodyIntro"><a name="950497">The CLI can be accessed over the appliance serial port or by using SSH to connect to the appliance over the network.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950498">Serial Port access - Use a terminal emulator program (such as hyperterm on Windows or tip on Unix) to connect to the AppResponse Appliance’s serial port with the provided serial cable. Use the following terminal-emulation settings: 115200 baud, no parity, 8 data bits, no flow control, and 1 stop bit.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950502">SSH access - Use SSH to access the appliance over the network. A number of free SSH clients, such as Teraterm and putty, are available for MS Windows. SSH to the IP address or hostname of the AppResponse Appliance.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyIntro"><a name="950506">The CLI prompts for a valid username and password before granting access. After logging in, type help and press Enter to see a list of valid commands.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;6     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950507">Command Line Interface - Help</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="973549"><img class="Default" src="images/AGCH05-Config_Maintenance.11.04.1.jpg" width="365" height="175" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="973550">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="950515">The AppResponse Appliance is based on the FreeBSD operating system. The CLI exposes many of the commands from the FreeBSD shell to the user. The following commands should be familiar to users with a UNIX background:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950516">date</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950517">df</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950518">host</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950519">hostname</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950520">ifconfig</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950521">iostat</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950522">netstat</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950523">nslookup</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950524">ping</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950525">stty</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950526">traceroute</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950527">uptime</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="950528">The CLI provides help for each command through the Unix man (manual) command. To access help for a command, type man followed by the command name and press Enter. e.g., man netstat. Refer to the man pages for help using the Unix commands listed above. Other sections within this chapter document usage of commands that are unique to the AppResponse Appliance CLI.</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          // Add related topics
+          //
+          WWHAddRelatedTopic("Administration and Maintenance", "getting_started", "AGCH05-Config_Maintenance.11.01.html");
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

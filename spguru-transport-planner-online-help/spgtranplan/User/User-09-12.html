@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:52" />
+    <title>Pure Link-by-Link (Full Intermediate Grooming)</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-09-01.html"> Grooming DCL to OCH Traffic</a> > <a href="User-09-10.html">DCL Grooming Solutions Without Protection</a> > Pure Link-by-Link (Full Intermediate Grooming)</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp55710"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Pure Link-by-Link (Full Intermediate Grooming)
+</h2>
+
+ 
+
+<a name="wp55936"> </a><p class="pBody">
+In link-by-link grooming (also called &quot;core grooming&quot;), we groom the traffic together into the available OCH channels whenever possible, and add new channels if needed. The grooming algorithm terminates traffic at the DXC in every intermediate node, and regrooms the traffic to utilize existing wavelengths as fully as possible. 
+</p>
+<a name="wp60193"> </a><p class="pBody">
+If we apply this solution to the same network as the previous example (see <a href="javascript:WWHClickedPopup('wdm_user', 'User-09-11.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-11.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Solution 1: Pure End-to-End (No Intermediate Grooming)</u></a>), SP&#160;Guru&#160;Transport&#160;Planner accommodates the three DCL demands as follows:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp60206"> </a><div class="pSmartList1"><li>Demand A-B (8 STM-1s): routed on the optical channel between nodes A and B. This demand uses 8 out of 16 timeslots on the optical channel.</li></div>
+<a name="wp60207"> </a><div class="pSmartList1"><li>Demand B-C (7 STM-1s): routed on the optical channel between B and C. This demands uses 7 out of 16 timeslots on the optical channel. </li></div>
+<a name="wp60230"> </a><div class="pSmartList1"><li>Demand A-C (4 STM-1s): SP&#160;Guru&#160;Transport&#160;Planner establishes no new optical channel for this demand. Instead, it uses the unused timeslots on the already-created optical channels. There are eight unused timeslots on optical channel A&#8211;B and nine unused timeslots on B&#8211;C. SP&#160;Guru&#160;Transport&#160;Planner accommodates this demand as follows:</li></div>
+<div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp60257"> </a><div class="pSmartList2"><li>At node A, aggregate the A&#8211;B and A&#8211;C demands on the optical channel A&#8211;B. The network uses 12 (8 +4) timeslots on this optical channel. </li></div>
+<a name="wp60266"> </a><div class="pSmartList2"><li>At node B, split the DCL traffic: drop the A&#8211;B demand and switch the A&#8211;C demand to the optical channel B&#8211;C. Add the B&#8211;C demand to the DXC. Now the A&#8211;C and B&#8211;C demands are aggregated on the optical channel B&#8211;C; the network uses 11 (7 + 4) timeslots on this channel. </li></div>
+<a name="wp60267"> </a><div class="pSmartList2"><li>At node C, split and drop the DCL traffic.</li></div>
+<a name="wp75036"> </a><p class="pFigCaption">
+Figure&#160;8-7   Link-by-Link (No Protection): Capacity Requirements
+</p>
+<a name="wp75039"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-09-12-07.jpg" height="228" width="530" id="wp75038" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp75110"> </a><p class="pFigCaption">
+Figure&#160;8-8   Link-by-Link (No Protection): Associated Equipment
+</p>
+<a name="wp75113"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-09-12-08.jpg" height="289" width="530" id="wp75112" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp55987"> </a><p class="pBodyRelative">
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp75226table55944">
+  <caption><a name="wp75226"> </a><div class="ptblcaption">
+Table&#160;8-8   Main Equipment Associated with Solution 2 (Link-by-Link / No Protection)&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp55956"> </a><div class="pCellHeading">
+Equipment
+</div>
+</th>
+    <th><a name="wp55958"> </a><div class="pCellHeading">
+Quantity
+</div>
+</th>
+    <th><a name="wp55960"> </a><div class="pCellHeading">
+Associated Equipment
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp55962"> </a><div class="pCellBody">
+Logical DCL links
+</div>
+</td>
+    <td><a name="wp56047"> </a><div class="pCellBody">
+2
+</div>
+</td>
+    <td><a name="wp56049"> </a><div class="pCellBody">
+4 DXC trunk ports
+</div>
+<a name="wp58349"> </a><div class="pCellBody">
+4 OXC tributary ports
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp55968"> </a><div class="pCellBody">
+DCL units switched
+</div>
+</td>
+    <td><a name="wp56051"> </a><div class="pCellBody">
+4
+</div>
+</td>
+    <td><a name="wp56053"> </a><div class="pCellBody">
+DXC required in node B to switch and re-aggregate
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp55974"> </a><div class="pCellBody">
+Optical channels/hops
+</div>
+</td>
+    <td><a name="wp56055"> </a><div class="pCellBody">
+2 optical channels using
+</div>
+<a name="wp56056"> </a><div class="pCellBody">
+1&#160;+&#160;1 = 2 hops
+</div>
+</td>
+    <td><a name="wp56059"> </a><div class="pCellBody">
+4 short-reach transponders
+</div>
+<a name="wp58350"> </a><div class="pCellBody">
+4 long-reach transponders
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp55981"> </a><div class="pCellBody">
+WDM in-line equipment
+</div>
+</td>
+    <td><ul class="pCellBodyBullet"><a name="wp56061"> </a><div class="pCellBodyBullet"><li>
+1 regeneration point on link A-B
+</li></div>
+<a name="wp56062"> </a><div class="pCellBodyBullet"><li>
+4 OAs in total on links A-B, A-C
+</li></div>
+</ul></td>
+    <td><a name="wp56064"> </a><div class="pCellBody">
+1 channel on link A-B (requires 1 regenerator card)
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="3" rowspan="1"><a name="wp75289"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 8-8	
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+</p>
+</ul></div>
+</ul></div>
+<a name="wp61267"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>The values in <a href="javascript:WWHClickedPopup('wdm_user', 'User-09-12.html#wp75226');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-12.html#wp75226', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;8-8</u></a> are calculated with the OCH layer mode as opaque.
+</p>
+
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_31_grm.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

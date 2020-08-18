@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:38:42" />
+    <title>Dimensioning</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="wdmgtut-4-01.html"> Network Design Operations</a> > Dimensioning</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp926095"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Dimensioning
+</h2>
+
+ 
+
+
+<a name="wp926096"> </a><p class="pBody">
+The following procedure shows how to dimension the OCH layer to accommodate all traffic of a specified OCH traffic matrix in the network. Two routing strategies are described: a shortest-path algorithm and an optimized algorithm. For more information about other dimensioning options, see the SP&#160;Guru&#160;Transport&#160;Planner User&#160;Guide.
+</p>
+<a name="wp926098"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp926098", false);</script>Procedure&#160;3-5   Dimensioning the OCH Layer<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp926098", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp926098", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp926100"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the <b class="cBold">WDMGuru_Examples</b> project.</li></div>
+<ol type="a">
+<a name="wp926101"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Open</span><b class="cBold">...</b>.</li></div>
+<a name="wp926102"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">WDMGuru_Examples</span> project, then press <span style="font-weight: bold">Open</span>.</li></div>
+<a name="wp938630"> </a><p class="pIndentedRelative">
+The example project which contains various scenarios loads. The Australia scenario appears in the workspace.
+</p>
+</ol>
+<a name="wp926104"> </a><div style="text-align: left" class="pSmartList2Test"><li>Select <span style="font-weight: bold">Scenarios &gt; Switch To Scenario &gt; USA</span> to view the USA scenario in the workspace.</li></div>
+<a name="wp926106"> </a><div style="text-align: left" class="pSmartList2Test"><li>Strip capacity.</li></div>
+<ol type="a">
+<a name="wp926107"> </a><div class="pprocstepSub"><li>Select <b style="font-weight: bold" class="cBold">Design</b><span style="font-weight: bold">&#160;&gt; Strip Capacity</span><b class="cBold">...</b>.</li></div>
+<a name="wp926108"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Tear Down Traffic</span> to release all OCH and DCL traffic in the network.</li></div>
+<a name="wp926109"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Strip Node Equipment</span> to downgrade all discrete nodes to their smallest possible size.</li></div>
+<a name="wp926110"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Strip Link Equipment</span> to remove all fiber pairs that carry no traffic. then press <span style="font-weight: bold">Strip</span>.</li></div>
+<a name="wp935238"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-05-25.jpg" height="223" width="469" id="wp935245" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp926117"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Strip Capacity</b> dialog box.</li></div>
+</ol>
+<a name="wp941599"> </a><div style="text-align: left" class="pSmartList2Test"><li>Dimension the OCH layer (shortest path algorithm).</li></div>
+<ol type="a">
+<a name="wp938684"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Design</b> &gt; <span style="font-weight: bold">Dimension DCL/OCH Layer</span><b class="cBold">...</b>, and choose traffic matrix <span style="font-weight: bold">OC-48.</span></li></div>
+<a name="wp938690"> </a><p class="pIndentedRelative">
+This dialog box is used to fully route and accommodate wavelength demands in the network. If needed, extra equipment is installed in the network to make sure all traffic demands can be accommodated.
+</p>
+<a name="wp938685"> </a><div class="pprocstepSub"><li>Choose <span style="font-weight: bold">Shortest Path</span> (Algorithm).This implies that each connection is routed along the shortest path&#8212;that is, the path with the lowest cost&#8212;between its two endnodes.</li></div>
+<a name="wp926120"> </a><div class="pprocstepSub"><li>Choose <span style="font-weight: bold">Unprotected</span> (Protection). This implies that no back-up path is created for the routed connections.</li></div>
+<a name="wp926121"> </a><div class="pprocstepSub"><li>Choose <span style="font-weight: bold">Hop Count </span>(Routing Cost). The algorithm searches the path with the fewest hops.</li></div>
+<a name="wp926122"> </a><div class="pprocstepSub"><li>Choose <span style="font-weight: bold">Default line system </span>(Link Expansion). This ensures that all added line systems are of the default type (LH&#160;40-WDM).</li></div>
+<a name="wp941617"> </a><div class="pprocstepSub"><li>	Uncheck <span style="font-weight: bold">Equip All Bands On Added Fiber Pairs </span>(Link Expansion). This means that only the necessary bands are equipped on the added fiber pairs.</li></div>
+<a name="wp947229"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-05-26.jpg" height="443" width="471" id="wp947227" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp926123"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">Dimension</span>.</li></div>
+<a name="wp926132"> </a><p class="pIndentedRelative">
+The <span style="font-weight: bold">Results of Dimensioning</span> dialog box appears.
+</p>
+<a name="wp946485"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-05-27.jpg" height="299" width="474" id="wp946483" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ol>
+</ol></div>
+<a name="wp938833"> </a><p class="pBody">
+.
+</p>
+<a name="wp938813"> </a><p class="pIndentedRelative">
+This dialog box gives an overview of the equipment added in the network to accommodate the traffic matrix OC-48. Pay attention to the total number of fiber pairs and OXC ports to compare these with the results of <a href="javascript:WWHClickedPopup('wdmg_tut', 'wdmgtut-4-05.html#wp938900');" onMouseOver="WWHShowPopup('wdmg_tut', 'wdmgtut-4-05.html#wp938900', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">step&#160;9.5</u></a>, below.
+</p>
+<ol type="a">
+<a name="wp938824"> </a><div class="pprocstepSub"><li>Close the dialog boxes.</li></div>
+</ol>
+<a name="wp926144"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the results.</li></div>
+<ol type="a">
+<a name="wp926145"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Design &gt; Routing Results</b>.</li></div>
+<a name="wp926146"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">OCH </span>layer and the traffic matrix <span style="font-weight: bold">OC-48</span>. As expected, the traffic matrix OC-48 is entirely accommodated in the network. Additional statistics regarding the capacity and hop length are provided.</li></div>
+<a name="wp946446"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-05-28.jpg" height="265" width="470" id="wp946444" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp926155"> </a><div class="pprocstepSub"><li>Close the dialog box.</li></div>
+</ol>
+<a name="wp941637"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the required equipment.</li></div>
+<ol type="a">
+<a name="wp926156"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Info &gt; Network Cost &gt; Node Cost</span>.</li></div>
+<a name="wp938840"> </a><p class="pIndentedRelative">
+The <b class="cBold">Node Cost</b> dialog box appears with an overview of the required node components and their cost.
+</p>
+<a name="wp935394"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-05-29.jpg" height="154" width="456" id="wp935401" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp926164"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Info &gt; Network Cost &gt; Link Cost</span>.</li></div>
+<a name="wp938844"> </a><p class="pIndentedRelative">
+The Link Cost dialog box appears with an overview of the required link components and their cost.
+</p>
+<a name="wp935443"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-05-30.jpg" height="177" width="455" id="wp935450" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ol>
+<a name="wp926173"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the <b class="cBold">Node Cost</b> and <b class="cBold">Link Cost</b> windows.</li></div>
+<a name="wp945951"> </a><div style="text-align: left" class="pSmartList2Test"><li>Strip capacity.</li></div>
+<ol type="a">
+<a name="wp926174"> </a><div class="pprocstepSub"><li>Select <b style="font-weight: bold" class="cBold">Design</b><span style="font-weight: bold">&#160;&gt;&#160;Strip Capacity</span><b class="cBold">...</b>.</li></div>
+<a name="wp946040"> </a><div class="pprocstepSub"><li>Put a checkmark next to <span style="font-weight: bold">Tear Down Traffic</span>, <span style="font-weight: bold">Strip Node Equipment,</span> and <span style="font-weight: bold">Strip Link Equipment</span>, then press <span style="font-weight: bold">Strip</span>.<br />
+<img src="images/wdmgtut-4-05-31.jpg" height="216" width="440" id="wp946038" border="0" hspace="0" vspace="-2"/><br />
+</li></div>
+<a name="wp938858"> </a><p class="pIndentedRelative">
+This removes all traffic and equipment from the network.
+</p>
+<a name="wp937701"> </a><div class="pprocstepSub"><li>Close the dialog box.</li></div>
+</ol>
+<a name="wp946075"> </a><div style="text-align: left" class="pSmartList2Test"><li>Dimension the OCH layer (heuristic algorithm).</li></div>
+<ol type="a">
+<a name="wp926177"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Design</b> <span style="font-weight: bold">&gt; Dimension DCL/OCH layer</span><b class="cBold">...</b>.</li></div>
+<a name="wp926178"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">OC-48</span>, <span style="font-weight: bold">Unprotected</span>, <span style="font-weight: bold">Hop Count,</span> and <b class="cBold">Default line system</b>.</li></div>
+<a name="wp926179"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Heuristic</span> (Algorithm) and put a checkmark next to <span style="font-weight: bold">Optimize Link</span>. With this option selected, the heuristic tries to remove poorly utilized line systems, by rerouting traffic along other (longer) routes.</li></div>
+<a name="wp938883"> </a><div class="pprocstepSub"><li>Put a checkmark next to <span style="font-weight: bold">Optimize Node</span>. With this option selected, the heuristic tries to reroute some of the traffic to downgrade poorly-utilized node facilities and reduce costs.</li></div>
+<a name="wp938896"> </a><p class="pIndentedRelative">
+Note that the latter option is valid only for discrete OCH nodes. You can also specify a threshold: if the threshold indicates 50&#160;percent, the heuristic only attempts to remove fiber pairs (or node types) for which the utilization is lower than 50&#160;percent.
+</p>
+<a name="wp938900"> </a><div class="pprocstepSub"><li>Enter <span style="font-weight: bold">100</span>&#160;percent for the <span style="font-weight: bold">Threshold</span>, then click <span style="font-weight: bold">Dimension</span>.<span style="font-weight: bold"><br />
+<img src="images/wdmgtut-4-05-32.jpg" height="414" width="465" id="wp941840" border="0" hspace="0" vspace="-2"/><br />
+</span></li></div>
+<a name="wp926180"> </a><p class="pIndentedRelative">
+The <span style="font-weight: bold">Results of Dimensioning</span> dialog box indicates that the heuristic results in fewer fiber pairs (on the link between HOUSTON and MIAMI, for example) and smaller OXCs (in node NEW_YORK, for example) than the shortest path algorithm. The number of used OXC ports is higher, however, due to the longer routes taken by some of the connections.
+</p>
+<a name="wp946576"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-05-33.jpg" height="297" width="457" id="wp946574" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932174"> </a><div class="pprocstepSub"><li>Close the dialog boxes.</li></div>
+</ol>
+<a name="wp926190"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the project.</li></div>
+<ol type="a">
+<a name="wp926191"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Close</span>.</li></div>
+<a name="wp926192"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Don&#39;t Save</span> in the <span style="font-weight: bold">Close Confirm</span> dialog box.</li></div>
+</ol>
+<a name="wp936742"> </a><p class="pProcEnd">
+End of Procedure 3-5
+</p>
+
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/wdmg_tut_3.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

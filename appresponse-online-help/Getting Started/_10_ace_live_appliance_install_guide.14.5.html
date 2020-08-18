@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Configuring the Appliance</title>
+    <link rel="StyleSheet" href="css/_10_ace_live_appliance_install_guide.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_admin_guide_splash.html">Administrator Guide</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="_10_ace_live_appliance_install_guide.14.1.html">Installing the Appliance</a> &gt; Configuring the Appliance</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="951315">Configuring the Appliance</a></div>
+      <div class="body"><a name="951319">With the physical connections for the AppResponse appliance complete, the initial appliance configuration must be performed using one of the methods described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', '_10_ace_live_appliance_install_guide.14.4.html#1007066', '');" title="Installing the Appliance">step&nbsp;3.</a></span> of <span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', '_10_ace_live_appliance_install_guide.14.4.html#955649', '');" title="Installing the Appliance">Procedure&nbsp;1</a></span>. Once this is complete, the final appliance configuration is done using the web interface.</div>
+      <div class="h2NoBreak"><a name="951322">Command Line Interface</a></div>
+      <div class="body"><a name="951326">The AppResponse appliance requires minimal initial configuration; you must access the command-line interface (CLI) using the appliance’s serial port, static IP address, or keyboard/monitor (as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', '_10_ace_live_appliance_install_guide.14.5.html#951351', '');" title="Configuring the Appliance">Step 3: Initial Setup using the CLI</a></span>). There you can set the appliance host name, domain name, IP address, netmask, and the default gateway for the management interface.</div>
+      <div class="body"><a name="951330">The command line interface also provides functionality to set the date, ping and traceroute arbitrary destinations, check the status and statistics of all network interfaces, run diagnostics reports and view the error log. These functions are not required during the initial configuration procedures.</a></div>
+      <div class="bodyNote">
+        <span class="bold">Note: </span><a name="951331">A number of free SSH clients, such as Teraterm and putty, are available for Windows.</a></div>
+      <div class="body"><a name="951332">After you’ve set the basic network parameters using the CLI, you can then access the CLI over the network by using SSH to login to the appliance. You can also access the Administration&nbsp;&gt; System web interface to complete the system configuration (as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', '_10_ace_live_appliance_install_guide.14.5.html#961550', '');" title="Configuring the Appliance">Step 4: Completing Setup using the Administration &gt; System Web Interface</a></span>).</div>
+      <div class="body"><a name="951339">In general, the CLI should only be used to configure network parameters at install time. All subsequent changes to network parameters should be performed using the web interface.</a></div>
+      <div class="h3TopNoBreak"><a name="951351">Step 3: Initial Setup using the CLI</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd951356&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procCaption_inner" style="width: 90pt; white-space: nowrap">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd951356", false);</script>Procedure&nbsp;4    </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="951356">Initial Setup Using the CLI</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd951356", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="955779">Press the power switch on the front of the AppResponse appliance to turn the appliance on. Watch the serial port console for any error messages during the boot process.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="951357">The </a><span class="code">login</span> prompt appears approximately 2 minutes after the appliance is turned on. Type <span class="codebold">admin</span> and press Enter.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="951360">The initial CLI login is </a><span class="code">admin</span> with either a null password or an initial password of <span class="code">npadmin</span>.The <span class="code">admin</span> login has administrative privileges and can be used to create additional CLI logins as well as web interface logins.</div>
+      <div class="procStepCont"><a name="956151">While using the CLI, you can view the list of available commands by typing: </a><span class="codebold">commands</span> </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="996463">At the </a><span class="code">password</span> prompt, press Enter. If this does not work, enter <span class="codebold">npadmin</span> and press Enter. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note: </span><a name="996467">If you are able to log in without a password, you must specify a password now. </a></div>
+      <div class="procStepCont"><a name="996496">To specify or change the password, do the following: </a></div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	3.1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="996217">At the prompt, type </a><span class="codebold">passwd</span>, then press Enter.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	3.2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="996218">At the </a><span class="code">Old Password </span>prompt, do one of the following based on your results in <span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', '_10_ace_live_appliance_install_guide.14.5.html#996463', '');" title="Configuring the Appliance">step&nbsp;3.</a></span>:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="996314">Press Enter (null password) </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="996316">Enter </a><span class="codebold">npadmin</span> and press Enter </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	3.3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="996231">At the </a><span class="code">New Password</span> prompt, enter a password and press Enter (you need to do this twice for confirmation).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="951364">To display the system configuration menu, at the prompt type </a><span class="codebold">setup</span>, and then press Enter.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	5.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="951365">To begin the interactive system configuration, at the </a><span class="code">setup</span> prompt type <span class="codebold">config</span>, and then press Enter.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	6.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="951366">For each of the following parameters, type the appropriate value.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><span class="bold"><a name="951394">Caution—</a></span>IP Address, Netmask, and Gateway changes may affect the visibility of this system on the network.</div>
+      <div class="tblAnchor"><a name="956246">&nbsp;</a></div>
+      <table class="tableNarrow" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+              <tr style="vertical-align: baseline">
+                <td>
+                  <div class="tblCaption_inner" style="width: 44.64pt; white-space: nowrap">Table&nbsp;4    </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="956263">Required Parameters for the Setup Appliance</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 102.09672pt">
+            <div class="tblHead"><a name="951369">Parameter</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 365.90328pt">
+            <div class="tblHead"><a name="951371">Value Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="951373">Hostname</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="951375">Type the host name for the system. Enter the hostname only, do not include the domain name. The hostname must be under 63 characters long, contain only letters, digits, or dashes, and start with a letter and end with either a letter or digit.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="951377">IP Address</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="951379">Type the IP address for the management interface.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="951381">Netmask</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="951383">Type the netmask for the management interface.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="951385">Default Gateway</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="951388">Type the primary gateway IP address used by the management interface to reach other networks.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="951390">Domain</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="951393">Type the default, fully qualified domain name for the system used during DNS resolution. Do not include the hostname. Each portion of the domain name must be under 63 characters long, contain only letters, digits, or dashes, and start with a letter and end with either a letter or digit.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom" colspan="2"></td>
+        </tr>
+      </table>
+      <div class="procStepCont"><span class="bold"><a name="956901">CAUTION—</a></span>The CLI should only be used to set the network parameters at install time. All subsequent changes should be performed using the Administration&nbsp;&gt; System web interface.</div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	7.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="956902">Verify your new settings: At the </a><span class="code">setup</span> prompt, type <span class="codebold">showall</span><span class="ScreenUserEntry"> </span>and then press Enter.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	8.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="951397">To save the changes if the settings are correct, at the setup prompt type </a><span class="codebold">commit</span><span class="ScreenUserEntry"> </span>and then press <span class="Online" style="font-weight: bold">Enter</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	9.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="951398">Because these changes require a restart to take effect, when you are asked if you want to restart the system, at the </a><span class="code">setup</span> prompt type <span class="codebold">yes</span> and then press Enter.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="951399">If the </a><span class="code">login</span> prompt appears approximately two to three minutes after you reboot the system, the reboot process is complete.</div>
+      <div class="procStepCont"><a name="951400">To quit the CLI without rebooting, type </a><span class="codebold">no</span><span style="font-weight: bold"> </span>at the reboot prompt, and then type <span class="codebold">quit</span> and press Enter.</div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	10.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="951401">With the initial setup of the appliance finished, proceed to Step 4a of the installation procedure (</a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', '_10_ace_live_appliance_install_guide.14.5.html#961550', '');" title="Configuring the Appliance">Step 4: Completing Setup using the Administration &gt; System Web Interface</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note: </span><a name="956361">If this is a first time installation, be sure to read the next section for information on how to access the web interface (</a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', '_10_ace_live_appliance_install_guide.14.5.html#951424', '');" title="Configuring the Appliance">Accessing the Administration &gt; System Web Interface</a></span>).</div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap">End of Procedure 4</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="956365">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="956369">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="951410">Administration &gt; System Web Interface</a></div>
+      <div class="body"><a name="951414">After you install the AppResponse appliance hardware and set it up using the command line interface, start the web interface to finish setup</a></div>
+      <div class="body"><a name="951420">The web interface is used to complete the configuration of the appliance. The web interface allows you to change the same parameters as in the initial CLI configuration —host name, domain, IP address, netmask, and default gateway—plus it allows you to configure additional parameters including physical configuration, DNS, NTP, and BGP.</a></div>
+      <div class="body"><a name="951421">Changes to network parameters may affect the visibility and accessibility of the system on the network. If you are no longer able to access the system on the network, use the CLI from the serial port to enter appropriate network settings.</a></div>
+      <div class="body"><a name="951422">Some changes made using the web interface require a restart to take effect.</a></div>
+      <div class="h3NoBreak"><a name="951424"> Accessing the Administration &gt; System Web Interface</a></div>
+      <div class="body"><a name="951425">If you have never accessed the web interface before, follow these steps.</a></div>
+      <div class="bodyKeyConcept">
+        <span class="zBlueItalics">Key Concept—</span><a name="951429">To successfully connect to the web interface you must be able to access the AppResponse appliance from your desktop machine via TCP ports 8080 and 8443.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd951430&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procCaption_inner" style="width: 90pt; white-space: nowrap">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd951430", false);</script>Procedure&nbsp;5    </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="951430">Accessing the Web Interface</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd951430", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="956392">Start a web browser and go to the appliance web interface by opening one of the following URLs:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubCont"><span class="code"><a name="951431">http://&lt;</a></span><span class="italic">appliance_hostname</span><span class="code" style="font-style: normal">&gt;:8080</span><span class="Online"> </span></div>
+      <div class="procStepSubCont"><span class="code"><a name="951433">http://&lt;</a></span><span class="italic">appliance_ip_address</span><span class="code" style="font-style: normal">&gt;:8080</span><span class="Online"> </span></div>
+      <div class="procStepCont"><a name="951434">This automatically redirects the browser to a secure (SSL) connection on TCP port 8443.</a></div>
+      <div class="procStepCont"><a name="951435">The browser may display the certificate validation popup window. Accept the certificate to proceed to the Login page.</a></div>
+      <div class="procNote">
+        <span class="bold">Note: </span><a name="951436">It takes approximately 5 to 10 minutes after the appliance is rebooted for the web interface to be available.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="951440">At the Login page, enter your AppResponse appliance Username. During initial set-up, log into the appliance using the admin account.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="951444">Type the AppResponse appliance Password for the user account.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="951445">Click Login.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepResult_inner" style="width: 18.72pt; white-space: nowrap">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="951452">If the username and password supplied were valid, the main page of the Web Console appears. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	5.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1282984">Choose Administration &gt; System in the Web Console sidebar. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="1282986">The Administration &gt; System web page provides a brief overview of the functionality available within this interface. It also displays the name and access rights of the user account used to access the web interface.</a></div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap">End of Procedure 5</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="956440">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="961539">&nbsp;</a></div>
+      <div class="h3NoBreak"><a name="961550">Step 4: Completing Setup using the Administration &gt; System Web Interface</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd961551&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procCaption_inner" style="width: 90pt; white-space: nowrap">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd961551", false);</script>Procedure&nbsp;6    </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="961551">Completing Setup Using the Web Interface</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd961551", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="951467">After installing the AppResponse appliance hardware, from within the web interface on the </a><span class="HTBlue">system</span> tab, click <span class="HTBlue">setup</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap">Figure&nbsp;27    </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="951469">System &gt; Setup Page—Web Interface</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="954162"><img class="Default" src="images/_10_ace_live_appliance_install_guide.14.5.1.jpg" width="508" height="476" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="954163">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="951475">Under Network Configuration Settings, verify the network parameters that were set during the initial CLI configuration (as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', '_10_ace_live_appliance_install_guide.14.5.html#951351', '');" title="Configuring the Appliance">Step 3: Initial Setup using the CLI</a></span>):</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="951481">Host Name	</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="956547">Netmask</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="951484">Domain	</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="956548">Gateway</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="951486">IP Address</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><span class="bold"><a name="951487">CAUTION—</a></span>IP Address, Netmask, and Gateway changes may affect the visibility of this system on the network.</div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="951490">From the Management Interface Speed/Duplex Settings drop-down list, select the management network interface card’s mode of operation (or media type) used for communication. Note the following:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><span class="Emphasis"><a name="1301412">If the switch port to which the management port is connected is forced to a specific speed or duplex setting, the management interface media type </a></span><span class="italic">must be configured</span><span class="Emphasis" style="font-style: normal"> to the same settings; otherwise, select autoselect.</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="951491">The Administration &gt; System &gt; Setup web page displays the speed/duplex settings and current status of the management and monitoring interfaces. The management interface speed/duplex is set to autoselect by default. However, the speed/duplex settings should be configured to the same value set on the router/switch port.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="951492">Changes to the Management Interface settings may greatly affect the responsiveness of the system.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="951516">(Optional) Configure the duplicate packet filter.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="956636">Under Physical Configuration, by default, the duplicate packet filter is enabled. The appliance may receive multiple copies of the same packet.</a></div>
+      <div class="procStepCont"><a name="951520">In certain network configurations, the AppResponse appliance may receive duplicate frames. For instance, if a span port is configured to mirror both inbound and outbound traffic flow, packets between machines being spanned is sent to the appliance twice. The appliance can be configured to detect and ignore these packets using the duplicate packet filter.</a></div>
+      <div class="procStepCont"><a name="951527">Riverbed strongly recommends that the AppResponse appliance is deployed in a manner such that duplicate packets are minimized or avoided altogether. Even though the AppResponse appliance is capable of filtering duplicate packets, the increased number of packets received and processed by the AppResponse appliance can be very detrimental to overall system performance.</a></div>
+      <div class="procNote">
+        <span class="bold">Note: </span><a name="956643">The appliance must be rebooted before changes to the duplicate packet filter take effect.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	5.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="951536">Under Domain Name Servers, type the DNS Server IP addresses used by the AppResponse appliance to perform network IP address resolution (one server address per line). Configure this option to see a fully qualified domain name in the Console (instead of IP addresses).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	6.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="951542">(</a><span class="italic">Optional</span>) Under Border Gateway Protocol Settings, enter the following settings to give the AppResponse appliance access to BGP information required to map IP addresses to AS numbers:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note: </span><a name="951546">You can set the BGP Mode to Inactive if you do not have access to a BGP router or you do not want to enter this information at this time.</a></div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="951550">Set the BGP Mode to Active to enable the AppResponse appliance to exchange routing information with a border router -or- Inactive to terminate the AppResponse appliance’s exchange of routing information with a border router.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="951554">Enter the hostname of the router under Peer Router Name.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="951555">Enter the IP address of the router under Peer Router IP Address.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="951556">Under Appliance AS, type the autonomous system number (from 1 to 65535) of the network in which the AppResponse appliance is located.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="951560">Under Peer Router AS, type the autonomous system number (from 1 to 65535) of the network in which the border router is located.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="951562">Under Last Internal AS, type the autonomous system number of the router at the border of your network. All AS numbers before this are not displayed in the traffic report. As a result, the ISP AS number is identified as the 1st Hop after the Last Internal AS.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="951566">The border router must also be configured to allow BGP peering with the AppResponse appliance.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	7.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="951569">Under Internal addresses, enter the </a><span class="glossterm">internal address list</span>. This is a list of IP addresses within the local network. The AppResponse appliance uses this list to determine the direction of traffic flow (inbound or outbound) for the Total Traffic group. Inbound and Outbound for all other groups are relative to the group (as described in <span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', '_10_ace_live_appliance_install_guide.14.2.html#950485', '');" title="Pre-installation Information">Physical Configurations</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note: </span><a name="1027208">To ensure accurate results, you must include all server IPs for all </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Apps.028.2.html#1198932', '');" title="Defined Applications: Overview">Server Application</a></span><span class="HTBlue">s</span> and <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Apps.028.2.html#1196837', '');" title="Defined Applications: Overview">Web Application</a></span><span class="HTBlue">s</span> in the Internal Addresses list (Administration&nbsp;&gt; System&nbsp;&gt; Setup page). This ensures that the Applications Table shows the IPs for that application correctly (Internal IPs ==&gt; [<span class="italic">clients</span>] and External IPs ==&gt; [<span class="italic">servers</span>]). </div>
+      <div class="procStepCont"><a name="951576">The default setting for the Internal Address List is all private address ranges: 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	8.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="951578">Under Time Settings, enter the following:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="951583">Local Time Zone in which the AppResponse appliance is used.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="951588">Network Time Protocol (NTP) Servers used by the AppResponse appliance to synchronize its clock (entered as one server address per line).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	9.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1022523">Set up hardware and software alerts on the appliance. For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH05-Config_Maintenance.11.17.html#951373', '');" title="Diagnostics in the Web Interface">Alerts</a></span> .</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note: </span><a name="1022531">To improve uptime, Riverbed strongly recommends that you set up hardware and software alerts on all your AppResponse appliances. </a></div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap">End of Procedure 6</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="956728">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="956735">&nbsp;</a></div>
+      <div class="h3NoBreak"><a name="951590">NTP Servers</a></div>
+      <div class="body"><a name="951594">To prevent clock drift and to ensure that AppResponse appliance time matches the time on other systems, it is strongly recommended that the AppResponse appliance clock be synchronized with a known time source using the NTP protocol. Public NTP servers are available if your organization does not have internal servers. The IP address of the NTP server should always be used rather than its hostname. Refer to the </a><span class="italic">Public NTP Server List</span> on <span class="HTBlue"><a href="http://www.ntp.org/" target="external_window">http://www.ntp.org/</a></span> for a complete list of public NTP servers and access policies.</div>
+      <div class="bodyNote">
+        <span class="bold">Note: </span><a name="951601">The system automatically restarts the AppResponse appliance if necessary.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd951602&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procCaption_inner" style="width: 90pt; white-space: nowrap">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd951602", false);</script>Procedure&nbsp;7    </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="951602">Configuring the NTP Server List</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd951602", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="956763">Under history, the System Log displays details about all configuration changes, restarts, and shutdowns that have occurred on the system. Review the system log for any errors that may have occurred during the initial configuration.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="951603">Scroll down the page (if necessary), and then click Apply to save the configuration settings.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="956833">TIP—Whenever you change settings, consider backing up the system configuration</a> as described in <span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH05-Config_Maintenance.11.18.html', '');" title="Halting or Rebooting the Appliance from the Web Interface">Halting or Rebooting the Appliance from the Web Interface</a></span>.</div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap">End of Procedure 7</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="956778">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h3NoBreak"><a name="951608">Quitting the Web Interface</a></div>
+      <div class="body"><a name="951611">With the web interface running, click </a><span class="bold">logout</span> at the top of the page (see <span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', '_10_ace_live_appliance_install_guide.14.5.html#951424', '');" title="Configuring the Appliance">Accessing the Administration &gt; System Web Interface</a></span>).</div>
+      <div class="h3NoBreak"><a name="951613">Installation and Configuration Complete</a></div>
+      <div class="bodyIntro"><a name="951620">Now that the AppResponse appliance has been rackmounted and configured, the AppResponse Console can be installed on a desktop machine. Please refer to </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH02-MC_Overview.003.2.html', '');" title="Installing the Desktop Console">Installing the Desktop Console</a></span>.</div>
+      <div class="bodyNote">
+        <span class="bold">Note: </span><a name="1251816">You can log in again at any time (as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', '_10_ace_live_appliance_install_guide.14.5.html#951424', '');" title="Configuring the Appliance">Accessing the Administration &gt; System Web Interface</a></span>).<br /><br />If you close the browser window without clicking <span class="bold">logout</span>, the web interface does not allow that user account to make administrative changes for 30 minutes. The admin user is exempt from this rule.</div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

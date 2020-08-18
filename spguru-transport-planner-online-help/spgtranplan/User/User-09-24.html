@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:52" />
+    <title>Grooming Sequentially</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-09-01.html"> Grooming DCL to OCH Traffic</a> > <a href="User-09-22.html">Grooming Multiple DCL Matrices </a> > Grooming Sequentially</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp145854"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Grooming Sequentially
+</h2>
+
+ 
+
+<a name="wp145837"> </a><p class="pBody">
+You can groom multiple traffic matrices (or sets of traffic matrices) sequentially by performing the grooming action multiple times. This allows you to use different settings, such as optimization or protection, for these different traffic matrices. One important effect is the possible reuse of resources in the DCL layer. These resources take the form of unused capacity from an OCH matrix that is already accommodated in the network. There are two possible reasons why this capacity is unused:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp53930"> </a><div class="pSmartList1"><li>The capacity of a previously set up (non-native) OCH matrix is trailed to the DCL layer and can be used to accommodate DCL traffic.</li></div>
+<a name="wp53931"> </a><div class="pSmartList1"><li>The capacity is a result of a previous grooming operation. Upon setup of the OCH matrix, the DCL trunks are created and DCL traffic is accommodated on the trunks. In general, the DCL trunks are not fully utilized (utilization is less than 100 percent); as a result, these trunks have unused capacity.</li></div>
+</ul></div>
+<a name="wp53947"> </a><p class="pBody">
+The grooming algorithm considers this and reuses any unused DCL capacity. The grooming algorithm reuses only optical channels that have a multiplex factor (for example, 16 for STM-16) greater than or equal to than the multiplex factor of the DCL demands. The result of this reuse is a &quot;dependency chain&quot; of traffic matrices: each successor matrix depends on a previous matrix. This means that you cannot tear down a traffic matrix if it has any successor (dependent) traffic matrix that is accommodated in the network. 
+</p>
+<a name="wp58544"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Example: Groom Without Reuse
+</h3>
+<a name="wp53970"> </a><p class="pBody">
+Assume that the DCL layer has no unused capacity, and that the grooming algorithm is applied on multiple matrices. Working in &quot;no-reuse&quot; mode creates non-chaining OCH and DCL traffic matrices that can be accommodated and torn down in any order, as shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-09-24.html#wp88492');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-24.html#wp88492', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;8-16</u></a>. You must complete all grooming actions before you start setting up any matrix.
+</p>
+<a name="wp88492"> </a><p class="pFigCaption">
+Figure&#160;8-16   Multiple Grooming with No Reuse
+</p>
+<a name="wp88495"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-09-24-16.jpg" height="298" width="530" id="wp88494" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp53996"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Example: Groom With Reuse
+</h3>
+<a name="wp56785"> </a><p class="pBody">
+This section describes the scenario of multiple grooming with reuse shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-09-24.html#wp88642');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-24.html#wp88642', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;8-17</u></a>: 
+</p>
+<div class="pSmartList1"><ol type="1" class="pSmartList1">
+<a name="wp54095"> </a><div class="pSmartList1"><li>Groom matrix DCL_A. SP&#160;Guru&#160;Transport&#160;Planner creates an OCH matrix (OCH_A) and grooms all the DCL traffic into this matrix. Set up matrices OCH_A and DCL_A. This leaves OCH_A with some unused capacity.</li></div>
+<a name="wp57171"> </a><div class="pSmartList1"><li>Groom matrix DCL_B. SP&#160;Guru&#160;Transport&#160;Planner grooms part of DCL_B&#39;s traffic into the unused capacity in OCH_A, creates a new matrix (OCH_B), and grooms the remaining traffic into the new matrix. This creates a &quot;parent-child&quot; relationship between traffic matrices OCH_A and DCL_B. If you tear down matrix OCH_A, the network no longer has the capacity to accommodate DCL_B. Therefore, make sure you tear down DCL_B before you tear down OCH_A.</li></div>
+<a name="wp88642"> </a><p class="pFigCaption">
+Figure&#160;8-17   Multiple Grooming with Reuse 
+</p>
+<a name="wp88645"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-09-24-17.jpg" height="342" width="700" id="wp88644" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ol></div>
+<a name="wp56764"> </a><p class="pBody">
+You can repeat this process indefinitely, creating successive generations of dependent matrices. As long as each successive grooming operation results in unused capacity, the dependency chain will continue. The dependency relationship extends to both setting up and tearing down matrices: Just as you must set up a parent before setting up the child, you must tear down all dependent children before tearing down a parent. 
+</p>
+<a name="wp54250"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>Routing functions (Design&#160;&gt; Route&#160;DCL/OCH&#160;Traffic) to accommodate DCL traffic matrices can also consume unused capacity in the DCL layer. Therefore, you must tear down these matrices before you can tear down any matrices associated with a grooming action.
+</p>
+
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_31_grm.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Direct Captures on Riverbed Accelerators</title>
+    <link rel="StyleSheet" href="css/ace_wan_acceleration_capturing_manual_riverbed.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ace_wan_acceleration_capturing_manual_riverbed.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_appendices_splash.html#898312">Appendices</a> &gt; Direct Captures on Riverbed Accelerators</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="hAppendix"><a name="898312">Direct Captures on Riverbed Accelerators</a></div>
+      <div class="body"><a name="979358">This workflow is provided in case you prefer to capture directly on the accelerators themselves using tcpdump. However, it is recommended that you capture on the accelerators using Capture&nbsp;Manager, as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_capturing.13.3.html#955289', '');" title="Capturing on Cisco and Riverbed Accelerators">Capturing on Cisco and Riverbed Accelerators</a></span>.</div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="979387">The following information is based on the experiences of engineers working in a lab environment, and is not intended to provide comprehensive documentation about specific devices. If you need detailed information about capturing on a specific device, contact your IS organization or the device vendor.</a></div>
+      <div class="bodyIntro"><a name="979359">The direct workflow consists of the following steps.</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="979248">Log in to both accelerators using telnet, putty, or a similar utility. <br /></a><span class="bold">Note—</span>You must be in Executive mode to capture traffic.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><a name="979249">Ideally, you should be able to run the application and start/stop the captures from the same host. Suppose you are capturing on two accelerators, each of which has one interface for both WAN and LAN traffic. In this case, you would have the following windows open:</a></div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="979250">Accelerator 1, WAN/LAN interface</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="979251">Accelerator 2, WAN/LAN interface</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="979252">Window for running the application to capture</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="979253">If the accelerators have in-line modules to support separate LAN and WAN interfaces, you would need to have the following windows open:</a></div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="979254">Accelerator 1, LAN interface</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="979255">Accelerator 1, WAN interface</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="979256">Accelerator 2, LAN interface</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="979257">Accelerator 2, WAN interface</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="979258">Window for running the application to capture</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="979261">Identify the interfaces to capture on (see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_capturing_manual_riverbed.html#979291', '');" title="Direct Captures on Riverbed Accelerators">Identifying the Steelhead Interfaces for Capturing Traffic</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="979263">Start the capture(s) on each accelerator.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><a name="979264">Steelhead devices use tcpdump, a common utility for capturing traffic. For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_capturing_manual_tcpdump.html#898312', '');" title="Capturing Application Traffic with tcpdump">Capturing Application Traffic with tcpdump</a></span>.</div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	4)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="979268">Run the user-level application transaction you want to capture.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	5)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="979269">When the transaction finishes, stop the capture on each accelerator: make the corresponding window active, then press Ctrl-C.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	6)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="979273">Transfer the packet&nbsp;traces from the accelerators to the AppTransaction&nbsp;Xpert host, as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_capturing_manual_riverbed.html#979299', '');" title="Direct Captures on Riverbed Accelerators">Transferring Packet&nbsp;Traces from the Steelhead Device to the AppTransaction&nbsp;Xpert Host</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	7)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="979279">Delete the original packet&nbsp;traces, as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_capturing_manual_riverbed.html#979309', '');" title="Direct Captures on Riverbed Accelerators">Deleting Files on the Steelhead Device</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><span class="bold"><a name="979281">Note—</a></span>For specific information about how to capture on these devices, consult the Riverbed Steelhead documentation.</div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	8)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="979285">Fill out the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_worksheet.html#898312', '');" title="WAN Acceleration Worksheet">WAN Acceleration Worksheet</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumContLast"><a name="979286">Although this step is not required, you might find this information useful when import the packet&nbsp;traces into AppTransaction&nbsp;Xpert.</a></div>
+      <div class="h1NoBreak"><a name="979291">Identifying the Steelhead Interfaces for Capturing Traffic</a></div>
+      <div class="body"><a name="979292">Steelhead devices use separate WAN-side and LAN-side interfaces. Therefore, you must capture on two interfaces per device.</a></div>
+      <div class="body"><a name="979293">These devices can also be deployed in logical in-path mode, with one interface transferring WAN-side and LAN-side traffic (as shown in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_capturing.13.2.html#952160', '');" title="Direct Captures (On the Accelerators)">Figure&nbsp;11-5</a></span>). In this case, you can capture on one interface. The default names for these interfaces are <span class="codebold">wan0_0</span> and <span class="codebold">lan0_0</span>.</div>
+      <div class="body"><a name="979297">If you cannot identify the exact interface(s) on which to capture, contact someone in your IS organization.</a></div>
+      <div class="h1NoBreak"><a name="979299">Transferring Packet&nbsp;Traces from the Steelhead Device to the AppTransaction&nbsp;Xpert Host</a></div>
+      <div class="bodyIntro"><a name="979303">Steelhead devices have a web interface that you can use to download packet&nbsp;traces. The following steps outline the general procedure.</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="979304">Log in to the host where you want to download the packet&nbsp;traces.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="979305">Open a web browser and log in to the web interface of the Steelhead accelerator.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="979306">Navigate to the Reports&nbsp;&gt; Diagnostic&nbsp;&gt; TCP&nbsp;Dumps page.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	4)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="979307">To download a packet&nbsp;trace, select the filename and save the file.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h1NoBreak"><a name="979309">Deleting Files on the Steelhead Device</a></div>
+      <div class="body"><a name="979310">After you download a file, it is good practice to delete the original copy on the Steelhead appliance. To do this, select the checkbox and click Remove Selected Files.</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

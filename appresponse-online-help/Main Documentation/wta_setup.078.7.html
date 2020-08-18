@@ -1,0 +1,1368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Tracking Web Page Users: the User Session Tracking Manager</title>
+    <link rel="StyleSheet" href="css/wta_setup.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_user_guide_splash.html">User Guide</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="wta.html">Web Transaction Analysis</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="wta_setup.078.1.html">Setup: Web Transaction Analysis</a> &gt; Tracking Web Page Users: the User Session Tracking Manager</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h2Top"><a name="1113751">Tracking Web Page Users: the User Session Tracking Manager</a></div>
+      <div class="body"><a name="1113752">A </a><span class="glossterm">User Session Tracking profile</span> defines a set of related web pages and the key strings that the web client and server use to track individual sessions. AppResponse requires this profile to track individual users and the page views for each user. </div>
+      <div class="body"><a name="1113759">To define these profiles, choose Tools&nbsp;&gt; Pages&nbsp;&gt; User&nbsp;Session&nbsp;Tracking&nbsp;Manager in the Desktop Console. You must define one profile per web application of interest; in this context, a “web application of interest” is an application for which you want to track individual users. </a></div>
+      <div class="body"><a name="1201237">This section discusses the following:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.7.html#1113774', '');" title="Tracking Web Page Users: the User Session Tracking Manager" name="1201336">Important Notes</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.7.html#1113779', '');" title="Tracking Web Page Users: the User Session Tracking Manager" name="1201338">Defining a User Session Tracking Profile</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.7.html#1113953', '');" title="Tracking Web Page Users: the User Session Tracking Manager" name="1201342">User Session Tracking Manager</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.7.html#1144486', '');" title="Tracking Web Page Users: the User Session Tracking Manager" name="1201359">Defining Keys Using Regular Expressions</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h3NoBreak"><a name="1113774">Important Notes</a></div>
+      <div class="body"><a name="1201301">Note the following:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1201280">AppResponse assumes that usernames and session IDs are embedded in the web traffic as key-value pairs separated by the ‘</a><span class="codebold">=</span>’ character (for example, <span class="codebold">username</span><span class="code" style="font-weight: normal">=jsmith</span> and <span class="codebold">sessionID</span><span class="code" style="font-weight: normal">=1131</span>). </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="1201327">If a web application uses different conventions for transferring usernames and session ID strings, you must define the keys using regular expressions as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.7.html#1144486', '');" title="Tracking Web Page Users: the User Session Tracking Manager">Defining Keys Using Regular Expressions</a></span>. To use this method, you must have a working knowledge of regular expressions and the data formats used by the web application of interest. </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1201424">Do not use any of the following characters in a User Session Tracking profile, unless you are defining a regular expression as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.7.html#1144486', '');" title="Tracking Web Page Users: the User Session Tracking Manager">Defining Keys Using Regular Expressions</a></span>:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="codebold"><a name="1201504">.</a></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;(period)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="codebold"><a name="1201522">+</a></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(plus sign)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="codebold"><a name="1201525">*</a></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(asterisk)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="codebold"><a name="1201529">? </a></span>&nbsp;&nbsp;&nbsp;&nbsp;		&nbsp;&nbsp;&nbsp;&nbsp;(question mark)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="codebold"><a name="1201532">( )</a></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(parentheses)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="codebold"><a name="1201535">{ }</a></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(brackets)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="codebold"><a name="1201538">[ ] </a></span>&nbsp;&nbsp;&nbsp;&nbsp;(square brackets)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="codebold"><a name="1201541">^</a></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(caret)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="codebold"><a name="1201544">$ </a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(dollar sign)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="codebold"><a name="1201555">\</a></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(backslash)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113778">Collecting user data can be highly resource-intensive, especially on large networks with a lot of web traffic. Therefore, it is good practice to collect user data only for Page Families of interest.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h3NoBreak"><a name="1113779">Defining a User Session Tracking Profile</a></div>
+      <div class="bodyIntro"><a name="1113780">The following procedure describes how to create a User Session Tracking profile for a web application.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1113781&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procCaption_inner" style="width: 90pt; white-space: nowrap">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1113781", false);</script>Procedure&nbsp;5    </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="1113781">Creating a User Session Tracking Profile for a Web Application</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1113781", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113782">Capture a login of the web application in a packet trace file:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113783">If the application login exchanges passwords or other sensitive information, verify that is configured to mask out this information. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubCont"><a name="1113786">For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.4.html', '');" title="Masking Private Data in Observed Web Traffic">Masking Private Data in Observed Web Traffic</a></span>. </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113791">If the application login is SSL-encrypted, set up AppResponse decryption.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubCont"><a name="1113795">For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.5.html#1113534', '');" title="Page Analysis: Enabling and Configuring">Enable SSL Decoding</a></span>. </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113799">Using tcpdump or Transaction&nbsp;Analyzer, capture the login sequence as follows: </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113800">Go to the login page for the web application. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113801">Start the capture. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113802">Enter the username/password and log in. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113803">Wait until the "login-succeeded" page downloads completely. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113804">If the web application uses separate servers for logins and for content, download a few more pages so that you can capture data for the different servers used by the application. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113805">Stop the capture. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113809">Open the resulting packet trace file in the Transaction&nbsp;Analyzer Transaction Analyzer or Wireshark. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113813">In the Desktop Console, choose Pages&nbsp;&gt; User&nbsp;Session&nbsp;Tracking&nbsp;Manager.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113815">Create a new User Session Tracking profile.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="1113816">You can find the correct information for the profile by analyzing the decoded HTTP trace data in Wireshark or Transaction&nbsp;Analyzer. The following sections describe how to determine the correct settings for </a></div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.7.html#1113841', '');" title="Tracking Web Page Users: the User Session Tracking Manager" name="1113823">Login Page &gt; Servers</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.7.html#1113853', '');" title="Tracking Web Page Users: the User Session Tracking Manager" name="1113827">Login Page &gt; URLs</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.7.html#1113865', '');" title="Tracking Web Page Users: the User Session Tracking Manager" name="1113831">Associated Pages</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.7.html#1113882', '');" title="Tracking Web Page Users: the User Session Tracking Manager" name="1113835">Parameters &gt; User Key</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.7.html#1113917', '');" title="Tracking Web Page Users: the User Session Tracking Manager" name="1113839">Parameters &gt; Session Key</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h4"><a name="1113841">Login Page &gt; Servers</a></div>
+      <div class="procStepCont"><a name="1113842">Examine the </a><span class="code">POST</span> message for the client login. </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113843">The port number is in the </a><span class="code">TCP</span> header &gt; destination port. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113844">The IP address is in the </a><span class="code">IP</span> header &gt; destination IP. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap">Figure&nbsp;6    </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1113845">Login Server Port and IP in POST Message</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1113849"><img class="Default" src="images/wta_setup.078.7.01.jpg" width="507" height="54" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1113850">&nbsp;</a></div>
+      <div class="procStepSubCont"><span class="bold"><a name="1113851">Note—</a></span>If the web application uses multiple login servers, you might need to specify multiple server IPs. </div>
+      <div class="h4"><a name="1113853">Login Page &gt; URLs</a></div>
+      <div class="procStepCont"><a name="1113854">Examine the </a><span class="code">POST</span> message for the client login. Look for the string in the URL path that is unique to the login-submitted page—that is, the page that indicates to the user that the login was successful. A useful technique is to compare the “pre-login” and “post-login” URLs to determine the string that is unique to the latter. For example, suppose a web application uses the following pre- and post-login URLs:</div>
+      <div class="codeStep"><a name="1113855">https://myapp.acme.com/index.php?title=Special:UserLogin </a></div>
+      <div class="codeStep"><span class="code"><a name="1113856">https://myapp.acme.com/index.php?title=Special:UserLogin&amp;action=Submitlogin </a></span></div>
+      <div class="procStepCont"><a name="1113857">In this case, </a><span class="codebold">SubmitLogin</span> is the string that marks a page as coming from the login server. In this case, you would specify the URL and path like this:</div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap">Figure&nbsp;7    </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1113858">Specifying the Login Page URL and Path</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1113862"><img class="Default" src="images/wta_setup.078.7.02.jpg" width="507" height="90" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1113863">&nbsp;</a></div>
+      <div class="h4"><a name="1113865">Associated Pages</a></div>
+      <div class="procStepCont"><a name="1113866">If the web application uses the same server (or set of servers) for logins and other types of transactions, you can use the same URLs and servers for Associated Pages as you did for Login Pages.</a></div>
+      <div class="procStepCont"><a name="1113867">If the application uses separate login servers, you will need to use the same workflow that you used for the login pages:</a></div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113868">Capture one or more associated page views using tcpdump or Transaction&nbsp;Analyzer.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113872">Examine the </a><span class="code">POST</span> message(s) for the TCP port and IP address for the web server.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113873">Examine the </a><span class="code">POST</span> message(s) to the URL host and path. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBulletCont"><a name="1113874">When you specify the host and path, your goal is to enter a regular expression that matches all page views of interest for the web application of interest (and no other web applications that you are tracking in AppResponse). The following are some example hostnames/paths: </a></div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><span class="codebold"><a name="1113878">inet.acme.com</a></span> and <span class="codebold">*/*calendar* </span>(“Any page view whose URL includes the host string <span class="code">inet.acme.com</span> and a path with the parameter string <span class="code">calendar</span>”)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><span class="codebold"><a name="1113879">calendar.acme.com</a></span> and <span class="codebold">*</span> ( “Any page view whose URL includes the host string <span class="code">calendar.acme.com</span>”)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><span class="codebold"><a name="1113880">www.webstore.com</a></span> and <span class="codebold">/shopchart/*</span> (“Any page view whose URL includes the host string <span class="code">www.webstore.com</span> and a parameter string that starts with <span class="code">/shopcart/</span>”)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h4"><a name="1113882">Parameters &gt; User Key</a></div>
+      <div class="procNote">
+        <span class="bold">Note: </span><a name="1146971">This section describes how to find and enter keys that are encoded as key-value pairs separated by equals signs (</a><span class="code">username=jsmith</span>). If the application uses a different format, you must enter the key as a regular expression. For more information, see <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.7.html#1144486', '');" title="Tracking Web Page Users: the User Session Tracking Manager">Defining Keys Using Regular Expressions</a></span>. </div>
+      <div class="procStepCont"><a name="1113886">Using the Find Packets operation in Wireshark or Transaction&nbsp;Analyzer, search for packets that contain the username string you specified when logging in. Make sure that you search the text/string/ASCII data rather than the binary/HEX data.</a></div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap">Figure&nbsp;8    </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1113887">Finding Packets with the Username String</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1113891"><img class="Default" src="images/wta_setup.078.7.03.jpg" width="507" height="175" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1113892">&nbsp;</a></div>
+      <div class="procStepCont"><a name="1113893">Search for the </a><span class="code">&lt;</span><span class="italic">userkey</span><span class="code" style="font-style: normal">&gt;=&lt;</span><span class="italic">username</span><span class="code" style="font-style: normal">&gt;</span> string in the HTTP contents of each found packet. This best places to look are in the <span class="code">POST</span> data (most likely) or the URL parameter of a <span class="code">GET</span> request (less likely, but possible).</div>
+      <div class="procStepCont"><a name="1113894">Make sure that you include the entire user key in the Name of User Key field. If the user key is embedded in the middle of a </a><span class="code">POST</span> or <span class="code">GET</span> message, make sure to include the entire user key string between </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113895">the ampersand (‘&amp;’) that immediately precedes the user key (start)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBulletCont"><a name="1113896">and </a></div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113897">the equal sign (‘=’) that immediately follows the user key (end).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="1113898">For example, suppose you find that the user key is embedded in the following string:</a></div>
+      <div class="z-Top_of_Form" style="color: #000000; font-size: 2.0pt; font-style: normal; font-variant: normal; font-weight: normal; margin-left: 0pt; margin-top: 0.0pt; text-align: Center; text-indent: 0pt; text-transform: none; vertical-align: baseline"><a name="1113899">&nbsp;</a></div>
+      <div class="procStepSubCont"><span class="code"><a name="1113900">...p3%2AF%7B</a></span><span class="zBoldRed">&amp;</span><span class="bold" style="color: #000000">gholm425%24lkjerjd%24username</span><span class="zRedBold">=</span><span class="code" style="color: #000000; font-weight: normal">jsmith....</span> </div>
+      <div class="procStepCont"><a name="1113901">In this case, you would want to enter the string between (but not including) the ‘</a><span class="codebold">&amp;</span>’ and ‘<span class="codebold">=</span>’ characters:</div>
+      <div class="figAnchor"><a name="1113905"><img class="Default" src="images/wta_setup.078.7.04.jpg" width="513" height="103" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1113906">&nbsp;</a></div>
+      <div class="procStepCont"><a name="1113907">In some cases, the user key might be located at the very start of a </a><span class="code">POST</span> or <span class="code">GET </span>message:</div>
+      <div class="procStepSubCont"><span class="bold"><a name="1113908">ctlFoBarUserNameKey</a></span><span class="zRedBold">=</span><span class="code" style="color: #000000; font-weight: normal">account1&amp;password=....</span></div>
+      <div class="procStepCont"><a name="1113909">In this case, you would enter the string from the start of the message up to (but not including) the ‘</a><span class="codebold">=</span>’ between the user-key and user-value strings:</div>
+      <div class="z-Top_of_Form" style="color: #000000; font-size: 2.0pt; font-style: normal; font-variant: normal; font-weight: normal; margin-left: 0pt; margin-top: 0.0pt; text-align: Center; text-indent: 0pt; text-transform: none; vertical-align: baseline"><a name="1113910">&nbsp;</a></div>
+      <div class="figAnchor"><a name="1113914"><img class="Default" src="images/wta_setup.078.7.05.jpg" width="513" height="103" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1113915">&nbsp;</a></div>
+      <div class="h4"><a name="1113917">Parameters &gt; Session Key</a></div>
+      <div class="procNote">
+        <span class="bold">Note: </span><a name="1113918">This section describes how to find and enter keys that are encoded as key-value pairs separated by equals signs (</a><span class="code">username=jsmith</span>). If the application uses a different format, you must enter the key as a regular expression. For more information, see <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.7.html#1144486', '');" title="Tracking Web Page Users: the User Session Tracking Manager">Defining Keys Using Regular Expressions</a></span>. </div>
+      <div class="procStepCont"><a name="1143185">Look in the </a><span class="code">cookie</span> field of the first <span class="code">POST</span> message for the “login submitted” page. The cookie might include several key-value pairs that are possible candidates for the “correct” session key. Here are some possible clues that a specific key is the one you're looking for: </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113919">The key includes some form of "session" (examples: </a><span class="code">JSESSIONID</span>, <span class="code">&lt;</span><span class="code" style="font-style: normal">string&gt;_WebSession</span>, <span class="code">&lt;</span><span class="code" style="font-style: normal">string&gt;_sessid</span>). </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113920">The value is lengthy and includes at least some numeric characters. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="1113921">These clues are valid for many, but not all, web applications. </a></div>
+      <div class="procNote">
+        <span class="bold">Note: </span><a name="1113922">You might find that the cookie includes several keys that are possible candidates. In the following example, the cookie contains two different key strings, </a><span class="code">ACME_WebSession_R</span> and <span class="code">ACME_WebSession</span>: </div>
+      <div class="codeSubStep"><a name="1113923">HTTP: cookie: __utma=12570986.195726709.1192744122.1246891527.1288982137.9; __utmz=12570986.1288982137.9.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); </a><span class="bold">ACME_WebSession_R</span>=0751031; <span class="bold">ACME_WebSession</span>=07510310</div>
+      <div class="procStepCont"><a name="1113924">In this case, you might need to test the different keys before you find the key that results in the desired user tracking behavior, as outlined in the following steps.</a></div>
+      <div class="procNote">
+        <span class="bold">Note: </span><a name="1113925">A web application might use “dynamic” session keys that vary slightly with each session. In this case, you can use a wildcard (‘*’) character with a common string that all session keys share. For example, a web application might use session key/value pairs such as: </a></div>
+      <div class="codeSubStep"><a name="1113926">MedSupplySalesAppSessionID_afjib=&lt;</a><span class="italic" style="font-size: 10.0pt">session_id_1</span>&gt;<br />MedSupplySalesAppSessionID_djekg=&lt;<span class="italic" style="font-size: 10.0pt">session_id_2</span>&gt;<br />MedSupplySalesAppSessionID_iopru=&lt;<span class="italic" style="font-size: 10.0pt">session_id_3</span>&gt;<br />MedSupplySalesAppSessionID_dbhfk=&lt;<span class="italic" style="font-size: 10.0pt">session_id_4</span>&gt;<br /></div>
+      <div class="procStepCont"><a name="1113927">In this case, you could use the expression </a><span class="codebold">MedSupplySalesAppSessionID_*</span> to track all sessions for this application. Make sure that the wildcard expression is not too broad, and that it matches only session IDs for the web application of interest. Thus the expression <span class="codebold">MedSupplySalesAppSessionID_* </span>is a good match for the web application in our example, while <span class="codebold">*SessionID* </span>would be too broad.</div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	5.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113928">Review all your settings in all the tabs of the User Session Tracking Manager, then click Apply or OK. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	6.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113932">Go to Administration &gt; System &gt; Pages and verify that the “Enable Page Analysis” option is selected. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	7.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113934">Verify that the User Session Tracking profile you specified works as intended:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	7.1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113935">Go to the login page of the web application and log in (if you are already logged in, log out and then log back in).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	7.2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113936">Download several pages in a “typical” session for that web application. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	7.3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113940">In the Desktop Console, set the project time to focus on the web session (including login and associated pages). </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	7.4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113941">Open the Web Application table (View&nbsp;&gt; Table&nbsp;&gt; Web&nbsp;Application).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	7.5.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113942">In the Web Applications table, set the Show pull-down menu to User. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="1113943">You should see the pages for your web session, listed under the username you used to log in. </a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	8.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113947">If the User table does not show the page views for your web session, repeat </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.7.html#1113815', '');" title="Tracking Web Page Users: the User Session Tracking Manager">step&nbsp;4.</a></span> through <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.7.html#1113934', '');" title="Tracking Web Page Users: the User Session Tracking Manager">step&nbsp;7.</a></span> until you get the results you expect. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap">End of Procedure 5</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1113951">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1113952">&nbsp;</a></div>
+      <div class="h3NoBreak"><a name="1113953">User Session Tracking Manager</a></div>
+      <div class="bodyIntro"><a name="1113954">The Session Tracking Manager includes four tabbed pages:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.7.html#1113972', '');" title="Tracking Web Page Users: the User Session Tracking Manager" name="1113958">Identity Tab</a></span>—Name and description of the web pages that use these specific key names</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.7.html#1113981', '');" title="Tracking Web Page Users: the User Session Tracking Manager" name="1113962">Parameters Tab</a></span>—The key names (used in name-value pairs) to indicate the user and session ID</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.7.html#1113996', '');" title="Tracking Web Page Users: the User Session Tracking Manager" name="1113966">Login Page Tab</a></span>—The login page(s) where users enter usernames</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.7.html#1114023', '');" title="Tracking Web Page Users: the User Session Tracking Manager" name="1113970">Associated Pages Tab</a></span>——Other pages that use the specified session IDs.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h4"><a name="1113972">Identity Tab</a></div>
+      <div class="bodyIntro"><a name="1113973">Enter a name and short description of the set of web pages included in this entry.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;9     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="1113974">Session Tracking Manager &gt; “Identity” Page</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1113978"><img class="Default" src="images/wta_setup.078.7.06.jpg" width="509" height="124" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1113979">&nbsp;</a></div>
+      <div class="h4"><a name="1113981">Parameters Tab</a></div>
+      <div class="bodyIntro"><a name="1113988">To identify users automatically, AppResponse relies on usernames and session ID key names parsed from </a><span class="code">&lt;</span><span class="italic">name</span><span class="code" style="font-style: normal">&gt;=&lt;</span><span class="italic">value</span><span class="code" style="font-style: normal">&gt;</span> strings in the web traffic of interest. In this page, specify the key names used to track the username and session ID.</div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;10     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="1113989">Session Tracking Manager &gt; “Parameters” Page</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1113993"><img class="Default" src="images/wta_setup.078.7.07.jpg" width="509" height="99" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1113994">&nbsp;</a></div>
+      <div class="h4"><a name="1113996">Login Page Tab</a></div>
+      <div class="bodyIntro"><a name="1113997">This page specifies the login pages where users enter usernames. </a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;11     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="1113998">Session Tracking Manager &gt; “Login Page” &gt; “Servers” Tab</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1114002"><img class="Default" src="images/wta_setup.078.7.08.jpg" width="509" height="143" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1114003">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="1114004">The Servers page specifies the following:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1114005">Ports—Port number(s) used by these login pages </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1114006">IP addresses—The IP address(es) for all hosts that serve these login pages</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;12     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="1114007">Session Tracking Manager &gt; “Login Page” &gt; “URLs” Tab</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1114011"><img class="Default" src="images/wta_setup.078.7.09.jpg" width="509" height="165" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1114012">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="1114013">The URLs page specifies the login page URLs:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1114014">Host—A string or regular expression to indicate the host or domain (for example, </a><span class="codebold">www.acme.com</span><span class="code" style="font-weight: normal"> </span>or<span class="code"> </span><span class="codebold">*.google.com</span>). </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1114015">Path—A string or regular expression for the URL pattern of any login pages on the host (for example, </a><span class="codebold">*/identification.aspx</span> or <span class="codebold">*AUTH_Login*</span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyIntro"><a name="1114016">For more information about using regular expressions to evaluate URLs, see the following section of the AppResponse documentation:</a></div>
+      <div class="bodyIndented"><a name="1114020">Groups&nbsp;and&nbsp;Applications&nbsp;&gt; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Defined&nbsp;Application&nbsp;Manager&nbsp;&gt; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Defining&nbsp;Applications&nbsp;&gt; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Defined Application Manager URL Syntax</a></div>
+      <div class="h4"><a name="1114023">Associated Pages Tab</a></div>
+      <div class="body"><a name="1114024">This page specifies web pages that use Session IDs based on the key specified under the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.7.html#1113981', '');" title="Tracking Web Page Users: the User Session Tracking Manager">Parameters Tab</a></span>. To identify users that downloaded these pages, AppResponse parses the traffic for session IDs and matches an individual session to a username.</div>
+      <div class="bodyIntro"><a name="1114031">The Servers page specifies the following:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1114032">Ports—Port number(s) used by these pages </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1114033">IP addresses—The IP address(es) for all hosts that serve these pages</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyIntro"><a name="1114034">The URLs page specifies the URLs of all associated pages.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1114035">Host—A string or regular expression to indicate the host or domain (for example, </a><span class="codebold">www.acme.com</span><span class="code" style="font-weight: normal"> </span>or<span class="code"> </span><span class="codebold">*.google.com</span>). </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1114036">Path—A string or regular expression for the URL pattern of associated page (for example, </a><span class="codebold">*/account_home.aspx</span> or <span class="codebold">*prodinfo*</span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="1114037">For more information about using regular expressions to evaluate URLs, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Apps.028.3.html#1206022', '');" title="Defined Application Manager">Adding URLs to Web Applications</a></span>.</div>
+      <div class="h3NoBreak"><a name="1144486">Defining Keys Using Regular Expressions</a></div>
+      <div class="body"><a name="1145645">AppResponse can automatically find keys that are encoded in the </a><span class="code">application/x-www-form-urlencoded</span> format: key=value pairs separated by ampersands—for example, <span class="italic">key1</span><span class="code" style="font-style: normal">=</span><span class="italic">value</span><span class="code" style="font-style: normal">1&amp;key2=value2</span>. </div>
+      <div class="bodyIntro"><a name="1144693">If a web application uses a different encoding format, you can enter regular expressions to find the username, session ID, and other keys. This requires the following:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1145445">A working knowledge of regular expressions</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1145489">A knowledge of the exact key-encoding format used by the application you want to monitor. Information about non-</a><span class="code">urlencoded</span> formats is outside the scope of AppResponse documentation.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyIntro"><a name="1145169">You can specify regular expressions in the following fields only:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1146175">Desktop Console &gt; Tools &gt; Pages &gt; Information Privacy Manager &gt; Definition&nbsp;tab &gt; Key field</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1146282">Desktop Console &gt; Tools &gt; Pages &gt; User Session Tracking Manager &gt; Parameters tab &gt; Name of User Key field</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1146350">Desktop Console &gt; Tools &gt; Pages &gt; User Session Tracking Manager &gt; Parameters tab &gt; Name of Session Key field</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h4"><a name="1146532">Required Format</a></div>
+      <div class="bodyIntro"><a name="1144488">To find a non-urlencoded key, you must enter a regular expression in the following format:</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><span class="codebold"><a name="1144620">[regex]</a></span> - This tag tells the appliance that you are defining a regular expression rather than a key string.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1144622">A regular expression that tells the appliance how to find the matching string</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1144650">A parenthesized expression that tells the appliance how to find the key </a><span class="italic">within</span> the matching string </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyIntro"><a name="1144489">For example, suppose a web app defines usernames in the format</a></div>
+      <div class="bodyIndented" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="code"><a name="1144490">username:jsmith,password:XXXXXXX</a></span></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;13     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="1146388">Regular Expression to Find a non-urlencoded Key: Example</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1146392"><img class="Default" src="images/wta_setup.078.7.10.jpg" width="509" height="80" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1146393">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="1144491">In this case, you would do the following:</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1144492">Go to the Desktop Console &gt; Tools &gt; Pages &gt; User Session Tracking Manager</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1144493">In the Name of User Key field, enter </a><span class="codebold">[regex]username:([^,]*)</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><a name="1144494">This says: find the string </a><span class="code">username:[</span><span class="italic">all-chars-until-the-next-comma</span><span class="code" style="font-style: normal">]</span></div>
+      <div class="listNumCont"><a name="1144495">The appliance finds the matching string: </a><span class="code">username:jsmith</span></div>
+      <div class="listNumCont"><a name="1144496">The appliance uses the parenthesized expression </a><span class="code">([^,]*)</span><span class="codebold"> </span>to find the username: <span class="code">jsmith </span></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

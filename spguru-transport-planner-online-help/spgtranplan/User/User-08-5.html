@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:47" />
+    <title>Dimensioning Algorithms</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-08-1.html"> Dimensioning</a> > <a href="User-08-2.html">Dimension DCL/OCH Layer Dialog Box</a> > Dimensioning Algorithms</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp54237"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Dimensioning Algorithms
+</h2>
+
+ 
+
+<a name="wp110169"> </a><p class="pBody">
+The following algorithms are available:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp110188"> </a><div class="pSmartList1"><li><a href="javascript:WWHClickedPopup('wdm_user', 'User-08-5.html#wp53207');" onMouseOver="WWHShowPopup('wdm_user', 'User-08-5.html#wp53207', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Shortest-Path Dimensioning</u></a></li></div>
+<a name="wp110264"> </a><div class="pSmartList1"><li><a href="javascript:WWHClickedPopup('wdm_user', 'User-08-5.html#wp53209');" onMouseOver="WWHShowPopup('wdm_user', 'User-08-5.html#wp53209', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Heuristic Dimensioning</u></a></li></div>
+<a name="wp110283"> </a><div class="pSmartList1"><li><a href="javascript:WWHClickedPopup('wdm_user', 'User-08-5.html#wp54851');" onMouseOver="WWHShowPopup('wdm_user', 'User-08-5.html#wp54851', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Diverse-Route Dimensioning</u></a></li></div>
+</ul></div>
+<a name="wp53207"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Shortest-Path Dimensioning
+</h3>
+<a name="wp53208"> </a><p class="pBody">
+The Shortest Path algorithm dimensions the network using the lowest-cost routes for each connection. See <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-04.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-04.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Routing Algorithm</u></a> for information on routing costs.
+</p>
+<a name="wp53209"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Heuristic Dimensioning
+</h3>
+<a name="wp106636"> </a><p class="pBody">
+The Heuristic algorithm dimensions the network using the shortest-path algorithm, and includes an additional optimization step. To remove inefficiently used link and node facilities, SP&#160;Guru&#160;Transport&#160;Planner tries to reroute connections that occupy capacity on these facilities. If rerouting the connections results in a cheaper solution&#8212;that is, if the extra routing cost is less than the savings in the link or node facility&#39;s cost&#8212;SP&#160;Guru&#160;Transport&#160;Planner removes the link or node facility and reroutes the traffic.
+</p>
+<a name="wp115416"> </a><p class="pBody">
+The algorithm works as follows:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp115417"> </a><div class="pSmartList1"><li>Start with the line or node facility with the highest redundant cost, which expresses the cost of the unused capacity on a link or node. </li></div>
+<a name="wp115418"> </a><div class="pSmartList1"><li>For redundant link facilities:</li></div>
+<div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp115419"> </a><div class="pSmartList2"><li>If Link Expansion is set to Optimized Set, try to remove the link facility (or wavelength band) or replace it with a cheaper link facility that has less capacity.</li></div>
+<a name="wp115420"> </a><div class="pSmartList2"><li>If you did not specify this option, try to remove the system (or wavelength band).</li></div>
+</ul></div>
+</ul></div>
+<a name="wp115421"> </a><p class="pBody">
+For redundant node systems, the algorithm performs optimization only if your network uses discrete node types (as specified in the Network Properties dialog box). SP&#160;Guru&#160;Transport&#160;Planner tries to replace the current node type with the node type that has the next-lowest throughput, as defined in the node types list (OXC or IXC for OCH dimensioning, DXC or IXC for DCL dimensioning). 
+</p>
+<a name="wp56542"> </a><p class="pBody">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp82549table56519">
+  <caption><a name="wp82549"> </a><div class="ptblcaption">
+Table&#160;7-3   Heuristics Options&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp56528"> </a><div class="pCellHeading">
+Option
+</div>
+</th>
+    <th><a name="wp56530"> </a><div class="pCellHeading">
+Description
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp56532"> </a><div class="pCellBody">
+Optimize Link
+</div>
+</td>
+    <td><a name="wp56534"> </a><div class="pCellBody">
+When enabled, the optimization algorithm tries to remove or reduce redundant line systems (or wavelength bands)
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp56536"> </a><div class="pCellBody">
+Optimize Node
+</div>
+</td>
+    <td><a name="wp56541"> </a><div class="pCellBody">
+When enabled, the optimization tries to remove or reduce redundant discrete node types
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp56558"> </a><div class="pCellBody">
+Threshold
+</div>
+</td>
+    <td><a name="wp56560"> </a><div class="pCellBody">
+When utilization on a given resource (line system or node type) exceeds the specified threshold, the algorithm stops trying to optimize that resource. The default value is 100 percent, which means that SP&#160;Guru&#160;Transport&#160;Planner optimizes all resources (unless there is no excess capacity).
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp82574"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 7-3	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+
+</p>
+<a name="wp54851"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Diverse-Route Dimensioning
+</h3>
+<a name="wp101301"> </a><p class="pBody">
+This option is available when Unprotected dimensioning is selected. The diverse route algorithm ensures that if there is a failure, not all related connections fail simultaneously. 
+</p>
+<a name="wp111010"> </a><p class="pBody">
+If you want SP&#160;Guru&#160;Transport&#160;Planner to do the optimization step, select the &quot;Optimize Diversity&quot; option. For more information, refer to <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-04.html#wp274939');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-04.html#wp274939', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Diverse Routing Algorithm</u></a> in the <em class="cEmphasis">Routing</em> chapter.
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_28_dim.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

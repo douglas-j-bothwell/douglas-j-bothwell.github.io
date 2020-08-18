@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:33:27" />
+    <title>1&#160;+&#160;1 Path Protection</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-03-01.html"> Concepts and Models</a> > <a href="User-03-09.html">Protection Methods in Meshed Networks</a> > 1&#160;+&#160;1 Path Protection</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp45134"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+1&#160;+&#160;1 Path Protection
+</h2>
+
+ 
+
+<a name="wp45141"> </a><p class="pBody">
+You can apply 1+1 path protection at the DCL and OCH layer. With 1&#160;+&#160;1 protection enabled, the network transmits traffic from the source to the destination simultaneously using a working path and a protection path. The destination node monitors information on both paths and selects between &quot;working-path&quot; and &quot;protection-path&quot; traffic. If the working path gets interrupted, the system switches to the protection path. 
+</p>
+<a name="wp45154"> </a><p class="pBody">
+A protection path can be <em class="cEmphasis">link disjoint</em>, which means it has no common links with the working path. A protection path can also be <em class="cEmphasis">node disjoint</em>, which means it has no common nodes (except for source and destination) and links with the working path. Link disjointness protects against single-link failures, while node disjointness protects against single-link and single-node failures. Note that even node disjointness does not protect against failures in the source or destination node, because the working and the protection path have these nodes in common. 
+</p>
+<a name="wp45135"> </a><p class="pBody">
+Protection switching can be done at three possible locations. The switching location determines the number of cross-connect ports (at the tributary side) that the network must reserve for a 1+1 protected path:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp45185"> </a><div class="pSmartList1"><li>By the cross-connect&#8212;If the protection switching can be done internally in the cross-connect, only one tributary port is needed at the cross-connect. </li></div>
+<a name="wp45191"> </a><div class="pSmartList1"><li>By a separate protection switch&#8212;When protection switching is done by a separate protection switch&#8212;for example, a protection transponder before the cross-connect (see <a href="javascript:WWHClickedPopup('wdm_user', 'User-03-19.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-19.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Optical Nodes: Non-Blocking OXC</u></a>)&#8212;two tributary interfaces are also required at the cross-connect for working and protection paths. </li></div>
+<a name="wp45174"> </a><div class="pSmartList1"><li>At the client side&#8212;For client-layer protected traffic, the client has already done the protection switching and hands off two interfaces (one for the working path and one for the protection path) and requests for diverse routing of both interfaces through the network. Both interfaces are counted at the tributaries.</li></div>
+</ul></div>
+<a name="wp45181"> </a><p class="pBody">
+There is no difference between these different 1+1 protection schemes with respect to the link capacity requirements and the routes taken by working and protection paths. The only difference is in the required ports in the cross-connect. For more information, see section <a href="javascript:WWHClickedPopup('wdm_user', 'User-03-15.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-15.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Node Modeling Capabilities in SP&#160;Guru&#160;Transport&#160;Planner</u></a>.
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_13_co.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

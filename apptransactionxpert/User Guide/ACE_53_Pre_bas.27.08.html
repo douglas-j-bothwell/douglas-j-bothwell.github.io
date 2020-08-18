@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Using QuickPredict to Simulate WAN Acceleration</title>
+    <link rel="StyleSheet" href="css/ACE_53_Pre_bas.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ACE_53_Pre_bas.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_predict_app_performance_splash.html#161673">Predicting Application Performance</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ACE_53_Pre_bas.27.01.html#161673">Predicting Application Performance with QuickPredict and QuickRecode</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ACE_53_Pre_bas.27.02.html#161673">QuickPredict</a> &gt; Using QuickPredict to Simulate WAN Acceleration</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h2Top"><a name="161673">Using QuickPredict to Simulate WAN Acceleration</a></div>
+      <div class="body"><a name="161683">QuickPredict includes the ability to generate </a><span class="italic">accelerated scenarios</span> that simulate the effects of common WAN acceleration techniques on the network/protocol delays and overall response time of an application. This functionality is especially useful if your organization does not use WAN accelerators currently and you want to see if WAN acceleration might improve the performance of specific applications.</div>
+      <div class="bodyIntro"><a name="161684">Note the following:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="161685">QuickPredict simulates the effects of some common WAN acceleration techniques, but is not intended to predict the performance of any specific set of WAN accelerators in a production network.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="162574">WAN acceleration prediction with QuickPredict is not designed to provide an exact response time if traffic is accelerated. Instead, the prediction feature is more of a barometer of sensitivity to various acceleration techniques that are used to optimize the use of WAN links. If moving the slider for a given technique has a significant effect on response time, then you can conclude that the particular application will benefit from WAN acceleration.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="161686">Not all applications will benefit from WAN acceleration. In some cases, an application might even show a slight increase in response time due to overhead introduced by the WAN accelerators themselves. (In general, applications that are sensitive to bandwidth and/or latency bottlenecks are the most likely to benefit from WAN acceleration.)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyIntro"><a name="161687">The following steps outline the general workflow:</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="161688">Open the Transaction&nbsp;Analyzer model in which you want to simulate the effects of WAN acceleration.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><span class="bold"><a name="161689">Note—</a></span>You cannot use this functionality for a Transaction&nbsp;Analyzer model that has been modified using QuickRecode.</div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="161690">Open the QuickPredict dialog box using one of the following menu items in the Transaction&nbsp;Analyzer:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="161691">Simulation&nbsp;&gt; QuickPredict</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="161692">Simulation&nbsp;&gt; QuickPredict&nbsp;Bar&nbsp;Charts</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="161693">Select the tier pair that represents the WAN connection where you want to deploy the “virtual accelerators”.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	4)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="161694">Enable prediction for WAN acceleration:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="italic"><a name="161695">In QuickPredict:</a></span> Select the WAN Acceleration check box.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="italic"><a name="161696">In QuickPredict Bar Charts:</a></span> In the parameters table, set the WAN Acceleration field to Put on Slider.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	5)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="161697">Select the acceleration scenario and parameter settings you want to model, as described in the following sections:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_53_Pre_bas.27.08.html#161708', '');" title="Using QuickPredict to Simulate WAN Acceleration" name="161701">Basic Scenario</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_53_Pre_bas.27.08.html#161713', '');" title="Using QuickPredict to Simulate WAN Acceleration" name="161705">Advanced Scenario</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumContLast"><span class="bold"><a name="161706">Note—</a></span>An accelerated QuickPredict scenario models only one set of parameters at a time, depending on the selected tab (Basic or Advanced). When you switch between the two tabs, the scenario uses the <span class="italic">new</span> parameter settings as input and the <span class="italic">old</span> settings have no effect. To ensure that the current scenario reflects the current parameter settings, it is good practice to click “Update&nbsp;Graph” or “Update&nbsp;Results” after switching between the Basic and Advanced settings.</div>
+      <div class="h3NoBreak"><a name="161708">Basic Scenario</a></div>
+      <div class="bodyIntro"><a name="161709">A Basic scenario has the following parameters:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="161710">Byte Reduction—Reduction in the number of bytes sent over the WAN, regardless of the acceleration method</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="161711">Turn Reduction (Prefetching)—Reduction in the number of application turns over the WAN, regardless of acceleration method</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h3NoBreak"><a name="161713">Advanced Scenario</a></div>
+      <div class="bodyIntro"><a name="161714">An Advanced scenario has the following options and parameters:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;color: #000000; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none"><span class="bold"><a name="161718">Enable Auto-Compression (Checkbox)</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="161935">When this option is enabled, QuickPredict estimates the </a><span class="italic">compressibility</span> of the transaction by analyzing the application payload data transferred across the WAN in both directions (client–&gt;server as well as server–&gt;client).</div>
+      <div class="listBulletCont"><a name="161947">To calculate the average compression, QuickPredict performs a </a><span class="italic">virtual&nbsp;gzip</span> operation on each application message sent across the WAN to determine the percentage by which that message can be compressed.</div>
+      <div class="listBulletCont"><a name="162672">For example, HTTP headers have an “Accept-encoding” field that allows for a compression method such as gzip. QuickPredict calculates all the potentially compressible bytes in the trace and offers this as a percentage of data reduction on the wire. (WAN accelerators will perform this compression if available).</a></div>
+      <div class="listBulletCont"><a name="162640">The estimated percentage shown (as non-editable text in the Compression field) represents the total reduction for all message bytes sent across the WAN. For example, if the Compression field shows 40%, then the accelerated application will send 40% fewer message bytes across the WAN. You can override the number shown in the Compression field if you know that the WAN accelerators handle your traffic in a specific manner to reduce the data even further.</a></div>
+      <div class="listBulletCont"><span class="bold"><a name="161957">Note—</a></span>Auto-compression requires the original packet trace data used to create the Transaction&nbsp;Analyzer model.</div>
+      <div class="listBullet_outer" style="margin-left: 0pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;color: #000000; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none"><span class="bold" style="color: #000000; font-size: 11.0pt"><a name="162887">Compression</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="162013">Percentage reduction in the application payload of each message sent over the WAN due to compression techniques. If this parameter is set to 40%, each application message in the accelerated scenario will be 40% smaller.</a></div>
+      <div class="listBulletCont"><a name="161999">Remember that auto-compression and manually specified compression results are calculated differently:</a></div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="162000">Auto-compression varies from message to message. QuickPredict calculates the “compressibility” of each message individually, and the percentage displayed represents the average compression for all messages.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="162001">Manually specified compression is uniform for all messages: QuickPredict compresses every message by the percentage you specify.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="162002">Thus, even if you manually specify the compression value shown when auto-compression was enabled, you will probably get different results.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;color: #000000; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none"><span class="bold"><a name="161726">Turn Reduction (Prefetching)</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="162070">Percent by which the total number of request/responses over the WAN are reduced in the accelerated transaction. If this parameter is set to 40%, the accelerated application will have 40% fewer request/responses across the WAN.</a></div>
+      <div class="listBulletCont"><a name="162092">Many WAN accelerators seek to reduce application chattiness by pre-fetching requested data whenever possible. For example: if a web page request includes five different graphics files included in that page, the accelerators might pre-fetch those graphics so that the entire page requires only one request (plus all responses for that request) over the WAN.</a></div>
+      <div class="listBulletCont"><a name="162098">Because a transaction can include multiple sets of request/responses, each with its own characteristics, QuickPredict performs a series of “internal simulations” where each simulation pre-fetches different sets of request/responses. The calculated reduction in delays and overall response time is derived from the results of these internal simulations.</a></div>
+      <div class="listBulletCont"><span class="bold"><a name="162102">Note—</a></span>Techniques for reducing application chattiness can vary depending on the application, protocols, and type/make of accelerator. For this reason, the exact effects of reducing application chattiness in a production network can be difficult to predict.</div>
+      <div class="listBullet_outer" style="margin-left: 0pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;color: #000000; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none"><span class="bold"><a name="161730">Byte-Level Cache Hit Rate</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="162125">Percentage of application bytes sent over the WAN that are cached at the client-side accelerator. If this parameter is set to 40%, the accelerated application will have 40% of the original application bytes cached; 60% of the original bytes will be sent across the WAN.</a></div>
+      <div class="listBulletCont"><a name="162186">Byte-level caching is performed at the transport layer between the client-side accelerator (CSA) and server-side accelerator (SSA) to reduce the amount of data that needs to be sent across the WAN.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;color: #000000; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none"><span class="bold"><a name="162190">Object Cache Hit Rate</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="162226">Percentage of application-layer objects that are cached at the client-side accelerator. If this parameter is set to 40%, the accelerated application will have 40% of the original objects cached and 60% of the original objects sent over the WAN. (In this context, an “object” is a set of one or more application messages that are sent in response to a single request.)</a></div>
+      <div class="listBulletCont"><a name="162227">Because a transaction can include objects with different sizes, QuickPredict performs a series of “internal simulations” where each simulation caches/sends a different combination of objects. The calculated reduction in delays and overall response time is derived from the results of these internal simulations.</a></div>
+      <div class="listBulletCont"><span class="bold"><a name="162228">Note—</a></span>Application object caching is not supported on all accelerator models. To determine if this technique is supported on a specific model, check with the device vendor.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:38:42" />
+    <title>Grooming DCL to OCH Traffic</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="wdmgtut-4-01.html"> Network Design Operations</a> > Grooming DCL to OCH Traffic</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp926232"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Grooming DCL to OCH Traffic
+</h2>
+
+ 
+
+
+<a name="wp939028"> </a><p class="pBody">
+Routing non-native OCH traffic creates a logical DCL topology. This topology can be used for routing DCL traffic in a bottom-up approach: first traffic in the lower (OCH) layer is routed and the resulting logical topology in the upper (DCL) layer is used for routing DCL traffic. Another approach is referred to as top-down. In this approach, dimensioning of the DCL layer drives the demand for the OCH layer, which can subsequently be dimensioned. The top-down approach is called grooming in SP&#160;Guru&#160;Transport&#160;Planner. Grooming determines a logical DCL topology and maps this logical topology on the wavelengths of the OCH layer. SP&#160;Guru&#160;Transport&#160;Planner supports four grooming strategies:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp926234"> </a><div class="pSmartList1"><li>Basic end-to-end grooming</li></div>
+<a name="wp926235"> </a><div class="pSmartList1"><li>Optimized end-to-end grooming</li></div>
+<a name="wp926236"> </a><div class="pSmartList1"><li>Basic link-by-link grooming</li></div>
+<a name="wp926237"> </a><div class="pSmartList1"><li>Optimized link-by-link grooming</li></div>
+</ul></div>
+<a name="wp926239"> </a><p class="pBody">
+Each of these grooming strategies results in a different logical DCL topology. Basic end-to-end grooming results in a fully meshed DCL topology, in which no electrical switching at the DCL layer occurs. Basic link-by-link grooming results in a logical DCL topology that mirrors the fiber topology, and in which electrical switching occurs in every intermediate node. Both optimized end-to-end grooming and optimized link-by-link grooming start from the corresponding basic strategies and evolve to a solution in which the logical DCL topology is a cost-optimized result which balances the cost of electrical and optical switching.
+</p>
+<a name="wp926241"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp926241", false);</script>Procedure&#160;3-6   Grooming DCL to OCH Traffic<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp926241", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp926241", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp926243"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the WDMGuru_Examples project.</li></div>
+<ol type="a">
+<a name="wp926244"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Open</span><b class="cBold">...</b>.</li></div>
+<a name="wp926245"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">WDMGuru_Examples</span> project, then press <span style="font-weight: bold">Open</span>.</li></div>
+<a name="wp939035"> </a><p class="pIndentedRelative">
+The example project, which contains multiple scenarios, is loaded. The Australia scenario appears in the workspace.
+</p>
+</ol>
+<a name="wp926246"> </a><div style="text-align: left" class="pSmartList2Test"><li>Select <span style="font-weight: bold">Scenarios &gt; Switch To Scenario &gt; USA</span> to view the USA scenario in the workspace.</li></div>
+<a name="wp926249"> </a><div style="text-align: left" class="pSmartList2Test"><li>Groom the SONET/SDH traffic matrix.</li></div>
+<ol type="a">
+<a name="wp926250"> </a><div class="pprocstepSub"><li>Select the <b class="cBold">Design &gt; Groom DCL to OCH Traffic &gt; Optimized Routes... </b>dialog box.</li></div>
+<a name="wp926251"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">STS-1</span> DCL traffic matrix in the traffic matrix table. Select <span style="font-weight: bold">OC-48</span> as target bit rate for the OCH traffic matrix in which you want to carry the DCL traffic.</li></div>
+<a name="wp944485"> </a><p class="pIndentedRelative">
+This results in a multiplex factor of 48, indicating the granularity of the OCH signal versus one unit of the DCL signal.
+</p>
+<a name="wp926252"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">End to End Grooming</span> and select <span style="font-weight: bold">Optimize</span> to perform optimized end-to-end grooming (do not put a checkmark next to <b class="cBold">1+1 Protection in DCL</b>).<span style="font-weight: bold"><br />
+<img src="images/wdmgtut-4-07-37.jpg" height="340" width="473" id="wp942007" border="0" hspace="0" vspace="-2"/><br />
+</span></li></div>
+<a name="wp939062"> </a><div class="pprocstepSub"><li>Press <span style="font-weight: bold">Groom</span>.</li></div>
+<a name="wp939063"> </a><p class="pIndentedRelative">
+The <span style="font-weight: bold">Grooming Optimization Progress</span> dialog box appears.
+</p>
+<a name="wp939067"> </a><div class="pprocstepSub"><li>When the status is <span style="font-weight: bold">Finished</span>, close the dialog box.</li></div>
+<a name="wp926253"> </a><p class="pIndentedRelative">
+The results of the grooming action are shown on the right side of the <span style="font-weight: bold">Grooming DCL to OCH Traffic &#8211; Optimized Routes</span> dialog box. The OCH_STS-1_Grooming traffic matrix contains the optical channels that are used to create the logical DCL links. The <span style="font-weight: bold">Capacity</span> field indicates the number of needed optical channels, while the <span style="font-weight: bold">Utilization</span> field indicates how well the capacity is used by the DCL traffic that is groomed in these optical channels.
+</p>
+<a name="wp935723"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-07-38.jpg" height="339" width="473" id="wp935752" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ol>
+<a name="wp926262"> </a><div style="text-align: left" class="pSmartList2Test"><li>Dimension the OCH layer for the traffic matrix resulting from the grooming action:</li></div>
+<ol type="a">
+<a name="wp944881"> </a><div class="pprocstepSub"><li>Click the <span style="font-weight: bold">Dimension</span> button in the <span style="font-weight: bold">Groom</span><b style="font-weight: bold" class="cBold"> DCL to OCH Traffic </b><span style="font-weight: bold">&#8211; Optimized Routes</span> dialog box.</li></div>
+<a name="wp939095"> </a><p class="pIndentedRelative">
+The <span style="font-weight: bold">Dimension</span> <b class="cBold">DCL/OCH Layer </b>dialog box appears.
+</p>
+<a name="wp926264"> </a><div class="pprocstepSub"><li>Select the traffic matrix <span style="font-weight: bold">OCH_STS-1_Grooming</span> and choose <span style="font-weight: bold">Unprotected </span>(Protection Type), <span style="font-weight: bold">Shortest Path </span>(Algorithm), as routing cost <span style="font-weight: bold">Hop Count </span>(Routing Cost), and <b class="cBold">Default line system </b>(Link Expansion).</li></div>
+<a name="wp935784"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-07-39.jpg" height="400" width="471" id="wp935791" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp926272"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">Dimension</span>.</li></div>
+<a name="wp939099"> </a><p class="pIndentedRelative">
+The OCH traffic resulting from the grooming action (OCH_STS-1_Grooming) and the groomed DCL traffic matrix STS-1 are now accommodated in the network.
+</p>
+<a name="wp939103"> </a><div class="pprocstepSub"><li>Close all windows.</li></div>
+<a name="wp926273"> </a><div class="pprocstepSub"><li>Click the <span style="font-weight: bold">DCL</span> button on the toolbar to inspect the DCL layer view. </li></div>
+</ol>
+<a name="wp926274"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the routed connections.</li></div>
+<ol type="a">
+<a name="wp926275"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Network &gt; Connection Browser</span>.</li></div>
+<a name="wp926276"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">DCL</span> for <span style="font-weight: bold">Traffic</span>, <span style="font-weight: bold">All</span> for the <span style="font-weight: bold">Layout</span>, and <span style="font-weight: bold">Traffic</span> <span style="font-weight: bold">Matrix</span> for the <span style="font-weight: bold">Order</span>.</li></div>
+<a name="wp939108"> </a><div class="pprocstepSub"><li>Expand the <span style="font-weight: bold">STS-1</span> traffic matrix (using the <span style="font-weight: bold">+</span> icon) and inspect the routes of this traffic matrix.</li></div>
+<a name="wp939109"> </a><p class="pIndentedRelative">
+By using the tool bar button to switch the view between the OCH and DCL layer, you can inspect the routes in both layers. Inspecting a DCL route in the OCH layer reveals the path taken in the OCH layer.
+</p>
+<a name="wp935851"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-07-40.jpg" height="298" width="482" id="wp935858" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ol>
+<a name="wp926285"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the project.</li></div>
+<ol type="a">
+<a name="wp926286"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Close</span>.</li></div>
+<a name="wp926287"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Don&#39;t Save</span> in the <span style="font-weight: bold">Close Confirm</span> dialog box.</li></div>
+</ol>
+</ol></div>
+<a name="wp935924"> </a><p class="pProcEnd">
+End of Procedure 3-6
+</p>
+
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/wdmg_tut_3.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

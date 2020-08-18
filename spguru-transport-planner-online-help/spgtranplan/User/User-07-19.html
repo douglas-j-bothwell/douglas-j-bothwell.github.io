@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:27" />
+    <title>Routing Traffic with Service Identifiers</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-07-01.html"> Routing</a> > <a href="User-07-16.html">Service Identifiers</a> > Routing Traffic with Service Identifiers</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp306526"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Routing Traffic with Service Identifiers
+</h2>
+
+ 
+
+<a name="wp307087"> </a><p class="pBody">
+After you have assigned Client Service Identifiers to DCL connections and Server Service Identifiers to wavelengths (OCH connections), you can use these identifiers to drive the Routing design action. In doing so, you can prohibit DCL connections from being routed over certain wavelengths, if the Client Service Identifiers of the DCL connections do not match the Server Service Identifiers of the wavelengths. That is, you can force certain services to be routed over certain wavelengths that are reserved for those services only. Use <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-19.html#wp307089');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-19.html#wp307089', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;6-10</u></a> to apply service identifiers. 
+</p>
+<a name="wp307089"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp307089", false);</script>Procedure&#160;6-10   Applying Service Identifiers to Traffic<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp307089", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp307089", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp306926"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the Routing design action by selecting Design&#160;&gt; Route&#160;DCL/OCH&#160;Traffic.</li></div>
+<a name="wp306927"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The Route DCL/OCH Traffic dialog box appears. For more information about this dialog box, refer to <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-02.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-02.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Route DCL/OCH Traffic Dialog Box</u></a>.
+</p>
+<a name="wp306928"> </a><p class="pFigCaption">
+Figure&#160;6-19   Route DCL/OCH Traffic Dialog Box
+</p>
+<a name="wp306932"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-07-19-19.jpg" height="464" width="530" id="wp306933" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp306902"> </a><div style="text-align: left" class="pSmartList2Test"><li>Check the &quot;Apply Service Identifiers&quot; option. </li></div>
+<a name="wp306959"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click the &quot;...&quot; button to access specific options for applying service identifiers.</li></div>
+<a name="wp307048"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The Service Identifier Requirements Dialog Box opens.
+</p>
+<a name="wp307028"> </a><p class="pFigCaption">
+Figure&#160;6-20   Service Identifier Requirements Dialog Box
+</p>
+<a name="wp307032"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-07-19-20.jpg" height="141" width="499" id="wp307033" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp306967"> </a><div style="text-align: left" class="pSmartList2Test"><li>Select one of the following options:</li></div>
+<div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp306992"> </a><div class="pSmartList2"><li>All client identifiers must be matched&#8212;A DCL connection can only be routed over a wavelength if the Client Service Identifiers of the DCL connection contain at least all the Server Service Identifiers of the wavelength. The Client Server Identifiers may contain more entries than the Server Service Identifiers, but not fewer.</li></div>
+<a name="wp306892"> </a><div class="pSmartList2"><li>At least one client identifier must be matched&#8212;A DCL connection can only be routed over a wavelength if the Client Service Identifiers of the DCL connection contains at least one the Server Service Identifiers of the wavelength. If the wavelength has only one Server Service Identifier, the DCL connection should at least contain the same identifier among its Client Service Identifier. If the wavelength has multiple Server Service Identifiers, the DCL connection should at least contain one of the same identifiers among its Client Service Identifiers.</li></div>
+</ul></div>
+<a name="wp307039"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click OK to apply your selection and close the dialog box.</li></div>
+<a name="wp307043"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click the Route button to run the design action or Close to exit the dialog box without running the design action.</li></div>
+</ol></div>
+<a name="wp307044"> </a><p class="pProcEnd">
+End of Procedure 6-10
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp307734"> </a><h6 class="pHeading6">
+
+</h6>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_25_rte.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

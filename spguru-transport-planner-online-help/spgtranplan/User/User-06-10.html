@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:04" />
+    <title>OADM Data Files</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-06-01.html"> Importing and Exporting Data</a> > <a href="User-06-04.html">Data File Formats</a> > OADM Data Files</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp240186"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+OADM Data Files
+</h2>
+
+ 
+
+<a name="wp240190"> </a><p class="pBody">
+OADM data files use the format shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-10.html#wp240229');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-10.html#wp240229', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;5-9</u></a>. The first row contains eight headers; each subsequent line corresponds to one OADM. 
+</p>
+<a name="wp257034"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>You can import OADMs only if the network is in transparent mode.
+</p>
+
+<a name="wp240228"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp240197table240191">
+  <caption><a name="wp240197"> </a><div class="ptblcaption">
+Table&#160;5-7   OADM Data File Fields&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp240201"> </a><div class="pCellHeading">
+Field
+</div>
+</th>
+    <th><a name="wp240203"> </a><div class="pCellHeading">
+Description
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp240205"> </a><div class="pCellBody">
+Node
+</div>
+</td>
+    <td><a name="wp240207"> </a><div class="pCellBody">
+The node in which the OADM is located
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp240209"> </a><div class="pCellBody">
+Node1 / Node2
+</div>
+</td>
+    <td><a name="wp240211"> </a><div class="pCellBody">
+The end nodes of the links between which the OADM should be added
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp240213"> </a><div class="pCellBody">
+Index1 / Index2
+</div>
+</td>
+    <td><a name="wp240215"> </a><div class="pCellBody">
+The indices of the fibers in the links between which the OADM should be added. If the fibers are not equipped yet, they will be equipped automatically as part of the import process.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp240217"> </a><div class="pCellBody">
+Type
+</div>
+</td>
+    <td><a name="wp240219"> </a><div class="pCellBody">
+The Line System type of the OADM
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp240221"> </a><div class="pCellBody">
+Designation1/ Designation2
+</div>
+</td>
+    <td><a name="wp240223"> </a><div class="pCellBody">
+If two or more parallel links are present between Node and Node1 (or Node2), Designation1 (or Designation2) indicates which parallel link the specified OADM should use.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp240225"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 5-7	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+<a name="wp240229"> </a><p class="pFigCaption">
+Figure&#160;5-9   OADM Data File in .csv Format
+</p>
+<a name="wp240232"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-06-10-09.jpg" height="135" width="530" id="wp240231" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_22_imp.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

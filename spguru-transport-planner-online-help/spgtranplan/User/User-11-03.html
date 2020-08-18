@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:16" />
+    <title>Transparent Network Node Types</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-11-01.html"> Transparent Networks</a> > <a href="User-11-02.html">Transparent Network Concepts</a> > Transparent Network Node Types</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp291328"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Transparent Network Node Types
+</h2>
+
+ 
+
+<a name="wp291338"> </a><p class="pBody">
+This section describes the specialized node types that SP&#160;Guru&#160;Transport&#160;Planner uses to model transparent networks.
+</p>
+<a name="wp291395"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Transparent Node
+</h3>
+<a name="wp291339"> </a><p class="pBody">
+A fully transparent cross-connect has no regeneration capacity. Therefore in-node regeneration or wavelength conversion cannot occur in this type of node&#8212;every optical channel passes through the node transparently. Long-reach transponders are used at the OXC (or OADM) tributary ports for local traffic only. The presence of transparent cross-connects in an optical network might result in unroutable traffic if the MTL is exceeded in that node.
+</p>
+<a name="wp291340"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Transparent Node with Selective Regeneration
+</h3>
+<a name="wp291341"> </a><p class="pBody">
+This type of node has regeneration capacity and supports in-node regeneration or wavelength conversion for optical channels that pass through the node. This type of node uses long-reach transponders at the OXC (or OADM) tributary ports for local traffic and for pass-through traffic that needs regeneration or wavelength conversion. You can choose either of two models to do regeneration or wavelength conversion in a node:
+</p>
+<div class="pSmartList1"><ol type="1" class="pSmartList1">
+<a name="wp291342"> </a><div class="pSmartList1"><li>Regeneration through a DXC&#8212;In-node regeneration occurs through the DXC. This adds a level of flexibility because the DXC manages the OXC (or OADM) tributary ports&#8212;and therefore the transponders&#8212;and assigns the transponders to either the local traffic or transit traffic that requires intermediate regeneration. Keep in mind that if you use discrete-sized DXC node types in this model, the DXC size adds another constraint on the amount of regeneration that can occur in the node.</li></div>
+<a name="wp291343"> </a><div class="pSmartList1"><li>Regeneration through a regeneration bank&#8212;In-node regeneration occurs in a fixed bank of long-reach transponders connected to the OXC (or OADM) tributary ports.</li></div>
+</ol></div>
+<a name="wp291344"> </a><p class="pBody">
+To specify the model, set the &quot;Regenerate via DXC&quot; option in the Network Properties dialog box (Network&#160;&gt; Network&#160;Properties). For more information about this dialog box, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-09.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-09.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Network Properties</u></a>.
+</p>
+<a name="wp291345"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Opaque Node
+</h3>
+<a name="wp291346"> </a><p class="pBody">
+An opaque node is a node with full regeneration capacity. The OXC (or OADM) is connected to the WDM line systems through long-reach transponders, and short-reach transponders are attached to the OXC (or OADM) tributary ports. If the node type is an IXC, the node is always considered an opaque node.
+</p>
+<a name="wp291349"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Tunable and Fixed-Wavelength Transponders
+</h3>
+<a name="wp291350"> </a><p class="pBody">
+Depending on the node architecture, SP&#160;Guru&#160;Transport&#160;Planner uses tunable or fixed-wavelength transponders:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp292462"> </a><div class="pSmartList1"><li>For non-blocking OXCs or OADMs, SP&#160;Guru&#160;Transport&#160;Planner assumes tunable transponders, which enable the OXC or OADM to use the transponder for each outgoing signal. </li></div>
+<a name="wp292464"> </a><div class="pSmartList1"><li>For blocking OXCs (wavelength plane OXC or WP-OXC), SP&#160;Guru&#160;Transport&#160;Planner assumes fixed transponders, each of which is associated with a specific wavelength plane. This means that a fixed wavelength transponder can be used only for a signal transmitted on the corresponding wavelength.</li></div>
+</ul></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_34_trn.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

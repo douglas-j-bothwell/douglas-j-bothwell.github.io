@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Troubleshooting Common Issues with Backup and Recovery</title>
+    <link rel="StyleSheet" href="css/AGCH06-backup-recovery.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_admin_guide_splash.html">Administrator Guide</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="AGCH06-backup-recovery.19.1.html">Backup and Recovery of Appliance Data</a> &gt; Troubleshooting Common Issues with Backup and Recovery</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="1096266">Troubleshooting Common Issues with Backup and Recovery</a></div>
+      <div class="bodyIntro"><a name="1096267">Typically, backup and recovery problems are related to permissions issues, an improperly defined backup server, connection timeouts, etc. The following table lists troubleshooting tasks.</a></div>
+      <div class="tblAnchor"><a name="1096348">&nbsp;</a></div>
+      <table class="tableNarrow" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+              <tr style="vertical-align: baseline">
+                <td>
+                  <div class="tblCaption_inner" style="width: 44.64pt; white-space: nowrap">Table&nbsp;3    </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="1208128">Backup/Recovery Troubleshooting Tasks</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 21.79008pt">
+            <div class="tblHead"><a name="1096270">&nbsp;</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 87.0048pt">
+            <div class="tblHead"><a name="1096272">Task</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 359.20584pt">
+            <div class="tblHead"><a name="1096274">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="figAnchor"><a name="1096279"><img class="Default" src="images/AGCH06-backup-recovery.19.4.1.jpg" width="25" height="25" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9" style="color: #000000; font-size: 9.0pt; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline"><span class="bold"><a name="1096281">FTP or SSH</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1096283">Check whether the backup is using FTP or SSH.</a></div>
+            <div class="tblBody9"><a name="1096284">If using FTP, note that in some cases, performing large file backups over FTP may result in a failure. To test, try performing a small file backup over FTP. If a small backup (i.e., configs only) works, but a full backup fails, try performing an SSH backup.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="figAnchor"><a name="1096289"><img class="Default" src="images/AGCH06-backup-recovery.19.4.2.jpg" width="25" height="25" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9" style="color: #000000; font-size: 9.0pt; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline"><span class="bold"><a name="1096291">Confirm Connectivity</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1096293">Verify the following and contact your network administrator if either of the following items fail:</a></div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1096297">From the backup server, try to ping the AppResponse appliance.</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1096298">If there is a firewall between the backup server and the appliance, make sure that the appropriate ports (FTP or SSH) are open for backup/restore.</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="figAnchor"><a name="1096303"><img class="Default" src="images/AGCH06-backup-recovery.19.4.3.jpg" width="25" height="25" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9" style="color: #000000; font-size: 9.0pt; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline"><span class="bold"><a name="1096305">Confirm the Backup Directory Path</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1096310">Verify that the path to the backup directory is correctly defined in AppResponse.</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1096311">Try the following:<br />Log in to the backup server from your Windows command prompt (Start&nbsp;&gt; Run&nbsp;&gt; cmd) using the same username and password defined in the Administration&nbsp;&gt; System web UI. <br />After logging in, type </a><span class="code">pwd</span> or <span class="code">dir</span> to determine where it's logging in. For instance, when you enter <span class="code">pwd</span> it shows that you are logged in under “C:\desktop\ftp” and your backup ftp directory path is “C:\desktop\ftp\riverbed\backup”. Then you know that in the System&nbsp;&gt; Administration web UI, you need to define the path as “\riverbed\backup” and not the complete path.</div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="figAnchor"><a name="1096322"><img class="Default" src="images/AGCH06-backup-recovery.19.4.4.jpg" width="25" height="25" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9" style="color: #000000; font-size: 9.0pt; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline"><span class="bold"><a name="1096324">Check Permissions</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1096326">Verify that the user performing the backup has read, write, delete, and execute permissions to the backup directory on the backup server.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="figAnchor"><a name="1096342"><img class="Default" src="images/AGCH06-backup-recovery.19.4.5.jpg" width="25" height="25" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="bold"><a name="1096345">Check Logs</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1096347">Obtain the exact error message in the br.log file. This file can be accessed through the System&nbsp;&gt; Administration web UI: Diagnostic&nbsp;&gt; log&nbsp;viewer.</a></div>
+          </td>
+        </tr>
+      </table>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          // Add related topics
+          //
+          WWHAddRelatedTopic("Fast Recovery", "getting_started", "AGCH06-backup-recovery.19.5.html");
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

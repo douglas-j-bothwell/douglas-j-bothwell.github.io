@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:27" />
+    <title>Service Identifiers</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-07-01.html"> Routing</a> > Service Identifiers</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp306093"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Service Identifiers
+</h2>
+
+ 
+
+
+<a name="wp306297"> </a><p class="pBody">
+The Service Identifier feature lets you tag specific wavelengths to restrict for use by routes of upper layer traffic (i.e., DCL connections). This allows you to specify wavelength services and routing of upper layer traffic over designated wavelengths that meet the service identifier requirements of the upper layer traffic. For example, you may have a network in which certain wavelengths are tied to a specific customer (e.g., a bank) and all services for that customer should go over those wavelengths, while other customer traffic should not. 
+</p>
+<a name="wp306314"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('wdm_user', 'User-07-16.html#wp306316');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-16.html#wp306316', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;6-7</u></a> summarizes a typical workflow for using the Service Identifier feature in SP&#160;Guru&#160;Transport&#160;Planner. The steps of this workflow are described in more detail in later subsections, to which links are provided.
+</p>
+<a name="wp306316"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp306316", false);</script>Procedure&#160;6-7   Specifying Service Identifier Workflow<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp306316", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp306316", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp306391"> </a><div style="text-align: left" class="pSmartList2Test"><li>Specify the Service Identifiers representing the different services in the network. For more information about adding or removing service identifiers, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-17.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-17.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Specifying Service Identifiers</u></a>.</li></div>
+<a name="wp306397"> </a><div style="text-align: left" class="pSmartList2Test"><li>Assign Client Service Identifiers to DCL connections to identify which connections represent which services. For more information about assigning Client Service Identifiers to DCL connections, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-18.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-18.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Applying Service Identifiers to Connections</u></a>.</li></div>
+<ol type="a">
+<a name="wp306400"> </a><div class="pprocstepSub"><li>(Option 1) Add/Remove Client Service Identifiers for DCL connections in Network&#160;&gt; Connection&#160;Browser.</li></div>
+<a name="wp306403"> </a><div class="pprocstepSub"><li>(Option 2) Import Client Service Identifiers as part of the Connection List file format by using File&#160;&gt; Import&#160;&gt; Network&#160;Elements. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-01.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-01.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Importing and Exporting Data</u></a>.</li></div>
+</ol>
+<a name="wp306407"> </a><div style="text-align: left" class="pSmartList2Test"><li>Assign Server Service Identifiers to OCH connections to identify which wavelengths support which services. For more information about assigning Client Service Identifiers to OCH connections, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-18.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-18.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Applying Service Identifiers to Connections</u></a>.</li></div>
+<ol type="a">
+<a name="wp306410"> </a><div class="pprocstepSub"><li>(Option 1) Add/Remove Server Service Identifiers for OCH connections using Network&#160;&gt; Connection&#160;Browser.</li></div>
+<a name="wp306415"> </a><div class="pprocstepSub"><li>(Option 2) Import Server Service Identifiers as part of the Connection List file format by using File&#160;&gt; Import&#160;&gt; Network&#160;Elements. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-01.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-01.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Importing and Exporting Data</u></a>.</li></div>
+</ol>
+<a name="wp306421"> </a><div style="text-align: left" class="pSmartList2Test"><li>Check the Apply Service Identifiers checkbox in the Design&#160;&gt; Route&#160;DCL/OCH&#160;Traffic dialog to route DCL connections over wavelengths matching the Service Identifiers. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-19.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-19.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Routing Traffic with Service Identifiers</u></a>.</li></div>
+<a name="wp306427"> </a><div style="text-align: left" class="pSmartList2Test"><li>Generate the Service Identifier Assignments Report by choosing .Info&#160;&gt; Export&#160;to&#160;Web&#160;Report&#160;&gt;  Service&#160;Identifier&#160;Assignments&#160;Report. </li></div>
+</ol></div>
+<a name="wp306582"> </a><p class="pProcEnd">
+End of Procedure 6-7
+</p>
+<a name="wp306332"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>As described in steps 2 and 3 of <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-16.html#wp306316');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-16.html#wp306316', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;6-7</u></a>, the Service Identifier concept is applied on a per connection basis. This means that different connections within the same traffic matrix can have different Service Identifiers.
+</p>
+
+
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_25_rte.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

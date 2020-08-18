@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Capture Security: Restricting Access to Capture Operations</title>
+    <link rel="StyleSheet" href="css/ace_appcap_overview_plus.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ace_appcap_overview_plus.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_capture_app_traffic_splash.html#237752">Capturing Application Traffic</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ace_appcap_overview_plus.04.01.html#237752">Capturing Traffic with AppTransaction&nbsp;Xpert</a> &gt; Capture Security: Restricting Access to Capture Operations</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="237752">Capture Security: Restricting Access to Capture Operations</a></div>
+      <div class="bodyIntro"><a name="237754">To restrict access to capture operations, you can create a capture authorization file and store it on a capture agent computer. This file lists specific computers and users; only the users listed, when logged onto the computers listed, can capture traffic on that host.</a></div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="237755">If you do not create a capture authorization file, and are using Anonymous (Level 1) encryption, anyone with access to AppTransaction&nbsp;Xpert can use it to capture traffic.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd237762&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd237762", false);</script>Procedure&nbsp;4-3   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="237762">Creating a Capture Authorization File</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd237762", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="237763">In a text editor, create a file called capture_auth.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="237764">Type a list of hosts and users that have access to capture operations, in the form:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="codeSubStep"><span class="code"><a name="237765">&lt;</a></span><span class="italic">ip_address_of_capturing_hos</span><span class="code" style="color: #000000; font-style: normal; font-weight: normal">t&gt; &lt;</span><span class="italic">user_name</span><span class="code" style="color: #000000; font-style: normal; font-weight: normal">&gt;</span></div>
+      <div class="codeSubStep"><span class="code"><a name="237766">&lt;</a></span><span class="italic">ip_address_of_capturing_host</span><span class="code" style="color: #000000; font-style: normal; font-weight: normal">&gt; &lt;</span><span class="italic">user_name</span><span class="code" style="color: #000000; font-style: normal; font-weight: normal">&gt;</span></div>
+      <div class="procNote">
+        <span class="bold">Note—</span><a name="237767">The capture agent software does not perform DNS lookups. Therefore, this file must use IP&nbsp;addresses to specify computers that can capture traffic on that host. If Capture&nbsp;Manager and the capture agent are installed on the same host, use the address 127.0.0.1 (the “local-host” IP&nbsp;address) to authorize captures on that host. If you cannot capture using this address, replace it with the network IP address.</a></div>
+      <div class="procStepCont"><a name="237768">Use the plus sign (+) to match any user or any host, as shown in the following example.</a></div>
+      <div class="codeSubStep"><a name="237769">+ sjones<br />127.16.10.150 +<br />127.0.0.1 root<br />127.16.2.134 pcook</a></div>
+      <div class="procStepCont"><a name="237770">This example shows that:</a></div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="237771">sjones can capture when logged into any computer</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="237772">any user can capture when logged onto the computer with IP address </a><span style="font-size: 9.0pt">127.16.10.150</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="237773">any user logged onto the local computer as “root” can capture on that computer</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="237774">pcook can capture when logged into the computer with IP address </a><span style="font-size: 9.0pt">127.16.2.134</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="237775">Copy the </a><span class="codebold">capture_auth</span> file to the same directory on the capture agent computer where the application-capture software is installed.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 4-3</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="237776">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="237777">&nbsp;</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          // Add related topics
+          //
+          WWHAddRelatedTopic("Capturing Traffic with AppTransaction\u00A0Xpert", "main_doc", "ace_appcap_overview_plus.04.01.html#87132");
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:52" />
+    <title>No Grooming Without Reuse</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-09-01.html"> Grooming DCL to OCH Traffic</a> > <a href="User-09-25.html">DCL Grooming and Two-Tier Network Design</a> > No Grooming Without Reuse</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp58828"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+No Grooming Without Reuse
+</h2>
+
+ 
+
+<a name="wp102062"> </a><p class="pBody">
+You cannot groom without reuse in a two-tier network. When you groom a DCL matrix, the resulting OCH matrix contains only demands between EOCC nodes. If extra DCL capacity is required on the electrical links to accommodate the DCL demands, the algorithm equips extra fibers on these links. These fibers are of the default SONET/SDH type as specified in the Network Properties dialog box (Network&#160;&gt; Network&#160;Properties). This means that you cannot groom multiple matrices without reusing capacity (the method described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-09-24.html#wp58544');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-24.html#wp58544', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Example: Groom Without Reuse</u></a>). 
+</p>
+<a name="wp58833"> </a><p class="pBody">
+The following hypothetical example shows what happens when you try to groom two matrices without reuse in a two-tier network. 
+</p>
+<div class="pSmartList1"><ol type="1" class="pSmartList1">
+<a name="wp58834"> </a><div class="pSmartList1"><li>You groom an initial DCL matrix (DCL_1). This equips additional fibers in the electrical DCL links to ensure extra spare DCL capacity. </li></div>
+<a name="wp58835"> </a><div class="pSmartList1"><li>Do not accommodate DCL_1 in the network, but groom traffic matrix DCL_2 first. In that case, the algorithm uses some of the existing spare capacity to accommodate DCL_2. (The first grooming operation generated this existing capacity to accommodate DCL_1.)</li></div>
+<a name="wp58836"> </a><div class="pSmartList1"><li>You set up one of the groomed matrices. The setup operation uses the remaining spare DCL capacity from the grooming operation in step 1 to accommodate the matrix.</li></div>
+<a name="wp58837"> </a><div class="pSmartList1"><li>You try to set up the remaining matrix, which fails. The second grooming (in step 2) did not add enough capacity in the electrical links. Therefore you can set up one of the matrices (DCL_1 or DCL_2), but you cannot set up both.</li></div>
+</ol></div>
+<a name="wp58838"> </a><p class="pBody">
+For this reason, you should always use the groom-with-reuse strategy (described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-09-24.html#wp53996');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-24.html#wp53996', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Example: Groom With Reuse</u></a>) when grooming in a two-tier network. 
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_31_grm.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

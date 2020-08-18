@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:40" />
+    <title>Device File Format</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-14-01.html"> Hardware Configurator</a> > <a href="User-14-04.html">Hardware File Formats</a> > Device File Format</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp136063"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Device File Format
+</h2>
+
+ 
+
+<a name="wp136202"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('wdm_user', 'User-14-05.html#wp136206');" onMouseOver="WWHShowPopup('wdm_user', 'User-14-05.html#wp136206', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;13-1</u></a> shows the file format used to define HCON devices. For information about specific fields, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-14-05.html#wp136242');" onMouseOver="WWHShowPopup('wdm_user', 'User-14-05.html#wp136242', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;13-2</u></a>.
+</p>
+<a name="wp136206"> </a><p class="pFigCaption">
+Figure&#160;13-1   Device File Format
+</p>
+<a name="wp136209"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-14-05-01.jpg" height="229" width="699" id="wp136208" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp136204"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp136242table136240">
+  <caption><a name="wp136242"> </a><div class="ptblcaption">
+Table&#160;13-2   Device File Format&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp136246"> </a><div class="pCellHeading">
+Field
+</div>
+</th>
+    <th><a name="wp136248"> </a><div class="pCellHeading">
+Description
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136250"> </a><div class="pCellBody">
+Vendor<br />Family<br />Model
+</div>
+</td>
+    <td><a name="wp136252"> </a><div class="pCellBody">
+Identifies a unique device. You must specify these fields according to the following requirements:
+</div>
+<ul class="pCellBodyBullet"><a name="wp136343"> </a><div class="pCellBodyBullet"><li>
+You can specify multiple product families for each vendor and multiple device models for each family.
+</li></div>
+<a name="wp141287"> </a><div class="pCellBodyBullet"><li>
+A valid configuration for a SP&#160;Guru&#160;Transport&#160;Planner type must consist of device models from the same vendor and family. For example, the DXC configuration in a node can consist of multiple devices of the same family (Nortel OPTera DX16 and DX32) but not of devices of different families (a Nortel OPTera DX16 and a Lucent LambdaUnite MSS). 
+</li></div>
+<a name="wp141288"> </a><div class="pCellBodyBullet"><li>
+A valid node configuration can contain different families and models for different SP&#160;Guru&#160;Transport&#160;Planner types (for example, a Nortel OPTera DX16 for the DXC and a Lucent Wavestar 16 for the ADMs in the same node). 
+</li></div>
+<a name="wp136338"> </a><div class="pCellBodyBullet"><li>
+A valid line system configuration contains WDMTM, OA, and REG devices of the same vendor and family.
+</li></div>
+</ul></td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136254"> </a><div class="pCellBody">
+Cost
+</div>
+</td>
+    <td><a name="wp136256"> </a><div class="pCellBody">
+Base cost of the device. This field can contain multiple values, separated by the &#39;+&#39; character, to model modular devices (see <a href="javascript:WWHClickedPopup('wdm_user', 'User-14-05.html#wp136322');" onMouseOver="WWHShowPopup('wdm_user', 'User-14-05.html#wp136322', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Compound Values</u></a>).
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136258"> </a><div class="pCellBody">
+Properties
+</div>
+</td>
+    <td><a name="wp136260"> </a><div class="pCellBody">
+This field can contain auxiliary parameters such as &quot;floorspace&quot; or &quot;power&quot; (that is, power consumption)
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136262"> </a><div class="pCellBody">
+Icon<br />Icon Priority
+</div>
+</td>
+    <td><a name="wp136264"> </a><div class="pCellBody">
+Specifies the icons to represent the device in the SP&#160;Guru&#160;Transport&#160;Planner user interface
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136266"> </a><div class="pCellBody">
+WDMG:Type
+</div>
+</td>
+    <td><a name="wp136268"> </a><div class="pCellBody">
+Specifies the SP&#160;Guru&#160;Transport&#160;Planner equipment type(s) that the device supports. A device can support multiple SP&#160;Guru&#160;Transport&#160;Planner equipment types. For example, you can use a specific switch as a DXC, IXC or MSSP. Each field can also contain multiple types, separated by a &#39;+&#39; sign (see <a href="javascript:WWHClickedPopup('wdm_user', 'User-14-05.html#wp136322');" onMouseOver="WWHShowPopup('wdm_user', 'User-14-05.html#wp136322', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Compound Values</u></a>).
+</div>
+<a name="wp136436"> </a><div class="pCellBody">
+<b class="cBold">Note&#8212;</b>Take care filling out the values for the four &quot;WDMG:&quot; fields in the device file, because the names must match the names used in SP&#160;Guru&#160;Transport&#160;Planner exactly.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136270"> </a><div class="pCellBody">
+WDMG:LS
+</div>
+</td>
+    <td><a name="wp136272"> </a><div class="pCellBody">
+Specifies the corresponding line system in SP&#160;Guru&#160;Transport&#160;Planner. This field is needed for WDMTM, OADM, INT-OADM, WP-OXC, INT-OXC, OA, and REG devices only.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136274"> </a><div class="pCellBody">
+WDMG:Bit Rate
+</div>
+</td>
+    <td><a name="wp136276"> </a><div class="pCellBody">
+Specifies the aggregation bit rate for a SONET/SDH device. This field is needed for ADM and TM devices only. 
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136278"> </a><div class="pCellBody">
+WDMG:Ring Type
+</div>
+</td>
+    <td><a name="wp136280"> </a><div class="pCellBody">
+Specifies the SONET/SDH ring type(s) the device supports (such as UPSR, 2F-BLSR or 4F-BLSR). This field is needed for ADM devices only. Each field can also contain multiple values, separated by a &#39;+&#39; sign (see <a href="javascript:WWHClickedPopup('wdm_user', 'User-14-05.html#wp136322');" onMouseOver="WWHShowPopup('wdm_user', 'User-14-05.html#wp136322', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Compound Values</u></a>).
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp136282"> </a><div class="pCellBody">
+Slot:&lt;<em class="cEmphasis">slot_id</em>&gt;
+</div>
+</td>
+    <td><a name="wp136284"> </a><div class="pCellBody">
+The final fields define the different slot types. Each field specifies the number of slots of type &lt;<em class="cEmphasis">slot_id</em>&gt; per device model. 
+</div>
+<a name="wp136419"> </a><div class="pCellBody">
+These fields start with the string &quot;Slot:&quot; followed by the name of the slot type. The slot type can have an arbitrary name. The cards that fit into a certain slot are specified in the card file, by referring to the name of the slot type. Each field can also contain multiple values, separated by a &#39;+&#39; sign to model modular devices (see <a href="javascript:WWHClickedPopup('wdm_user', 'User-14-05.html#wp136322');" onMouseOver="WWHShowPopup('wdm_user', 'User-14-05.html#wp136322', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Compound Values</u></a>). 
+</div>
+<a name="wp136459"> </a><div class="pCellBody">
+A device contains a number of slots of a specific type. Different devices can use the same slot type. Multiple device models of the same vendor and family should always use the same slot type because these devices use the same set of cards.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp136306"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 13-2	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+<a name="wp136322"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Compound Values
+</h3>
+<a name="wp136471"> </a><p class="pBody">
+A <em class="cEmphasis">compound value</em> is a series of values separated by `+&#39; characters. You can specify compound values for the following fields in a device file:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp136480"> </a><div class="pSmartList1"><li>Cost and Slot&#8212;Specifies modular equipment, having costs c1, c2, c3 and containing slots s1, s2, s3. Modular equipment is &quot;in-service&quot; upgradeable&#8212;that is, a device with s1 slots can be upgraded to a device with s2 slots at an extra cost of (c2 - c1).</li></div>
+<a name="wp136493"> </a><div class="pSmartList1"><li>WDMG:Type&#8212;Specifies multiple SP&#160;Guru&#160;Transport&#160;Planner types that the device supports</li></div>
+<a name="wp136494"> </a><div class="pSmartList1"><li>WDMG:Ring Type&#8212;Specifies multiple SONET/SDH ring types that the device supports</li></div>
+</ul></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_41_hcon.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

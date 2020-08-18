@@ -1,0 +1,2320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Predicting Application Deployment with Transaction&nbsp;Analyzer Models</title>
+    <link rel="StyleSheet" href="css/ace_tut_deploy_app.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ace_tut_deploy_app.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">Tutorials and Examples &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_tut_tutorials_splash.html#1043969">Transaction Analyzer Tutorials</a> &gt; Predicting Application Deployment with Transaction&nbsp;Analyzer Models</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="hChapterNoNum"><a name="1043969">Predicting Application Deployment with Transaction&nbsp;Analyzer Models</a></div>
+      <div class="bodyIntro"><a name="1059137">AppTransaction&nbsp;Xpert includes predictive features that enable you to determine how network and application changes will affect application performance. This tutorial demonstrates how you can import traffic from AppTransaction&nbsp;Xpert to create a “virtual deployment” to test a proposed application’s performance. You will build a model and predict the performance of an application deployment to a large group of users.</a></div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="1057884">If you have an AppTransaction&nbsp;Xpert&nbsp;Plus license and want to run a discrete event simulation (DES), download and run IT&nbsp;Guru 16.0 or later. IT&nbsp;Guru will allow you to run DES using the AppTransaction&nbsp;Xpert&nbsp;Plus license.<br /></a></div>
+      <div class="body"><a name="1020983">The starting point is a series of transactions for a three-tier Oracle application; these transactions have been captured in a test lab using a local area network (LAN) environment. The requirement is to predict bandwidth needs and performance when this application is deployed on a wide area network (WAN).</a></div>
+      <div class="bodyIntro"><a name="1035214">The goal of this exercise is to answer the following questions:</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1020984">What is the response time for a single user on the 256&nbsp;Kbps Frame Relay circuit?</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1025873">Can a 256&nbsp;Kbps Frame Relay circuit support 200&nbsp;users?</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1025874">How much bandwidth will 200 users need?</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumLast_inner" style="width: 21.6pt; white-space: nowrap;">	4)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumLast_inner"><a name="1025665">With the existing traffic load on the circuit, will performance for 200 users be satisfactory?</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="1020339">The original packet&nbsp;traces were captured in a test lab where the application was deployed to a sample client machine on the same LAN as the Application and Database (DB) Servers.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;4-1   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="1030888">Test Lab Topology</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1030891"><img class="Default" src="images/ace_tut_deploy_app.06.1.01.jpg" width="365" height="304" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1021025">&nbsp;</a></div>
+      <div class="body"><a name="1054761">AppTransaction&nbsp;Xpert used the packet&nbsp;traces to create application fingerprints that characterize the data exchange between tiers. From these fingerprints, a simulation can show how the application will behave under different conditions.</a></div>
+      <div class="body"><a name="1020330">Six separate transactions (Connect, Login, List&nbsp;Categories, Choose&nbsp;Category, View&nbsp;Record, and Logout) are used to build the application definition.</a></div>
+      <div class="body"><a name="1021044">The Data Exchange Chart for each transaction is shown in the following figures.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;4-2   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="1044200">Step 1: Connect</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1044204"><img class="Default" src="images/ace_tut_deploy_app.06.1.02.jpg" width="425" height="223" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1044210">&nbsp;</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;4-3   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="1054783">Step 2: Login</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1044214"><img class="Default" src="images/ace_tut_deploy_app.06.1.03.jpg" width="420" height="219" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1044215">&nbsp;</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;4-4   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="1054794">Step 3: List Categories</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1044219"><img class="Default" src="images/ace_tut_deploy_app.06.1.04.jpg" width="421" height="222" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1044225">&nbsp;</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;4-5   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="1054804">Step 4: Choose Category</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1044229"><img class="Default" src="images/ace_tut_deploy_app.06.1.05.jpg" width="417" height="214" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1044230">&nbsp;</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;4-6   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="1054817">Step 5: View Record</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1044234"><img class="Default" src="images/ace_tut_deploy_app.06.1.06.jpg" width="425" height="220" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1044240">&nbsp;</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;4-7   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="1054827">Step 6: Logout</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1044244"><img class="Default" src="images/ace_tut_deploy_app.06.1.07.jpg" width="422" height="221" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1020489">&nbsp;</a></div>
+      <div class="h1TopNoBreak"><a name="1054837">Import the Transaction&nbsp;Analyzer Model</a></div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="1064900">If you have an AppTransaction&nbsp;Xpert&nbsp;Plus license and want to run a discrete event simulation (DES), download and run IT&nbsp;Guru 16.0 or later. IT&nbsp;Guru will allow you to run DES using the AppTransaction&nbsp;Xpert&nbsp;Plus license.<br /></a></div>
+      <div class="body"><a name="1030725">The topology wizard builds network models from Transaction&nbsp;Analyzer models and defines settings that are specified during the import.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1054849&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1054849", false);</script>Procedure&nbsp;4-1   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="1054849">Import the Transaction&nbsp;Analyzer Model into OPNET&nbsp;Analysis&nbsp;Software</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1054849", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1042387">Open your OPNET analysis software (e.g.: IT&nbsp;Guru, SP&nbsp;Guru, OPNET&nbsp;Modeler), choose </a><span class="bold">File&nbsp;&gt; New…</span>, select <span class="bold">Project </span>from the pull-down menu, and click <span class="bold">OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1048883"><img class="Default" src="images/ace_tut_deploy_app.06.1.08.jpg" width="207" height="70" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1021143">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1054862">Enter </a><span class="bold">&lt;initials&gt;_App_Deploy</span> as the project name. Name the scenario <span class="bold">single_user</span>.<br /><br />Verify that the <span class="bold">Use&nbsp;Startup&nbsp;Wizard when creating&nbsp;new&nbsp;scenario</span> checkbox is selected. If not selected, click the checkbox to select it.<br /><br />Click <span class="bold">OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1048904"><img class="Default" src="images/ace_tut_deploy_app.06.1.09.jpg" width="270" height="113" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1021155">&nbsp;</a></div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="1054875">The Startup Wizard appears.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1021149">In the “Startup Wizard: Initial Topology” dialog box, notice that you can import topologies from a variety of sources, including device configurations and XML files.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1048920">Select </a><span class="bold">Import&nbsp;from&nbsp;</span>AppTransaction&nbsp;Xpert. Click <span class="bold">Next&nbsp;&gt;</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1048932"><img class="Default" src="images/ace_tut_deploy_app.06.1.10.jpg" width="506" height="183" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1021195">&nbsp;</a></div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 4-1</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1054898">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1054902">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="1054894">Configure the Application</a></div>
+      <div class="body"><a name="1024746">Perform the following procedure to configure the application.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1054911&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1054911", false);</script>Procedure&nbsp;4-2   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="1054911">Configuring the AppTransaction&nbsp;Xpert Application</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1054911", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1021196">Set the </a><span class="bold">Name</span> field to <span class="bold">Oracle&nbsp;Application</span>. This text string identifies the application in the model.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1020509">Set the </a><span class="bold">Repeat </span>field to <span class="bold">5</span>. This field controls how many times a user executes the application per hour.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1026743">Leave the limit at the default value, </a><span class="bold">Infinite</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1042422">Click on </a><span class="bold">Add Task</span>. In the <span class="bold">Contained Tasks</span> table, click on the word <span class="bold">Specify...</span>, and then select <span class="bold">Step1_connect.atc.m</span> from the pull-down menu.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1042423">Repeat the previous step five more times to add the following tasks to the </a><span class="bold">Contained Tasks</span> list:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;color: #000000; font-family: Helvetica; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner" style="color: #000000; font-family: Helvetica; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none"><span class="bold"><a name="1024659">Step2_login.atc.m</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;color: #000000; font-family: Helvetica; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner" style="color: #000000; font-family: Helvetica; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none"><span class="bold"><a name="1024660">Step3_list_categories.atc.m</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;color: #000000; font-family: Helvetica; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner" style="color: #000000; font-family: Helvetica; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none"><span class="bold"><a name="1024661">Step4_choose_category.atc.m</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;color: #000000; font-family: Helvetica; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner" style="color: #000000; font-family: Helvetica; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none"><span class="bold"><a name="1024662">Step5_view_record.atc.m</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;color: #000000; font-family: Helvetica; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner" style="color: #000000; font-family: Helvetica; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none"><span class="bold"><a name="1024663">Step6_logout.atc.m</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="1058805">The dialog box should look like the one shown in the following figure.</a></div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;4-8   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1031298">Import from AppTransaction&nbsp;Xpert Application Dialog Box</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1031301"><img class="Default" src="images/ace_tut_deploy_app.06.1.11.jpg" width="481" height="337" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1042450">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1054937">Click </a><span class="bold">Next&nbsp;&gt;</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 4-2</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1054957">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1054961">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="1042451">Create the Topology</a></div>
+      <div class="body"><a name="1042459">Perform the following procedure to create the topology for one user of the application on a 256&nbsp;Kbps Frame Relay circuit with 40&nbsp;ms of latency.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1054970&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1054970", false);</script>Procedure&nbsp;4-3   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="1054970">Create the Topology</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1054970", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1024631">In the </a><span class="bold">LAN&nbsp;Details</span> section of the dialog box, verify the following settings:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1026766">Number of Clients: </a><span class="bold">1</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1020527">Packet Analyzer: </a><span class="bold">Do&nbsp;Not&nbsp;Include</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1020529">Client Location: </a><span class="bold">Remote</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1025538">In the </a><span class="bold">WAN&nbsp;Details</span> section of the dialog box, specify the following settings:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1025541">Technology: </a><span class="bold">Frame Relay</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1025542">Packet Latency: </a><span class="bold">40</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1025543">Packet Loss Ratio: </a><span class="bold">1</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1025544">Access Bandwidth: </a><span class="bold">256</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="1058833">The dialog box should look like the one shown in the following figure.</a></div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;4-9   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1044250">Create AppTransaction&nbsp;Xpert Topology Dialog Box</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1044255"><img class="Default" src="images/ace_tut_deploy_app.06.1.12.jpg" width="482" height="275" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1031350">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1054998">Click </a><span class="bold">Create</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 4-3</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1055022">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1055026">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="1024639">Review the Model</a></div>
+      <div class="body"><a name="1048958">The Wizard creates a topology similar to the one shown in the figure below. The Tasks, Applications, and Profiles objects have been configured according to the packet&nbsp;traces and the entries that you made in the Wizard. You can customize them further, if necessary.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;4-10   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="1048967">Topology for One User Over 256 Kbps Frame Relay PVC</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1048970"><img class="Default" src="images/ace_tut_deploy_app.06.1.13.jpg" width="509" height="258" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1031386">&nbsp;</a></div>
+      <div class="body"><a name="1055041">The topology consists of the Client, the Oracle&nbsp;App&nbsp;Server, and the Oracle&nbsp;Auth&nbsp;Server, which are assigned traffic profiles based on the imported Transaction&nbsp;Analyzer models. Access links connect switches and routers through a Frame Relay cloud.</a></div>
+      <div class="body"><a name="1020552">The Wizard selects statistics that are commonly used in application deployment studies. You can select additional statistics or deselect statistics that are already selected.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1055051&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1055051", false);</script>Procedure&nbsp;4-4   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="1055051">Selecting and Deselecting Statistics</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1055051", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1020554">To inspect the statistics that have been selected, choose </a><span class="bold">DES&nbsp;&gt; Choose&nbsp;Individual&nbsp;Statistics…</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;4-11   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1048853">Statistics to be Collected by the Simulation</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1048856"><img class="Default" src="images/ace_tut_deploy_app.06.1.14.jpg" width="427" height="500" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1031455">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1055064">Examine the statistics that are available and the statistics that have been selected. Click </a><span class="bold">Cancel</span> when done.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1057106">Select </a><span class="bold">File&nbsp;&gt; Save</span>, and then click <span class="bold">Save</span> to save the project.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 4-4</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1055071">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1055075">&nbsp;</a></div>
+      <div class="h1TopNoBreak"><a name="1024725">Run the Simulation</a></div>
+      <div class="body"><a name="1030738">Now that the topology is created, you can run the simulation. The application will be activated five times per hour on a 256 Kbps Frame Relay circuit with 40&nbsp;ms of latency.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1055084&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1055084", false);</script>Procedure&nbsp;4-5   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="1055084">Running the Simulation</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1055084", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1038731">Click the </a><span class="bold">Configure/Run Discrete Event Simulation</span> toolbar button. <img class="Default" src="images/ace_tut_deploy_app.06.1.15.jpg" width="17" height="16" style="display: inline; float: none; left: 0.0; top: 0.0" title="" /></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="1038737">The Configure Discrete Event Simulation dialog box appears. If the dialog box is in the </a><span class="bold">Detailed</span> view, click the <span class="bold">Simple</span> button in the lower-left corner.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;4-12   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1048995">Configure Discrete Event Simulation Dialog Box</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1048998"><img class="Default" src="images/ace_tut_deploy_app.06.1.16.jpg" width="352" height="301" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1039495">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1055097">Set the </a><span class="bold">Duration</span> value to <span class="bold">8</span>&nbsp;hours. Keep the default values for all other fields, and then click <span class="bold">Run</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1021905">Notice that the Simulation Execution dialog box provides a running update of the simulation as it progresses.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;4-13   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1049014">Simulation Execution Dialog Box</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1049017"><img class="Default" src="images/ace_tut_deploy_app.06.1.17.jpg" width="450" height="297" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1031628">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1055111">Close this dialog box when the simulation completes.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 4-5</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1055124">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1055133">&nbsp;</a></div>
+      <div class="h1NoBreak"><a name="1021819">View Results</a></div>
+      <div class="body"><a name="1033531">Now view the response time for the individual tasks and the entire application.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1055153&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1055153", false);</script>Procedure&nbsp;4-6   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="1055153">Viewing the Results</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1055153", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1044261">Click the </a><span class="bold">View&nbsp;Results</span> toolbar button. <img class="Default" src="images/ace_tut_deploy_app.06.1.18.jpg" width="17" height="17" style="display: inline; float: none; left: 0.0; top: 0.0" title="" /></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="1048429">The </a><span class="bold">Results&nbsp;Browser</span> displays. The <span class="bold">Show&nbsp;results</span> panel in the lower-left corner provides a treeview for available statistics.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1036044">Expand the </a><span class="bold">Global&nbsp;Statistics&nbsp;&gt; Transaction&nbsp;Analyzer Model</span> hierarchy by clicking on the <span class="bold">+</span> sign (arrow on Linux platforms) in the “Show&nbsp;results” pane. Scroll down and select the six <span class="bold">Task&nbsp;Response&nbsp;Time</span> statistics.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1036045">Set the view (pull-down menu under </a><span class="bold">Presentation</span>) for <span class="bold">Overlaid&nbsp;Statistics</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;4-14   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1049029">Select Statistics to View in a Graph</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1049032"><img class="Default" src="images/ace_tut_deploy_app.06.1.19.jpg" width="397" height="234" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1031674">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1055191">Click </a><span class="bold">Show</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note—</span><a name="1043004">Your results may be slightly different because the repetition rate is based on a random (exponential) distribution.</a></div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;4-15   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1049048">Response Time Statistics for the Individual Tasks</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1049051"><img class="Default" src="images/ace_tut_deploy_app.06.1.20.jpg" width="425" height="308" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1031710">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1055210">You see the response times of the individual tasks vary from about 0.5&nbsp;seconds (</a><span class="bold">Step1_connect</span>) to over 10&nbsp;seconds (<span class="bold">Step2_login</span>). You may see a different number of data points or a different start time. This occurs because the start time and repeatability are determined by exponential distributions.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1020741"> In the Results Browser dialog box, click </a><span class="bold">Unselect&nbsp;All</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="1057126">Now view the response time for the entire application.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	7	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1042534">Collapse the </a><span class="bold">Global Statistics&nbsp;&gt; Transaction&nbsp;Analyzer&nbsp;Model</span> hierarchy by clicking on the <span class="bold">–</span> sign (&lt;&nbsp;on&nbsp;Linux).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	8	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1042535">Expand the </a><span class="bold">Custom&nbsp;Application</span> hierarchy by clicking on the <span class="bold">+</span> sign, and then select the <span class="bold">Application&nbsp;Response&nbsp;Time&nbsp;(sec)</span> statistic.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	9	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1020745"> Change the filter menu from </a><span class="fUserInput" style="font-weight: bold">As Is</span> to <span class="fUserInput" style="font-weight: bold">average</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;4-16   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1049063">Select the Application Response Time Statistic</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1049066"><img class="Default" src="images/ace_tut_deploy_app.06.1.21.jpg" width="438" height="255" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1031749">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	10	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1055241">Click </a><span class="bold">Show</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;4-17   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1049084">Average Response Time for Entire Application</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1049105"><img class="Default" src="images/ace_tut_deploy_app.06.1.22.jpg" width="342" height="263" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1049111">&nbsp;</a></div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="1055255">The graph shows that the entire application had a response time of over 15 seconds. The application response time is the time it takes to complete all the tasks of the application.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="1027269">You may see a shorter or longer curve (because the number of times the application repeats is based on a probability distribution) or a different start time.</a></div>
+      <div class="procNote">
+        <span class="bold">Note—</span><a name="1027271">The outlier point that raises the average occurs because this model drops 1 percent of the packets on the Frame Relay cloud. Dropped packets cause TCP to retransmit; these retransmissions increase the average response time.</a></div>
+      <div class="procStepCont"><a name="1024156">Now you can answer the first question posed in the Overview: the response time for a single user on the 256&nbsp;Kbps circuit is over 16&nbsp;seconds.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	11	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1025944">Close the graph panels and the Results Browser dialog box.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	12	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1038999">When prompted, click </a><span class="bold">Hide</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1039014"><img class="Default" src="images/ace_tut_deploy_app.06.1.23.jpg" width="234" height="75" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1039000">&nbsp;</a></div>
+      <div class="procStepCont"><a name="1055282">This enables you to view the results later by clicking on the </a><span class="bold">Hide/Show&nbsp;Graph&nbsp;Panels</span> button. <img class="Default" src="images/ace_tut_deploy_app.06.1.24.jpg" width="17" height="17" style="display: inline; float: none; left: 0.0; top: 0.0" title="" /></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	13	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1039059">Select </a><span class="bold">File&nbsp;&gt; Save</span> to save the project.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 4-6</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1055292">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1055296">&nbsp;</a></div>
+      <div class="h1NoBreak"><a name="1020848">Simulate Multiple Users</a></div>
+      <div class="body"><a name="1030761">Now that you know the response time for a single user, you want to see the response time for many simultaneous users over a Frame Relay circuit. You will create a new scenario that demonstrates the behavior of the application when deployed to 200 users.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1055305&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1055305", false);</script>Procedure&nbsp;4-7   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="1055305">Simulating Multiple Users</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1055305", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1020850">Select </a><span class="bold">Scenario&nbsp;&gt; Duplicate&nbsp;Scenario…</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1020852">Name the scenario </a><span class="bold">200_Users</span>, and then click <span class="bold">OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1044312">Right-click on the client and choose </a><span class="bold">Edit&nbsp;Attributes&nbsp;(Advanced)</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1020854">Change the model attribute from </a><span class="bold">ethernet_ace_wkstn</span> to <span class="bold">100BaseT_LAN</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4.1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1047833">Click on the Model attribute value.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4.2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1047837">If a warning dialog box displays, select </a><span class="bold">Yes</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4.3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1047838">From the pull-down list, select </a><span class="bold">100BaseT_LAN</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1044337">Expand the LAN attribute: click on the </a><span class="bold">+</span> sign (arrow on Linux platforms). Change <span class="bold">Number&nbsp;of&nbsp;Workstations</span> from <span class="bold">10</span> to <span class="bold">200</span>. Click <span class="bold">OK</span> to close the window.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1044365"><img class="Default" src="images/ace_tut_deploy_app.06.1.25.jpg" width="365" height="452" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1038778">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1055321">Click on the </a><span class="bold">Configure/Run&nbsp;Discrete&nbsp;Event&nbsp;Simulation</span> button. In the Configure/Run DES dialog box, change the <span class="bold">Duration</span> to <span class="bold">0.5</span>&nbsp;(hours). Click <span class="bold">Run</span>. This simulation may take a few minutes to complete.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	7	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1022125">Close the dialog box when the simulation completes.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 4-7</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1055328">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1055332">&nbsp;</a></div>
+      <div class="h1TopNoBreak"><a name="1022644">View Results for Multiple Users</a></div>
+      <div class="body"><a name="1030772">Now you can look at the application behavior for 200&nbsp;users.</a></div>
+      <div class="bodyIntro"><a name="1024159">First, look at the global statistics for the tasks and application.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1055352&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1055352", false);</script>Procedure&nbsp;4-8   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="1055352">Viewing Results for Multiple Users</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1055352", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1020878">Click the </a><span class="bold">View&nbsp;Results</span> toolbar button.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1022142">Expand the </a><span class="bold">Global&nbsp;Statistics&nbsp;&gt; Transaction&nbsp;Analyzer&nbsp;Model </span>hierarchy. Scroll down and select the six <span class="bold">Task&nbsp;Response&nbsp;Time</span> statistics.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1022162">Set the view (left pull-down menu) for </a><span class="bold">Overlaid&nbsp;Statistics</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1055372">Click </a><span class="bold">Show</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note—</span><a name="1044008">The colors assigned to the statistics in the graph are determined by the order in which the statistics were selected in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('tutorials', 'ace_tut_deploy_app.html#1022142', '');" title="Predicting Application Deployment with Transaction Analyzer Models">step&nbsp;2</a></span>; therefore, the colors in your graph may differ from the colors in the examples.</div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;4-18   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1049132">Response Time Statistics for the Individual Tasks for 200 Users</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1049135"><img class="Default" src="images/ace_tut_deploy_app.06.1.26.jpg" width="419" height="316" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1032293">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1055391">In the View&nbsp;Results dialog box, click </a><span class="bold">Unselect&nbsp;All</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1039074">Collapse the </a><span class="bold">Transaction&nbsp;Analyzer&nbsp;Model</span> hierarchy by clicking on the <span class="bold">–</span>&nbsp;sign.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	7	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1022206">Expand the </a><span class="bold">Custom Application</span> hierarchy, then select the <span class="bold">Application&nbsp;Response&nbsp;Time&nbsp;(sec)</span> statistic.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	8	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1032327">Click </a><span class="bold">Show</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;4-19   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1049162">Response Time for Entire Application for 200 Users</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1049165"><img class="Default" src="images/ace_tut_deploy_app.06.1.27.jpg" width="342" height="270" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1032354">&nbsp;</a></div>
+      <div class="procStepCont"><a name="1055404">Your graph might vary slightly from the figure above, but the trend should be similar.</a></div>
+      <div class="procStepCont"><a name="1026203">The graph shows an average response time of over 15 seconds for 200 users; this is in the same range as the delay experienced by one user. You can verify the average by using the average filter.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	9	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1039086">Save the project and close the Results Browser dialog box.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	10	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1039096">Click on the </a><span class="bold">Hide/Show&nbsp;Graph&nbsp;Panels </span>button to hide the current results.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="1025883">This answers the second question posed in the Overview: the 256&nbsp;Kbps Frame Relay link can support the 200 users in the remote site.</a></div>
+      <div class="procStepCont"><a name="1023615">Now, look at the throughput for a specific link.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	11	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1024167">Right-click on the link between the Cloud and the Remote&nbsp;Router, and then select </a><span class="bold">View&nbsp;Results</span> from the pop-up menu. (If a menu with multiple items displays, choose <span class="bold">Cloud&nbsp;&lt;-&gt;&nbsp;Remote&nbsp;Router</span>, and then select <span class="bold">View&nbsp;Results</span> from the pop-up menu.)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;4-20   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1032399">Select the Remote 256 Kbps Link</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1032402"><img class="Default" src="images/ace_tut_deploy_app.06.1.28.jpg" width="420" height="294" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1032396">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	12	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1055444">Expand the Object Statistics hierarchy until point-to-point is expanded. Then select the two statistics for </a><span class="bold">throughput&nbsp;(bits/sec)</span> and choose <span class="bold">Overlaid&nbsp;Statistics</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	13	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1032539">Click </a><span class="bold">Show</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;4-21   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1049192">Throughput on the WAN Link for 200 Users</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1049195"><img class="Default" src="images/ace_tut_deploy_app.06.1.29.jpg" width="346" height="279" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1032612">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	14	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1055457">This graph shows instantaneous throughput. To see this data as an average, apply the moving average filter.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="1024137">In the Results Browser dialog box, change the filter from </a><span class="bold">As&nbsp;Is</span> to <span class="bold">moving_average</span>.</div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;4-22   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1049207">Apply the moving_average Filter to the Throughput Statistic</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1049210"><img class="Default" src="images/ace_tut_deploy_app.06.1.30.jpg" width="332" height="376" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1032778">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	15	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1055473">In the moving_average parameters box, enter a window value of </a><span class="bold">180</span> seconds.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	16	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1048691">Click </a><span class="bold">Show</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	17	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1032792">Review the throughput displayed as a moving average. Your results may vary slightly.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="1025586">The moving average filter groups data into “buckets” of a specified size (180&nbsp;seconds in this example), calculates the average of all data points in the bucket, and then creates a graph from the average for each bucket. This filter removes the extremes but shows how throughput changes over time.</a></div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;4-23   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1049224">Throughput with moving_average Filter</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1049227"><img class="Default" src="images/ace_tut_deploy_app.06.1.31.jpg" width="319" height="280" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1039108">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	18	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1055490">Save the project and close the Results Browser dialog box.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	19	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1039109">Click on the </a><span class="bold">Hide/Show&nbsp;Graph&nbsp;Panels </span>button to hide the current results.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 4-8</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1055497">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1055501">&nbsp;</a></div>
+      <div class="body"><a name="1025955">This answers the third question posed in the Overview: 200 users consume an average of 30&nbsp;Kbps of the available 256&nbsp;Kbps.</a></div>
+      <div class="body"><a name="1020923">However, this simulation is a simplified and optimistic analysis. In reality, the WAN circuit is already carrying traffic from other applications, and during a typical business day, the 256&nbsp;Kbps WAN link is 80&nbsp;percent utilized. Your analysis of this application rollout should incorporate the existing traffic.</a></div>
+      <div class="h1TopNoBreak"><a name="1020924">Simulate Multiple Users with Existing Traffic</a></div>
+      <div class="body"><a name="1030815">The simplest way to simulate the existing traffic is to apply background utilization traffic to the WAN.</a></div>
+      <div class="body"><a name="1024435">The simulation run in this section can take up to 10&nbsp;minutes to complete, depending on the speed of your computer.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1055945&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1055945", false);</script>Procedure&nbsp;4-9   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="1055945">Simulating Multiple Users with Existing Traffic</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1055945", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1020925">Select </a><span class="bold">Scenario&nbsp;&gt; Duplicate&nbsp;Scenario… </span>Name the new scenario<span class="bold"> 200_Users_w_background_load</span>, and then click<span class="bold"> OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1020927">Set a bidirectional background load of 200&nbsp;Kbps on the </a><span class="bold">Cloud&nbsp;&lt;-&gt; Remote&nbsp;Router </span>link:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1048097">Right-click on the link between the Remote&nbsp;Router and Cloud, and select </a><span class="bold">Edit&nbsp;Attributes</span> from the pop-up menu. (If a menu with multiple items appears, choose <span class="bold">Cloud&nbsp;&lt;-&gt;&nbsp;Remote&nbsp;Router</span>, and then select <span class="bold">Edit&nbsp;Attributes</span> from the pop-up menu.)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionSubStep_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionSubStep_inner" style="width: 57.599999999999994pt; white-space: nowrap;">Figure&nbsp;4-24   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionSubStep_inner"><a name="1032969">Edit&nbsp;Attributes&nbsp;Dialog&nbsp;Box—Detail</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1037960"><img class="Default" src="images/ace_tut_deploy_app.06.1.32.jpg" width="393" height="126" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1032967">&nbsp;</a></div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1055532">Change the </a><span class="bold">Value</span> field of <span class="bold">Traffic&nbsp;Information </span>from <span class="bold">None</span> to <span class="bold">Edit…</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1039131"><img class="Default" src="images/ace_tut_deploy_app.06.1.33.jpg" width="438" height="195" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1020930">&nbsp;</a></div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1055542">Change the value of the </a><span class="bold">Rows</span> field to <span class="bold">1</span> and press <span class="bold">Enter</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1052263"><img class="Default" src="images/ace_tut_deploy_app.06.1.34.jpg" width="444" height="195" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1052230">&nbsp;</a></div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1055552">Change the value of Traffic Class to </a><span class="bold">Background&nbsp;Load</span> and press <span class="bold">Enter</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1052275"><img class="Default" src="images/ace_tut_deploy_app.06.1.35.jpg" width="442" height="195" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1052242">&nbsp;</a></div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1055562">Click on the cell under </a><span class="bold">Cloud&nbsp;-&gt;&nbsp;Remote&nbsp;Router</span> and select <span class="bold">Edit</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1052292"><img class="Default" src="images/ace_tut_deploy_app.06.1.36.jpg" width="440" height="194" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1052309">&nbsp;</a></div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="1055572">The (A -&gt; B) attribute table appears. The table contains attributes for specifying unidirectional traffic on the link.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1052305">Change the Value field of </a><span class="bold">Traffic&nbsp;Load&nbsp;(bps)</span> from <span class="bold">NONE</span> to <span class="bold">Edit…</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1052316"><img class="Default" src="images/ace_tut_deploy_app.06.1.37.jpg" width="333" height="162" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1052221">&nbsp;</a></div>
+      <div class="procStepSubResult_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubResult_inner"><a name="1055585">The Traffic Intensity Attribute Profile window appears. You can use this window to define, view, and edit background load traffic from the Cloud to the Remote Router.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1033017"><img class="Default" src="images/ace_tut_deploy_app.06.1.38.jpg" width="401" height="256" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1033010">&nbsp;</a></div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.7	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1055604">Enter </a><span class="bold">0.0</span> seconds and <span class="bold">200,000</span> bits/second as shown in the following figure:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1039182"><img class="Default" src="images/ace_tut_deploy_app.06.1.39.jpg" width="227" height="138" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1039176">&nbsp;</a></div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.8	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1055614">Click </a><span class="bold">OK</span> to save this background load, which is about 80&nbsp;percent of the 256&nbsp;Kbps link speed.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubResult_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubResult_inner"><a name="1048174">This specifies the background load of 200&nbsp;Kbps background load from the Cloud to the Remote Router.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.9	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1048177">Specify the same 200&nbsp;Kbps load in the opposite direction (that is, from the Remote Router to the Cloud): Repeat Steps </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('tutorials', 'ace_tut_deploy_app.html#1055562', '');" title="Predicting Application Deployment with Transaction Analyzer Models">2.5</a></span> through <span class="HTBlue"><a href="javascript:WWHClickedPopup('tutorials', 'ace_tut_deploy_app.html#1055614', '');" title="Predicting Application Deployment with Transaction Analyzer Models">2.8</a></span> for the background load in the Remote Router -&gt; Cloud direction.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.10	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1048190">Click </a><span class="bold">OK</span> to close the <span class="bold">(Traffic&nbsp;Information)&nbsp;Table</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.11	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1050015">Click </a><span class="bold">OK </span>to close the <span class="bold">Cloud&nbsp;&lt;-&gt;&nbsp;Remote&nbsp;Router&nbsp;Attributes</span> window.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1039225">Click the </a><span class="bold">Configure/Run Simulation</span> toolbar button. In the Configure Discrete Event Simulation dialog box, leave the duration as <span class="bold">0.5&nbsp;</span>hour. Click <span class="bold">Run</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1022491">Close this dialog box after the simulation finishes.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="1022492">These results show how the link utilization impacts the application response time.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1033235">Click the </a><span class="bold">View Results</span> toolbar button.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1033087">Expand the </a><span class="bold">Custom&nbsp;Application&nbsp;hierarchy</span>. Select <span class="bold">Application&nbsp;Response&nbsp;Time&nbsp;(sec)</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;4-25   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1049241">Select the Application Response Time (sec) Statistic</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1049244"><img class="Default" src="images/ace_tut_deploy_app.06.1.40.jpg" width="276" height="269" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1033066">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	7	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1055657">Click </a><span class="bold">Show</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;4-26   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1049331">Response Time for 200 Users on 80% Utilized WAN Link</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1049334"><img class="Default" src="images/ace_tut_deploy_app.06.1.41.jpg" width="362" height="269" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1033170">&nbsp;</a></div>
+      <div class="procStepCont"><a name="1055670">You might see higher or lower spikes, but most response times should be 20–25 seconds.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	8	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1020942">Notice that at certain times, the response time spikes up much higher. What is the link utilization during those periods?</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	9	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1022568">Close the Results Browser dialog box.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	10	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1024434">Right-click on the link between the Remote&nbsp;Router and the Cloud, and then choose </a><span class="bold">View&nbsp;Results</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	11	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1022584">Select both </a><span class="bold">utilization</span> statistics, specify <span class="bold">Overlaid&nbsp;Statistics</span>, and then set the filter to <span class="bold">As&nbsp;Is</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;4-27   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1049256">Select the Utilization Statistics</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1049259"><img class="Default" src="images/ace_tut_deploy_app.06.1.42.jpg" width="501" height="353" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1048468">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	12	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1055686">Click </a><span class="bold">Show</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;4-28   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1049296">Utilization on 256 Kbps Frame Relay Circuit</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1049299"><img class="Default" src="images/ace_tut_deploy_app.06.1.43.jpg" width="464" height="278" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1039280">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	13	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1055700">Click the </a><span class="bold">Hide/Show&nbsp;Graph&nbsp;Panel</span> button to hide the displayed results.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	14	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1039284">Save and close the project.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 4-9</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1055717">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1055721">&nbsp;</a></div>
+      <div class="body"><a name="1033380">Now you can answer the final question: this scenario shows that there will be significant performance problems if this application is deployed to the 200 remote users. When you model the existing 80&nbsp;percent load, response times will vary from over 15&nbsp;seconds, as predicted by the second scenario, to much higher spikes.</a></div>
+      <div class="body"><a name="1024221">The utilization graph shows that these spikes in application response time correspond to periods of link congestion. There are several instances where the WAN link reaches 100&nbsp;percent utilization.</a></div>
+      <div class="body"><a name="1020954">This scenario suggests that the 256&nbsp;Kbps WAN link should be upgraded before deploying this application.</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

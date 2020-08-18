@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:40:17" />
+    <title>Network Evaluation</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="wdmgtut-5-1.html"> Network Evaluation</a> > Failure Analysis</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp927592"> </a><h2 class="pTitle">
+Network Evaluation
+</h2>
+<hr />
+
+ 
+
+
+<a name="wp926588"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Failure Analysis
+</h2>
+
+ 
+
+
+<a name="wp926589"> </a><p class="pBody">
+The Failure Analysis feature allows you to study the impact of equipment failures on the traffic routed in the network by specifying any sequence of equipment failures. SP&#160;Guru&#160;Transport&#160;Planner shows how the traffic reacts to these failures. Depending on the protection schemes applied, part of the traffic can be recovered and part of the traffic can be interrupted.
+</p>
+<a name="wp926590"> </a><p class="pBody">
+The following failures can be simulated:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp926591"> </a><div class="pSmartList1"><li>OTS layer: cable failure and node failure (node fails in all layers)</li></div>
+<a name="wp926592"> </a><div class="pSmartList1"><li>OCH layer: OXC, IXC, OADM, and patch panel failure or complete node failure</li></div>
+<a name="wp926593"> </a><div class="pSmartList1"><li>DCL layer: DXC failure, failing all ADMs, or complete node failure</li></div>
+</ul></div>
+<a name="wp926595"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp926595", false);</script>Procedure&#160;4-1   Performing Failure Analysis<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp926595", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp926595", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp926597"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the WDMGuru_Tutorial_Failure_Analysis project.</li></div>
+<ol type="a">
+<a name="wp926598"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Open...</span>.</li></div>
+<a name="wp926599"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">WDMGuru_Tutorial_Failure_Analysis</span> project, then press <span style="font-weight: bold">Open</span>.</li></div>
+<a name="wp933467"> </a><p class="pIndentedRelative">
+The example project is loaded, containing the scenario <b class="cBold">scenario1</b>.
+</p>
+</ol>
+<a name="wp926600"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the routed traffic matrices.</li></div>
+<ol type="a">
+<a name="wp931931"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Design &gt; Routing Results</span>.</li></div>
+<a name="wp926602"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">DCL </span>layer<span style="font-weight: bold"> </span>and the traffic matrix <b class="cBold">STS-1.</b> The selected traffic matrix has been accommodated in the network (using the ring sizing and grooming algorithm).</li></div>
+<a name="wp926603"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">OCH</span>. The OC-48 traffic matrix deploys 1+1 protection. The OCH_STS-1-1_Grooming traffic matrix is the outcome of the grooming algorithm, applied to the part of the STS-1 matrix that is not accommodated on the rings.</li></div>
+<a name="wp926604"> </a><div class="pprocstepSub"><li>Close the <span style="font-weight: bold">Routing Results</span> dialog box.</li></div>
+</ol>
+<a name="wp926605"> </a><div style="text-align: left" class="pSmartList2Test"><li>Perform failure analysis.</li></div>
+<ol type="a">
+<a name="wp926606"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Info &gt; Failure Analysis</span>.</li></div>
+<a name="wp932759"> </a><p class="pIndentedRelative">
+The <span style="font-weight: bold">Failure Analysis</span> dialog box appears.
+</p>
+<a name="wp932763"> </a><p class="pIndentedRelative">
+Closing the dialog box exits the failure analysis mode.
+</p>
+<a name="wp932807"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>When you are in failure analysis mode, no network design operations can be performed.
+</p>
+<a name="wp926607"> </a><div class="pprocstepSub"><li>Select the OTS layer view using the <span style="font-weight: bold">OTS</span> button on the toolbar.</li></div>
+<a name="wp926608"> </a><div class="pprocstepSub"><li>Right-click on the link between <span style="font-weight: bold">Dallas</span> and <span style="font-weight: bold">Chicago</span>, then select <span style="font-weight: bold">Fail This Cable</span>.</li></div>
+<a name="wp932824"> </a><p class="pIndentedRelative">
+The cable fails (indicated by a red cross).
+</p>
+<a name="wp932828"> </a><p class="pIndentedRelative">
+Note that the cable failure has been added to the <span style="font-weight: bold">Overview of Failures</span> section of the <span style="font-weight: bold">Failure Analysis</span> dialog box.
+</p>
+<a name="wp926609"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-5-1-01.jpg" height="320" width="608" id="wp932318" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp926618"> </a><div class="pprocstepSub"><li>Uncheck <b class="cBold">Generate Web Report</b> and click <span style="font-weight: bold">Evaluate</span> in the <span style="font-weight: bold">Failure Analysis</span> dialog box.</li></div>
+<a name="wp932832"> </a><p class="pIndentedRelative">
+The <span style="font-weight: bold">Overview of Affected Traffic</span> section shows the impact of the cable failure on the traffic accommodated in the network.
+</p>
+<a name="wp932836"> </a><p class="pIndentedRelative">
+In the OCH layer:
+</p>
+<div class="pSmartList3"><ul class="pSmartList3">
+<a name="wp932846"> </a><div class="pSmartList3"><li>52 of the 365 optical channels that were routed are affected (21of these channels can be recovered, 31 are lost)</li></div>
+<a name="wp932852"> </a><div class="pSmartList3"><li>768 STS-1 units are routed in the DCL layer (187 units are affected but all can be recovered by the ring and mesh protection schemes)</li></div>
+<a name="wp932360"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-5-1-02.jpg" height="213" width="472" id="wp932387" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ul></div>
+<a name="wp926624"> </a><div class="pprocstepSub"><li>Use the <span style="font-weight: bold">OCH</span> button on the toolbar to view the OCH layer. The link between <b class="cBold">Dallas</b> and <b class="cBold">Chicago </b>is colored in orange, meaning that this link fails as a consequence of the cable failure in the OTS layer.</li></div>
+</ol>
+<a name="wp926625"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the impact of the cable failure.</li></div>
+<ol type="a">
+<a name="wp926626"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Network &gt; Connection Browser</span> to inspect the impact of the failure on the traffic accommodated in the network.</li></div>
+<a name="wp933283"> </a><p class="pIndentedWarning">
+<span style="font-weight: bold; color: black;">Caution&#8212;</span>Do not close the Failure Analysis dialog box. If you close the dialog box, you will exit the failure analysis mode.
+</p>
+<a name="wp926627"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">OCH </span>radio button under Traffic.</li></div>
+<a name="wp932857"> </a><div class="pprocstepSub"><li>Click on the <span style="font-weight: bold">+</span> sign to inspect the connections of the OC-48 traffic matrix.</li></div>
+<a name="wp932858"> </a><p class="pIndentedRelative">
+The connections are either unaffected (indicated as <span style="font-weight: bold">Yes</span> in the <span style="font-weight: bold">Routed</span> column) or rerouted using a backup path (indicated as <span style="font-weight: bold">Recovered</span>).
+</p>
+<a name="wp932862"> </a><p class="pIndentedRelative">
+Note that all connections affected by the cable failure can be recovered due to the 1+1 protection scheme deployed.
+</p>
+<a name="wp926628"> </a><p class="pIndentedRelative">
+For example, check the connection between Boston and Dallas. The working path (Boston &#8211;&gt; Detroit &#8211;&gt; Chicago &#8211;&gt; Dallas) is affected by the failing cable Dallas &lt;-&gt; Chicago. Therefore, the connection is recovered using its protecting path (Boston &#8211;&gt; New York &#8211;&gt; Washington &#8211;&gt; Atlanta -&gt; Dallas). This backup path is not affected by the failure. It is inherent to the 1+1 protection scheme that all connections affected by a single link failure can be recovered.
+</p>
+<a name="wp933290"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>The optical channels that were reported as failed in <a href="javascript:WWHClickedPopup('wdmg_tut', 'wdmgtut-5-1.html#wp926618');" onMouseOver="WWHShowPopup('wdmg_tut', 'wdmgtut-5-1.html#wp926618', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">step&#160;3.4</u></a> were not part of this OC-48 matrix, but were OCH connections that supported DCL traffic (from grooming) or DCL rings.
+</p>
+<a name="wp932409"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-5-1-03.jpg" height="376" width="548" id="wp932420" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp926636"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">DCL</span> in the connection browser.</li></div>
+<a name="wp932876"> </a><div class="pprocstepSub"><li>Use the <span style="font-weight: bold">+</span> icon to expand the STS-1 traffic matrix. Note that all its affected connections can be recovered using their back-up path.</li></div>
+<a name="wp926637"> </a><div class="pprocstepSub"><li>Close the connection browser (do not close the <span style="font-weight: bold">Failure Analysis</span> dialog box).</li></div>
+</ol>
+<a name="wp926639"> </a><div style="text-align: left" class="pSmartList2Test"><li>Continue failure analysis.</li></div>
+<ol type="a">
+<a name="wp926640"> </a><div class="pprocstepSub"><li>Use the <span style="font-weight: bold">OCH</span> button on the toolbar to view the OCH layer.</li></div>
+<a name="wp926641"> </a><div class="pprocstepSub"><li>Right-click on the node <span style="font-weight: bold">Washington</span>, then select <span style="font-weight: bold">Fail This Node</span>.</li></div>
+<a name="wp932884"> </a><p class="pIndentedRelative">
+Both the OXC and the patch panel fail in this location.
+</p>
+<a name="wp932440"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-5-1-04.jpg" height="239" width="472" id="wp932447" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp926650"> </a><div class="pprocstepSub"><li>In the <span style="font-weight: bold">Failure Analysis</span> dialog box, check <b class="cBold">Generate Web Report</b> and then click <b class="cBold">Evaluate</b>.</li></div>
+<a name="wp934046"> </a><p class="pIndentedRelative">
+If the Generate Web Report option is selected, the web browser launches automatically and shows a failure analysis report. This report contains information about the affected and recovered traffic for the current network simulation.
+</p>
+<a name="wp932888"> </a><p class="pIndentedRelative">
+In the OCH layer 102 traffic units are affected now, of which only 12 units are recoverable. Traffic is also disrupted in the DCL layer.
+</p>
+</ol>
+<a name="wp926651"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the impact of the equipment failures.</li></div>
+<ol type="a">
+<a name="wp926652"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Network &gt; Connection Browser</span> to inspect the impact of the failures on the traffic accommodated in the network.</li></div>
+<a name="wp933314"> </a><p class="pIndentedWarning">
+<span style="font-weight: bold; color: black;">Caution&#8212;</span>Do not close the Failure Analysis dialog box. If you close the dialog box, you will exit the failure analysis mode.
+</p>
+<a name="wp926653"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">OCH</span>.</li></div>
+<a name="wp932903"> </a><div class="pprocstepSub"><li>Click on the <span style="font-weight: bold">+</span> sign to inspect the connections of the OC-48 traffic matrix.</li></div>
+<a name="wp932904"> </a><p class="pIndentedRelative">
+Some affected connections are not recovered (indicated by <span style="font-weight: bold">Lost</span> in the <span style="font-weight: bold">Routed</span> column). This is due to the two failures in the network. Note that a node failure results in losing all connections entering the network in that node, while transit connections could be recovered. So, each connection entering the network in Washington is lost, while the connection Atlanta &lt;-&gt; Boston, for example, is recovered.
+</p>
+<a name="wp932457"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-5-1-05.jpg" height="390" width="555" id="wp932464" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp926662"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">DCL</span> in the connection browser. Inspect the <span style="font-weight: bold">STS-1</span> traffic matrix. Some of its connections are also lost.</li></div>
+<a name="wp926663"> </a><div class="pprocstepSub"><li>Close the connection browser (do not close the <span style="font-weight: bold">Failure Analysis</span> dialog box).</li></div>
+</ol>
+<a name="wp926664"> </a><div style="text-align: left" class="pSmartList2Test"><li>Repair the cable failure.</li></div>
+<ol type="a">
+<a name="wp926665"> </a><div class="pprocstepSub"><li>Use the <span style="font-weight: bold">OTS</span> button on the toolbar to view the OTS layer.</li></div>
+<a name="wp926666"> </a><div class="pprocstepSub"><li>Right-click on the failing cable between <span style="font-weight: bold">Dallas</span> and <span style="font-weight: bold">Chicago</span>, then select <span style="font-weight: bold">Repair This Cable</span>.</li></div>
+<a name="wp932920"> </a><p class="pIndentedRelative">
+This removes the cable failure. The red cross on the link is removed and the failure no longer appears in the <span style="font-weight: bold">Overview of Failures</span> section in the <span style="font-weight: bold">Failure Analysis</span> dialog box.
+</p>
+<a name="wp926667"> </a><div class="pprocstepSub"><li>In the <b class="cBold">Failure Analysis</b> dialog box, uncheck <b class="cBold">Generate Web Report</b> and click <span style="font-weight: bold">Evaluate</span>.</li></div>
+<a name="wp932926"> </a><p class="pIndentedRelative">
+In the OCH layer, 90 optical channels are affected, 34 optical channels are disrupted. Also, traffic is lost in the DCL layer.
+</p>
+<a name="wp926671"> </a><div class="pprocstepSub"><li>Compare this result with the result in <a href="javascript:WWHClickedPopup('wdmg_tut', 'wdmgtut-5-1.html#wp926605');" onMouseOver="WWHShowPopup('wdmg_tut', 'wdmgtut-5-1.html#wp926605', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">step&#160;3</u></a> of this procedure. The single node failure <span style="font-weight: bold">Washington</span> has a more severe impact on the traffic accommodated in the network than the single cable failure <span style="font-weight: bold">Dallas &lt;-&gt; Chicago</span>. Note that the 1+1 protection scheme cannot recover traffic towards a failing node.</li></div>
+<a name="wp932490"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-5-1-06.jpg" height="210" width="470" id="wp932499" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp926677"> </a><div class="pprocstepSub"><li>Close the <span style="font-weight: bold">Failure Analysis</span> dialog box.</li></div>
+<a name="wp932945"> </a><p class="pIndentedRelative">
+This clears all user-defined failures and ends the failure analysis.
+</p>
+</ol>
+<a name="wp933512"> </a><div style="text-align: left" class="pSmartList2Test"><li>Generate a failure analysis report</li></div>
+<ol type="a">
+<a name="wp933513"> </a><div class="pprocstepSub"><li>Go to <b class="cBold">Info &gt;</b> <b style="font-weight: bold" class="cBold">Export to Web Report &gt; Failure Analysis Report</b><span style="font-weight: bold">...</span>. </li></div>
+<a name="wp933556"> </a><p class="pIndentedRelative">
+The <b class="cBold">Generate Failure Analysis Report</b> dialog box allows you to define the options to create a failure analysis web report.
+</p>
+<a name="wp934080"> </a><p class="pIndentedRelative">
+Keep in mind that this web report shows information about different network scenarios, while the report generated during a failure analysis operation (see step <a href="javascript:WWHClickedPopup('wdmg_tut', 'wdmgtut-5-1.html#wp926650');" onMouseOver="WWHShowPopup('wdmg_tut', 'wdmgtut-5-1.html#wp926650', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">5.3</u></a>) shows information about the current scenario only. 
+</p>
+<a name="wp933547"> </a><div class="pprocstepSub"><li>Check <b class="cBold">Cables </b>(Elements To Fail). </li></div>
+<a name="wp933563"> </a><p class="pIndentedRelative">
+This means that only cable failures are simulated for the web report.
+</p>
+<a name="wp933515"> </a><div class="pprocstepSub"><li>Check<b class="cBold"> Single </b>(Element Failure Combination), implying only single (cable) failures are simulated.</li></div>
+<a name="wp933516"> </a><div class="pprocstepSub"><li>Press <b class="cBold">OK</b> to generate the failure analysis report. </li></div>
+<a name="wp933590"> </a><p class="pIndentedRelative">
+The web report is automatically opened.
+</p>
+<a name="wp933517"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Overview</b> in the Failure Analysis Report file. </li></div>
+<a name="wp933582"> </a><p class="pIndentedRelative">
+This section gives an overview of the total, affected, recovered and lost traffic per layer and per failure scenario.
+</p>
+<a name="wp926678"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-5-1-07.jpg" height="204" width="530" id="wp933603" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp933616"> </a><div class="pprocstepSub"><li>Verify the cable failure <b class="cBold">Dallas &lt;-&gt; Chicago</b> in the <b class="cBold">Overview traffic per failure scenario </b>table. 52 of the 365 optical channels are affected by this cable failure, of which 21 channels can be recovered. </li></div>
+<a name="wp933651"> </a><p class="pIndentedRelative">
+In the DCL layer, 187 of the 768 STS-1 units are affected, but all of them can be recovered. Note that these results are the same as obtained in step <a href="javascript:WWHClickedPopup('wdmg_tut', 'wdmgtut-5-1.html#wp926605');" onMouseOver="WWHShowPopup('wdmg_tut', 'wdmgtut-5-1.html#wp926605', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">3</u></a>.
+</p>
+<a name="wp933635"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Cable Dallas &lt;-&gt; Chicago </b>at the left side of the report. </li></div>
+<a name="wp933647"> </a><p class="pIndentedRelative">
+More details about the impact of this cable failure on the network traffic are displayed. Verify the traffic matrix <b class="cBold">OC-48</b>. Note that all affected connections of this traffic matrix can be recovered. For example, the connection <b class="cBold">Boston &lt;-&gt; Dallas </b>is recovered along the following path: BOSTON -&gt; NEW_YORK -&gt; WASHINGTON -&gt; ATLANTA -&gt; DALLAS. Verify that the same result was obtained in step <a href="javascript:WWHClickedPopup('wdmg_tut', 'wdmgtut-5-1.html#wp926625');" onMouseOver="WWHShowPopup('wdmg_tut', 'wdmgtut-5-1.html#wp926625', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">4</u></a>.
+</p>
+<a name="wp933614"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-5-1-08.jpg" height="89" width="525" id="wp933658" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp933675"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Failure Analysis Report </b>file.</li></div>
+<a name="wp933676"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Generate Failure Analysis Report</b> dialog box.</li></div>
+</ol>
+<a name="wp933673"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the project</li></div>
+<ol type="a">
+<a name="wp926679"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Close</span>.</li></div>
+<a name="wp926680"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Don&#39;t Save</span> in the <span style="font-weight: bold">Close Confirm</span> dialog box.</li></div>
+</ol>
+</ol></div>
+<a name="wp932151"> </a><p class="pProcEnd">
+End of Procedure 4-1
+</p>
+
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/wdmg_tut_4.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

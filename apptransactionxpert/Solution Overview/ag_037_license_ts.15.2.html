@@ -1,0 +1,1017 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Common Licensing Problems and Solutions</title>
+    <link rel="StyleSheet" href="css/ag_037_license_ts.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ag_037_license_ts.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">Solution Overview &gt; <a class="WebWorks_Breadcrumb_Link" href="ag_splash.html#471084">License and Installation Support</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ag_037_licensing_overview.09.1.html#471084">Licensing</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ag_037_license_ts.15.1.html#471084">Troubleshooting Licenses</a> &gt; Common Licensing Problems and Solutions</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h2"><a name="471084">Common Licensing Problems and Solutions</a></div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="471040">Some solutions contained in this section assume that you have access to the License Manager GUI. If you are using VNE&nbsp;Server or AppInternals&nbsp;Xpert, you may have access to the License Manager GUI through another OPNET application. The GUI is the preferred method for managing and troubleshooting licenses, where available.</a></div>
+      <div class="hSideHeadLineAbove"><a name="369134">Cannot Find License Server You Want to Use</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="369135">If you cannot see the license server you want in the license treeview, you can add it to your </a><span class="code">license_managed_servers</span> preference. After editing the preference, click on File&nbsp;&gt; Refresh&nbsp;Server&nbsp;Information in the License Manager.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="369136">If the above method is problematic, you can also set the default license server by directly changing the</a><span class="code"> license_server</span> preference to the hostname or IP address of the computer that has the licenses you want to use.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="369137">For non-enterprise licensing, the license server you choose must be in the same classful IP network as the computer on which you are running OPNET&nbsp;analysis&nbsp;software.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="hSideHeadLineAbove"><a name="369141">License Not Obtained</a></div>
+      <div class="bodyIntro"><a name="369142">If you see a dialog box telling you that a license was not obtained, consider the following possible solutions for each type of problem. The type of problem is described in the “What Happened?” section of the dialog box.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="369143">There was no response from the license server</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369144">Are </a><span class="code">license_server </span>and<span class="code"> license_port</span> set to the correct value, and are they spelled correctly? Use the “hostname” command to determine the exact spelling and capitalization.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369145">Is the specified license server running?</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369146">Can the client ping the server? Can the server ping the client? This applies even if the server is the client. TCP/IP must be installed and running, even in standalone mode.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369150">Is the license server an older release of OPNET&nbsp;analysis&nbsp;software? Run the latest release of the License Server.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369151">Rarely this may be accompanied by errors saying the op_models directory does not exist. It could be the case that changes to the preferences cannot be stored because OPNET&nbsp;analysis&nbsp;software cannot write to the home directory. This can be due to permissions or because the directory does not exist.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="369155">There are no licenses in the server’s license file.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369156">Set the</a><span class="code"> license_server</span> preference to a host with available licenses.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369157">Use the Add Licenses button in the License Manager to add licenses to the server's license file.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="369158">The license server did not grant your request for licenses.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369159">You may be running a License Server that is too old for your licenses. In that case upgrade to the latest available License Server. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369160">Set the </a><span class="code">license_server</span> preference to a computer with available licenses. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369161">Use the Add Licenses button in the License Manager to add licenses to the server's license file.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369162">Deselect any product modules that are not in use.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="369163">The only available license has expired or The only available license’s maintenance has expired.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369164">Perform the Change Maintenance Expiration operation if the current authorized maintenance date is not reflected in the license file. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369165">Perform the Change License Expiration operation if the current authorized expiration date is not reflected in the license file.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369166">Be sure to use Select Product Modules to deselect product modules that are unavailable. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369167">In rare instances you may need to perform the Update System Date operation, if License Server date is too far in the future.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="369168">The requested license was found in the license server’s license file but it is in use.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369169">The most common cause of this message is that the license is in use by another user. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369173">If OPNET&nbsp;analysis&nbsp;software exited ungracefully, select the license in the License Manager, then click on the Revoke License button to revoke the permits that are erroneously listed as “in use”. (OPNET&nbsp;analysis&nbsp;software will automatically recover from this situation after no more than one hour without intervention).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="369180">VNE&nbsp;Server licenses are not recovered in the one hour time period. A license may not be automatically revoked for several days.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="369181">The license server is a “standalone” license server. A standalone license server cannot issue licenses to other applications.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369182">An obvious remedy is to make sure you are selecting a License Server that is not in standalone mode.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369183">If you are certain you have selected the correct default server, switch the License Server to server mode. Stop the license server and (re)install the latest software patch level (on the server machine). During the installation, choose Floating: Serve licenses from this computer.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="369184">Your machine’s IP network address is different from the IP network address of the license server.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369185">You must use a License Server on your local IP network. Check to be sure you are using a License Server on your local IP network.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369186">This error can also occur if the computer running the License Server received a new IP address after the License Server was started. The solution is to restart the License Server by stopping it, then starting it again in the License Manager.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="369187">The license server cannot write to its license file. A license server cannot give licenses unless it can write to its license file.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369188">Make sure the owner of the License Server process/daemon has permissions to write to the license file.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="369189">The license server cannot lock its license file. A license server cannot give licenses unless it can lock its license file.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369190">Make sure the owner of the License Server process/daemon has permissions to create/delete files and directories in the </a><span class="code">OPNET_license</span> directory. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369191">Make sure enough disk space is available to create a small file or directory in the </a><span class="code">OPNET_license</span> directory.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="369192">A standalone License Server has the same permissions as the user logged in, while a License Server running in server mode typically has root or Administrator privileges.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="369193">The license server’s license file is invalid. A license server cannot give licenses from an invalid file.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369194">Make sure you are running the latest version of License Server. If you are not running the latest version of License Server, you may encounter problems when adding, deregistering, or obtaining licenses.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369198">If you receive this error, refer to </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.08.html#376972', '');" title="License File Operations with the License Manager GUI">Validate License File (Button)</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="369199">A license server’s license file does not exist. A license server cannot give out licenses without a license file.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369200">The license file may have been deleted, or the license server does not have permissions to create a new license file upon startup. If the license server should have a license file, check to see if it was deleted. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369201">Otherwise, select a different license server.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369205">If necessary, refer to </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.07.html#379397', '');" title="License Server Operations within License Manager GUI">Create License File (Button)</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="369206">Your username/hostname is not authorized to obtain licenses from the license server.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369207">The user account or computer from which you are trying to access the license server is not authorized in the </a><span class="code">user_auth</span> file. Check the <span class="code">user_auth</span> file on the computer where the license server is running.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369211">For more information, refer to </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_admin.14.2.html#470148', '');" title="Restricting License Users">Restricting License Users</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSubLast_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSubLast_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSubLast_inner"><a name="369212">Try to login from an authorized account or computer.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="hSideHeadLineAbove"><a name="369213">No licenses in file</a></div>
+      <div class="body"><a name="369214">If there are no licenses in your license file, you may need to sign your Electronic Licensing Agreement (ELA). To do this</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="369218">Point your browser to the OPNET Support Center </a><span class="HTBlue"><a href="http://www.opnet.com/support" target="external_window">http://www.opnet.com/support</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="369220">Click on the License Registration link. When prompted, log in with your OPNET username and password. The License Registration page appears.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="369227">Click on the View Electronic License Agreements link. The OPNET License Agreement Review page appears in a separate browser window.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	4)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="369228">Find the agreement that you are interested in signing. On the left side of this agreement, click on the Sign link.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	5)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="369229">Read the license agreement, then click on the Continue button at the bottom of the page.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	6)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="369230">The next page asks if you are authorized by your organization to sign the license agreement. Read the page, and if you agree, click the I Agree button.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumLast_inner" style="width: 21.6pt; white-space: nowrap;">	7)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumLast_inner"><a name="369231">The next page is the actual acceptance of the legal agreement. Read the page, and if you agree, click on the I Agree button.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="369232">Each set of licenses has two agreements: Usage and Maintenance. You need to sign both agreements before your licenses are available for use.</a></div>
+      <div class="hSideHeadLineAbove"><a name="369233">Error: A "SERVERS" license is required to use the "server_definer" process model</a></div>
+      <div class="body"><a name="369234">The SERVERS license, also called Server Specialized Model (SSM) is used for studying advanced server characteristics, such as the effect of disk access time, CPU usage, and other detailed aspects of server usage.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="369235">If you intended to use this feature, but don’t have access to a server license, contact info@opnet.com or your OPNET sales account manager.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="369236">If you did NOT intend to use this feature, you can fix the problem by</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="369237">making sure that the "Server: Modeling Method" on all nodes is set to "Simple CPU", and</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSubLast_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSubLast_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSubLast_inner"><a name="369238">removing any "Server Definition" utility nodes from the network</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyIntro"><a name="369239">You may see a similar error for other specialized models, including those in the following table:</a></div>
+      <div class="tblAnchor"><a name="369292">&nbsp;</a></div>
+      <table class="tableNarrow" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="">
+              <tr style="vertical-align: baseline;">
+                <td>
+                  <div class="tblCaption_inner" style="width: 61.2pt; white-space: nowrap;">Table&nbsp;3-10   </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="369245">Specialized Models&nbsp;</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 164.50632pt">
+            <div class="tblHead"><a name="369249">Model</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 215.44488pt">
+            <div class="tblHead"><a name="369251">License</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="369253">Server</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="369255">SERVERS</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="369261">GPRS</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="369263">GPRS</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="369265">PNNI</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="369267">PNNI</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="369269">UMTS</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="369271">UMTS</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="369277">IPv6</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="369279">IPV6</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="369281">MPLS</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="369283">MPLS</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="369285">Mainframe</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="369287">MFRAME</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="hSideHeadLineAbove"><a name="369293">Error: License Server's IP Address Does Not Match the IP Address of Co-Located Workstation</a></div>
+      <div class="body"><a name="369294">When you install a license server on your computer, the license is manipulated by a system service: </a><span class="code">op_license_server</span>. If your computer's IP address changes (due to a dial-up or VPN connection, for example) between the time the License Server started and the time OPNET&nbsp;analysis&nbsp;software is launched, the License Server process does not pick up the change. Restarting the license server will refresh its awareness of its IP address.</div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="369298">- Run the License Manager</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="369299">- Choose the local license server process (green dot) from the server treeview</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="369300">- Click the Stop Server button. After a moment, the license server stops.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumLast_inner" style="width: 21.6pt; white-space: nowrap;">	4)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumLast_inner"><a name="369301">- Click the Start Server button. After a moment, the license server starts.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="hSideHeadLineAbove"><a name="369302">Error: Bad checksum [error -16111]</a></div>
+      <div class="body"><a name="369303">The "bad checksum" error during license registration usually indicates one of two things:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="369304">The Transaction Code was mistyped. Make sure that the complete Transaction Code was entered and that it doesn't have extra spaces or characters.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="369305">The hostname was mistyped. Make sure you used the correct capitalization--this field is case-sensitive. Also check for extra spaces or characters.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="hSideHeadLineAbove"><a name="369306">Entries in License Server Authorization Files Do Not Work</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="369307">Make sure your license authorization files contain the correct format. A '+' may replace either or both fields to indicate that you want to allow all.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont" style="color: #000000; font-family: Courier; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="code"><a name="369308">   hostname username</a></span></div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="369309">After making any necessary changes to the authorization files, use the License Manager menu item Tools&nbsp;&gt;&nbsp;Refresh Server Authorization Files, so the License Server uses the latest changes.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="hSideHeadLineAbove"><a name="369310">When Entering Approval Code on the Web, Receive Error: "Multiple Decryption Choices"</a></div>
+      <div class="body"><a name="369311">This message is most common with older releases of OPNET&nbsp;analysis&nbsp;software. Older versions of the licensing system generated Transaction Codes that were less specific than they are now. Therefore, many times a Transaction Code made from either version could be confused with transaction codes from the other. That is what is meant by “Multiple Decryption Choices.” To avoid this problem</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="369315">If you are using the Express method, simply try the operation again.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="369316">If you are using the Browser method to perform a license operation, discard the Transaction Code that caused this error message, and try again with a new Transaction Code.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="hSideHeadLineAbove"><a name="369317">Lost Confirmation Code during Registration</a></div>
+      <div class="body"><a name="369318">If you lost your Confirmation Code during a registration, you may see the error, “This license has a pending registration”. Confirmation codes are stored in the session log of the machine running the License Server.</a></div>
+      <div class="body"><a name="369319">You can view the session log by choosing Help&nbsp;&gt;&nbsp;Session Log&nbsp;&gt;&nbsp;Open.</a></div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="369320">Confirmation codes are not necessary with the Express method of license registration.</a></div>
+      <div class="hSideHead"><a name="369321">Potential Server or DNS Configuration Error</a></div>
+      <div class="bodyIntro"><a name="369322">If you receive an error similar to this, there is usually not a true problem:</a></div>
+      <div class="codeColumn"><a name="369323">&lt;&lt;&lt; Diagnostic Error &gt;&gt;&gt;<br />* Package: Vos (Virtual Operating System)<br />* Function: Vos_Sec_Fl_Dmn_Versioned_Ping<br />* Error: Potential server or DNS configuration error:<br />License server (X) returned (Y) as its host name.</a></div>
+      <div class="body"><a name="369324">This means that your preference settings for the License Server differ from what the server reports. This can happen when the server has multiple hostnames or interfaces. </a></div>
+      <div class="bodyIntro"><a name="369325">To prevent the message</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="369326">Refer to the server in your preferences by the correct hostname or IP address.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="369327">Suppress this and other diagnostic error messages by setting the </a><span class="code">diag_enable</span> preference to FALSE.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

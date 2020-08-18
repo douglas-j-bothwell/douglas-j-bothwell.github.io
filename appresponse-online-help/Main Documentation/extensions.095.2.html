@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Creating an Insight Extension and Local Script</title>
+    <link rel="StyleSheet" href="css/extensions.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_idk_guide_splash.html">Insight Development Kit (IDK)</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="extensions.095.1.html">Insight Extensions and Scripts</a> &gt; Creating an Insight Extension and Local Script</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="999029">Creating an Insight Extension and Local Script</a></div>
+      <div class="body"><a name="999030">In general, Insight Extensions are deployed to an Appliance using a signed jar. At this time, all jars need to be signed by Riverbed. However, an SE or partner that has root access to an appliance can develop an Insight Extension by placing it directly on the box and editing it directly on the appliance. All Insight Extensions must be located in the following directory:</a></div>
+      <div class="body"><a name="999031">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/u1/cliext/insights/[ExtensionName]</a></div>
+      <div class="body"><a name="999032">where ExtensionName is the name of the extension. This name how the Extension is referred to in the Insight. In this directory you must place an executable file with the name run. This executable can then call other scripts and resources in the directory and on the appliance.</a></div>
+      <div class="body"><a name="999033">Local Scripts are placed on the user's hard drive and are referred to using the full path to the script on the native operating system. On a windows box scripts are often put into .bat files. An example:</a></div>
+      <div class="body"><a name="999034">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C:\Guides\InsightCommunity\Scripts\ping.bat</a></div>
+      <div class="body"><a name="999027">On a Windows box wherever a Script can be entered it is also valid to enter a DOS command.</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          // Add related topics
+          //
+          WWHAddRelatedTopic("Insight Extensions and Scripts", "main_doc", "extensions.095.1.html");
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

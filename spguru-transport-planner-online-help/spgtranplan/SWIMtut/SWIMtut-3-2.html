@@ -1,0 +1,422 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:41:55" />
+    <title>Instructions</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="SWIMtut-3-1.html"> Defining a Multi-Layer IP-Over-WDM Network</a> > Instructions</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp932804"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Instructions
+</h2>
+
+ 
+
+
+<a name="wp947393"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp947393", false);</script>Procedure&#160;2-1   Defining the Integrated SP&#160;Guru&#160;Network&#160;Planner / SP&#160;Guru&#160;Transport&#160;Planner Project<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp947393", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp947393", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp948060"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the <b class="cBold">SWIM_Tutorial_Basics </b>project in SP&#160;Guru&#160;Network&#160;Planner.</li></div>
+<ol type="a">
+<a name="wp932807"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File&#160;&gt; Open</span>.</li></div>
+<a name="wp932808"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">SWIM_Tutorial_Basics</span> project. Click <span style="font-weight: bold">Open</span>. Note that the current scenario is named <b class="cBold">bare</b>. The IP network is represented in SP&#160;Guru&#160;Network&#160;Planner.</li></div>
+</ol>
+<a name="wp932809"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the underlying transport network in SP&#160;Guru&#160;Transport&#160;Planner.</li></div>
+<ol type="a">
+<a name="wp932810"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold">&#160;&gt; Switch To Corresponding Transport Network </span>or click the<br />
+<img src="images/SWIMtut-3-2-01.jpg" height="31" width="29" align="right" id="wp933104" border="0" hspace="0" vspace="-2"/><br />
+ toolbar button. The transport network appears in SP&#160;Guru&#160;Transport&#160;Planner. </li></div>
+<a name="wp932811"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Network&#160;&gt; Connection Browser</span>. This dialog box shows the traffic accommodated in the network on a per-layer basis. There is one traffic matrix, <b class="cBold">Voice</b>, accommodated by the DCL layer.<b class="cBold"> </b>The OCH layer contains<b class="cBold"> Optical_Leased_Lines</b> and<b class="cBold"> OCH_Voice_Grooming</b>. <b class="cBold">OCH_Voice_Grooming </b>does not represent any user traffic; it represents the optical traffic that supports the groomed DCL traffic.</li></div>
+<a name="wp932812"> </a><div class="pprocstepSub"><li>Close the Connection Browser.</li></div>
+</ol>
+<a name="wp932813"> </a><div style="text-align: left" class="pSmartList2Test"><li>Switch to the Layer-2/3 network: select SWIM<span style="font-weight: bold"> &gt; Switch To Corresponding Layer-2/3 Network </span>or click the<br />
+<img src="images/SWIMtut-3-2-02.jpg" height="31" width="29" align="right" id="wp933139" border="0" hspace="0" vspace="-2"/><br />
+ toolbar button.</li></div>
+<a name="wp932815"> </a><div style="text-align: left" class="pSmartList2Test"><li>Currently, the IP network is represented in SP&#160;Guru&#160;Network&#160;Planner and the transport network is represented in SP&#160;Guru&#160;Transport&#160;Planner. There is no relationship between the two networks yet. To create a relationship, start by defining associations between the nodes. Layer-2/3 nodes are associated with Transport nodes. This means that the IP router (in SP&#160;Guru&#160;Network&#160;Planner) is interconnected to the corresponding cross-connect (in SP&#160;Guru&#160;Transport&#160;Planner) to access the transport network.</li></div>
+<ol type="a">
+<a name="wp932816"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold">&#160;&gt; Node/Link&#160;Mapping &gt; Map&#160;Nodes...</span> to map the Layer-2/3 nodes to the corresponding Transport nodes.</li></div>
+<a name="wp932817"> </a><div class="pprocstepSub"><li>Select node <span style="font-weight: bold">Barcelona</span> in the left pane. Note that Barcelona is automatically selected in the right pane.</li></div>
+<a name="wp932818"> </a><div class="pprocstepSub"><li>Click on the <b class="cBold">&gt;&gt; </b>button. The association is made between node Barcelona in SP&#160;Guru&#160;Network&#160;Planner and its counterpart in SP&#160;Guru&#160;Transport&#160;Planner.</li></div>
+<a name="wp932819"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">top</span> subnet in the left pane.</li></div>
+<a name="wp933430"> </a><div class="pprocstepSub"><li>Click the <span style="font-weight: bold">Auto &gt;&gt;</span> button. This maps all selected Layer-2/3 nodes to their namesakes in SP&#160;Guru&#160;Transport&#160;Planner. This only works when the names of the corresponding nodes in SP&#160;Guru&#160;Network&#160;Planner and SP&#160;Guru&#160;Transport&#160;Planner match exactly.</li></div>
+<a name="wp932821"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Ghent</span> and <span style="font-weight: bold">Brussels</span> (while holding the <span style="font-weight: bold">Ctrl</span> key) in the left pane.</li></div>
+<a name="wp932822"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Belgium</span> in the right pane. Make sure no other item in the pane is selected.</li></div>
+<a name="wp932823"> </a><div class="pprocstepSub"><li>Click the <span style="font-weight: bold">&gt;&gt;</span> button to relate both Layer-2/3 nodes to the one Transport node.</li></div>
+<a name="wp932824"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>The Layer-2/3 node <b class="cBold">Padova</b> does not yet have a Transport counterpart. We will create a new Transport node for this node.
+</p>
+<a name="wp932825"> </a><div class="pprocstepSub"><li>Select the node <span style="font-weight: bold">Padova</span> in the left pane. Note that the <span style="font-weight: bold">New... 1 to 1</span> entry is selected in the right pane.</li></div>
+<a name="wp932826"> </a><div class="pprocstepSub"><li>Click the <span style="font-weight: bold">&gt;&gt;</span> button. The <span style="font-weight: bold">SWIM &#8211; Map To New Transport Node</span> dialog box appears.</li></div>
+<a name="wp934736"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">ECC</span> as node type and <span style="font-weight: bold">Padova</span> as name. Click <span style="font-weight: bold">OK</span>.</li></div>
+<a name="wp932827"> </a><div class="pprocstepSub"><li>Verify that only the <b class="cBold">Office_XXX</b> nodes are left unmapped, and click <span style="font-weight: bold">OK</span> to save the node mappings.</li></div>
+</ol>
+<a name="wp932828"> </a><div style="text-align: left" class="pSmartList2Test"><li>Check the node mappings in the network.</li></div>
+<ol type="a">
+<a name="wp932829"> </a><div class="pprocstepSub"><li>Select all nodes in the Layer-2/3 network.</li></div>
+<a name="wp932830"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold">&#160;&gt; Switch To Corresponding Transport Network</span>. Note that all corresponding nodes in the Transport network are selected. Also note the newly created ECC node <span style="font-weight: bold">Padova</span>.</li></div>
+</ol>
+<a name="wp932831"> </a><div style="text-align: left" class="pSmartList2Test"><li>Create links in SP&#160;Guru&#160;Transport&#160;Planner.</li></div>
+<ol type="a">
+<a name="wp932832"> </a><div class="pprocstepSub"><li>Open the object palette by clicking the toolbar button <br />
+<img src="images/SWIMtut-3-2-03.jpg" height="28" width="28" align="right" id="wp933552" border="0" hspace="0" vspace="-2"/><br />
+(or by selecting <span style="font-weight: bold">Edit &gt; Open Object Palette</span>.</li></div>
+<a name="wp932833"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">wdm_link_ots</span> icon and create a link between <span style="font-weight: bold">Padova</span> and <span style="font-weight: bold">Munchen</span> by clicking on both nodes. Similarly, create a link between <span style="font-weight: bold">Padova</span> and <span style="font-weight: bold">Rome</span>. Right-click (or click the <b class="cBold">Esc</b> key) to stop adding links.</li></div>
+<a name="wp933698"> </a><p class="pFigCaption">
+Figure&#160;2-1   wdmguru Object Palette
+</p>
+<a name="wp933702"> </a><p class="pBodyRelative">
+<br />
+<img src="images/SWIMtut-3-2-04.jpg" height="120" width="494" id="wp933705" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932835"> </a><div class="pprocstepSub"><li>Close the object palette.</li></div>
+</ol>
+<a name="wp935141"> </a><div style="text-align: left" class="pSmartList2Test"><li>Define the concatenated bit rate STS-3-7c in SP&#160;Guru&#160;Transport&#160;Planner as a concatenation of seven STS-3 connections. This bit rate will be used to support the Gigabit Ethernet links in <a href="javascript:WWHClickedPopup('swim_tut', 'SWIMtut-3-2.html#wp932841');" onMouseOver="WWHShowPopup('swim_tut', 'SWIMtut-3-2.html#wp932841', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">step&#160;9</u></a>.</li></div>
+<ol type="a">
+<a name="wp935145"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Network&#160;&gt; Custom Bit Rates...</span> This dialog box lets you define new bit rates.</li></div>
+<a name="wp932838"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">Add Bit Rate</span> in the DCL layer section. This creates a new bit rate for the SONET traffic. Fill in <span style="font-weight: bold">STS-3-7c</span> as name for the new bit rate. Note that <span style="font-weight: bold">STS-3</span> will automatically appear as <b class="cBold">Base Bit Rate</b> and <span style="font-weight: bold">7</span> as <b class="cBold">Concatenation Count</b>. Click <span style="font-weight: bold">OK</span>.</li></div>
+</ol>
+<a name="wp932839"> </a><div style="text-align: left" class="pSmartList2Test"><li>Switch to the Layer-2/3 network: select SWIM<span style="font-weight: bold">&#160;&gt; Switch&#160;To&#160;Corresponding&#160;Layer-2/3&#160;Network</span>.</li></div>
+<a name="wp932841"> </a><div style="text-align: left" class="pSmartList2Test"><li>Verify the default settings for the link mapping. These default settings define how the IP links are translated to the transport network. Each IP link is translated to a connection to be routed in the transport network. The default link mapping defines defaults for the layer and bit rate of this connection in SP&#160;Guru&#160;Transport&#160;Planner, depending on the link model in SP&#160;Guru&#160;Network&#160;Planner.</li></div>
+<ol type="a">
+<a name="wp947569"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold">&#160;&gt; Node/Link&#160;Mapping&#160;&gt; Set&#160;Link&#160;Mapping&#160;Defaults...</span> The <span style="font-weight: bold">SWIM &#8211; Default Link Mapping</span> dialog box appears. Select the <span style="font-weight: bold">Scenario</span> tab.</li></div>
+<a name="wp947570"> </a><div class="pprocstepSub"><li>Verify that <span style="font-weight: bold">DCL</span> (Transport Layer) and <span style="font-weight: bold">STS-3-7c</span> (Transport Bit Rate) are selected for the <span style="font-weight: bold">Ethernet 1000BaseX</span> model.</li></div>
+<a name="wp932844"> </a><div class="pprocstepSub"><li>Verify that <span style="font-weight: bold">OCH</span> (Transport Layer) and <span style="font-weight: bold">OC-192</span> (Transport Bit Rate) are selected for the <span style="font-weight: bold">Ethernet 10Gbps Link</span> model.</li></div>
+<a name="wp933681"> </a><p class="pFigCaption">
+Figure&#160;2-2   Scenario Tab of Default Link Mapping Dialog Box
+</p>
+<a name="wp933685"> </a><p class="pBodyRelative">
+<br />
+<img src="images/SWIMtut-3-2-05.jpg" height="235" width="500" id="wp933688" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932846"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">OK</span> to close the dialog box.</li></div>
+</ol>
+<a name="wp932847"> </a><div style="text-align: left" class="pSmartList2Test"><li>Define the link mapping.</li></div>
+<ol type="a">
+<a name="wp932848"> </a><div class="pprocstepSub"><li>Verify the checkmarked menu item SWIM<span style="font-weight: bold">&#160;</span>&gt; <span style="font-weight: bold">Automatically Update Operational Status Visualization</span> is turned on, to show the operational status of mapped links. If a link is unmapped or if its operational status is up, no icon is overlaid. In our case the network view does not change since no Layer-2/3 link have been mapped to the transport network.</li></div>
+<a name="wp932849"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold">&#160;&gt; Node/Link&#160;Mapping&#160;&gt; Map&#160;Links...</span> The dialog box that appears is analogous to the one for mapping nodes. It displays the Layer-2/3 links on the left and the Transport objects to which they are mapped on the right (in this case, traffic matrices).</li></div>
+<a name="wp932850"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Ethernet 1000BaseX</span> in the left pane. Note that <span style="font-weight: bold">New... Per model</span> is automatically selected in the right pane. This automatically creates a new traffic matrix in SP&#160;Guru&#160;Transport&#160;Planner.</li></div>
+<a name="wp932851"> </a><div class="pprocstepSub"><li>Click on the <span style="font-weight: bold">&gt;&gt;</span> button. The <span style="font-weight: bold">SWIM &#8211; Map To New Transport Traffic Matrix</span> dialog box appears. In this dialog box you can specify the Transport traffic matrix.</li></div>
+<a name="wp933604"> </a><div class="pprocstepSub"><li>Note that <span style="font-weight: bold">DCL</span> is automatically entered as layer for the new traffic matrix, <span style="font-weight: bold">STS-3-7c</span> as bit rate. This is done based on the entry for link model Ethernet 1000BaseX in the default link mapping settings you reviewed in <a href="javascript:WWHClickedPopup('swim_tut', 'SWIMtut-3-2.html#wp932841');" onMouseOver="WWHShowPopup('swim_tut', 'SWIMtut-3-2.html#wp932841', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">step&#160;9</u></a>. Enter <span style="font-weight: bold">1G_Eth_Links</span> as the name. Click <span style="font-weight: bold">OK</span>.</li></div>
+<a name="wp933666"> </a><p class="pFigCaption">
+Figure&#160;2-3   Map to New Transport Traffic Matrix Dialog Box
+</p>
+<a name="wp933670"> </a><p class="pBodyRelative">
+<br />
+<img src="images/SWIMtut-3-2-06.jpg" height="227" width="499" id="wp933673" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932854"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">Ethernet 10Gbps Link</span> model in the left pane and click on the <b class="cBold">Auto&#160;&gt;&gt;</b> button. Note that the Ethernet 10Gbps links are mapped to an OC-192 traffic matrix (named <b class="cBold">swim_OCH_OC-192</b>) at the OCH layer, as specified in the SWIM<span style="font-weight: bold">&#160;&gt; Set&#160;Link&#160;Mapping&#160;Defaults</span> dialog box (see <a href="javascript:WWHClickedPopup('swim_tut', 'SWIMtut-3-2.html#wp932841');" onMouseOver="WWHShowPopup('swim_tut', 'SWIMtut-3-2.html#wp932841', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">step&#160;9</u></a>).</li></div>
+<a name="wp935037"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>You might need to uncheck the <b class="cBold">Selected</b> checkbox to see the <span style="font-weight: bold">Ethernet 10Gbps Link </span>model. 
+</p>
+<a name="wp932855"> </a><div class="pprocstepSub"><li>Right-click on the <span style="font-weight: bold">swim_OCH_OC-192</span> traffic matrix and select <span style="font-weight: bold">Set name</span>. Fill in <span style="font-weight: bold">10G_Eth_Links</span> as the new name for this traffic matrix. Click <span style="font-weight: bold">OK</span>.</li></div>
+<a name="wp944493"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">OK</span> in the <span style="font-weight: bold">SWIM &#8211; Map Links</span> dialog box. Note that all of the mapped<br />
+<img src="images/SWIMtut-3-2-07.jpg" height="31" width="29" align="right" id="wp944495" border="0" hspace="0" vspace="-2"/><br />
+ links are overlaid with an icon. The icon indicates that the links have been mapped to traffic matrices at the transport network, but this traffic is not yet set up. This will be done in SP&#160;Guru&#160;Transport&#160;Planner.</li></div>
+<a name="wp944500"> </a><p class="pFigCaption">
+Figure&#160;2-4   Mapped Links in SP&#160;Guru&#160;Network&#160;Planner
+</p>
+<a name="wp944504"> </a><p class="pBodyRelative">
+<br />
+<img src="images/SWIMtut-3-2-08.jpg" height="385" width="530" id="wp944502" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ol>
+</ol></div>
+<a name="wp933422"> </a><p class="pProcEnd">
+End of Procedure 2-1
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp932858"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp932858", false);</script>Procedure&#160;2-2   Dimension the Transport Network to Accommodate the New Traffic<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp932858", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp932858", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp932859"> </a><div style="text-align: left" class="pSmartList2Test"><li>Switch to the Transport network: select SWIM<span style="font-weight: bold">&#160;&gt; Switch To Corresponding Transport Network</span>.</li></div>
+<a name="wp932861"> </a><div style="text-align: left" class="pSmartList2Test"><li>Verify that the link mapping resulted in new traffic demands in SP&#160;Guru&#160;Transport&#160;Planner.</li></div>
+<ol type="a">
+<a name="wp932862"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Network &gt; Traffic Matrix Editor</span> (or click the <br />
+<img src="images/SWIMtut-3-2-09.jpg" height="30" width="30" align="right" id="wp934060" border="0" hspace="0" vspace="-2"/><br />
+toolbar button). This dialog box lets you manage traffic matrices.</li></div>
+<a name="wp932863"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">OCH</span> layer. Note that a new OC-192 traffic matrix named <span style="font-weight: bold">10G_Eth_Links</span> has been created on the OCH layer. The<b class="cBold"> Native </b>setting indicates that the traffic matrix is <span style="font-weight: bold">External</span>. This means that they have an external origin, in this case SP&#160;Guru&#160;Network&#160;Planner.</li></div>
+<a name="wp932864"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">DCL</span> layer. A new STS-3-7c traffic matrix named <span style="font-weight: bold">1G_Eth_Links</span> has been created.</li></div>
+<a name="wp932865"> </a><div class="pprocstepSub"><li>Close the <span style="font-weight: bold">Traffic Matrix Editor</span> dialog box.</li></div>
+</ol>
+<a name="wp932866"> </a><div style="text-align: left" class="pSmartList2Test"><li>Verify that there is sufficient capacity in the transport network to support the Ethernet 1-Gbps links. To do so, try to route the corresponding 10G_Eth_Links traffic matrix in the OCH layer of SP&#160;Guru&#160;Transport&#160;Planner. We are using protected routing in the OCH layer to ensure that if an IP link is affected by a cable break, traffic can still run over the link because the IP link is routed over its protection path at the optical layer.</li></div>
+<ol type="a">
+<a name="wp932867"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Design &gt; Route DCL/OCH Traffic</span> (or click the toolbar button).</li></div>
+<a name="wp932868"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">OCH Layer</span> and the traffic matrix <span style="font-weight: bold">10G_Eth_Links</span>. Select <span style="font-weight: bold">Protected</span> and <span style="font-weight: bold">Node Disjoint</span> (no Client Protection). Click <span style="font-weight: bold">Route</span>.</li></div>
+<a name="wp932869"> </a><p class="pFigCaption">
+Figure&#160;2-5   Route DCL/OCH Traffic Dialog Box
+</p>
+<a name="wp934067"> </a><p class="pBodyRelative">
+<br />
+<img src="images/SWIMtut-3-2-10.jpg" height="349" width="521" id="wp934070" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932870"> </a><p class="pIndentedRelative">
+When the action is finished, the 10G_Eth_Links matrix are completely set up; the Transport network contains enough free capacity to support all 10G Ethernet links in the Layer-2/3 network. 
+</p>
+<a name="wp932871"> </a><div class="pprocstepSub"><li>Close the dialog boxes.</li></div>
+</ol>
+<a name="wp932872"> </a><div style="text-align: left" class="pSmartList2Test"><li>Switch to the Layer-2/3 network.</li></div>
+<ol type="a">
+<a name="wp932873"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold"> &gt; Switch To Corresponding Layer-2/3 Network</span>.</li></div>
+</ol>
+<a name="wp932874"> </a><div style="text-align: left" class="pSmartList2Test"><li>Verify that the 10Gbps Ethernet links are up.</li></div>
+<ol type="a">
+<a name="wp932875"> </a><div class="pprocstepSub"><li>The SWIM<span style="font-weight: bold"> &gt; Automatically Update Operational Status Visualization</span> option should still be enabled (indicated by a check mark). The 1Gbps Ethernet links still have an <br />
+<img src="images/SWIMtut-3-2-11.jpg" height="25" width="23" align="right" id="wp934158" border="0" hspace="0" vspace="-2"/><br />
+icon overlaid, indicating that they have been mapped to Transport connections, but have not been set up yet. The 10Gbps Ethernet links no longer have an overlay icon, since their associated Transport connections are up and running.</li></div>
+<a name="wp934077"> </a><p class="pFigCaption">
+Figure&#160;2-6   Network in SP&#160;Guru&#160;Network&#160;Planner
+</p>
+<a name="wp934081"> </a><p class="pBodyRelative">
+<br />
+<img src="images/SWIMtut-3-2-12.jpg" height="437" width="530" id="wp934084" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ol>
+<a name="wp932877"> </a><div style="text-align: left" class="pSmartList2Test"><li>Verify that the 1Gbps Ethernet links are down.</li></div>
+<ol type="a">
+<a name="wp932878"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold"> &gt; Show Connections Browser On Switching To Transport Network</span>. The Connections Browser opens if any mapped links are selected when you switch to SP&#160;Guru&#160;Transport&#160;Planner.</li></div>
+<a name="wp932879"> </a><div class="pprocstepSub"><li>Select the 1Gbps Ethernet links (hold down the <span style="font-weight: bold">Ctrl</span> key and click on each of the links marked with an <br />
+<img src="images/SWIMtut-3-2-13.jpg" height="25" width="23" align="right" id="wp934164" border="0" hspace="0" vspace="-2"/><br />
+icon).</li></div>
+<a name="wp932880"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold">&#160;&gt; Switch To Corresponding Transport Network</span>.</li></div>
+<a name="wp932881"> </a><div class="pprocstepSub"><li>The <span style="font-weight: bold">SWIM - Connections Browser</span> dialog box opens. Use the <b class="cBold">+</b> icon at the<br />
+<img src="images/SWIMtut-3-2-14.jpg" height="30" width="35" align="right" id="wp934355" border="0" hspace="0" vspace="-2"/><br />
+ left of a connection to view more details about the connection. Note that each of the connections is unrouted. This is also seen from the red link icon for the Layer-2/3 link element in the tree.</li></div>
+<a name="wp932882"> </a><div class="pprocstepSub"><li>Close the Connections Browser.</li></div>
+</ol>
+<a name="wp932883"> </a><div style="text-align: left" class="pSmartList2Test"><li>Verify that there is insufficient capacity in the transport network to support the 1Gbps Ethernet links by attempting to route the corresponding 1G_Eth_Links traffic matrix in the DCL layer of SP&#160;Guru&#160;Transport&#160;Planner.</li></div>
+<ol type="a">
+<a name="wp932884"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Design &gt;</span> <span style="font-weight: bold">Route DCL/OCH Traffic...</span>.</li></div>
+<a name="wp932885"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">DCL Layer</span> and the SONET traffic matrix <span style="font-weight: bold">1G_Eth_Links</span>. Choose the same options as in <a href="javascript:WWHClickedPopup('swim_tut', 'SWIMtut-3-2.html#wp932866');" onMouseOver="WWHShowPopup('swim_tut', 'SWIMtut-3-2.html#wp932866', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">step&#160;3</u></a>: <span style="font-weight: bold">Protected</span> and <span style="font-weight: bold">Node Disjoint</span>. Click <span style="font-weight: bold">Route</span>.</li></div>
+<a name="wp934364"> </a><div class="pprocstepSub"><li>The <span style="font-weight: bold">Routing Results</span> dialog box opens. No routes were found due to lack of capacity. (To verify this: use the <span style="font-weight: bold">DCL</span> toolbar button to inspect the DCL layer. All DCL links from node <b class="cBold">Glasgow</b> are completely used&#8212;no free capacity left&#8212;and no capacity is available on the links from node <b class="cBold">Padova</b>.) The capacity of the Transport network needs to be expanded since there is not enough free capacity in the network to accommodate the 1G Ethernet links.</li></div>
+<a name="wp932887"> </a><div class="pprocstepSub"><li>Close the dialog boxes.</li></div>
+</ol>
+<a name="wp932888"> </a><div style="text-align: left" class="pSmartList2Test"><li>Groom the SONET traffic matrix <b class="cBold">1G_Eth_Links</b>.</li></div>
+<ol type="a">
+<a name="wp932889"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Design &gt; Groom DCL to OCH Traffic &gt; Optimized Routes...</span> (or use<br />
+<img src="images/SWIMtut-3-2-15.jpg" height="27" width="28" align="right" id="wp934372" border="0" hspace="0" vspace="-2"/><br />
+ toolbar button). This dialog box is used to map SONET traffic to optical channels. If needed, the grooming algorithm installs extra equipment to accommodate the SONET traffic matrix.</li></div>
+<a name="wp932890"> </a><div class="pprocstepSub"><li>Select the SONET traffic matrix <span style="font-weight: bold">1G_Eth_Links</span>. Choose the following options: <span style="font-weight: bold">OC-48</span> (bit rate of the optical channels to which the DCL traffic is groomed), <span style="font-weight: bold">End to End Grooming</span> (no optimization), <span style="font-weight: bold">1+1 Protection in DCL</span> (no client protection), <span style="font-weight: bold">Node Disjoint</span> and <span style="font-weight: bold">DCL Link Disjoint</span>. Click <span style="font-weight: bold">Groom</span>.</li></div>
+<a name="wp932891"> </a><p class="pFigCaption">
+Figure&#160;2-7   Groom DCL to OCH Traffic Dialog Box
+</p>
+<a name="wp934096"> </a><p class="pBodyRelative">
+<br />
+<img src="images/SWIMtut-3-2-16.jpg" height="341" width="514" id="wp934099" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932892"> </a><div class="pprocstepSub"><li>When the grooming action is complete, a new OCH traffic matrix (named <b class="cBold">OCH_1G_Eth_Links_Grooming</b>) is created that supports the DCL traffic matrix <b class="cBold">1G_Eth_Links</b>. Note that these traffic matrices are not yet accommodated in the network.</li></div>
+<a name="wp934106"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">Dimension</span> in the <span style="font-weight: bold">Groom DCL to OCH Traffic - Optimized Routes</span> dialog box. </li></div>
+<a name="wp934108"> </a><div class="pprocstepSub"><li>The <span style="font-weight: bold">Dimension DCL/OCH Layer</span> dialog box opens. This dialog box lets you accommodate OCH layer matrices in the network. If needed, extra network equipment is added to try to entirely accommodate a given traffic matrix in the network.</li></div>
+<a name="wp932896"> </a><div class="pprocstepSub"><li>Select the newly created OCH traffic matrix <span style="font-weight: bold">OCH_1G_Eth_Links_Grooming</span>. Select <span style="font-weight: bold">Unprotected</span> (Protection), <span style="font-weight: bold">Heuristic</span> (enable <span style="font-weight: bold">Optimize Link</span> and <span style="font-weight: bold">Optimize Node</span>), and accept the default settings for the other options.</li></div>
+<a name="wp947919"> </a><p class="pFigCaption">
+Figure&#160;2-8   Dimension DCL/OCH Layer Dialog Box
+</p>
+<a name="wp947923"> </a><p class="pBodyRelative">
+<br />
+<img src="images/SWIMtut-3-2-17.jpg" height="433" width="523" id="wp947921" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932897"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">Dimension</span>. The <span style="font-weight: bold">Results of Dimensioning</span> dialog box opens. Note that both traffic matrices, <b class="cBold">OCH_1G_Eth_Links_Grooming</b> and <b class="cBold">1G_Eth_Links</b>, are now entirely accommodated in the network. This adds 18 OXC ports; no extra fibers need to be installed.</li></div>
+<a name="wp932898"> </a><div class="pprocstepSub"><li>Close all dialog boxes.</li></div>
+</ol>
+<a name="wp932899"> </a><div style="text-align: left" class="pSmartList2Test"><li>Switch to the Layer-2/3 network.</li></div>
+<ol type="a">
+<a name="wp932900"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold"> &gt; Switch To Corresponding Layer-2/3 Network </span>to return to SP&#160;Guru&#160;Network&#160;Planner.</li></div>
+<a name="wp932901"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>All of the mapped links are no longer marked with any overlay icon since all associated Transport connections are set up.
+</p>
+</ol>
+<a name="wp932902"> </a><div style="text-align: left" class="pSmartList2Test"><li>Save the project under a different name: select <span style="font-weight: bold">File &gt; Save As </span>and save the project as <b class="cBold">&lt;</b><em style="font-style: oblique" class="cBoldItalics">initials</em><b style="font-style: normal" class="cBold">&gt;_SWIM_Tutorial_Basics</b>.</li></div>
+</ol></div>
+<a name="wp933892"> </a><p class="pProcEnd">
+End of Procedure 2-2
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp932904"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp932904", false);</script>Procedure&#160;2-3   Inspect the Routes Between the Office Nodes<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp932904", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp932904", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp932905"> </a><div style="text-align: left" class="pSmartList2Test"><li>Duplicate the scenario.</li></div>
+<ol type="a">
+<a name="wp932906"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Scenarios &gt; Duplicate Scenario</span>.</li></div>
+<a name="wp932907"> </a><div class="pprocstepSub"><li>Name the scenario <span style="font-weight: bold">analysis</span>. Click <span style="font-weight: bold">OK</span>.</li></div>
+</ol>
+<a name="wp932908"> </a><div style="text-align: left" class="pSmartList2Test"><li>Run flow analysis to determine the routes of the IP demands.</li></div>
+<ol type="a">
+<a name="wp932909"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Flow Analysis &gt; Configure/Run Flow Analysis... </span>(or press <span style="font-weight: bold">Ctrl+Alt+F</span> on the keyboard). </li></div>
+<a name="wp932910"> </a><div class="pprocstepSub"><li>The <span style="font-weight: bold">Configure/Run Flow Analysis</span> dialog box appears. Keep the default settings. Click <span style="font-weight: bold">Run</span>.</li></div>
+<a name="wp934125"> </a><p class="pFigCaption">
+Figure&#160;2-9   Configure/Run Flow Analysis Dialog Box
+</p>
+<a name="wp934132"> </a><p class="pBodyRelative">
+<br />
+<img src="images/SWIMtut-3-2-18.jpg" height="451" width="519" id="wp934135" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932912"> </a><div class="pprocstepSub"><li>The <span style="font-weight: bold">Resolve Unassigned IP Addresses for Scenario...</span> dialog box opens. Click <span style="font-weight: bold">Yes</span>.</li></div>
+<a name="wp932913"> </a><div class="pprocstepSub"><li>Wait until the <span style="font-weight: bold">Flow Analysis Log &#8211; SWIM_Tutorial_Basics-analysis</span> dialog box appears. All demands are now routed. Close the dialog box.</li></div>
+</ol>
+<a name="wp932914"> </a><div style="text-align: left" class="pSmartList2Test"><li>Show the routes between the <b class="cBold">Ghent </b>and <b class="cBold">Porto </b>offices.</li></div>
+<ol type="a">
+<a name="wp932915"> </a><div class="pprocstepSub"><li>Select the nodes <span style="font-weight: bold">Office_GEN</span> and <span style="font-weight: bold">Office_POR</span> (while holding the <span style="font-weight: bold">Ctrl</span> key).</li></div>
+<a name="wp932916"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Flow Analysis &gt; Show Routes Between Selected Nodes</span> (or click <span style="font-weight: bold">Ctrl+Alt+S</span> on the keyboard).</li></div>
+<a name="wp932917"> </a><div class="pprocstepSub"><li>The <span style="font-weight: bold">Show Routes</span> dialog box appears. Click on <span style="font-weight: bold">Show</span>. The routes that appear are <b class="cBold">Office_GEN -&gt; Ghent -&gt; Brussels -&gt; Barcelona -&gt; Porto -&gt; Office_POR</b> and <b class="cBold">Office_GEN -&gt; Ghent -&gt; London -&gt; Barcelona -&gt; Porto -&gt; Office_POR</b>,<b class="cBold"> </b>and the reverse routes.</li></div>
+<a name="wp934142"> </a><p class="pFigCaption">
+Figure&#160;2-10   Show Routes Dialog Box
+</p>
+<a name="wp934146"> </a><p class="pBodyRelative">
+<br />
+<img src="images/SWIMtut-3-2-19.jpg" height="107" width="458" id="wp934149" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932919"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">Close</span> in the <span style="font-weight: bold">Show Routes</span> dialog box. This does not clear the routes between <b class="cBold">Office_GEN</b> and <b class="cBold">Office_POR</b>.</li></div>
+</ol>
+<a name="wp932920"> </a><div style="text-align: left" class="pSmartList2Test"><li>Visualize the routes of the links and paths.</li></div>
+<ol type="a">
+<a name="wp932921"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold"> &gt; Open Mapped Connections Browser...</span>. This dialog box lets you visualize the routes of the links and paths of SP&#160;Guru&#160;Network&#160;Planner across all network layers.</li></div>
+<a name="wp932922"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Layer 2/3</span> (Network Layer to Display In Project Editor) and <span style="font-weight: bold">Paths</span> (Layer-2/3 Elements To Show) to visualize the routes in the Layer-2/3 network.</li></div>
+<a name="wp932923"> </a><div class="pprocstepSub"><li>Select the path through node <b class="cBold">Brussels</b>. Use the <span style="font-weight: bold">+</span> icon next to the path to inspect the list of links that make up the path. Click on the <span style="font-weight: bold">+</span> icon to the left of a constituent link to verify how the link is mapped on the transport network. Note that the blue link icon indicates that the Layer-2/3 link is up and running.</li></div>
+<a name="wp932924"> </a><div class="pprocstepSub"><li>Select each link of the path, and <span style="font-weight: bold">DCL</span>, <span style="font-weight: bold">OCH</span>, <span style="font-weight: bold">OMS</span>, and <span style="font-weight: bold">OTS</span> (Network Layer To Display In Project Editor), to browse through the different layers of the transport network and investigate how each link of the route is accommodated in the transport network. </li></div>
+<a name="wp932925"> </a><div class="pprocstepSub"><li>The Connections Browser also lists the details of the connections for each of the mapped Layer-2/3 links. For example, expanding the link between nodes <b class="cBold">Barcelona</b> and <b class="cBold">Porto </b>shows that its delay is 4.180 ms.</li></div>
+<a name="wp932926"> </a><div class="pprocstepSub"><li>Close the <span style="font-weight: bold">SWIM - Connections Browser</span> dialog box.</li></div>
+</ol>
+</ol></div>
+<a name="wp933441"> </a><p class="pProcEnd">
+End of Procedure 2-3
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp932927"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp932927", false);</script>Procedure&#160;2-4   Failure Analysis<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp932927", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp932927", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp932928"> </a><div style="text-align: left" class="pSmartList2Test"><li>Switch to the Transport network (if you have not already done so).</li></div>
+<ol type="a">
+<a name="wp932929"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold">&#160;&gt; Switch To Corresponding Transport Network</span>.</li></div>
+</ol>
+<a name="wp932930"> </a><div style="text-align: left" class="pSmartList2Test"><li>Run a failure analysis.</li></div>
+<ol type="a">
+<a name="wp932931"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Info &gt; Failure Analysis</span>, which opens the <span style="font-weight: bold">Failure Analysis</span> dialog box. This dialog box lets you evaluate the effect of equipment failures on the traffic accommodated by the network.</li></div>
+<a name="wp932932"> </a><div class="pprocstepSub"><li>Click on the <span style="font-weight: bold">OTS</span> toolbar button to view the OTS layer. Fail the cable between <span style="font-weight: bold">Madrid</span> and <span style="font-weight: bold">Barcelona</span> by right-clicking on it and selecting <span style="font-weight: bold">Fail This Cable</span>. </li></div>
+<a name="wp932933"> </a><div class="pprocstepSub"><li>Click on <span style="font-weight: bold">Evaluate</span> in the <span style="font-weight: bold">Failure Analysis</span> dialog box to verify the impact of the cable failure on the traffic accommodated in the network. In the <span style="font-weight: bold">Overview of Affected Traffic</span> section an overview is given of the affected traffic in the DCL and OCH layers. Do not close the <span style="font-weight: bold">Failure Analysis</span> dialog box.</li></div>
+<a name="wp932934"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Network &gt; Connection Browser</span>. Inspect the connections in the <span style="font-weight: bold">DCL</span> and the <span style="font-weight: bold">OCH</span> layers. Note that some connections are lost at the OCH layer only. These lost connections are part of the traffic matrices that support the groomed SONET matrices. The connection between <b class="cBold">Barcelona</b> and <b class="cBold">Madrid </b>fails for the traffic matrix <b class="cBold">OCH_1G_Eth_Links_Grooming</b>, while the connections <b class="cBold">Barcelona &lt;-&gt; London, Barcelona &lt;-&gt; Madrid, London &lt;-&gt; Madrid and Madrid &lt;-&gt; Rome</b> fail for the <b class="cBold">OCH_Voice_Grooming</b> traffic matrix. Note that all native OCH traffic survives the failures since it is protected at the OCH layer. Also, the DCL traffic supported by the (partly failing) OCH grooming traffic survives the failures since it is protected at the DCL layer.</li></div>
+<a name="wp932935"> </a><div class="pprocstepSub"><li>Close the Connection Browser.</li></div>
+<a name="wp932936"> </a><div class="pprocstepSub"><li>Select SWIM<b style="font-weight: bold" class="cBold">&#160;</b><span style="font-weight: bold">&gt; Switch&#160;To&#160;Corresponding&#160;Layer-2/3&#160;Network </span>(do not close the <span style="font-weight: bold">Failure Analysis</span> dialog box). Note that no IP links fail because they are all protected. This is because the 1G links are protected at the DCL layer, whereas the 10G links are protected at the OCH layer.</li></div>
+<a name="wp932937"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold"> &gt; Open Mapped Connection Browser...</span>. Select <span style="font-weight: bold">Layer 2/3</span> (Network Layer to Display in Project Editor) and <span style="font-weight: bold">Paths</span> (Layer-2/3 Elements To Show). </li></div>
+<a name="wp932938"> </a><div class="pprocstepSub"><li>Select the first path again. Select each link of the path, and <span style="font-weight: bold">DCL</span>, <span style="font-weight: bold">OCH</span>, <span style="font-weight: bold">OMS</span> and <span style="font-weight: bold">OTS</span> (Network Layer To Display), to browse through the different layers of the transport network and investigate how each link of the route is accommodated in the transport network. Looking at the route from <b class="cBold">Office_GEN</b> to <b class="cBold">Office_POR</b>, you will notice that a detour is taken via London and (at the OTS layer) Bordeaux.</li></div>
+<a name="wp932939"> </a><div class="pprocstepSub"><li>Close the Connections Browser.</li></div>
+</ol>
+<a name="wp932940"> </a><div style="text-align: left" class="pSmartList2Test"><li>In SP&#160;Guru&#160;Network&#160;Planner, select <b class="cBold">Scenarios &gt; Object/Attribute Difference Report &gt; Generate Report</b> to compare the original network to the current IP network, which has been subjected to failures.</li></div>
+<ol type="a">
+<a name="wp932941"> </a><div class="pprocstepSub"><li>Verify that the <span style="font-weight: bold">bare</span> scenario is selected for comparison and click <span style="font-weight: bold">Generate</span>.</li></div>
+<a name="wp932942"> </a><div class="pprocstepSub"><li>The <span style="font-weight: bold">Network Difference Tree</span> dialog box appears. Select <span style="font-weight: bold">Objects with differences</span>. This will show that the<b class="cBold"> Barcelona &lt;-&gt; Porto </b>link suffers from a delay increase from 4.180 ms to 14.132 ms, because the supporting connection is switched to its protection path.</li></div>
+<a name="wp934384"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>Note that the unit of delay reported in SP&#160;Guru&#160;Network&#160;Planner, and therefore in the difference report, is in seconds.
+</p>
+<a name="wp932943"> </a><div class="pprocstepSub"><li>Close the dialog box and select SWIM<span style="font-weight: bold">&#160;&gt; Switch To Corresponding Transport Network</span>.</li></div>
+<a name="wp932944"> </a><div class="pprocstepSub"><li>Click on the <span style="font-weight: bold">OTS</span> toolbar button to go the OTS layer view (do not close the <span style="font-weight: bold">Failure Analysis</span> dialog box).</li></div>
+<a name="wp932945"> </a><div class="pprocstepSub"><li>Fail the cable between London and Paris by right-clicking on the link and selecting <span style="font-weight: bold">Fail This Cable</span>.</li></div>
+<a name="wp932946"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">Evaluate</span> in the <span style="font-weight: bold">Failure Analysis</span> dialog box to verify the impact of the double cable failure on the traffic accommodated in the network.</li></div>
+<a name="wp932947"> </a><div class="pprocstepSub"><li>Switch to SP&#160;Guru&#160;Network&#160;Planner by selecting SWIM<span style="font-weight: bold"> &gt; Switch To Corresponding Layer-2/3 Network </span>(without closing the <span style="font-weight: bold">Failure Analysis</span> dialog box). The IP link between <b class="cBold">Barcelona</b> and <b class="cBold">London</b> fails because the working and protecting path of its supporting connection at the OCH layer are affected. Also, the link between <b class="cBold">Barcelona</b> and <b class="cBold">Porto</b> fails because both the working and protecting path of its supporting connection at the DCL layer are affected.<br />
+<img src="images/SWIMtut-3-2-20.jpg" height="27" width="27" align="right" id="wp934399" border="0" hspace="0" vspace="-2"/><br />
+ These failing links are overlaid with the link failed icon.</li></div>
+</ol>
+<a name="wp933447"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the project.</li></div>
+<ol type="a">
+<a name="wp933448"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File &gt; Close</span>.</li></div>
+<a name="wp933449"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">Save</span> in the <span style="font-weight: bold">Close Confirm</span> dialog box.</li></div>
+</ol>
+</ol></div>
+
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/swim_tut_2.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

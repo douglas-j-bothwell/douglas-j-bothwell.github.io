@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:31:28" />
+    <title>Restricting License Server Administration</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="Admin-4-01.html"> Licensing</a> > Restricting License Server Administration</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp143613"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Restricting License Server Administration
+</h2>
+
+ 
+
+
+<a name="wp143615"> </a><p class="pBody">
+You can restrict access to server administration operations by creating an administration authorization file (<code class="cCode">admin_auth</code>) that is stored on a specific license server. This file specifies machines and users: only the users listed, when logged into the machines listed, can perform server administration operations on that server.
+</p>
+<a name="wp143618"> </a><p class="pBody">
+The following operations are restricted:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp143620"> </a><div class="pSmartList1"><li>Add License</li></div>
+<a name="wp143622"> </a><div class="pSmartList1"><li>Revoke License (however, users who are already using licenses can always revoke their own licenses)</li></div>
+<a name="wp143624"> </a><div class="pSmartList1"><li>Change Maintenance Expiration</li></div>
+<a name="wp143626"> </a><div class="pSmartList1"><li>Change License Expiration</li></div>
+<a name="wp143628"> </a><div class="pSmartList1"><li>Deregister License</li></div>
+<a name="wp143630"> </a><div class="pSmartList1"><li>Clear License File</li></div>
+<a name="wp143632"> </a><div class="pSmartList1"><li>Update System Date</li></div>
+<a name="wp143634"> </a><div class="pSmartList1"><li>Start Server</li></div>
+<a name="wp143636"> </a><div class="pSmartList1"><li>Stop Server</li></div>
+</ul></div>
+<a name="wp143637"> </a><p class="pBodyWarning">
+<span style="font-weight: bold; color: red;">WARNING&#8212;</span>If you do not create an administration authorization file, any user from any machine has access to these operations.
+</p>
+<a name="wp143638"> </a><p class="pBody">
+The administration authorization file is a text file with the following format: 
+</p>
+<div class="pCodeStep"><ul class="pCodeStep">
+<a name="wp143639"> </a>&lt;machine&gt; &lt;user&gt;<br />
+...<br />
+&lt;machine&gt; &lt;user&gt;
+</ul></div>
+<a name="wp143640"> </a><p class="pBody">
+You can use a plus sign (+) to mean any user or any machine, as shown in the following example.
+</p>
+<div class="pCodeStep"><ul class="pCodeStep">
+<a name="wp143641"> </a>engineering1 root<br />
+js_pizza_box jsmith<br />
+ww_NT wwilson<br />
++ hhoover<br />
+engineering_test +
+</ul></div>
+<a name="wp143642"> </a><p class="pBody">
+This example file shows that:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp143643"> </a><div class="pSmartList1"><li>any user logging in as <code class="cCode">root</code> on <code class="cCode">engineering1</code> can perform server administration operations</li></div>
+<a name="wp143644"> </a><div class="pSmartList1"><li><code class="cCode">jsmith</code> can perform operations when logged into <code class="cCode">js_pizza_box</code></li></div>
+<a name="wp143645"> </a><div class="pSmartList1"><li><code class="cCode">wwilson</code> can perform operations when logged into <code class="cCode">ww_NT</code></li></div>
+<a name="wp143646"> </a><div class="pSmartList1"><li><code class="cCode">hhoover</code> can perform operations when logged into any machine</li></div>
+<a name="wp143647"> </a><div class="pSmartList1"><li>any user can perform operations when logged into <code class="cCode">engineering_test</code></li></div>
+</ul></div>
+<a name="wp143648"> </a><p class="pBody">
+Name the administration authorization file as <code class="cCode">admin_auth</code> and place it on the license server for which you want to control administration operations, in the same directory as the license file:
+</p>
+<a name="wp143649"> </a><p class="pBodyRelative">
+Windows: <code class="cCode">&lt;primary_hard_drive&gt;:\OPNET_license\</code>
+</p>
+<a name="wp143650"> </a><p class="pBodyRelative">
+Solaris: <code class="cCode">/opt/OPNET_license/</code> or<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<code class="cCode">/var/adm/OPNET_license/</code>
+</p>
+<a name="wp200648"> </a><p class="pBodyRelative">
+Linux: <code class="cCode">/opt/OPNET_license/</code>
+</p>
+<a name="wp143651"> </a><p class="pBody">
+After adding or editing an administration authorization file, you must do one of the following things to make it take effect:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp143652"> </a><div class="pSmartList1"><li>In the License Manager, choose Tools&#160;&gt; Refresh&#160;Server&#160;Authorization&#160;Files.</li></div>
+<a name="wp143653"> </a><div class="pSmartList1"><li>Stop and restart the license server.</li></div>
+</ul></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/ag_035_licensing.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

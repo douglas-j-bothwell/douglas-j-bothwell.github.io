@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:52" />
+    <title>Solution 1: Pure End-to-End (No Intermediate Grooming)</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-09-01.html"> Grooming DCL to OCH Traffic</a> > <a href="User-09-10.html">DCL Grooming Solutions Without Protection</a> > Solution 1: Pure End-to-End (No Intermediate Grooming)</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp60127"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Solution 1: Pure End-to-End (No Intermediate Grooming)
+</h2>
+
+ 
+
+<a name="wp56438"> </a><p class="pBody">
+This solution specifies end-to-end grooming (also called &quot;edge grooming&quot;); this grooms all DCL traffic at the edge of the network and not in any intermediate nodes. The following network contains three nodes, in which a single fiber carrying 16 wavelengths is lit on links between A-B and B-C. There is a total DCL traffic demand of 19 STM-1 units; each optical channel carries an STM-16 signal.
+</p>
+<a name="wp74400"> </a><p class="pFigCaption">
+Figure&#160;8-5   End-to-End (No Protection): Capacity Requirements
+</p>
+<a name="wp74403"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-09-11-05.jpg" height="244" width="530" id="wp74402" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp74711"> </a><p class="pBody">
+This example uses the following strategy: For each DCL connection, reserve one optical channel in the OCH layer. This channel can use multiple wavelengths; the level of utilization on the channel depends on the number of time slots requested. For example, one time slot (STM-1) can result in an optical channel (STM-16) that is poorly used (1 out of 16). SP&#160;Guru&#160;Transport&#160;Planner accommodates these channels in the OCH layer. In this example, A-C and B-C result in two single-hop optical channels and A-C is routed over two hops. 
+</p>
+<a name="wp55351"> </a><p class="pBody">
+The associated equipment in the DCL and OCH layers is shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-09-11.html#wp74745');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-11.html#wp74745', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;8-6-End-to-End (No Protection): Associated Equipment</u> </a>. All traffic is aggregated in wavelengths by the DXC. There are two OA sites on both links and one regeneration site on link A-B. The optical channel A-C is connected through the OXC in node B. 
+</p>
+<a name="wp74745"> </a><p class="pFigCaption">
+Figure&#160;8-6   End-to-End (No Protection): Associated Equipment
+</p>
+<a name="wp74748"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-09-11-06.jpg" height="294" width="530" id="wp74747" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp58338"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp75001table55657">
+  <caption><a name="wp75001"> </a><div class="ptblcaption">
+Table&#160;8-7   Main Equipment Associated with Solution 1 (End-to-End / No Protection)&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp55669"> </a><div class="pCellHeading">
+Equipment
+</div>
+</th>
+    <th><a name="wp55671"> </a><div class="pCellHeading">
+Quantity
+</div>
+</th>
+    <th><a name="wp55673"> </a><div class="pCellHeading">
+Associated Equipment
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp55675"> </a><div class="pCellBody">
+Logical DCL links
+</div>
+</td>
+    <td><a name="wp55677"> </a><div class="pCellBody">
+3
+</div>
+</td>
+    <td><a name="wp55679"> </a><div class="pCellBody">
+6 DXC trunk ports
+</div>
+<a name="wp58256"> </a><div class="pCellBody">
+6 OXC tributary ports
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp55681"> </a><div class="pCellBody">
+Intermediate DCL units switched
+</div>
+</td>
+    <td><a name="wp55683"> </a><div class="pCellBody">
+0
+</div>
+</td>
+    <td>&#160;</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp55687"> </a><div class="pCellBody">
+Optical channels/hops
+</div>
+</td>
+    <td><a name="wp55689"> </a><div class="pCellBody">
+3 channels using
+</div>
+<a name="wp55690"> </a><div class="pCellBody">
+1&#160;+&#160;1 + 2 = 4 hops
+</div>
+</td>
+    <td><a name="wp55692"> </a><div class="pCellBody">
+6 short-reach transponders
+</div>
+<a name="wp58259"> </a><div class="pCellBody">
+8 long-reach transponders
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp55694"> </a><div class="pCellBody">
+WDM in-line equipment
+</div>
+</td>
+    <td><a name="wp55696"> </a><div class="pCellBody">
+· 1 regeneration on link A-B
+</div>
+<a name="wp55697"> </a><div class="pCellBody">
+· 4 OAs in total on links A-B and B-C
+</div>
+</td>
+    <td><a name="wp55699"> </a><div class="pCellBody">
+2 channels on link A-B (requires 2 regenerator cards)
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="3" rowspan="1"><a name="wp75014"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 8-7	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+<a name="wp133112"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>The values in <a href="javascript:WWHClickedPopup('wdm_user', 'User-09-11.html#wp75001');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-11.html#wp75001', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;8-7</u></a> are calculated assuming that the OCH layer mode is opaque.
+</p>
+
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_31_grm.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

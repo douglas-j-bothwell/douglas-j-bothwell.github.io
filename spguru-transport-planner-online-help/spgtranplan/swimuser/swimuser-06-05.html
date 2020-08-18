@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:37:50" />
+    <title>Link-to-Connection Mapping (New SP&#160;Guru&#160;Transport&#160;Planner Traffic Matrices)</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="swimuser-06-01.html"> Mapping Layer-2/3 Links to Transport Connections</a> > <a href="swimuser-06-02.html">Mapping Links: Procedure Descriptions</a> > Link-to-Connection Mapping (New SP&#160;Guru&#160;Transport&#160;Planner Traffic Matrices)</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp927503"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Link-to-Connection Mapping (New SP&#160;Guru&#160;Transport&#160;Planner Traffic Matrices)
+</h2>
+
+ 
+
+<a name="wp927383"> </a><p class="pBody">
+This procedure maps Layer-2/3 links to transport connections. This operation creates one or more new traffic matrices and maps the selected links to connections in the new matrices.
+</p>
+<a name="wp927168"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp927168", false);</script>Procedure&#160;5-3   Mapping One or More Layer-2/3 links to Transport Connections (New Traffic Matrices Per Model)<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp927168", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp927168", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp927170"> </a><div style="text-align: left" class="pSmartList2Test"><li>From the Project Editor of SP&#160;Guru&#160;Network&#160;Planner, choose SWIM&#160;&gt; Node/Link&#160;Mapping&#160;&gt; Map&#160;Links.</li></div>
+<a name="wp927171"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The <a href="javascript:WWHClickedPopup('swim_user', 'swimuser-06-10.html');" onMouseOver="WWHShowPopup('swim_user', 'swimuser-06-10.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">SWIM - Map Links Dialog Box</u></a> appears.
+</p>
+<a name="wp927172"> </a><div style="text-align: left" class="pSmartList2Test"><li>In the Layer-2/3 Links treeview, select the links to map.</li></div>
+<a name="wp927173"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+To select multiple links, hold down the Ctrl key while selecting.
+</p>
+<a name="wp927174"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+To select all links in a subnet, select the subnet in the treeview (this is possible only if the Show Hierarchy checkbox is selected).
+</p>
+<a name="wp927175"> </a><div style="text-align: left" class="pSmartList2Test"><li>In the Transport Traffic Matrices treeview, select either &quot;New... all to 1&quot; or &quot;New... per model&quot;.</li></div>
+<a name="wp928133"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+If you select &quot;New... all to 1&quot;, SWIM creates one traffic matrix in SP&#160;Guru&#160;Transport&#160;Planner. Each selected link will be mapped onto a connection in that matrix, regardless of the link model.
+</p>
+<a name="wp928149"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+If you select &quot;New... per model&quot;, SWIM creates multiple traffic matrices&#8212;one matrix for each link model used by the set of all selected links. This means that each link is mapped to a connection in the traffic matrix that corresponds to its link model.
+</p>
+<a name="wp927176"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click the &quot;&gt;&gt;&quot; Button.</li></div>
+<a name="wp927177"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The SWIM - Map To New Transport Traffic Matrix dialog box appears for the selected set of Layer-2/3 links.
+</p>
+<a name="wp928178"> </a><div style="text-align: left" class="pSmartList2Test"><li>Select the network layer and bit rate.</li></div>
+<a name="wp927179"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The initially selected network layer and bit rate matrix&#8212;and, as a result, the connections that support the links&#8212;are determined by the mapping defaults specified for the underlying link models. If a link model has no default mapping, links that use that model will remain unmapped. For more information, see <a href="javascript:WWHClickedPopup('swim_user', 'swimuser-06-11.html');" onMouseOver="WWHShowPopup('swim_user', 'swimuser-06-11.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Setting Link Mapping Defaults</u></a>.
+</p>
+<a name="wp927180"> </a><div style="text-align: left" class="pSmartList2Test"><li>Enter the name of the traffic matrix.</li></div>
+<a name="wp927181"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click OK to close the SWIM - Map To New Transport Traffic Matrix dialog box.</li></div>
+<a name="wp927182"> </a><div style="text-align: left" class="pSmartList2Test"><li>If you selected &quot;New...per model&quot; in <a href="javascript:WWHClickedPopup('swim_user', 'swimuser-06-05.html#wp927175');" onMouseOver="WWHShowPopup('swim_user', 'swimuser-06-05.html#wp927175', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">step&#160;3</u></a>, repeat <a href="javascript:WWHClickedPopup('swim_user', 'swimuser-06-05.html#wp928178');" onMouseOver="WWHShowPopup('swim_user', 'swimuser-06-05.html#wp928178', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">step&#160;5</u></a> through <a href="javascript:WWHClickedPopup('swim_user', 'swimuser-06-05.html#wp927181');" onMouseOver="WWHShowPopup('swim_user', 'swimuser-06-05.html#wp927181', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">step&#160;7</u></a> for each link model and its associated set of selected links.</li></div>
+<a name="wp927488"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click OK to confirm the mapping and close the SWIM - Map Links dialog box.</li></div>
+</ol></div>
+<a name="wp931718"> </a><p class="pProcEnd">
+End of Procedure 5-3
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp931719"> </a><h6 class="pHeading6">
+
+</h6>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/swim_19_link.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>How Insights Work</title>
+    <link rel="StyleSheet" href="css/InsightBuilder_Basics.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_idk_guide_splash.html">Insight Development Kit (IDK)</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="InsightBuilder_Basics.091.1.html">Insight Development Kit Basics</a> &gt; How Insights Work</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1"><a name="953126">How Insights Work</a></div>
+      <div class="body"><a name="953130">An Insight is a synergistic collection of tables and charts from the AppResponse user interface. These elements can be linked by various automatic analyses and supplemented with controls to provide interactivity. Once saved, an Insight can be opened as a distinct window within the Desktop Console. Insights provide a way of customizing how data is presented and how you interact with it to get specific summary information or to solve specific problems.</a></div>
+      <div class="bodyIntro"><a name="953131">Insights can serve a variety of purposes, including:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="953132">Information summaries—predefined displays of commonly viewed information. The displays are automatically populated and generally require limited or no user input. Insights of this type provide a convenient way to monitor performance or provide high-level views to management.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="953133">Workflows—interactive “templates” that allow custom views of information, for which users can select data sources as needed. Workflow Insights can capture best practices and simplify the process of solving complex tasks by guiding the user through analyses appropriate to a particular task.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="953135">Five Building Blocks</a></div>
+      <div class="bodyIntro"><a name="953137">Insights are created using five building blocks collectively called Elements. These building blocks are</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="953138">Visual Components</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="953139">Analysis Components</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="953140">Controls</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="953141">Interactions</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="953142">Layers</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="953143">Visual Components and Analysis Components communicate via Interactions. Controls enable users to set parameters for Visual Objects. Layers, which can be thought of as different “pages”, are a way of specifying the inheritance of Components and Interactions between different parts of an Insight.</a></div>
+      <div class="h3NoBreak"><a name="953145">Visual Components</a></div>
+      <div class="body"><a name="953146">Visual Components are just what the name implies: the parts of an Insight that a user can see and interact with, such as charts, topology maps, selectors, tables, text labels, and toolbars. Almost every element of the AppResponse user interface is available as a Visual Component for an Insight.</a></div>
+      <div class="bodyIntro"><a name="953150">Some Visual Components have toolbars with Controls that permit data entry or enable the component’s operation or appearance to be modified by the user. For instance, </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_Basics.091.3.html#953155', '');" title="How Insights Work">Figure&nbsp;2</a></span> shows a Table Component with a variety of toolbar controls.</div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;2     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="953155">Table Component with Toolbar</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="953159"><img class="Default" src="images/InsightBuilder_Basics.091.3.1.jpg" width="473" height="243" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="953160">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="953161">There is also a Toolbar Component that adds similar Controls that affect the Insight as a whole. </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_Basics.091.3.html#953166', '');" title="How Insights Work">Figure&nbsp;3</a></span> shows such a toolbar with seven Controls, one of which (a spacer between the Clear button and the Print button) is invisible.</div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;3     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="953166">Toolbar with Seven Controls</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="953170"><img class="Default" src="images/InsightBuilder_Basics.091.3.2.jpg" width="638" height="29" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="953171">&nbsp;</a></div>
+      <div class="h3NoBreak"><a name="953173">Analysis Components</a></div>
+      <div class="body"><a name="953174">Analysis Components are behind-the-scenes components that transform data in a variety of ways. For instance, the Drilldown Analysis Component takes a Business Group as an input and outputs the top members of a drilldown from that group.</a></div>
+      <div class="h3NoBreak"><a name="953176">Controls</a></div>
+      <div class="bodyIntro"><a name="953177">Controls are the various elements of Visual Components (such as buttons, text fields, and combo boxes) that enable users to enter information and change settings. For instance, the “By” control on a Chart or Table lets the user specify the metric by which displayed groups are ranked.</a></div>
+      <div class="bodyNote">
+        <span class="bold">Note: </span><a name="953178">There are also controls within the IDK that you use to configure the appearance and behavior of the Insight Elements. When we discuss Controls (with an upper-case “C”), we mean the ones available to a user within an Insight.</a></div>
+      <div class="h3NoBreak"><a name="953180">Interactions</a></div>
+      <div class="body"><a name="953181">As noted above, Interactions enable Components to communicate among themselves. An Interaction automatically gets information of a specified type from one Component (its Producer) and transfers that information to another Component (its Consumer).</a></div>
+      <div class="body"><a name="953185">For instance, in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_Basics.091.3.html#953155', '');" title="How Insights Work">Figure&nbsp;2</a></span>, selecting a new limit using the Top Control in the Toolbar causes a Value Interaction to get that limit and send it to the table (the Consumer of that Interaction). This allows the table to reflect the new limit in the number of items it displays.</div>
+      <div class="h3NoBreak"><a name="953189">Layers</a></div>
+      <div class="body"><a name="953190">Layers, which can be thought of as different “pages” in an Insight, offer a means of constructing multi-part Insights using a variety of inheritance methods that determine which elements of each Layer are available in other Layers. They are one of the primary means of preserving screen real estate (which is important because, for efficiency, all parts of an Insight should be visible without scrolling). Layers can be configured for sequential access or can be non-sequential.</a></div>
+      <div class="h2NoBreak"><a name="953191">How the Building Blocks Work Together</a></div>
+      <div class="body"><a name="953192">We will “take apart” a simple Insight (comprising a Toolbar, a Group Selector, and a Multi-Group Chart) to illustrate how Components communicate using Interactions.</a></div>
+      <div class="bodyIntro"><a name="953196">In this Insight (</a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_Basics.091.3.html#953198', '');" title="How Insights Work">Figure&nbsp;4</a></span>), selecting a Business Group in the selector pane (on the left) displays its throughput in the Multi-Group Chart (on the right).</div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;4     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="953198">Simple Insight - Business Group Selected </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="953202"><img class="Default" src="images/InsightBuilder_Basics.091.3.3.jpg" width="620" height="248" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="953203">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="953204">Clicking on the Clear Control in the Toolbar clears the selection in the Group Selector and the Chart display, as shown in the following figure.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;5     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="953205">Simple Insight - Cleared</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="953209"><img class="Default" src="images/InsightBuilder_Basics.091.3.4.jpg" width="608" height="250" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="953210">&nbsp;</a></div>
+      <div class="bodyIntro"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_Basics.091.3.html#953216', '');" title="How Insights Work" name="953214">Figure&nbsp;6</a></span> shows the Navigation pane display for this Insight, showing the three Visual Components of the Insight and the Interactions that pass data between them.</div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;6     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="953216">Element Navigation Pane for Simple Insight</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="953220"><img class="Default" src="images/InsightBuilder_Basics.091.3.5.jpg" width="372" height="179" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="953221">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="953222">An “exploded” view of this Insight, showing how the Interactions connect the Visual Components, appears in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_Basics.091.3.html#953227', '');" title="How Insights Work">Figure&nbsp;7</a></span>. (The Layers Control does not send Interactions.)</div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;7     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="953227">Exploded View of Simple Insight</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="953254"><img class="Default" src="images/InsightBuilder_Basics.091.3.6.jpg" width="688" height="474" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="953255">&nbsp;</a></div>
+      <div class="body"><a name="953257">This diagram shows the essence of Insight structure: Components, whether Visual or Analysis, communicating by way of Interactions within Layers.</a></div>
+      <div class="body"><a name="953258">Diagramming of this sort is an integral part of designing Insights. You should always diagram an Insight before you begin to build it.</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

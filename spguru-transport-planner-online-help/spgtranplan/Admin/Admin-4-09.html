@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:31:28" />
+    <title>Starting the License Server</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="Admin-4-01.html"> Licensing</a> > <a href="Admin-4-09.html">Starting the License Server</a> > Solaris and Linux</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp143489"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Starting the License Server
+</h2>
+
+ 
+
+
+<a name="wp143490"> </a><p class="pBody">
+There are several ways to start the License Server. <code class="cCode">op_license_server</code> is typically started by one of the boot scripts of the host operating system. See section <a href="javascript:WWHClickedPopup('license', 'Admin-4-10.html');" onMouseOver="WWHShowPopup('license', 'Admin-4-10.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Stopping the License Server</u></a> for methods of stopping <code class="cCode">op_license_server</code>.
+</p>
+<a name="wp143497"> </a><p class="pBody">
+When you invoke a licensed application (such as SP&#160;Guru&#160;Transport&#160;Planner), the application sends a request for a license to <code class="cCode">op_license_server</code>. This license server examines the license file and, if a license is free, sends a reply granting the licensed application permission to run. If all licenses are in use, <code class="cCode">op_license_server</code> sends a reply denying permission and the application notifies you.
+</p>
+<a name="wp143501"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('license', 'Admin-4-09.html#wp143511');" onMouseOver="WWHShowPopup('license', 'Admin-4-09.html#wp143511', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;3-5</u></a> describes the preferred way to start the License Server. The remaining procedures in this section describe alternate methods for specific operating systems.
+</p>
+<a name="wp143502"> </a><p class="pBody">
+Regardless of the method you use, you should note these considerations:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp143503"> </a><div class="pSmartList1"><li>You can only start the local License Server (the one for the computer into which you are logged in).</li></div>
+<a name="wp143504"> </a><div class="pSmartList1"><li>The License Server (<code class="cCode">op_license_server</code>) must have read/write permissions on the license file to work correctly.</li></div>
+<a name="wp143508"> </a><div class="pSmartList1"><li>If you installed SP&#160;Guru&#160;Transport&#160;Planner in standalone licensing mode, it will obtain licenses on its own. There is no need to start the license server in this case.</li></div>
+</ul></div>
+<a name="wp143511"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp143511", false);</script>Procedure&#160;3-5   Starting the License Server (Preferred Method)<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp143511", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp143511", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp143515"> </a><div style="text-align: left" class="pSmartList2Test"><li>Run the License Manager (as in <a href="javascript:WWHClickedPopup('license', 'Admin-4-05.html#wp18628');" onMouseOver="WWHShowPopup('license', 'Admin-4-05.html#wp18628', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Starting the License Manager</u></a>).</li></div>
+<a name="wp143516"> </a><div style="text-align: left" class="pSmartList2Test"><li>Select the License Server for your computer in the License Manager treeview. (It will have a red dot in front of its name, indicating that it is not running.)</li></div>
+<a name="wp143517"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click the Start Server button.</li></div>
+</ol></div>
+<a name="wp143518"> </a><p class="pProcEnd">
+End of Procedure 3-5
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp222588"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp143519"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Windows
+</h2>
+
+ 
+
+<a name="wp143520"> </a><p class="pBody">
+There are two alternate ways to start the license server on Windows:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp171513"> </a><div class="pSmartList1"><li>Manually</li></div>
+<a name="wp171521"> </a><div class="pSmartList1"><li>Automatically</li></div>
+</ul></div>
+<a name="wp143522"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp143522", false);</script>Procedure&#160;3-6   Starting the License Server on Windows (Manually)<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp143522", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp143522", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp143523"> </a><div style="text-align: left" class="pSmartList2Test"><li>Start the Services application (in the Administrative Tools section of the Windows Control Panel).</li></div>
+<a name="wp143524"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>Your path to the Services application depends on your version of the Windows operating system. Please consult your Microsoft manual for assistance.
+</p>
+<a name="wp143525"> </a><div style="text-align: left" class="pSmartList2Test"><li>Locate License Server in the scrolling list of available services. If the Status column entry for this service does not read &quot;Started&quot;, select it and click the Start button.</li></div>
+<a name="wp143526"> </a><div style="text-align: left" class="pSmartList2Test"><li>The Startup column entry should read &quot;Automatic&quot;, which indicates that <code class="cCode">op_license_server</code> will be started automatically whenever Windows is restarted. If this is not the case, change the Startup Type property to &quot;Automatic&quot;.</li></div>
+</ol></div>
+<a name="wp143527"> </a><p class="pProcEnd">
+End of Procedure 3-6
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp143528"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp219140"> </a><p class="pBody">
+If you want the License Server to start automatically whenever the computer is rebooted, follow <a href="javascript:WWHClickedPopup('license', 'Admin-4-09.html#wp143533');" onMouseOver="WWHShowPopup('license', 'Admin-4-09.html#wp143533', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;3-7</u></a>.
+</p>
+<a name="wp143533"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp143533", false);</script>Procedure&#160;3-7   Starting the License Server on Windows (Automatically)<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp143533", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp143533", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp143537"> </a><div style="text-align: left" class="pSmartList2Test"><li>Install or reinstall SP&#160;Guru&#160;Transport&#160;Planner.</li></div>
+<a name="wp143538"> </a><div style="text-align: left" class="pSmartList2Test"><li>Select &quot;Floating: Serve licenses from this computer&quot; as your licensing scheme.</li></div>
+<a name="wp143539"> </a><div style="text-align: left" class="pSmartList2Test"><li>Complete the installation.</li></div>
+</ol></div>
+<a name="wp143540"> </a><p class="pProcEnd">
+End of Procedure 3-7
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp143541"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Solaris and Linux
+</h2>
+
+ 
+
+<a name="wp143543"> </a><p class="pBody">
+There are two alternate ways to start the license server on Solaris and Linux:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp143544"> </a><div class="pSmartList1"><li>Manually, from the command line</li></div>
+<a name="wp143545"> </a><div class="pSmartList1"><li>Automatically, using auto-boot commands typically located in the <code class="cCode">/etc/rc</code> file</li></div>
+</ul></div>
+<a name="wp143549"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp143549", false);</script>Procedure&#160;3-8   Starting the License Server on Solaris and Linux (Manually)<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp143549", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp143549", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp143550"> </a><div style="text-align: left" class="pSmartList2Test"><li>Log into the host computer where <code class="cCode">op_license_server</code> is running.</li></div>
+<a name="wp156432"> </a><div style="text-align: left" class="pSmartList2Test"><li>Navigate to the binary directory (<code class="cCode">&lt;bindir&gt;</code>) for your OPNET&#160;analysis&#160;software release and architecture.</li></div>
+<a name="wp156433"> </a><div style="text-align: left" class="pSmartList2Test"><li>Type the following command. </li></div>
+<div class="pCodeStep"><ul class="pCodeStep">
+<a name="wp143553"> </a>./op_license_server -license_port &lt;port&gt;
+<a name="wp143554"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>If you do not know which port is available for <code class="cCode">op_license_server</code>, enter &quot;port_a&quot;. If that port is unavailable, an error message will tell you which ports are available and you can re-enter the command with the correct port.
+</p>
+</ul></div>
+</ol></div>
+<a name="wp143555"> </a><p class="pProcEnd">
+End of Procedure 3-8
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp222596"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp143560"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp143560", false);</script>Procedure&#160;3-9   Starting the License Server on Solaris or Linux (Automatically)<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp143560", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp143560", false);</script>
+<a name="wp143561"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>Root permissions are usually required for this procedure.
+</p>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp143562"> </a><div style="text-align: left" class="pSmartList2Test"><li>Create the following file: <code class="cCode">/etc/rc3.d/S999_opnet_lic_server</code>.</li></div>
+<a name="wp143563"> </a><div style="text-align: left" class="pSmartList2Test"><li>Insert the following auto-boot commands into the file you created:</li></div>
+<div class="pCodeStep"><ul class="pCodeStep">
+<a name="wp143564"> </a># OPNET License Server<br />
+echo &#39;starting OPNET License Server...&#39;<br />
+&lt;bindir&gt;/op_license_server -license_port &lt;port&gt;
+</ul></div>
+<a name="wp200889"> </a><div style="text-align: left" class="pSmartList2Test"><li>(Linux only) Copy the same script to /etc/rc5.d using the following command:</li></div>
+<div class="pCodeStep"><ul class="pCodeStep">
+<a name="wp200903"> </a>cp /etc/rc3.d/S999_opnet_lic_server /etc/rc5.d
+</ul></div>
+</ol></div>
+<a name="wp143565"> </a><p class="pProcEnd">
+End of Procedure 3-9
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp222595"> </a><h6 class="pHeading6">
+
+</h6>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/ag_035_licensing.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

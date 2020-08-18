@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:27" />
+    <title>Node Model Options</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-07-01.html"> Routing</a> > <a href="User-07-02.html">Route DCL/OCH Traffic Dialog Box</a> > Node Model Options</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp275186"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Node Model Options
+</h2>
+
+ 
+
+<a name="wp256088"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>These options are available only if the nodes on the selected layer (DCL or OCH) are discrete nodes. If the nodes are continuous, they can scale without limitations and do not constrain the routing algorithms.
+</p>
+
+<a name="wp256089"> </a><p class="pBody">
+The options are:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp255682"> </a><div class="pSmartList1"><li>Impose Node Limitations&#8212;If enabled, discrete node sizes are fixed and are not upgraded. The capacity limits on these discrete nodes form additional constraints to the routing algorithm, in addition to the limited link capacities. SP&#160;Guru&#160;Transport&#160;Planner considers OXC or IXC capacities when routing an OCH matrix, and DXC or IXC capacities when routing a DCL matrix. </li></div>
+<a name="wp255683"> </a><div class="pSmartList1"><li>Constrain OCH Routing by DCL Node Size&#8212;In some cases, you might route an OCH matrix that originated from outside the OCH layer. For example, you might route an OCH matrix that resulted from a grooming operation. This is called <em class="cEmphasis">non-native traffic</em> because it originated from a different network layer (in this case, the DCL layer). </li></div>
+<a name="wp256409"> </a><p class="pBodyRelative">
+When SP&#160;Guru&#160;Transport&#160;Planner routes non-native OCH traffic, it trails OCH connections to DCL trunks. Therefore, routing non-native OCH connections might require additional DXC trunk ports. If this option is enabled, the discrete DXC type (and therefore the number of available ports on a DXC) is fixed; this constrains the amount of OCH traffic that SP&#160;Guru&#160;Transport&#160;Planner can route. If this option is disabled, SP&#160;Guru&#160;Transport&#160;Planner adds DXC ports (by upgrading the DXC type) as needed to route the specified OCH traffic matrix. 
+</p>
+</ul></div>
+<a name="wp255725"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>This option applies only when you are routing a non-native OCH traffic matrix. 
+</p>
+
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_25_rte.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

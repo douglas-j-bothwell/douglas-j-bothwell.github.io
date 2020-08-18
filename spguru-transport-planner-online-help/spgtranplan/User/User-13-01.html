@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:24" />
+    <title>Ring Design</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2">Ring Design</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp250989"> </a><h2 class="pTitle">
+Ring Design
+</h2>
+<hr />
+
+ 
+
+
+<a name="wp259569"> </a><p class="pBody">
+SP&#160;Guru&#160;Transport&#160;Planner can model SONET/SDH ring-based networks. You can specify SONET/SDH rings within the DCL infrastructure of the existing topology, route DCL traffic on these rings, upgrade existing rings by adding stacked rings on top of them, or identify new rings to add to the network.
+</p>
+<a name="wp276409"> </a><p class="pBody">
+The following steps outline the general ring-design workflow in SP&#160;Guru&#160;Transport&#160;Planner.
+</p>
+<div class="pSmartList1"><ol type="1" class="pSmartList1">
+<a name="wp275886"> </a><div class="pSmartList1"><li>Create or import a network topology.</li></div>
+<a name="wp275887"> </a><div class="pSmartList1"><li>Perform the following pre-design steps:</li></div>
+<div class="pSmartList2"><ol type="a" class="pSmartList2">
+<a name="wp275888"> </a><div class="pSmartList2"><li>Create ring models and set the cost parameters for the ring equipment.</li></div>
+<a name="wp288596"> </a><div class="pSmartList2"><li>Specify how you want the optical layer to support these rings (using patch panels or standard switches).</li></div>
+<a name="wp275893"> </a><div class="pSmartList2"><li>For each node in the DCL layer, specify how you want to perform ring interconnection.</li></div>
+<a name="wp288624"> </a><p class="pBodyRelative">
+These steps are described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-13-02.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-13-02.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Pre-Design Steps</u></a>.
+</p>
+</ol></div>
+<a name="wp275894"> </a><div class="pSmartList1"><li>Create one or more rings in the network, as described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-13-03.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-13-03.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Creating Rings</u></a>.</li></div>
+<a name="wp275898"> </a><div class="pSmartList1"><li>Dimension the rings for a DCL traffic matrix. This accommodates the traffic on the existing rings or upgrades the existing rings. This step is described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-13-05.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-13-05.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Ring Dimensioning</u></a>.</li></div>
+<a name="wp303644"> </a><div class="pSmartList1"><li>Identify new rings to be added to the network to decrease the overall network cost or route more traffic in the network. This step is described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-13-09.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-13-09.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Ring Identification</u></a>. </li></div>
+<a name="wp303631"> </a><div class="pSmartList1"><li>If the rings cannot support some traffic in the matrix, do a mesh design (that is, a grooming or routing operation).</li></div>
+</ol></div>
+<a name="wp291629"> </a><p class="pBody">
+You can interchange steps 4, 5, and 6. For example, you can
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp305204"> </a><div class="pSmartList1"><li>Route part of the DCL traffic matrix on the current mesh capacity (step 6), then accommodate the unrouted part of the traffic matrix on DCL rings (step 4).</li></div>
+<a name="wp305213"> </a><div class="pSmartList1"><li>Identify new rings (step 5), then route traffic on the legacy and new rings (step 5).</li></div>
+</ul></div>
+<a name="wp291618"> </a><p class="pBody">
+SP&#160;Guru&#160;Transport&#160;Planner has a ring browser that you can use to view details about installed rings. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-13-04.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-13-04.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Ring Browser</u></a>.
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_40_rd.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

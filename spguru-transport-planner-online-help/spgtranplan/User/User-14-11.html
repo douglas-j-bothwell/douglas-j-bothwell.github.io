@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:40" />
+    <title>Interconnection Options Dialog Box</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-14-01.html"> Hardware Configurator</a> > <a href="User-14-09.html">Configuring Hardware</a> > Interconnection Options Dialog Box</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp138379"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Interconnection Options Dialog Box
+</h2>
+
+ 
+
+<a name="wp138380"> </a><p class="pBody">
+You can use the Interconnection Options dialog box to specify the amount of capacity reserved for interconnecting devices, in cases where the configuration algorithm results in a solution with multiple devices from one SP&#160;Guru&#160;Transport&#160;Planner type. These options are relevant for the SP&#160;Guru&#160;Transport&#160;Planner node types only: DXC, IXC, OXC, OXCT, WP-OXC, and INT-OXC. 
+</p>
+<a name="wp138415"> </a><p class="pBody">
+If one device is used to configure a SP&#160;Guru&#160;Transport&#160;Planner type, all cards that reside on the same device and all ports on the different cards can be interconnected. If multiple devices are needed, this interconnection is not possible and some interconnection capacity might be required to interconnect ports on different devices.
+</p>
+<a name="wp138393"> </a><p class="pFigCaption">
+Figure&#160;13-6   Interconnection Options Dialog Box
+</p>
+<a name="wp138384"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-14-11-06.jpg" height="110" width="530" id="wp138382" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp138176"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp138133table138128">
+  <caption><a name="wp138133"> </a><div class="ptblcaption">
+Table&#160;13-7   Interconnection Options Dialog Box&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp138137"> </a><div class="pCellHeading">
+Option
+</div>
+</th>
+    <th><a name="wp138139"> </a><div class="pCellHeading">
+Description
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp141090"> </a><div class="pCellBody">
+% of node capacity reserved for interconnection 
+</div>
+</td>
+    <td><a name="wp141092"> </a><div class="pCellBody">
+Specifies the amount of interconnection capacity as a percentage of the total traffic switched in that node. For example, if a node switches 100 Gbps of traffic and 10 percent of the node capacity is reserved for interconnection, this means 10 Gbps of extra interconnection capacity is provided.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp141094"> </a><div class="pCellBody">
+Assign ports per device 
+</div>
+</td>
+    <td><a name="wp141096"> </a><div class="pCellBody">
+Assigns the calculated number of interconnection ports per device. For example, if four interconnection ports are required for two devices, these four interconnection ports are assigned on each device.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp141106"> </a><div class="pCellBody">
+Bit rate of DXC interconnection ports 
+</div>
+</td>
+    <td><a name="wp141108"> </a><div class="pCellBody">
+Specifies the bit rate of the ports used to establish the interconnection capacity on the DXCs and the IXCs. For example, if a DXC requires 10 Gbps of interconnection capacity, and the bit rate of the interconnection ports is OC-48 (2.5 Gbps), four such interconnection ports are required.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp141102"> </a><div class="pCellBody">
+Bit rate of OXC interconnection ports
+</div>
+</td>
+    <td><a name="wp141104"> </a><div class="pCellBody">
+Specifies the bit rate of the ports used to establish the interconnection capacity on the OXCs, WP-OXCs, and INT-OXCs.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp141098"> </a><div class="pCellBody">
+Spread ports over all devices 
+</div>
+</td>
+    <td><a name="wp141100"> </a><div class="pCellBody">
+Spreads the calculated number of interconnection ports evenly over all devices. For example, if four interconnection ports are required for two devices, two interconnection ports are assigned per device.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp138173"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 13-7	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_41_hcon.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

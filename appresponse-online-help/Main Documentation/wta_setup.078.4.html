@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Masking Private Data in Observed Web Traffic</title>
+    <link rel="StyleSheet" href="css/wta_setup.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_user_guide_splash.html">User Guide</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="wta.html">Web Transaction Analysis</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="wta_setup.078.1.html">Setup: Web Transaction Analysis</a> &gt; Masking Private Data in Observed Web Traffic</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h2"><a name="1113279">Masking Private Data in Observed Web Traffic</a></div>
+      <div class="body"><a name="1113283">You can configure AppResponse to prevent private data in observed web traffic—URLs, cookies, POST data—from being displayed in the user interface (for example, in the Web Applications Navigator or the Individual Page Views page). Examples of private data include passwords, personal identification such as Social Security numbers, and other internal information. </a></div>
+      <div class="body"><a name="1113287">You define the private data to mask out by creating profiles in the Information Privacy Manager (Tools &gt; Pages &gt; Information Privacy Manager). Each profile defines the key string in a </a><span class="code">&lt;key&gt;=&lt;value&gt;</span> pair used by a web application. Whenever it observes the key string in an HTTP packet, AppResponse identifies and masks out the corresponding parameter string in URLs, cookies, and POST data. To prevent the data from appearing in the Desktop Console, the appliance performs this masking on “live” web traffic as it is observed on the monitoring interfaces. </div>
+      <div class="bodyWarning">
+        <span class="zRedBold">WARNING: </span><a name="1113294">This functionality does not hide private data after it has been observed by the appliance. For this reason, you must specify the private data to mask out </a><span class="italic">before you enable web page analysis or SSL decoding</span>. </div>
+      <div class="bodyWarning">
+        <span class="zRedBold">WARNING: </span><a name="1113295">This Information Privacy functionality applies to Web Transaction Analysis data only. You cannot use this functionality to hide sensitive information in packet data captured over unencrypted connections. <br /><br />If you want to use Web Transaction Analysis </a><span class="italic">and</span> capture packets but cannot do both over an encrypted connection, Riverbed recommends that you configure the appliance using one of the following methods:<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* Capture in "headers-only" mode, as described in <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Capture-advanced.074.04.html#986613', '');" title="CLI captureconfig Utility: Filtering Packets and Advanced Options">Headers-Only Mode</a></span>.<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* Set the <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Capture-advanced.074.02.html#954796', '');" title="High-Speed Captures">Packet Size Limit</a></span> to no higher than 128, as described in <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Capture-advanced.074.02.html#954784', '');" title="High-Speed Captures">Configuration Options for High-Speed Captures</a></span>. </div>
+      <div class="bodyNote">
+        <span class="bold">Note: </span><a name="1148023">AppResponse assumes that private data fields are embedded in the web traffic as key-value pairs separated by the ‘</a><span class="codebold">=</span>’ character (for example, <span class="codebold">username</span><span class="code" style="font-weight: normal">=jsmith</span> and <span class="codebold">sessionID</span><span class="code" style="font-weight: normal">=1131</span>). <br /><br />If a web application uses different conventions for transferring values, you must define the keys using regular expressions as described in <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.7.html#1144486', '');" title="Tracking Web Page Users: the User Session Tracking Manager">Defining Keys Using Regular Expressions</a></span>. Note that to use this method, you must have a working knowledge of regular expressions and the exact data formats used by the web application of interest. </div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1113309&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procCaption_inner" style="width: 90pt; white-space: nowrap">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1113309", false);</script>Procedure&nbsp;1    </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="1113309">Creating an Information Privacy Profile for Masking Private Parameter Values</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1113309", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113310">For each web application of interest, create a list of HTTP parameter fields that contain private data you want to mask out. Examples of private data include</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113311">Passwords</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113312">Social Security numbers</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113313">External usernames</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note: </span><a name="1113314">The best source for obtaining this information is from the web developers or other staff who develop, maintain, and/or troubleshoot the web application directly. If this is not an option for you, the following steps provide additional guidelines for obtaining this information on your own. </a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113316">If you cannot obtain the data key, server, and URL information from someone in your organization, use tcpdump, Wireshark, or another program to capture one or more page views that contain at least one instance of each data field that you want to mask out. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="1113320">Capture the web traffic as follows: </a></div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113321">Go to the login page for the web application. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113322">Start the capture. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113323">Log in as a user who can enter and submit the data fields you want to mask out (password, Social Security number, and so on).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113324">Wait until the "login-succeeded" page downloads completely. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.5.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113325">Navigate to a web page that prompts you for the data field(s) of interest. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubCont"><span class="bold"><a name="1113326">Note—</a></span>Pages such as “Update Profile” or “New Profile” are likely candidates for entering and submitting this type of information. </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.6.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113327">When prompted, specify the requested information. If necessary, write down the values that you specify so you can search for these values in the trace. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.7.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113328">Submit the information to the web server (for example, by clicking OK or Submit). </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.8.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113329">Stop the capture.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.9.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113330">Open the resulting trace file in Wireshark or in the Trace Explorer window of Transaction&nbsp;Analyzer. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113337">Open the Desktop Console and connect to the appliance as a user with Administrator privileges.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1124189">In the console, choose Pages &gt; Information Privacy Manager. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	5.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113339">Click New to create a new entry in the Information Privacy Manager. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	6.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113341">Specify the information in each of the tabbed pages for the data field you want to mask out.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note: </span><a name="1113342">The best source for obtaining this information is from the web developers or other staff who develop, maintain, and/or troubleshoot the web application directly. If this is not an option for you, the following sections describe how to find this information if the trace file you created in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.4.html#1113316', '');" title="Masking Private Data in Observed Web Traffic">step&nbsp;2.</a></span> </div>
+      <div class="procStepSubAltIntro"><a name="1113346">Definition &gt; Key</a></div>
+      <div class="procStepBulletCont"><a name="1113350">Using the Find Packets operation in Wireshark or Transaction&nbsp;Analyzer, search for packets that contain the </a><span class="code">&lt;</span><span class="italic">value</span><span class="code" style="font-style: normal">&gt;</span> string that you submitted for the data field of interest (password, Social Security number, etc.). Make sure that you search the text/string/ASCII data rather than the binary/HEX data.</div>
+      <div class="figCaptionSubStep_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionSubStep_inner" style="width: 57.599999999999994pt; white-space: nowrap">Figure&nbsp;1    </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionSubStep_inner"><a name="1113351">Finding Packets with a Social Security Number (Example)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1113355"><img class="Default" src="images/wta_setup.078.4.1.jpg" width="338" height="178" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1113356">&nbsp;</a></div>
+      <div class="procStepBulletCont"><a name="1113357">For each packet that contains the </a><span class="code">&lt;</span><span class="italic">value</span><span class="code" style="font-style: normal">&gt;</span> string, parse the HTTP contents of that packet to locate the corresponding <span class="code">&lt;key&gt;</span> string. This best places to look are in the <span class="code">POST</span> data (most likely) or the URL parameter of a <span class="code">GET</span> request (less likely, but possible). </div>
+      <div class="procStepSubAltIntro"><a name="1113358">Servers &gt; Ports<br />Servers &gt; IP Addresses</a></div>
+      <div class="procStepBulletCont"><a name="1113359">Examine the </a><span class="code">POST</span> message for the web page that contains the <span class="code">&lt;</span><span class="italic">key</span><span class="code" style="font-style: normal">&gt;=&lt;</span><span class="italic">value</span><span class="code" style="font-style: normal">&gt;</span> string of interest. </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113360">The port number is in the </a><span class="code">TCP</span> header &gt; destination port. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113361">The IP address is in the </a><span class="code">IP</span> header &gt; destination IP. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionSubStep_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionSubStep_inner" style="width: 57.599999999999994pt; white-space: nowrap">Figure&nbsp;2    </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionSubStep_inner"><a name="1113362">Server Port and IP in POST Message</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1113366"><img class="Default" src="images/wta_setup.078.4.2.jpg" width="507" height="54" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1113367">&nbsp;</a></div>
+      <div class="procStepSubCont"><span class="bold"><a name="1113368">Note—</a></span>If the web application uses multiple servers, you might need to specify multiple server ports/IPs. </div>
+      <div class="procStepSubAltIntro"><a name="1113369">URLs</a></div>
+      <div class="procStepBulletCont"><a name="1113370">When you specify the host and path, your goal is to enter one or more regular expressions that match all page views that might include the specific </a><span class="code">&lt;</span><span class="italic">key</span><span class="code" style="font-style: normal">&gt;=&lt;</span><span class="italic">value</span><span class="code" style="font-style: normal">&gt;</span> string. The following are some example hostnames/paths: </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><span class="codebold"><a name="1113371">inet.acme.com</a></span> and <span class="codebold">*/*profile* </span>(“Any page view whose URL includes the host string <span class="code">inet.acme.com</span> and a path with the parameter string <span class="code">profile</span>”)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><span class="codebold"><a name="1113372">myprofile.acme.com</a></span> and <span class="codebold">*</span> (“Any page view whose URL includes the host string <span class="code">myprofile.acme.com</span>”)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><span class="codebold"><a name="1113373">www.webstore.com</a></span> and <span class="codebold">/purchase/*</span> (“Any page view whose URL includes the host string <span class="code">www.webstore.com</span> and a parameter string that starts with <span class="code">/purchase/</span>”)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	7.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113380">Repeat </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.4.html#1113339', '');" title="Masking Private Data in Observed Web Traffic">step&nbsp;5.</a></span> and <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.4.html#1113341', '');" title="Masking Private Data in Observed Web Traffic">step&nbsp;6.</a></span> for each additional parameter you want to mask out. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	8.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113382">Review all your entries in the Information Privacy Manager, then click Apply or OK. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note: </span><a name="1113386">AppResponse does not mask out private data after it is stored on an appliance. For this reason, it is good practice to review all Information Privacy profiles for all private key strings </a><span class="italic">before you enable Web Transaction Analysis or SSL decoding</span>.</div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	9.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113389">If the data fields you want to mask out are included in URLs, you can use the following steps to verify that the Information Privacy profile you specified works as intended:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	9.1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113393">Go to the Administration &gt; System &gt; Pages web page and enable (turn on) the “Enable Page Analysis” option. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	9.2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113394">Go to the login page of the web application and log in (if you are already logged in, log out and then log back in).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	9.3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113398">Repeat the web session you performed in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.4.html#1113316', '');" title="Masking Private Data in Observed Web Traffic">step&nbsp;2.</a></span> to generate the trace file. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	9.4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113402">Go back to Administration &gt; System &gt; Pages and disable (turn off) the “Enable Page Analysis” option. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	9.5.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113406">In the Desktop Console, set the project time to focus on the web session you just performed.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	9.6.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113407">Open the Individual Page Views insight (Insights&nbsp;&gt; Page&nbsp;Analysis&nbsp;&gt; Individual&nbsp;Page&nbsp;Views).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	9.7.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113408">Select the Top Page Analysis Groups tab and select Web Application in the pull-down menu (top left). </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	9.8.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113409">In the Group table (top left), select the web application you are verifying. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubResult_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubResult_inner" style="width: 10.799999999999997pt; white-space: nowrap">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubResult_inner"><a name="1113410">The Top Individual Page Views table (bottom) shows the top page views for the web application. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	9.9.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113411">In the Top Individual Page Views table, resize the Individual Page column so that you can see the entire URL. The sensitive parameter strings should appear masked. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	10.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113415">If the parameter values of interest appear unmasked in the URLs, repeat </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.4.html#1113316', '');" title="Masking Private Data in Observed Web Traffic">step&nbsp;2.</a></span> through <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.4.html#1113389', '');" title="Masking Private Data in Observed Web Traffic">step&nbsp;9.</a></span> until you get the results you expect. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap">End of Procedure 1</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1113419">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1113420">&nbsp;</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

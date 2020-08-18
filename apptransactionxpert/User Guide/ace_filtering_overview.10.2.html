@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Packet Filtering</title>
+    <link rel="StyleSheet" href="css/ace_filtering_overview.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ace_filtering_overview.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_preview_import_filter_traffic_splash.html#174955">Previewing, Importing, and Filtering Traffic</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ace_filtering_overview.10.1.html#174955">Filtering Traffic</a> &gt; Packet Filtering</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="174955">Packet Filtering</a></div>
+      <div class="bodyIntro"><a name="174956">Packet filters are useful for filtering irrelevant traffic. Use packet filters when:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="174960">Capturing traffic with AppTransaction&nbsp;Xpert capture agents—<br />You can apply a filter to a capture agent in the Remote Application Capture Agent Editor dialog box, as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_appcap_overview_plus.04.14.html#238428', '');" title="Configuring a Capture Agent">Configuring a Capture Agent</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="174967">Importing capture data into AppTransaction&nbsp;Xpert—<br />You can apply a filter to a packet&nbsp;trace in the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.08.html#218827', '');" title="“Merge Capture Files” Options: Packet Traces and Packet Filters">Merge Capture Files Dialog Box</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="174971">Viewing capture data in </a><span style="font-size: 10.0pt">Trace&nbsp;Explorer and Transaction&nbsp;Analyzer—<br /></span>You can apply a filter to a packet&nbsp;trace by choosing Edit&nbsp;&gt; Filter&nbsp;Trace…</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="174975">By default, AppTransaction&nbsp;Xpert captures and imports nearly all non-broadcast, non-multicast packets. Filtering is configured in the Capture File Filter dialog box. (See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_filtering_overview.10.2.html#174991', '');" title="Packet Filtering">Figure&nbsp;9-1</a></span>.) You can filter packets based on hosts, ports, direction, and protocols. You can also save a defined filter and reuse it when creating other Transaction&nbsp;Analyzer models.</div>
+      <div class="h2NoBreak"><a name="174984">Packet&nbsp;Trace Filters</a></div>
+      <div class="bodyIntro"><a name="174985">A packet&nbsp;trace filter consists of criteria specifying the traffic to filter (to include or to exclude). Criteria is specified in the Capture File Filter dialog box, which contains sections for specifying several types of criteria:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="174986">Packet flow (host, port, and direction)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="174987">Protocols</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="174988">Frame numbers and time ranges</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="174989">Broadcast/multicast traffic</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;9-1   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="174991">Capture File Filter Dialog Box (Capture and Import Version)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="175015"><img class="Default" src="images/ace_filtering_overview.10.2.1.jpg" width="478" height="384" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="175016">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="175017">The specified criteria is combined to create the composite filter, as follows:</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="175018">All lines in the packet flow filtering table are logically OR’ed to create the packet flow criteria.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="175019">All lines in the protocol filtering table are logically OR’ed to create the protocol criteria.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumLast_inner" style="width: 21.6pt; white-space: nowrap;">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumLast_inner"><a name="175020">All sections of the dialog box are logical AND’ed to create the composite filter.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="175021">For example, if the packet flow filtering table is configured to import all packets originating from host A and the protocol filtering table is configured to import only those packets that do not have UDP data, the resulting filter will import only those packets originating from host A that do not have UDP data (these might be TCP, DLC, and others).</a></div>
+      <div class="bodyIntro"><a name="175022">Use the following procedure to specify a filter for capturing traffic with a capture agent or importing captured traffic into AppTransaction&nbsp;Xpert.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd175026&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd175026", false);</script>Procedure&nbsp;9-1   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="175026">Specifying a Packet&nbsp;Trace Filter for Captures and Imports</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd175026", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="175027">Choose whether </a><span style="font-size: 11.0pt">packet flow filtering</span> is used to include or exclude packet flows from the capture by selecting one of these radio buttons:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="175028">Import all of the following hosts/ports</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="175029">Import everything but the following hosts/ports</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="175030">In the </a><span style="font-size: 11.0pt">packet flow filtering</span> table, specify the source and destination hosts and ports, as follows:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="175031">Set each Host cell to one of the following:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <span class="bold">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="175032">“ANY”</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <span class="bold">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="175033">IP address—this can be a full address, a partial address ending in a * wildcard (such as 172.* or 192.168.42.*), or an address using slash notation (such as 192.168.1.1/9, where /9 is equivalent to matching the IP address using a mask of 255.128.0.0)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <span class="bold">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="175034">DNS name (capture filters only)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="175035">Set each Port cell to one of the following:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <span class="bold">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="175036">a single port number</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <span class="bold">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="175037">a range of port numbers (such as 100-249)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <span class="bold">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="175038">a comma-separated list of any combination of single port numbers and port ranges</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note—</span><a name="175039">To sort the table, click on a column heading.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="175040">Specify the direction of packet flow (unidirectional or bidirectional) by clicking in the Direction cell and selecting a direction.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="175041">To add another packet flow filter, click the Add Line button and repeat steps 2 and 3.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="175042">Choose whether protocol filtering is used to include or exclude protocols from the capture by selecting one of these radio buttons:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="175043">Import all of the following protocols</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="175044">Import everything but the following protocols</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="175045">Specify the protocols of interest:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="175046">To add another protocol, click the Add Protocol button and select a protocol. (Select “&lt;UNSPECIFIED&gt;” to match all protocols.)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="175047">To change a protocol, select it and choose a different protocol from the pop-up list.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="175048">To remove a protocol, select it and click the Remove Protocol button.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	7	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="175049">If needed, specify frame number and time stamp ranges for filtering.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	8	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="175050">Set the “Exclude Broadcast Traffic” and “Exclude Multicast Traffic” checkboxes as needed.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	9	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="175051">Click Save… to save the filter.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	10	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="175052">Click OK to close the dialog box.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 9-1</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="175053">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="175054">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="175055">Use the following procedure to specify a filter for viewing captured traffic in </a><span style="font-size: 10.0pt">Trace&nbsp;Explorer</span>.</div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd175056&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd175056", false);</script>Procedure&nbsp;9-2   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="175056">Specifying a Packet&nbsp;Trace Filter for Trace&nbsp;Explorer</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd175056", false);</script>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;9-2   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="175057">Capture File Filter Dialog Box (Trace&nbsp;Explorer Version)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="175073"><img class="Default" src="images/ace_filtering_overview.10.2.2.jpg" width="462" height="384" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="175074">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="175075">Choose whether packet flow filtering is used to include or exclude packet flows from the trace by selecting one of these radio buttons:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="175076">Include all of the following</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="175077">Include everything but the following</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="175078">For either selection, you can use the radio buttons on the right side to specify whether packet flows not included are excluded (simply ignored) or deleted from the trace.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="175079">In the packet flow filtering table, specify the source and destination hosts and ports, as follows:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="175080">Set each Host cell to one of the following:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <span class="bold">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="175081">“ANY”</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <span class="bold">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="175082">DNS name</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <span class="bold">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="175083">IP address—this can be a full address, a partial address ending in a * wildcard (such as 172.* or 192.168.42.*), or an address using slash notation (such as 192.168.1.1/9, where /9 is equivalent to matching the IP address using a mask of 255.128.0.0)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="175084">Set each Port cell to one of the following:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <span class="bold">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="175085">a single port number</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <span class="bold">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="175086">a range of port numbers (such as 100-249)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <span class="bold">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="175087">a comma-separated list of any combination of single port numbers and port ranges</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note—</span><a name="175088">To sort this table, click on a column heading.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="175089">Specify the direction of packet flow (unidirectional or bidirectional) by clicking in the Direction cell and selecting a direction.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="175090">To add another packet flow filter, click the Add Line button and repeat steps 2 and 3.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="175091">Choose whether protocol filtering is used to include or exclude protocols from the capture by selecting one of these radio buttons:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="175092">Include connections with the following protocols</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="175093">Include everything but the connections with the following protocols</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="175094">Specify the protocols of interest:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="175095">To add a protocol, click the “Add&nbsp;Protocol” button and select a protocol. <br />(Select “&lt;UNSPECIFIED&gt;” to match all protocols.)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="175096">To change a protocol, select it and choose a different protocol from the pop-up list.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="175097">To remove a protocol, select it and click the “Remove&nbsp;Protocol” button.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	7	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="175098">If needed, specify a frame number range for filtering.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	8	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="175099">Click Save… to save the filter.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	9	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="175100">Click OK to close the dialog box.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 9-2</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="175101">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="176490">&nbsp;</a></div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="176491">To capture VLAN traffic from an AppTransaction&nbsp;Xpert capture agent using an IP-based filter, you must set the “ace_capture_vlan_bpf_enable” preference to TRUE.</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          // Add related topics
+          //
+          WWHAddRelatedTopic("Filtering Traffic", "main_doc", "ace_filtering_overview.10.1.html#90696");
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

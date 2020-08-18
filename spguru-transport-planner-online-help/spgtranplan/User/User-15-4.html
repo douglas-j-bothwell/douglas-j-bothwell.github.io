@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:51" />
+    <title>Availability Analysis Report</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-15-1.html"> Failure Evaluation</a> > <a href="User-15-2.html">Service Availability</a> > Availability Analysis Report</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp302156"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Availability Analysis Report
+</h2>
+
+ 
+
+<a name="wp302245"> </a><p class="pBody">
+The generated web report consists of two main parts. First, an overview of the availability analysis settings is shown. Next, an overview of the availability results is given per traffic matrix.
+</p>
+<a name="wp302257"> </a><p class="pFigCaption">
+Figure&#160;14-3   Availability Analysis Report&#8212;Analysis Settings
+</p>
+<a name="wp302265"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-15-4-03.jpg" height="219" width="530" id="wp302266" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp302272"> </a><p class="pBody">
+This section gives an overview of the analysis options you can select. First, the analysis method is displayed. Next, the options for the simulation method are displayed: the maximum number of simultaneous failures, the maximum number of simultaneous failures to restore for shared path protection and for restoration, and the connection order for restoration. The report only shows these options if you have selected the simulation method. At the end, an overview of the selected failure elements is displayed. These failure elements are shown per failure type.
+</p>
+<a name="wp302285"> </a><p class="pFigCaption">
+Figure&#160;14-4   Availability Analysis Report&#8212;Availability Results
+</p>
+<a name="wp302289"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-15-4-04.jpg" height="277" width="530" id="wp302290" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp302298"> </a><p class="pBody">
+The Availability Analysis report shows the availability results per traffic matrix. You can view the result for a traffic matrix by clicking on the traffic matrix name at the left side of the report. The availability results per traffic matrix consists of three parts:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp302346"> </a><div class="pSmartList1"><li>An overview is given of the availability of the traffic matrix: the average availability, the expected loss of traffic, and the average expected loss of traffic. Note that only the connections you selected are taken into account to calculate these parameters.</li></div>
+<a name="wp302351"> </a><div class="pSmartList1"><li>The &quot;Connections meeting availability requirements&quot; table is displayed. This table contains those connections for which the minimal calculated value for the availability is higher than or equal to the required availability set for the connection. This table shows, per connection, the connection name, the source and destination name, and the protection type. Also, the minimal, the estimated, and the maximal calculated value for the availability are shown.</li></div>
+<a name="wp302354"> </a><div class="pSmartList1"><li>Next, the table shows the required availability of the connection. The minimal and maximal availability are respectively a lower-border and upper-border for the exact availability of the connection. Note that the estimated value is only displayed if the simulation method is selected. The equality of the minimal and maximal availability implies that this value is the exact value for the availability of the connection.</li></div>
+<a name="wp302359"> </a><div class="pSmartList1"><li>At the end of the report, the &quot;Connections failing to meet availability requirements&quot; table is displayed and contains the connections for which the minimal value for the availability is lower than its required availability.</li></div>
+</ul></div>
+<a name="wp302296"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>The required availability of an LOP, DCL, or OCH connection can be specified by right-clicking on the connection in the Network &gt; Connection Browser. This parameter should have a value between 0 and 1.
+</p>
+
+<a name="wp302374"> </a><p class="pFigCaption">
+Figure&#160;14-5   Connection Browser
+</p>
+<a name="wp302378"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-15-4-05.jpg" height="200" width="530" id="wp302379" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_43_fe.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:37:20" />
+    <title>Evaluate Availability: Batch Options</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-17-01.html"> Batch Console</a> > <a href="User-17-08.html">Editing a Batch File Manually</a> > Evaluate Availability: Batch Options</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp225117"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Evaluate Availability: Batch Options
+</h2>
+
+ 
+
+<a name="wp225121"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('wdm_user', 'User-17-15.html#wp225128');" onMouseOver="WWHShowPopup('wdm_user', 'User-17-15.html#wp225128', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;16-11</u></a> lists the options you can specify for an Evaluate Availability command. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-15-1.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-15-1.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Failure Evaluation</u> </a>.
+</p>
+<a name="wp225176"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp225128table225122">
+  <caption><a name="wp225128"> </a><div class="ptblcaption">
+Table&#160;16-11   Evaluating Availability: Batch Options&#160;
+</div>
+</caption>
+  <tr align="left" valign="top">    <td><a name="wp225134"> </a><div class="pCellHeading">
+Option
+</div>
+</td>
+    <td><a name="wp225136"> </a><div class="pCellHeading">
+Description
+</div>
+</td>
+    <td><a name="wp225138"> </a><div class="pCellHeading">
+Comment
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp225140"> </a><div class="pCellBody">
+-layer
+</div>
+</td>
+    <td><a name="wp230140"> </a><div class="pCellBody">
+Layer:
+</div>
+<ul class="pCellBodyBullet"><a name="wp230141"> </a><div class="pCellBodyBullet"><li>
+DCL = digital client layer
+</li></div>
+<a name="wp225144"> </a><div class="pCellBodyBullet"><li>
+OCH = optical channel layer 
+</li></div>
+</ul></td>
+    <td><a name="wp225146"> </a><div class="pCellBody">
+DCL is the only applicable option if a network contains all EEC nodes (no OCC or EOCC nodes)
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp225148"> </a><div class="pCellBody">
+-load
+</div>
+</td>
+    <td><a name="wp225150"> </a><div class="pCellBody">
+Traffic matrix subject to evaluate availability
+</div>
+</td>
+    <td>&#160;</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp225154"> </a><div class="pCellBody">
+-opdf
+</div>
+</td>
+    <td><a name="wp230167"> </a><div class="pCellBody">
+Evaluate double failures:
+</div>
+<ul class="pCellBodyBullet"><a name="wp230168"> </a><div class="pCellBodyBullet"><li>
+0 = neglect
+</li></div>
+<a name="wp230169"> </a><div class="pCellBodyBullet"><li>
+1 = calculate unaffected connections
+</li></div>
+<a name="wp225159"> </a><div class="pCellBodyBullet"><li>
+2 = apply restoration algorithm
+</li></div>
+</ul></td>
+    <td><a name="wp225161"> </a><div class="pCellBody">
+For shared path protection or mesh restoration only
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp225163"> </a><div class="pCellBody">
+-optf
+</div>
+</td>
+    <td><a name="wp230185"> </a><div class="pCellBody">
+Evaluate triple failures:
+</div>
+<ul class="pCellBodyBullet"><a name="wp230186"> </a><div class="pCellBodyBullet"><li>
+0 = neglect
+</li></div>
+<a name="wp225167"> </a><div class="pCellBodyBullet"><li>
+1 = calculate unaffected connections
+</li></div>
+</ul></td>
+    <td><a name="wp225169"> </a><div class="pCellBody">
+For shared path protection or mesh restoration only
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="3" rowspan="1"><a name="wp225171"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 16-11	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_50_bc.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

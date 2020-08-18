@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:27" />
+    <title>Tearing Down a Traffic Matrix</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-07-01.html"> Routing</a> > Tearing Down a Traffic Matrix</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp280085"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Tearing Down a Traffic Matrix
+</h2>
+
+ 
+
+
+<a name="wp251981"> </a><p class="pBody">
+When you tear down a traffic matrix, SP&#160;Guru&#160;Transport&#160;Planner removes that traffic from the network and the traffic becomes &quot;unrouted.&quot; To do this, open the Tear Down Traffic dialog box (Design&#160;&gt; Tear&#160;Down&#160;Traffic); then select the traffic matrix and click Tear Down. This operation removes traffic only, and does not remove any network capacity.
+</p>
+<a name="wp256292"> </a><p class="pBody">
+You can also tear down a partially routed traffic matrix&#8212;that is, a matrix that was not 100 percent routed&#8212;from the Route dialog box: open the Route dialog box, select the matrix, and click Tear Down. See <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-01.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-01.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Routing</u></a> for more information.
+</p>
+<a name="wp251988"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>If an OCH matrix contains DCL connections that resulted from a grooming operation, tearing down the OCH matrix also tears down these DCL connections. This is also true for a DCL traffic matrix that contains groomed LOP connections. For more information about setting up and tearing down dependent OCH/DCL matrices, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-09-22.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-22.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Grooming Multiple DCL Matrices</u></a>.
+</p>
+
+<a name="wp272650"> </a><p class="pFigCaption">
+Figure&#160;6-8   Tear Down Traffic Matrix Dialog Box
+</p>
+<a name="wp272653"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-07-10-08.jpg" height="142" width="530" id="wp272652" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp280276"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp280179table280174">
+  <caption><a name="wp280179"> </a><div class="ptblcaption">
+Table&#160;6-5   Tear Down Traffic Dialog Box&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp280183"> </a><div class="pCellHeading">
+Control
+</div>
+</th>
+    <th><a name="wp280185"> </a><div class="pCellHeading">
+Description
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp280396"> </a><div class="pCellBody">
+Layer
+</div>
+</td>
+    <td><a name="wp280398"> </a><div class="pCellBody">
+Specifies the type of traffic matrices that appear in the Traffic Matrix list.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp280400"> </a><div class="pCellBody">
+Tear Down
+</div>
+</td>
+    <td><a name="wp280402"> </a><div class="pCellBody">
+Tears down the selected traffic matrix
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp280404"> </a><div class="pCellBody">
+Traffic Matrix
+</div>
+</td>
+    <td><a name="wp280406"> </a><div class="pCellBody">
+Select the traffic matrix to tear down. This table lists all routed traffic matrices of the type specified by the Layer option.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp280408"> </a><div class="pCellBody">
+Unpin All
+</div>
+</td>
+    <td><a name="wp280413"> </a><div class="pCellBody">
+If this option is selected, SP&#160;Guru&#160;Transport&#160;Planner unpins all pinned connections so that all connections (pinned and unpinned) are torn down. Otherwise SP&#160;Guru&#160;Transport&#160;Planner tears down unpinned connections only.
+</div>
+<a name="wp312894"> </a><div class="pCellBody">
+For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-09.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-09.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Pinning and Unpinning Connections</u></a>.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp280273"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 6-5	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_25_rte.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

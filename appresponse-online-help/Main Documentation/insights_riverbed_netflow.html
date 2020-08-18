@@ -1,0 +1,953 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Riverbed NetFlow Insights</title>
+    <link rel="StyleSheet" href="css/insights_riverbed_netflow.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_user_guide_splash.html">User Guide</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="insights.html">Insights</a> &gt; Riverbed NetFlow Insights </div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="1113226">Riverbed NetFlow Insights </a></div>
+      <div class="bodyIntro"><a name="1113227">Riverbed NetFlow Insights enable you to </a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113228">Monitor WAN throughput by application on individual Riverbed devices. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113229">View detailed throughput and compression metrics for individual applications </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113230">Analyze passthrough, optimized, and total WAN throughputs and WAN/LAN compression metrics for individual applications. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113231">Analyze applications and IPs that are affected the most (and the least) from Riverbed optimization. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyIntro"><a name="1144873">This section discusses the following topics:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'insights_riverbed_netflow.html#1113254', '');" title="Riverbed NetFlow Insights" name="1144877">System Requirements</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'insights_riverbed_netflow.html#1113263', '');" title="Riverbed NetFlow Insights" name="1144881">Configuration and Setup</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'insights_riverbed_netflow.html#1113328', '');" title="Riverbed NetFlow Insights" name="1144885">WAN Usage Insight</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'insights_riverbed_netflow.html#1113340', '');" title="Riverbed NetFlow Insights" name="1144889">WAN Performance Insight</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'insights_riverbed_netflow.html#1113357', '');" title="Riverbed NetFlow Insights" name="1144893">WAN Troubleshooting Insight</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="1113254">System Requirements</a></div>
+      <div class="bodyIntro"><a name="1113255">These Insights require the following:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113259">AppResponse release 8.0.8 or higher</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113260">A NetFlow Data Collection license</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113261">A Riverbed Steelhead appliance with an RIOS release that can export flow data in NetFlow v9 format</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="1113263">Configuration and Setup</a></div>
+      <div class="bodyIntro"><a name="1113264">These Insights require that each Steelhead be configured as follows:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113265">The Steelhead has a Flow Collector that is configured as follows:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1113269">Exports data to the AppResponse appliance in Netflow v9 format.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1113270">Exports data for at least one LAN and one WAN interface.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1113271">For each interface, the Flow Collector exports data for both Optimized and Passthrough traffic.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1113272">The Active Flow Timeout is set to 60 seconds.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1113273">The Inactive Flow Timeout is set to 60 seconds or less.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113274">The Steelhead has SNMP traps enabled and a Read-Only Community string specified.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyIntro"><a name="1113275">The following procedure describes how to configure a Steelhead appliance using the RIOS v6.0 web interface.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1113279&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procCaption_inner" style="width: 90pt; white-space: nowrap">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1113279", false);</script>Procedure&nbsp;1    </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="1113279">Configuring a Steelhead for AppResponse Riverbed NetFlow Insights</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1113279", false);</script>
+      <div class="procNote">
+        <span class="bold">Note: </span><a name="1113280">This procedure is based on the web interface for RIOS version 6.0.2. Some menus, options and UI elements might be different if you are using a different version of RIOS.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113281">Log in to the web interface of the Steelhead.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113282">Choose Configure&nbsp;&gt; Networking&nbsp;&gt; Flow&nbsp;Export.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113283">Under Flow Export and Top Talker Settings, configure the options as follows:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113284">Enable Flow Export = selected</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113285">Disable Top Talkers = selected</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113286">Active Flow Timeout = 60 seconds</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113287">Inactive Flow Timeout = 15 seconds</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap">Figure&nbsp;1    </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1113288">Flow Export/Top Talker Settings</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1113292"><img class="Default" src="images/insights_riverbed_netflow.056.1.1.jpg" width="513" height="168" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1113293">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113297">Under Flow Collectors, create a collector for the AppResponse appliance:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	4.1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113298">Specify the IP address of the appliance, and the port on which the appliance listens for Netflow data.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubCont"><span class="bold"><a name="1113299">Note—</a></span>The collector port number must be included in the Netflow Port(s) field in the Administration&nbsp;&gt; System&nbsp;&gt; Advanced page of the AppResponse web UI. </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	4.2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113303">Set the Version to Netflow v9.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	4.3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113304">For each LAN and WAN interface of interest, set the pull-down menu to All. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	4.4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113305">For each RIOS interface, set the pull-down menu to None. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap">Figure&nbsp;2    </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1113306">Flow Collector Settings</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1113310"><img class="Default" src="images/insights_riverbed_netflow.056.1.2.jpg" width="513" height="258" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1113311">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	5.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113312">Choose Configure &gt; System Settings &gt; SNMP Basic. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	6.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113313">Configure the following settings:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113314">Enable SNMP Traps = selected</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113318">Read-Only Community String = a string that enables AppResponse to read data from the Steelhead.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap">Figure&nbsp;3    </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1113319">SNMP Server Settings</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1113323"><img class="Default" src="images/insights_riverbed_netflow.056.1.3.jpg" width="513" height="84" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1113324">&nbsp;</a></div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap">End of Procedure 1</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1113325">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1113326">&nbsp;</a></div>
+      <div class="h2TopNoBreak"><a name="1113328">WAN Usage Insight</a></div>
+      <div class="bodyIntro"><a name="1113329">This Insight is useful for viewing the overall WAN throughput and utilization in your network, and for identifying the interfaces and applications used the WAN most heavily during the current project time window. Note the following:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113330">The Riverbed WAN interfaces table supports many right-click menu operations available in other tables. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113331">You can double-click and drag-and-drop slices in the Top Applications pie chart to export data to external charts and tables. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113332">You can zoom in on a specific time window in the graph (right) to view the top applications for this window in the pie chart.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;4     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="1113333">WAN Usage Insight</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1113337"><img class="Default" src="images/insights_riverbed_netflow.056.1.4.jpg" width="566" height="357" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1113338">&nbsp;</a></div>
+      <div class="h2TopNoBreak"><a name="1113340">WAN Performance Insight </a></div>
+      <div class="bodyIntro"><a name="1113341">This Insight is useful for analyzing the WAN acceleration performance on a specific interface. This Insight shows interface throughput levels and traffic reduction over time, identifies top applications based WAN throughputs (overall, optimized, and pass-through), and shows the time-based effects of WAN acceleration on top applications. </a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;5     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="1113342">WAN Performance Insight</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1113346"><img class="Default" src="images/insights_riverbed_netflow.056.1.5.jpg" width="589" height="360" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1113347">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="1113348">In this Insight, you can</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113349">View time-based throughputs and LAN-to-WAN throughput reduction per Steelhead interface. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="1113350">The Data Reduction graph shows two measurements of data reduction:</a></div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1113351">Optimized Traffic Data Reduction—The percentage by which LAN throughput (optimizable) is reduced to WAN throughput (optimized). If the Data Reduction graph shows 10%, for example, the optimized WAN throughput is 90% of the non-passthrough LAN throughput.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1113352">Overall Traffic Data Reduction—The percentage by which total LAN throughput (optimizable and pass-through) is reduced to total WAN throughput (optimized and pass-through). </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113353">Identify top applications by WAN throughput (total, optimized, and pass-through) on a selected interface. You can also view top applications and application-specific throughputs for a subset of time by dragging horizontally in the top right graph. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113354">View time-based throughputs and compression ratios per application. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1113355">Customize, edit, export, and analyze data for selected interfaces, throughputs, and applications via right-click menus.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2TopNoBreak"><a name="1113357">WAN Troubleshooting Insight</a></div>
+      <div class="bodyIntro"><a name="1113358">This Insight is useful for troubleshooting WAN acceleration performance on a specific interface. This Insight shows interface throughput levels and traffic reduction over time, identifies top applications based on WAN throughputs, and shows the top talkers (WAN/LAN IPs and IP Conversations) for specific applications. </a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;6     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="1113359">WAN Troubleshooting Insight</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1113363"><img class="Default" src="images/insights_riverbed_netflow.056.1.6.jpg" width="577" height="327" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1113364">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="1113365">In this Insight, you can</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113366">View time-based throughputs and LAN-to-WAN throughput reduction per Steelhead interface. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="1113367">The Data Reduction graph shows two measurements of data reduction:</a></div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1113368">Optimized Traffic Data Reduction—The percentage by which LAN throughput (optimizable) is reduced to WAN throughput (optimized). If the graph shows 10%, for example, the WAN throughput is 90% of the LAN throughput.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1113369">Overall Traffic Data Reduction—The percentage by which LAN throughput (optimizable and pass-through) is reduced to WAN throughput (optimized and pass-through). </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="1113370">You can select a time window within the Throughput (Total) and Data Reduction graphs by dragging horizontally. When you select a new time window, the Top Applications and Top on WAN tables update to show data for this time window.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113371">Identify top applications by WAN throughput—total, optimized, and pass-through—on a selected interface (Top Applications for &lt;</a><span class="italic">interface</span>&gt; table, bottom left). </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113372">View top talkers—IPs and IP Conversations—and their throughputs for a specific application and time window (Top &lt;</a><span class="italic">application</span>&gt; on WAN table, bottom left).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><span class="bold"><a name="1113373">Note—</a></span>The Throughput values in this table measure Total, Passthrough, or Optimized traffic across the WAN, depending on which tab is selected in the Top Applications table.</div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113374">by dragging horizontally in the top right graph.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113375">Identify top WAN/LAN IPs by throughput for specific applications. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113376">Customize, edit, export, and analyze data for selected interfaces, throughputs, and applications via right-click menus.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

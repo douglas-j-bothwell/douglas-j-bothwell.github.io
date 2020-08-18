@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Installation Directory (&lt;install_dir&gt;)</title>
+    <link rel="StyleSheet" href="css/ACE_13_Sys.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ACE_13_Sys.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">Solution Overview &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_getting_started_splash.html#340406">Getting Started</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ACE_13_Sys.04.1.html#340406">System Environment</a> &gt; Installation Directory (&lt;install_dir&gt;)</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="340406">Installation Directory (&lt;install_dir&gt;)</a></div>
+      <div class="body"><a name="340408">The installation directory (</a><span class="code">&lt;install_dir&gt;</span>) is the directory where the release media contents are downloaded. The installation directory is an important reference location on the disk. It is usually represented by the symbol <span class="code">&lt;install_dir&gt;</span>, especially when it appears as part of a path name, as in <span class="code">&lt;reldir&gt;/sys/include</span>.</div>
+      <div class="body"><a name="296465">The symbol </a><span class="code">&lt;install_dir&gt;</span> represents an actual directory located somewhere in the file system. The user (or system administrator) has the freedom to select the location of <span class="code">&lt;install_dir&gt;</span> and create the directory there; no hardwired location is required. One of the typical locations for <span class="code">&lt;install_dir&gt;</span> is in the <span class="code">/usr</span> directory (for example, <span class="code">/usr/opnet</span>). This location is beneficial when several users with different accounts need access to the AppTransaction&nbsp;Xpert software. In this case, <span class="code">&lt;install_dir&gt;</span> is owned by the root or system administrator account, with read and execute permissions set up for other accounts.</div>
+      <div class="body"><a name="99567">Another common location for </a><span class="code">&lt;install_dir&gt;</span> is within a user’s home directory. This location is useful when only one user requires access to AppTransaction&nbsp;Xpert software and it is preferred to handle all system administration tasks locally. In this case, <span class="code">&lt;install_dir&gt;</span> should not be given the name<span class="code"> &lt;HOME&gt;/</span>atx, because this name may conflict with execution of the atx program in the home directory. Instead, choose a neutral name such as <span class="code">&lt;HOME&gt;/opnet</span>.</div>
+      <div class="body"><a name="29680">Because the installation directory stores the AppTransaction&nbsp;Xpert system software (including software for different releases or different workstation architectures), there typically is only one installation directory per site. Even when several workstations are used to execute AppTransaction&nbsp;Xpert, all the workstations can share one </a><span class="code">&lt;install_dir&gt;</span> located on a file server (via the Network File System, NFS, or a similar system).</div>
+      <div class="body"><a name="20124">The installation directory contains only one type of subdirectory: </a><span class="code">&lt;release&gt;</span>. The release directory contains the system software and standard models for a particular release of AppTransaction&nbsp;Xpert. There is always at least one release directory.</div>
+      <div class="bodyIntro"><a name="139463">When installed, new releases replace the existing files within the subdirectory, but the top-level organization remains unchanged. The following figure shows this organization.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;2-1   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="139473">Installation Directory Organization</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="139481"><img class="Default" src="images/ACE_13_Sys.04.2.1.jpg" width="393" height="88" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="139482">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="136117">Release Directory (&lt;reldir&gt;)</a></div>
+      <div class="body"><a name="136119">The release directory (</a><span class="code">&lt;install_dir&gt;/&lt;release&gt;</span>, or simply <span class="code">&lt;reldir&gt;</span>) contains the complete software and model files for a specific release. A <span class="glossterm">release</span> is a distinct version of AppTransaction&nbsp;Xpert that typically incorporates new features or major bug fixes. A release directory is identified by a name such as 17.0.T. </div>
+      <div class="bodyIntro"><a name="297236">Each release directory contains two subdirectories, as listed in the following table.</a></div>
+      <div class="tblAnchor"><a name="139562">&nbsp;</a></div>
+      <table class="termDefinition" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="">
+              <tr style="vertical-align: baseline;">
+                <td>
+                  <div class="tblCaption_inner" style="width: 61.2pt; white-space: nowrap;">Table&nbsp;2-1   </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="139568">Contents of the Release Directory&nbsp;</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 126.53928pt">
+            <div class="tblHead"><a name="139572">This subdirectory…</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 255.4272pt">
+            <div class="tblHead"><a name="139574">Contains…</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="139576">sys</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="139578">system software for the corresponding release</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="139580">doc</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="139582">product documentation files</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="body"><a name="336438">If you download a release or software update into an existing </a><span class="code">&lt;reldir&gt;</span> directory, it replaces the existing files within these subdirectories, but the top-level organization remains unchanged. Typically, however, a new release goes into a new <span class="code">&lt;reldir&gt;</span> directory, in which case any existing <span class="code">&lt;reldir&gt;</span> directories (and their contents) remain unchanged. The names and locations of subdirectories under each <span class="code">&lt;reldir&gt;</span> directory should not be modified after installation.</div>
+      <div class="h3NoBreak"><a name="199671">System Directory (sys)</a></div>
+      <div class="body"><a name="199676">The system directory (</a><span class="code">&lt;reldir&gt;/sys</span>) contains software and support files, including all programs, libraries, and header files. The organization of <span class="code">sys</span> is copied from the release media and remains fixed. The contents of <span class="code">sys</span> subdirectories vary somewhat during installation and software updates, but remain fixed during use of the software (that is, no non-installation programs modify the contents of the <span class="code">sys</span> directory and its subdirectories).</div>
+      <div class="body"><a name="23558">Because </a><span class="code">sys</span> contains all of the software, it is a resource that can be shared by multiple users. It is also possible that more than one version of AppTransaction&nbsp;Xpert will be present at a site, due to different machine architectures.</div>
+      <div class="bodyIntro"><a name="62497">The following table lists the subdirectories in the </a><span class="code">sys</span> directory.</div>
+      <div class="tblAnchor"><a name="339165">&nbsp;</a></div>
+      <table class="tableNarrow" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="">
+              <tr style="vertical-align: baseline;">
+                <td>
+                  <div class="tblCaption_inner" style="width: 61.2pt; white-space: nowrap;">Table&nbsp;2-2   </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="339098">Subdirectories in the System Directory&nbsp;</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 102.4812pt">
+            <div class="tblHead"><a name="339102">This subdirectory…</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 279.91728pt">
+            <div class="tblHead"><a name="339104">Contains…</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339106">configs</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339108">Code for the menus called by .ets files</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339110">etc</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339112">Files related to third party products</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339114">examples</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339116">Tutorial files</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339118">help</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339120">HTML help files</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339122">hpov</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339124">Registry setting for HP OpenView</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339126">icons</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339128">Icon databases</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339130">images</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339132">Maps, splash screens, and web images</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339134">include</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339136">Header files used during the compilation of process models</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339138">lib</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339140">Python files</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339142">pc_amd_win64<br />pc_intel_win32</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339144">Program executables for the specified architecture</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339150">reports</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339152">Report templates</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339154">schemas</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339156">Report schemas</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339158">utilities</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339160">Miscellaneous files that do not fall under any other category</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339162">web_reports</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="339164">Images and code used in web reports</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="figSpaceAfter"><a name="339278">L</a></div>
+      <div class="h3NoBreak"><a name="298415">Documentation Directory (doc)</a></div>
+      <div class="body"><a name="298417">The documentation directory (</a><span class="code">&lt;reldir&gt;/doc</span>) contains files for the product documentation.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

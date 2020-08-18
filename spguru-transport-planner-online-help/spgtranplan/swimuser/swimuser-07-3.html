@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:37:57" />
+    <title>Use Cases for SRGs</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="swimuser-07-1.html"> Designing Robust Multi-Layer Networks</a> > <a href="swimuser-07-2.html">Shared Risk Groups</a> > Use Cases for SRGs</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp924191"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Use Cases for SRGs
+</h2>
+
+ 
+
+<a name="wp923873"> </a><p class="pBody">
+SRGs are especially useful for two use cases, which are described in the following sections:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp923880"> </a><div class="pSmartList1"><li><a href="javascript:WWHClickedPopup('swim_user', 'swimuser-07-3.html#wp933565');" onMouseOver="WWHShowPopup('swim_user', 'swimuser-07-3.html#wp933565', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Failure Impact Analysis in SP&#160;Guru&#160;Network&#160;Planner</u></a></li></div>
+<a name="wp923881"> </a><div class="pSmartList1"><li><a href="javascript:WWHClickedPopup('swim_user', 'swimuser-07-3.html#wp923892');" onMouseOver="WWHShowPopup('swim_user', 'swimuser-07-3.html#wp923892', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">SRGs and MPLS Traffic Engineering</u></a></li></div>
+</ul></div>
+<a name="wp933565"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Failure Impact Analysis in SP&#160;Guru&#160;Network&#160;Planner
+</h3>
+<a name="wp933570"> </a><p class="pBody">
+In SP&#160;Guru&#160;Network&#160;Planner, you can run survivability analysis studies for SRGs defined in the transport layer. The workflow is as follows:
+</p>
+<div class="pSmartList1"><ol type="1" class="pSmartList1">
+<a name="wp923916"> </a><div class="pSmartList1"><li>Define SRGs in the transport layer, as described in <a href="javascript:WWHClickedPopup('swim_user', 'swimuser-07-4.html');" onMouseOver="WWHShowPopup('swim_user', 'swimuser-07-4.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Creating Transport-Layer SRGs</u></a>.</li></div>
+<a name="wp923929"> </a><div class="pSmartList1"><li>In SP&#160;Guru&#160;Network&#160;Planner, choose Flow&#160;Analysis&#160;&gt; Configure/Run&#160;Failure&#160;Impact&#160;Analysis.</li></div>
+<a name="wp923920"> </a><div class="pSmartList1"><li>In the Configure/Run&#160;Survivability&#160;Analysis dialog box, select the SRGs from the object types tree.</li></div>
+<a name="wp923960"> </a><div class="pSmartList1"><li>Run the survivability analysis. </li></div>
+</ol></div>
+<a name="wp923970"> </a><p class="pBody">
+The Failure Analysis reports show the effects of Transport element failures on the Layer-2/3 network. For more information about Failure Analysis, see <a href="javascript:WWHClickedPopup('swim_user', 'swimuser-07-5.html');" onMouseOver="WWHShowPopup('swim_user', 'swimuser-07-5.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">SWIM Failure Analysis</u></a>.
+</p>
+<a name="wp923892"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+SRGs and MPLS Traffic Engineering
+</h3>
+<a name="wp923871"> </a><p class="pBody">
+MPLS uses label switched paths (LSPs) to route IP traffic. SP&#160;Guru&#160;Network&#160;Planner includes a design action (mpls_te) that you can use to networks that support MPLS TE. This design action computes primary and secondary explicit routes (ERs) for LSPs. One LSP can have a primary and secondary ER; the secondary route is used if the primary is unavailable due to a network failure. 
+</p>
+<a name="wp923975"> </a><p class="pBody">
+You can use mpls_te to design your IP/MPLS network to be robust against failures in the transport network. The mpls_te design action has an attribute called &quot;SRG Disjoint&quot;. This attribute is useful for computing primary and secondary ERs when SRGs have been created for failures in the transport network. mpls_te tries to find SRG-disjoint routes to ensure that at least one route (primary or secondary) will be available, even if a transport-network failure (for which an SRG is defined) occurs.
+</p>
+<a name="wp931943"> </a><p class="pBody">
+For general information about MPLS TE, perform the tutorial <a href="javascript:WWHClickedPopup('swim_tut', 'SWIMtut-3-1.html#wp927592');" onMouseOver="WWHShowPopup('swim_tut', 'SWIMtut-3-1.html#wp927592', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Defining a Multi-Layer IP-Over-WDM Network</u></a>, or see the following sections of the SP&#160;Guru&#160;Network&#160;Planner documentation: 
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp931945"> </a><div class="pSmartList1"><li>&quot;MPLS User Guide&quot; chapter (Specialized Models <em class="cEmphasis">User Guides</em>)</li></div>
+<a name="wp926016"> </a><div class="pSmartList1"><li>&quot;MPLS Traffic Engineering&quot; chapter (Design Module <em class="cEmphasis">User Guide</em>)</li></div>
+</ul></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/swim_21_srg.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

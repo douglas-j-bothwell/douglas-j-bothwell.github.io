@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:33:27" />
+    <title>SONET Nodes: DXC</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-03-01.html"> Concepts and Models</a> > <a href="User-03-15.html">Node Modeling Capabilities in SP&#160;Guru&#160;Transport&#160;Planner</a> > SONET Nodes: DXC</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp45337"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+SONET Nodes: DXC
+</h2>
+
+ 
+
+<a name="wp45338"> </a><p class="pBody">
+An ECC node can cross-connect SONET traffic only and not optical traffic; therefore, the ECC node is equipped with a DXC by default. The trunk ports of the DXC connect to the physical DCL links that terminate in the node. For example, if an OC-48 DCL link terminates in the node, an OC-48 trunk port is used on the DXC. The DXC is a digital switching matrix that can switch traffic down to the STS-1 level (STM-1 level for SDH traffic) between different DCL links (<em class="cEmphasis">transit traffic</em>) or between a DCL link and the tributary ports for a local add/drop port (<em class="cEmphasis">local traffic</em>).
+</p>
+<a name="wp73309"> </a><p class="pFigCaption">
+Figure&#160;2-13   DXC in ECC Node
+</p>
+<a name="wp73312"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-16-13.jpg" height="107" width="530" id="wp73311" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp45356"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Minimum and Maximum Bit Rates for Tributary and Trunk Ports
+</h3>
+<a name="wp45357"> </a><p class="pBody">
+A DXC node type is specified by the number of equivalent STS-3/STM-1 ports. By default, the bit rates on available ports are determined by either the traffic terminated at the add/drop ports, or the bit rate of the links terminated at the trunk ports. 
+</p>
+<a name="wp45371"> </a><p class="pBody">
+Despite this default, you can limit the bit rates for the DXC ports. At the tributary side, you can specify a <em class="cEmphasis">minimum tributary port bit rate</em>. Any add/drop traffic with a lower bit rate than this specified minimum bit rate is not directly fed to the DXC but is attached to a SONET/SDH terminal multiplexer, which aggregates traffic up to the minimum bit rate. 
+</p>
+<a name="wp45384"> </a><p class="pBody">
+You can also specify a <em class="cEmphasis">maximum trunk port bit rate</em>, which specifies the maximum bit rate allowed at the trunk ports. For example, the maximum bit rate could be STM-16 while DCL links in the network work at STM-64 rate. This configuration requires a mid-stage multiplexer to aggregate the traffic through the DXC STM-16 ports up to STM-64 signals, carried on a DCL link.
+</p>
+<a name="wp45335"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('wdm_user', 'User-03-16.html#wp73494');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-16.html#wp73494', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;2-14-DXC with Minimum Tributary and Maximum Trunk Bit Rate of STM-16</u> </a> shows a DXC with minimum and maximum bit rates equal to STM-16. At the tributary ports, all traffic with a bit rate lower than STM-16 is multiplexed to a STM-16 rate. At the trunk ports, all channels that operate above the STM-16 rate are de-multiplexed into STM-16 constituents. The aggregation rates affect the port count on the DXC only; they do not affect the routing, the grooming, or the internal switching granularity of the DXC. 
+</p>
+<a name="wp73494"> </a><p class="pFigCaption">
+Figure&#160;2-14   DXC with Minimum Tributary and Maximum Trunk Bit Rate of STM-16
+</p>
+<a name="wp73476"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-16-14.jpg" height="99" width="530" id="wp73475" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp47999"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Protection Options
+</h3>
+<a name="wp45438"> </a><p class="pBody">
+DCL traffic can be client-protected. If it is client-protected, two tributary ports are required on the DXC for each protected connection. If the traffic is not client-protected, one tributary port is sufficient and the protection switching is done internally in the DXC.
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_13_co.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

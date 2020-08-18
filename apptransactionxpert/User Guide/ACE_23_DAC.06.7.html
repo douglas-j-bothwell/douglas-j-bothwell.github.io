@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Troubleshooting Command-Line Captures</title>
+    <link rel="StyleSheet" href="css/ACE_23_DAC.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ACE_23_DAC.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_capture_app_traffic_splash.html#175712">Capturing Application Traffic</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ACE_23_DAC.06.1.html#175712">Distributed Agent Controller</a> &gt; Troubleshooting Command-Line Captures</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="175712">Troubleshooting Command-Line Captures</a></div>
+      <div class="body"><a name="175714">When </a><span class="code">opnet_appcapture</span> completes a capture successfully, the agents store any resulting packet&nbsp;traces in the locations indicated in <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_appcap_overview_plus.04.19.html#239294', '');" title="Managing Packet Traces">Table&nbsp;4-9</a></span>&nbsp;<span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_appcap_overview_plus.04.19.html#239294', '');" title="Managing Packet Traces">Packet Trace Storage Locations</a></span>.</div>
+      <div class="body"><a name="175718">If </a><span class="code">opnet_appcapture</span> encounters an error during a capture, it generates a log message to the file “&lt;<span class="italic">DAC_dir</span>&gt;/err_log.” If you experience problems during a capture, review this log.</div>
+      <div class="body"><a name="175720">If you still cannot resolve the problem, try repeating the capture while in verbose mode. To do this, open the opnet_appcapture_settings.ef file and set the </a><span class="code">-verbose_log</span> setting to <span class="code">TRUE </span>(or add this setting if it is not specified in the file). When you do a capture with this option enabled, opnet_appcapture generates status messages to the log files “opnet_appcapture.log” and “opnet_appcapture_proxy.log”, which are located in your &lt;<span class="italic">DAC_dir</span>&gt; directory. When the capture finishes, check these log files for messages.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          // Add related topics
+          //
+          WWHAddRelatedTopic("Distributed Agent Controller", "main_doc", "ACE_23_DAC.06.1.html#180217");
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

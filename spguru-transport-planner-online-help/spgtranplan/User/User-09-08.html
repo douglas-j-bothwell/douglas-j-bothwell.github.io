@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:52" />
+    <title>Cost Parameters That Affect DCL Grooming Results</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-09-01.html"> Grooming DCL to OCH Traffic</a> > Cost Parameters That Affect DCL Grooming Results</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp54763"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Cost Parameters That Affect DCL Grooming Results
+</h2>
+
+ 
+
+
+<a name="wp55048"> </a><p class="pBody">
+The following table lists the cost parameters that affect the grooming algorithm. You enter these parameters in the Equipment Properties dialog boxes (Network&#160;&gt; Equipment&#160;Properties); for more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-18.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-18.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Equipment Properties</u></a>. 
+</p>
+<a name="wp60006"> </a><p class="pBody">
+If SP&#160;Guru&#160;Transport&#160;Planner needs to equip extra fibers due to the dimensioning algorithm, these new fibers are of the default type (WDM or SONET/SDH) as specified in the Network Properties dialog box (Network&#160;&gt; Network&#160;Properties).
+</p>
+<a name="wp55258"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp74041table55210">
+  <caption><a name="wp74041"> </a><div class="ptblcaption">
+Table&#160;8-6   Cost Parameters That Affect Grooming Results&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp55219"> </a><div class="pCellHeading">
+Parameter
+</div>
+</th>
+    <th><a name="wp55221"> </a><div class="pCellHeading">
+Description
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp60016"> </a><div class="pCellBody">
+DXC cost:
+</div>
+</td>
+    <td>&#160;</td>
+</tr>
+  <tr align="left" valign="top">    <td><ul class="pCellBodyBullet"><a name="wp60020"> </a><div class="pCellBodyBullet"><li>
+Tributary port cost
+</li></div>
+</ul></td>
+    <td><a name="wp60022"> </a><div class="pCellBody">
+The cost of one tributary port (at the bit rate of the DCL traffic matrix) on the DXC
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><ul class="pCellBodyBullet"><a name="wp60024"> </a><div class="pCellBodyBullet"><li>
+Trunk port cost
+</li></div>
+</ul></td>
+    <td><a name="wp60026"> </a><div class="pCellBody">
+The cost of one trunk port (at the bit rate of the OCH matrix selected for the grooming) on the DXC
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp55227"> </a><div class="pCellBody">
+Optical channel cost:
+</div>
+</td>
+    <td>&#160;</td>
+</tr>
+  <tr align="left" valign="top">    <td><ul class="pCellBodyBullet"><a name="wp55231"> </a><div class="pCellBodyBullet"><li>
+WDM channel card cost
+</li></div>
+</ul></td>
+    <td><a name="wp55233"> </a><div class="pCellBody">
+The cost of one channel at the WDM multiplexer to terminate the wavelength (bit-rate independent cost)
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><ul class="pCellBodyBullet"><a name="wp60035"> </a><div class="pCellBodyBullet"><li>
+Regenerator card cost
+</li></div>
+</ul></td>
+    <td><a name="wp60041"> </a><div class="pCellBody">
+In-line regeneration requires one card per optical channel. The cost of this card depends on the line system type and the bit rate of the OCH matrix.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><ul class="pCellBodyBullet"><a name="wp55235"> </a><div class="pCellBodyBullet"><li>
+Transponder cost
+</li></div>
+</ul></td>
+    <td><a name="wp60051"> </a><div class="pCellBody">
+The cost of the transponder in the nodes depends on the line system type and bit rate of the OCH matrix
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp60070"> </a><div class="pCellBody">
+OXC cost:
+</div>
+</td>
+    <td>&#160;</td>
+</tr>
+  <tr align="left" valign="top">    <td><ul class="pCellBodyBullet"><a name="wp60066"> </a><div class="pCellBodyBullet"><li>
+Tributary port cost
+</li></div>
+</ul></td>
+    <td><a name="wp60080"> </a><div class="pCellBody">
+The cost of one tributary port (at the bit rate of the OCH matrix) on the OXC
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><ul class="pCellBodyBullet"><a name="wp60058"> </a><div class="pCellBodyBullet"><li>
+Trunk port cost
+</li></div>
+</ul></td>
+    <td><a name="wp60085"> </a><div class="pCellBody">
+The cost of one trunk port (at the bit rate of the OCH matrix) on the OXC
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp55243"> </a><div class="pCellBody">
+WDM link cost:
+</div>
+</td>
+    <td><a name="wp60090"> </a><div class="pCellBody">
+Common equipment per fiber pair used (these costs are specified per line system type).
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><ul class="pCellBodyBullet"><a name="wp55247"> </a><div class="pCellBodyBullet"><li>
+OA cost
+</li></div>
+</ul></td>
+    <td><a name="wp55249"> </a><div class="pCellBody">
+The cost of an optical amplifier (one per fiber per OA site).
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><ul class="pCellBodyBullet"><a name="wp55251"> </a><div class="pCellBodyBullet"><li>
+Regenerator cost
+</li></div>
+</ul></td>
+    <td><a name="wp55253"> </a><div class="pCellBody">
+The cost of common equipment per regenerator site.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><ul class="pCellBodyBullet"><a name="wp55255"> </a><div class="pCellBodyBullet"><li>
+WDM terminal multiplexer cost
+</li></div>
+</ul></td>
+    <td><a name="wp55257"> </a><div class="pCellBody">
+The cost of a WDM terminal multiplexer/demultiplexer.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp74218"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 8-6	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_31_grm.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

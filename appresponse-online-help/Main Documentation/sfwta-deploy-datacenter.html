@@ -1,0 +1,1372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Data Center Deployments</title>
+    <link rel="StyleSheet" href="css/sfwta-deploy-datacenter.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_al_apm_integration_splash.html">Integration with Other Riverbed Solutions</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="sfwta.html">SteelHead Integration (SteelFlow WTA)</a> &gt; Data Center Deployments</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="1177156">Data Center Deployments</a></div>
+      <div class="bodyIntro"><a name="1177157">This section describes how to set up SteelFlow monitoring in a network with a Data Center SteelHead and one or more client-side SteelHeads in remote offices:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'sfwta-deploy-datacenter.html#1140223', '');" title="Data Center Deployments" name="1142588">Prerequisites</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'sfwta-deploy-datacenter.html#1140123', '');" title="Data Center Deployments" name="1142592">Setup Requirements</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'sfwta-deploy-datacenter.html#1140440', '');" title="Data Center Deployments" name="1142620">Checklist: Data Center Deployment Setup</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;1     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="1140252">SteelFlow Deployment: AppResponse and SteelHeads</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1140255"><img class="Default" src="images/sfwta-deploy-datacenter.102.1.1.jpg" width="623" height="439" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1140256">&nbsp;</a></div>
+      <div class="h1TopNoBreak"><a name="1140223">Prerequisites</a></div>
+      <div class="body"><a name="1142332">Before you begin setting up Steelflow data collection, it is good practice to verify that:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1142333">All SteelHeads (client-side and server-side) are installed and set up.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1142334">All SteelHeads (client-side and server-side) have RiOS 9.0 or higher installed.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1144394">Every client-side SteelHead is successfully peered with the Data Center SteelHead and local clients are able to download optimized pages from the server(s).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1142335">The AppResponse appliance is installed, set up, and monitoring traffic.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1142336">The AppResponse appliance has release 9.5 or higher installed.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="1142772">For information about installing and setting up SteelHead appliances, see the following:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1142338">SteelHead Appliance Deployment Guide</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1142339">SteelHead Appliance Installation and Configuration Guide </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="1144626">For information about installing and setting up AppResponse appliances, see the following:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1142340">AppResponse Hardware Install Guide</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1142317">AppResponse Software Install Guide</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="1140123">Setup Requirements</a></div>
+      <div class="body"><a name="1142689">This section discusses the following:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'sfwta-deploy-datacenter.html#1140125', '');" title="Data Center Deployments" name="1142736">Set Up Data Center SteelHead</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'sfwta-deploy-datacenter.html#1138502', '');" title="Data Center Deployments" name="1142740">Set Up Client-Side SteelHeads</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'sfwta-deploy-datacenter.html#1138518', '');" title="Data Center Deployments" name="1142744">Add SteelHeads in AppResponse Web Console</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'sfwta-deploy-datacenter.html#1138519', '');" title="Data Center Deployments" name="1142748">Define Business Groups in AppResponse Desktop Console</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'sfwta-deploy-datacenter.html#1138743', '');" title="Data Center Deployments" name="1142752">Set Up WTA on AppResponse Appliance</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'sfwta-deploy-datacenter.html#1143255', '');" title="Data Center Deployments" name="1142756">Verify NTP Servers</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'sfwta-deploy-datacenter.html#1143280', '');" title="Data Center Deployments" name="1144376">Define Web Applications</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h3NoBreak"><a name="1140125">Set Up Data Center SteelHead</a></div>
+      <div class="bodyIntro"><a name="1138496">Enable SteelFlow WTA on the Data Center SteelHead: </a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1138497">Log in to the web UI of the Data Center SteelHead.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1138498">Enable SteelFlow WTA:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">a)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1138499">Choose Optimization &gt; Protocols: HTTP.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">b)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1138500">In the HTTP page, select Enable HTTP Optimization. Then select Enable SteelFlow WTA.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">c)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1138501">Click Apply (immediately below Settings box) and then Save (top-right corner of Settings box) to apply your changes.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h3NoBreak"><a name="1138502">Set Up Client-Side SteelHeads</a></div>
+      <div class="bodyIntro"><a name="1138503">Do the following on each client-side SteelHead you want to monitor:</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1138504">Log in to the SteelHead web UI.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1138505">Enable SteelFlow WTA:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">a)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1138506">Choose Optimization &gt; Protocols: HTTP.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">b)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1198799">In the HTTP page, select Enable HTTP Optimization. Then select Enable SteelFlow WTA.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">c)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1170105">Click Apply (immediately below Settings box) and then Save (top-right corner of Settings box) to apply your changes.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1138509">Enable REST API access:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">a)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1138510">Choose Administration &gt; Security: REST API Access.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">b)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1138511">Select “Enable REST API Access” and click Apply.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">c)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1138512">Add an Access Code that the AppResponse appliance can use to access data from the SteelHead:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSubCont"><a name="1138513">Click Add Access Code.</a></div>
+      <div class="listBulletSubCont"><a name="1138514">Enter a user-friendly description in the Description of Use field</a></div>
+      <div class="listBulletSubCont"><a name="1138515">Select Generate a New Access Code and click Add.</a></div>
+      <div class="listBulletSubCont"><a name="1138516">Select the new access code and choose Edit &gt; Copy (or the equivalent) in the browser window.</a></div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap">Figure&nbsp;2    </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1138532">Generate REST API Access Code in SteelHead Web Interface</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1138535"><img class="Default" src="images/sfwta-deploy-datacenter.102.1.2.jpg" width="509" height="302" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1138536">&nbsp;</a></div>
+      <div class="h3NoBreak"><a name="1138518">Add SteelHeads in AppResponse Web Console</a></div>
+      <div class="bodyIntro"><a name="1138591">Do the following: </a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1138548">Log in to the AppResponse web console.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1138549">In the treeview menu (left pane), choose Administration &gt; Integration. Then select SteelHead in the right-pane table.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1138550">In the SteelHead configuration page, click Add at the bottom of the table.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	4)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1143185">In the Add New SteelHead dialog box, add an entry for the Cloud SteelHead and all client-side SteelHeads that you want to monitor. The following fields are required for each SteelHead:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1138552">Management Address = Management interface of the SteelHead.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1138553">Access Code — Select Custom and then paste the Access Code you created in the previous step. (If necessary, go back to the SteelHead web interface &gt; Administration &gt; Security &gt; REST API page and copy the code again.)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1138554">Enable Polling = selected</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap">Figure&nbsp;3    </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1138569">Add New SteelHead in AppResponse Web Console</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1138572"><img class="Default" src="images/sfwta-deploy-datacenter.102.1.3.jpg" width="509" height="294" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1138573">&nbsp;</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	5)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1138556">Select “Enable SteelHead performance data collection” if it is not already selected. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><span class="bold" style="font-size: 10.0pt"><a name="1143218">Note—</a></span>Changing this setting causes the web server on the appliance to reboot, so you might need to log in to the appliance again. </div>
+      <div class="h3NoBreak"><a name="1138519">Define Business Groups in AppResponse Desktop Console</a></div>
+      <div class="bodyIntro"><a name="1138766">You should define a Business Group for each client-side SteelHead. Each group should include all web clients in the corresponding location. Do the following: </a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1138750">Open the Desktop Console: Go to the AppResponse Web Console and choose Administration &gt; Desktop Console. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1138751">For each client-side SteelHead, define a Business Group for the branch office where the SteelHead is located. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><a name="1138752">To define a new BG, do the following: </a></div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">a)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1138753">In the Desktop Console, choose Tools &gt; Business Groups &gt; Business Group Manager.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">b)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1139546">In the Business Group Manager, click New and specify the following settings:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="tblAnchor"><a name="1139593">&nbsp;</a></div>
+      <table class="tableNarrow" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+              <tr style="vertical-align: baseline">
+                <td>
+                  <div class="tblCaption_inner" style="width: 44.64pt; white-space: nowrap">Table&nbsp;1    </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="1139552">Required Settings for Each Branch-Office Business Group&nbsp;</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 88.71552pt">
+            <div class="tblHead"><a name="1139558">Tab</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 88.71552pt">
+            <div class="tblHead"><a name="1139560">Item</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 290.56896pt">
+            <div class="tblHead"><a name="1139562">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1139564">Identity</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1139566">Name</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1139568">User-friendly name such as SF Branch Office</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: none; border-top-style: none; border-top-width: 0.0pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1139570">&nbsp;</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1139572">Description</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1139574">It is good practice  to include the SteelHead name or IP in the description. This makes it easy to see the SteelHeads that a specific page traversed.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: none; border-top-style: none; border-top-width: 0.0pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1139576">&nbsp;</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1139578">Classification</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1139580">Business Group</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1139582">&nbsp;</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1139584">Status</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1139586">Active</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1139588">Business Group Definition</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1139590">IP/AS Members</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1139592">All local IPs in the branch office (ie, IPs on the LAN side of the client-side SteelHead)</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1139594">Create one or more Business Groups for non-optimized web pages that you can use to compare with the optimized branch office. A comparison BG must have the following characteristics:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1139493">The comparison location is remote from the Data Center and communicates across a similar WAN.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1139494">The WAN is not optimized by SteelHeads.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1139495">The branch office and comparison location should use the same web apps of interest, so you can compare optimized and non-optimized page views directly.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1139496">The comparison location should be approximately the same distance from the Data Center as the branch office, so that the WAN latencies are comparable (</a><span class="code">compare location&lt;—&gt;DC</span> latency should be approximately equal to <span class="code">branch-location&lt;—&gt;DC </span>latency).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyKeyConcept">
+        <span class="zBlueItalics">Key Concept—</span><a name="1139497">When selecting a comparison group in your organization, you should look for locations that are good candidates for WAN optimization. Many organizations place their SteelHeads in branch offices with the smallest WAN links and the highest round trip times. If the compare location is much closer to or further away from the Data Center, the WAN latencies will differ and you will need to consider this difference when you compare results between the two locations. </a></div>
+      <div class="h3NoBreak"><a name="1138743">Set Up WTA on AppResponse Appliance</a></div>
+      <div class="bodyIntro"><a name="1139785">You need to set up the following:</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1139859">Masking of Private Data (optional)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><a name="1140000">You can configure the appliance to prevent private data in observed traffic, such as usernames or account numbers, from getting saved to disk or appearing in the user interface. If this is a priority, you need to set this up before you enable WTA. For more information, search for “setup configuration web transaction analysis” in the online help and go to the “Masking Private Data in Observed Web Traffic” section. </a></div>
+      <div class="listNumCont"><a name="1143000">For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.4.html', '');" title="Masking Private Data in Observed Web Traffic">Masking Private Data in Observed Web Traffic</a></span> .</div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1139897">Page Analysis Configuration:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1139955">Enable Page Analysis = selected</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1139956">on Port(s)...and Server IP addresses: Specify the ports and the server IPs for the web applications for which you want to collect page metrics.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><a name="1139951">Note—To minimize load on the appliance, It is good practice to limit web page tracking to ports and hosts of interest only when possible. </a></div>
+      <div class="listNumCont"><a name="1143106">For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.5.html', '');" title="Page Analysis: Enabling and Configuring">Page Analysis: Enabling and Configuring</a></span> .</div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1140064">Configure decryption for web apps that use SSL: </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">a)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1140065">Under Page Analysis Configuration Parameters, select Enable SSL decoding. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">b)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1140066">Under Private Key Configuration, add the private key for each SSL-encrypted web application:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSubCont"><a name="1140067">Click Add under the Private Keys list.</a></div>
+      <div class="listNumSubCont"><a name="1140068">Paste the private key into the Private Key Details field.</a></div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">c)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1140069">Click OK.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><a name="1143040">For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.6.html', '');" title="SSL Decoding: Enabling and Configuring">SSL Decoding: Enabling and Configuring</a></span> .</div>
+      <div class="h3NoBreak"><a name="1143255">Verify NTP Servers</a></div>
+      <div class="body"><a name="1143256">It is good practice to verify that all appliances (AppResponse and SteelHeads) are using a reliable NTP server. </a></div>
+      <div class="bodyIntro"><a name="1143257">To view and change the NTP servers used in AppResponse:</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1143258">Log in to the AppResponse Web Console.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1143259">Choose Administration &gt; System.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1143260">Choose System &gt; Setup. The NTP Servers field is under Time Settings near the bottom of the page. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyIntro"><a name="1143274">To view and change the NTP servers used in SteelHead:</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1143262">Log in to the SteelHead web interface.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1143263">Choose Administration &gt; System Settings: Date/Time.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="1143280">Define Web Applications</a></div>
+      <div class="bodyIntro"><a name="1143306">The Desktop Console includes a Defined Application Manager where you can group related page families into defined Web Applications. </a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1143549">Set up Steelflow data collection (that is, perform all the other required steps).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1143589">Wait for the appliance to collect page views of interest.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1143764">In the AppResponse Web Console, go to the Page Families Navigator and view the page families you want to monitor.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	4)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1143815">In the Defined Application Manager, create web applications that group related Page Families together (see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'sfwta-web-apps.html', '');" title="Grouping Page Families into Web Applications">Grouping Page Families into Web Applications</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2TopNoBreak"><a name="1140440">Checklist: Data Center Deployment Setup</a></div>
+      <div class="body"><a name="1140533">The following steps list the required steps for SteelFlow monitoring in a Data Center deployment.</a></div>
+      <div class="tblAnchor"><a name="1140626">&nbsp;</a></div>
+      <table class="tableWide" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+              <tr style="vertical-align: baseline">
+                <td>
+                  <div class="tblCaption_inner" style="width: 44.64pt; white-space: nowrap">Table&nbsp;2    </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="1172695">Data Center Setup Checklist&nbsp;</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 120.90528pt">
+            <div class="tblHead"><a name="1172699">Appliance</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 347.094pt">
+            <div class="tblHead"><a name="1172701">Setup Requirements</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1172703">SteelHead (All)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1172705">Before you begin, it is good practice to verify that</a></div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1172706">All appliances are installed, peered, set up, and exchanging traffic.</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1172707">All SteelHeads have RiOS 9.0 or higher installed.</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1172708">Every client-side SteelHead is successfully peered with the Data Center SteelHead and local clients are able to download pages from the SaaS server.</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1172712">The AppResponse appliance has 9.5 or higher installed.</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1172714">SteelHead (Data Center)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1172716">Enable the following in the </a><span style="font-size: 10.0pt">SteelHead web interface</span>: </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1172717">Optimization &gt; HTTP &gt; Enable HTTP Optimization</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1172718">Optimization &gt; HTTP &gt; SteelFlow WTA</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1172720">SteelHead (client-side)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1172722">For each client-side SteelHead, enable the following in the </a><span style="font-size: 10.0pt">SteelHead web interface</span>: </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1172723">Optimization &gt; HTTP &gt; Enable HTTP Optimization</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1172724">Optimization &gt; HTTP &gt; SteelFlow WTA</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1172725">Administration &gt; Security &gt; REST API Access &gt; Enable REST API Access</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9"><a name="1172726">Each client-side SteelHead needs at least one Access Code defined in the REST API Access page. You will need to copy and paste this code into the AppResponse Web Console. </a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top" rowspan="1">
+            <div class="tblBody9"><a name="1172734">AppResponse </a></div>
+            <div class="tblBody9Right"><a name="1172735">SteelHeads Table</a></div>
+            <div class="tblBody9Right"><a name="1172783">&nbsp;</a></div>
+            <div class="tblBody9Right"><a name="1172785">&nbsp;</a></div>
+            <div class="tblBody9Right"><a name="1172787">&nbsp;</a></div>
+            <div class="tblBody9Right"><a name="1172743">&nbsp;</a></div>
+            <div class="tblBody9Right"><a name="1172804"><br />Enable Data Collection</a></div>
+            <div class="tblBody9Right"><a name="1172801">&nbsp;</a></div>
+            <div class="tblBody9Right"><a name="1172812"><br /></a></div>
+            <div class="tblBody9"><a name="1172748">Web Transaction Analysis</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top" rowspan="1">
+            <div class="tblBody9"><a name="1172737">&nbsp;</a></div>
+            <div class="tblBody9"><a name="1172738">Every client-side SteelHead must have an entry in the Web&nbsp;Console&nbsp;&gt; Administration&nbsp;&gt; System&nbsp;&gt; Integration&nbsp;&gt; SteelHead table. Each entry must include:</a></div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1172739">Management Address </a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1172740">Access Code </a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1172741">Enable Polling = selected</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9"><a name="1172795">&nbsp;</a></div>
+            <div class="tblBody9"><a name="1172745">Enable the following in the Web Console&nbsp;&gt; Administration&nbsp;&gt; System&nbsp;&gt; Integration&nbsp;&gt; SteelHead table: </a></div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1172746">Enable SteelHead performance data collection</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9"><a name="1172750">&nbsp;</a></div>
+            <div class="tblBody9"><a name="1172807">1) Set up Masking of </a><span style="font-size: 10.0pt">Private Data (optional)</span></div>
+            <div class="tblBody9"><a name="1172754">&nbsp;</a></div>
+            <div class="tblBody9"><a name="1172828">2) In System &gt; Administration web UI &gt; System &gt; Pages, set </a></div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1172755">Enable Page Analysis (selected)</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1172756">...of Ports ...and Server IP addresses: specify the ports and server IPs for the web applications for which you want to collect page metrics.</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9"><a name="1172760">&nbsp;</a></div>
+            <div class="tblBody9"><a name="1172818">3) Configure SSL Decryption for web apps that use SSL</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1172762">All appliances</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1172767">It is good practice to verify that all appliances (AppResponse and SteelHeads) are using a reliable NTP server.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1172772">AppResponse </a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1172774">Define Web Applications (after appliance collects page views)</a></div>
+          </td>
+        </tr>
+      </table>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

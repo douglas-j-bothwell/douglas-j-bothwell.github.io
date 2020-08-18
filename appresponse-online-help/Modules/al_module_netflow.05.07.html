@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Managing ToS Groups</title>
+    <link rel="StyleSheet" href="css/al_module_netflow.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_al_module_netflow_splash.html"> NetFlow Data Collection</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="al_module_netflow.05.01.html">Collecting NetFlow Data</a> &gt; Managing ToS Groups</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="957010">Managing ToS Groups</a></div>
+      <div class="bodyIntro"><a name="953686">The ToS Group Manager is used to create, edit, or delete ToS groups. To access the ToS Group Manager, choose Tools&nbsp;&gt; External&nbsp;Data&nbsp;&gt; ToS&nbsp;Group&nbsp;Manager.</a></div>
+      <div class="figCaptionPage">
+        <span class="bold">Figure&nbsp;6     </span><a name="933823">ToS Group Manager</a></div>
+      <div class="figAnchor"><a name="933827"><img class="Default" src="images/al_module_netflow.05.07.1.jpg" width="560" height="332" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="933828">&nbsp;</a></div>
+      <div class="body"><a name="933829">The ToS Group Manager displays a list of existing ToS Groups. There are no ToS Groups defined on a freshly-installed appliance.</a></div>
+      <div class="body"><a name="933830">The ToS Group Manager lets you make multiple changes to the group list and save them all at once. These changes can include creating, deleting, and editing groups. These changes are not saved until you click Apply. Pressing Cancel discards all changes entered since the last Apply and closes the ToS Group Manager.</a></div>
+      <div class="body"><a name="933831">ToS Group definitions can be imported and exported in CSV format. For more details, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Tools.073.4.html#950822', '');" title="Importing and Exporting Data">Importing and Exporting Configuration Data</a></span>.</div>
+      <div class="h2NoBreak"><a name="933837">Creating a ToS Group</a></div>
+      <div class="bodyIntro"><a name="933841">Data for new ToS Groups can only be viewed within the AppResponse Desktop Console in time selections after the group was defined. You can view the definitions of any new ToS Groups immediately in the ToS Group Manager, but it might take several minutes before data for a newly-created ToS Group can be viewed. </a></div>
+      <div class="procCaption" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd933842&quot;);">
+        <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd933842", false);</script>Procedure&nbsp;3    <a name="933842">Defining a New ToS Group</a></div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd933842", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="933844">Starting on the Identity tab (the default tab), click New in the tool bar on the lower left of the </a><span style="font-size: 11.0pt">ToS</span> Group Manager window. The new <span style="font-size: 11.0pt">ToS</span> Group is displayed and selected in the table at the top of the window. The group attributes can be edited in the lower pane of the window.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="933845">Click in the Name field and enter a unique name to identify the </a><span style="font-size: 11.0pt">ToS</span> Group. The name can include any character except for the following:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="933846">comma (</a><span class="codebold">,</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="933847">forward-slash (</a><span class="codebold">/</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="933848">close-triangle-bracket (</a><span class="codebold">&gt;</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><span class="italic"><a name="933849">(Optional)</a></span> Click in the Description field and enter a description of the <span style="font-size: 11.0pt">ToS</span> Group.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="933850">Leave the Status of the group as Active. For information on Business Group status, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('modules', 'al_module_netflow.05.07.html#933916', '');" title="Managing ToS Groups">Group Status</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	5.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="933854">Click the Definition tab.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap">Figure&nbsp;7    </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="933855">ToS Group Manager - Definition Tab</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="933859"><img class="Default" src="images/al_module_netflow.05.07.2.jpg" width="577" height="151" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="933860">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	6.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="933861">In the DSCP Values field, enter a comma-delimited list of individual DSCP values and DSCP ranges.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="933862">Errors in the list of DSCP values are indicated by a red font. To view the error list, click “Check ToS Group Definitions and Overlaps”.</a></div>
+      <div class="procStepCont"><a name="933863">Valid formats for an entry are as follows:</a></div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="933864">DSCP value: # </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="933865">DSCP range: # - # (where the first value is smaller or equal to the second) </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	7.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="933866">In the Device IPs field, enter a comma-delimited list of the device IPs and IP ranges from which the NetFlow statistics are being exported.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="933867">Errors in the list of device IPs are indicated by a red font. To view the error list, click “Check ToS Group Definitions and Overlaps”.</a></div>
+      <div class="procStepCont"><a name="933868">Valid formats for an entry are as follows:</a></div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="933869">IP Address: #.#.#.# </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="933870">IP Address Prefix Form: #.#.#.0/24 </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="933871">IP Address Range: #.#.#.# - #.#.#.# (where the first IP is smaller or equal to the second) </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	8.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><span class="italic"><a name="933872">(Optional)</a></span> Click the Add Row button to extend the ToS Group definition with additional DSCP values and devices. For example, you would do this if there are other devices in different network segments whose traffic should also be associated with this ToS Group even though they have different DSCP values assigned.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	9.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="933874">Click “Check ToS Group Definitions and Overlaps” to make sure that the definition of this ToS Group does not conflict with existing groups. If so, edit the definition to remove the conflict.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	10.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><span class="italic"><a name="933881">(Optional)</a></span> Repeat steps <span class="HTBlue"><a href="javascript:WWHClickedPopup('modules', 'al_module_netflow.05.07.html#933844', '');" title="Managing ToS Groups">1.</a></span>–<span class="HTBlue"><a href="javascript:WWHClickedPopup('modules', 'al_module_netflow.05.07.html#933874', '');" title="Managing ToS Groups">9.</a></span> to define additional ToS Groups. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note—</span><a name="933882">None of the new groups will be saved until you click Apply or OK. Clicking Cancel erases all changes.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	11.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="933883">Click OK or Apply to save changes, or Cancel to abort.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap">End of Procedure 3</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="933884">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="933885">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="933887">Editing a ToS Group</a></div>
+      <div class="bodyIntro"><a name="933888">Follow these instructions to edit an existing ToS Group within the ToS Group Manager.</a></div>
+      <div class="procCaption" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd933889&quot;);">
+        <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd933889", false);</script>Procedure&nbsp;4    <a name="933889">Editing a ToS Group</a></div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd933889", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="933890">To edit an existing group, select the group name from the list of groups that appears at the top of the window.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="933891">Edit the group attributes (Name and Description) in the lower part of the window.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note—</span><a name="933892">You can edit as many groups as you wish. However, none of the changes will be saved until you click Apply or OK. Clicking Cancel erases all changes.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="933893">Click OK or Apply to save changes, or Cancel to abort.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap">End of Procedure 4</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="933894">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="933895">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="933897">Deleting a ToS Group</a></div>
+      <div class="bodyIntro"><a name="933898">When you delete a ToS Group, the group (and any data associated with it) is no longer available in the AppResponse Desktop Console. You will no longer be able to access any of the historical data for that group from the AppResponse Appliance. As an alternative to deleting the group, you can set the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('modules', 'al_module_netflow.05.07.html#933916', '');" title="Managing ToS Groups">Group Status</a></span> to “Inactive”, which stops new data collection, but still lets you access historical data.</div>
+      <div class="procCaption" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd933908&quot;);">
+        <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd933908", false);</script>Procedure&nbsp;5    <a name="933908">Deleting a ToS Group </a></div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd933908", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="933909">In the ToS Group Manager, select a ToS Group in the table. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="933910">Click the Delete button in the tool bar on the lower left of the ToS Group Manager window.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="933911">Click OK or Apply to save changes, or Cancel to abort.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap">End of Procedure 5</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="933912">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="933913">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="933916">Group Status</a></div>
+      <div class="body"><a name="933917">There are certain cases where it is desirable to retain the collected data for a ToS Group that is no longer valid. For instance, suppose you have defined DSCP=12 as “Gold,” but a new policy change redefines DSCP=12 as “Silver.” You might still want to look at the historical data for “Gold” and see what the ToS Group definition was when the data was collected. In this case, you can change the status of the Gold ToS Group to “Inactive” and create a new active group for “Silver.” The AppResponse Appliance will stop collected data for Gold, the existing data will be retained in the database.</a></div>
+      <div class="figCaptionPage">
+        <span class="bold">Figure&nbsp;8     </span><a name="933921">Group Status - Identity Tab</a></div>
+      <div class="figAnchor"><a name="933925"><img class="Default" src="images/al_module_netflow.05.07.3.jpg" width="261" height="36" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="933926">&nbsp;</a></div>
+      <div class="body"><a name="933927">In addition, IP addresses that belong only to inactive ToS Groups are not considered when selecting the Top IP addresses during the aggregation process. </a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

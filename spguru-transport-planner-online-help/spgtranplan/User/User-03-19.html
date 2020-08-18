@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:33:27" />
+    <title>Optical Nodes: Non-Blocking OXC</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-03-01.html"> Concepts and Models</a> > <a href="User-03-15.html">Node Modeling Capabilities in SP&#160;Guru&#160;Transport&#160;Planner</a> > Optical Nodes: Non-Blocking OXC</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp119192"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Optical Nodes: Non-Blocking OXC
+</h2>
+
+ 
+
+<a name="wp119194"> </a><p class="pBody">
+An OCC node can cross-connect optical traffic only and no SONET traffic; therefore the OCC node is equipped with an OXC by default. The OXC can be an optical or an electrical switching matrix (see <a href="javascript:WWHClickedPopup('wdm_user', 'User-03-08.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-08.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Optical Transparency</u></a> for more information). The trunk ports of the OXC connect to the wavelengths of the WDM line systems of OCH links that terminate in the node. The OXC switches wavelengths between different WDM line systems (<em class="cEmphasis">transit traffic</em>) or between the OXC tributary ports and the WDM line systems (<em class="cEmphasis">local traffic</em>).
+</p>
+<a name="wp119198"> </a><p class="pFigCaption">
+Figure&#160;2-16   OXC in OCC Node
+</p>
+<a name="wp119209"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-19-16.jpg" height="130" width="530" id="wp119200" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp119212"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Patch Panel
+</h3>
+<a name="wp119214"> </a><p class="pBody">
+OCH-layer traffic consists of wavelengths that are transported on WDM line systems and are cross-connected by OXCs within nodes. Some traffic can be static, which does not need the flexible (and expensive) switching capabilities of the OXC. This traffic can be labeled <em class="cEmphasis">hardwired</em> in SP&#160;Guru&#160;Transport&#160;Planner and is not switched using the OXC, but through a static patch panel (PP). If both hardwired and non-hardwired traffic coexist in a node, the node includes both an OXC and a PP (see <a href="javascript:WWHClickedPopup('wdm_user', 'User-03-19.html#wp119220');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-19.html#wp119220', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;2-17</u></a>). You can also define an entire node as static; in this case, a patch panel cross-connects all traffic (whether hardwired or not) and no OXC is present in the node.
+</p>
+<a name="wp119220"> </a><p class="pFigCaption">
+Figure&#160;2-17   OXC and Patch Panel (Opaque Scenario)
+</p>
+<a name="wp119224"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-19-17.jpg" height="195" width="530" id="wp119222" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp119226"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Protection Options
+</h3>
+<a name="wp119228"> </a><p class="pBody">
+If OCH traffic is client-protected, two OXC tributary ports interconnect two short-reach transponders (in opaque mode) or two long-reach transponders (in transparent mode) to guide the working and protection constituents of traffic in the OXC. This traffic is switched toward the OXC trunk ports. The OXC is connected to the WDM line system, either through long-reach transponders (opaque mode) or directly (transparent mode).
+</p>
+<a name="wp119229"> </a><p class="pFigCaption">
+Figure&#160;2-18   Impact of Client Protection on Required Transponders and OXC Ports (Opaque Scenario)
+</p>
+<a name="wp119240"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-19-18.jpg" height="175" width="530" id="wp119231" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp119242"> </a><p class="pBody">
+If the OCH traffic is not client-protected, the OCH layer handles the protection switching. Most OXCs today cannot do protection switching (in contrast with DXCs and IXCs, which are electrical switches that support protection switching). Therefore, a protection transponder outside the OXC does the actual switching. The protection transponder takes one signal as input and splits the signal into a working and protection path; these paths feed into two tributary OXC ports. The OXC switches the working and protection paths to the appropriate trunk ports, which are connected to the WDM line system. The protection transponder comes in short-reach (opaque mode) and long-reach (transparent mode) versions. 
+</p>
+<a name="wp119245"> </a><p class="pBody">
+Shared path protection differs from 1+1 protection in this regard: 1&#160;+&#160;1 protection uses single-ended switching, while shared protection uses dual-ended switching. 
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp119246"> </a><div class="pSmartList1"><li>1+1 protection uses single-ended switching. Therefore only the destination node does switching, while the source node duplicates the traffic (since the OXC cannot broadcast traffic this way, the network uses a protection transponder instead).</li></div>
+<a name="wp119247"> </a><div class="pSmartList1"><li>Shared protection uses dual-ended switching, which is done by the OXC. The OXC needs only one tributary port to terminate shared path-protected traffic. One OXC trunk port is dedicated for the working path, while another OXC trunk port is used for the protection path (this trunk port can be shared with other protection paths).</li></div>
+<a name="wp119249"> </a><p class="pFigCaption">
+Figure&#160;2-19   Shared Path Protection in OXC (Opaque Scenario)
+</p>
+<a name="wp119253"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-03-19-19.jpg" height="118" width="530" id="wp119251" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ul></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_13_co.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Desktop Console</title>
+    <link rel="StyleSheet" href="css/AGAP01-Verify.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_admin_guide_splash.html">Administrator Guide</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="AGAP01-Verify.15.1.html">Verifying Appliance Operations</a> &gt; Desktop Console</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="929177">Desktop Console</a></div>
+      <div class="body"><a name="929186">Download and set up the Desktop Console, and then either create or open a project (see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH02-MC_Overview.003.2.html', '');" title="Installing the Desktop Console">Installing the Desktop Console</a></span>).</div>
+      <div class="h2NoBreak"><a name="929187">Viewing Traffic Flow</a></div>
+      <div class="body"><a name="929191">From within the Desktop Console, click Select Time and choose the Recent Hour time selection. Then open a group table and view the Total Traffic group.The metrics displayed should be greater than zero if the AppResponse Appliance is successfully monitoring traffic.</a></div>
+      <div class="h2NoBreak"><a name="929198">Verifying Desktop Time and Date</a></div>
+      <div class="body"><a name="929204">From within the Desktop Console, invoke the Time Selection dialog. Verify that the AppResponse Appliance and desktop times and date toward the top of the window are correct. (They may differ if your client desktop is in a different time zone than the AppResponse Appliance.) Your client time is your desktop computer time and date. If the “Client is 10 Minutes Behind the AppResponse Appliance” message displays, consider correcting your local computer time setting.</a></div>
+      <div class="h2NoBreak"><a name="929212">Verifying that DNS is Operating on the Desktop</a></div>
+      <div class="body"><a name="929216">From within the Desktop Console, open a Top Traffic table and select the IP Address group. Make sure that the Information column is included in the table display. DNS is operational if any of the IP addresses listed are resolved to hostnames in the Information column. If all columns are blank, either DNS name lookups are not operational or none of the IP addresses listed in the table have valid DNS hostnames. Check these results against the operating system's DNS resolution tools (e.g., nslookup).</a></div>
+      <div class="h2NoBreak"><a name="929217">Verifying that BGP Peering is Operating</a></div>
+      <div class="body"><a name="929221">From within the Desktop Console, invoke a Groups table and view the ISP AS groups. Then click Select Time to select a recent time period (such as the last hour). The Group column should display an ISP AS other than Unknown. If the rows are labelled ISP AS Unknown then BGP peering is probably not operating. Verify that your BGP router is configured to peer with the AppResponse Appliance. Also, check the BGP settings in the web interface, as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', '_10_ace_live_appliance_install_guide.14.5.html#951410', '');" title="Configuring the Appliance">Administration &gt; System Web Interface</a></span>.</div>
+      <div class="h2NoBreak"><a name="978158">Disk Alert Pop-Up Window in Desktop Console</a></div>
+      <div class="bodyIntro"><a name="978159">The Desktop Console features a new pop-up window that appears when a disk alert is generated. This window serves as a visible reminder to fix or replace the disk. </a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;1     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="978160">Disk Alert Pop-Up Window in Desktop Console</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="978164"><img class="Default" src="images/AGAP01-Verify.15.4.1.jpg" width="512" height="95" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="978165">&nbsp;</a></div>
+      <div class="bodyNote">
+        <span class="bold">Note: </span><a name="978166">The popup for a specific alert will continue to appear until an Administrator manually deletes it from the appliance. After you resolve a disk issue, it is good practice to delete the pop-up for that issue. The alert information is still available under Administration &gt; System &gt; Diagnostic &gt; Log Viewer.</a></div>
+      <div class="bodyIntro"><a name="978167">Administrators can add custom information that might be useful to others that log in to the appliance—for example, "</a><span class="code">WARNING: This Appliance is scheduled to be down for maintenance from 1-2 pm, 04/29/14.</span>" The following steps outline this workflow:</div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="978168">Click Edit. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="978169">Resize the window to see the full alert.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="978170">Edit the HTML text between the </a><span class="codebold">&lt;body&gt; </span>and <span class="codebold">&lt;/body&gt;</span> tags with the content you want displayed for that pop-up. Click Done/Edit to toggle between edit and view mode.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	4)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="978171">Click Save to save the edited text on the appliance.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

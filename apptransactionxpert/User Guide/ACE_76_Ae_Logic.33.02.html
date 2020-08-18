@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Logic Scripts: Example Use Cases</title>
+    <link rel="StyleSheet" href="css/ACE_76_Ae_Logic.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ACE_76_Ae_Logic.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_edit_design_apps_whiteboard_splash.html#236280">Editing and Designing Applications with Transaction&nbsp;Whiteboard</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ACE_76_Ae_Logic.33.01.html#236280">Modeling Complex Application Behavior with Logic Scripts</a> &gt; Logic Scripts: Example Use Cases</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="236280">Logic Scripts: Example Use Cases</a></div>
+      <div class="bodyIntro"><a name="236287">The following examples describe some of the capabilities of logic scripts:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="bold"><a name="87630">Generate messages based on parameters or network/application conditions—</a></span>A tier can generate traffic based on user-specified parameters or in response to conditions in the network or the application.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="93169">For example, you can create a parameter such as “number&nbsp;of&nbsp;pages” that determines the number of web pages requested. Before running QuickPredict or a simulation, a user sets this parameter to determine the number of pages downloaded during the task.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="bold"><a name="87631">Generate traffic based on external data—</a></span>To model traffic based on existing network or application data, you can write Python scripts that read data from external sources and use the data to generate messages.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="bold"><a name="87632">Application task chaining—</a></span>A tier can run another task based on Python code that specifies the conditions under which the child task is run. This enables you to model transactions in which tiers launch different child tasks in response to events in the application or the network. For example, you can create a login task that authenticates a login (specified using parameters). If the login succeeds, the task then runs a child task that models a web-based database query. Otherwise, the task ends.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="bold"><a name="87633">Advanced delay modeling—</a></span>Every message has two attributes (processing delay and user delay) that specify the delay at the source tier before the tier sends that message. Because a logic script can modify these attributes, you can model tier delays in greater detail.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="374808">For example, you can write logic scripts that model user behavior during a web-browsing task:</a></div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="87634">Web client sends request to web server</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="87635">If web server sends a response, web client processes the response for 0.5 seconds (processing delay) and sends an acknowledgement </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="87636">If there is no response after 20 seconds (user delay), web client sends a new request to a different server</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="bold"><a name="87637">“Go-to” and “looping” application execution—</a></span>You can write logic code to skip or repeat parts of an application task. This enables you to model behavior such as application-layer retransmissions:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="87638">Client sends request to server</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="87639">If no response, client retransmits</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="87640">Client tries two more times</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSubLast_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSubLast_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSubLast_inner"><a name="87641">If it still gets no response, client skips the “response&nbsp;received” section</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

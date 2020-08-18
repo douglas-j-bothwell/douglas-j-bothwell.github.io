@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Software Updates Using the CLI</title>
+    <link rel="StyleSheet" href="css/APC_softwareupdate.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_admin_guide_splash.html">Administrator Guide</a> &gt; Software Updates Using the CLI</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="hAppendix"><a name="929001">Software Updates Using the CLI</a></div>
+      <div class="body"><a name="929004">Alternatively from the System&nbsp;&gt; Administration web UI, you can download and install software updates using the CLI, which includes a </a><span class="code">release-update</span> command. Before updating, be sure to back up the system configuration to simplify error recovery in case an update fails.</div>
+      <div class="h2NoBreak"><a name="978084">Important Notes</a></div>
+      <div class="bodyIntro"><a name="976787">Note the following:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="976825">You cannot downgrade any appliance or director to a previous release.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="976827">The CLI method is primarily intended for updating appliances that currently have 8.5.5 or earlier installed. Riverbed recommends that you use the System&nbsp;&gt; Administration web UI to update or upgrade from 8.6.2 or higher, as described in</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'inst-sw-webui-appl.html', '');" title="Software Updates from the Administration &gt; System Web UI" name="1006546">Software Updates from the Administration&nbsp;&gt; System Web UI</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'director-update-web-ui.html', '');" title="Updating the Director and Connected Appliances in the Web UI" name="977329">Updating the Director and Connected Appliances in the Web UI</a></span> </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="976865">The CLI method requires a local FTP or HTTP server that is visible to the appliance you want to update. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1003667">If you do not have a local FTP or HTTP server,  you can use the System&nbsp;&gt; Administration web UI to update the appliance. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><span class="code" style="font-size: 14.0pt; font-weight: bold"><a name="929007">release-update</a></span> Commands</div>
+      <div class="bodyIntro"><a name="978107">To download and install a new software release access the CLI, type </a><span class="codebold">release-update</span> and press Enter. The CLI displays the <span class="code">update</span> menu which provides the following commands:</div>
+      <div class="listBullet_outer" style="margin-left: 0pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="code"><a name="929015">download</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="930419">Download a software release from  a local web server. If the </a><span class="code">check</span> command was run previously, <span class="code">download</span> provides a list of available software releases. If the <span class="code">check</span> command has not been run, you must provide the complete URL to a software JAR. The download command supports URLs with an embedded username and password. This can be useful for transferring files from FTP servers requiring authentication.</div>
+      <div class="listBulletCont"><span class="code"><a name="929016">ftp://</a></span><span class="italic">username</span><span class="code" style="font-style: normal">:</span><span class="italic">password</span><span class="code" style="font-style: normal">@</span><span class="italic">host</span><span class="code" style="font-style: normal">/path</span> </div>
+      <div class="listBulletCont"><span class="code"><a name="929017">http://</a></span><span class="italic">username</span><span class="code" style="font-style: normal">:</span><span class="italic">password</span><span class="code" style="font-style: normal">@</span><span class="italic">host</span><span class="code" style="font-style: normal">/path</span> </div>
+      <div class="listBulletCont"><a name="929021">This command transfers the software release to the appliance but does not install it.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="code"><a name="929025">install</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="930435">Install a software release that has been downloaded to the appliance. This command provides a list of software JARs that are currently stored on the appliance.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="code"><a name="929029">delete</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="930436">Delete a software release that has been downloaded to the appliance. The </a><span class="code">delete</span> command provides a list of releases that are currently on the appliance.</div>
+      <div class="listBulletCont"><span class="bold"><a name="969574">Note—</a></span>Before you start using the CLI to update an appliance, it is good practice to delete any old JARs that are still stored on the appliance. This frees up disk space that might be needed to store new JARs. </div>
+      <div class="listBulletCont"><a name="969794">In this context, an “old JAR” corresponds to </a></div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1004025">Any release that is not the currently installed release (for appliances) </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1004026">Any release that is neither the current release nor a release that needs to be installed on any connected appliance. (for directors)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="1004027">Suppose you want to install 9.0.3 on an 8.6.8 director. The director and all connected appliances have been updated to 8.6.8, but the director still has several older release JARs in its storage area. Therefore, you should delete all JARS for all releases up to but not including 8.6.8.</a></div>
+      <div class="listBulletCont"><a name="969795">To remove old JARs from an appliance or director, do the following steps:</a></div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">a)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="969796">Log in to the director as a user with Administrator privileges, using an SSH-enabled program such as putty.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">b)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="969785">Enter the following command: </a><span class="codebold">release-update</span> </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSubCont"><a name="969786">The CLI displays the </a><span class="code">AppResponse Software Update</span> menu.</div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">c)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="969787">Enter the following command: </a><span class="codebold">releases</span> </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSubCont"><a name="969581">The CLI displays all releases that are currently stored on the director.</a></div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">d)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="969582">For all old JARs (neither the current release nor a release needed to update the director or a connected appliance), run the following commands:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSubCont"><span class="codebold"><a name="969583">delete &lt;</a></span><span class="italic" style="font-weight: normal">release_number</span><span class="codebold" style="font-style: normal">&gt;</span> </div>
+      <div class="listNumSubCont"><span class="codebold"><a name="969584">unpublish &lt;</a></span><span class="italic" style="font-weight: normal">release_number</span><span class="codebold" style="font-style: normal">&gt;</span> </div>
+      <div class="listNumSubCont"><a name="969585">All JAR files for </a><span class="code">&lt;</span><span class="italic">release_number</span><span class="code" style="font-style: normal">&gt;</span> are removed from the director.</div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">e)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="969586">For the release currently installed on the Director, run the following command: </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSubCont"><span class="codebold"><a name="969587">unpublish &lt;</a></span><span class="italic" style="font-weight: normal">release_number</span><span class="codebold" style="font-style: normal">&gt;</span> </div>
+      <div class="listNumSubCont"><a name="969588">You must perform this step for the currently installed release if it was installed on the director using the CLI rather than the System&nbsp;&gt; Administration web UI.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="code"><a name="929030">log</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="930438">Examine a software installation log. A new log file is created each time a software release is installed. The log command provides a list of available software logs.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="code"><a name="929031">proxy</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="930439">Configure an HTTP proxy server used by the check and download commands</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="code"><a name="978265">check</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><span class="bold"><a name="978266">Note—</a></span>This command is useful only on an appliance that is connected to a director. To confirm all connections in the domain, log in to the director for the Desktop Console and confirm all connections under Tools&nbsp;&gt; Domain&nbsp;Manager.</div>
+      <div class="listBulletCont"><a name="978267">You can use this option to check for software releases on a connected director that are available for downloading and installing. By default, an appliance connected to a director should show the following path. (If this path is </a><span class="italic">not</span> displayed, log in to the director Desktop Console and check the connection under Tools&nbsp;&gt; Domain&nbsp;Manager.)</div>
+      <div class="listBulletCont"><span class="code"><a name="978607">http://</a></span><span class="italic">director-ip-or-name</span><span class="code" style="font-style: normal">:8080/updates/releases.txt</span>&nbsp;&nbsp;</div>
+      <div class="listBullet_outer" style="margin-left: 0pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="code"><a name="978609">quit</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="978806">Return to the main CLI menu.</a></div>
+      <div class="h2NoBreak"><span class="code" style="color: #000000; font-size: 14.0pt; font-style: normal; font-weight: bold"><a name="978810">release-current</a></span> Command</div>
+      <div class="body"><a name="978813">The </a><span class="code">release-current</span><span class="Online"> CLI command d</span>isplays the current software release running on the appliance. This command <span class="Emphasis" style="font-style: italic">does not</span> take arguments.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

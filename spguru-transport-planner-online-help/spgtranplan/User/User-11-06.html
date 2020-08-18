@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:16" />
+    <title>Routing Algorithm</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-11-01.html"> Transparent Networks</a> > <a href="User-11-04.html">Algorithm Descriptions</a> > Routing Algorithm</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp258713"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Routing Algorithm
+</h2>
+
+ 
+
+<a name="wp292805"> </a><p class="pBody">
+SP&#160;Guru&#160;Transport&#160;Planner&#39;s transparent network routing algorithm has the following characteristics:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp292806"> </a><div class="pSmartList1"><li>An important factor in the algorithm is the ratio between the link cost versus the cost for wavelength regeneration or conversion (WR/WC). The routing algorithm considers this cost ratio when it chooses between additional transparent hops and an additional WR/WC. This ratio does not influence whether a signal must be regenerated to obey transparency limitations.</li></div>
+<a name="wp292879"> </a><div class="pSmartList1"><li>Given the default cost settings, SP&#160;Guru&#160;Transport&#160;Planner prefers one additional WC/WR over one additional hop and one additional hop over two WC/WRs. The latter means that routing a connection over two hops without regeneration is preferable to routing over a shorter path with extra regeneration.</li></div>
+<a name="wp292880"> </a><div class="pSmartList1"><li>For a transparent node with selective regeneration, you can specify the amount of regeneration capacity manually: right-click on a node in the OCH Node Browser and choose Set Regenerator Capacity. To remove the unused regenerator capacities in the selected node, choose Strip Regenerator Capacity from the right-click menu. For more information about this browser, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-05-11.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-05-11.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">OCH Node Browser</u></a>.</li></div>
+<a name="wp292809"> </a><div class="pSmartList1"><li>By using the routing algorithm (see <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-02.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-02.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Route DCL/OCH Traffic Dialog Box</u></a>), you can then evaluate the traffic that can be routed according to the amount of regenerator capacity in the nodes. Otherwise, you can let SP&#160;Guru&#160;Transport&#160;Planner determine the amount of regeneration capacity by using the dimensioning algorithm (see <a href="javascript:WWHClickedPopup('wdm_user', 'User-08-2.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-08-2.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Dimension DCL/OCH Layer Dialog Box</u></a>). In the latter case, the algorithm adds as much regeneration capacity to the nodes as needed to try to accommodate the specified traffic matrix in the network. You cannot specify the amount of regeneration capacity of fully transparent nodes (no regeneration capacity) and opaque nodes (full regeneration capacity).</li></div>
+</ul></div>
+<a name="wp258733"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Routing vs. WC/WR: Example
+</h3>
+<a name="wp293055"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('wdm_user', 'User-11-06.html#wp267239');" onMouseOver="WWHShowPopup('wdm_user', 'User-11-06.html#wp267239', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;10-2</u></a> shows how cost parameters affect the choice between routing and WC/WR for a wavelength demand. The routing algorithm considers routing cost (per hop) and regeneration cost (per transition between wavelengths) to choose between routing and WC/WR. In some cases, a longer route might be preferred if no in-node regeneration is required.
+</p>
+<a name="wp267239"> </a><p class="pFigCaption">
+Figure&#160;10-2   Routing Cost vs. Regeneration Cost in the Transparent Algorithm
+</p>
+<a name="wp267242"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-11-06-2.jpg" height="288" width="700" id="wp267241" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp293086"> </a><p class="pBody">
+In <a href="javascript:WWHClickedPopup('wdm_user', 'User-11-06.html#wp267239');" onMouseOver="WWHShowPopup('wdm_user', 'User-11-06.html#wp267239', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;10-2</u></a>, each plane represents an available wavelength plane in the transparent network. The algorithm uses the cost parameters to determine the optimal route for a specific connection and whether WR/WC is required along the path. SP&#160;Guru&#160;Transport&#160;Planner does wavelength regeneration or conversion according to the characteristics of the optimal route:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp293087"> </a><div class="pSmartList1"><li>If the entire path is assigned to the same wavelength (no conversion is needed), the connection is routed in the same wavelength plane.</li></div>
+<a name="wp293088"> </a><div class="pSmartList1"><li>If the path length exceeds the MTL, the algorithm does regeneration in an intermediate node of the path. Depending on the spare resources in the network, an implicit WC might be needed in the intermediate node. If implicit WC is needed, the path is switched from one wavelength plane to another in the intermediate node; if implicit WC is not needed, the path stays in the same wavelength plane.</li></div>
+<a name="wp293089"> </a><div class="pSmartList1"><li>If no path can be found within the same wavelength (because resources have been used to accommodate other connections), the algorithm does explicit WC&#8212;that is, it switches to another wavelength in the intermediate node.</li></div>
+</ul></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_34_trn.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

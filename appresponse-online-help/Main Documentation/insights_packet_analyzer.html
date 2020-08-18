@@ -1,0 +1,1027 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Packet Analyzer Insight</title>
+    <link rel="StyleSheet" href="css/insights_packet_analyzer.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_user_guide_splash.html">User Guide</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="insights.html">Insights</a> &gt; Packet Analyzer Insight</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="1113227">Packet Analyzer Insight</a></div>
+      <div class="body"><a name="1113228">You can use the Packet Analyzer insight to view protocol decodes of captured packets from within the console. This insight is useful for troubleshooting network problems, examining security issues, debugging protocol implementations, and other workflows that require detailed knowledge of the protocol information embedded in individual packets.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;1     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="1113232">Protocol Decodes in Packet Analyzer Insight</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1113236"><img class="Default" src="images/insights_packet_analyzer.055.1.1.jpg" width="621" height="330" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1113237">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="1113239">Prerequisites</a></div>
+      <div class="bodyIntro"><a name="1113240">To use this insight effectively, you should have a basic working knowledge of the following topics: </a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113241">Analyzing protocol decodes using tools such as Wireshark.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1113242">Specifying packet filters using the Berkeley Packet Filter (BPF) filter format. For more information, search the internet using the string “bpf filter syntax”.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast" style="color: #000000; font-size: 11.0pt; font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 18.0pt; margin-left: 14.4pt; margin-top: 10.0pt; text-transform: none; vertical-align: baseline">•	<span style="color: #000000; font-size: 11.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><a name="1113243">Wireshark display filters. For more information, see </a></span><span class="HTBlue"><a href="http://wiki.wireshark.org/DisplayFilters" target="external_window">http://</a></span><span class="HTBlue" style="font-size: 10.0pt">wiki.wireshark.org/DisplayFilters</span>.</div>
+      <div class="h2NoBreak"><a name="1113246">Workflow Description</a></div>
+      <div class="bodyIntro"><a name="1113247">The following steps outline the recommended workflow.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1113248&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procCaption_inner" style="width: 90pt; white-space: nowrap">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1113248", false);</script>Procedure&nbsp;1    </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="1113248">Packet Analyzer Insight: Recommended Workflow</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1113248", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113249">Open the Packet Analyzer insight from either of the following:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113250">Insights menu (Insights &gt; Packet Analysis &gt; Packet Analyzer)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113251">Packet Download Manager (Tools &gt; Packet Download Manager)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="1113252">The Packet Download Manager method is recommended because you can identify and filter packets of interest before opening the insight. The following steps outline the workflow:</a></div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113253">Open the Packet Download Manager.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113254">Edit the preview to focus on the packets that you want to analyze.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubCont"><span class="bold"><a name="1113258">Note—</a></span>You must make sure that the “Display Individual IP conversations in preview result” checkbox is selected.</div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113259">Click in the desired tab to preview the packets (Tier Pair Circle, Tier Pair Table, or Tier Table).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113260">Zoom in on a time window by dragging horizontally in the throughput chart, if desired.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.5.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113261">Select the tier or tier pair whose packets you want to analyze.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubCont"><span class="bold"><a name="1113262">Note—</a></span>Make sure that you select the time window and tier/tier pair in the correct order: zoom in on the throughput chart (<span class="italic">first</span>), then select the tier/tier pair (<span class="italic">second</span>). Otherwise the View Decode button will be unavailable.</div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.6.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113263">Click View Decode.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap">Figure&nbsp;2    </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1113264">Selecting Packets for Analysis in the Packet Decode Manager</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1113268"><img class="Default" src="images/insights_packet_analyzer.055.1.2.jpg" width="510" height="276" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1113269">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113282">In the Filters tabbed page, specify the set of packets to include for analysis in the insight. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="1113283">This step is required if you opened the insight from the Insights menu and optional if you opened from the Packet Download Manager. You can specify the following in this page:</a></div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113284">Time window (</a><span class="italic">yyyy-mm-dd hh:mm:ss</span>) —If you change the time window, you must click Update to apply the change.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113285">IP(s) for the packets of interest. You can specify any of the following: </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBulletCont"><a name="1113286">IPv4 or IPv6 address (example: </a><span class="italic">x.x.x.x</span>) </div>
+      <div class="procStepBulletCont"><a name="1113287">IP conversation (two IPs separated by a vertical bar, for example: </a><span class="italic">x.x.x.x|y.y.y.y</span>) </div>
+      <div class="procStepBulletCont"><a name="1113288">IP range (two IPs separated by a dash, for example: </a><span class="italic">x.x.x.x-y.y.y.y</span>) </div>
+      <div class="procNoteSub">
+        <span class="bold">		Note: </span><a name="1139857">Both IPv4 and IPv6 addresses are supported.</a></div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113289">Monitoring Interface Group (</a><span class="italic">optional</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113290">VLAN (</a><span class="italic">optional</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113291">BPF — You can specify a packet filter in BPF (Berkeley Packet Filter) format. Note the following:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113292">If this field does not contain a correct BPF expression, no filter will be applied.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113293">BPF expressions are case sensitive. </a><span class="codebold">tcp or udp</span> is a valid expression, but <span class="codebold">TCP OR UDP</span> is not.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap">Figure&nbsp;3    </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="1113294">“Filters” Tabbed Page</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1113298"><img class="Default" src="images/insights_packet_analyzer.055.1.3.jpg" width="623" height="276" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1113299">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113300">If you edited any of the packet filters, click View Packets.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><span class="bold"><a name="1113301">--&gt;&nbsp;</a></span>The insight switches to the Packets page and displays summaries for all packets that match all the specified filters. </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113302">The Packets tab to view and analyze the packets of interest. This page has the following elements:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113303">Wireshark Display Filter - Specify a Wireshark display filter to show only packets of interest in the Packet Summaries table. For information about the display filter format, see</a><span class="HTBlue"> </span><span class="HTBlue" style="font-size: 11.0pt"><a href="http://wiki.wireshark.org/DisplayFilters" target="external_window">http://</a></span><span class="HTBlue" style="font-size: 10.0pt">wiki.wireshark.org/DisplayFilters</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBulletCont"><span class="bold"><a name="1113305">Note—</a></span>If the display filter includes quotes, you must use single quotes (<span class="code">sip.To&nbsp;contains&nbsp;‘a1762’</span>) rather than double quotes (<span class="code">sip.To&nbsp;contains&nbsp;"a1762"</span>).</div>
+      <div class="procStepBulletCont"><a name="1113306">After you specify the filter, you must press Enter to apply it. </a></div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113307">Go to Page Containing - This filter is useful for finding packets that contain ASCII text of interest—for example, HTTP packets that contain a specific string (either in the HTML content or the HTTP header data). When you enter a string and press Enter, the insight searches the Packet Summaries table and highlights packets that include the search string. Note the following:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113308">String searches are case-sensitive.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113309">After you specify the search string, you must press Enter to run the search. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113310">Packet Summaries table - This table shows all packets that meet all filter criteria specified in both the Filters and the Packets tabbed pages. Select a packet to view the protocol decodes, header summary, and data for that packet.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBulletCont"><a name="1113311">This table shows the following columns by default:</a></div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113312">Frame</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113313">Time </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113314">Source/Destination IPs</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113315">Decode — Highest decode level for the individual packet</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113316">Decode Summary</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBulletCont"><a name="1139802">You can edit the columns to show and hide in this table: Right-click in the table and choose Show Toolbar; then click the Toolbar Settings button that appears and select Edit Columns; then click the click the Edit Columns toolbar button. You can show the following additional columns:</a></div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113318">Delta — Time difference between the current frame and the first frame shown in the insight</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113319">Size - Size of the packet, in bytes</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113320">IP ID - IP identification field</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap">•&nbsp;</div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="1113321">Source MAC Address/Destination MAC Address</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113322">Protocol Layer table - Select the protocol layer for which you want to view decodest</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113323">Headers tabbed page - Shows detailed decodes for the selected protocol layer of the packet.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1113324">Data tabbed page - View the packet contents in hexadecimal and ASCII format</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	5.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1148515">To download packets to your computer from the Packet Analyzer insight, click on the Download Packets button at the bottom of the Packet Analyzer window (</a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'insights_packet_analyzer.html#1113325', '');" title="Packet Analyzer Insight">Figure&nbsp;4</a></span>). </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note: </span><a name="1148554">The packet download feature ignores the Wireshark Display Filter. If you want to view the conversations that will be downloaded, clear the contents of the Wireshark Display Filter.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;4     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="1113325">“Packets” Tabbed Page (with “Download Packets” Button)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1113329"><img class="Default" src="images/insights_packet_analyzer.055.1.4.jpg" width="624" height="606" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1113330">&nbsp;</a></div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap">End of Procedure 1</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1113331">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1113332">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="1113334">Packet Filtering: Examples</a></div>
+      <div class="bodyIntro"><a name="1113335">You can specify multiple criteria, separated by commas, in each field in the Filters page: IP, VLAN, MIFG, BPF. This insight combines each field into a compound filter, as illustrated in the following examples. (Only IPv4 examples are included below, but IPv6 addresses are also supported.)</a></div>
+      <div class="tblAnchor"><a name="1113422">&nbsp;</a></div>
+      <table class="tableNarrow" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+              <tr style="vertical-align: baseline">
+                <td>
+                  <div class="tblCaption_inner" style="width: 44.64pt; white-space: nowrap">Table&nbsp;1    </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="1113338">Packet Filtering in Packet Analyzer Insight: Examples</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 131.0688pt">
+            <div class="tblHead"><a name="1113342">Filter Fields</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 336.9312pt">
+            <div class="tblHead"><a name="1113344">Description and Resulting Boolean Expression</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113346">IP: 1.2.3.4,5.6.7.8</a></div>
+            <div class="tblBody9"><a name="1113347">VLAN: 1, 2</a></div>
+            <div class="tblBody9"><a name="1113348">MIFG: *</a></div>
+            <div class="tblBody9"><a name="1113349">BPF: tcp or udp</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113351">Include packets to/from IPs 1.2.3.4 on VLAN 1 or 5.6.7.8 on VLAN 2 from any MIFG: </a></div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1113352">IP (1.2.3.4) &amp; VLAN(1) &amp; MIFG(*) &amp; BPF (tcp or udp)</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1113353">IP (5.6.7.8) &amp; VLAN(2) &amp; MIFG(*) &amp; BPF (tcp or udp)</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113355">IP: 1.2.3.4,5.6.7.8</a></div>
+            <div class="tblBody9"><a name="1113356">VLAN: 1,*</a></div>
+            <div class="tblBody9"><a name="1113357">MIFG: *</a></div>
+            <div class="tblBody9"><a name="1113358">BPF: tcp or udp</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113360">Include packets to/from IPs 1.2.3.4 on VLAN 1 or 5.6.7.8 on any VLAN from any MIFG:</a></div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1113361">IP (1.2.3.4) &amp; VLAN(1) &amp; MIFG(*) &amp; BPF (tcp or udp)</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1113362">IP (5.6.7.8) &amp; VLAN(*) &amp; MIFG(*) &amp; BPF (tcp or udp)</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113364">IP: 1.2.3.4,5.6.7.8</a></div>
+            <div class="tblBody9"><a name="1113365">VLAN: 1,-1</a></div>
+            <div class="tblBody9"><a name="1113366">MIFG: *</a></div>
+            <div class="tblBody9"><a name="1113367">BPF: tcp or udp</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113369">Include packets to/from IPs 1.2.3.4 on VLAN 1 or 5.6.7.8 non-VLAN (-1 means non-VLAN) from any MIFG:</a></div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1113370">IP (1.2.3.4) &amp; VLAN(1) &amp; MIFG(*) &amp; BPF (tcp or udp)</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1113371">IP (5.6.7.8) &amp; VLAN(-1) &amp; MIFG(*) &amp; BPF (tcp or udp)</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113373">IP: 1.2.3.4,5.6.7.8</a></div>
+            <div class="tblBody9"><a name="1113374">VLAN: 1,2</a></div>
+            <div class="tblBody9"><a name="1113375">MIFG: 0,2</a></div>
+            <div class="tblBody9"><a name="1113376">BPF: tcp or udp</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113378">Include packets to/from IPs 1.2.3.4 on VLAN 1 and MIFG 0 or 5.6.7.8 on VLAN 2 from MIFG 2:</a></div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1113379">IP (1.2.3.4) &amp; VLAN(1) &amp; MIFG(0) &amp; BPF (tcp or udp)</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1113380">IP (5.6.7.8) &amp; VLAN(2) &amp; MIFG(*) &amp; BPF (tcp or udp)</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113382">IP: 1.2.3.4,5.6.7.8</a></div>
+            <div class="tblBody9"><a name="1113383">VLAN: 1</a></div>
+            <div class="tblBody9"><a name="1113384">MIFG: 1</a></div>
+            <div class="tblBody9"><a name="1113385">BPF: tcp or udp</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113387">Include packets to/from IPs 1.2.3.4 on VLAN 1 and MIFG 1 or 5.6.7.8 from any MIFG and any VLAN/non-VLAN:</a></div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1113388">IP (1.2.3.4) &amp; VLAN(1) &amp; MIFG(1) &amp; BPF (tcp or udp)</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1113389">IP (5.6.7.8) &amp; VLAN(1) &amp; MIFG(1) &amp; BPF (tcp or udp)</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113391">IP: 1.2.3.4|5.6.7.8</a></div>
+            <div class="tblBody9"><a name="1113392">VLAN: *</a></div>
+            <div class="tblBody9"><a name="1113393">MIFG: *</a></div>
+            <div class="tblBody9"><a name="1113394">BPF: tcp or udp</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113396">Include packets between IPs 1.2.3.4 and 5.6.7.8 from any MIFG:</a></div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1113397">IP (1.2.3.4:5.6.7.8) &amp; VLAN(*) &amp; MIFG(*) &amp; BPF (tcp or udp)</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113399">IP: 1.2.3.4-1.2.3.10</a></div>
+            <div class="tblBody9"><a name="1113400">VLAN: *</a></div>
+            <div class="tblBody9"><a name="1113401">MIFG: *</a></div>
+            <div class="tblBody9"><a name="1113402">BPF: tcp or udp</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113404">Include packets from IP range 1.2.3.4 and 5.6.7.8 from any MIFG:</a></div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1113405">IP (1.2.3.4-5.6.7.8) &amp; VLAN(*) &amp; MIFG(*) &amp; BPF (tcp or udp)</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113407">IP: 0.0.0.0</a></div>
+            <div class="tblBody9"><a name="1113408">VLAN: *</a></div>
+            <div class="tblBody9"><a name="1113409">MIFG: *</a></div>
+            <div class="tblBody9"><a name="1113410">BPF: ip6</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113412">Include all IPv6 packets:</a></div>
+            <div class="tblBody9"><a name="1113413">IP (0.0.0.0) &amp; VLAN(*) &amp; MIFG(*) &amp; BPF (ipv6)</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113415">IP: 0.0.0.0</a></div>
+            <div class="tblBody9"><a name="1113416">VLAN: *</a></div>
+            <div class="tblBody9"><a name="1113417">MIFG: *</a></div>
+            <div class="tblBody9"><a name="1113418">BPF: (not ip)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113420">Include all non-IP packets:</a></div>
+            <div class="tblBody9"><a name="1113421">IP (0.0.0.0) &amp; VLAN(*) &amp; MIFG(*) &amp; BPF (not ip)</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="h2NoBreak"><a name="950400">Using the Packet Analyzer Insight on a Director</a></div>
+      <div class="body"><a name="1139977">You can run the packet analyzer insight on a Director and view information for one or more connected appliances. When using this insight on a Director, the Packet Summaries table includes an extra column that lists the appliance.</a></div>
+      <div class="bodyIntro"><a name="1139978">Filtering options on the Director are the same as they are on an appliance except that on a Director you must also specify the appliance when specifying IP addresses, IP conversations, or IP ranges. Use the following syntax to specify an appliance in the packet filter:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1139979">IP address (appliancename:x.x.x.x)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1139980">IP conversation (appliancename:x.x.x.x|y.y.y.y)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1139981">IP range (appliancename:x.x.x.x-y.y.y.y) </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;5     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="1139982">Packet Analyzer Insight on a Director</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1139999"><img class="Default" src="images/insights_packet_analyzer.055.1.5.jpg" width="509" height="549" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1140000">&nbsp;</a></div>
+      <div class="body"><a name="1140004">To use the Packet Analyzer Insight on a director that is running the current release with appliances that are running a release prior to 9.0, you need to upgrade the appliances to the latest Packet Analyzer Insight. You can download the latest insights from the Update Center.</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

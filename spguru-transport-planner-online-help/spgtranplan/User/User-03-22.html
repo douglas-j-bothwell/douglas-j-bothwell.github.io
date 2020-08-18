@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:33:27" />
+    <title>SONET/ Optical Nodes: DXC + OXC</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-03-01.html"> Concepts and Models</a> > <a href="User-03-15.html">Node Modeling Capabilities in SP&#160;Guru&#160;Transport&#160;Planner</a> > SONET/ Optical Nodes: DXC + OXC</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp47149"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+SONET/ Optical Nodes: DXC + OXC
+</h2>
+
+ 
+
+<a name="wp45704"> </a><p class="pBody">
+An EOCC node can cross-connect both SONET and optical traffic. Therefore the EOCC node is equipped with a DXC and an OXC by default. This node type has the following characteristics:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp45761"> </a><div class="pSmartList1"><li>DXC&#8212;Within the DXC, traffic can be switched to the STS-1 level&#8212;or STM-1 level for SDH traffic&#8212;to the tributary ports (for local add/drop) and the physical and logical DCL links (for grooming). At the DXC tributary ports, local SONET traffic is add/dropped. The DXC trunk ports terminate both physical DCL trunks (to an ECC node) and logical DCL trunks (between two EOCC nodes)&#8212;that is, as non-native OCH connections that terminate in the node. These trunk ports (for logical DCL links) interconnect with the OXC tributary ports. </li></div>
+<a name="wp45762"> </a><div class="pSmartList1"><li>OXC&#8212;The OXC switches wavelengths between different WDM line systems, or between the OXC tributary ports and the WDM line systems. For non-native OCH connections, the OXC tributary ports are connected to the DXC trunk ports. Separate OXC tributary ports (which do not interconnect with the DXC trunk ports) are used for native OCH connections. OXC trunk ports interconnect with the WDM line system wavelengths of the OCH links. These links connect to EOCC or OCC nodes and terminate in the connected node. </li></div>
+<a name="wp79379"> </a><p class="pFigCaption">
+Figure&#160;2-26   DXC + OXC in EOCC Node
+</p>
+<a name="wp79382"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-03-22-26.jpg" height="158" width="530" id="wp79381" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ul></div>
+<a name="wp45797"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Native Traffic
+</h3>
+<a name="wp45832"> </a><p class="pBody">
+Native OCH traffic contains wavelengths that are not available for routing SONET/SDH traffic; in the layered view, native OCH connections are not trailed to DCL links. These connections do not terminate at the DXC of its end nodes&#8212;as is the case for non-native connections&#8212;but occupy a tributary OXC port only.
+</p>
+<a name="wp79455"> </a><p class="pFigCaption">
+Figure&#160;2-27   Native and Non-Native Traffic on OXC + DXC (Opaque Scenario)
+</p>
+<a name="wp79458"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-22-27.jpg" height="181" width="530" id="wp79457" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp45892"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Protection Options
+</h3>
+<a name="wp45912"> </a><p class="pBody">
+OCH traffic can be client-protected or non-client-protected (much like an OCC node with an OXC). For native traffic, the situation is the same as for an OCC. For <em class="cEmphasis">client-protected, non-native</em> OCH traffic, the client is the SDH layer, and the protection switching is done by the DXC; this requires two DXC trunk ports. For <em class="cEmphasis">non-client-protected, non-native</em> traffic, only one trunk port is required at the DXC and the protection transponder is used for the protection switching. In both cases (client-protected or non-client-protected), two OXC tributary ports are required.
+</p>
+<a name="wp79506"> </a><p class="pFigCaption">
+Figure&#160;2-28   Impact of Client Protection on Non-Native OCH Traffic
+</p>
+<a name="wp79509"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-22-28.jpg" height="214" width="530" id="wp79508" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp45929"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Grooming
+</h3>
+<a name="wp45947"> </a><p class="pBody">
+Grooming is important for transporting SONET traffic over the wavelengths of the WDM network. Grooming is the process of mapping SONET traffic to wavelengths efficiently, by switching traffic either at the SONET (DCL) or wavelength (OCH) layer. Grooming requires a switch that can switch traffic down to the lowest traffic granularity. 
+</p>
+<a name="wp117528"> </a><p class="pBody">
+Only nodes that contain an electrical cross-connect can perform grooming. Therefore, it is not possible to groom in an OCC node. In an EOCC or ECC node, grooming requires a DXC or an IXC. It is not possible to groom in TM node, because the SDH terminal multiplexers do not allow switching transit SONET traffic. 
+</p>
+<a name="wp79552"> </a><p class="pFigCaption">
+Figure&#160;2-29   TM + OXC Node (Without Grooming)
+</p>
+<a name="wp79555"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-22-29.jpg" height="116" width="530" id="wp79554" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp48059"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+SONET/SDH Rings
+</h3>
+<a name="wp48060"> </a><p class="pBody">
+When a SONET/SDH ring is terminated in an EOCC node, behavior within the node differs depending on whether the DCL link that terminates within the node is a physical or a logical link:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp81872"> </a><div class="pSmartList1"><li>In the case of a physical DCL link (towards an ECC), the behavior in the node is similar to the ECC. </li></div>
+<a name="wp81873"> </a><div class="pSmartList1"><li>In the case of a logical DCL link (towards an EOCC or OCC), the DLC link is supported by an optical channel. The optical channel is terminated in the node using either an OXC or a patch panel port (you can define this in the Network Properties dialog box, as described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-09.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-09.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Network Properties</u></a>).</li></div>
+</ul></div>
+<a name="wp117678"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>This section considers the DXC + OXC case, but SP&#160;Guru&#160;Transport&#160;Planner also supports the following combinations: DXC + WP-OXC, DXC + OADM and DXC + Patch Panel.
+</p>
+
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_13_co.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

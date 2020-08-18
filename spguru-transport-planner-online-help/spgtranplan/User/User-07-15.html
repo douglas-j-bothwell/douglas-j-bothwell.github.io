@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:27" />
+    <title>Link Usage Threshold</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-07-01.html"> Routing</a> > Link Usage Threshold</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp305954"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Link Usage Threshold
+</h2>
+
+ 
+
+
+<a name="wp305958"> </a><p class="pBody">
+A <em class="cEmphasis">link usage threshold </em>is a value of any real number between 0 and 1 (i.e.,&#160;[0.1]) that designates the maximum allowed percentage of utilization for a link. Thus, the capacity usage of a link cannot exceed the link usage threshold defined for a link. For a DCL link, the link usage threshold specifies the percentage of the timeslots that can be utilized. For an OCH link, it specifies the percentage of the available wavelengths that can be utilized.
+</p>
+<a name="wp305962"> </a><p class="pBody">
+Given the above definition, consider an STS-192 DCL link. If a usage threshold of 0.5 (i.e., 50%) is specified, the maximum allowed capacity usage of the link is 96 STS&#39;s (i.e., 192 * 0.5 = 96). Since capacity usage on a DCL or OCH link must be an integral value, a floor function is applied to the result of the capacity of the link multiplied by the usage threshold. A floor function is used since partial usage of DCL link timeslots or OCH link wavelengths is not permitted. Thus, the maximum capacity usage of a link is derived with the following function:
+</p>
+<a name="wp305964"> </a><p class="pBody">
+<code class="cCode">Floor(Link Usage Threshold * Link Capacity)</code>
+</p>
+<a name="wp305966"> </a><p class="pBody">
+The floor function rounds down the result of <code class="cCode">(Link Usage Threshold * Link Capacity)</code> to the nearest whole integer. Logically, if a usage threshold of 0 is specified, then the link cannot be used to accommodate any traffic. Conversely, for a usage threshold of 1, the entire link capacity can be used for the accommodation of traffic.
+</p>
+<a name="wp305968"> </a><p class="pBody">
+In SP&#160;Guru&#160;Transport&#160;Planner link usage thresholds are considered to be the same for parallel links, that is, links between the same node pairs. For example, given nodes A and B, all links between A and B would have the same usage threshold value. You can think of this as link thresholds being defined for the entire link bundle between nodes and not for each individual link in the bundle.
+</p>
+<a name="wp305970"> </a><p class="pBody">
+Link usage threshold values are defined within SP&#160;Guru&#160;Transport&#160;Planner via a matrix. This matrix defines the link usage threshold values on a per-link-bundle basis for both the DCL and OCH layers.
+</p>
+<a name="wp305972"> </a><p class="pBody">
+The following figures illustrate the link usage threshold concept and how it is applied to both the DCL and OCH layers.
+</p>
+<a name="wp305947"> </a><p class="pFigCaption">
+Figure&#160;6-14   DCL Layer Usage Threshold Example
+</p>
+<a name="wp306053"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-07-15-14.jpg" height="354" width="530" id="wp306060" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp306078"> </a><p class="pFigCaption">
+Figure&#160;6-15   OCH Layer Usage Threshold Example
+</p>
+<a name="wp306082"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-07-15-15.jpg" height="346" width="530" id="wp306085" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp306169"> </a><p class="pBody">
+In SP&#160;Guru&#160;Transport&#160;Planner the threshold values for the links are set via the Link Usage Thresholds dialog box, as described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-15.html#wp306102');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-15.html#wp306102', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;6-6</u></a>.
+</p>
+<a name="wp306102"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp306102", false);</script>Procedure&#160;6-6   Setting and Using the Link Usage Thresholds<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp306102", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp306102", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp306188"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the Link Usage Thresholds dialog box by selecting Network&#160;&gt; Link&#160;Usage&#160;Thresholds from the menu bar or by clicking on the &quot;...&quot; button next to the &quot;Apply link usage threshold&quot; option in Routing, Dimensioning, or Grooming dialog boxes. </li></div>
+<a name="wp306193"> </a><p class="pFigCaption">
+Figure&#160;6-16   Link Usage Thresholds Dialog Box
+</p>
+<a name="wp306145"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-07-15-16.jpg" height="220" width="500" id="wp306148" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp306114"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>The dialog box is shown with all usage threshold values being 1 (i.e. 100% of the links capacity can be utilized). 
+</p>
+<a name="wp306204"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click on either DCL or OCH Layer radio button to select a layer to edit. </li></div>
+<a name="wp306232"> </a><div style="text-align: left" class="pSmartList2Test"><li>(Option 1) Edit individual values.</li></div>
+<ol type="a">
+<a name="wp306229"> </a><div class="pprocstepSub"><li>Edit each cell individually to specify the desired value. </li></div>
+</ol>
+<a name="wp306116"> </a><div style="text-align: left" class="pSmartList2Test"><li>(Option 2) Set all values to a global threshold.</li></div>
+<ol type="a">
+<a name="wp306245"> </a><div class="pprocstepSub"><li>Click on the &quot;Uniform&quot; button. </li></div>
+<a name="wp306251"> </a><div class="pprocstepSub"><li>The &quot;Enter Global Threshold&quot; dialog box displays. </li></div>
+<a name="wp306256"> </a><div class="pprocstepSub"><li>Enter a value for uniform thresholds.</li></div>
+<a name="wp306257"> </a><div class="pprocstepSub"><li>Click the OK button to apply the values to all cells. </li></div>
+</ol>
+<a name="wp306268"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click the OK button to apply and save the values. </li></div>
+<a name="wp306269"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The link usage threshold values are persistent, meaning they are saved with the network model in the project files.
+</p>
+</ol></div>
+<a name="wp306263"> </a><p class="pProcEnd">
+End of Procedure 6-6
+</p>
+<a name="wp306118"> </a><p class="pBody">
+Besides defining the threshold values for the links in the user interface as described above, you can also import (and export) the link usage thresholds at the DCL and OCH layer. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-04.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-04.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Data File Formats</u></a>.
+</p>
+<a name="wp306120"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>The link usage thresholds are utilized by a number of design actions within SP&#160;Guru&#160;Transport&#160;Planner, such as routing, dimensioning, and grooming. To make sure that the link usage thresholds are considered by a design action, select the &quot;Apply link usage thresholds&quot; option in the design action dialog box . 
+</p>
+
+
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_25_rte.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Stopping the License Server from the Command Line</title>
+    <link rel="StyleSheet" href="css/ag_037_license_cmdline.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ag_037_license_cmdline.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">Solution Overview &gt; <a class="WebWorks_Breadcrumb_Link" href="ag_splash.html#385956">License and Installation Support</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ag_037_licensing_overview.09.1.html#385956">Licensing</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ag_037_license_cmdline.11.01.html#385956">Managing Licenses from the Command Line</a> &gt; Stopping the License Server from the Command Line</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h2"><a name="385956">Stopping the License Server from the Command Line</a></div>
+      <div class="body"><a name="385957">The preferred method is to use the License Manager GUI to stop a license server, as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.11.html#474573', '');" title="Stopping the License Server">Stopping the License Server</a></span>, however you can stop a license server from the command line using the procedures in this section.</div>
+      <div class="bodyWarning">
+        <span class="zRedBold">WARNING—</span><a name="385958">Do not stop the License Server while any licensed application is running, unless you will bring the license server back up within 15 minutes. For best system behavior, ask users to stop using the software or revoke all in-use licenses with the License Manager before stopping the License Server.</a></div>
+      <div class="h3"><a name="385981">Stopping the License Server from Windows</a></div>
+      <div class="bodyIntro"><a name="484831">You can stop the OPNET License Manager service, as shown in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_cmdline.11.07.html#484837', '');" title="Stopping the License Server from the Command Line">Procedure&nbsp;3-37</a></span>.</div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd484837&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd484837", false);</script>Procedure&nbsp;3-37   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="484837">Stopping the License Server on Windows (Manually)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd484837", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="484838">Start the Services application (in the Administrative Tools section of the Windows Control Panel).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note—</span><a name="484839">Your path to the Services application depends on your version of the Windows operating system. Please consult your Microsoft manual for assistance.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="484840">Locate OPNET License Server in the scrolling list of available services. If the Status column entry for this service reads “Started”, select it and click the Stop button.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 3-37</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="484841">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="484842">\</a></div>
+      <div class="body"><a name="485479">The following procedure should be used only when other methods fail to stop the license server and only for license servers that are </a><span class="italic">not</span> serving licenses to AppInternals&nbsp;Xpert or VNE&nbsp;Server. For cases in which you cannot stop a license server that is serving licenses to those products, please contact OPNET Technical Support for assistance. </div>
+      <div class="bodyWarning">
+        <span class="zRedBold">WARNING—</span><a name="464507">Do not use </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_cmdline.11.07.html#385983', '');" title="Stopping the License Server from the Command Line">Procedure&nbsp;3-38</a></span> on AppInternals&nbsp;Xpert</div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd385983&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd385983", false);</script>Procedure&nbsp;3-38   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="385983">Stopping the License Server on Windows—Alternate Method</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd385983", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="385987">Invoke the License Manager program from the command line in the stop server mode:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="codeStep"><a name="385988">op_license_util -license_server_kill -license_server &lt;server&gt; \<br />		-license_port &lt;port&gt;</a></div>
+      <div class="procStepCont"><a name="385989">For information about </a><span class="code">op_license_util</span>, see the <span class="italic">Program Descriptions</span> chapter of your product documentation.</div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 3-38</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="385990">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="385991">&nbsp;</a></div>
+      <div class="h3"><a name="386008">Stopping the License Server on Linux</a></div>
+      <div class="body"><a name="386010">The following procedure describes an alternate way to stop the license server on Linux. The preferred method to use is described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.11.html#474573', '');" title="Stopping the License Server">Stopping the License Server</a></span>.</div>
+      <div class="bodyWarning">
+        <span class="zRedBold">WARNING—</span><a name="386014">Do not use </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_cmdline.11.07.html#386016', '');" title="Stopping the License Server from the Command Line">Procedure&nbsp;3-39</a></span> on AppInternals&nbsp;Xpert.</div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd386016&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd386016", false);</script>Procedure&nbsp;3-39   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="386016">Stopping the License Server on Linux (Alternate Method)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd386016", false);</script>
+      <div class="procCdwWarning">
+        <span class="zRedBold">Warning—</span><a name="386017">Use this procedure only when other methods do not work.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="386018">Determine the process id (pid) of </a><span class="code">op_license_server</span><span class="code" style="font-size: 11.0pt"> </span>by logging into the process’ host and using the <span class="code" style="font-size: 11.0pt">ps</span> command.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="386019">Execute the </a><span class="code">kill</span> command from the command line:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="codeStep"><a name="386020">kill &lt;pid&gt;</a></div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 3-39</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="386021">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="466173">&nbsp;</a></div>
+      <div class="procSpaceAfter"><a name="386022">&nbsp;</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

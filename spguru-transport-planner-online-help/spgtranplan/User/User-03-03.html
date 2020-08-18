@@ -1,0 +1,497 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:33:27" />
+    <title>SONET/SDH Systems</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-03-01.html"> Concepts and Models</a> > <a href="User-03-02.html">SONET/SDH and Optical Technology</a> > SONET/SDH Systems</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp44087"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+SONET/SDH Systems
+</h2>
+
+ 
+
+<a name="wp44191"> </a><p class="pBody">
+SONET is a standardized TDM protocol that allows individual low-bit-rate tributary signals to be multiplexed directly into higher-bit-rate SONET signals. In addition, SONET has built-in overhead, which is restricted to about five percent of the total signal capacity; this overhead provides capabilities for advanced network management, maintenance, and fault recovery.
+</p>
+<a name="wp44192"> </a><p class="pBody">
+The information structure used to transmit SONET signals is called the <em class="cEmphasis">Synchronous Transport Signal</em> (STS). An STS consists of payload and overhead information fields, and is organized in a block frame structure that repeats every 125 microseconds. The basic STS frame is STS-1, with a bit rate of 51.84 Mbps. STS-1 signals can be multiplexed into higher-level STS-<span style="font-style: oblique">N</span> signals, where <span style="font-style: oblique">N</span> is an integer (typically a multiple of 3 or 4). The optical interface for transporting STS-<span style="font-style: oblique">N </span>signals over optical fiber is called the <em class="cEmphasis">Optical Carrier Level N </em>(OC-<span style="font-style: oblique">N</span>).
+</p>
+<a name="wp123973"> </a><p class="pBody">
+SDH uses a similar signal called the <em class="cEmphasis">Synchronous Transport Module</em> (STM). The basic STM frame is STM-1, with a bit rate of 155.52 Mbps. STM-1 signals can be multiplexed into STM-<span style="font-style: oblique">N</span> signals, where <span style="font-style: oblique">N</span> is typically a multiple of four. The SDH STM-1 signal has the same bit rate as the SONET STS-3 signal. 
+</p>
+<a name="wp124563"> </a><p class="pBody">
+The STS-1 payload (called <em class="cEmphasis">SPE</em>, for <em class="cEmphasis">Synchronous Payload Envelope</em>) can vary, depending on the type of data in the frame. If one DS-3 is being mapped to the frame, it is placed directly into the SPE. But if sub-DS-3 services are being transmitted, a new container must be defined. This new container is called the <em class="cEmphasis">VT</em> (<em class="cEmphasis">virtual tributary</em>). VT-rate circuits are part of the lower order path (LOP) layer of SONET.
+</p>
+<a name="wp124564"> </a><p class="pBody">
+VTs are defined for four types of service, corresponding with the PDH signals they support: DS-1 (VT-1.5), E1 (VT-2), DS-1c (VT-3) and DS-2 (VT-6). Each type carries a different bandwidth and therefore occupies a different amount of space within the payload. VT-1.5 occupies 9 bytes x 3 bytes (three columns), VT-2 is four columns, VT-3 is six columns, and VT-6 is 12 columns. To solve the problem of mixing and matching VTs within a payload, SONET defines a VTG (VT group): one STS-1 frame has seven VTGs, and each VTG occupies 12 columns of the payload. VTs are matched and placed into a VTG that contains identical services. A single VTG can contain four VT-1.5s, three VT-2s, two VT-3s or one VT-6.
+</p>
+<a name="wp124565"> </a><p class="pBody">
+SDH uses a similar type of lower-order container called the VC (virtual container). VCs are defined for five types of service: DS-1 (VC-11), E1 (VC-12), DS-2 (VC-2) and E-3 (VC-3) and E-4 (VC-4). The VC-11, VC-12 and VC-2 containers are mapped into a <em class="cEmphasis">TUG</em> (<em class="cEmphasis">tributary unit group</em>), similar to the VTG in SONET. Seven TUGs fit into a VC-3. An STM-1 frame can host 3 VC-3s or a VC-4.
+</p>
+<a name="wp124757"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('wdm_user', 'User-03-03.html#wp124761');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-03.html#wp124761', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;2-1</u></a> lists the VT signals and matching VC signals modeled in SP&#160;Guru&#160;Transport&#160;Planner.
+</p>
+<a name="wp124848"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp124761table124758">
+  <caption><a name="wp124761"> </a><div class="ptblcaption">
+Table&#160;2-1   VT Levels and Matching VC Signals&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th colspan="2" rowspan="1"><a name="wp124769"> </a><div class="pCellHeading">
+<b class="cBold">SONET</b>
+</div>
+</th>
+    <th colspan="2" rowspan="1"><a name="wp124773"> </a><div class="pCellHeading">
+<b class="cBold">SDH</b>
+</div>
+</th>
+</tr>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp124853"> </a><div class="pCellHeading">
+Name
+</div>
+</th>
+    <th><a name="wp124855"> </a><div class="pCellHeading">
+Payload Bit Rate
+</div>
+</th>
+    <th><a name="wp124857"> </a><div class="pCellHeading">
+Name
+</div>
+</th>
+    <th><a name="wp126545"> </a><div class="pCellHeading">
+Payload Bit Rate
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp124777"> </a><div class="pCellBody">
+VT-1.5
+</div>
+</td>
+    <td><a name="wp124779"> </a><div class="pCellBody">
+1.728Mb/s
+</div>
+</td>
+    <td><a name="wp124781"> </a><div class="pCellBody">
+VC-11
+</div>
+</td>
+    <td><a name="wp124783"> </a><div class="pCellBody">
+1.728Mb/s
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp124785"> </a><div class="pCellBody">
+VT-2
+</div>
+</td>
+    <td><a name="wp124787"> </a><div class="pCellBody">
+2.304Mb/s
+</div>
+</td>
+    <td><a name="wp124789"> </a><div class="pCellBody">
+VC-12
+</div>
+</td>
+    <td><a name="wp124791"> </a><div class="pCellBody">
+2.304Mb/s
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp124793"> </a><div class="pCellBody">
+VT-3
+</div>
+</td>
+    <td><a name="wp124795"> </a><div class="pCellBody">
+3.456Mb/s
+</div>
+</td>
+    <td><a name="wp124797"> </a><div class="pCellBodyCenter">
+&#8212;
+</div>
+</td>
+    <td><a name="wp124799"> </a><div class="pCellBodyCenter">
+&#8212;
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp124801"> </a><div class="pCellBody">
+VT-6
+</div>
+</td>
+    <td><a name="wp124803"> </a><div class="pCellBody">
+6.912Mb/s
+</div>
+</td>
+    <td><a name="wp124805"> </a><div class="pCellBody">
+VC-2
+</div>
+</td>
+    <td><a name="wp124807"> </a><div class="pCellBody">
+6.912Mb/s
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp124809"> </a><div class="pCellBody">
+STS-1
+</div>
+</td>
+    <td><a name="wp124811"> </a><div class="pCellBody">
+50.112Mb/s
+</div>
+</td>
+    <td><a name="wp124813"> </a><div class="pCellBody">
+VC-3
+</div>
+</td>
+    <td><a name="wp124815"> </a><div class="pCellBody">
+48.960Mb/s
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td>&#160;</td>
+    <td>&#160;</td>
+    <td><a name="wp124821"> </a><div class="pCellBody">
+VC-4
+</div>
+</td>
+    <td><a name="wp124823"> </a><div class="pCellBody">
+150.336Mb/s
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="4" rowspan="1"><a name="wp124841"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 2-1	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+<a name="wp125339"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('wdm_user', 'User-03-03.html#wp125343');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-03.html#wp125343', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;2-2</u></a> lists the STS rates and the corresponding STM rates modeled in SP&#160;Guru&#160;Transport&#160;Planner.
+</p>
+<a name="wp125430"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp125343table125340">
+  <caption><a name="wp125343"> </a><div class="ptblcaption">
+Table&#160;2-2   <span style="font-style: normal; font-weight: bold; text-decoration: none; vertical-align: baseline">OC Levels and Matching SONET/SDH Signals&#160;</span>
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp125351"> </a><div class="pCellHeading">
+<b class="cBold">OC Level</b>
+</div>
+</th>
+    <th><a name="wp125353"> </a><div class="pCellHeading">
+<b class="cBold">Bit Rate</b>
+</div>
+</th>
+    <th><a name="wp125355"> </a><div class="pCellHeading">
+<b class="cBold">STS Level (SONET)</b>
+</div>
+</th>
+    <th><a name="wp125357"> </a><div class="pCellHeading">
+<b class="cBold">STM Level (SDH)</b>
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp125359"> </a><div class="pCellBody">
+OC&#8211;1
+</div>
+</td>
+    <td><a name="wp125361"> </a><div class="pCellBody">
+51.5 Mb/s
+</div>
+</td>
+    <td><a name="wp125363"> </a><div class="pCellBody">
+STS&#8211;1
+</div>
+</td>
+    <td><a name="wp125365"> </a><div class="pCellBody">
+&#8211;
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp125367"> </a><div class="pCellBody">
+OC&#8211;3
+</div>
+</td>
+    <td><a name="wp125369"> </a><div class="pCellBody">
+155 Mb/s
+</div>
+</td>
+    <td><a name="wp125371"> </a><div class="pCellBody">
+STS&#8211;3
+</div>
+</td>
+    <td><a name="wp125373"> </a><div class="pCellBody">
+STM&#8211;1
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp125375"> </a><div class="pCellBody">
+OC&#8211;12
+</div>
+</td>
+    <td><a name="wp125377"> </a><div class="pCellBody">
+622 Mb/s
+</div>
+</td>
+    <td><a name="wp125379"> </a><div class="pCellBody">
+STS&#8211;12
+</div>
+</td>
+    <td><a name="wp125381"> </a><div class="pCellBody">
+STM&#8211;4
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp125383"> </a><div class="pCellBody">
+OC&#8211;48
+</div>
+</td>
+    <td><a name="wp125385"> </a><div class="pCellBody">
+2.5 Gb/s
+</div>
+</td>
+    <td><a name="wp125387"> </a><div class="pCellBody">
+STS&#8211;48
+</div>
+</td>
+    <td><a name="wp125389"> </a><div class="pCellBody">
+STM&#8211;16
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp125391"> </a><div class="pCellBody">
+OC&#8211;192
+</div>
+</td>
+    <td><a name="wp125393"> </a><div class="pCellBody">
+10.0 Gb/s
+</div>
+</td>
+    <td><a name="wp125395"> </a><div class="pCellBody">
+STS&#8211;192
+</div>
+</td>
+    <td><a name="wp125397"> </a><div class="pCellBody">
+STM&#8211;64
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp125399"> </a><div class="pCellBody">
+OC&#8211;768
+</div>
+</td>
+    <td><a name="wp125401"> </a><div class="pCellBody">
+40.0 Gb/s
+</div>
+</td>
+    <td><a name="wp125403"> </a><div class="pCellBody">
+STS&#8211;768
+</div>
+</td>
+    <td><a name="wp125405"> </a><div class="pCellBody">
+STM&#8211;256
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp125407"> </a><div class="pCellBody">
+OC&#8211;1536
+</div>
+</td>
+    <td><a name="wp125409"> </a><div class="pCellBody">
+80.0 Gb/s
+</div>
+</td>
+    <td><a name="wp125411"> </a><div class="pCellBody">
+STS&#8211;1536
+</div>
+</td>
+    <td><a name="wp125413"> </a><div class="pCellBody">
+STM&#8211;512
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp125415"> </a><div class="pCellBody">
+OC&#8211;3072
+</div>
+</td>
+    <td><a name="wp125417"> </a><div class="pCellBody">
+160 Gb/s
+</div>
+</td>
+    <td><a name="wp125419"> </a><div class="pCellBody">
+STS&#8211;3072
+</div>
+</td>
+    <td><a name="wp125421"> </a><div class="pCellBody">
+STM&#8211;1024
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="4" rowspan="1"><a name="wp125423"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 2-2	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+<a name="wp123978"> </a><p class="pBody">
+The standardized set of STS/STM and VT/VC signals were devised to fit the traditional voice-based PDH signals. However, as today&#39;s networks are increasingly relying on data services, SONET/SDH has been extended with the principle of <em class="cEmphasis">virtual concatenation</em> of signals. Virtual concatenation defines an inverse multiplexing procedure that groups multiple signals and transports them as one entity across the network. The concatenated signals are obtained by grouping the payloads of the constituent signals. Both STS/STM and VT/VC support virtual concatenation: for example, an STS-1-21vc signal can be defined that groups the payload of 21 STS-1 containers (combined payload of 21 x 50.112 Mb/s = 1.052 Gb/s) to efficiently transport 1 Gigabit Ethernet services over SONET. 
+</p>
+<a name="wp44407"> </a><p class="pBody">
+In its basic form, a SONET link consists of an optical fiber with terminal multiplexers at the endpoints, and amplifiers and regenerators between the endpoints. The terminal multiplexers combine STM-N signals in a higher-rate STM-M signal (M &gt; N). At regular intervals along the fiber, optical amplifiers boost signals that have propagation losses in the fiber. To ensure correct transmission, regenerators must clean up the signal at intermediate points due to non-linear degradations in the fiber (a process called <em class="cEmphasis">3R regeneration</em>). This process reamplifies, reshapes, and retimes the signal at the electrical level, not the optical level.
+</p>
+<a name="wp61470"> </a><p class="pFigCaption">
+Figure&#160;2-1   SONET Link
+</p>
+<a name="wp61473"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-03-01.jpg" height="85" width="530" id="wp61472" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp39755"> </a><p class="pBody">
+Nodes in the network use <em class="cEmphasis">digital cross-connects</em> (DXCs) to transport SONET signals efficiently throughout the network. A DXC typically terminates several SONET links on its <em class="cEmphasis">trunk</em> ports; it can also add or drop local traffic through its <em class="cEmphasis">tributary</em> ports. Thus a DXC can transfer cross-connect traffic between two SONET links (<em class="cEmphasis">transit traffic)</em>; a DXC can also add/drop tributary traffic from a SONET link (<em class="cEmphasis">local traffic)</em>.
+</p>
+<a name="wp61541"> </a><p class="pFigCaption">
+Figure&#160;2-2   DXC
+</p>
+<a name="wp61544"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-03-02.jpg" height="156" width="530" id="wp61543" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp44477"> </a><p class="pBody">
+If cross-connection is not required, you can substitute a DXC with an add/drop multiplexer (ADM) or a SONET/SDH terminal multiplexer (TM) at locations with a lower nodal degree. An ADM can add/drop traffic in the location; it can also pass express traffic. ADMs are also used in the nodes of SONET/SDH rings. A terminal multiplexer aggregates the tributary traffic to the bit rate of its trunk, and has no transit capabilities.
+</p>
+<a name="wp61665"> </a><p class="pFigCaption">
+Figure&#160;2-3   Terminal Multiplexer and ADM
+</p>
+<a name="wp61638"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-03-03.jpg" height="137" width="530" id="wp61637" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp47939"> </a><p class="pBody">
+You can construct three types of networks in SP&#160;Guru&#160;Transport&#160;Planner: 
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp80670"> </a><div class="pSmartList1"><li>Mesh SONET/SDH networks that use DXCs and Terminal Multiplexers </li></div>
+<a name="wp80673"> </a><div class="pSmartList1"><li>SONET/SDH ring networks that use ADMs. SP&#160;Guru&#160;Transport&#160;Planner supports the three main ring types:</li></div>
+<div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp47956"> </a><div class="pSmartList2"><li><b style="font-weight: bold" class="cBold">UPSR:</b> Unidirectional Path Switched Ring</li></div>
+<a name="wp47961"> </a><div class="pSmartList2"><li><b style="font-weight: bold" class="cBold">2F-BLSR:</b> 2-Fiber Bidirectional Line Switched Ring</li></div>
+<a name="wp47964"> </a><div class="pSmartList2"><li><b style="font-weight: bold" class="cBold">4F-BLSR:</b> 4-Fiber Bidirectional Line Switched Ring</li></div>
+</ul></div>
+<a name="wp87758"> </a><div class="pSmartList1"><li>Combined&#8212;You can also create networks that combine these two types of topologies.</li></div>
+</ul></div>
+<a name="wp88688"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span><em class="cEmphasis">UPSR</em> and <em class="cEmphasis">BLSR</em> are North American terminology for SONET networks. In European terminology for SDH networks, the UPSR is known as a Sub-Network Connection Protection (<em class="cEmphasis">SNCP</em>) ring and the BLSR is known as a Multiplex Section Shared Protection Ring (<em class="cEmphasis">MS-SPRing</em>).
+</p>
+
+<a name="wp80734"> </a><p class="pFigCaption">
+Figure&#160;2-4   Ring Network: Example
+</p>
+<a name="wp80737"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-03-04.jpg" height="314" width="530" id="wp80736" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp48054"> </a><p class="pBody">
+The UPSR and 2F-BLSR are supported by one underlying fiber pair or one wavelength pair if the ring is supported by a (D)WDM system. The 4F-BLSR is supported by two underlying fiber pairs or two wavelength pairs. On a UPSR ring, a connection is always routed using a working path along one side of the ring and a protection path along the opposite side of the ring. On a BLSR, in contrast, half of the ring capacity is reserved up front for protection purposes while traffic is routed in the remaining capacity (with no explicit protection path). 
+</p>
+<a name="wp80753"> </a><p class="pBody">
+For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-03-14.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-14.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Protection Methods in Ring Networks</u></a>.
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_13_co.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:37:57" />
+    <title>SWIM Failure Analysis</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="swimuser-07-1.html"> Designing Robust Multi-Layer Networks</a> > SWIM Failure Analysis</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp924699"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+SWIM Failure Analysis
+</h2>
+
+ 
+
+
+<a name="wp924700"> </a><p class="pBody">
+Using SWIM, you can generate a web report that shows the effects of failures in the transport layer on links in the Layer-2/3 network. Each Failure Analysis report iterates through a set of failure cases; for each failure case, the report shows all failed links, unaffected links, and affected links (an &quot;affected link&quot; is a link whose delay is affected by the specified failure). 
+</p>
+<a name="wp925321"> </a><p class="pBody">
+SP&#160;Guru&#160;Network&#160;Planner and SP&#160;Guru&#160;Transport&#160;Planner each have their own Failure Analysis operations. These operations differ in the following ways:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp925282"> </a><div class="pSmartList1"><li>SP&#160;Guru&#160;Transport&#160;Planner failure analysis (Info&#160;&gt; Failure Analysis) analyzes the effects of transport-layer failures on the transport network only, and does not consider the effects of these failures on the Layer-2/3 network.</li></div>
+<a name="wp925299"> </a><div class="pSmartList1"><li>SP&#160;Guru&#160;Network&#160;Planner survivability analysis (Flow Analysis&#160;&gt; Configure/Run Survivability Analysis) studies the effects of failures in the transport network&#8212;fibers, cables, OXCs, DXCs&#8212;on link performance in the layer-2/3 network. For each failure scenario in the transport layer, survivability analysis analyzes the effects on Layer-2/3 links. Information on the effects of transport layer failures are included in the following reports:</li></div>
+<div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp925307"> </a><div class="pSmartList2"><li>Analyses&#160;&gt; Failure Impact-Demands: This report includes columns that show delay-impacted demands.</li></div>
+<a name="wp929630"> </a><div class="pSmartList2"><li>Analyses&#160;&gt; Delay Impacted Demands: This report summarizes the set of demands that were delayed by the transport-layer failure.</li></div>
+<a name="wp929658"> </a><div class="pSmartList2"><li>Analyses&#160;&gt; Failed Demands: This report includes columns that show the end-to-end delay for failure and baseline scenarios.</li></div>
+<a name="wp929659"> </a><div class="pSmartList2"><li>Analyses&#160;&gt; Rerouted Demands: This report includes columns that show the end-to-end delay for failure and baseline scenarios.</li></div>
+<a name="wp929716"> </a><p class="pFigCaption">
+Figure&#160;6-2   Failure Impact-Demands Report with Failed Transport Nodes
+</p>
+<a name="wp929724"> </a><p class="pBodyRelative">
+<br />
+<img src="images/swimuser-07-5-2.jpg" height="209" width="530" id="wp929731" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ul></div>
+</ul></div>
+<a name="wp925803"> </a><p class="pBody">
+For more information about the other types of Failure Analysis, see the following sections:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp925813"> </a><div class="pSmartList1"><li>&quot;Using Failure Impact Analysis&quot; chapter (Flow&#160;Analysis <em class="cEmphasis">User Guide </em>in SP&#160;Guru&#160;Network&#160;Planner documentation)</li></div>
+<a name="wp925826"> </a><div class="pSmartList1"><li><a href="javascript:WWHClickedPopup('wdm_user', 'User-15-1.html#wp250989');" onMouseOver="WWHShowPopup('wdm_user', 'User-15-1.html#wp250989', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Failure Evaluation</u></a></li></div>
+<a name="wp925382"> </a><p class="pBodyRelative">
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp925338table925333">
+  <caption><a name="wp925338"> </a><div class="ptblcaption">
+Table&#160;6-2   Generate Failure Analysis Report for Transport Layer Failures Dialog Box&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp925342"> </a><div class="pCellHeading">
+Option/Field
+</div>
+</th>
+    <th><a name="wp925344"> </a><div class="pCellHeading">
+Description
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp925346"> </a><div class="pCellBody">
+Elements to Fail
+</div>
+</td>
+    <td><a name="wp925348"> </a><div class="pCellBody">
+The types of Transport network elements to fail. For every instance of a network object selected in this table, SWIM creates an SRG. You can select the following types of objects:
+</div>
+<ul class="pCellBodyBullet"><a name="wp925349"> </a><div class="pCellBodyBullet"><li>
+Cables&#8212;Failure of an optical cable (in OTS layer)
+</li></div>
+<a name="wp925350"> </a><div class="pCellBodyBullet"><li>
+Entire transport nodes&#8212;Failure of an entire Transport node (including all OXCs, DXCs, OADMs, and other equipment present at the site) as well as the Layer-2/3 node(s) that have been mapped onto it
+</li></div>
+<a name="wp925352"> </a><div class="pCellBodyBullet"><li>
+OXCs&#8212;Failure of individual optical cross-connect (OXC). This does not include optical cross-connect parts of IXCs
+</li></div>
+<a name="wp925353"> </a><div class="pCellBodyBullet"><li>
+IXCs&#8212;Failure of individual integrated electrical/optical cross-connect (IXC)
+</li></div>
+<a name="wp925354"> </a><div class="pCellBodyBullet"><li>
+OADMs&#8212;Failure of individual optical add/drop multiplexer (OADM)
+</li></div>
+<a name="wp925355"> </a><div class="pCellBodyBullet"><li>
+Patch Panels&#8212;Failure of patch panel
+</li></div>
+<a name="wp925356"> </a><div class="pCellBodyBullet"><li>
+DXCs&#8212;Failure of individual digital cross-connect (DXC). This does not include digital-cross connect parts of IXCs
+</li></div>
+<a name="wp925357"> </a><div class="pCellBodyBullet"><li>
+ADMs&#8212;Failure of individual digital add/drop multiplexer (ADM)
+</li></div>
+</ul></td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp925359"> </a><div class="pCellBody">
+Element Failure Combination
+</div>
+</td>
+    <td><a name="wp925463"> </a><div class="pCellBody">
+The following options are available:
+</div>
+<ul class="pCellBodyBullet"><a name="wp925464"> </a><div class="pCellBodyBullet"><li>
+Single&#8212;General a single-failure case for every network object of a selected type. Thus if you selected &quot;Cables&quot; under &quot;Elements to Fail&quot;, the report will show the effect of every individual cable failure in the network.
+</li></div>
+<a name="wp925465"> </a><div class="pCellBodyBullet"><li>
+Pairwise&#8212;General a pairwise-failure case for every two-object combination of network objects whose type is selected. Thus if you selected &quot;Cables&quot; and &quot;OXCs&quot; under &quot;Elements to Fail&quot;, the report will show the results of every pairwise-failure case (two cable failures, two OXC failures, or one cable/one OXC failure).
+</li></div>
+</ul></td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp925379"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 6-2	
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+</p>
+</ul></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/swim_21_srg.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

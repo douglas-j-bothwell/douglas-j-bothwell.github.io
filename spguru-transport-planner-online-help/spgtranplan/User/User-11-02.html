@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:16" />
+    <title>Transparent Network Concepts</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-11-01.html"> Transparent Networks</a> > <a href="User-11-02.html">Transparent Network Concepts</a> > Wavelength Conversion (WC)</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp290625"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Transparent Network Concepts
+</h2>
+
+ 
+
+
+<a name="wp290663"> </a><p class="pBody">
+This section describes the basic concepts of transparent networks. For more information about the different transparent cross-connect architectures supported in SP&#160;Guru&#160;Transport&#160;Planner, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-03-19.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-19.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Optical Nodes: Non-Blocking OXC</u></a> and <a href="javascript:WWHClickedPopup('wdm_user', 'User-03-20.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-20.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Optical Nodes: WP-OXC</u></a>.
+</p>
+<a name="wp295256"> </a><p class="pBody">
+To change the transparency setting of a node, right-click on the node in the OCH Node Browser and choose Make Transparent, Make Opaque, or Make Selective. For more information about this window, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-05-11.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-05-11.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">OCH Node Browser</u></a>.
+</p>
+<a name="wp290664"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Selective Regeneration (SR)
+</h2>
+
+ 
+
+<a name="wp290691"> </a><p class="pBody">
+In opaque transport networks, about 60 to 80 percent of the network installation cost goes to the line cards and transponders that convert the electrical signals to optical signals. To reduce this cost, transparent networks regenerate signals within nodes and move regeneration away from the WDM links&#8212;specifically the long-reach transponders that terminate channels within these links. Instead, regeneration occurs within nodes selectively. This means that a transparent network regenerates only those channels that require regeneration, while an opaque network regenerates all channels within a node&#8212;even channels that do not need regeneration. In a transparent network, channels that are not regenerated in an intermediate node pass transparently through that node. These channels do not need transponders in the node. 
+</p>
+<a name="wp302377"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>Transparent passthrough in a node is only possible if the line system has been set as transparent (see <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-21.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-21.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">WDM Link Equipment Properties</u></a>) and is between fibers that have been equipped with the same WDM line system. If this is not the case, the signal will automatically be regenerated in the node or will not be routed at all, in the case in which no regeneration is possible in the node.
+</p>
+
+<a name="wp290666"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Wavelength Conversion (WC)
+</h2>
+
+ 
+
+<a name="wp291081"> </a><p class="pBody">
+Regeneration in an intermediate node gives a connection additional flexibility, because it enables the connection to switch wavelengths when it passes through the node. In a transparent network, each signal is regenerated every MTL kilometers. This regeneration divides the path into sub-paths, and thereby frees up the routing and wavelength-assignment (WA) algorithm to assign different wavelengths to these sub-paths. Wavelength conversion (WC) can be either implicit or explicit:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp290667"> </a><div class="pSmartList1"><li>In implicit WC, regeneration is required in the node and the required optical-to-electrical signal conversion is used to switch wavelengths.</li></div>
+<a name="wp291153"> </a><div class="pSmartList1"><li>In explicit WC, regeneration is not required in the node (the MTL is not exceeded) but an optical-to-electrical conversion is done to allow wavelength conversion. Explicit WC provides even more flexibility to the routing and wavelength-conversion algorithm than implicit WC. </li></div>
+</ul></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_34_trn.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

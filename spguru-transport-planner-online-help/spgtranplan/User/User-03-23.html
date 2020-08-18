@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:33:27" />
+    <title>Integrated SONET/Optical Nodes: IXC</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-03-01.html"> Concepts and Models</a> > <a href="User-03-15.html">Node Modeling Capabilities in SP&#160;Guru&#160;Transport&#160;Planner</a> > Integrated SONET/Optical Nodes: IXC</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp48057"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Integrated SONET/Optical Nodes: IXC
+</h2>
+
+ 
+
+<a name="wp88630"> </a><p class="pBody">
+A different node type can be considered for EOCC nodes. The Integrated optical-digital Cross-Connect (IXC) consolidates the functions of the DXC and the OXC in one device; this eliminates the need for intermediate ports. 
+</p>
+<a name="wp46105"> </a><p class="pBody">
+The IXC consists of an electrical switching matrix that can 
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp46141"> </a><div class="pSmartList1"><li>switch SONET traffic down to the STS-1 level (STM-1 level for SDH traffic) for grooming purposes (between DCL links)</li></div>
+<a name="wp47186"> </a><div class="pSmartList1"><li>add/drop local SONET traffic via the IXC tributary ports</li></div>
+<a name="wp46142"> </a><div class="pSmartList1"><li>switch an entire wavelength between different WDM line systems</li></div>
+<a name="wp46145"> </a><div class="pSmartList1"><li>add/drop local native OCH traffic from a WDM line system via an IXC tributary port</li></div>
+</ul></div>
+<a name="wp46150"> </a><p class="pBody">
+The IXC tributary ports add or drop SONET local traffic and native OCH local traffic. The trunk ports of the IXC terminate the physical DCL trunks (to an ECC node) and wavelengths of the WDM line systems of the OCH links (to EOCC or OCC nodes).
+</p>
+<a name="wp90757"> </a><p class="pFigCaption">
+Figure&#160;2-30   IXC in EOCC Node
+</p>
+<a name="wp90761"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-23-30.jpg" height="113" width="530" id="wp90759" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp46036"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Minimum and Maximum Bit Rates for Tributary and Trunk Ports
+</h3>
+<a name="wp46187"> </a><p class="pBody">
+You specify an IXC by the number of equivalent STS-3/STM-1 ports. You can also limit the bit rates allowed for the IXC ports, and specify a minimum tributary port bit rate and a maximum trunk port bit rate. In these respects, IXCs resemble DXCs; for more information about minimum and maximum bit rates for DXCs, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-03-16.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-16.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">SONET Nodes: DXC</u></a>.
+</p>
+<a name="wp46204"> </a><p class="pBody">
+The following figure shows an IXC with minimum and maximum bit rates equal to STM-16.
+</p>
+<a name="wp90735"> </a><p class="pFigCaption">
+Figure&#160;2-31   IXC with Minimum Tributary and Maximum Trunk Bit Rate of STM-16
+</p>
+<a name="wp90739"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-23-31.jpg" height="94" width="530" id="wp90737" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp46230"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Native Traffic
+</h3>
+<a name="wp46266"> </a><p class="pBody">
+In an IXC scenario, native connections that terminate in that node consume a tributary and a trunk port. Non-native OCH connections that are trailed to the DCL layer use a trunk port only (the SONET traffic routed over these trunks uses tributary ports at the IXC when added or dropped at this node).
+</p>
+<a name="wp90673"> </a><p class="pFigCaption">
+Figure&#160;2-32   Native OCH Traffic on an IXC
+</p>
+<a name="wp90684"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-23-32.jpg" height="172" width="530" id="wp90675" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp46305"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Protection Options
+</h3>
+<a name="wp46329"> </a><p class="pBody">
+For non-client protected native OCH traffic through an IXC, the situation is slightly different from an OXC. In this case, the IXC is an electrical switch that can do protection switching for OCH and DCL traffic. Only one tributary port is required at the IXC and protection switching happens in the IXC. For client-protected native OCH traffic, the situation is similar to an OXC (that is, two tributary ports are needed on the IXC).
+</p>
+<a name="wp46330"> </a><p class="pBody">
+For DCL traffic, the situation is similar to a DXC: two tributary ports are required on the IXC for client-protected traffic; if the traffic is not client-protected, one tributary port is adequate and the protection switching is done internally in the DXC.
+</p>
+<a name="wp90720"> </a><p class="pFigCaption">
+Figure&#160;2-33   Non-Client Protected OCH Traffic in IXC
+</p>
+<a name="wp90724"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-23-33.jpg" height="109" width="530" id="wp90722" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp48072"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+ADMs and IXC
+</h3>
+<a name="wp48073"> </a><p class="pBody">
+ADMs in combination with an IXC are not explicitly counted. In this case, the ADM functionality is realized by the IXC, which acts as an MSSP (multi-service switching platform). 
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_13_co.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

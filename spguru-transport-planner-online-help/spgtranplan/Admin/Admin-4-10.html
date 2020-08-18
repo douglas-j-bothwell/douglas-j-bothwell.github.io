@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:31:28" />
+    <title>Stopping the License Server</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="Admin-4-01.html"> Licensing</a> > <a href="Admin-4-10.html">Stopping the License Server</a> > Solaris and Linux</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp143567"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Stopping the License Server
+</h2>
+
+ 
+
+
+<a name="wp143568"> </a><p class="pBodyWarning">
+<span style="font-weight: bold; color: red;">WARNING&#8212;</span>Do not stop the License Server while any licensed application is running, unless you will bring the license server back up within 15 minutes. For best system behavior, ask users to stop using the software or revoke all in-use licenses with the License Manager before stopping the License Server.
+</p>
+<a name="wp143572"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('license', 'Admin-4-10.html#wp143576');" onMouseOver="WWHShowPopup('license', 'Admin-4-10.html#wp143576', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;3-10</u></a> describes the preferred way for stopping the License Server. You can also use one of the alternate methods given for specific OS platforms.
+</p>
+<a name="wp143576"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp143576", false);</script>Procedure&#160;3-10   Stopping the License Server (Preferred Method)<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp143576", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp143576", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp171540"> </a><div style="text-align: left" class="pSmartList2Test"><li>Run the License Manager (as in <a href="javascript:WWHClickedPopup('license', 'Admin-4-05.html#wp18628');" onMouseOver="WWHShowPopup('license', 'Admin-4-05.html#wp18628', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Starting the License Manager</u></a>).</li></div>
+<a name="wp171541"> </a><div style="text-align: left" class="pSmartList2Test"><li>In the License Manager treeview, select the license file of the server you intend to stop, and verify that no licenses are in use.</li></div>
+<div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp143582"> </a><div class="pSmartList2"><li>If any licenses are checked out, you can forcibly revoke them. To do so, select and revoke those licenses. The user receives a warning message and a short grace period, allowing time to save files and exit the application. If the user does not exit, the application will quit.</li></div>
+<a name="wp156480"> </a><div class="pSmartList2"><li>You can choose not to revoke any checked-out licenses if you will bring the license server back up within a few minutes.</li></div>
+</ul></div>
+<a name="wp143583"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click the Stop License Server button.</li></div>
+</ol></div>
+<a name="wp143584"> </a><p class="pProcEnd">
+End of Procedure 3-10
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp222597"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp143592"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp143592", false);</script>Procedure&#160;3-11   Stopping the License Server on Windows (Alternate Method 1)<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp143592", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp143592", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp143593"> </a><div style="text-align: left" class="pSmartList2Test"><li>Invoke the License Manager program from the command line in the stop server mode:</li></div>
+<div class="pCodeStep"><ul class="pCodeStep">
+<a name="wp143594"> </a>op_license_util -license_server_kill -license_server &lt;server&gt; \<br />
+		-license_port &lt;port&gt;
+<a name="wp143595"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+For information about <code class="cCode">op_license_util</code>, see the <em class="cEmphasis">Program Descriptions</em> chapter of your product documentation.
+</p>
+</ul></div>
+</ol></div>
+<a name="wp143596"> </a><p class="pProcEnd">
+End of Procedure 3-11
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp222602"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp150145"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Windows
+</h2>
+
+ 
+
+<a name="wp293117"> </a><p class="pBody">
+In addition to the preferred method, you can stop the License Server on Windows by starting the Windows &quot;Services&quot; application. Select OPNET License Manager from the list of available services, and click the Stop button to stop the supervisor service. You can also use <a href="javascript:WWHClickedPopup('license', 'Admin-4-10.html#wp143592');" onMouseOver="WWHShowPopup('license', 'Admin-4-10.html#wp143592', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;3-11</u></a>.
+</p>
+<a name="wp150068"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Solaris and Linux
+</h2>
+
+ 
+
+<a name="wp143602"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('license', 'Admin-4-10.html#wp143607');" onMouseOver="WWHShowPopup('license', 'Admin-4-10.html#wp143607', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;3-12</u></a> describes an alternate way to stop the license server on Solaris or Linux.
+</p>
+<a name="wp143607"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp143607", false);</script>Procedure&#160;3-12   Stopping the License Server on Solaris or Linux (Alternate Method)<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp143607", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp143607", false);</script>
+<a name="wp156490"> </a><p class="pIndentedWarning">
+<span style="font-weight: bold; color: black;">Warning&#8212;</span>Use this procedure only when other methods do not work.
+</p>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp143608"> </a><div style="text-align: left" class="pSmartList2Test"><li>Determine the process id (pid) of <code class="cCode">op_license_server</code><code class="cCode"> </code>by logging into the process&#39; host and using the <code class="cCode">ps</code> command.</li></div>
+<a name="wp143609"> </a><div style="text-align: left" class="pSmartList2Test"><li>Execute the <code class="cCode">kill</code> command from the command line:</li></div>
+<div class="pCodeStep"><ul class="pCodeStep">
+<a name="wp143610"> </a>kill &lt;pid&gt;
+</ul></div>
+</ol></div>
+<a name="wp143611"> </a><p class="pProcEnd">
+End of Procedure 3-12
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp222607"> </a><h6 class="pHeading6">
+
+</h6>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/ag_035_licensing.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:51" />
+    <title>Failure Analysis Report</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-15-1.html"> Failure Evaluation</a> > Failure Analysis Report</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp296236"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Failure Analysis Report
+</h2>
+
+ 
+
+
+<a name="wp296244"> </a><p class="pBody">
+Within the Failure Analysis mode of SP&#160;Guru&#160;Transport&#160;Planner, you can study the impact of a specific set of failures and their effects on traffic at the different layers. Instead of defining the failures manually, you can also generate a web report with an overview of all specified failures and their impact. To generate this type of report, choose Info&#160;&gt; Generate&#160;Web&#160;Report&#160;&gt; Failure&#160;Analysis&#160;Report. 
+</p>
+<a name="wp296408"> </a><p class="pFigCaption">
+Figure&#160;14-10   Generate Failure Analysis Report Dialog Box
+</p>
+<a name="wp296412"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-15-9-10.jpg" height="228" width="530" id="wp296410" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp296325"> </a><p class="pBody">
+The <a href="javascript:WWHClickedPopup('wdm_user', 'User-15-9.html#wp296408');" onMouseOver="WWHShowPopup('wdm_user', 'User-15-9.html#wp296408', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Generate Failure Analysis Report Dialog Box</u></a> enables you to select the failure scenarios to include in the report. You can select the Elements To Fail, which list all the equipment types modeled in SP&#160;Guru&#160;Transport&#160;Planner. You can select one or more elements to fail; you can also select single or pairwise failures. When you click OK, SP&#160;Guru&#160;Transport&#160;Planner runs a failure analysis for each element (for single failures) or combination of elements (for pairwise failures) of a selected type. 
+</p>
+<a name="wp296360"> </a><p class="pBody">
+For example, suppose you select Cable and OXC elements (under Elements to Fail) and Single and Pairwise (under Element Failure Combination). In this case, the set of considered failure scenarios consists of:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp296247"> </a><div class="pSmartList1"><li>All single-cable failures</li></div>
+<a name="wp296248"> </a><div class="pSmartList1"><li>All single-OXC failures</li></div>
+<a name="wp296249"> </a><div class="pSmartList1"><li>All double-cable failures</li></div>
+<a name="wp296250"> </a><div class="pSmartList1"><li>All double-OXC failures</li></div>
+<a name="wp296251"> </a><div class="pSmartList1"><li>All failure scenarios with the simultaneous failure of one cable and one OXC</li></div>
+</ul></div>
+<a name="wp296252"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>An &quot;Entire SP&#160;Guru&#160;Transport&#160;Planner node&quot; failure implies the failure of all equipment elements in that node.
+</p>
+
+<a name="wp296432"> </a><p class="pBody">
+The resulting report includes an overview of lost and recovered connections for each of the considered failure scenarios, as well as an overview of all failure scenarios. The generated report contains an overview page, which includes an overview of the considered failure scenarios and the amount of lost and recovered traffic per failure scenario (as shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-15-9.html#wp296913');" onMouseOver="WWHShowPopup('wdm_user', 'User-15-9.html#wp296913', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;14-11</u></a>). This allows you to identify the most critical failure considered by the failure analysis. 
+</p>
+<a name="wp296913"> </a><p class="pFigCaption">
+Figure&#160;14-11   Failure Analysis Web Report: Overview
+</p>
+<a name="wp296917"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-15-9-11.jpg" height="364" width="530" id="wp296915" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp296457"> </a><p class="pBody">
+You can click on each individual failure scenario listed in the left frame of the web report. Each failure-scenario page gives a detailed overview of the amount of traffic that is affected and recovered at each layer (as shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-15-9.html#wp296925');" onMouseOver="WWHShowPopup('wdm_user', 'User-15-9.html#wp296925', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;14-12</u></a>). Each failure-scenario page shows the lost connections, recovered connections, and the new paths on which the recovered connections are routed.
+</p>
+<a name="wp296925"> </a><p class="pFigCaption">
+Figure&#160;14-12   Failure Analysis Web Report: Individual Failure Scenario
+</p>
+<a name="wp296929"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-15-9-12.jpg" height="365" width="532" id="wp296927" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_43_fe.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

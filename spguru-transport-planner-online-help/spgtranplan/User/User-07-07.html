@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:27" />
+    <title>Routing Results</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-07-01.html"> Routing</a> > Routing Results</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp251580"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Routing Results
+</h2>
+
+ 
+
+
+<a name="wp251696"> </a><p class="pBody">
+The Routing Results dialog box (Design&#160;&gt; Routing&#160;Results) shows the results of routing operations for different traffic matrices. This window appears automatically after you route a matrix using the Route&#160;DCL/OCH&#160;Traffic operation (see <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-01.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-01.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Routing</u></a>). For a selected OCH or DCL traffic matrix, SP&#160;Guru&#160;Transport&#160;Planner reports the percentage of the matrix&#39;s traffic that is routed and accommodated in the network. 
+</p>
+<a name="wp253924"> </a><p class="pBody">
+Several types of constraints can result in unrouted traffic:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp256186"> </a><div class="pSmartList1"><li>Topological constraints, such as the absence of a link between two nodes</li></div>
+<a name="wp293435"> </a><div class="pSmartList1"><li>Limited link capacities</li></div>
+<a name="wp256187"> </a><div class="pSmartList1"><li>Limited node capacities</li></div>
+<a name="wp275483"> </a><div class="pSmartList1"><li>Limited regeneration capacities (in transparent networks)</li></div>
+<a name="wp275484"> </a><div class="pSmartList1"><li>Limited tributary capacities (in transparent networks that deploy wavelength-plane OXCs with integrated terminal multiplexers)</li></div>
+<a name="wp256190"> </a><div class="pSmartList1"><li>The inability to find disjoint working and protection paths when routing with 1&#160;+&#160;1 protection</li></div>
+<a name="wp293436"> </a><div class="pSmartList1"><li>Explicit, user-specified routing constraints for a specific connection (for more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-13.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-13.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Constraint-Based Routing</u></a>)</li></div>
+</ul></div>
+<a name="wp256185"> </a><p class="pBody">
+The Routing Results dialog box displays the average link, node, regeneration, and tributary utilization after a routing operation. You can use these numbers to determine the cause of unrouted traffic. For example, if link utilization is high, unrouted traffic is probably due to capacity shortage on the links. 
+</p>
+<a name="wp256200"> </a><p class="pBody">
+You can view specific information about any (routed) matrix using the Select&#160;Layer radio buttons and the Traffic Matrix pull-down menu.
+</p>
+<a name="wp269678"> </a><p class="pFigCaption">
+Figure&#160;6-7   Routing Results Dialog Box
+</p>
+<a name="wp269681"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-07-07-07.jpg" height="268" width="530" id="wp269680" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp293575"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp293522table293517">
+  <caption><a name="wp293522"> </a><div class="ptblcaption">
+Table&#160;6-4   Routing Results &#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp293526"> </a><div class="pCellHeading">
+Field/Option
+</div>
+</th>
+    <th><a name="wp293528"> </a><div class="pCellHeading">
+Description
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp293530"> </a><div class="pCellBody">
+Layer
+</div>
+</td>
+    <td><a name="wp293532"> </a><div class="pCellBody">
+The layer (LOP, DCL or OCH) for which to view routing results
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp293534"> </a><div class="pCellBody">
+Link Utilization
+</div>
+</td>
+    <td><a name="wp293536"> </a><div class="pCellBody">
+Link capacity used (as a percentage of total link capacity) in the selected layer
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp293538"> </a><div class="pCellBody">
+Node Utilization
+</div>
+</td>
+    <td><a name="wp293540"> </a><div class="pCellBody">
+Node capacity used (as a percentage of total node capacity) in the selected layer. This field is available only if the network uses discrete node types in that layer.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp293542"> </a><div class="pCellBody">
+Regen. Utilization
+</div>
+</td>
+    <td><a name="wp293544"> </a><div class="pCellBody">
+Reports on the utilization of the regeneration capacity (for transparent networks and OCH layer only)
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp293546"> </a><div class="pCellBody">
+Trib. Utilization
+</div>
+</td>
+    <td><a name="wp293548"> </a><div class="pCellBody">
+Reports on the utilization of the tributary capacity (only for transparent networks that deploy wavelength-plane OXCs with integrated terminal multiplexers)
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp293550"> </a><div class="pCellBody">
+Traffic Matrix
+</div>
+</td>
+    <td><a name="wp293552"> </a><div class="pCellBody">
+Lists all routed matrices in the currently selected layer. Select a matrix to view the routing results.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp293554"> </a><div class="pCellBody">
+Protection Type
+</div>
+</td>
+    <td><a name="wp293556"> </a><div class="pCellBody">
+The protection type used to route the currently selected matrix
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp293558"> </a><div class="pCellBody">
+Routed Capacity
+</div>
+</td>
+    <td><a name="wp293560"> </a><div class="pCellBody">
+The routed capacity (as a percentage of the total capacity) of the matrix. For example: 3/4 would indicate a traffic matrix of four units of total capacity, of which three have been routed. In this case the % field would read 75.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp293562"> </a><div class="pCellBody">
+Total Hops
+</div>
+</td>
+    <td><a name="wp293564"> </a><div class="pCellBody">
+The total hop count of all working/protection paths in the selected matrix. SP&#160;Guru&#160;Transport&#160;Planner uses the following equation to determine the hop count of a path:
+</div>
+<a name="wp293565"> </a><div class="pCellBody">
+<span style="font-style: oblique">hop_count_for_path </span>= <span style="font-style: oblique">total_links_in_path</span> x <span style="font-style: oblique">capacity_units_routed</span>
+</div>
+<a name="wp293566"> </a><div class="pCellBody">
+For example, a connection with three units of capacity routed over a path with two links results in a hop count of six for that path. An unrouted connection adds no units to the total number of hops.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp293568"> </a><div class="pCellBody">
+Mean Hops
+</div>
+</td>
+    <td><a name="wp293570"> </a><div class="pCellBody">
+The total number of hops (for working and protection paths) versus the total routed capacity in that matrix. See the entry on Total Hops of a description of how SP&#160;Guru&#160;Transport&#160;Planner calculates hops.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp301153"> </a><div class="pCellBody">
+Split Off Unrouted Connections
+</div>
+</td>
+    <td><a name="wp301155"> </a><div class="pCellBody">
+Splits a partly-routed traffic matrix into two matrices: one matrix that contains all the routed connections and a &quot;residual&quot; matrix that contains all unrouted connections. 
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp293572"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 6-4	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_25_rte.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

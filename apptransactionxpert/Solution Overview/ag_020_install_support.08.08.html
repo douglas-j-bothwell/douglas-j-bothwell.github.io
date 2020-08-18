@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Running Previous Releases</title>
+    <link rel="StyleSheet" href="css/ag_020_install_support.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ag_020_install_support.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">Solution Overview &gt; <a class="WebWorks_Breadcrumb_Link" href="ag_splash.html#135774">License and Installation Support</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ag_020_install_support.08.01.html#135774">Installation Support</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ag_020_install_support.08.07.html#135774">Update Installation Procedures</a> &gt; Running Previous Releases</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h2"><a name="135774">Running Previous Releases</a></div>
+      <div class="body"><a name="135775">If you have installed the latest version of the software, you can still run earlier releases by creating batch files to set the appropriate system variables (Windows) or by updating your PATH (Linux), as described in the following procedures.</a></div>
+      <div class="bodyIntro"><a name="187730">To run a previous Windows release, do the following procedure:</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd135781&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd135781", false);</script>Procedure&nbsp;2-8   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="135781">Running Previous Releases of AppTransaction&nbsp;Xpert (Windows)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd135781", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="135782">Use a batch file to set the opnet_dir, Lib, Path, and Include system variables (a batch file is any file with a </a><span class="code">.bat</span> extension). </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="153718">For example, the following batch file could be used to set up an environment for version 11.0:</a></div>
+      <div class="codeStep"><a name="165667">@echo off<br />set opnet_dir = c:\OPNET<br />set path = c:\opnet\11.0.A\sys\pc_intel_win32\bin;%path%<br />set lib = c:\opnet\11.0.A\sys\pc_intel_win32\lib;%lib%<br />set include = c:\opnet\11.0.A\sys\include;%include%<br />echo OPNET 11.0.A environment has been set up</a></div>
+      <div class="procStepCont"><a name="135794">When you want to run version 11.0, first run the above batch file in a command window (by typing the name of the batch file, including the extension), then issue the standard AppTransaction&nbsp;Xpert start-up commands from the same window (such as …&gt;atx).</a></div>
+      <div class="procNote">
+        <span class="bold">Note—</span><a name="135795">The latest version of the license server (</a><span class="code">op_license_server</span>) should be running on your machine, regardless of the AppTransaction&nbsp;Xpert version you are running. For example, if you run both a current release and a previous release, you should be running the current release license server. If you selected the “serve licenses from this computer” option during the license configuration portion of the installation, the new license server was automatically installed in place of any existing servers.</div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 2-8</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="150599">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="187739">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="208962">To run a previous Linux release, do the following procedure:</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd135801&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd135801", false);</script>Procedure&nbsp;2-9   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="135801">Running Previous Releases of AppTransaction&nbsp;Xpert (Linux)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd135801", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="135802">Reset your PATH variable for the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_010_concepts.07.2.html#75799', '');" title="Terminology">release directory</a></span> of the AppTransaction&nbsp;Xpert version you want to run.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="165675">For example, to run version 12.0, you would reset your PATH as follows:</a></div>
+      <div class="codeStep"><a name="153994">set path=(&lt;install_dir&gt;/12.0.A/sys/unix/bin $path)</a></div>
+      <div class="procNote">
+        <span class="bold">Note—</span><a name="135809">The latest version of the license server (</a><span class="code">op_license_server</span>) should be running on your machine, regardless of the AppTransaction&nbsp;Xpert version you are running. For example, if you run both a <span class="italic">current</span> release and a <span class="italic">previous </span>release, you should be running the<span class="italic"> current </span>release license server. If you selected the “serve licenses from this computer” option during the license configuration portion of the installation, the new license server was automatically installed in place of any existing servers.</div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 2-9</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="185778">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="210220">&nbsp;</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

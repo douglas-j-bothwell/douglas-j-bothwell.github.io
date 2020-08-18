@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:33:53" />
+    <title>The OCH Layer Mode</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-04-01.html"> Creating a Baseline Scenario</a> > <a href="User-04-09.html">Network Properties</a> > The OCH Layer Mode</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp261709"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+The OCH Layer Mode
+</h2>
+
+ 
+
+<a name="wp261710"> </a><p class="pBody">
+You can specify two different modes for the OCH layer:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp140770"> </a><div class="pSmartList1"><li>Opaque mode represents a network in which optical channels are regenerated at every node in the OCH layer. This regeneration is done by the long-reach transponders that terminate the channels on the WDM line systems. This opaque mode enables you to combine different types of WDM line systems with the same network, because the line systems interact seamlessly through the opaque nodes. </li></div>
+<a name="wp140771"> </a><div class="pSmartList1"><li>In transparent mode, regeneration of optical channels does not occur at every node in the OCH layer. You can define three node types in a transparent network:</li></div>
+<div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp270891"> </a><div class="pSmartList2"><li>Opaque node&#8212;The node behaves like any node in opaque mode: regeneration occurs for every channel that passes through the node.</li></div>
+<a name="wp270933"> </a><div class="pSmartList2"><li>Transparent node&#8212;Regeneration is not possible in the node; a channel passes through the node without being regenerated.</li></div>
+<a name="wp270937"> </a><div class="pSmartList2"><li>Selective node&#8212;The node is transparent, but selective channels can be regenerated when needed.</li></div>
+<a name="wp271040"> </a><p class="pBodyRelative">
+In transparent network mode, transparent pass-through of a signal through a node is only possible if the incoming and outgoing fiber of the signal are equipped with the same WDM line system. If a signal transfers between fibers of different WDM line systems, regeneration is always performed in the intermediate node.
+</p>
+</ul></div>
+</ul></div>
+<a name="wp140773"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Transparent Options
+</h3>
+<a name="wp204102"> </a><p class="pBody">
+You can specify the following options in transparent mode:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp204108"> </a><div class="pSmartList1"><li>If the &quot;Regenerate via DXC&quot; checkbox is checked, SP&#160;Guru&#160;Transport&#160;Planner regenerates using transponders that interconnect the OXC tributary ports with the DXC trunk ports. If this checkbox is not checked, SP&#160;Guru&#160;Transport&#160;Planner regenerates using a separate bank of transponders which is interconnected with the OXC tributary ports. See <a href="javascript:WWHClickedPopup('wdm_user', 'User-11-02.html#wp290664');" onMouseOver="WWHShowPopup('wdm_user', 'User-11-02.html#wp290664', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Selective Regeneration (SR)</u></a> for more information.</li></div>
+<a name="wp204116"> </a><div class="pSmartList1"><li>The &quot;Use Wavelength Plane OXC&quot; option enables you to specify the use of WP-OXCs in transparent mode. If this option is checked, SP&#160;Guru&#160;Transport&#160;Planner changes all unused OXCs (that is, OXCs that have no fibers attached) to WP-OXCs. See <a href="javascript:WWHClickedPopup('wdm_user', 'User-03-20.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-20.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Optical Nodes: WP-OXC</u></a> for more information.</li></div>
+</ul></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_16_cbn.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

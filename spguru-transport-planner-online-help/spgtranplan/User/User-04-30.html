@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:33:53" />
+    <title>Link Design</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-04-01.html"> Creating a Baseline Scenario</a> > Link Design</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp256009"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Link Design
+</h2>
+
+ 
+
+
+<a name="wp256010"> </a><p class="pBody">
+When you create a new link in your network, it is unequipped. You can use the Link Design operation to place amplification and regeneration sites along the link span, based on the transmission characteristics of the selected WDM line system.
+</p>
+<a name="wp256011"> </a><p class="pBody">
+Always design links before you do any network-design operations that affect the OCH layer. This step is a <em class="cEmphasis">prerequisite</em> to design operations in transparent networks, and is <em class="cEmphasis">strongly recommended</em> for design operations in opaque networks. If you dimension a network without designing the links first, the dimensioning algorithms do not include the cost of amplifiers and regenerators in its calculations. 
+</p>
+<a name="wp256012"> </a><p class="pBody">
+Two parameters determine the number of regenerators and amplifiers on a link, which are specified in the <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-31.html#wp256052');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-31.html#wp256052', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Link Design Dialog Box</u></a>: 
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp256013"> </a><div class="pSmartList1"><li>The maximum span length before regeneration</li></div>
+<a name="wp256014"> </a><div class="pSmartList1"><li>The maximum number of amplification spans before regeneration </li></div>
+</ul></div>
+<a name="wp256018"> </a><p class="pBody">
+With these parameters, SP&#160;Guru&#160;Transport&#160;Planner calculates the number of required amplification and regeneration sites as follows: 
+</p>
+<div class="pPreformattedRelative"><pre class="pPreformattedRelative">
+# total sites = <em class="cEmphasis">fiber_length</em> / <em class="cEmphasis">max_span_length_before_amplification</em> &#8211; 1<a name="wp256019"> </a>
+# regeneration sites = <em class="cEmphasis">#_total_sites</em> / <em class="cEmphasis">max_#_amplification_spans_before_regeneration</em> <a name="wp256020"> </a>
+# amplification sites = <em class="cEmphasis">#_total_sites</em> &#8211; <em class="cEmphasis">#_regeneration_sites</em><a name="wp256021"> </a>
+</pre></div>
+<a name="wp271597"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('wdm_user', 'User-04-30.html#wp256023');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-30.html#wp256023', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;3-11</u></a> describes how to design the links in your network. You can also design links by importing the data for amplification and regeneration sites, as described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-09.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-09.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Optical Amplifier and Regenerator Locations Data Files</u></a>.
+</p>
+<a name="wp256023"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp256023", false);</script>Procedure&#160;3-11   Designing Links<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp256023", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp256023", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp256024"> </a><div style="text-align: left" class="pSmartList2Test"><li>Choose Design&#160;&gt; Link&#160;Design to open the Link Design dialog box.</li></div>
+<a name="wp256025"> </a><div style="text-align: left" class="pSmartList2Test"><li>For each link in your network:</li></div>
+<ol type="a">
+<a name="wp256026"> </a><div class="pprocstepSub"><li>Choose the type of link you want to design (OTS links or fiber routes). If you choose to design fiber routes, all intermediate nodes through which fibers are routed, will also be considered as possible amplification/regeneration sites.</li></div>
+<a name="wp271675"> </a><div class="pprocstepSub"><li>Choose the link you want to design in the Link menu, or choose ALL LINKS to design all links at once. If you chose to design OTS links, you can also choose ALL DCL LINKS, ALL OCH LINKS, or SELECTED LINKS.</li></div>
+<a name="wp256027"> </a><div class="pprocstepSub"><li>Choose the line-system type on the selected link in the LS Type pull-down menu. This menu lists all line systems defined in the WDM Equipment Properties dialog box (described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-21.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-21.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">WDM Link Equipment Properties</u></a>). You can also choose &quot;All LSTYPES&quot; from this menu, to specify a &quot;worst-case&quot; link design. </li></div>
+<a name="wp256031"> </a><div class="pprocstepSub"><li>Set the Site Locations menu to specify the placement of sites along the link.</li></div>
+<a name="wp256032"> </a><div class="pprocstepSub"><li>Set the Regeneration Locations menu to specify which sites act as regeneration sites.</li></div>
+<a name="wp256033"> </a><div class="pprocstepSub"><li>Click Design. </li></div>
+<a name="wp256034"> </a><p class="pIndentedRelative">
+A window appears to show the number of OAs and regenerators added to the selected link.
+</p>
+</ol>
+<a name="wp256035"> </a><div style="text-align: left" class="pSmartList2Test"><li>Repeat these steps until you have designed all links in the network. To determine whether a link is designed, select the link and view the Designed field. You can also browse for undesigned links in the Link Browser; for more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-05-03.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-05-03.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Link Browser</u></a>.</li></div>
+</ol></div>
+<a name="wp308403"> </a><p class="pProcEnd">
+End of Procedure 3-11
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp308404"> </a><h6 class="pHeading6">
+
+</h6>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_16_cbn.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

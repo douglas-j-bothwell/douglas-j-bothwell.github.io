@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:51" />
+    <title>Evaluating the Impact of Failures on Traffic</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-15-1.html"> Failure Evaluation</a> > <a href="User-15-5.html">Failure Analysis</a> > Evaluating the Impact of Failures on Traffic</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp282715"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Evaluating the Impact of Failures on Traffic
+</h2>
+
+ 
+
+<a name="wp282716"> </a><p class="pBody">
+After you fail one or more network elements, evaluate the impact of these failures by clicking the Evaluate button in the Failure Analysis dialog box. SP&#160;Guru&#160;Transport&#160;Planner starts at the OCH level by evaluating the connections affected by the failures. SP&#160;Guru&#160;Transport&#160;Planner tries to recover these connections. The recovery mechanism for each connection determines the recovery method. For example, if the working path of a 1+1 protected connection fails and the protection path is not affected by the failures, SP&#160;Guru&#160;Transport&#160;Planner switches to this path. Any connection not recovered at the OCH layer results in a failed DCL link. The DCL layer view marks the failing links in orange. SP&#160;Guru&#160;Transport&#160;Planner evaluates these link failures along with the other possible failures at the DCL layer to determine which DCL connections are affected.
+</p>
+<a name="wp282717"> </a><p class="pFigCaption">
+Figure&#160;14-8   Failure Analysis in DCL View
+</p>
+<a name="wp282721"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-15-8-08.jpg" height="427" width="530" id="wp282719" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp282723"> </a><p class="pBody">
+The Overview of Affected Traffic window in the Failure Analysis dialog box shows the amount of affected traffic recovered and lost in both the DCL and OCH layer.
+</p>
+<a name="wp282724"> </a><p class="pBody">
+In the Connection Browser (Network&#160;&gt; Connection&#160;Browser), you can inspect the status of the individual connections. The Routed column indicates four possible states of a connection:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp282725"> </a><div class="pSmartList1"><li>No&#8212;Connection was not routed before the failure.</li></div>
+<a name="wp282726"> </a><div class="pSmartList1"><li>Yes&#8212;Connection was routed and not affected by the failure.</li></div>
+<a name="wp282727"> </a><div class="pSmartList1"><li>Recovered&#8212;Connection was routed, affected by the failure, but could be rerouted on its protection or restoration path.</li></div>
+<a name="wp282728"> </a><div class="pSmartList1"><li>Lost&#8212;Connection was routed, affected by the failure, but was not protected or could not be rerouted on its protection or restoration path.</li></div>
+<a name="wp282729"> </a><p class="pFigCaption">
+Figure&#160;14-9   Failure Analysis Results in the Connection Browser
+</p>
+<a name="wp282733"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-15-8-09.jpg" height="263" width="530" id="wp282731" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ul></div>
+<a name="wp281503"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Failure Report
+</h3>
+<a name="wp296210"> </a><p class="pBody">
+If the Generate Web Report option is selected, SP&#160;Guru&#160;Transport&#160;Planner generates a web report automatically when you click the Evaluate button in the <a href="javascript:WWHClickedPopup('wdm_user', 'User-15-7.html#wp294249');" onMouseOver="WWHShowPopup('wdm_user', 'User-15-7.html#wp294249', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Failure Analysis Dialog Box</u></a>. The web report gives a detailed overview of the amount of traffic that is affected and recovered at each layer. For each traffic matrix, the web report lists the lost connections, recovered connections, and the new paths on which recovered connections are routed.
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_43_fe.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

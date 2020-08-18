@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:52" />
+    <title>Grooming DCL Traffic with Fixed Routes</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-09-01.html"> Grooming DCL to OCH Traffic</a> > Grooming DCL Traffic with Fixed Routes</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp126167"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Grooming DCL Traffic with Fixed Routes
+</h2>
+
+ 
+
+
+<a name="wp126168"> </a><p class="pBody">
+The Optimized Routes grooming algorithm optimizes DCL routes to minimize the network cost. This might create some undesirable routes in the OCH layer (for example, routes with backhauling). In some cases, you might want to groom traffic using fixed routes instead. You can calculate the routes in the OTS layer or import them from an external file. The Fixed Routes grooming algorithm does not change these routes&#8212;it just decides whether to bypass the signal optically or electrically within nodes to minimize the network cost.
+</p>
+<a name="wp131957"> </a><p class="pBody">
+To groom traffic using fixed routes, choose Design&#160;&gt; Groom&#160;DCL&#160;to&#160;OCH&#160;Traffic&#160;&gt; Fixed&#160;Routes. This opens the Groom DCL to OCH Traffic - Fixed Routes dialog box (<a href="javascript:WWHClickedPopup('wdm_user', 'User-09-07.html#wp126169');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-07.html#wp126169', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;8-3</u></a>).
+</p>
+<a name="wp126169"> </a><p class="pFigCaption">
+Figure&#160;8-3   Groom DCL to OCH Traffic - Fixed Routes Dialog Box
+</p>
+<a name="wp126173"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-09-07-03.jpg" height="431" width="530" id="wp126171" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp126175"> </a><p class="pBody">
+The options in this dialog box are similar to those for grooming using optimized routes. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-09-03.html#wp125195');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-03.html#wp125195', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;8-1-Groom DCL to OCH Traffic - Optimized Routes Dialog Box</u></a>.
+</p>
+<a name="wp126179"> </a><p class="pBody">
+You must also specify the physical routes of the DCL traffic matrix. There are two options for doing this: 
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp132094"> </a><div class="pSmartList1"><li>Calculate OTS Routes&#8212;You can choose to have a shortest path algorithm calculate the routes. In this case, you specify the routing cost criterion. These routes are calculated on the OTS layer. Therefore, if you specify 1+1 protected routing, disjointness down to the OTS layer is guaranteed.</li></div>
+<a name="wp126180"> </a><div class="pSmartList1"><li>Import OTS Routes&#8212;You can import the paths from a flat (.csv) file. The file format is shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-09-07.html#wp132114');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-07.html#wp132114', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;8-4</u></a>. Each line specifies the working route (and the protection route in the case of protected routing) specified as a list of nodes, from start to end node; each node is followed by the layer (in this case, &quot;OTS&quot; for all nodes). For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-24.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-24.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Importing and Exporting Route Data Files</u></a>.</li></div>
+<a name="wp132114"> </a><p class="pFigCaption">
+Figure&#160;8-4   Importing OTS Routes: File Format
+</p>
+<a name="wp132118"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-09-07-04.jpg" height="129" width="530" id="wp132116" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ul></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_31_grm.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

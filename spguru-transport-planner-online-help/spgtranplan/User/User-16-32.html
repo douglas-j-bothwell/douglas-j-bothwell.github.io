@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:37:07" />
+    <title>Diversity Report</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-16-01.html"> Viewing Network Information</a> > Diversity Report</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp184563"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Diversity Report
+</h2>
+
+ 
+
+
+<a name="wp184945"> </a><p class="pBody">
+To generate this report, choose Info&#160;&gt; Export&#160;to&#160;Web&#160;Report&#160;&gt; Diversity&#160;Report. Next, set the options for calculating the diversity in the resulting dialog, shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-16-32.html#wp184954');" onMouseOver="WWHShowPopup('wdm_user', 'User-16-32.html#wp184954', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;15-8</u></a>.
+</p>
+<a name="wp184954"> </a><p class="pFigCaption">
+Figure&#160;15-8   Generate Diversity Report Options
+</p>
+<a name="wp184958"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-16-32-8.jpg" height="285" width="530" id="wp184959" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp184972"> </a><p class="pBody">
+Select the layer to consider (DCL or OCH), the traffic matrices on that layer, and the diversity options, as explained in <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-04.html#wp274939');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-04.html#wp274939', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Diverse Routing Algorithm</u></a> in the <em class="cEmphasis">Routing</em> chapter. The report gives an overview of the overlap between different connections based on the specified diversity options. The &quot;Overlap Metric&quot; in the report expresses the units of capacity that are overlapping on a particular element (on a link, a node, or the entire network). An example is shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-16-32.html#wp184986');" onMouseOver="WWHShowPopup('wdm_user', 'User-16-32.html#wp184986', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;15-9</u></a>.
+</p>
+<a name="wp184986"> </a><p class="pFigCaption">
+Figure&#160;15-9   Diversity Report&#8212;Diversity Overview
+</p>
+<a name="wp185034"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-16-32-9.jpg" height="219" width="530" id="wp185032" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp190882"> </a><p class="pBody">
+The report contains three pages from which you can select:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp185043"> </a><div class="pSmartList1"><li>Diversity Overview&#8212;Gives an overview of the total amount of overlap in the network based on the specified diversity options. The diversity options are also shown in the overview page.</li></div>
+<a name="wp185046"> </a><div class="pSmartList1"><li>Link and Node Details&#8212;Gives an overview of the total amount of overlap on each individual node and link, as well detailed information on the connections that are overlapping per node and link based on the specified diversity options.</li></div>
+<a name="wp185049"> </a><div class="pSmartList1"><li>Connection Details&#8212;Gives an overview of the amount of overlap on each connection of the selected traffic matrices, as well as detailed information on the connections are overlapping with a particular connections, based on the specified diversity options. Also, the diverse connections are reported. These are the connections that do not have any overlap with any other connections, based on the specified diversity options.</li></div>
+</ul></div>
+<a name="wp185013"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>The traffic matrices that you select for which to create the diversity report do not necessarily need to be routed with the diverse routing algorithm. You can also calculate the overlap for traffic that has been routed without optimizing the diversity.
+</p>
+
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_47_ev.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

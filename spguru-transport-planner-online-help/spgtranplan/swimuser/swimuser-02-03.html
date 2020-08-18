@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:37:44" />
+    <title>Advantages of Multi-Layer Network Design</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="swimuser-02-01.html"> SWIM Overview</a> > Advantages of Multi-Layer Network Design</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp921777"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Advantages of Multi-Layer Network Design
+</h2>
+
+ 
+
+
+<a name="wp921823"> </a><p class="pBody">
+To implement a truly multi-layer design and analysis of such a multi-layered network, you must model the relationship between the IP and transport layers accurately. It is not enough to model each layer independently. In a SWIM network scenario, Layer-2/3 links are supported by transport connections; this means that link attributes depend on the status of the underlying connections. If a transport connection fails (for any reason), any dependent Layer-2/3 link also fails. If a transport connection is running, the routing of that connection affects the IP link delay. A multi-layered design offers the following advantages:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp921855"> </a><div class="pSmartList1"><li>Realistic Service Level Agreement (SLA) modeling&#8212;Because Layer-2/3 link delays are calculated based on the underlying transport network, you can verify SLAs realistically and enforce SLAs using constraint-based routing.</li></div>
+<a name="wp921868"> </a><div class="pSmartList1"><li>Multi-layered Failure Analysis studies&#8212;A multi-layered design enables you to study how failures in the transport layer affect performance in the Layer-2/3 network, which you cannot do with layer-specific Failure Analysis operations in SP&#160;Guru&#160;Network&#160;Planner or SP&#160;Guru&#160;Transport&#160;Planner alone. </li></div>
+<a name="wp922473"> </a><p class="pFigCaption">
+Figure&#160;1-2   SWIM Architecture for Modeling Multi-Layer Networks
+</p>
+<a name="wp922476"> </a><p class="pBodyRelative">
+<br />
+<img src="images/swimuser-02-03-2.jpg" height="463" width="697" id="wp922475" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ul></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/swim_10_ov.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

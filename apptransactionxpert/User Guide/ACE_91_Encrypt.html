@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Using SSL Encryption with AppTransaction&nbsp;Xpert</title>
+    <link rel="StyleSheet" href="css/ACE_91_Encrypt.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ACE_91_Encrypt.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_appendices_splash.html#44546">Appendices</a> &gt; Using SSL Encryption with AppTransaction&nbsp;Xpert</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="hAppendix"><a name="44546">Using SSL Encryption with AppTransaction&nbsp;Xpert</a></div>
+      <div class="body"><a name="142853">AppTransaction&nbsp;Xpert supports SSL encryption for authentication to, and communication between, Capture&nbsp;Manager and capture agents. This appendix describes how to create certificates using OpenSSL on Windows; these certificates enable you and other users to capture data in AppTransaction&nbsp;Xpert using level-2 encryptions. This appendix also describes how to create a local Certificate Authority (CA).</a></div>
+      <div class="bodyIntro"><a name="142854">The workflow described in this document relies on:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="142855">openssl.exe, which is part of the OpenSSL distribution</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="italic"><a name="144851">op_cert.bat</a></span>, which is a helper batch file. This batch file wraps openssl.exe. You should customize the top portion of <span class="italic">op_cert.bat</span> with information that is specific to your environment, including specifying your organization name and the certificate expiration durations.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="161848">This file and additional documentation are available on Riverbed Splash. To obtain the batch file, go to </a><span class="HTBlue"><a href="https://splash.riverbed.com/welcome" target="external_window">Riverbed Splash</a></span> and search for “Generate certificates for use with SSL encryption for AppTransaction&nbsp;Xpert capture agents”.</div>
+      <div class="h1NoBreak"><a name="142857">Background</a></div>
+      <div class="body"><a name="142858">AppTransaction&nbsp;Xpert captures Anonymous (level 1) encryption by default. You can also specify Certificate Authentication (level 2) encryption, which requires that Capture&nbsp;Manager and the capture agents have a signed certificate from a trusted party.</a></div>
+      <div class="body"><a name="142859">It is recommended that you create certificates using a local Certificate Authority (CA) within your organization; this avoids the fees associated with third-party certificates. Many organizations already have local Certificate Authorities.</a></div>
+      <div class="body"><a name="142860">If you do not already have a local Certificate Authority, this document describes how to set up and use a local Certificate Authority using OpenSSL, which is open-source and widely used. See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_91_Encrypt.html#142861', '');" title="Using SSL Encryption with AppTransaction Xpert">Creating SSL Certificates on Windows: Workflow Description</a></span>.</div>
+      <div class="h1TopNoBreak"><a name="142861">Creating SSL Certificates on Windows: Workflow Description</a></div>
+      <div class="bodyIntro"><a name="151839">The following sections outline the general steps:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_91_Encrypt.html#151819', '');" title="Using SSL Encryption with AppTransaction Xpert" name="151880">Step 1: Install SSL on your Certificate Authority (CA) Machine</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_91_Encrypt.html#142869', '');" title="Using SSL Encryption with AppTransaction Xpert" name="151889">Step 2: Generate the Configuration File and Certificate Authority Keys</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_91_Encrypt.html#142880', '');" title="Using SSL Encryption with AppTransaction Xpert" name="151898">Step 3: Generate the Capture&nbsp;Manager Certificate</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_91_Encrypt.html#142893', '');" title="Using SSL Encryption with AppTransaction Xpert" name="151899">Step 4: Deploy the Certificate Files</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="151819">Step 1: Install SSL on your Certificate Authority (CA) Machine</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd142862&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd142862", false);</script>Procedure&nbsp;C-1   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="142862">Installing SSL on a Certificate Authority (CA) Machine</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd142862", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="142863">Choose a machine to be your certificate authority (CA).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="142864">Download and install a binary distribution of OpenSSL onto the CA machine. This includes a command-line program </a><span class="codebold">openssl.exe</span>, which is used to create certificates.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="142865">The OpenSSL website maintains the official list of binary downloads for OpenSSL. To download an SLL installer for windows, go to the following URL:</a></div>
+      <div class="procStepSubCont"><span class="HTBlue"><a href="http://www.openssl.org/related/binaries.html" target="external_window" name="143840">http://www.openssl.org/related/binaries.html</a></span></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="142867">Install all SSL files in one directory (for example, c:\openssl) on the CA machine.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure C-1</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="142868">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="162018">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="142869">Step 2: Generate the Configuration File and Certificate Authority Keys</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd142871&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd142871", false);</script>Procedure&nbsp;C-2   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="142871">Creating Certificate Authority Keys</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd142871", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="142872">Open a command prompt window and go to the directory where the SSL executable files are installed.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="142873">Optionally, modify the </a><span class="italic">op_cert</span> batch file to change the expiration date of the certificates. Capture&nbsp;Manager private key has a default expiration of 90 days; the other certificates are valid for 10 years. (The country, state, locality, and organization in the batch file appear in the certificates, but have no effect on the security or setup.)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="142874">Run </a><span class="codebold">op_cert dsaparam</span>. <br /><br />This command creates the <span class="italic">dsaparam.pem</span> file, which will be used to create the other certificates.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="142876">Run </a><span class="codebold">op_cert gencakey</span>. <br /><br />This command prompts for a passphrase three times. It will ask you for the passphrase for the CA private key. This should be a secure password. This command creates the following two files:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="tblAnchor"><a name="152085">&nbsp;</a></div>
+      <table class="tableNarrow" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="">
+              <tr style="vertical-align: baseline;">
+                <td>
+                  <div class="tblCaption_inner" style="width: 61.2pt; white-space: nowrap;">Table&nbsp;C-1   </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="152066">Files Created by the “op_cert dsaparam” Command&nbsp;</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 88.67232pt">
+            <div class="tblHead"><a name="152070">Item</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 292.92768pt">
+            <div class="tblHead"><a name="152072">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="152074">ca.pem</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="152094">Public key of the certificate authority. This file goes on the manager and the agent.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="152078">casign.pem</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="152080">Private key of the certificate authority. This file is used to sign </a><span style="font-style: normal">cert.pem</span> and <span style="font-style: normal">ca.pem</span>. This file should be kept only on the CA machine, and should be kept secure.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure C-2</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="142879">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="162016">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="142880">Step 3: Generate the Capture&nbsp;Manager Certificate</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd142881&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd142881", false);</script>Procedure&nbsp;C-3   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="142881">Generating a Capture&nbsp;Manager Certificate</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd142881", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="142882">Run </a><span class="codebold">op_cert genmanager</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="142883">This command prompts for a passphrase twice. When Capture&nbsp;Manager in level-2 mode is started, the user must enter this passphrase.</a></div>
+      <div class="procStepCont"><a name="142884">The command then prompts for a passphrase for the file </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_91_Encrypt.html#152078', '');" title="Using SSL Encryption with AppTransaction Xpert">casign.pem</a></span>, which is the passphrase to the CA's private key specified in <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_91_Encrypt.html#142876', '');" title="Using SSL Encryption with AppTransaction Xpert">step&nbsp;4</a></span> of <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_91_Encrypt.html#142871', '');" title="Using SSL Encryption with AppTransaction Xpert">Procedure&nbsp;C-2</a></span>. This operation creates the following file:</div>
+      <div class="tblAnchor"><a name="152158">&nbsp;</a></div>
+      <table class="tableNarrow" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="">
+              <tr style="vertical-align: baseline;">
+                <td>
+                  <div class="tblCaption_inner" style="width: 61.2pt; white-space: nowrap;">Table&nbsp;C-2   </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="152139">File Created by the “op_cert genmanager” Command&nbsp;</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 88.67232pt">
+            <div class="tblHead"><a name="152143">Item</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 292.92768pt">
+            <div class="tblHead"><a name="152145">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="152147">cert.pem</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="152149">Private key for Capture&nbsp;Manager. Goes on Capture&nbsp;Manager.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure C-3</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="142892">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="162017">&nbsp;</a></div>
+      <div class="h2TopNoBreak"><a name="142893">Step 4: Deploy the Certificate Files</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd162006&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd162006", false);</script>Procedure&nbsp;C-4   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="162006">Deploying Certificates</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd162006", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="162007">Install the capture agent on the agent machine.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="162011">On the agent machine, copy the file </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_91_Encrypt.html#152074', '');" title="Using SSL Encryption with AppTransaction Xpert">ca.pem</a></span> in the capture agent directory. (The Windows default is C:\Program Files\opnet\AppCapture&lt;<span class="italic">rel_num</span>&gt;). The agent automatically uses level-2 encryption the next time a client machine tries to connect to it.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="142897">Copy the files </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_91_Encrypt.html#152074', '');" title="Using SSL Encryption with AppTransaction Xpert">ca.pem</a></span> and <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_91_Encrypt.html#152147', '');" title="Using SSL Encryption with AppTransaction Xpert">cert.pem</a></span> into your &lt;<span class="italic">user_home</span>&gt;\op_admin\ace_import_configs directory.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="142898">Exit and restart AppTransaction&nbsp;Xpert, and open Capture&nbsp;Manager. (From the AppTransaction&nbsp;Xpert System window, choose File&nbsp;&gt; Capture&nbsp;Manager).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="142899">A dialog box prompts for the passphrase used to create the certificate in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_91_Encrypt.html#142876', '');" title="Using SSL Encryption with AppTransaction Xpert">step&nbsp;4</a></span> of <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_91_Encrypt.html#142871', '');" title="Using SSL Encryption with AppTransaction Xpert">Procedure&nbsp;C-2</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="142906">Enter the passphrase and click OK. (If you click Cancel, Capture&nbsp;Manager still opens, but not using level 2 security.)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="142907">Start a capture with the new agent that you set up in this step. In the Capture Agents treeview of Capture&nbsp;Manager, the agent icon should show a padlock with a “2” in it, indicating that you are capturing using level-2 security.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure C-4</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="142908">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="162019">&nbsp;</a></div>
+      <div class="h1NoBreak"><a name="151795">Additional Information about Capture Agents and Encryption</a></div>
+      <div class="bodyIntro"><a name="142910">For more information about the security functionality of capture agents, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_appcap_overview_plus.04.06.html#237290', '');" title="Capture Encryption">Capture Encryption</a></span>.</div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="142912">This document is intended to assist AppTransaction&nbsp;Xpert users, but a definitive guide to the entirety of SSL is beyond the scope of this help system. Many organizations already have security teams that are familiar with SSL. For additional details about SSL itself, the O'Reilly book “Network&nbsp;Security with OpenSSL” by John Viega provides first an overview and then details of SSL. You can read the introductory chapter online (http://www.oreilly.com/catalog/openssl). There are numerous other books about SSL, and of course many articles about SSL are available on the Internet.</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

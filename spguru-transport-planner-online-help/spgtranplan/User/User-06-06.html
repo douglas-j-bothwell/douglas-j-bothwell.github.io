@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:04" />
+    <title>Node Settings Data Files</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-06-01.html"> Importing and Exporting Data</a> > <a href="User-06-04.html">Data File Formats</a> > Node Settings Data Files</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp255086"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Node Settings Data Files
+</h2>
+
+ 
+
+<a name="wp256271"> </a><p class="pBody">
+Node Settings data files use the format shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-06.html#wp255593');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-06.html#wp255593', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;5-5-Node Settings Data File</u> </a>. The first row contains two to five headers, depending on the amount of data you want to import; each subsequent row describes settings for one OCH or DCL node. To generate a .csv file that contains a mix of DCL and OCH settings, choose File&#160;&gt; Export&#160;&gt; Network&#160;Elements.
+</p>
+<a name="wp255630"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>This operation does not create new nodes. If you want to create new nodes using an import file, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-05.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-05.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"></a><a href="javascript:WWHClickedPopup('wdm_user', 'User-06-05.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-05.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Node Locations Data Files</u></a>.
+</p>
+
+<a name="wp255267"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp255248table255243">
+  <caption><a name="wp255248"> </a><div class="ptblcaption">
+Table&#160;5-3   Node Settings Data File&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp255252"> </a><div class="pCellHeading">
+Field
+</div>
+</th>
+    <th><a name="wp255254"> </a><div class="pCellHeading">
+Description
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp255256"> </a><div class="pCellBody">
+Id
+</div>
+</td>
+    <td><a name="wp255258"> </a><div class="pCellBody">
+Name of the node whose settings are specified in that row.
+</div>
+<a name="wp256013"> </a><div class="pCellBody">
+If a node name in the &quot;Id&quot; column does not exist in the current scenario, the import engine skips that row. 
+</div>
+<a name="wp256037"> </a><div class="pCellBody">
+The same node ID can be listed more than once, typically to provide settings for nodes that contain both electrical and optical elements. To specify that a node contains a DXC and an OXC, you must include two entries. These entries do not need to be adjacent in the file.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp255260"> </a><div class="pCellBody">
+Type
+</div>
+</td>
+    <td><a name="wp255262"> </a><div class="pCellBody">
+Node type name, which can be DXC, TM, IXC, OXC, WP-OXC, INT-OXC, OADM, INT-OADM, or PP.
+</div>
+<a name="wp255646"> </a><div class="pCellBody">
+This field is mandatory because it is used to determine the layer (OCH or DCL) to which the information in that row applies. SP&#160;Guru&#160;Transport&#160;Planner automatically determines the layer based on this type. DXC and TM indicate DCL layer settings, IXC applies to both DCL and OCH, and all other types indicate OCH layer settings.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp255419"> </a><div class="pCellBody">
+XC Type<br />(<em class="cEmphasis">optional</em>)
+</div>
+</td>
+    <td><a name="wp255421"> </a><div class="pCellBody">
+Cross-connect type name, if applicable.
+</div>
+<a name="wp255901"> </a><div class="pCellBody">
+&quot;Continuous&quot; specifies that a node contains a continuous XC; &quot;Not Present&quot; specifies that the node does not contain an XC.
+</div>
+<a name="wp256412"> </a><div class="pCellBody">
+XC Type names should correspond to the node cost model currently in effect in your network. In the example shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-06.html#wp255593');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-06.html#wp255593', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;5-5</u></a>, the network model should use a discrete DCL node model and a discrete OCH node model for this input file to be imported correctly. 
+</div>
+<a name="wp256416"> </a><div class="pCellBody">
+If an XC Type field does not correspond to the network&#39;s node cost model, the XC type of the node is not changed&#8212;it is set to the XC type it had before the import operation, or to the default XC type if the import file specifies a change to a different type. 
+</div>
+<a name="wp256417"> </a><div class="pCellBody">
+You must use the exact same spelling for XC type names as in the network settings (pay special care to the capitalization); otherwise SP&#160;Guru&#160;Transport&#160;Planner cannot find a match. If an XC type does not apply to the node type&#8212;in a TM and/or OADM node, for example&#8212;simply leave the XC Type field on that row blank.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp255423"> </a><div class="pCellBody">
+Regeneration Capacity<br />(<em class="cEmphasis">optional</em>)
+</div>
+</td>
+    <td><a name="wp255425"> </a><div class="pCellBody">
+Amount of regeneration capacity. This field is applicable for OCH nodes in transparent mode only. 
+</div>
+<a name="wp256606"> </a><div class="pCellBody">
+This field is ignored if the Regeneration Status is set to opaque. 
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp255427"> </a><div class="pCellBody">
+Regeneration Status<br />(<em class="cEmphasis">optional</em>)
+</div>
+</td>
+    <td><a name="wp255429"> </a><div class="pCellBody">
+The OCH transparency status; this value can be &quot;Transparent&quot;, &quot;Selective&quot; or &quot;Opaque&quot;. This field is applicable for OCH nodes in transparent mode only. 
+</div>
+<a name="wp256601"> </a><div class="pCellBody">
+If the Regeneration Capacity is greater than zero and the Regeneration Status is &quot;transparent,&quot; the Status field overrides the Capacity field and the node has no regeneration capacity.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp255264"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 5-3	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+<a name="wp255593"> </a><p class="pFigCaption">
+Figure&#160;5-5   Node Settings Data File
+</p>
+<a name="wp255596"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-06-06-05.jpg" height="174" width="530" id="wp255595" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_22_imp.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

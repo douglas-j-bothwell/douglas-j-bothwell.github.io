@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:33:23" />
+    <title>Creating a Network Topology</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-02-01.html"> Overview</a> > <a href="User-02-04.html">Creating Baseline Information</a> > Creating a Network Topology</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp91964"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Creating a Network Topology
+</h2>
+
+ 
+
+<a name="wp91965"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Layered Network Design
+</h3>
+<a name="wp39285"> </a><p class="pBody">
+SP&#160;Guru&#160;Transport&#160;Planner uses five different layers to model a network, as outlined (from highest layer to lowest) in <a href="javascript:WWHClickedPopup('wdm_user', 'User-02-05.html#wp54319');" onMouseOver="WWHShowPopup('wdm_user', 'User-02-05.html#wp54319', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;1-1</u></a>.
+</p>
+<a name="wp39323"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp54319table39286">
+  <caption><a name="wp54319"> </a><div class="ptblcaption">
+Table&#160;1-1   <span style="font-style: normal; font-weight: bold; text-decoration: none; vertical-align: baseline">Network Layers in SP&#160;Guru&#160;Transport&#160;Planner&#160;</span>
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp39294"> </a><div class="pCellHeading">
+<b class="cBold">Abbrev</b>
+</div>
+</th>
+    <th><a name="wp39296"> </a><div class="pCellHeading">
+<b class="cBold">Layer</b>
+</div>
+</th>
+    <th><a name="wp39298"> </a><div class="pCellHeading">
+<b class="cBold">Description</b>
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp39300"> </a><div class="pCellBody">
+LOP
+</div>
+</td>
+    <td><a name="wp39302"> </a><div class="pCellBody">
+Lower Order Path
+</div>
+</td>
+    <td><a name="wp39304"> </a><div class="pCellBody">
+SONET/SDH lower order tributaries&#8212;contains lower order traffic: virtual containers (VC) in SDH or virtual tributaries (VT) in SONET
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp92554"> </a><div class="pCellBody">
+DCL
+</div>
+</td>
+    <td><a name="wp92556"> </a><div class="pCellBody">
+Digital Client Layer
+</div>
+</td>
+    <td><a name="wp92558"> </a><div class="pCellBody">
+SONET/SDH higher order traffic layer&#8212;used to represent STM/STS-level trunks and connections
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp39306"> </a><div class="pCellBody">
+OCH
+</div>
+</td>
+    <td><a name="wp39308"> </a><div class="pCellBody">
+Optical Channel
+</div>
+</td>
+    <td><a name="wp39310"> </a><div class="pCellBody">
+Optical channel layer&#8212;optical line systems and optical cross-connects
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp39312"> </a><div class="pCellBody">
+OMS
+</div>
+</td>
+    <td><a name="wp39314"> </a><div class="pCellBody">
+Optical Multiplex Section
+</div>
+</td>
+    <td><a name="wp39316"> </a><div class="pCellBody">
+Fiber layer&#8212;equipped fibers
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp39318"> </a><div class="pCellBody">
+OTS
+</div>
+</td>
+    <td><a name="wp39320"> </a><div class="pCellBody">
+Optical Transmission
+</div>
+</td>
+    <td><a name="wp39322"> </a><div class="pCellBody">
+Physical layer&#8212;buildings and cables
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="3" rowspan="1"><a name="wp54505"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 1-1	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+<a name="wp39214"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Creating a Topology
+</h3>
+<a name="wp39266"> </a><p class="pBody">
+The Project Editor window provides an environment for defining the topology of an optical network. A network model consists of <em class="cEmphasis">nodes</em> that communicate with each other using <em class="cEmphasis">links</em>. SP&#160;Guru&#160;Transport&#160;Planner provides a simple drag-and-drop interface for creating topologies. First you select a node or link model in a separate window (the <em class="cEmphasis">object palette</em>); then you click in the workspace to create network objects (nodes and links). 
+</p>
+<a name="wp39894"> </a><p class="pBody">
+Each link and node object has its own set of properties. You can customize the properties of individual network objects. Depending on your design needs, you might want to add more lit fibers or equipment, for example, or change the model of a node (OXC, DXC, IXC, etc.). When you double-click on an object, an object browser appears; to edit an object&#39;s properties within the browser, you right-click on the object. 
+</p>
+<a name="wp45815"> </a><p class="pBody">
+Typically you specify a meshed network topology. To add rings to the topology, you can select the nodes that are part of the ring, then specify the type and bit rate of the ring.
+</p>
+<a name="wp39377"> </a><p class="pBody">
+Generally, you build a network using a &quot;bottom-to-top&quot; approach: creating and customizing the topology in the lower (OTS and OMS) layers, then designing and analyzing the network in the upper (OCH, DCL, and LOP) layers.
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_10_ov.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

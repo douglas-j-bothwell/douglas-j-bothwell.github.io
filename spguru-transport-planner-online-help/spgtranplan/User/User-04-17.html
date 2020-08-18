@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:33:53" />
+    <title>Creating a Traffic Matrix</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-04-01.html"> Creating a Baseline Scenario</a> > <a href="User-04-15.html">Creating Network Traffic</a> > Creating a Traffic Matrix</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp291229"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Creating a Traffic Matrix
+</h2>
+
+ 
+
+<a name="wp291225"> </a><p class="pBody">
+After you create a baseline topology, you must create one or more traffic matrices. A traffic matrix specifies the amount of traffic between each node in the topology. Most design operations (such as routing or dimensioning) require a traffic matrix; SP&#160;Guru&#160;Transport&#160;Planner views the matrix as a traffic demand forecast and configures the network to meet this forecast.
+</p>
+<a name="wp141135"> </a><p class="pBody">
+Every traffic flow in a traffic matrix is bidirectional and symmetrical: the amount of traffic between two nodes is always equal in both directions.
+</p>
+<a name="wp137291"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp137291", false);</script>Procedure&#160;3-7   Creating a Traffic Matrix<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp137291", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp137291", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp137292"> </a><div style="text-align: left" class="pSmartList2Test"><li>Create a baseline topology with all nodes and links that you want to populate with traffic.</li></div>
+<a name="wp137293"> </a><div style="text-align: left" class="pSmartList2Test"><li>Choose Network&#160;&gt; Traffic&#160;Matrix&#160;Editor.</li></div>
+<a name="wp137294"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The Traffic Matrix Editor (shown in the following diagram) appears.
+</p>
+<a name="wp305750"> </a><p class="pFigCaption">
+Figure&#160;3-23   Traffic Matrix Editor
+</p>
+<a name="wp306819"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-04-17-24.jpg" height="305" width="500" id="wp306817" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp137302"> </a><div style="text-align: left" class="pSmartList2Test"><li>Choose Layer to select the layer (LOP, DCL, or OCH) of the traffic matrix you want to create. The nodes that appear in the Selected Matrix depend on this setting: OCH matrices contain all OCC and EOCC nodes, LOP and DCL matrices contain all ECC and EOCC nodes.</li></div>
+<a name="wp137303"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+LOP, DCL, and OCH matrices represent different traffic demands at different layers: SONET/SDH lower-order demands at the LOP layer, SONET/SDH higher-order traffic demands at the DCL layer, and optical-wavelength demands at the OCH layer. The following points summarize the differences and similarities between these matrix types:
+</p>
+<div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp137304"> </a><div class="pSmartList2"><li>You can groom LOP traffic to DCL traffic. You cannot run a routing or dimensioning operation directly on LOP traffic; you need to translate it to DCL traffic first.For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-10-1.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-10-1.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Grooming LOP to DCL Traffic</u> </a>.</li></div>
+<a name="wp290923"> </a><div class="pSmartList2"><li>You can run a routing operation with either a DCL or an OCH traffic matrix. Routing affects only the used capacity at the layer (DCL or OCH) at which the routing took place. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-01.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-01.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Routing</u> </a>.</li></div>
+<a name="wp137305"> </a><div class="pSmartList2"><li>You can only run a dimensioning operation with a DCL traffic matrix in a network that contains ECC nodes (no OCC or EOCC nodes) or with an OCH traffic matrix. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-08-1.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-08-1.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Dimensioning</u> </a>.</li></div>
+<a name="wp137306"> </a><div class="pSmartList2"><li>You can run a grooming operation with a DCL matrix only. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-09-01.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-01.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Grooming DCL to OCH Traffic</u> </a>.</li></div>
+</ul></div>
+<a name="wp290944"> </a><div style="text-align: left" class="pSmartList2Test"><li>You can set the Native check box for DCL/OCH traffic. The option is set by default.</li></div>
+<a name="wp291168"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+A connection is called <em class="cEmphasis">native</em> if it affects only the layer on which it is defined. A non-native connection is trailed towards the higher layer and becomes a link at that layer. 
+</p>
+<a name="wp291090"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+A native OCH connection represents pure optical traffic; a non-native OCH connection represents optical traffic that can support SONET/SDH traffic. Hence a non-native OCH connection becomes a logical link at the DCL layer. 
+</p>
+<a name="wp292846"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+You can also define native and non-native DCL traffic. A non-native DCL connection is trailed towards the LOP layer. LOP traffic is always native, since this is the top layer in the hierarchy. 
+</p>
+<a name="wp290942"> </a><div style="text-align: left" class="pSmartList2Test"><li>If you want to rename the matrix, double-click the current name, enter a new name, and press Enter.</li></div>
+<a name="wp137309"> </a><div style="text-align: left" class="pSmartList2Test"><li>Specify the Bit Rate of the matrix.</li></div>
+<a name="wp137310"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click either Random (to specify varying traffic levels between nodes) or Uniform (to specify a uniform traffic level for every pair of nodes). </li></div>
+<a name="wp137311"> </a><div style="text-align: left" class="pSmartList2Test"><li>Specify the level of traffic you want in the resulting dialogue box, then click OK to return to the Traffic Matrix Editor.</li></div>
+<a name="wp137312"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The Selected Matrix table fills with integer values. These values specify the number of bidirectional wavelength demands (OCH layer) or bidirectional time slots (LOP or DCL layer) at the specified bit rate. 
+</p>
+<a name="wp137313"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click New to create another traffic matrix, or OK to close the Traffic Matrix Editor and accept your changes.</li></div>
+<a name="wp139297"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>After you set up a traffic matrix, you cannot change it in the Traffic Matrix Editor. A message below the matrix warns that it cannot be renamed, deleted, or modified. To change the traffic matrix, you must apply the Tear Down operation first. See <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-01.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-01.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Routing</u> </a> for more information about setting up and tearing down traffic matrices. 
+</p>
+</ol></div>
+<a name="wp308375"> </a><p class="pProcEnd">
+End of Procedure 3-7
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp314358"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp314359"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>Besides defining traffic manually via the traffic matrix editor, you can also import traffic, as a traffic matrix or as a list of connections. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-13.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-13.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Traffic Matrix Data Files</u></a> and <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-16.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-16.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Connection List Data Files</u></a>.
+</p>
+
+<a name="wp308376"> </a><h6 class="pHeading6">
+
+</h6>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_16_cbn.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

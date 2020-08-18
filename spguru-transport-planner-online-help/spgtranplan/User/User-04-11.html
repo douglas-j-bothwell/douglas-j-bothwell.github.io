@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:33:53" />
+    <title>The Node Model</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-04-01.html"> Creating a Baseline Scenario</a> > <a href="User-04-09.html">Network Properties</a> > The Node Model</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp140775"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+The Node Model
+</h2>
+
+ 
+
+<a name="wp204230"> </a><p class="pBody">
+You can set the Node Model buttons to determine how SP&#160;Guru&#160;Transport&#160;Planner models EOCCs:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp140776"> </a><div class="pSmartList1"><li>If you choose the DXC + OXC<em class="cEmphasis"> </em>model, the EOCC node uses a DXC to switch SONET/SDH traffic and a separate OXC to switch wavelengths. The DXC trunk ports connect to the OXC tributary ports so nodes can transport SDH/SONET traffic over WDM wavelengths.</li></div>
+<a name="wp140777"> </a><div class="pSmartList1"><li>If you use the integrated DXC/OXC (IXC)<em class="cEmphasis"> </em>model, the EOCC node uses one electrical cross-connect that can switch both at the SONET/SDH level and (in an opaque way) at the wavelength level.</li></div>
+<a name="wp148049"> </a><div class="pSmartList1"><li>You can set the Use OADMs option to use OADMs in degree-two OCH nodes (that is, nodes that terminate two links). One OADM terminates at most two fibers using the same line system. This means that, for each WDM line system that terminates on one or both links of a node, SP&#160;Guru&#160;Transport&#160;Planner counts one OADM. This also means that, in opaque mode, a node can include OADMs of different line system types.</li></div>
+<a name="wp205475"> </a><div class="pSmartList1"><li>If &quot;Support SONET/SDH Rings Via Patch Panel&quot; is selected, the optical channels that support the overlay SONET/SDH rings are switched via a patch panel. If this option is not selected, these channels are switched via the OXC, IXC or OADM (depending on the node model).</li></div>
+</ul></div>
+<a name="wp140778"> </a><p class="pBody">
+The Discrete DXC,<em class="cEmphasis"> </em>Discrete OXC, and Discrete IXC check boxes enable you to use a discrete node model for each type of node equipment. If this option is not selected for a node type, SP&#160;Guru&#160;Transport&#160;Planner uses a continuous node model instead.
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp140904"> </a><div class="pSmartList1"><li>If you are using a discrete node model, specify a range of discrete node types (each characterized by its throughput and cost) in the equipment properties. SP&#160;Guru&#160;Transport&#160;Planner can consider these discrete node sizes when routing (where the node sizes are constraints) or dimensioning (where the nodes need to be dimensioned). </li></div>
+<a name="wp140908"> </a><div class="pSmartList1"><li>If you use the continuous node model, nodes are assumed to scale continuously: SP&#160;Guru&#160;Transport&#160;Planner assumes that all node types exist (16x16 ports, 17x17 ports, etc.) and calculates the cost using a base cost and per-port cost.</li></div>
+</ul></div>
+<a name="wp271200"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>The settings in this section specify the default model of a node. You can override these settings for individual nodes using the OCH Node Browser, as described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-05-11.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-05-11.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">OCH Node Browser</u></a>.
+</p>
+
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_16_cbn.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

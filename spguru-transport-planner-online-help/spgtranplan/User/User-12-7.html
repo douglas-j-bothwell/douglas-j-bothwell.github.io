@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:20" />
+    <title>Implement Express Links Dialog Box</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-12-1.html"> Optical Express Layer</a> > Implement Express Links Dialog Box</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp1023681"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Implement Express Links Dialog Box
+</h2>
+
+ 
+
+
+<a name="wp1023684"> </a><p class="pBody">
+The Implement Express Links dialog box appears when you click Next in the <a href="javascript:WWHClickedPopup('wdm_user', 'User-12-5.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-12-5.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Select Express Links Dialog Box</u></a>. The treeview lists all express links (as determined by the previous steps in the wizard) and enables you to decide how to implement these links. SP&#160;Guru&#160;Transport&#160;Planner uses &quot;fiber routing&quot; for this purpose&#8212;that is, it establishes a new OCH link between two gateway nodes. This link is supported by a fiber pair in the OMS layer and bypasses any intermediate nodes. This avoids the expensive switching cost in intermediate nodes. 
+</p>
+<a name="wp1023820"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>Fiber routing is applied for express links between non-adjacent gateway nodes only. Adjacent gateway nodes are already connected by a direct fiber pair.
+</p>
+
+<a name="wp1023686"> </a><p class="pFigCaption">
+Figure&#160;11-5   Implement Express Links Dialog Box
+</p>
+<a name="wp1023690"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-12-7-5.jpg" height="218" width="530" id="wp1023688" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp1023750"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp1023697table1023692">
+  <caption><a name="wp1023697"> </a><div class="ptblcaption">
+Table&#160;11-5   Implement Express Links Dialog Box&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp1023701"> </a><div class="pCellHeading">
+Control
+</div>
+</th>
+    <th><a name="wp1023703"> </a><div class="pCellHeading">
+Description
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1023714"> </a><div class="pCellBody">
+Express Link column (in treeview)
+</div>
+</td>
+    <td><a name="wp1023716"> </a><div class="pCellBody">
+Name of the express link. 
+</div>
+<a name="wp1023866"> </a><div class="pCellBody">
+The possible fiber routes for the link appear as children of each link. Initially SP&#160;Guru&#160;Transport&#160;Planner selects the fiber route that results in the lowest cost and overlap. 
+</div>
+<ul class="pCellBodyBullet"><a name="wp1023875"> </a><div class="pCellBodyBullet"><li>
+To visualize a route in the Project Editor workspace, select the route in the treeview. 
+</li></div>
+<a name="wp1023874"> </a><div class="pCellBodyBullet"><li>
+To select a different route, double-click on the route in the treeview. 
+</li></div>
+</ul></td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1032352"> </a><div class="pCellBody">
+Fixed
+</div>
+</td>
+    <td><a name="wp1032354"> </a><div class="pCellBody">
+Shows the fixed fiber routes of express links. Fiber routes are fixed if the express links already has direct fibers between its end nodes, or the fiber route has already been chosen as an express link. This means that you cannot modify existing fiber routes unless you remove the express links first.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1032360"> </a><div class="pCellBody">
+Overlap (treeview)
+</div>
+</td>
+    <td><a name="wp1032362"> </a><div class="pCellBody">
+The number of fibers in the selected route that overlap with other express-link routes.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1032356"> </a><div class="pCellBody">
+Overlap (field above treeview)
+</div>
+</td>
+    <td><a name="wp1032358"> </a><div class="pCellBody">
+Total number of overlapping fibers of all selected fiber routes
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1032366"> </a><div class="pCellBody">
+Reset
+</div>
+</td>
+    <td><a name="wp1032368"> </a><div class="pCellBody">
+Restore the default fiber-route selections for all express links
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1023718"> </a><div class="pCellBody">
+Previous
+</div>
+</td>
+    <td><a name="wp1023720"> </a><div class="pCellBody">
+Return to the previous window (see <a href="javascript:WWHClickedPopup('wdm_user', 'User-12-5.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-12-5.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Select Express Links Dialog Box</u></a>)
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1032348"> </a><div class="pCellBody">
+Finish
+</div>
+</td>
+    <td><a name="wp1032350"> </a><div class="pCellBody">
+Implement the specified express links in the network
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp1023747"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 11-5	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_37_oel.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

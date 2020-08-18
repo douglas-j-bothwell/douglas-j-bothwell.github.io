@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:24" />
+    <title>Ring Dimensioning</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-13-01.html"> Ring Design</a> > Ring Dimensioning</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp276790"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Ring Dimensioning
+</h2>
+
+ 
+
+
+<a name="wp276640"> </a><p class="pBody">
+With SP&#160;Guru&#160;Transport&#160;Planner you can combine ring and mesh architectures. This section describes how to accommodate traffic on the SONET/ SDH legacy ring infrastructure and off-load the remaining traffic to a DCL mesh architecture.
+</p>
+<a name="wp276965"> </a><p class="pBody">
+After you specify a set of rings in your network, you can use them to accommodate DCL traffic. You can reuse the legacy capacity on these rings; for the remaining traffic that cannot be routed on the rings, you can route this traffic in the meshed DCL network (as the result of a grooming operation, for example). Alternatively, you can add stacked rings to existing rings to expand them, then try to route all the traffic on the expanded rings. Even in this case, it is possible that SP&#160;Guru&#160;Transport&#160;Planner cannot route all the traffic on the existing rings. If the rings do not cover the entire network, you can route the remaining traffic again in the meshed network. 
+</p>
+<a name="wp276989"> </a><p class="pBody">
+To route traffic on SONET rings and dimension the rings, open the Dimension DCL Rings dialog box (Design&#160;&gt; Dimension&#160;DCL&#160;Rings). This dialog box lists all DCL traffic matrices, their bit rate and total capacity, and how they have been routed so far. You can include multiple DCL traffic matrices in one operation; all selected matrices (those whose Select field is set to Yes(<em class="cEmphasis">x</em>)) are considered by the dimensioning algorithm.
+</p>
+<a name="wp303766"> </a><p class="pFigCaption">
+Figure&#160;12-7   Dimension DCL Rings Dialog Box Before a Dimensioning Operation
+</p>
+<a name="wp303770"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-13-05-07.jpg" height="223" width="530" id="wp303768" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp277649"> </a><p class="pBody">
+The typical workflow is to use the Dimension DCL Rings dialog box to accommodate traffic on the rings. Then you can use the routing and grooming action to accommodate any remaining traffic that could not be routed on rings. (See <a href="javascript:WWHClickedPopup('wdm_user', 'User-13-06.html#wp277052');" onMouseOver="WWHShowPopup('wdm_user', 'User-13-06.html#wp277052', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;12-2-Dimension DCL Rings Dialog Box</u></a> for information on the available options and fields.)
+</p>
+<a name="wp277718"> </a><p class="pBody">
+When the ring-dimensioning operation completes, the traffic matrix table shows the traffic that has been routed on the rings, the percentage that has been routed on the mesh, and the percentage of traffic that is currently unrouted. You can use the Result fields to compare the network state before and after ring dimensioning.
+</p>
+<a name="wp277728"> </a><p class="pFigCaption">
+Figure&#160;12-8   Dimension DCL Rings Dialog Box After a Dimensioning Operation
+</p>
+<a name="wp277732"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-13-05-08.jpg" height="218" width="530" id="wp277730" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_40_rd.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

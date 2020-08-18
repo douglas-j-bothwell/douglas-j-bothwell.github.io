@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:24" />
+    <title>Hybrid Ring-Mesh Design</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-13-01.html"> Ring Design</a> > <a href="User-13-05.html">Ring Dimensioning</a> > Hybrid Ring-Mesh Design</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp310103"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Hybrid Ring-Mesh Design
+</h2>
+
+ 
+
+<a name="wp310104"> </a><p class="pBody">
+When the option &quot;Allow connections partly over mesh&quot; is selected, the ring routing algorithm considers both rings as mesh links to route traffic over. In certain cases, there might be no ring interconnectivity between two nodes so the only option is to route the connection (partially) over mesh links. In other circumstances, the shortest or cheapest path might include one or more mesh links. As such, the ring routing algorithm ends up with a solution in which certain connections are only partially routed over rings (or not routed at all). 
+</p>
+<a name="wp310126"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>The ring routing algorithm will not actually route the connections over the mesh links but will leave part (or all) of the connection unrouted instead. To route these unrouted portions of traffic over the mesh, use one of the mesh design actions, such as routing or grooming.
+</p>
+
+<a name="wp310135"> </a><p class="pBody">
+You can control the number of mesh links considered by the ring routing algorithm by setting the &quot;Mesh Link Mode&quot; option in the Advanced Ring Design Options. The following options are available:
+</p>
+<a name="wp310140"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp310146table310144">
+  <caption><a name="wp310146"> </a><div class="ptblcaption">
+Table&#160;12-4   Mesh Link Mode Options
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp310150"> </a><div class="pCellHeading">
+Option
+</div>
+</th>
+    <th><a name="wp310152"> </a><div class="pCellHeading">
+Description
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp310154"> </a><div class="pCellBody">
+Per Cluster
+</div>
+</td>
+    <td><a name="wp310156"> </a><div class="pCellBody">
+This means that every cluster is connected to every other cluster by exactly one mesh link. Thus, (M*(M-1))/2 links are considered, where M is the number of clusters (adjacent ring groups and isolated mesh nodes). See figure below for example.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp310158"> </a><div class="pCellBody">
+Full Mesh
+</div>
+</td>
+    <td><a name="wp310160"> </a><div class="pCellBody">
+The network is fully meshed such that every node is connected to every other node (i.e., (N*(N-1))/2 links where N is the number of nodes in the network).
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp310162"> </a><div class="pCellBody">
+No Mesh
+</div>
+</td>
+    <td><a name="wp310164"> </a><div class="pCellBody">
+No mesh links are allowed.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp310166"> </a><div class="pCellBody">
+Candidate Mesh
+</div>
+</td>
+    <td><a name="wp310168"> </a><div class="pCellBody">
+Allows selection of a candidate link import file which defines possible candidate links. The links specified in the import file specify the mesh links that are considered during the routing process. The format of the Mesh Link Candidate file is the same as for the Candidate Links feature in Grooming DCL to OCH Traffic &gt; Grooming DCL Traffic with Optimized Routes. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-09-04.html#wp146430');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-04.html#wp146430', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Import Candidate Node Pairs</u></a>.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp310170"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 12-4	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+<a name="wp310255"> </a><p class="pBody">
+For definition purposes, a cluster is a set of nodes which is constructed by starting with a set containing a single node and then adding to that set all nodes that are reachable via adjacent rings. No node can belong to two clusters and pure mesh nodes constitute singleton clusters. <a href="javascript:WWHClickedPopup('wdm_user', 'User-13-08.html#wp310263');" onMouseOver="WWHShowPopup('wdm_user', 'User-13-08.html#wp310263', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;12-10</u></a> illustrates the concept in more detail.
+</p>
+<a name="wp310263"> </a><p class="pFigCaption">
+Figure&#160;12-10   Hybrid Ring-Mesh Design
+</p>
+<a name="wp310267"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-13-08-10.jpg" height="396" width="530" id="wp310268" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp310274"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('wdm_user', 'User-13-08.html#wp310263');" onMouseOver="WWHShowPopup('wdm_user', 'User-13-08.html#wp310263', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;12-10</u></a> shows how clusters are formed and how they are then connected to each other by a single mesh link. 
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp310338"> </a><div class="pSmartList1"><li>With the Full Mesh option, each node is considered to be connected to every other node with a mesh link. </li></div>
+<a name="wp310339"> </a><div class="pSmartList1"><li>The No Mesh option prevents the consideration of any mesh links. Thus, the connections can only be routed over rings and no candidate mesh link possibilities are considered. </li></div>
+<a name="wp310340"> </a><div class="pSmartList1"><li>Candidate Mesh involves the importing of mesh link candidates via an import CSV file.</li></div>
+</ul></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_40_rd.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

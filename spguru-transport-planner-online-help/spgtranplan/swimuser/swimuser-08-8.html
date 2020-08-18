@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:37:59" />
+    <title>transport_link_pricer Design Action</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="swimuser-08-1.html"> Transport-Layer Cost Allocation</a> > transport_link_pricer Design Action</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp929935"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+transport_link_pricer Design Action
+</h2>
+
+ 
+
+
+<a name="wp930209"> </a><p class="pBody">
+The transport_link_pricer design action sets the &quot;financial cost&quot; attribute of all Layer-2/3 links in its input set. The mapping status of a Layer-2/3 link determines the cost calculations used. For this design action, a Layer-2/3 link falls into one of the following categories:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp930210"> </a><div class="pSmartList1"><li>	Mapped Layer-2/3 links whose underlying Transport connections have been set up&#8212;These are links which have been mapped using SWIM&#39;s link mapping feature, and for which the corresponding Transport connection is set up. Note that you can visualize the operational status of mapped Layer-2/3 links by choosing SWIM &gt; Automatically&#160;Update&#160;Operational&#160;Status&#160;Visualization; the Layer-2/3 link will have no overlay icon if its Transport connection is set up.</li></div>
+<a name="wp930211"> </a><div class="pSmartList1"><li>Mapped Layer-2/3 links whose underlying Transport connection has not been set up&#8212;These are links that have been mapped using SWIM&#39;s link mapping feature, but the underlying Transport connection is unrouted. When visualizing the operational status, such Layer-2/3 links will be overlaid with the &quot;link unrouted&quot; icon.</li></div>
+<a name="wp931133"> </a><p class="pFigCaption">
+Figure&#160;7-3   &quot;Link Unrouted&quot; Icon
+</p>
+<a name="wp931136"> </a><p class="pBodyRelative">
+<br />
+<img src="images/swimuser-08-8-3.jpg" height="85" width="500" id="wp931135" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp930212"> </a><p class="pBodyRelative">
+For more information about link mapping in SWIM, see <a href="javascript:WWHClickedPopup('swim_user', 'swimuser-06-01.html');" onMouseOver="WWHShowPopup('swim_user', 'swimuser-06-01.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Mapping Layer-2/3 Links to Transport Connections</u> </a>.
+</p>
+<a name="wp930213"> </a><div class="pSmartList1"><li>Mappable Layer-2/3 links&#8212;These are links that have not yet been mapped to Transport connections, but have mapped endpoints, defined link models, and default link mappings. These are all the links that would appear in the SWIM - Map Links dialog box and would be mapped to Transport connections using the automatic link mapping functionality (that is, using the Auto&gt;&gt; button). </li></div>
+<a name="wp930214"> </a><p class="pBodyRelative">
+This dialog box is described in <a href="javascript:WWHClickedPopup('swim_user', 'swimuser-06-10.html');" onMouseOver="WWHShowPopup('swim_user', 'swimuser-06-10.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">SWIM - Map Links Dialog Box</u></a>.
+</p>
+<a name="wp930268"> </a><div class="pSmartList1"><li>Unmappable Layer-2/3 links&#8212;These are links that have not been mapped to a Transport connection, and for which</li></div>
+<div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp930269"> </a><div class="pSmartList2"><li>One or both endpoints are unmapped, or</li></div>
+<a name="wp930270"> </a><div class="pSmartList2"><li>The default link-mapping settings do not specify a Transport layer and bit rate to map it to</li></div>
+</ul></div>
+</ul></div>
+<a name="wp930271"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('swim_user', 'swimuser-08-8.html#wp930344');" onMouseOver="WWHShowPopup('swim_user', 'swimuser-08-8.html#wp930344', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;7-3</u></a> and <a href="javascript:WWHClickedPopup('swim_user', 'swimuser-08-8.html#wp930408');" onMouseOver="WWHShowPopup('swim_user', 'swimuser-08-8.html#wp930408', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;7-4</u></a> describe the cost calculations used for specific links. The WDMG cost calculation (<code class="cCode">cost_spg_tran_plan</code> in the formulas) is also influenced by the settings of the &quot;Include All WDMG Layers&quot; and &quot;Include WDMG Shared Elements Cost&quot; parameters described in <a href="javascript:WWHClickedPopup('swim_user', 'swimuser-08-9.html#wp930497');" onMouseOver="WWHShowPopup('swim_user', 'swimuser-08-9.html#wp930497', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;7-5-transport_link_pricer Attributes (Part&#160;1&#160;of&#160;2)</u> </a>.
+</p>
+<a name="wp930335"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp930344table930301">
+  <caption><a name="wp930344"> </a><div class="ptblcaption">
+Table&#160;7-3    Link Calculations in SP&#160;Guru&#160;Network&#160;Planner&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp930348"> </a><div class="pCellHeading">
+Link Category
+</div>
+</th>
+    <th><a name="wp930350"> </a><div class="pCellHeading">
+Cost Calculation
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp930352"> </a><div class="pCellBody">
+Unmappable Layer-2/3 links
+</div>
+</td>
+    <td><a name="wp930354"> </a><div class="pCellBody">
+cost = cost_spg_nw_plan<br />cost_spg_nw_plan = fixed_cost + cost_per_kb * bit_rate_spg + cost_per_km * distance_link_spg_nw_plan
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp930356"> </a><div class="pCellBody">
+Mapped Layer-2/3 links <br />(connection has been set up)
+</div>
+<a name="wp930384"> </a><div class="pCellBody">
+Mapped Layer-2/3 links <br />(connection has <em class="cEmphasis">not</em> been set up)
+</div>
+<a name="wp930389"> </a><div class="pCellBody">
+Mappable Layer-2/3 links
+</div>
+</td>
+    <td><a name="wp931632"> </a><div class="pCellBody">
+cost = cost_spg_nw_plan + wdmg_multiplier * cost_spg_tran_plan
+</div>
+<a name="wp931633"> </a><div class="pCellBody">
+cost_spg_nw_plan = fixed_cost + cost_per_kb * bit_rate_spg + cost_per_km *<br />&#160;&#160;&#160;distance_conn_wdm
+</div>
+<a name="wp930400"> </a><div class="pCellBody">
+cost_spg_tran_plan = cost of connection as defined by the SP&#160;Guru&#160;Transport&#160;Planner cost model
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp930360"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 7-3	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+<a name="wp930431"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp930408table930403">
+  <caption><a name="wp930408"> </a><div class="ptblcaption">
+Table&#160;7-4   Connection Calculations in SP&#160;Guru&#160;Transport&#160;Planner&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp930412"> </a><div class="pCellHeading">
+Link Category
+</div>
+</th>
+    <th><a name="wp930414"> </a><div class="pCellHeading">
+Cost Calculation
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp930420"> </a><div class="pCellBody">
+Mapped Layer-2/3 links <br />(connection has been set up)
+</div>
+</td>
+    <td><a name="wp930426"> </a><div class="pCellBody">
+The cost of the underlying connection as calculated in SP&#160;Guru&#160;Transport&#160;Planner will be used as cost_spg_tran_plan.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp930445"> </a><div class="pCellBody">
+Mapped Layer-2/3 links <br />(connection has <em class="cEmphasis">not</em> been set up)
+</div>
+</td>
+    <td><a name="wp930441"> </a><div class="pCellBody">
+The design action determines whether the underlying connection can be routed using the existing capacity of the WDMG network. This is similar to finding routes with SP&#160;Guru&#160;Transport&#160;Planner&#39;s routing wizard (see the &quot;Manual Routing&quot; section in the Transport Planner User Guide). The SP&#160;Guru&#160;Transport&#160;Planner cost for the candidate route will be used as cost_spg_tran_plan.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp930458"> </a><div class="pCellBody">
+Mappable Layer-2/3 links
+</div>
+</td>
+    <td><a name="wp930453"> </a><div class="pCellBody">
+The design action determines whether a connection for the WDMG layer can be routed using a bit rate specified in the SWIM default link-mapping settings. If it can, the candidate route&#39;s cost is used as cost_spg_tran_plan.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp930428"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 7-4	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/swim_26_tlcost.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

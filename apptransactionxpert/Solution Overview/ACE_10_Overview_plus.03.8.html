@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Workflow: Running a Discrete Event Simulation</title>
+    <link rel="StyleSheet" href="css/ACE_10_Overview_plus.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ACE_10_Overview_plus.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">Solution Overview &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_getting_started_splash.html#159996">Getting Started</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ACE_10_Overview_plus.03.1.html#159996">Overview of AppTransaction&nbsp;Xpert</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ACE_10_Overview_plus.03.2.html#159996">Workflow Description for AppTransaction&nbsp;Xpert</a> &gt; Workflow: Running a Discrete Event Simulation</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h2Top"><a name="159996">Workflow: Running a Discrete Event Simulation</a></div>
+      <div class="body"><a name="159997">AppTransaction&nbsp;Xpert can generate a </a><span class="italic">model</span> of an application by analyzing a live network packet trace from an application. Based on the packet&nbsp;traces, AppTransaction&nbsp;Xpert makes conjectures as to the actual message exchange pattern of the application, complete with message sizes, timing sequence, and dependencies. You can import the AppTransaction&nbsp;Xpert model into OPNET’s discrete event simulation (DES) environment and play back the model to create the same traffic pattern as captured in the live environment.</div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="159998">The ability to run a discrete event simulation with a Transaction&nbsp;Analyzer model (.atc.m) requires an AppTransaction&nbsp;Xpert Plus or an AppTransaction&nbsp;Xpert Module license.<br /><br />If you have an AppTransaction&nbsp;Xpert Plus license and no discrete event simulation environment, you can download and run IT Guru 16.0 or later to run discrete event simulations. When started, IT&nbsp;Guru uses an AppTransaction&nbsp;Xpert Plus license and runs without any product module functionality, except for discrete event simulation. (Be aware that if you only have a single AppTransaction&nbsp;Xpert Plus license, you must close AppTransaction&nbsp;Xpert before starting IT&nbsp;Guru, so that a license is available. If you have multiple AppTransaction&nbsp;Xpert Plus licenses, it is not necessary to close AppTransaction&nbsp;Xpert, as long as another AppTransaction&nbsp;Xpert Plus licence is available.)</a></div>
+      <div class="bodyIntro"><a name="159999">You can import Transaction&nbsp;Analyzer models (.atc.m) into a discrete event simulation environment using one of the following methods:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="160000">Import into a new scenario—</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="160024">From the Project Editor, choose Topology&nbsp;&gt; Import&nbsp;Topology&nbsp;&gt; From&nbsp;AppTransaction&nbsp;Xpert…</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="160048">Using the Startup Wizard, choose “Import&nbsp;from&nbsp;AppTransaction&nbsp;Xpert” when prompted for the initial topology.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="160025">Import into an existing scenario—</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="160030">From the Project Editor, choose Protocols&nbsp;&gt; Application&nbsp;&gt; Deploy&nbsp;AppTransaction&nbsp;Xpert&nbsp;Application&nbsp;on&nbsp;Existing&nbsp;Network&nbsp;&gt; as&nbsp;Discrete&nbsp;Traffic…</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSubLast_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSubLast_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSubLast_inner"><a name="160041">From the Project Editor, choose Protocols&nbsp;&gt; Application&nbsp;&gt; Deploy&nbsp;AppTransaction&nbsp;Xpert&nbsp;Application&nbsp;on&nbsp;Existing&nbsp;Network&nbsp;&gt; as&nbsp;Traffic&nbsp;Flows…</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="221942">To import a Transaction&nbsp;Analyzer model into the discrete event simulation environment, the AppTransaction&nbsp;Xpert directory must be added to the model directories (mod_dirs) preference for the DES environment application.</a></div>
+      <div class="body"><a name="221946">For more information about running discrete event simulations with Transaction&nbsp;Analyzer models, see the documentation for the discrete event simulation environment (e.g., OPNET&nbsp;Modeler, SP&nbsp;Guru&nbsp;Network&nbsp;Planner, or IT&nbsp;Guru).</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

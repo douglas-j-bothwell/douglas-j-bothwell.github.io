@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:40:17" />
+    <title>Availability Analysis</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="wdmgtut-5-1.html"> Network Evaluation</a> > Availability Analysis</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp926682"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Availability Analysis
+</h2>
+
+ 
+
+
+<a name="wp926683"> </a><p class="pBody">
+The availability analysis feature allows you to calculate the service availability of traffic routed in the network. It takes into account the failure rate of network devices and the protection types deployed in the network. You can use the calculated service availability values to verify if service level agreements (for example, 99.99 percent network availability) can be met.
+</p>
+<a name="wp926685"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp926685", false);</script>Procedure&#160;4-2   Evaluating Recovery Strategies<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp926685", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp926685", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp926687"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the <b class="cBold">WDMGuru_Tutorial_Scenarios</b> project.</li></div>
+<ol type="a">
+<a name="wp926688"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Open...</span>.</li></div>
+<a name="wp926689"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">WDMGuru_Tutorial_Scenarios</span> project, then press <span style="font-weight: bold">Open</span>.</li></div>
+<a name="wp933694"> </a><p class="pIndentedRelative">
+This project contains 4 scenarios for an example US network. Each scenario contains a design of the OCH layer for the traffic matrix called <b class="cBold">OC-48</b>. Each of these scenarios uses a different protection strategy. The initially loaded scenario is called <b class="cBold">USA_Unprotected</b>. In this scenario all traffic has been routed along a single unprotected path.
+</p>
+<a name="wp935709"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>If the <b class="cBold">USA_Unprotected</b> scenario is not the default scenario, select Scenarios&#160;&gt; Switch to Scenario and choose <b class="cBold">USA_Unprotected</b>.
+</p>
+</ol>
+<a name="wp934833"> </a><div style="text-align: left" class="pSmartList2Test"><li>Define the equipment failure rates.</li></div>
+<ol type="a">
+<a name="wp934834"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Network &gt; Availability Settings</b>. This dialog box allows you to specify the failure rate for different equipment types. Only link failures are considered in this example.</li></div>
+<a name="wp934835"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Cable Length Per Cut Per Year </b>in the <b class="cBold">Link Availability</b> section and set the value to <b class="cBold">300</b> kilometers. This means that per 300 km of cable on cable cut is expected each year.</li></div>
+<a name="wp934836"> </a><div class="pprocstepSub"><li>Set the <b class="cBold">Mean Time To Repair</b> to <b class="cBold">12</b> hours. Press <b class="cBold">Apply to All</b> to apply this failure rate to all physical links in the network.</li></div>
+<a name="wp934837"> </a><p class="pIndentedRelative">
+The failures rates of line system devices (e.g. Optical Amplifier) and nodes devices (e.g. OXC) can be specified as Mean Time Between Failures (MTBF) and Mean Time To Repair (MTTR), as availability (value between 0 and 1) or as Failures In Time (one FIT stands for one failure per 10e9 hours). In this example we only consider cable cuts, implying the availability of line system and node equipment is set to 1.
+</p>
+<a name="wp934838"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Availability Settings</b> dialog box.</li></div>
+<a name="wp932524"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-5-2-09.jpg" height="426" width="476" id="wp932531" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ol>
+<a name="wp934879"> </a><div style="text-align: left" class="pSmartList2Test"><li>Set the required availability for the connections of the OC-48 traffic matrix.</li></div>
+<ol type="a">
+<a name="wp934880"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Network &gt; Connection Browser</b>.</li></div>
+<a name="wp934881"> </a><div class="pprocstepSub"><li>Select <b class="cBold">OCH</b> (&quot;Traffic), <b class="cBold">All</b> (&quot;Layout&quot;) and <b class="cBold">Traffic Matrix</b> (&quot;Order).</li></div>
+<a name="wp934882"> </a><div class="pprocstepSub"><li>Expand the <b class="cBold">OC-48 </b>traffic matrix (using the &quot;<b class="cBold">+</b>&quot; sign) to view all connections of this traffic matrix.</li></div>
+<a name="wp934883"> </a><div class="pprocstepSub"><li>Select all connections of this traffic matrix and right-click on <b class="cBold">Set Required Availability</b>.</li></div>
+</ol>
+</ol></div>
+<a name="wp926702"> </a><p class="pBody">
+.
+</p>
+<a name="wp932552"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/wdmgtut-5-2-10.jpg" height="363" width="469" id="wp932559" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp926707"> </a><p class="pIndentedRelative">
+The <b class="cBold">Enter Required Availability </b>dialog box appears. 
+</p>
+<ol type="a">
+<a name="wp934947"> </a><div class="pprocstepSub"><li>Fill in <b class="cBold">0.99</b> as required availability. Click <b class="cBold">OK</b> to set the required availability for each of the selected connections.</li></div>
+<a name="wp934930"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-5-2-11.jpg" height="90" width="479" id="wp934934" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp934940"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Connection Browser</b>.</li></div>
+</ol>
+<a name="wp934913"> </a><div style="text-align: left" class="pSmartList2Test"><li>Calculate the service availability (<b class="cBold">USA_Unprotected</b> scenario).</li></div>
+<ol type="a">
+<a name="wp934951"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Info &gt; Evaluate Availability</b> to calculate the availability of connections accommodated in the network.</li></div>
+<a name="wp934952"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-5-2-12.jpg" height="299" width="499" id="wp934970" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp934980"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Analytical</b> as <b class="cBold">Analysis Method</b>. For unprotected and 1+1 protected traffic this method gives exact results.</li></div>
+<a name="wp934981"> </a><div class="pprocstepSub"><li>Expand <b class="cBold">All Traffic</b> and <b class="cBold">OCH Layer</b> (using the &quot;<b class="cBold">+</b>&quot; sign) in the <b class="cBold">Traffic To Analyze</b> section. Mark the <b class="cBold">OC-48 </b>traffic matrix. This implies that the availability algorithm calculates the availability for all routed connections of this traffic matrix.</li></div>
+<a name="wp934982"> </a><div class="pprocstepSub"><li>Expand <b class="cBold">All Failure Elements </b>(using the &quot;<b class="cBold">+</b>&quot; sign) in the <b class="cBold">Failure Elements To Analyze</b> section. All failure elements are displayed per failure type. Mark <b class="cBold">Cable Failures</b>. This implies that only cable failures are taken into account to calculate the availability of the selected connections. Note that the number of selected failure elements amounts to<b class="cBold"> 23</b> (as displayed in the lower right corner of the dialog box) because 23 physical links are present in the network.</li></div>
+<a name="wp934983"> </a><div class="pprocstepSub"><li>Click <b class="cBold">Evaluate</b> to calculate the service availability for the selected traffic taking into account the selected failure elements.</li></div>
+<a name="wp934984"> </a><div class="pprocstepSub"><li>The <b class="cBold">Availability Analysis</b> web report pops up. The first section of this report gives an overview of the analysis parameters set by the user. It shows that the analytical method was used and that only cable failures have been selected for this evaluation.</li></div>
+<a name="wp934953"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-5-2-13.jpg" height="414" width="479" id="wp935037" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp934976"> </a><div class="pprocstepSub"><li>Select <b class="cBold">OC-48</b> in the upper left corner of the report. The displayed section gives an overview of the availability of this traffic matrix. The first table (&quot;<b class="cBold">Summary</b>&quot;) shows the average availability and the expected loss of traffic for the entire traffic matrix. The average availability amounts to 0.988147 and the expected loss of traffic (ELT) amounts to 15,990.15 hours per year. The ELT is the total amount of traffic the network is expected to lose yearly due to the (cable) failures affecting the connections. The Average Expected Loss of Traffic represents the average ELT per connection.</li></div>
+<a name="wp934977"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-5-2-14.jpg" height="158" width="479" id="wp935067" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp934978"> </a><p class="pIndentedRelative">
+The second table (&quot;<b class="cBold">Connections meeting availability requirements</b>&quot;) gives an overview of the connections of which the calculated value for the availability is higher than or equal to their required availability. Per routed connection, the source and destination node are shown, as is the protection type, the minimal and maximal availability and the required availability. Note that because the calculation of the availability is exact, the values for the minimal availability and the maximal availability are identical for each connection.
+</p>
+<a name="wp935073"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-5-2-15.jpg" height="175" width="479" id="wp935088" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp935074"> </a><p class="pIndentedRelative">
+The last table (&quot;<b class="cBold">Connections failing to meet availability requirements</b>&quot;) gives an overview of the connections of which the availability is lower than their required availability. Because the connections are deployed without protection, a lot of connections are failing to meet their availability requirement.
+</p>
+<a name="wp935094"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-5-2-16.jpg" height="212" width="479" id="wp935109" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp935095"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Availability Analysis Report</b> and the <b class="cBold">Evaluate Availability </b>dialog box.</li></div>
+</ol>
+<a name="wp935124"> </a><div style="text-align: left" class="pSmartList2Test"><li>Switch to the <b class="cBold">USA_Dedicated_Protected</b> scenario.</li></div>
+<ol type="a">
+<a name="wp935125"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Scenarios &gt; Switch To Scenario &gt; USA_Dedicated_Protected</b>. In this scenario, all traffic is routed using the 1+1 protection scheme. For each connection, both a working and dedicated protection path is reserved. The signal is simultaneously transmitted along both paths. Upon a failure on the working path, the destination selects the protection path. Note that the failure rates in this scenario are identical to those set in the <b class="cBold">USA_Unprotected </b>scenario. Verify this in the <b class="cBold">Network &gt; Availability Settings</b> dialog box. Also, the required availability has been set to 0.99 for each connection of the traffic matrix OC-48. This can be verified by right-clicking on a connection in the <b class="cBold">Network &gt; Connection Browser</b> and selecting <b class="cBold">Set Required Availability</b>.</li></div>
+</ol>
+<a name="wp935126"> </a><div style="text-align: left" class="pSmartList2Test"><li>Calculate the service availability (<b class="cBold">USA_Dedicated_Protected </b>scenario).</li></div>
+<ol type="a">
+<a name="wp935127"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Info &gt; Evaluate Availability.</b></li></div>
+<a name="wp935128"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Analytical </b>as <b class="cBold">Analysis Method</b>.</li></div>
+<a name="wp935129"> </a><div class="pprocstepSub"><li>Expand <b class="cBold">All Traffic</b> and <b class="cBold">OCH Layer</b> (using the &quot;+&quot; sign) in the <b class="cBold">Traffic To Analyze</b> section. Mark the <b class="cBold">OC-48</b> traffic matrix. This implies that all routed connections of this traffic matrix are selected for the availability calculation.</li></div>
+<a name="wp935130"> </a><div class="pprocstepSub"><li>Expand <b class="cBold">All Failure Elements </b>(using the &quot;<b class="cBold">+</b>&quot; sign) in the <b class="cBold">Failure Elements To Analyze</b> section. All failure elements are displayed per failure type. Mark<b class="cBold"> Cable Failures</b>. </li></div>
+<a name="wp935131"> </a><div class="pprocstepSub"><li>Click <b class="cBold">Evaluate</b> to calculate the service availability for the selected traffic taking into account the selected failure elements.</li></div>
+<a name="wp935132"> </a><div class="pprocstepSub"><li>The <b class="cBold">Availability Analysis</b> web report pops up.</li></div>
+<a name="wp935133"> </a><div class="pprocstepSub"><li>Select <b class="cBold">OC-48</b> in the upper left corner of the report. The <b class="cBold">Summary</b> table shows that the average availability for this traffic matrix amounts to 0.999776 and the expected loss of traffic (ELT) amounts to 302.36 hours per year. Note that this latter value is much lower than for traffic accommodated without protection. So, due to using the 1+1 protection scheme, the achieved service availability is substantially higher. Also, all connections are now meeting their required availability.</li></div>
+<a name="wp935115"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-5-2-17.jpg" height="159" width="488" id="wp935233" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp935246"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Availability Analysis Report </b>and the <b class="cBold">Evaluate Availability</b> dialog box.</li></div>
+</ol>
+<a name="wp935247"> </a><div style="text-align: left" class="pSmartList2Test"><li>Switch to the <b class="cBold">USA_Shared_path</b> scenario.</li></div>
+<ol type="a">
+<a name="wp935248"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Scenarios &gt; Switch To Scenario &gt; USA_Shared_path</b>. In this scenario, the routing of working and protecting path is similar to dedicated protection, but the protection path is only activated upon a failure. This allows sharing protection resources between connections that are not considered to fail simultaneously. Note that the equipment failure rates and the required availabilities for the OC-48 connections are identical to those set in the <b class="cBold">USA_Unprotected</b> scenario.</li></div>
+</ol>
+<a name="wp935284"> </a><div style="text-align: left" class="pSmartList2Test"><li>Calculate the service availability (<b class="cBold">USA_Shared_path</b> scenario).</li></div>
+<ol type="a">
+<a name="wp935250"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Info &gt; Evaluate Availability</b>.</li></div>
+<a name="wp935251"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Simulation</b> as <b class="cBold">Analysis Method</b>. The simulation method simulates different failure scenarios and inspects the impact of the failures on the traffic accommodated in the network. This method results in more precise values for the availability, if shared path protection or restoration is deployed in the network. The analytical method, on the other hand, does not take into account those protection schemes. It treats traffic with shared path protection or restoration as unprotected traffic. This results in a sub-border for the availability.</li></div>
+<a name="wp935252"> </a><div class="pprocstepSub"><li>Expand <b class="cBold">All Traffic</b> and <b class="cBold">OCH Layer</b> (using the &quot;<b class="cBold">+</b>&quot; sign) in the<b class="cBold"> Traffic To Analyze</b> section. Mark the <b class="cBold">OC-48 </b>traffic matrix.</li></div>
+<a name="wp935253"> </a><div class="pprocstepSub"><li>Expand <b class="cBold">All Failure Elements</b> (using the &quot;<b class="cBold">+</b>&quot; sign) in the <b class="cBold">Failure Elements To Analyze </b>section. Mark <b class="cBold">Cable Failures</b>. </li></div>
+<a name="wp935254"> </a><div class="pprocstepSub"><li>For the simulation method, some extra parameters are needed because the availability is calculated by simulating different failure scenarios. Therefore, you must specify to which level of detail you want to simulate the failures.</li></div>
+<a name="wp935255"> </a><div class="pprocstepSub"><li>Select <b class="cBold">3</b> as <b class="cBold">Maximum Number Of Simultaneous Failures</b>. This implies that only failure scenarios with less than 4 simultaneous failures are simulated to calculate the service availability. Thus, scenarios with 4 to 23 failures are neglected. This saves calculation time, but it also implies that the calculated value for the service availability will be less exact. However, due to the fact that the probability of those neglected higher-order failure scenarios is rather low, this estimation is justified.</li></div>
+<a name="wp935256"> </a><div class="pprocstepSub"><li>Select <b class="cBold">2</b> as <b class="cBold">Maximum Number Of Simultaneous Failures To Restore </b>for<b class="cBold"> Shared Path Protection</b>. This implies that in failure scenarios with less than 3 failures, the shared path protection scheme is applied to try to restore the connections. However, in scenarios with 3 simultaneous failures, shared path protection is not used. In those scenarios, the routed connections are treated as unprotected connections. This saves calculation time, but results in a less exact value for the availability.</li></div>
+<a name="wp935257"> </a><div class="pprocstepSub"><li>Select <b class="cBold">0</b> as <b class="cBold">Maximum Number Of Simultaneous Failures To Restore</b> for<b class="cBold"> Link or Path Restoration</b>. This parameter limits the failure scenarios in which the link or path protection scheme is applied (analogously to the previous parameter for shared path protection). As no selected connections are accommodated in the network with link or path restoration, this parameter is not important for this simulation.</li></div>
+<a name="wp935258"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Shortest First </b>as<b class="cBold"> Connection Order For Restoration</b>.</li></div>
+<a name="wp935356"> </a><div class="pprocstepSub"><li>Click <b class="cBold">Evaluate</b> to calculate the service availability for the selected traffic taking into account the selected failure elements. Note that the simulation method is more time-consuming than the analytical method.</li></div>
+<a name="wp935116"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-5-2-18.jpg" height="200" width="478" id="wp935363" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp935370"> </a><div class="pprocstepSub"><li>After the calculation has finished, the <b class="cBold">Availability Analysis</b> web report pops up. Note that now also the simulation options are displayed in the <b class="cBold">Analysis Settings</b> section.</li></div>
+<a name="wp935371"> </a><div class="pprocstepSub"><li>Select <b class="cBold">OC-48</b> in the upper left corner of the report. The <b class="cBold">Summary </b>table shows that the average availability for this traffic matrix amounts to 0.99971 and the expected loss of traffic (ELT) amounts to 395.21 hours per year. Note that both values are now approximate values, because the simulation method was chosen. The average availability for shared path protection is lower than for 1+1 protected routing. Due to sharing protection resources, particular higher-order failure scenarios affect more connections in the shared mode as opposed to connections in the dedicated protection mode.</li></div>
+<a name="wp935243"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-5-2-19.jpg" height="174" width="473" id="wp935391" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp935412"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Availability Analysis Report</b> and the <b class="cBold">Evaluate Availability</b> dialog box.</li></div>
+</ol>
+<a name="wp935414"> </a><div style="text-align: left" class="pSmartList2Test"><li>Switch to the <b class="cBold">USA_Path_Restoration</b> scenario.</li></div>
+<ol type="a">
+<a name="wp935415"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Scenarios &gt; Switch To Scenario &gt; USA_Path_Restoration</b>. In this scenario, traffic is routed along a working path and the protection resources are again shared between disjoint working paths. The main difference with shared path protection is that the recovery path is not fixed, but depends on the failing network elements. The restoration algorithm reserves sufficient protection resources to meet the design criterion, here being able to restore all traffic in case a single link fails. Note that the equipment failure rates and the required availabilities for the OC-48 connections are identical to those set in the <b class="cBold">USA_Unprotected </b>scenario.</li></div>
+</ol>
+<a name="wp935416"> </a><div style="text-align: left" class="pSmartList2Test"><li>Calculate the service availability (<b class="cBold">USA_Path_Restoration</b> scenario).</li></div>
+<ol type="a">
+<a name="wp935417"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Info &gt; Evaluate Availability</b>.</li></div>
+<a name="wp935418"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Simulation</b> as <b class="cBold">Analysis Method</b>.</li></div>
+<a name="wp935419"> </a><div class="pprocstepSub"><li>Expand <b class="cBold">All Traffic</b> and <b class="cBold">OCH Layer</b> (using the &quot;<b class="cBold">+</b>&quot; sign) in the <b class="cBold">Traffic To Analyze</b> section. Mark the <b class="cBold">OC-48</b> traffic matrix.</li></div>
+<a name="wp935420"> </a><div class="pprocstepSub"><li>Expand <b class="cBold">All Failure Elements</b> (using the &quot;<b class="cBold">+</b>&quot; sign) in the <b class="cBold">Failure Elements To Analyze</b> section. Mark <b class="cBold">Cable Failures</b>. </li></div>
+<a name="wp935421"> </a><div class="pprocstepSub"><li>Select <b class="cBold">3</b> as <b class="cBold">Maximum Number Of Simultaneous Failures</b>.</li></div>
+<a name="wp935422"> </a><div class="pprocstepSub"><li>Select <b class="cBold">0</b> as <b class="cBold">Maximum Number Of Simultaneous Failures To Restore for Shared Path Protection</b>. As no selected connections are accommodated in the network with shared path protection, this parameter is not important for this simulation.</li></div>
+<a name="wp935423"> </a><div class="pprocstepSub"><li>Select <b class="cBold">2</b> as <b class="cBold">Maximum Number Of Simultaneous Failures To Restore for Link or Path Restoration</b>. This implies that in failure scenarios with less than 3 failures, the link or path restoration scheme is considered to restore the connections. However, in scenarios with 3 simultaneous failures, link or path restoration is not used. In those scenarios, the routed connections are treated as unprotected connections.</li></div>
+<a name="wp935424"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Shortest First as Connection Order For Restoration</b>.</li></div>
+<a name="wp935425"> </a><div class="pprocstepSub"><li>Click <b class="cBold">Evaluate</b> to calculate the service availability for the selected traffic taking into account the selected failure elements.</li></div>
+<a name="wp935516"> </a><p class="pIndentedRelative">
+After the calculation has finished, the <b class="cBold">Availability Analysis</b> web report pops up. 
+</p>
+<a name="wp935427"> </a><div class="pprocstepSub"><li>Select <b class="cBold">OC-48 </b>(in the upper left corner of the report). The <b class="cBold">Summary</b> table shows that average availability for this traffic matrix amounts to 0.99961 and the expected loss of traffic (ELT) amounts to 514.34 hours per year. This (approximate) value for the ELT is higher than for shared path protection.</li></div>
+<a name="wp935407"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-5-2-20.jpg" height="181" width="473" id="wp935529" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp935541"> </a><p class="pIndentedRelative">
+Comparing the results for the different protection schemes, it appears that the 1+1 protection scheme leads to the lowest expected loss of traffic and to highest service availability for the selected traffic matrix OC-48. This is not always the case. Which protection scheme leads to the highest service availability for a certain traffic matrix depends on the network topology, the traffic matrix itself, and the selected failure elements and their failure rates.
+</p>
+<a name="wp935542"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Availability Analysis Report</b> and the <b class="cBold">Evaluate Availability</b> dialog box.</li></div>
+</ol>
+<a name="wp935543"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the project</li></div>
+<ol type="a">
+<a name="wp935544"> </a><div class="pprocstepSub"><li>Select <b class="cBold">File &gt; Close</b>.</li></div>
+<a name="wp935545"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Don&#39;t Save</b> in the <b class="cBold">Close Confirm</b> dialog box.</li></div>
+</ol>
+<a name="wp932147"> </a><p class="pProcEnd">
+End of Procedure 4-2
+</p>
+
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/wdmg_tut_4.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

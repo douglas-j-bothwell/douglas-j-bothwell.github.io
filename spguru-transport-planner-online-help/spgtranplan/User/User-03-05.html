@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:33:27" />
+    <title>SONET and WDM Representation in SP&#160;Guru&#160;Transport&#160;Planner</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-03-01.html"> Concepts and Models</a> > <a href="User-03-05.html">SONET and WDM Representation in SP&#160;Guru&#160;Transport&#160;Planner</a> > Layers in SP&#160;Guru&#160;Transport&#160;Planner</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp44601"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+SONET and WDM Representation in SP&#160;Guru&#160;Transport&#160;Planner
+</h2>
+
+ 
+
+
+<a name="wp44607"> </a><p class="pBody">
+You can think of a transport network that uses multiple technologies as a number of independent <em class="cEmphasis">layer networks</em> with a <em class="cEmphasis">client/server relationship</em> between adjacent layers: the server layer provides transport facilities, which are used to transport client-layer traffic. This means that when a connection is set up in the server (lower) layer, a logical link is created in the client (upper) layer. This logical link provides trunk capacity for client-layer traffic. 
+</p>
+<a name="wp115729"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Layers in SP&#160;Guru&#160;Transport&#160;Planner
+</h2>
+
+ 
+
+<a name="wp44649"> </a><p class="pBody">
+SP&#160;Guru&#160;Transport&#160;Planner has five network layers. From bottom to top, these layers are:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp115738"> </a><div class="pSmartList1"><li>The Optical Transmission (OTS) layer represents the physical topology, which consists of buildings interconnected by cables.</li></div>
+<a name="wp115745"> </a><div class="pSmartList1"><li>The Optical Multiplex Section (OMS) layer represents how fiber pairs are used on different cables of the OTS layer, and which WDM line system type is used on each fiber.</li></div>
+<a name="wp115752"> </a><div class="pSmartList1"><li>The Optical Channel (OCH) layer represents optical line systems and cross-connects.</li></div>
+<a name="wp46799"> </a><div class="pSmartList1"><li>The Digital Client (DCL) layer represents the STS/STM granularity of the SONET/SDH layer. This layer contains logical links created by wavelengths (which are routed in the OCH layer) between nodes that have OCH counterparts, and physical links between nodes that do not have OCH counterparts.</li></div>
+<a name="wp125576"> </a><div class="pSmartList1"><li>The Lower Order Path (LOP) layer represents the VT/VC granularity of the SONET/SDH layer.</li></div>
+</ul></div>
+<a name="wp44647"> </a><p class="pBody">
+When you equip fiber pairs in the OMS layer, this creates available capacity in the form of wavelengths or optical channels (represented by links in the OCH layer). The available capacity of the OCH links depends on the WDM line system types deployed on the fibers. 
+</p>
+<a name="wp44689"> </a><p class="pBody">
+In contrast with the OTS and OMS layer, the OCH layer is used for routing traffic (such a layer is also referred to as a <em class="cEmphasis">path layer</em>). OCH traffic is expressed as wavelength demands between node pairs. To fulfill these demands, SP&#160;Guru&#160;Transport&#160;Planner sets up OCH connections between nodes. These connections require spare wavelengths on the OCH links and switching capacity (provided by OXCs) in the nodes.
+</p>
+<a name="wp44608"> </a><p class="pBody">
+When SP&#160;Guru&#160;Transport&#160;Planner sets up an OCH connection between two nodes, this creates a logical link in the DCL layer. The capacity that becomes available on the DCL link depends on the bit rate of this optical channel. For example, an OC&#8211;48 optical channel results in a DCL link with a capacity of 48 STS&#8211;1 time slots. The network can use this DCL capacity to transport DCL connections.
+</p>
+<a name="wp46663"> </a><p class="pBody">
+However, not all set-up OCH connections are trailed to DCL links. Some OCH connections can be labeled as <em class="cEmphasis">native connections</em>. These connections are pure wavelength demands and the wavelengths are not used to convey SONET traffic. Thus, when this type of OCH connection is set up, no logical DCL link is created.
+</p>
+<a name="wp125608"> </a><p class="pBody">
+Just as non-native OCH connections result in DCL links, non-native DCL connections result in LOP links. Currently, SP&#160;Guru&#160;Transport&#160;Planner does not model the LOP layer as a full network layer: you cannot route traffic and define equipment for this layer. However, you can define an LOP traffic matrix and then run LOP grooming operations to translate this into a DCL traffic matrix. Then you can use the resulting DCL traffic matrix as you would use any other DCL traffic matrix.
+</p>
+<a name="wp67233"> </a><p class="pFigCaption">
+Figure&#160;2-7   Layers in SP&#160;Guru&#160;Transport&#160;Planner
+</p>
+<a name="wp67236"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-05-07.jpg" height="272" width="530" id="wp67235" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_13_co.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

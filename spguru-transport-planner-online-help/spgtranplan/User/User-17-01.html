@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:37:20" />
+    <title>Batch Console</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2">Batch Console</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp270261"> </a><h2 class="pTitle">
+Batch Console
+</h2>
+<hr />
+
+ 
+
+
+<a name="wp270265"> </a><p class="pBody">
+You can use SP&#160;Guru&#160;Transport&#160;Planner&#39;s batch console to open scenarios and run network design operations automatically. The batch console supports actions like routing, dimensioning, grooming, ring design, calculation of service availability, and evaluation of traffic variations.
+</p>
+<a name="wp224103"> </a><p class="pBody">
+To record commands in a batch file, you enter a &quot;recording batch file&quot; mode and specify operations using the SP&#160;Guru&#160;Transport&#160;Planner user interface. SP&#160;Guru&#160;Transport&#160;Planner writes commands to the batch file that describe the actions and options you specified. 
+</p>
+<a name="wp224110"> </a><p class="pBody">
+After you create a batch file, you can run it at your convenience. For example, you might want to run a complex batch file overnight so you can view the results the next morning. 
+</p>
+<a name="wp224111"> </a><p class="pBody">
+Batch files have the following characteristics:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp224112"> </a><div class="pSmartList1"><li>A batch file specifies one or more command sequences. Each sequence has three sets of commands:</li></div>
+<div class="pSmartList2"><ol type="a" class="pSmartList2">
+<a name="wp224113"> </a><div class="pSmartList2"><li>Open a source scenario</li></div>
+<a name="wp224114"> </a><div class="pSmartList2"><li>Run one or more design operations (such as routing or dimensioning)</li></div>
+<a name="wp224115"> </a><div class="pSmartList2"><li>Save the results to an output scenario</li></div>
+</ol></div>
+<a name="wp224119"> </a><div class="pSmartList1"><li>When you run a batch file, SP&#160;Guru&#160;Transport&#160;Planner runs the commands in the order in which they are listed in the file. This means that the network state after operation x is the input to operation x+1. In this situation, the x and x+1 operations take place on the same network project and scenario, following a single open action.</li></div>
+</ul></div>
+<a name="wp224123"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('wdm_user', 'User-17-01.html#wp224127');" onMouseOver="WWHShowPopup('wdm_user', 'User-17-01.html#wp224127', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;16-1</u></a> shows an example of a batch file with two command sequences:
+</p>
+<div class="pSmartList1"><ol type="1" class="pSmartList1">
+<a name="wp253895"> </a><div class="pSmartList1"><li>Open project_1, groom the DCL_0 traffic matrix in baseline_scenario1, dimension the resulting OCH traffic matrix (OCH_DCL_0_Grooming), and save the results to baseline_scenario_2 (lines 1 to 4)</li></div>
+<a name="wp224125"> </a><div class="pSmartList1"><li>Open project_2, route the OCH_0 traffic matrix in scenario BLSR1, and save the results to scenario BLSR2 (lines 5 to 7)</li></div>
+<a name="wp224127"> </a><p class="pFigCaption">
+Figure&#160;16-1   SP&#160;Guru&#160;Transport&#160;Planner Batch File: Example
+</p>
+<a name="wp224133"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-17-01-1.jpg" height="104" width="530" id="wp224129" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ol></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_50_bc.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

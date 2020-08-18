@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:33:27" />
+    <title>Optical Nodes: WP-OXC</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-03-01.html"> Concepts and Models</a> > <a href="User-03-15.html">Node Modeling Capabilities in SP&#160;Guru&#160;Transport&#160;Planner</a> > Optical Nodes: WP-OXC</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp118451"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Optical Nodes: WP-OXC
+</h2>
+
+ 
+
+<a name="wp118452"> </a><p class="pBody">
+In addition to the non-blocking OXC, SP&#160;Guru&#160;Transport&#160;Planner supports another OXC type for switching traffic: the wavelength plane OXC (WP-OXC). A WP-OXC can switch within one wavelength plane only. It is used exclusively in transparent networks, which use the same type of WDM line system on all links. The number of wavelengths on the WDM line system defines the number of wavelength planes. 
+</p>
+<a name="wp118453"> </a><p class="pBody">
+The main difference between the two OXC types is the way they deal with add/drop traffic. The non-blocking OXC, with an NxN switch matrix, is more flexible when combined with tunable transponders at the tributary side. In this case, the transponders can be tuned to the appropriate wavelength and switched towards any wavelength at the trunk side. In case of a WP-OXC, the tributary ports are bound to a specific wavelength plane (and thus can use fixed-wavelength transponders), which results in additional blocking. 
+</p>
+<a name="wp118455"> </a><p class="pBody">
+For transparent transit traffic, the non-blocking OXC offers no additional flexibility over the WP-OXC. Because of the wavelength continuity constraint, the wavelength cannot be changed within the node without breaking out of the wavelength plane. Thus both OXC types must switch between the same wavelengths.
+</p>
+<a name="wp118456"> </a><p class="pBody">
+Because the cross-connect functionality is assumed to be the same for each wavelength plane, the discrete WP-OXCs are specified in terms of fiber ports. Therefore if an OXC has eight fiber ports, it has eight wavelength ports per wavelength plane. 
+</p>
+<a name="wp118458"> </a><p class="pBody">
+The concept of &quot;fiber ports&quot; can also be physically realized by integrating the WDM terminal multiplexers in the OXC. In this configuration, the fibers are connected directly to the OXC instead of demultiplexing the wavelengths. When the terminal multiplexers are integrated, the OXC uses fiber ports and the trunk fibers can be directly interconnected to the OXC. In this case, external terminal multiplexers are required at the tributary side to multiplex the add/drop wavelengths towards the tributary fibers.
+</p>
+<a name="wp118460"> </a><p class="pBody">
+When the OXC terminal multiplexers are not integrated, the OXC uses wavelength ports and relies on external terminal multiplexers to (de)multiplex the wavelengths from the trunk fibers to the OXC ports. 
+</p>
+<a name="wp118461"> </a><p class="pFigCaption">
+Figure&#160;2-20   Integrated and Non-Integrated WP-OXCs 
+</p>
+<a name="wp118473"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-20-20.jpg" height="164" width="530" id="wp118463" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp118477"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+WP-OXC Architectures
+</h3>
+<a name="wp118478"> </a><p class="pBody">
+When you are working with a WP-OXC that has fiber ports and integrated terminal multiplexers, you can use an OXC fiber port in one of three ways:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp118480"> </a><div class="pSmartList1"><li>Trunk&#8212;The trunk fibers are directly interconnected with the OXC fiber ports.</li></div>
+<a name="wp118481"> </a><div class="pSmartList1"><li>Tap&#8212;This is similar to a trunk fiber, but an additional tap is placed on the fiber (before the OXC), splitting the fiber in two directions: one towards the OXC and the other towards a terminal multiplexer. The multiplexer enables wavelengths to add/drop from this fiber without using the OXC.</li></div>
+<a name="wp118483"> </a><div class="pSmartList1"><li>Trib&#8212;Each tributary fiber port allows add/drop of one wavelength per wavelength plane. Each port uses a terminal multiplexer to provide access to individual wavelengths.</li></div>
+</ul></div>
+<a name="wp118485"> </a><p class="pBody">
+The use of trunk, trib, and tap fiber ports on a WP-OXC allows for different node architectures, each with different degrees of flexibility (and thus blocking). These configurations are valid only in a WP-OXC with fiber ports and integrated terminal multiplexers.
+</p>
+<a name="wp118486"> </a><h4 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading4">
+Architecture 1: All Add/Drop Occurs through WP-OXC Tributary Fiber Ports 
+</h4>
+<a name="wp118488"> </a><p class="pBody">
+In this case, the OXC handles both transit and add/drop traffic. The flexibility of this solution is determined by the number of tributary fiber ports (and thus the number of tributary wavelengths per wavelength plane). A possible under-utilization of tributary fiber ports (and thus OXC) can occur if one wavelength is added/dropped substantially more than others. Hence, this aspect should be optimized by the wavelength assignment algorithm.
+</p>
+<a name="wp118490"> </a><p class="pFigCaption">
+Figure&#160;2-21   WP-OXC with All Add/Drop Occurring via Tributary Fiber Ports
+</p>
+<a name="wp118494"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-20-21.jpg" height="187" width="530" id="wp118492" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp118496"> </a><h4 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading4">
+Architecture 2: Use Taps on All Trunk Fibers
+</h4>
+<a name="wp118497"> </a><p class="pBody">
+A second node architecture uses taps on all trunk fibers, so that all add/drop traffic (including regenerated and wavelength-converted pass-through traffic) can occur through the tap and no separate tributary fiber ports are required. In this case, the OXC is used for transparent pass-through of traffic only. This architecture typically requires fewer OXC fiber ports than the previous architecture (where the OXC tributary fiber ports handle the add/drop). Each trunk fiber that is tapped requires a WDM multiplexer; this means that the OXC requires more multiplexers than the previous architecture. Since the add/drop is hard-wired in this case (using taps), the DXC is used to offer flexibility to the add/drop traffic. 
+</p>
+<a name="wp118498"> </a><p class="pFigCaption">
+Figure&#160;2-22   WP-OXC with All Add/Drop Occurring via Taps on Trunk Fibers
+</p>
+<a name="wp118502"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-20-22.jpg" height="184" width="530" id="wp118500" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp118504"> </a><h4 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading4">
+Architecture 3: Mixed Design (Combine Trunk/Tap/Tributary Fiber Ports)
+</h4>
+<a name="wp118505"> </a><p class="pBody">
+A mixed design, which combines trunk, tap and tributary fiber ports, offers a trade-off cost and flexibility. Some trunk fiber ports (those with a lot of add/drop traffic) can use taps, while on other trunk fibers, add/drop can occur via OXC tributary fiber ports.
+</p>
+<a name="wp118507"> </a><p class="pFigCaption">
+Figure&#160;2-23   WP-OXC with<span style="font-weight: normal"> </span>Mixed Add/Drop via Tributary Fiber Ports and via Taps on Trunk Fibers
+</p>
+<a name="wp118511"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-20-23.jpg" height="203" width="530" id="wp118509" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_13_co.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

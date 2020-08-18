@@ -1,0 +1,2579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Manage Licenses from the License Manager GUI</title>
+    <link rel="StyleSheet" href="css/ag_037_license_gui.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ag_037_license_gui.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">Solution Overview &gt; <a class="WebWorks_Breadcrumb_Link" href="ag_splash.html#475385">License and Installation Support</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ag_037_licensing_overview.09.1.html#475385">Licensing</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ag_037_license_gui.10.01.html#475385">License Manager Graphical User Interface</a> &gt; Manage Licenses from the License Manager GUI</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h2Top"><a name="475385">Manage Licenses from the License Manager GUI</a></div>
+      <div class="bodyIntro"><a name="475386">Once you have added your licenses to the license server, there are certain operations you may need to perform at a later time. For example</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#471793', '');" title="Manage Licenses from the License Manager GUI" name="475403">Deregistering a License</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#472348', '');" title="Manage Licenses from the License Manager GUI" name="475410">Clearing a License File</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#472352', '');" title="Manage Licenses from the License Manager GUI" name="475414">Changing the Maintenance Expiration for a License</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#472519', '');" title="Manage Licenses from the License Manager GUI" name="475418">Changing the Expiration Date for a License</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h3"><a name="471793">Deregistering a License</a></div>
+      <div class="bodyIntro"><a name="471794">Typically, you will deregister licenses if the computer is about to be reformatted or decommissioned, or if you want to move the license permit to another license file. The Deregister License button does not appear if you have selected a license permit that is in use. You can also right-click on a license and deregister it from the pop-up menu, as shown in the following figure.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;3-21   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="471799">Deregister License from Pop-Up Menu</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="471803"><img class="Default" src="images/ag_037_license_gui.10.10.01.jpg" width="509" height="254" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="471804">&nbsp;</a></div>
+      <div class="h4RunIn"><a name="471817">Deregister License from the License Manager GUI</a></div>
+      <div class="bodyIntro"><a name="471818">To begin the deregistration process, start with </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#471823', '');" title="Manage Licenses from the License Manager GUI">Procedure&nbsp;3-15</a></span> and continue to the procedure that applies to the deregistration method you will be using. </div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd471823&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd471823", false);</script>Procedure&nbsp;3-15   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="471823">Deregister Licenses from a License Server</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd471823", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471826">Open the License Manager GUI as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.02.html#473610', '');" title="Starting the License Manager GUI">Starting the License Manager GUI</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471828">Select the license server from which you want to deregister licenses in the treeview. (See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.04.html#379116', '');" title="License Manager Operations within GUI">License Manager Operations within GUI</a></span> for more information on the treeview).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471832">In the License Manager, expand the license file by clicking on the "+" sign next to the "License file" folder icon. Make sure the license you want to deregister is available (green).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471833">Select the license you want to deregister by clicking on it (use control-click or click-drag to select multiple licenses). Then click on the Deregister License button on the right side of the License Manager (or right-click on the license in the treeview and select Deregister License) to start the transaction.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471845">Select one of the methods for deregistering licenses (or click Cancel to exit this workflow):</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="471849">Express—Use </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#471870', '');" title="Manage Licenses from the License Manager GUI">Procedure&nbsp;3-16</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="471853">Browser—Use </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#471913', '');" title="Manage Licenses from the License Manager GUI">Procedure&nbsp;3-17</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="471857">Email—Use </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#471986', '');" title="Manage Licenses from the License Manager GUI">Procedure&nbsp;3-18</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="471861">Offline—Use </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.09.html#471726', '');" title="Add Licenses">Procedure&nbsp;3-14</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471862">Go to the procedure indicated for a given method, if applicable.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 3-15</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="471863">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="471864">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="471868">To deregister licenses using the express method, use the following procedure.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd471870&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd471870", false);</script>Procedure&nbsp;3-16   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="471870">Deregister Licenses Using Express Method</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd471870", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471874">Complete </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#471823', '');" title="Manage Licenses from the License Manager GUI">Procedure&nbsp;3-15</a></span>, selecting the Express method for deregistering licenses.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471875">Enter your OPNET Username, Password, and Group ID in the appropriate fields. Click OK.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;3-22   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="471876">Authenticate Yourself to OPNET</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="471880"><img class="Default" src="images/ag_037_license_gui.10.10.02.jpg" width="418" height="230" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="471881">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471882">If your computer uses a proxy server, click on the Specify Proxy button and fill in the information. Click OK.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;3-23   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="471883">Specify Proxy</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="471887"><img class="Default" src="images/ag_037_license_gui.10.10.03.jpg" width="480" height="236" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="471888">&nbsp;</a></div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="471890">A progress bar indicates that the deregistration process is executing.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471891">When the Deregister License operation is complete, the following dialog box appears. Click Close to exit license operations and close your browser.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;3-24   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="471892">License Deregistration Success</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="471896"><img class="Default" src="images/ag_037_license_gui.10.10.04.jpg" width="209" height="107" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="471897">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471900">Exit the License Manager, as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.03.html#474758', '');" title="Exiting the License Manager GUI">Exiting the License Manager GUI</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note—</span><a name="471902">If the Express Method fails due to firewall restrictions or other problems, use the Browser method, described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.09.html#471665', '');" title="Add Licenses">Procedure&nbsp;3-13</a></span>.</div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 3-16</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="471906">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="471907">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="471911">To deregister licenses using the browser method, use the following procedure.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd471913&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd471913", false);</script>Procedure&nbsp;3-17   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="471913">Deregister Licenses Using Browser Method</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd471913", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471917">Complete </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.09.html#471595', '');" title="Add Licenses">Procedure&nbsp;3-11</a></span>, selecting the Browser method for deregistering licenses.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="471918">The License Manager launches your Web browser and points it to the licensing area of the OPNET Technical Support website.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="471919">License Manager launches a dialog box containing the Transaction Code and Hostname you will need in later steps.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;3-25   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="471920">Transaction Code and Hostname Dialog</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="471928"><img class="Default" src="images/ag_037_license_gui.10.10.05.jpg" width="469" height="66" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471929">Log in with your OPNET Username and Password when the following dialog box appears. Click OK.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;3-26   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="471930">Login to OPNET Support Center</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="471934"><img class="Default" src="images/ag_037_license_gui.10.10.06.jpg" width="434" height="256" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="procNote">
+        <span class="bold">Note—</span><a name="471935">If your browser fails to launch, start it manually, navigate to http://www.opnet.com/support/, and click on "License Registration."</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471936">Click on "Perform license operations."</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471937">Select "Deregister License_permits)," and click Next.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;3-27   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="471938">Deregister License—Browser Method</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="471944"><img class="Default" src="images/ag_037_license_gui.10.10.07.jpg" width="366" height="130" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="471945">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471949">Enter the Transaction Code and Hostname from License Manager (see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.09.html#471670', '');" title="Add Licenses">step&nbsp;1</a></span>). You can either paste the text or type it manually. Make sure there are no extra spaces before or after the code or hostname. Click Next. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;3-28   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="471950">Enter Transaction Code/Hostname</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="471959"><img class="Default" src="images/ag_037_license_gui.10.10.08.jpg" width="428" height="71" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="471960">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471961">When the ”Select Starting License” page appears, select the lowest license ID that you want to deregister from your computer. If you want to deregister only one license, select that license.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	7	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471962">When the “Select Ending License” page appears, select the highest license ID that you want to deregister from your computer. If you want to deregister only one license, select that license. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="482789">The confirmation page appears.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	8	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471963">When the “License Registration Confirmation” page appears, check that the information is correct, then click Get Approval Code. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="471964">The Approval Code appears.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	9	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471965">In the License Manager, click Next and enter the Approval Code. This code can be very long, so make sure you copy the entire Approval Code. After you enter the Approval Code, click Next. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	10	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471966">In the License Manager, a Confirmation Code is displayed. Copy this Confirmation Code and enter it where required in the browser window, as shown. Click Next. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="471967">The licensing operation completes.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;3-29   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="471968">Enter Confirmation Code</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="471972"><img class="Default" src="images/ag_037_license_gui.10.10.09.jpg" width="431" height="189" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="471973">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	11	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471974">In the License Manager, click Done.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	12	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471977">Exit the License Manager, as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.03.html#474758', '');" title="Exiting the License Manager GUI">Exiting the License Manager GUI</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 3-17</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="471979">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="471980">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="471984">To deregister licenses using the email or offline method, use the following procedure.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd471986&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd471986", false);</script>Procedure&nbsp;3-18   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="471986">Deregister Licenses Using the Email or Offline Method</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd471986", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471987">Contact OPNET Technical Support to open a license registration case.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471991">Complete </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.09.html#471595', '');" title="Add Licenses">Procedure&nbsp;3-11</a></span>, selecting either the Email or Offline method for deregistering licenses.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="471992">The License Manager launches a dialog box containing the Transaction Code with license server hostname you will need in later steps.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471993">Provide this information as follows: </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="471994">Email—Copy and paste the Transaction code into an email and send to your point of contact for your technical support case. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="471995">Offline—Communicate the Transaction Code via phone or fax to your point of contact for your technical support case.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471996">Click Next.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="471997">A dialog box opens which prompts you for the Approval Code.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471998">You will receive an Approval Code from OPNET Technical Support via email, phone, or fax. Enter this into the dialog box and click Next.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="471999">In the License Manager, a Confirmation Code is displayed. Copy this Confirmation Code to an email to send to your technical support point of contact or provide the code via phone or fax.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="472000">Your license deregistration is complete. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 3-18</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="472001">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="472002">&nbsp;</a></div>
+      <div class="h4RunIn"><a name="472341">Deregistering versus Clearing a License File</a></div>
+      <div class="bodyIntro"><a name="472342">Should you use "Deregister License" or "Clear License File"? These two options sound very similar but each performs the same operation on a different scale.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="472343">Option 1—Deregister all licenses</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="472344">If you want to deregister all of your licenses in a single operation, use Clear License File. This deregisters all licenses in the license file at once, regardless of their contract number range.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="472345">Option 2—Deregister one or more selected licenses</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletContLast"><a name="472346">If you want to deregister a selected license use the Deregister License operation and select the license(s) to remove from your license file. </a></div>
+      <div class="h3"><a name="472348">Clearing a License File</a></div>
+      <div class="body"><a name="472349">This operation deregisters </a><span class="italic">all</span> licenses from the license file in a single operation. The Clear License File button appears in the License Manager GUI only if no licenses in the file are in use. The choice also appears on the pop-up menu when you right-click on a license file, if no licenses in the file are in use. You should <span class="italic">always</span> contact OPNET Technical Support by e-mail, phone, or fax before performing this operation.</div>
+      <div class="h3"><a name="472352">Changing the Maintenance Expiration for a License</a></div>
+      <div class="bodyIntro"><a name="472353">The maintenance expiration controls which releases of the application you can run. Current maintenance allows you to use the latest release and entitles you to technical support and other services. The procedures in this section apply to scenarios in which you have the License Manager GUI available for license management. To begin the change maintenance expiration process, start with </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#472358', '');" title="Manage Licenses from the License Manager GUI">Procedure&nbsp;3-19</a></span> and continue to the procedure that applies to the deregistration method you will be using. </div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd472358&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd472358", false);</script>Procedure&nbsp;3-19   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="472358">Change Maintenance Expiration for a License</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd472358", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472361">Open the License Manager GUI as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.02.html#473610', '');" title="Starting the License Manager GUI">Starting the License Manager GUI</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472363">Select the license server for which you want to modify licenses in the treeview. (See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.04.html#379116', '');" title="License Manager Operations within GUI">License Manager Operations within GUI</a></span> for more information on the treeview).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472367">In the License Manager, expand the license file by clicking on the "+" sign next to the "License file" folder icon. Make sure the license you want to modify is available (green).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472368">Select the license you want to modify by clicking on it (use control-click or click and drag to select multiple licenses). Then click on the Change Maintenance Expiration button on the right side of the License Manager (or right-click on the license in the treeview and select Change Maintenance Expiration) to start the transaction.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472369">Select one of the methods for modifying licenses (or click Cancel to exit this workflow):</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="472373">Express—Use </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#471870', '');" title="Manage Licenses from the License Manager GUI">Procedure&nbsp;3-16</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="472377">Browser—Use </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#471913', '');" title="Manage Licenses from the License Manager GUI">Procedure&nbsp;3-17</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="472381">Email—Use </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#471986', '');" title="Manage Licenses from the License Manager GUI">Procedure&nbsp;3-18</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="472385">Offline—Use </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.09.html#471726', '');" title="Add Licenses">Procedure&nbsp;3-14</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472386">Go to the procedure indicated for a given method, if applicable.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 3-19</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="472387">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="472388">&nbsp;</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd472390&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd472390", false);</script>Procedure&nbsp;3-20   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="472390">Change Maintenance Expiration Using the Express Method</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd472390", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472394">Complete </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#471823', '');" title="Manage Licenses from the License Manager GUI">Procedure&nbsp;3-15</a></span>, selecting the Express method for modifying licenses.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472395">Enter your OPNET Username, Password, and Group ID in the appropriate fields. Click OK.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;3-30   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="472396">Authenticate Yourself to OPNET</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="472400"><img class="Default" src="images/ag_037_license_gui.10.10.10.jpg" width="416" height="225" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="472401">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472402">If your computer uses a proxy server, click on the Specify Proxy button and fill in the information. Click OK.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;3-31   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="472403">Specify Proxy</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="472407"><img class="Default" src="images/ag_037_license_gui.10.10.11.jpg" width="480" height="235" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="472408">&nbsp;</a></div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="472409">A progress bar indicates that the deregistration process is executing.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472410">When the following dialog box appears, click OK to complete the operation and close the window.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;3-32   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="472411">Successful License Maintenance Change Operation</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="472415"><img class="Default" src="images/ag_037_license_gui.10.10.12.jpg" width="213" height="113" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="472416">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472419">Exit the License Manager, as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.03.html#474758', '');" title="Exiting the License Manager GUI">Exiting the License Manager GUI</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note—</span><a name="472421">If the Express method fails, try another method, such as the Browser method, described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#472390', '');" title="Manage Licenses from the License Manager GUI">Procedure&nbsp;3-20</a></span>.</div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 3-20</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="472425">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="472426">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="472427">To change maintenance expiration for one or more licenses using the browser method, use the following procedure.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd472432&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd472432", false);</script>Procedure&nbsp;3-21   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="472432">Change Maintenance Expiration Using the Browser Method</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd472432", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472436">Complete </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.09.html#471595', '');" title="Add Licenses">Procedure&nbsp;3-11</a></span>, selecting the Browser method for deregistering licenses.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="472437">The License Manager launches your Web browser and points it to the licensing area of the OPNET Technical Support website. If your browser fails to launch, start it manually, navigate to </a><span class="HTBlue"><a href="http://www.opnet.com/support" target="external_window">http://www.opnet.com/support/</a></span>, and click on "License Registration."</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="472439">License Manager launches a dialog box containing the Transaction Code and Hostname you will need in later steps.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472440">Enter your OPNET username and password, and then click OK.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472441">Click on "Perform license operations." </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472442">Select "Update Maintenance Expiration", and click Next.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="472443">A dialog box appears in the License Manager GUI with your hostname and a transaction code. You need the transaction code for the next step.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472444">Enter the Transaction Code and Hostname into the browser, and then click Next.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note—</span><a name="472445">You can either paste the text from the License Manager GUI or type it manually into the browser. Make sure there are no extra spaces before or after the code or hostname.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472446">When the “Select Starting License” page appears, select the lowest license ID that you want to update. If you want to change the maintenance expiration date of only one license, select that license.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	7	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472447">When the Select Ending License page appears, select the highest license ID that you want to update. If you want to change the maintenance expiration date of only one license, select that license. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="472448">The confirmation page appears.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	8	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472449">When the License Registration Confirmation page appears, check that the information is correct, and then click Get Approval Code. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="472450">The Approval Code appears.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	9	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472451">In the License Manager, click on the Next button, and enter the Approval Code. After you enter the Approval Code, click on the Next button. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note—</span><a name="472452">This code can be long, so make sure you copy the entire Approval Code. </a></div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="472453">In the License Manager, the Confirmation Code appears. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	10	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472454">Enter the Confirmation Code in the browser, and then click Next. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note—</span><a name="472455">The Confirmation Code was saved in the Session Log, which is available from the Help menu in the OPNET software, and can be retrieved later if necessary.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	11	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472456">In the License Manager, click Done. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="472457">The license is updated to its current authorized value.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 3-21</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="472458">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="479097">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="472459">To change maintenance expiration using the email or offline method, use the following procedure.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd472464&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd472464", false);</script>Procedure&nbsp;3-22   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="472464">Change Maintenance Expiration Using the Email or Offline Method</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd472464", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472465">Contact OPNET Technical Support to open a license registration case.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472472">Complete </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#472390', '');" title="Manage Licenses from the License Manager GUI">Procedure&nbsp;3-20</a></span> or <span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#472432', '');" title="Manage Licenses from the License Manager GUI">Procedure&nbsp;3-21</a></span>, selecting either the Email or Offline method for changing maintenance expiration.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="472473">The License Manager launches a dialog box containing the Transaction Code with license server hostname you will need in later steps.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472474">Provide this information as follows: </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="472475">Email—Copy and paste the Transaction code into an email and send to your point of contact for your technical support case. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="472476">Offline—Communicate the Transaction Code via phone or fax to your point of contact for your technical support case.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472477">Click Next.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="472478">A dialog box opens which prompts you for the Approval Code.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472479">You will receive an Approval Code from OPNET Technical Support via email, phone, or fax. Enter this into the dialog box and click Next.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472480">In the License Manager, a Confirmation Code is displayed. Copy this Confirmation Code to an email to send to your technical support point of contact or provide the code via phone or fax.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="472481">Your change is complete. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 3-22</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="472482">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="479098">&nbsp;</a></div>
+      <div class="h3"><a name="472519">Changing the Expiration Date for a License</a></div>
+      <div class="bodyIntro"><a name="472520">The license expiration controls how long you can use the license. After a license expires, it no longer runs OPNET applications.The procedures in this section apply to scenarios in which you have the License Manager GUI available for license management. To begin the change expiration date process for licenses, start with </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#472525', '');" title="Manage Licenses from the License Manager GUI">Procedure&nbsp;3-23</a></span> and continue to the procedure that applies to the method you will be using.</div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd472525&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd472525", false);</script>Procedure&nbsp;3-23   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="472525">Change License Expiration Date from License Manager</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd472525", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472528">Open the License Manager GUI as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.02.html#473610', '');" title="Starting the License Manager GUI">Starting the License Manager GUI</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472530">Select the license server on which you want to change license expiration date in the treeview. (See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.04.html#379116', '');" title="License Manager Operations within GUI">License Manager Operations within GUI</a></span> for more information on the treeview).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472534">In the License Manager, expand the license file by clicking on the "+" sign next to the "License file" folder icon. Make sure the license you want to select is available (green).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472535">Select the license you want to modify by clicking on it (use control-click or click-drag to select multiple licenses). Then click on the Change License Expiration button on the right side of the License Manager (or right-click on the license in the treeview and select Change License Expiration) to start the transaction.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472536">Select one of the methods for modifying license expiration (or click Cancel to exit this workflow):</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="472540">Express—Use </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#472561', '');" title="Manage Licenses from the License Manager GUI">Procedure&nbsp;3-24</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="472544">Browser—Use </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#472603', '');" title="Manage Licenses from the License Manager GUI">Procedure&nbsp;3-25</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="472548">Email—Use </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#472640', '');" title="Manage Licenses from the License Manager GUI">Procedure&nbsp;3-26</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="472552">Offline—Use </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#472640', '');" title="Manage Licenses from the License Manager GUI">Procedure&nbsp;3-26</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472553">Go to the procedure indicated for a given method, if applicable.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 3-23</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="472554">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="472555">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="472559">To change license expiration using the express method, use the following procedure.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd472561&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd472561", false);</script>Procedure&nbsp;3-24   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="472561">Change License Expiration Using Express Method</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd472561", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472565">Complete </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#472525', '');" title="Manage Licenses from the License Manager GUI">Procedure&nbsp;3-23</a></span>, selecting the Express method for changing license expiration dates.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472566">Enter your OPNET Username, Password, and Group ID in the appropriate fields. Click OK.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;3-33   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="472567">Authenticate Yourself to OPNET</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="472571"><img class="Default" src="images/ag_037_license_gui.10.10.13.jpg" width="416" height="230" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="472572">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472573">If your computer uses a proxy server, click on the Specify Proxy button and fill in the information. Click OK.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;3-34   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="472574">Specify Proxy</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="472578"><img class="Default" src="images/ag_037_license_gui.10.10.14.jpg" width="480" height="236" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="472579">&nbsp;</a></div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="472580">A progress bar indicates that the deregistration process is executing.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472581">When the Change License Expiration operation is complete, the following dialog box appears. Click Close to exit license operations and close your browser.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;3-35   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="472582">License Operation Success</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="472586"><img class="Default" src="images/ag_037_license_gui.10.10.15.jpg" width="212" height="109" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="472587">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472590">Exit the License Manager, as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.03.html#474758', '');" title="Exiting the License Manager GUI">Exiting the License Manager GUI</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note—</span><a name="472592">If the Express Method fails due to firewall restrictions or other problems, use the Browser method, described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#472603', '');" title="Manage Licenses from the License Manager GUI">Procedure&nbsp;3-25</a></span>.</div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 3-24</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="472596">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="472597">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="472601">To change license expiration using the browser method, use the following procedure.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd472603&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd472603", false);</script>Procedure&nbsp;3-25   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="472603">Change License Expiration Using Browser Method</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd472603", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472607">Complete </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#472525', '');" title="Manage Licenses from the License Manager GUI">Procedure&nbsp;3-23</a></span>, selecting the Browser method for modifying licenses.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="472608">The License Manager launches your Web browser and points it to the licensing area of the OPNET website.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="472609">License Manager launches a dialog box containing the Transaction Code and Hostname you will need in later steps.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472610">Log in with your OPNET Username and Password when the following dialog box appears. Click OK.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;3-36   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="472611">Login to OPNET Support Center</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="472615"><img class="Default" src="images/ag_037_license_gui.10.10.16.jpg" width="435" height="255" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="482804">&nbsp;</a></div>
+      <div class="procNote">
+        <span class="bold">Note—</span><a name="472616">If your browser fails to launch, start it manually; navigate to </a><span class="HTBlue"><a href="http://www.opnet.com/support" target="external_window">http://www.opnet.com/support/</a></span>, and click on "License Registration."</div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472618">Click on "Perform license operations." </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472619">Select "Update License Expiration," and click Next.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472620">Enter the Transaction Code and Hostname from License Manager. You can either paste the text or type it manually. Make sure there are no extra spaces before or after the code or hostname. Click Next.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472621">When the “Select Starting License” page appears, select the lowest license ID that you want to modify. If you want to modify only one license, select that license.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	7	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472622">When the “Select Ending License” page appears, select the highest license ID that you want to modify. If you want to modify only one license, select that license. The confirmation page appears.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	8	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472623">When the “License Registration Confirmation” page appears, verify that the information is correct, then click Get Approval Code.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="472624">The Approval Code appears.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	9	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472625">In the License Manager, click Next and enter the Approval Code. This code can be very long, so make sure you copy the entire Approval Code. After you enter the Approval Code, click Next. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	10	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472626">In the License Manager, a Confirmation Code is displayed. Copy this Confirmation Code and enter it where required in the browser window. Click Next.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="472627">The licensing operation completes.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	11	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472628">In the License Manager, click Done.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	12	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472631">Exit the License Manager, as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.03.html#474758', '');" title="Exiting the License Manager GUI">Exiting the License Manager GUI</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 3-25</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="472633">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="472634">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="472635">To change expiration dates for licenses using the email or offline method, use the following procedure.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd472640&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd472640", false);</script>Procedure&nbsp;3-26   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="472640">Change License Expiration Using the Email or Offline Method</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd472640", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472641">Contact OPNET Technical Support to open a license registration case.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472645">Complete </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.10.html#472525', '');" title="Manage Licenses from the License Manager GUI">Procedure&nbsp;3-23</a></span>, selecting either the Email or Offline method for modifying licenses.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="472646">The License Manager launches a dialog box containing the Transaction Code with license server hostname you will need in later steps.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472647">Provide this information as follows: </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="472648">Email—Copy and paste the transaction code into an email and send to your point of contact for your technical support case. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="472649">Offline—Communicate the transaction code via phone or fax to your point of contact for your technical support case.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472650">Click Next.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="472651">A dialog box opens which prompts you for the Approval Code.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472652">You will receive an Approval Code from OPNET Technical Support via email, phone, or fax. Enter this into the dialog box and click Next.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472653">In the License Manager, a Confirmation Code is displayed. Copy this Confirmation Code to an email to send to your technical support point of contact or provide the code via phone or fax.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="472655">Your licensing operation is complete.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 3-26</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="472656">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="472657">&nbsp;</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

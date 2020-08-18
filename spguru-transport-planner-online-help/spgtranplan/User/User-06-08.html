@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:04" />
+    <title>OTS Link Data Files</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-06-01.html"> Importing and Exporting Data</a> > <a href="User-06-04.html">Data File Formats</a> > OTS Link Data Files</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp262314"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+OTS Link Data Files
+</h2>
+
+ 
+
+<a name="wp239369"> </a><p class="pBody">
+OTS link data files use the format shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-08.html#wp239414');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-08.html#wp239414', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;5-7-Link Data File in .csv Format</u> </a>. The first row contains five headers; each subsequent row describes one link. 
+</p>
+<a name="wp239403"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp239372table239370">
+  <caption><a name="wp239372"> </a><div class="ptblcaption">
+Table&#160;5-5   OTS Link Data File Fields
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp239376"> </a><div class="pCellHeading">
+Field
+</div>
+</th>
+    <th><a name="wp239378"> </a><div class="pCellHeading">
+Description
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp239380"> </a><div class="pCellBody">
+From
+</div>
+</td>
+    <td><a name="wp239382"> </a><div class="pCellBody">
+Name of source node
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp239384"> </a><div class="pCellBody">
+To
+</div>
+</td>
+    <td><a name="wp239386"> </a><div class="pCellBody">
+Name of destination node
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp239388"> </a><div class="pCellBody">
+Length<br />(<em class="cEmphasis">optional</em>)
+</div>
+</td>
+    <td><a name="wp239390"> </a><div class="pCellBody">
+Length of the link in kilometers or miles. 
+</div>
+<a name="wp257010"> </a><div class="pCellBody">
+The default value for this field is 200 for logical networks and the geographic distance between the end nodes for other networks.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp239392"> </a><div class="pCellBody">
+Capacity<br />(<em class="cEmphasis">optional</em>)
+</div>
+</td>
+    <td><a name="wp239394"> </a><div class="pCellBody">
+Link capacity, in number of fiber pairs.
+</div>
+<a name="wp257015"> </a><div class="pCellBody">
+The default value for this field is 50.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp239396"> </a><div class="pCellBody">
+Cost<br />(<em class="cEmphasis">optional</em>)
+</div>
+</td>
+    <td><a name="wp239398"> </a><div class="pCellBody">
+User-defined cost of the link.
+</div>
+<a name="wp257024"> </a><div class="pCellBody">
+The default value for this field is 1.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp267820"> </a><div class="pCellBody">
+Designation<br />(optional)
+</div>
+</td>
+    <td><a name="wp267822"> </a><div class="pCellBody">
+The user-defined designation of the OTS link.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp239400"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 5-5	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+<a name="wp239408"> </a><p class="pBody">
+A data file can define two or more links between the same two nodes. This creates parallel links between the nodes. Parallel links can have different length, capacity, and cost values.
+</p>
+<a name="wp239409"> </a><p class="pBody">
+If the imported data includes nodes that are not currently part of your network, SP&#160;Guru&#160;Transport&#160;Planner creates them. You can use this operation to import links and nodes into your network. Because the data file does not include node locations, SP&#160;Guru&#160;Transport&#160;Planner places the nodes at arbitrary locations in the network.
+</p>
+<a name="wp239414"> </a><p class="pFigCaption">
+Figure&#160;5-7   Link Data File in .csv Format
+</p>
+<a name="wp239418"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-06-08-07.jpg" height="209" width="530" id="wp239416" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_22_imp.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

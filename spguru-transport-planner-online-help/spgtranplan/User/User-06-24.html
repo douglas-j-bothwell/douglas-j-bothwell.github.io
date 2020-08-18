@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:04" />
+    <title>Importing and Exporting Route Data Files</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-06-01.html"> Importing and Exporting Data</a> > Importing and Exporting Route Data Files</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp252227"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Importing and Exporting Route Data Files
+</h2>
+
+ 
+
+
+<a name="wp252228"> </a><p class="pBody">
+You can use route data files so that SP&#160;Guru&#160;Transport&#160;Planner uses predefined routes during a routing or dimensioning run, instead of calculating the routes. For more information about importing routes, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-02.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-02.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Route DCL/OCH Traffic Dialog Box</u></a>, <a href="javascript:WWHClickedPopup('wdm_user', 'User-08-2.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-08-2.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Dimension DCL/OCH Layer Dialog Box</u></a>, and <a href="javascript:WWHClickedPopup('wdm_user', 'User-09-07.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-07.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Grooming DCL Traffic with Fixed Routes</u></a>.
+</p>
+<a name="wp267620"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>The route data files for Groom DCL to OCH Traffic&#160;&gt; Fixed&#160;Routes should be specified entirely at the OTS layer (with the keyword OTS behind each layer). The grooming algorithm optimizes the layer at which to switch the traffic.
+</p>
+
+<a name="wp252240"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Unprotected Routes
+</h3>
+<a name="wp252244"> </a><p class="pBody">
+Data files for unprotected routes use the definition shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-24.html#wp252246');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-24.html#wp252246', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;5-23</u></a>. The file starts with the heading &quot;Route&quot; (singular) on its own row. Each subsequent row specifies one route. Each line specifies the nodes used by the route, from the starting node to the end node; each node is followed by a field that specifies the layer at which the traffic is switched (&quot;OTS&quot;, &quot;OMS&quot;, &quot;OCH&quot;, or &quot;DCL&quot;).
+</p>
+<a name="wp252246"> </a><p class="pFigCaption">
+Figure&#160;5-23   Routes (Unprotected) Data File in .csv Format
+</p>
+<a name="wp252250"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-06-24-23.jpg" height="122" width="530" id="wp252248" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp252252"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Protected Routes
+</h3>
+<a name="wp252256"> </a><p class="pBody">
+Data files for protected routes use the definition shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-24.html#wp252258');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-24.html#wp252258', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;5-24</u></a>. The file starts with the heading &quot;Routes&quot; (plural) on its own row. Each subsequent row specifies two paths&#8212;the working path first and the protection path second&#8212;separated by one empty cell. Each path definition uses the same conventions as in the Unprotected routes data file: a list of nodes, from start to end node; each node is followed by the layer at which the traffic is switched (&quot;OTS&quot;, &quot;OMS&quot;, &quot;OCH&quot;, or &quot;DCL&quot;).
+</p>
+<a name="wp252258"> </a><p class="pFigCaption">
+Figure&#160;5-24   Routes (Protected) Data File in .csv Format
+</p>
+<a name="wp252262"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-06-24-24.jpg" height="104" width="530" id="wp252260" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_22_imp.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

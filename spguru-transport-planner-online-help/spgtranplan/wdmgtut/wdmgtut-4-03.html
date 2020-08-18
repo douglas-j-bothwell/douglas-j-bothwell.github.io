@@ -1,0 +1,409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:38:42" />
+    <title>Routing Automatically</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="wdmgtut-4-01.html"> Network Design Operations</a> > Routing Automatically</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp925890"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Routing Automatically
+</h2>
+
+ 
+
+
+<a name="wp925891"> </a><p class="pBody">
+The examples in this section show routing actions at the OCH and DCL layer. The aim of routing is to establish as much traffic as possible within the given capacity of a network layer. These examples describe the impact of the main routing options. For more information on routing options, see the SP&#160;Guru&#160;Transport&#160;Planner User&#160;Guide.
+</p>
+<a name="wp925893"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp925893", false);</script>Procedure&#160;3-2   Routing Traffic in the Optical Layer (OCH Layer)<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp925893", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp925893", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp925895"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the WDMGuru_Examples project.</li></div>
+<ol type="a">
+<a name="wp925896"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Open...</span>.</li></div>
+<a name="wp925897"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">WDMGuru_Examples</span> project, then press <span style="font-weight: bold">Open</span>.</li></div>
+<a name="wp938106"> </a><p class="pIndentedRelative">
+The example project, which contains multiple scenarios, is loaded. The Australia scenario appears in the workspace.
+</p>
+</ol>
+<a name="wp925898"> </a><div style="text-align: left" class="pSmartList2Test"><li>Switch to the USA scenario.</li></div>
+<ol type="a">
+<a name="wp925899"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Scenarios &gt; Switch To Scenario &gt; USA</span>.</li></div>
+<a name="wp938115"> </a><p class="pIndentedRelative">
+The USA scenario appears in the workspace.
+</p>
+<a name="wp925900"> </a><div class="pprocstepSub"><li>Use the <span style="font-weight: bold">OMS</span> button on the toolbar to inspect the OMS layer. Note that initially one fiber pair is lit on each link.</li></div>
+<a name="wp925901"> </a><div class="pprocstepSub"><li>Use the <span style="font-weight: bold">OCH</span> button on the toolbar to inspect the OCH layer. Note that no wavelengths are in use on the links.</li></div>
+</ol>
+<a name="wp937148"> </a><div style="text-align: left" class="pSmartList2Test"><li>Route an OCH traffic matrix (with node limitations).</li></div>
+<ol type="a">
+<a name="wp941037"> </a><div class="pprocstepSub"><li>Click the <img src="images/wdmgtut-4-03-05.jpg" height="24" width="25" id="wp941060" border="0" hspace="0" vspace="-2"/> button on the toolbar or select the <b class="cBold">Design &gt; Route DCL/OCH Traffic</b> dialog box.</li></div>
+<a name="wp941038"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">OCH Layer</span> as the <span style="font-weight: bold">Layer</span> and <span style="font-weight: bold">OC-48 </span>as the <span style="font-weight: bold">Traffic Matrix</span>.</li></div>
+<a name="wp938132"> </a><div class="pprocstepSub"><li>Choose the following options:</li></div>
+<div class="pSmartList3"><ul class="pSmartList3">
+<a name="wp938133"> </a><div class="pSmartList3"><li><span style="font-weight: bold">Unprotected</span> (Protection)</li></div>
+<a name="wp938137"> </a><div class="pSmartList3"><li><span style="font-weight: bold">Sequential</span> (Routing Algorithm)</li></div>
+<a name="wp938138"> </a><div class="pSmartList3"><li><span style="font-weight: bold">Unsorted</span> (Connection Order)</li></div>
+<a name="wp938139"> </a><div class="pSmartList3"><li><span style="font-weight: bold">Hop Count </span>(Routing Cost)</li></div>
+<a name="wp938140"> </a><div class="pSmartList3"><li><span style="font-weight: bold">Impose Node Limitations</span> (Node Model Options)</li></div>
+</ul></div>
+<a name="wp938141"> </a><div class="pprocstepSub"><li>Uncheck <span style="font-weight: bold">Allow Equipping Dark Bands</span> in the Link Model Options panel. For more information on these options, see the SP&#160;Guru&#160;Transport&#160;Planner<em style="font-style: oblique" class="cEmphasis"> </em><span style="font-style: oblique">User&#160;Guide</span>.</li></div>
+<a name="wp938128"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-03-06.jpg" height="280" width="471" id="wp938126" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp925913"> </a><div class="pprocstepSub"><li>Press <span style="font-weight: bold">Route</span>.</li></div>
+<a name="wp938151"> </a><p class="pIndentedRelative">
+The <span style="font-weight: bold">Routing Results</span> dialog box appears.
+</p>
+<a name="wp947123"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-03-07.jpg" height="258" width="472" id="wp947121" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp938155"> </a><p class="pIndentedRelative">
+Only 35 percent of the traffic could be accommodated in the network. Fourteen percent of the link capacity in the OCH layer is in use and 84 percent of the OXC capacity. Notice that the node utilization is much higher than the link utilization, and therefore the capacity shortage must be in the nodes. Also, some other statistics are reported, such as the average hop length of the connections. Access the <span style="font-weight: bold">Routing Results</span> dialog box at any time using <b class="cBold">Design &gt; Routing Results</b>.
+</p>
+<a name="wp925914"> </a><div class="pprocstepSub"><li>Close the <span style="font-weight: bold">Routing Results</span> and the <b class="cBold">Route DCL/OCH Traffic </b>dialog boxes.</li></div>
+</ol>
+<a name="wp925923"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the routes of the connections.</li></div>
+<ol type="a">
+<a name="wp925924"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Network &gt; Connection Browser</span>.</li></div>
+<a name="wp925925"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">OCH</span> for <span style="font-weight: bold">Traffic</span>, <span style="font-weight: bold">All</span> for <span style="font-weight: bold">Layout</span>, and <span style="font-weight: bold">Traffic Matrix</span> for <span style="font-weight: bold">Order</span>.</li></div>
+<a name="wp925926"> </a><div class="pprocstepSub"><li>Click on the <span style="font-weight: bold">+</span> icon (next to OC-48) to inspect the connection details of traffic matrix OC-48.</li></div>
+<a name="wp938176"> </a><p class="pIndentedRelative">
+For each connection, the following information is shown:
+</p>
+<div class="pSmartList3"><ul class="pSmartList3">
+<a name="wp938215"> </a><div class="pSmartList3"><li>its capacity (<b class="cBold">Capacity</b>)</li></div>
+<a name="wp938219"> </a><div class="pSmartList3"><li>whether it is routed (<b class="cBold">Routed</b>)</li></div>
+<a name="wp938220"> </a><div class="pSmartList3"><li>whether it is carried on mesh or on rings (<b class="cBold">Carrier</b>)</li></div>
+<a name="wp938221"> </a><div class="pSmartList3"><li>its protection type (<b class="cBold">Protection</b>)</li></div>
+<a name="wp938222"> </a><div class="pSmartList3"><li>its number of hops (<b class="cBold">Hops</b>), length (<b class="cBold">Length</b>), delay (<b class="cBold">Delay</b>), etc.</li></div>
+<a name="wp938224"> </a><p class="pIndentedRelative">
+When you select a connection in the browser, its route is visualized in the workspace. Click on the + icon (next to a connection), to see the route of the connection in the connection browser. To inspect the wavelengths used on the links by the selected connection, mark <span style="font-weight: bold">Show Wavelength Configurations</span> in the lower-left corner of the connection browser.
+</p>
+<a name="wp934573"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-03-08.jpg" height="292" width="475" id="wp934580" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ul></div>
+<a name="wp925935"> </a><div class="pprocstepSub"><li>Close the connection browser.</li></div>
+<a name="wp925936"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Info</span> &gt; <span style="font-weight: bold">Topology</span> &gt; <span style="font-weight: bold">OCH Layer</span>. This dialog box provides additional network-wide statistics for the OCH layer, such as the node degree and the node and link utilization. Similar reports can be generated for each of the other layers.</li></div>
+<a name="wp946904"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-03-09.jpg" height="329" width="472" id="wp946902" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp925944"> </a><div class="pprocstepSub"><li>Close the <span style="font-weight: bold">OCH Layer Topology</span> dialog box.</li></div>
+</ol>
+<a name="wp925946"> </a><div style="text-align: left" class="pSmartList2Test"><li>Tear down the OCH traffic matrix.</li></div>
+<ol type="a">
+<a name="wp925947"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Design &gt; Tear Down Traffic...</b>.</li></div>
+<a name="wp925948"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">OCH Layer</span> and the (partly accommodated) traffic matrix <span style="font-weight: bold">OC-48</span>, then press <span style="font-weight: bold">Tear Down</span>.</li></div>
+<a name="wp938230"> </a><p class="pIndentedRelative">
+The OC-48 traffic matrix is released from the network and all capacity in the OCH layer becomes available again.
+</p>
+<a name="wp934625"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-03-10.jpg" height="150" width="474" id="wp934632" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp925956"> </a><div class="pprocstepSub"><li>Close the <span style="font-weight: bold">Tear Down Traffic</span> dialog box.</li></div>
+</ol>
+<a name="wp925958"> </a><div style="text-align: left" class="pSmartList2Test"><li>Route an OCH traffic matrix (without node limitations).</li></div>
+<ol type="a">
+<a name="wp925959"> </a><div class="pprocstepSub"><li>Select the<b class="cBold"> Design &gt; Route DCL/OCH Traffic...</b> dialog box, choose <span style="font-weight: bold">OCH Layer </span>as the<span style="font-weight: bold"> Layer</span>, and <span style="font-weight: bold">OC-48 </span>as the <span style="font-weight: bold">Traffic Matrix</span>.</li></div>
+<a name="wp938246"> </a><div class="pprocstepSub"><li>Choose the following options:</li></div>
+<div class="pSmartList3"><ul class="pSmartList3">
+<a name="wp938251"> </a><div class="pSmartList3"><li><span style="font-weight: bold">Unprotected</span> (Protection)</li></div>
+<a name="wp938255"> </a><div class="pSmartList3"><li><span style="font-weight: bold">Sequential</span> (Routing Algorithm)</li></div>
+<a name="wp938256"> </a><div class="pSmartList3"><li><span style="font-weight: bold">Unsorted</span> (Connection Order)</li></div>
+<a name="wp941152"> </a><div class="pSmartList3"><li><span style="font-weight: bold">Hop Count </span>(under Routing Options, next to Routing Cost)</li></div>
+<a name="wp941153"> </a><div class="pSmartList3"><li>Uncheck <span style="font-weight: bold">Allow Equipping Dark Bands</span> in the Link Model Options panel, and also the <span style="font-weight: bold">Impose Node Limitations</span> option. </li></div>
+</ul></div>
+<a name="wp941156"> </a><div class="pprocstepSub"><li>Press <span style="font-weight: bold">Route</span>.</li></div>
+<a name="wp938264"> </a><p class="pIndentedRelative">
+The <span style="font-weight: bold">Routing Results</span> dialog box appears.
+</p>
+<a name="wp938268"> </a><p class="pIndentedRelative">
+Observe that 100&#160;percent of the traffic is routed. Because the node limitations were not imposed, the discrete nodes have been upgraded to the correct size to allow them to route the entire traffic matrix. 
+</p>
+<a name="wp934642"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-03-11.jpg" height="261" width="470" id="wp934649" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ol>
+<a name="wp941173"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the <b class="cBold">Routing Results</b> and the <b class="cBold">Route DCL/OCH Traffic </b>dialog boxes.</li></div>
+<a name="wp941174"> </a><div style="text-align: left" class="pSmartList2Test"><li>To inspect the nodes in the OCH layer more in depth, open the <span style="font-weight: bold">Network &gt; Node Browser</span>, and then select <span style="font-weight: bold">Ports</span> as the <span style="font-weight: bold">View</span> and <span style="font-weight: bold">OCH</span> as the<span style="font-weight: bold"> Layer</span>. </li></div>
+<a name="wp948453"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-03-12.jpg" height="196" width="499" id="wp941233" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp941171"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the node browser.</li></div>
+<a name="wp941244"> </a><div style="text-align: left" class="pSmartList2Test"><li>Tear down the OCH traffic matrix.</li></div>
+<ol type="a">
+<a name="wp925970"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Design &gt; Tear Down Traffic...</b>.</li></div>
+<a name="wp925971"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">OCH Layer</span> and the (entirely accommodated) traffic matrix <span style="font-weight: bold">OC-48</span>, then press <span style="font-weight: bold">Tear Down</span>.</li></div>
+<a name="wp925972"> </a><div class="pprocstepSub"><li>Close the dialog box.</li></div>
+</ol>
+<a name="wp925973"> </a><div style="text-align: left" class="pSmartList2Test"><li>Route an OCH traffic matrix (with protection).</li></div>
+<ol type="a">
+<a name="wp925974"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Design &gt; Route DCL/OCH Traffic...</b>. In the dialog box, select <span style="font-weight: bold">OCH Layer</span> and the traffic matrix <span style="font-weight: bold">OC-48</span>.</li></div>
+<a name="wp938310"> </a><div class="pprocstepSub"><li>Choose the following options:</li></div>
+<div class="pSmartList3"><ul class="pSmartList3">
+<a name="wp938313"> </a><div class="pSmartList3"><li><span style="font-weight: bold">Protected</span> (Protection)</li></div>
+<a name="wp938317"> </a><div class="pSmartList3"><li><b class="cBold">Node Disjoint</b></li></div>
+<a name="wp938318"> </a><div class="pSmartList3"><li><span style="font-weight: bold">OTS Link Disjoint</span> </li></div>
+<a name="wp938319"> </a><div class="pSmartList3"><li><span style="font-weight: bold">Sequential</span> (Routing Algorithm)</li></div>
+<a name="wp938323"> </a><div class="pSmartList3"><li><span style="font-weight: bold">Unsorted</span> (Connection Order)</li></div>
+<a name="wp938324"> </a><div class="pSmartList3"><li><span style="font-weight: bold">Hop Count </span>(Routing Cost)</li></div>
+<a name="wp938325"> </a><div class="pSmartList3"><li>Uncheck <b class="cBold">Client Protection</b></li></div>
+<a name="wp944853"> </a><div class="pSmartList3"><li>Uncheck <span style="font-weight: bold">Allow Equipping Dark Bands</span> (Link Model Options)</li></div>
+<a name="wp941251"> </a><div class="pSmartList3"><li>Uncheck <span style="font-weight: bold">Impose Node Limitations</span> (Node Model Options)</li></div>
+<a name="wp941278"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-03-13.jpg" height="295" width="470" id="wp941271" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ul></div>
+<a name="wp925975"> </a><div class="pprocstepSub"><li>Press <span style="font-weight: bold">Route</span>.</li></div>
+<a name="wp938335"> </a><p class="pIndentedRelative">
+The <span style="font-weight: bold">Routing Results</span> dialog box indicates that the traffic matrix OC-48 could not be entirely accommodated in the network. Therefore, there must be a capacity shortage on the links (as indicated by the high link utilization), because not all traffic can be assigned a working path and a diverse protection path.
+</p>
+<a name="wp934655"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-03-14.jpg" height="254" width="455" id="wp934665" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp925983"> </a><div class="pprocstepSub"><li>Close the <span style="font-weight: bold">Routing Results</span> dialog box.</li></div>
+<a name="wp925984"> </a><p class="pIndentedRelative">
+Note that the traffic matrix OC-48 remains part of the list of traffic matrices in the <span style="font-weight: bold">Routing</span> dialog box, because it is not entirely routed. This gives the opportunity to try to route the unrouted part of the traffic matrix, for example, after adding link or node capacity.
+</p>
+<a name="wp938346"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Route DCL/OCH Traffic </b>dialog box.</li></div>
+</ol>
+<a name="wp925985"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the routes of the connections.</li></div>
+<ol type="a">
+<a name="wp925986"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Network &gt; Connection Browser</span>.</li></div>
+<a name="wp925987"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">OCH</span> for the <span style="font-weight: bold">Traffic</span>, <span style="font-weight: bold">All</span> for the <span style="font-weight: bold">Layout</span>, and <span style="font-weight: bold">Traffic Matrix</span> for the <span style="font-weight: bold">Order</span>.</li></div>
+<a name="wp925988"> </a><div class="pprocstepSub"><li>Click on the <span style="font-weight: bold">+</span> icon (next to OC-48) to inspect the connection details of traffic matrix OC-48. Select a connection: the working path (in green) and back-up path (in red) are shown on the workspace.</li></div>
+<a name="wp934671"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-03-15.jpg" height="305" width="473" id="wp934678" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp925996"> </a><div class="pprocstepSub"><li>Close the connection browser.</li></div>
+</ol>
+<a name="wp925998"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the project</li></div>
+<ol type="a">
+<a name="wp925999"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Close</span>.</li></div>
+<a name="wp926000"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Don&#39;t Save</span> in the <span style="font-weight: bold">Close Confirm</span> dialog box.</li></div>
+</ol>
+</ol></div>
+<a name="wp934830"> </a><p class="pProcEnd">
+End of Procedure 3-2
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp926002"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp926002", false);</script>Procedure&#160;3-3   Routing Traffic in the SONET/ SDH Layer (DCL Layer)<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp926002", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp926002", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp926004"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the WDMGuru_Examples project.</li></div>
+<ol type="a">
+<a name="wp926005"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Open</span><b class="cBold">...</b>.</li></div>
+<a name="wp926006"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">WDMGuru_Examples</span> project an press <span style="font-weight: bold">Open</span>.</li></div>
+<a name="wp938349"> </a><p class="pIndentedRelative">
+The example project, which contains multiple scenarios, is loaded. The Australia scenario appears in the workspace.
+</p>
+</ol>
+<a name="wp926007"> </a><div style="text-align: left" class="pSmartList2Test"><li>Select <span style="font-weight: bold">Scenarios &gt; Switch To Scenario &gt; USA</span> to view the USA scenario in the workspace.</li></div>
+<a name="wp926010"> </a><div style="text-align: left" class="pSmartList2Test"><li>Route an OCH traffic matrix (without node limitations).</li></div>
+<ol type="a">
+<a name="wp926011"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Design &gt; Route DCL/OCH Traffic... </b>dialog box.</li></div>
+<a name="wp926012"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">OCH Layer</span>, and the traffic matrix <span style="font-weight: bold">OC-48</span>.</li></div>
+<a name="wp938362"> </a><div class="pprocstepSub"><li>Choose the following options:</li></div>
+<div class="pSmartList3"><ul class="pSmartList3">
+<a name="wp938363"> </a><div class="pSmartList3"><li><span style="font-weight: bold">Unprotected</span> (Protection)</li></div>
+<a name="wp938367"> </a><div class="pSmartList3"><li><span style="font-weight: bold">Sequential</span> (Routing Algorithm)</li></div>
+<a name="wp938368"> </a><div class="pSmartList3"><li><span style="font-weight: bold">Unsorted</span> (Connection Order)</li></div>
+<a name="wp938369"> </a><div class="pSmartList3"><li><span style="font-weight: bold">Hop Count </span>(Routing Cost)</li></div>
+<a name="wp941347"> </a><div class="pSmartList3"><li>Uncheck <span style="font-weight: bold">Allow Equipping Dark Bands</span> (Link Model Options)</li></div>
+<a name="wp938370"> </a><div class="pSmartList3"><li>Uncheck <span style="font-weight: bold">Impose Node Limitations</span> (Node Model Options)</li></div>
+</ul></div>
+<a name="wp926013"> </a><div class="pprocstepSub"><li>Press <span style="font-weight: bold">Route</span>.</li></div>
+<a name="wp938371"> </a><p class="pIndentedRelative">
+The <span style="font-weight: bold">Routing Results</span> dialog box appears.
+</p>
+<a name="wp938375"> </a><p class="pIndentedRelative">
+The traffic matrix OC-48 is entirely accommodated in the network.
+</p>
+<a name="wp946951"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-03-16.jpg" height="266" width="473" id="wp946949" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp926014"> </a><div class="pprocstepSub"><li>Close the <span style="font-weight: bold">Routing Results</span> and <b class="cBold">Route DCL/OCH Traffic</b> dialog boxes.</li></div>
+<a name="wp926015"> </a><div class="pprocstepSub"><li>Switch to the DCL layer view using the <span style="font-weight: bold">DCL</span> button in the toolbar.</li></div>
+<a name="wp938388"> </a><p class="pIndentedRelative">
+Note that the traffic routed in the OCH layer results in a logical (or virtual) topology in the DCL layer. This is because each non-native connection that is routed in the OCH layer results in a logical DCL link with capacity corresponding to the bit rate of the OCH connection. DCL traffic can be routed on these logical DCL links (see the next step).
+</p>
+</ol>
+<a name="wp926016"> </a><div style="text-align: left" class="pSmartList2Test"><li>Route a SONET/SDH traffic matrix.</li></div>
+<ol type="a">
+<a name="wp926017"> </a><div class="pprocstepSub"><li>Select the <b class="cBold">Design &gt; Route DCL/OCH Traffic...</b> dialog box.</li></div>
+<a name="wp926018"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">DCL Layer</span>, and the traffic matrix <span style="font-weight: bold">STS-1</span>.</li></div>
+<a name="wp938416"> </a><div class="pprocstepSub"><li>Choose the following options:</li></div>
+<div class="pSmartList3"><ul class="pSmartList3">
+<a name="wp938417"> </a><div class="pSmartList3"><li><span style="font-weight: bold">Unprotected</span> (Protection)</li></div>
+<a name="wp938421"> </a><div class="pSmartList3"><li><span style="font-weight: bold">Sequential</span> (Routing Algorithm)</li></div>
+<a name="wp938428"> </a><div class="pSmartList3"><li><span style="font-weight: bold">Longest First</span> (Connection Order)</li></div>
+<a name="wp938429"> </a><div class="pSmartList3"><li><span style="font-weight: bold">Hop Count </span>(Routing Cost)</li></div>
+<a name="wp938402"> </a><p class="pIndentedRelative">
+Note that the option <b class="cBold">Impose Node Limitations</b> is always checked and cannot be unchecked for DCL traffic, because continuous node models are being used in the DCL layer (this can be verified in the <b class="cBold">Network &gt; Network Properties</b> dialog box).<span style="font-weight: bold"><br />
+<img src="images/wdmgtut-4-03-17.jpg" height="288" width="469" id="wp941370" border="0" hspace="0" vspace="-2"/><br />
+</span>
+</p>
+</ul></div>
+<a name="wp926019"> </a><div class="pprocstepSub"><li>Press <span style="font-weight: bold">Route</span>.</li></div>
+<a name="wp938435"> </a><p class="pIndentedRelative">
+The <span style="font-weight: bold">Routing Results</span> dialog box appears.
+</p>
+<a name="wp948481"> </a><p class="pIndentedRelative">
+The traffic matrix STS-1 is entirely accommodated in the network.
+</p>
+<a name="wp948482"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-03-18.jpg" height="228" width="402" id="wp948487" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp948483"> </a><div class="pprocstepSub"><li>Close the <span style="font-weight: bold">Routing Results</span> and <span style="font-weight: bold">Route DCL/OCH Traffic</span><b class="cBold">...</b> dialog boxes.</li></div>
+<a name="wp926021"> </a><div class="pprocstepSub"><li>Switch to the DCL layer using the <span style="font-weight: bold">DCL</span> button in the toolbar. Note that some link capacity at the DCL layer is in use now.</li></div>
+</ol>
+<a name="wp926022"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the routes of the SONET/SDH connections.</li></div>
+<ol type="a">
+<a name="wp926023"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Network &gt; Connection Browser</span>.</li></div>
+<a name="wp926024"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">DCL</span> for the <span style="font-weight: bold">Traffic</span>, <span style="font-weight: bold">All</span> for the <span style="font-weight: bold">Layout</span>, and <span style="font-weight: bold">Traffic Matrix</span> for the <span style="font-weight: bold">Order</span>.</li></div>
+<a name="wp926025"> </a><div class="pprocstepSub"><li>Click on the <span style="font-weight: bold">+</span> icon (next to STS-1) to inspect the connection details of traffic matrix STS-1.</li></div>
+<a name="wp934841"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-03-19.jpg" height="281" width="482" id="wp934848" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp926033"> </a><div class="pprocstepSub"><li>Close the connection browser.</li></div>
+</ol>
+<a name="wp926035"> </a><div style="text-align: left" class="pSmartList2Test"><li>Tear down the traffic matrices.</li></div>
+<ol type="a">
+<a name="wp926036"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Design &gt; Tear Down Traffic...</b>.</li></div>
+<a name="wp926037"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">DCL Layer</span> and the traffic matrix <span style="font-weight: bold">STS-1</span>, and press <span style="font-weight: bold">Tear Down</span>.</li></div>
+<a name="wp938445"> </a><p class="pIndentedRelative">
+The DCL traffic matrix is released from the network, and all capacity in the DCL layer becomes available. The OCH traffic matrix OC-48 is still accommodated in the network.<span style="font-weight: bold"><br />
+<img src="images/wdmgtut-4-03-20.jpg" height="167" width="455" id="wp941437" border="0" hspace="0" vspace="-2"/><br />
+</span>
+</p>
+<a name="wp926038"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">OCH Layer</span>; select <span style="font-weight: bold">OC-48</span> and press <span style="font-weight: bold">Tear Down</span>.</li></div>
+<a name="wp948501"> </a><p class="pIndentedRelative">
+The OCH traffic matrix is released from the network. Note that the order in which traffic matrices are torn down is important. Before tearing down an OCH traffic matrix, any dependent DCL traffic matrix must be torn down first. If you do try to tear down an OCH traffic matrix that is still supporting routed DCL layer traffic, you will receive an error message directing you to first perform a tear down operation for DCL traffic matrices.<span style="font-weight: bold"><br />
+<img src="images/wdmgtut-4-03-21.jpg" height="158" width="455" id="wp948503" border="0" hspace="0" vspace="-2"/><br />
+</span>
+</p>
+<a name="wp948505"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Tear Down Traffic</b> dialog box.</li></div>
+</ol>
+<a name="wp926041"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the project</li></div>
+<ol type="a">
+<a name="wp926042"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Close</span>.</li></div>
+<a name="wp926043"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Don&#39;t Save</span> in the <span style="font-weight: bold">Close Confirm</span> dialog box.</li></div>
+</ol>
+</ol></div>
+<a name="wp934998"> </a><p class="pProcEnd">
+End of Procedure 3-3
+</p>
+
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/wdmg_tut_3.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

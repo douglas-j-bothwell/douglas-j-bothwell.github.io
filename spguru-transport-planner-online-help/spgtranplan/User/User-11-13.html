@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:16" />
+    <title>Maximum Transparency Length</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-11-01.html"> Transparent Networks</a> > <a href="User-11-12.html">Transparent Routing Options Dialog Box</a> > Maximum Transparency Length</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp255602"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Maximum Transparency Length
+</h2>
+
+ 
+
+<a name="wp256880"> </a><p class="pBody">
+The Using Line System Type field indicates the current default line system type used for OCH links.
+</p>
+<a name="wp257640"> </a><p class="pBody">
+The Transparency Length is the distance a signal can travel through the network without requiring regeneration. SP&#160;Guru&#160;Transport&#160;Planner calculates this length based on the transmission characteristics of the line system type, using the formula:
+</p>
+<div class="pPreformattedRelative"><pre class="pPreformattedRelative">
+<span style="font-style: oblique">MTL = maximum_OA_span_length</span> * maximum_#_OA_spans_without_regeneration<a name="wp256877"> </a>
+</pre></div>
+<a name="wp259535"> </a><p class="pBody">
+The maximum transparency length (MTL) is expressed in length units or in OA spans. If OA spans are used to express the MTL, you can specify an additional OXC penalty and an OADM penalty. This specifies the number of additional OA spans counted for each transparent OXC or OADM passed, as a measure of the extra degradation experienced by a signal when it passes through a transparent OXC or OADM.
+</p>
+<a name="wp298111"> </a><p class="pBody">
+If a node consists of OADMs and OXCs, both penalties are counted. To force regeneration of signals that are dropped from the OADM, select the &quot;Force regeneration when dropping from OADM&quot; option. If this option is selected, only pass-through signals of the OADM can be transparent.
+</p>
+<a name="wp288136"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>You cannot set the transparency length or the line system type in this dialog box. To change the line system type, use the Default WDM Line System for OCH Link setting in the Network Properties dialog box (Network&#160;&gt; Network&#160;Properties).
+</p>
+
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_34_trn.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

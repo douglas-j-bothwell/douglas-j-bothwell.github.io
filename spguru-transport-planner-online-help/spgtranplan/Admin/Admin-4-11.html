@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:31:28" />
+    <title>License Server Reporting</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="Admin-4-01.html"> Licensing</a> > <a href="Admin-4-11.html">License Server Reporting</a> > Obtaining License Server Statistics</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp156674"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+License Server Reporting
+</h2>
+
+ 
+
+
+<a name="wp156682"> </a><p class="pBody">
+The license server can track license usage statistics and produce statistical reports upon request. When tracking is enabled on the license server, you can generate reports from the license manager console, using two commands, from any client. Either command lets you specify a number of days on which to report. 
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp156683"> </a><div class="pSmartList1"><li><code class="cCode">fldb_stats</code>&#8212;Produces a usage report for the license server.</li></div>
+<a name="wp156684"> </a><div class="pSmartList1"><li><code class="cCode">license_stats</code>&#8212;Produces a usage report for individual licenses.</li></div>
+</ul></div>
+<a name="wp156675"> </a><p class="pBody">
+The report displays on the screen, and a time-stamped .csv copy of the file is placed in the local <code class="cCode">&lt;user_home&gt;\op_admin\tmp</code> directory.
+</p>
+<a name="wp156999"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Enable License Tracking
+</h2>
+
+ 
+
+<a name="wp157000"> </a><p class="pBody">
+Use one of the following procedures, depending on your platform, to enable license tracking.
+</p>
+<a name="wp156775"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp156775", false);</script>Procedure&#160;3-13   Enable License Tracking (Windows)<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp156775", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp156775", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp156779"> </a><div style="text-align: left" class="pSmartList2Test"><li>Navigate to Windows Services.</li></div>
+<a name="wp156826"> </a><div style="text-align: left" class="pSmartList2Test"><li>Right-click on the OPNET License Server service, and select Properties.</li></div>
+<a name="wp208445"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click the Stop button on the General tab under Service Status. </li></div>
+<a name="wp208458"> </a><div style="text-align: left" class="pSmartList2Test"><li>Type <code class="cCode">-license_usage_tracking_enable [-license_usage_tracking_history_days &lt;</code><em style="font-style: oblique" class="cEmphasis">number of days&gt;</em><code style="font-style: normal" class="cCode">]</code> in the start parameters box.</li></div>
+<a name="wp158197"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>If you do not use the <code class="cCode">-license_usage_tracking_history_days &lt;number of days&gt; </code>parameter, tracking is automatically enabled for a 30 day history.
+</p>
+<a name="wp208469"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click the Start button, and click OK to exit Properties.</li></div>
+<a name="wp212736"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>If you stop and restart the License Server from the License Manager, tracking is disabled.
+</p>
+</ol></div>
+<a name="wp156955"> </a><p class="pProcEnd">
+End of Procedure 3-13
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp222608"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp156968"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp156968", false);</script>Procedure&#160;3-14   Enable License Tracking (Solaris or Linux)<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp156968", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp156968", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp213570"> </a><div style="text-align: left" class="pSmartList2Test"><li>Modify the auto-boot scripts as described in <a href="javascript:WWHClickedPopup('license', 'Admin-4-09.html#wp143560');" onMouseOver="WWHShowPopup('license', 'Admin-4-09.html#wp143560', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;3-9</u></a> to include &quot;-license_usage_tracking_enable&quot;. The entire command will appear as follows:</li></div>
+<div class="pPreformattedRelative"><pre class="pPreformattedRelative">
+<code class="cCode">&lt;</code><em style="font-style: oblique" class="cEmphasis">bindir</em><code style="font-style: normal" class="cCode">&gt;/op_license_server -license_port &lt;</code><em style="font-style: oblique" class="cEmphasis">port_name</em><code style="font-style: normal" class="cCode">&gt; -license_usage_tracking_enable</code><a name="wp213590"> </a>
+<a name="wp213635"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+Tracking information is retained for 30 days, by default. To modify this period, append the following when using the command shown above:
+</p>
+<div class="pCodeStep"><ul class="pCodeStep">
+<a name="wp213647"> </a><code class="cCode">-license_usage_tracking_history_days &lt;</code><em style="font-style: oblique" class="cEmphasis">number_of_days</em><code style="font-style: normal" class="cCode">&gt;
+</code></ul></div>
+</pre></div>
+<a name="wp213661"> </a><div style="text-align: left" class="pSmartList2Test"><li>Save the changes to the auto-boot script.</li></div>
+<a name="wp213787"> </a><div style="text-align: left" class="pSmartList2Test"><li>Stop the license server, using <a href="javascript:WWHClickedPopup('license', 'Admin-4-10.html#wp143576');" onMouseOver="WWHShowPopup('license', 'Admin-4-10.html#wp143576', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;3-10</u></a> or <a href="javascript:WWHClickedPopup('license', 'Admin-4-10.html#wp143607');" onMouseOver="WWHShowPopup('license', 'Admin-4-10.html#wp143607', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;3-12</u></a>.</li></div>
+<a name="wp213761"> </a><div style="text-align: left" class="pSmartList2Test"><li>Run the auto-boot script to restart the license server with the new changes.</li></div>
+</ol></div>
+<a name="wp156984"> </a><p class="pProcEnd">
+End of Procedure 3-14
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp222621"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp156992"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Obtaining License Server Statistics
+</h2>
+
+ 
+
+<a name="wp156993"> </a><p class="pBody">
+Once license tracking is enabled, you can generate statistical reports about license usage. Use one of the following procedures, depending on your platform, to generate a report.
+</p>
+<a name="wp157546"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+License Server Usage Reports
+</h3>
+<a name="wp157547"> </a><p class="pBody">
+A license server usage report provides license file statistics, including license ID (license number, contract number and program name), total time in use, average checkout time, number of checkouts, number of unique users who accessed the file, and user IDs of those who accessed the file.
+</p>
+<a name="wp157006"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp157006", false);</script>Procedure&#160;3-15   Generate License Usage Reports per Server (Windows)<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp157006", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp157006", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp157010"> </a><div style="text-align: left" class="pSmartList2Test"><li>Choose Start&#160;&gt; Programs&#160;&gt; OPNET&#160;SP&#160;Guru&#160;Transport&#160;Planner&#160;12.0&#160;&gt; OPNET&#160;Console&#160;12.0, to open a console window.</li></div>
+<a name="wp157116"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>You can generate the reports from any client machine that has access to the license server.
+</p>
+<a name="wp157108"> </a><div style="text-align: left" class="pSmartList2Test"><li>Type <code class="cCode">op_license_util -license_server </code><em class="cEmphasis">&lt;license_server_name&gt;</em>.</li></div>
+<a name="wp157109"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+A license server prompt displays.
+</p>
+<a name="wp157123"> </a><div style="text-align: left" class="pSmartList2Test"><li>Type <code class="cCode">fldb_stats</code> to print a usage report for the license server. </li></div>
+<a name="wp157141"> </a><div style="text-align: left" class="pSmartList2Test"><li>Enter the number of days for which you wish to report.</li></div>
+<a name="wp157777"> </a><div style="text-align: left" class="pSmartList2Test"><li>Obtain a .csv copy of the report from the local <code class="cCode">&lt;user_home&gt;</code><code class="cCode">\op_admin\tmp</code> directory.</li></div>
+<a name="wp157160"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>The naming convention of the file is <code class="cCode">license_usage_report_MM-DD-YYYY_HH:MM:SS</code>.
+</p>
+</ol></div>
+<a name="wp157152"> </a><p class="pProcEnd">
+End of Procedure 3-15
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp222649"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp157176"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp157176", false);</script>Procedure&#160;3-16   Generate License Usage Reports per Server (Solaris or Linux)<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp157176", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp157176", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp157183"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open a shell.</li></div>
+<a name="wp157184"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>You can generate the reports from any client machine that has access to the license server.
+</p>
+<a name="wp157185"> </a><div style="text-align: left" class="pSmartList2Test"><li>Type <code class="cCode">op_license_util -license_server </code><em class="cEmphasis">&lt;license_server_name&gt;</em>.</li></div>
+<a name="wp157186"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+A license server prompt displays.
+</p>
+<a name="wp157192"> </a><div style="text-align: left" class="pSmartList2Test"><li>Type <code class="cCode">fldb_stats</code> to print a usage report for the license server. </li></div>
+<a name="wp157194"> </a><div style="text-align: left" class="pSmartList2Test"><li>Enter the number of days for which you wish to report.</li></div>
+<a name="wp157778"> </a><div style="text-align: left" class="pSmartList2Test"><li>Obtain a .csv copy of the report from your <code class="cCode">&lt;user_home&gt;</code><code class="cCode">/op_admin/tmp</code> directory.</li></div>
+<a name="wp157195"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>The naming convention of the file is <code class="cCode">license_usage_report_MM-DD-YYYY_HH:MM:SS</code>.
+</p>
+</ol></div>
+<a name="wp157196"> </a><p class="pProcEnd">
+End of Procedure 3-16
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp222654"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp157783"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+License File Usage Reports
+</h3>
+<a name="wp157784"> </a><p class="pBody">
+A license file usage report provides license server statistics, including maximum number of concurrent users, maximum number of concurrent licenses in use, and average number of concurrent licenses in use. <a href="javascript:WWHClickedPopup('license', 'Admin-4-11.html#wp157789');" onMouseOver="WWHShowPopup('license', 'Admin-4-11.html#wp157789', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;3-10</u></a> shows an example of the .csv file that is produced.
+</p>
+<a name="wp157789"> </a><p class="pFigCaption">
+Figure&#160;3-10   License File Usage Report
+</p>
+<a name="wp157793"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/Admin-4-11-10.jpg" height="223" width="530" id="wp157791" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp157295"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp157295", false);</script>Procedure&#160;3-17   Generate License Usage Reports per License File (Windows)<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp157295", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp157295", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp157302"> </a><div style="text-align: left" class="pSmartList2Test"><li>Choose Start&#160;&gt; Programs&#160;&gt; OPNET&#160;SP&#160;Guru&#160;Transport&#160;Planner&#160;12.0&#160;&gt; OPNET&#160;Console&#160;12.0, to open a console window.</li></div>
+<a name="wp157303"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>You can generate the reports from any client machine that has access to the license server.
+</p>
+<a name="wp157304"> </a><div style="text-align: left" class="pSmartList2Test"><li>Type <code class="cCode">op_license_util -license_server </code><em class="cEmphasis">&lt;license_server_name&gt;</em>.</li></div>
+<a name="wp157305"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+A license server prompt displays.
+</p>
+<a name="wp157311"> </a><div style="text-align: left" class="pSmartList2Test"><li>Type <code class="cCode">license_stats</code> to print a usage report for the license server. </li></div>
+<a name="wp157312"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The report displays and scrolls on the screen.
+</p>
+<a name="wp157313"> </a><div style="text-align: left" class="pSmartList2Test"><li>Enter the number of days for which you wish to report.</li></div>
+<a name="wp157779"> </a><div style="text-align: left" class="pSmartList2Test"><li>Obtain a .csv copy of the report from your <code class="cCode">\op_admin\tmp</code> directory.</li></div>
+<a name="wp157314"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>The naming convention of the file is <code class="cCode">license_file_usage_report_MM-DD-YYYY_HH:MM:SS</code>.
+</p>
+</ol></div>
+<a name="wp157315"> </a><p class="pProcEnd">
+End of Procedure 3-17
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp222661"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp157414"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp157414", false);</script>Procedure&#160;3-18   Generate License Usage Reports per License File (Solaris or Linux)<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp157414", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp157414", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp157421"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open a shell.</li></div>
+<a name="wp157422"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>You can generate the reports from any client machine that has access to the license server.
+</p>
+<a name="wp157423"> </a><div style="text-align: left" class="pSmartList2Test"><li>Type <code class="cCode">op_license_util -license_server </code><em class="cEmphasis">&lt;license_server_name&gt;</em>.</li></div>
+<a name="wp157424"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+A license server prompt displays.
+</p>
+<a name="wp157430"> </a><div style="text-align: left" class="pSmartList2Test"><li>Type <code class="cCode">license_stats</code> to print a usage report for the license server. </li></div>
+<a name="wp157431"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The report displays and scrolls on the screen.
+</p>
+<a name="wp157432"> </a><div style="text-align: left" class="pSmartList2Test"><li>Enter the number of days for which you wish to report.</li></div>
+<a name="wp157780"> </a><div style="text-align: left" class="pSmartList2Test"><li>Obtain a .csv copy of the report from your <code class="cCode">&lt;user_home&gt;</code><code class="cCode">/op_admin/tmp</code> directory.</li></div>
+<a name="wp157433"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>The naming convention of the file is <code class="cCode">license_file_usage_report_MM-DD-YYYY_HH:MM:SS</code>.
+</p>
+</ol></div>
+<a name="wp157434"> </a><p class="pProcEnd">
+End of Procedure 3-18
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp222662"> </a><h6 class="pHeading6">
+
+</h6>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/ag_035_licensing.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

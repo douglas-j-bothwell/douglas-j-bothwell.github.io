@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Capture Encryption</title>
+    <link rel="StyleSheet" href="css/ace_appcap_overview_plus.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ace_appcap_overview_plus.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_capture_app_traffic_splash.html#237290">Capturing Application Traffic</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ace_appcap_overview_plus.04.01.html#237290">Capturing Traffic with AppTransaction&nbsp;Xpert</a> &gt; Capture Encryption</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="237290">Capture Encryption</a></div>
+      <div class="body"><a name="237295">AppTransaction&nbsp;Xpert supports SSL encryption of communications between Capture&nbsp;Managers and capture agents.</a></div>
+      <div class="bodyIntro"><a name="237296">A Capture&nbsp;Manager and capture agent can transfer data using one of the following types of encryption:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="237297">Anonymous (Level 1) encryption—Using this level, Capture&nbsp;Manager and the capture agent communicate over an encrypted connection but do not attempt any type of authentication. This type of encryption ensures that passive listeners cannot decipher data transferred between Capture&nbsp;Manager and the capture agent.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="237298">Certificate (Level 2) encryption—This level provides both encryption and authentication, and requires that Capture&nbsp;Manager and the capture agent have SSL certificates that were validated by a trusted CA (Certificate Authority). Level 2 encryption has the following advantages over Level 1 encryption:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="237299">Because the capture agent immediately checks for a valid certificate on Capture&nbsp;Manager, Level 2 encryption protects against “man in the middle” attacks.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSubLast_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSubLast_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSubLast_inner"><a name="237300">Because Capture&nbsp;Manager requires a password before it starts a capture operation, Level 2 encryption also prevents unauthorized users from running capture operations.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyIntro"><a name="237304">AppTransaction&nbsp;Xpert implements encryption using OpenSSL. The details of working with OpenSSL and creating certificates are outside the scope of this documentation. Fortunately, there are numerous reference books and websites with information about implementing encryption with OpenSSL; a good place to start is the OpenSSL website (</a><span class="HTBlue"><a href="http://www.openssl.org" target="external_window">http://www.openssl.org</a></span>).</div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="237306">SSL encryption is useful for securing data while it is being transmitted from the capture agent to Capture&nbsp;Manager. However, it does not secure sensitive data in the resulting packet&nbsp;traces. To prevent highly sensitive information from being captured, you must configure the capture agent to capture traffic using headers-only mode. For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_appcap_overview_plus.04.07.html#237752', '');" title="Capture Security: Restricting Access to Capture Operations">Capture Security: Restricting Access to Capture Operations</a></span>.</div>
+      <div class="h2TopNoBreak"><a name="237311">Requirements for Encryption (Level 1 and Level 2)</a></div>
+      <div class="bodyIntro"><a name="237312">To capture traffic using encryption, the following conditions must be true:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="237316">The Capture&nbsp;Manager computer must be running AppTransaction&nbsp;Xpert version 11.0 or higher.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="237320">The AppTransaction&nbsp;Xpert capture agent must be version 3.0 or higher. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h3NoBreak"><a name="237321">Generating Random Data</a></div>
+      <div class="bodyIntro"><a name="237322">To generate cryptographically secure traffic, the OpenSSL library needs access to random numbers. AppTransaction&nbsp;Xpert and capture agents can generate random numbers using the standard methods for the operating system of the host computer. Alternately, you can create your own </a><span class="code">rand</span> files (for Windows or UNIX) and <span class="code">rand_cmd</span> files (UNIX only) and place them in the following directories:</div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="237329">On the AppTransaction&nbsp;Xpert computer:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="237330">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</a><span class="italic">user_home</span>&gt;/op_admin/ace_import_configs</div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="237331">On the capture agent computer, place the file(s) in the same directory as the capture agent executables.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="237333">Requirements for Certificate Encryption (Level 2)</a></div>
+      <div class="bodyIntro"><a name="237334">In addition to the requirements listed in the previous section, Certificate (Level&nbsp;2) encryption also requires the following:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="237336">Both Capture&nbsp;Manager and the capture agent computers must have the same CA public certificate; this certificate must be signed by a Certificate Authority (CA). The capture agent uses this certificate to ensure that the Capture&nbsp;Manager’s certificate is signed by the same trusted CA. The capture agent certificate must be installed in the same directory as the capture agent executables.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="237337">The Capture&nbsp;Manager computer—that is, the computer running AppTransaction&nbsp;Xpert—must have a certificate that was signed by a CA. This certificate includes both a private and a public key, and must be installed in the directory &lt;</a><span class="italic">user_home</span>&gt;/op_admin/ace_import_configs.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="237341">To ensure the maximum level of security for Certificate encryption, set the ace_application_capture_min_allowable_encrypt_level preference to 2 on the Capture&nbsp;Manager computer. If this preference is set to 1, a Capture&nbsp;Manager or capture agent could drop to Anonymous (Level 1) encryption and establish a connection without a valid certificate.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;4-1   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="237346">Certificate (Level 2) Encryption in AppTransaction&nbsp;Xpert</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="237455"><img class="Default" src="images/ace_appcap_overview_plus.04.06.1.jpg" width="509" height="449" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="237456">&nbsp;</a></div>
+      <div class="body"><a name="237462">For more information about SSL and AppTransaction&nbsp;Xpert, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_91_Encrypt.html#44546', '');" title="Using SSL Encryption with AppTransaction Xpert">Using SSL Encryption with AppTransaction&nbsp;Xpert</a></span>.</div>
+      <div class="h2NoBreak"><a name="237465">Setting the Encryption Level</a></div>
+      <div class="bodyIntro"><a name="237466">Every Capture&nbsp;Manager and capture agent has a range of allowable encryption levels:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="237467">The </a><span class="italic">minimum</span> allowable level for a connection is specified by the setting of the AppTransaction&nbsp;Xpert preference ace_application_capture_min_allowable_encrypt_level on Capture&nbsp;Manager.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="237471">The </a><span class="italic">maximum</span> allowable level for a connection is determined by the following:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="237472">On Capture&nbsp;Manager, level-2 encryption requires signed certificates and a valid username and password entered by the user. Otherwise the maximum allowable encryption is 1.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSubLast_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSubLast_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSubLast_inner"><a name="237473">On the capture agent, level-2 encryption requires a signed certificate. Otherwise the maximum allowable level is 1.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="237474">A Capture&nbsp;Manager and a capture agent can establish a connection at either level 1 or level 2. If Capture Manager and a capture agent cannot agree on an encryption level, the connection is terminated and the capture operation fails for that Capture&nbsp;Manager-capture agent pair.</a></div>
+      <div class="bodyIntro"><a name="237475">The following tables list how Capture&nbsp;Manager and capture agents determine the encryption level for a connection. </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_appcap_overview_plus.04.06.html#237486', '');" title="Capture Encryption">Table&nbsp;4-2</a></span> lists the outcome if certificate authentication succeeds; <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_appcap_overview_plus.04.06.html#237539', '');" title="Capture Encryption">Table&nbsp;4-3</a></span> lists the outcome if certificate authentication fails. A ‘D’ means that the connection is disconnected.</div>
+      <div class="tblAnchor"><a name="237534">&nbsp;</a></div>
+      <table class="tableNarrow" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="">
+              <tr style="vertical-align: baseline;">
+                <td>
+                  <div class="tblCaption_inner" style="width: 61.2pt; white-space: nowrap;">Table&nbsp;4-2   </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="237486">Encryption Level (Certification Authentication Succeeds)</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 197.36784pt">
+            <div class="tblHead"><a name="237494">&nbsp;</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 184.0824pt" colspan="3">
+            <div class="tblHeadCenter"><a name="237497">Minimum/Maximum Encryption Levels (Capture Agent)</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: none; border-top-style: none; border-top-width: 0.0pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 197.36784pt">
+            <div class="tblHead"><a name="237503">&nbsp;</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-top-color: none; border-top-style: none; border-top-width: 0.0pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 39.86064pt">
+            <div class="tblHeadCenter"><a name="237505">&nbsp;</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-top-color: none; border-top-style: none; border-top-width: 0.0pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 72.11088pt">
+            <div class="tblHeadCenter"><a name="237507">1</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: none; border-top-style: none; border-top-width: 0.0pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 72.11088pt">
+            <div class="tblHeadCenter"><a name="237509">2</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: none; border-top-style: none; border-top-width: 0.0pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 197.36784pt" rowspan="3">
+            <div class="tblBody9Right"><span class="bold"><a name="237511">Minimum / <br />Maximum<br />Encryption<br />Levels<br />(Capture&nbsp;Manager</a></span>)</div>
+          </td>
+          <td style="border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.5pt; border-top-color: none; border-top-style: none; border-top-width: 0.0pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 39.86064pt">
+            <div class="tblHeadCenter"><a name="237513">1/1</a></div>
+          </td>
+          <td style="border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-left-color: none; border-left-style: none; border-left-width: 0.0pt; border-right-color: none; border-right-style: none; border-right-width: 0.0pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 72.11088pt">
+            <div class="tblBody9Center"><a name="237515">1</a></div>
+          </td>
+          <td style="border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-left-color: none; border-left-style: none; border-left-width: 0.0pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 72.11088pt">
+            <div class="tblBody9Center"><a name="237517">D</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.5pt; border-top-color: none; border-top-style: none; border-top-width: 0.0pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom">
+            <div class="tblHeadCenter"><a name="237521">1/2</a></div>
+          </td>
+          <td style="border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-left-color: none; border-left-style: none; border-left-width: 0.0pt; border-right-color: none; border-right-style: none; border-right-width: 0.0pt; border-top-color: none; border-top-style: none; border-top-width: 0.0pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9Center"><a name="237523">1</a></div>
+          </td>
+          <td style="border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-left-color: none; border-left-style: none; border-left-width: 0.0pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: none; border-top-style: none; border-top-width: 0.0pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9Center"><a name="237525">2</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom">
+            <div class="tblHeadCenter"><a name="237529">2/2</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9Center"><a name="237531">D</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9Center"><a name="237533">2</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="tblAnchor"><a name="237587">&nbsp;</a></div>
+      <table class="tableNarrow" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="">
+              <tr style="vertical-align: baseline;">
+                <td>
+                  <div class="tblCaption_inner" style="width: 61.2pt; white-space: nowrap;">Table&nbsp;4-3   </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="237539">Encryption Level (Certification Authentication Fails)</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 198.11808pt">
+            <div class="tblHead"><a name="237547">&nbsp;</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 183.33216pt" colspan="3">
+            <div class="tblHeadCenter"><a name="237550">Minimum/Maximum Encryption Levels (Capture Agent))</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-right-color: none; border-right-style: none; border-right-width: 0.0pt; border-top-color: none; border-top-style: none; border-top-width: 0.0pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 198.11808pt">
+            <div class="tblHead"><a name="237556">&nbsp;</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-left-color: none; border-left-style: none; border-left-width: 0.0pt; border-top-color: none; border-top-style: none; border-top-width: 0.0pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 39.1104pt">
+            <div class="tblHeadCenter"><a name="237558">&nbsp;</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 72.11088pt">
+            <div class="tblHeadCenter"><a name="237560">1</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 72.11088pt">
+            <div class="tblHeadCenter"><a name="237562">2</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 198.11808pt" rowspan="3">
+            <div class="tblBody9Right" style="color: #000000; font-family: Helvetica; font-size: 9.0pt; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline"><span class="bold"><a name="237564">Minimum / <br />Maximum<br />Encryption<br />Levels<br />(Capture&nbsp;Manager))</a></span></div>
+          </td>
+          <td style="border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.5pt; border-top-color: none; border-top-style: none; border-top-width: 0.0pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 39.1104pt">
+            <div class="tblHeadCenter"><a name="237566">1/1</a></div>
+          </td>
+          <td style="border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-left-color: none; border-left-style: none; border-left-width: 0.0pt; border-right-color: none; border-right-style: none; border-right-width: 0.0pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 72.11088pt">
+            <div class="tblBody9Center"><a name="237568">1</a></div>
+          </td>
+          <td style="border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-left-color: none; border-left-style: none; border-left-width: 0.0pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 72.11088pt">
+            <div class="tblBody9Center"><a name="237570">D</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.5pt; border-top-color: none; border-top-style: none; border-top-width: 0.0pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom">
+            <div class="tblHeadCenter"><a name="237574">1/2</a></div>
+          </td>
+          <td style="border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-left-color: none; border-left-style: none; border-left-width: 0.0pt; border-right-color: none; border-right-style: none; border-right-width: 0.0pt; border-top-color: none; border-top-style: none; border-top-width: 0.0pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9Center"><a name="237576">1</a></div>
+          </td>
+          <td style="border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-left-color: none; border-left-style: none; border-left-width: 0.0pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: none; border-top-style: none; border-top-width: 0.0pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9Center"><a name="237578">D</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom">
+            <div class="tblHeadCenter"><a name="237582">2/2</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9Center"><a name="237584">D</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9Center"><a name="237586">D</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="h2NoBreak"><a name="237588">Viewing the Encryption Level</a></div>
+      <div class="body"><a name="237590">The Capture&nbsp;Manager’s title bar shows the minimum and maximum encryption level specified for that manager. During a capture operation, the Capture&nbsp;Manager treeview shows the encryption level used for each connection.</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          // Add related topics
+          //
+          WWHAddRelatedTopic("Capturing Traffic with AppTransaction\u00A0Xpert", "main_doc", "ace_appcap_overview_plus.04.01.html#87132");
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

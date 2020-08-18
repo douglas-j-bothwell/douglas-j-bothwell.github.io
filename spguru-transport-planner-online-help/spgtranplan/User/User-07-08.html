@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:27" />
+    <title>Splitting Unrouted Connections into a Residual Traffic Matrix</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-07-01.html"> Routing</a> > <a href="User-07-07.html">Routing Results</a> > Splitting Unrouted Connections into a Residual Traffic Matrix</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp280370"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Splitting Unrouted Connections into a Residual Traffic Matrix
+</h2>
+
+ 
+
+<a name="wp301195"> </a><p class="pBody">
+If a traffic matrix contains unrouted connections, you can group these connections into a new matrix. As a result, the original matrix contains routed connections only and the new matrix contains unrouted connections only. This allows for workflows in which the unrouted traffic is treated differently from the routed traffic. Example workflows include:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp301196"> </a><div class="pSmartList1"><li>You can start from an OCH traffic matrix that you try to route within the existing network capacity. Then you can split the unrouted connections into a residual matrix and use this matrix to dimension the network.</li></div>
+<a name="wp301197"> </a><div class="pSmartList1"><li>You can start from a DCL traffic matrix that you try to route within the existing network capacity, which might be protected at the OCH layer. Then you can split the unrouted connections into a residual matrix and perform grooming for it, this time applying protection at the DCL layer.</li></div>
+</ul></div>
+<a name="wp301293"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('wdm_user', 'User-07-08.html#wp301294');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-08.html#wp301294', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;6-1</u></a> describes how to create a residual traffic matrix.
+</p>
+<a name="wp301294"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp301294", false);</script>Procedure&#160;6-1   Creating a Residual Traffic Matrix<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp301294", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp301294", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp301295"> </a><div style="text-align: left" class="pSmartList2Test"><li>Choose Design &gt; Routing Results and select a traffic matrix that is partly routed (that is, one for which the Routed Capacity field indicates more than 0% but less than 100%). </li></div>
+<a name="wp301296"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click on the &quot;Split off unrouted connections&quot; button.</li></div>
+<a name="wp301297"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The Routed Capacity field of the traffic matrix is now 100%.
+</p>
+<a name="wp301298"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+A residual traffic matrix is created with a name of &quot;&lt;<em class="cEmphasis">original_traffic_matrix</em>&gt;_split.&quot; 
+</p>
+<a name="wp301299"> </a><div style="text-align: left" class="pSmartList2Test"><li>Go to Network &gt; Traffic Matrix Editor to view the newly created traffic matrix. In this dialog you can also change the name of the traffic matrix.</li></div>
+<a name="wp301302"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>If the original traffic matrix contains a tandem connection that is partly routed, this connection will not be split off in the residual traffic matrix; it will remain in the original traffic matrix. 
+</p>
+</ol></div>
+<a name="wp302557"> </a><p class="pProcEnd">
+End of Procedure 6-1
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp302558"> </a><h6 class="pHeading6">
+
+</h6>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_25_rte.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

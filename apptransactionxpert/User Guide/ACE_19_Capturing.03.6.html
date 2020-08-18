@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Capturing HTTPS Transactions for Automatic SSL Decryption</title>
+    <link rel="StyleSheet" href="css/ACE_19_Capturing.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ACE_19_Capturing.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_capture_app_traffic_splash.html#113190">Capturing Application Traffic</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ACE_19_Capturing.03.1.html#113190">Capturing Application Traffic: Overview</a> &gt; Capturing HTTPS Transactions for Automatic SSL Decryption</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="113190">Capturing HTTPS Transactions for Automatic SSL Decryption</a></div>
+      <div class="body"><a name="113187">You can capture SSL-encrypted HTTP transactions and have them decrypted automatically when the packet&nbsp;traces are imported. For AppTransaction&nbsp;Xpert to decrypt these files, the following requirements must be met.</a></div>
+      <div class="bodyIntro" style="color: #000000; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline"><span class="bold"><a name="112780">Capture Requirements—</a></span></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="112917">A license for AppTransaction&nbsp;Xpert Decode&nbsp;Module or a solution that includes this functionality.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="112781">As of this publication, automatic decryption is supported for SSL versions 3.0 and TLS version 1.0. HTTP is the only supported protocol that runs over SSL.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="112782">The connection cannot use SSL compression.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="112783">The connection must use a </a><span class="italic">non-ephemeral</span> RSA key exchange.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="112785">The packet&nbsp;trace must include the SSL handshake for the SSL-encrypted connection.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyIntro" style="color: #000000; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline"><span class="bold"><a name="112786">Import Requirements—</a></span></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="113025">By default, SSL uses port 443 for HTTPS. If HTTPS connections in a packet&nbsp;trace use a non-default port, you must edit the following file to specify the port number:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont" style="color: #000000; font-family: Courier; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="code"><a name="119958">&lt;</a></span><span class="code" style="font-style: normal">install_dir&gt;\sys\configs\adm_protocol_forces.ace_dict</span></div>
+      <div class="listBulletCont"><a name="142204">For more information, see FAQ&nbsp;1202 (“How can I force AppTransaction&nbsp;Xpert to decode a specific protocol on a non-standard TCP/UDP port?”).</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="113097">You must copy all private keys used in encrypted transactions from the corresponding servers into one directory on the local computer.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="112946">The key files in the specified local directory must be in PEM format and can be password-encrypted.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletContLast"><a name="164823">For more information about converting to PEM format and additional troubleshooting steps, see FAQ&nbsp;1733 (“I want AppTransaction&nbsp;Xpert to decrypt HTTPS transactions in my capture file, and I need to copy key files from the server to my local computer. How do I do this?).</a></div>
+      <div class="h2TopNoBreak"><a name="112789">Importing the SSL Traffic</a></div>
+      <div class="bodyIntro"><a name="112953">When importing one or more packet&nbsp;traces with SSL-encrypted connections, you are prompted with decryption options. After clicking Next in the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.08.html#218827', '');" title="“Merge Capture Files” Options: Packet Traces and Packet Filters">Merge Capture Files Dialog Box</a></span>, the SSL Decryption Options dialog box appears. Choose one of the following:</div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="112954">Decrypt the SSL connections and specify the local key-file directory. If any keys are password-protected, you are prompted for the password after clicking Next.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="112955">Not to decrypt the SSL connections and continue with the import. The SSL traffic remains encrypted in the resulting Transaction&nbsp;Analyzer model.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          // Add related topics
+          //
+          WWHAddRelatedTopic("Capturing Application Traffic: Overview", "main_doc", "ACE_19_Capturing.03.1.html#44546");
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

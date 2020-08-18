@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:04" />
+    <title>Connection List Data Files</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-06-01.html"> Importing and Exporting Data</a> > <a href="User-06-04.html">Data File Formats</a> > Connection List Data Files</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp256884"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Connection List Data Files
+</h2>
+
+ 
+
+<a name="wp239582"> </a><p class="pBody">
+Connection list data files use the format shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-16.html#wp247902');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-16.html#wp247902', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;5-15</u></a>. The first row contains four or five headers; each subsequent row describes one connection. 
+</p>
+<a name="wp247801"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp247774table247772">
+  <caption><a name="wp247774"> </a><div class="ptblcaption">
+Table&#160;5-11   Connection List Data File Fields
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp247778"> </a><div class="pCellHeading">
+Field
+</div>
+</th>
+    <th><a name="wp247780"> </a><div class="pCellHeading">
+Description
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp247782"> </a><div class="pCellBody">
+From
+</div>
+</td>
+    <td><a name="wp247784"> </a><div class="pCellBody">
+Name of source node
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp247786"> </a><div class="pCellBody">
+To
+</div>
+</td>
+    <td><a name="wp247788"> </a><div class="pCellBody">
+Name of destination node
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp257285"> </a><div class="pCellBody">
+Service Designation<br />(<em class="cEmphasis">optional</em>)
+</div>
+</td>
+    <td><a name="wp257287"> </a><div class="pCellBody">
+User identifier for the connection
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp247790"> </a><div class="pCellBody">
+Capacity
+</div>
+</td>
+    <td><a name="wp247792"> </a><div class="pCellBody">
+Capacity on the connection, in units 
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp247794"> </a><div class="pCellBody">
+Route or Routes<br />(<em class="cEmphasis">optional</em>)
+</div>
+</td>
+    <td><a name="wp247796"> </a><div class="pCellBody">
+Path along which an unprotected connection is routed (&quot;Route&quot;), or working and protection path of a protected connection (&quot;Routes&quot;). This field is optional.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp266979"> </a><div class="pCellBody">
+Required Availability
+</div>
+</td>
+    <td><a name="wp266981"> </a><div class="pCellBody">
+The availability the connection should have, expressed as a number between 0 and 1.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp247798"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 5-11	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+<a name="wp247902"> </a><p class="pFigCaption">
+Figure&#160;5-15   Connection List Data File in .csv Format
+</p>
+<a name="wp247906"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-06-16-15.jpg" height="294" width="531" id="wp247904" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp247802"> </a><p class="pBody">
+Keep in mind the following:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp247814"> </a><div class="pSmartList1"><li>You do not need to specify a route for a connection. If you do not specify a route, the connection appears as an unrouted connection. </li></div>
+<a name="wp247803"> </a><div class="pSmartList1"><li>If you specify a route, you must specify it as a list of nodes traversed by the connection, starting with the From node and ending with the To node. Each field is followed by a field that specifies the layer at which the traffic is switched (&quot;OTS&quot;, &quot;OMS&quot;, &quot;OCH&quot;, &quot;DCL&quot;, or &quot;LOP&quot;). For 1+1 protected traffic, you must specify the working path first, a blank field&#8212;in CSV format, this means an extra comma as a delineator&#8212;and then the protection path.</li></div>
+<a name="wp239618"> </a><div class="pSmartList1"><li>If you specify a route, SP&#160;Guru&#160;Transport&#160;Planner tries to set up the connection along this route within the existing network capacity. If there is no sufficient capacity along this route, the connection is not set up.</li></div>
+<a name="wp239619"> </a><div class="pSmartList1"><li>You can import multiple connections (possibly with different routes) between the same node pair.</li></div>
+<a name="wp258901"> </a><div class="pSmartList1"><li>Both nodes (From and To) must be specified in the network for the connection to be imported.</li></div>
+<a name="wp239621"> </a><div class="pSmartList1"><li>When you import the connection file, you can specify the same properties as during a traffic matrix import in the <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-02.html#wp246411');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-02.html#wp246411', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Import Network Elements Dialog Box</u></a>: network layer, bit rate, and so on (for more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-13.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-13.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Traffic Matrix Data Files</u></a>). You can also specify the Client Protected option. </li></div>
+</ul></div>
+<a name="wp257299"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Specifying Links Using Modifiers
+</h3>
+<a name="wp257872"> </a><p class="pBody">
+You can insert certain modifiers within the regular route description to direct SP&#160;Guru&#160;Transport&#160;Planner to use certain links.
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp257303"> </a><div class="pSmartList1"><li>&quot;<code class="cCodeBold">_Ring_</code>&quot;&#8212;This modifier narrows down the DCL link selection. If a DCL route has both mesh links and ring links, the <code class="cCode">_Ring_</code> marker forces SP&#160;Guru&#160;Transport&#160;Planner to select a link on a ring instead of a mesh link. The marker should precede the node name of the end node of the link (for example: <code class="cCode">Node_00,DCL,Node_01,OCH,_Ring_,Node_02,DCL</code>). With the marker placed near the end, SP&#160;Guru&#160;Transport&#160;Planner can derive the route from OTS up to DCL and then make the last selection. </li></div>
+<a name="wp257603"> </a><p class="pBodyRelative">
+Suppose Node_00 and Node_02 are connected by an OCH connection that passes through Node_01, where it is switched optically. This OCH connection supports a DCL link from Node_00 to Node_02. These two nodes can have any number of connections between them, where each connection supports a DCL link. The _Ring_ marker directs SP&#160;Guru&#160;Transport&#160;Planner to use a DCL ring link (not a mesh link) to create the DCL route. 
+</p>
+</ul></div>
+<a name="wp257661"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Specifying Routing Behavior Using Keywords
+</h3>
+<a name="wp257878"> </a><p class="pBody">
+You can also specify additional information to further narrow down how the connection is routed. You must append this additional information immediately after the last field that contains the regular route information (nodes, layers and modifiers). If a working and protecting route are provided, you must append the detailed information to both routes separately.
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp257662"> </a><div class="pSmartList1"><li><code class="cCodeBold">wavelengths</code>&#8212;Use the keyword &quot;<code class="cCode">wavelengths</code>&quot; to indicate that wavelength information follows. Then list each wavelength in a comma-separated field. The number of wavelengths provided should equal the number of OCH hops in the route&#8212;that is, the number of layer fields specifying &quot;OCH&quot; minus one.</li></div>
+<a name="wp257663"> </a><div class="pSmartList1"><li><code class="cCodeBold">fibers</code>&#8212;Use the keyword &quot;<code class="cCode">fibers</code>&quot; to indicate that fiber information follows. Then list each fiber in a comma-separated field. The number of fibers should also equal the number of OCH hops, even if cable splitters or fiber routes are present. SP&#160;Guru&#160;Transport&#160;Planner selects the fiber specified by the index at the starting node of the current hop, and deduces other fiber information from the fiber routing and cable splitter configurations in the network.</li></div>
+<a name="wp257664"> </a><div class="pSmartList1"><li><code class="cCodeBold">regenerations </code>(<em class="cEmphasis">transparent network mode only</em>)&#8212;Use the keyword &quot;<code class="cCode">regenerations</code>&quot; to indicate that regeneration information follows. For each intermediate OCH node in the route, specify in a comma-separated field either &quot;YES&quot; or &quot;NO&quot; to indicate whether regeneration occurs in the corresponding node.</li></div>
+<a name="wp257665"> </a><div class="pSmartList1"><li><code class="cCodeBold">hardwired</code>&#8212;Use the keyword &quot;<code class="cCode">hardwired</code>&quot; to indicate that hardwiring status information follows. For each OCH node in the route, specify in a comma-separated field either &quot;YES&quot; or &quot;NO&quot; to indicate whether the connection is hardwired in the corresponding node.</li></div>
+<a name="wp266996"> </a><div class="pSmartList1"><li><code class="cCodeBold">timeslots</code>&#8212;Use the keyword &quot;<code class="cCode">timeslots</code>&quot; to indicate that timeslot information follows, and then list each timeslot-set in a comma-separated field. A timeslot-set is a sequence of timeslot indices within a single CSV field, separated by spaces. The number of timeslot-sets provided should equal the number of DCL hops in the route, that is, the number of layer fields specifying &quot;DCL&quot; minus one.</li></div>
+<a name="wp266997"> </a><div class="pSmartList1"><li><code class="cCodeBold">designations</code>&#8212;Use the keyword &quot;<code class="cCode">designations</code>&quot; to override the choice of specific resources (fibers, wavelengths, timeslots) the import engine would normally choose. The designations provided should correspond to links present in the network, and the number of designations should equal the number of hops in the route, on the layer on which the traffic is imported.</li></div>
+<a name="wp266998"> </a><div class="pSmartList1"><li><code class="cCodeBold">subdesignations</code>&#8212;Use the keyword &quot;<code class="cCode">subdesignations</code>&quot; to override the choice of subresource (wavelengths or timeslots) on the route. These subdesignations apply to subresources on the route within the layer on which the traffic is imported. You cannot specify subresources on lower layers (that can be set using the &quot;<code class="cCode">designations</code>&quot; keyword). The number of subdesignations provided should equal the number of hops in the route, on the layer on which the traffic is imported.</li></div>
+</ul></div>
+<a name="wp257607"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('wdm_user', 'User-06-16.html#wp257814');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-16.html#wp257814', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;5-16</u></a> shows an example CSV file that uses the <code class="cCode">wavelengths</code>, <code class="cCode">fibers</code>, and <code class="cCode">regenerations</code> keywords (these keywords are highlighted for clarity).
+</p>
+<a name="wp257814"> </a><p class="pFigCaption">
+Figure&#160;5-16   Keywords in a Connections Data File: Example
+</p>
+<a name="wp257817"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-06-16-16.jpg" height="51" width="530" id="wp257816" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp267076"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Specifying Service Identifiers
+</h3>
+<a name="wp267084"> </a><p class="pBody">
+You can also assign one or more service identifiers to a connection by using these keywords:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp267096"> </a><div class="pSmartList1"><li><code class="cCodeBold">service_identifiers_client</code>&#8212;Use this keyword to start assigning client-level service identifiers to the connection. The contents of all fields following this keyword will be assigned as identifiers of the connection, until the end of the input line or another keyword is reached.</li></div>
+<a name="wp267097"> </a><div class="pSmartList1"><li><code class="cCodeBold">service_identifiers_server</code>&#8212;Use this keyword to start assigning server-level service identifiers to the connection. The contents of all fields following this keyword will be assigned as identifiers of the connection, until the end of the input line or another keyword is reached.</li></div>
+</ul></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_22_imp.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

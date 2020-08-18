@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:33:27" />
+    <title>WDM Systems</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-03-01.html"> Concepts and Models</a> > <a href="User-03-02.html">SONET/SDH and Optical Technology</a> > WDM Systems</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp47937"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+WDM Systems
+</h2>
+
+ 
+
+<a name="wp44503"> </a><p class="pBody">
+Applying higher TDM rates can help a network transmit more data at a higher bit rate over an optical fiber. However, this approach is not very scalable because there are practical limitations to the bit rate of a single optical channel. This limitation can be overcome using <em class="cEmphasis">wavelength division multiplexing</em> (WDM). A WDM system uses multiple channels (each channel modulated with a different TDM signal) transmitted at different wavelengths over a single optical fiber. This technique multiplies the total fiber capacity by the number of multiplexed wavelengths. 
+</p>
+<a name="wp44510"> </a><p class="pBody">
+A WDM network uses wavelengths to convey traffic. The links consist of fibers equipped with WDM line systems. A line system consists of the following: 
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp44515"> </a><div class="pSmartList1"><li>A WDM terminal multiplexer that combines different wavelengths on one multi-wavelength optical channel </li></div>
+<a name="wp44516"> </a><div class="pSmartList1"><li>An optical amplifier that boosts the signal of the entire multi-wavelength optical channel at once</li></div>
+<a name="wp44519"> </a><div class="pSmartList1"><li>Regenerators that refresh each optical channel (this requires demultiplexing the multi-wavelength optical channel)</li></div>
+</ul></div>
+<a name="wp44529"> </a><p class="pBody">
+The amplifiers and regenerators in this system work as described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-03-03.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-03.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">SONET/SDH Systems</u></a>.
+</p>
+<a name="wp125516"> </a><p class="pBody">
+The WDM system might be designed so that wavelengths are grouped into spectral transmission bands. This might be due to the architecture of the multiplexers/demultiplexers or the amplifiers. The ability to upgrade the system band-per-band (instead of the entire system at once) allows for a more modular and cost-efficient upgrade scenario. Most of today&#39;s WDM systems work in two, three, or even more bands.
+</p>
+<a name="wp66753"> </a><p class="pFigCaption">
+Figure&#160;2-5   Terminal Multiplexer, Optical Amplifier, and Regenerator Site
+</p>
+<a name="wp66756"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-04-05.jpg" height="114" width="530" id="wp66755" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp44565"> </a><p class="pBody">
+WDM operates in the 1500 nm region of the optical fiber. This wavelength has good transmission characteristics and is preferred due to the availability of an amplifier that can boost all channels with a flat gain. 
+</p>
+<a name="wp47379"> </a><p class="pBody">
+Traditional SONET/SDH equipment operates at around 1310 nm. A device called a <em class="cEmphasis">transponder</em> is used to convert the 1310 nm interfaces of SONET/SDH equipment to the WDM wavelengths.
+</p>
+<a name="wp44571"> </a><p class="pBody">
+Two types of equipment can add/drop or cross-connect traffic in a node: <em class="cEmphasis">optical add/drop multiplexers</em> (OADMs) and <em class="cEmphasis">optical cross-connects</em> (OXCs). An OADM terminates two fiber pairs. It can insert or extract one or more &quot;tributary&quot; wavelength channels into or out of the multi-wavelength &quot;trunk&quot; channel while transparently passing through the remaining wavelengths. OADMs are typically deployed in nodes with limited amounts of add-drop traffic. In banded WDM systems, certain bands of the OADM might be entirely passed through, while other bands drop the traffic destined for that node. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-03-21.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-21.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Optical Nodes: OADM</u></a>.
+</p>
+<a name="wp44591"> </a><p class="pBody">
+An OXC consists of a large switching matrix that enables connectivity between the different ports of the OXC. The demultiplexed channels of the terminated fibers are interconnected to the trunk ports of the OXC; the add/drop channels are fed into the OXC through the tributary ports.
+</p>
+<a name="wp88771"> </a><p class="pBody">
+You can distinguish between different types of OXC switching matrices. Non-blocking OXCs can switch between any two ports, while wavelength plane or WP-OXCs can switch ports only on the same wavelength. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-03-20.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-20.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Optical Nodes: WP-OXC</u></a>. 
+</p>
+<a name="wp67004"> </a><p class="pFigCaption">
+Figure&#160;2-6   OADM and OXC
+</p>
+<a name="wp67007"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-04-06.jpg" height="114" width="530" id="wp67006" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_13_co.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

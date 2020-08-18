@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:24" />
+    <title>Advanced Options&#8212;Ring/Mesh Cost Dialog Box</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-13-01.html"> Ring Design</a> > <a href="User-13-05.html">Ring Dimensioning</a> > Advanced Options&#8212;Ring/Mesh Cost Dialog Box</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp277588"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Advanced Options&#8212;Ring/Mesh Cost Dialog Box
+</h2>
+
+ 
+
+<a name="wp286361"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('wdm_user', 'User-13-07.html#wp277413');" onMouseOver="WWHShowPopup('wdm_user', 'User-13-07.html#wp277413', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;12-3</u></a> lists the options and fields in the Advanced Options - Ring/Mesh Cost dialog box.
+</p>
+<a name="wp277590"> </a><p class="pFigCaption">
+Figure&#160;12-9   Advanced Options - Ring/Mesh Cost Dialog Box
+</p>
+<a name="wp277594"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-13-07-09.jpg" height="360" width="530" id="wp277592" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp277611"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp277413table277407">
+  <caption><a name="wp277413"> </a><div class="ptblcaption">
+Table&#160;12-3   Advanced Options - Ring/Mesh Cost Dialog Box&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp277417"> </a><div class="pCellHeading">
+Item
+</div>
+</th>
+    <th><a name="wp277419"> </a><div class="pCellHeading">
+Description
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp277421"> </a><div class="pCellBody">
+Allow connection partly over mesh
+</div>
+</td>
+    <td><a name="wp277423"> </a><div class="pCellBody">
+If this option is selected, SP&#160;Guru&#160;Transport&#160;Planner can route a connection partly on rings and partly on mesh. Thus after performing ring dimensioning with this option enabled, you can end up with partly routed connections, because the mesh part of the connections is not set up during ring dimensioning (you should do this in a separate grooming or routing action).
+</div>
+<a name="wp277510"> </a><div class="pCellBody">
+If this option is not selected, SP&#160;Guru&#160;Transport&#160;Planner routes a connection either entirely on (one or more) rings or entirely on mesh. For more information, refer to <a href="javascript:WWHClickedPopup('wdm_user', 'User-13-08.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-13-08.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Hybrid Ring-Mesh Design</u></a>.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp289723"> </a><div class="pCellBody">
+Existing Ring Factor
+</div>
+</td>
+    <td><a name="wp289725"> </a><div class="pCellBody">
+SP&#160;Guru&#160;Transport&#160;Planner multiplies the cost of existing rings with this factor. To model the reuse of already existing rings, enter a value smaller than 1.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp277431"> </a><div class="pCellBody">
+Mesh Factor
+</div>
+</td>
+    <td><a name="wp277436"> </a><div class="pCellBody">
+SP&#160;Guru&#160;Transport&#160;Planner multiplies the cost of links in the meshed DCL network by this factor. To model the use of rings, enter a value higher than the Existing Ring Factor and Added Ring Factor. To model the use of meshed links, enter a smaller value.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp277438"> </a><div class="pCellBody">
+Added Ring Factor
+</div>
+</td>
+    <td><a name="wp277441"> </a><div class="pCellBody">
+SP&#160;Guru&#160;Transport&#160;Planner multiplies the cost of added rings by this factor. To model the reuse of already existing rings, enter a value higher than the Existing Ring Factor.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp289735"> </a><div class="pCellBody">
+Interconnection Penalty
+</div>
+</td>
+    <td><a name="wp289737"> </a><div class="pCellBody">
+An extra penalty cost counted when traffic is switched between two rings. This can be used to discourage inter-ring traffic and let the traffic stay as long as possible on the same ring.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp289739"> </a><div class="pCellBody">
+Maximum Utilization (%)
+</div>
+</td>
+    <td><a name="wp289741"> </a><div class="pCellBody">
+The maximum percentage of capacity that can be used on each link of the ring. 
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp310760"> </a><div class="pCellBody">
+Mesh Link Mode
+</div>
+</td>
+    <td><a name="wp310762"> </a><div class="pCellBody">
+This option is only available if the option &#39;Allow connections partly over mesh&#39; has been chosen. This option determines the way nodes or groups of nodes are interconnected by mesh links to determine if mesh links may be a more cost effective solution opposed to rings.For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-13-08.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-13-08.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Hybrid Ring-Mesh Design</u></a>.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp304052"> </a><div class="pCellBody">
+Options for Ring Cost Calculation
+</div>
+</td>
+    <td><a name="wp304056"> </a><div class="pCellBody">
+These options specify extra costs included in the cost of a ring during ring dimensioning:
+</div>
+<ul class="pCellBodyBullet"><a name="wp304159"> </a><div class="pCellBodyBullet"><li>
+Include Proportional OCH Cost&#8212;If selected, the cost of a ring also includes the proportional cost of the equipment required to set up this ring in the OCH layer. This includes the cost of equipment (such as WDM systems and amplifiers) divided by the number of wavelengths supported at the OCH layer.
+</li></div>
+<a name="wp304057"> </a><div class="pCellBodyBullet"><li>
+Include Cost of Lower Layers&#8212;If selected, the cost of a ring also includes equipment costs in the OMS and OTS layers (such as fiber costs). These costs are also included proportionately&#8212;that is, only equipment that is used by the ring is included.
+</li></div>
+</ul></td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp309957"> </a><div class="pCellBody">
+Options for Ring vs. Mesh Cost Calculation
+</div>
+</td>
+    <td><a name="wp309959"> </a><div class="pCellBody">
+These options control what will happen in the case there is a tie when considering rings vs. mesh and also allow for the user to specify the protection level for connections traversing mesh links.
+</div>
+<ul class="pCellBodyBullet"><a name="wp310450"> </a><div class="pCellBodyBullet"><li>
+Mesh Routing with Dedicated Protection&#8212;This option controls the protection level of the connections or portions of connections that traverse mesh links. When unchecked this means that connections will be unprotected and when checked dedicated protection (i.e. 1+1 protection) is considered.
+</li></div>
+<a name="wp310052"> </a><div class="pCellBodyBullet"><li>
+Prefer Ring over Mesh in Case of Tie&#8212;This option controls what route would be considered most optimal in the case that there is a tie in the cost calculation for placing the connection on rings, rings and mesh or just mesh. When checked the algorithm will prefer rings in the case of ties. When unchecked the algorithm will prefer mesh links in the case of ties.
+</li></div>
+</ul></td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp277480"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 12-3	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+<a name="wp277014"> </a><p class="pBody">
+You can manipulate link costs&#8212;which determine how connections are routed&#8212;using the Existing Ring Factor, Added Ring Factor and Mesh Factor options. SP&#160;Guru&#160;Transport&#160;Planner multiplies these factors with the original costs of ring and mesh links (which are calculated based on the costs specified in the Equipment Properties). These factors have the following effects on routing:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp289430"> </a><div class="pSmartList1"><li>Given a low existing ring cost, SP&#160;Guru&#160;Transport&#160;Planner prefers to use existing rings and fill these up first. </li></div>
+<a name="wp289431"> </a><div class="pSmartList1"><li>If the mesh cost is lower than the existing ring cost, SP&#160;Guru&#160;Transport&#160;Planner avoids the rings and leaves traffic unrouted (you can route the unrouted traffic on the mesh afterwards). </li></div>
+<a name="wp289432"> </a><div class="pSmartList1"><li>If the mesh cost is between the existing ring cost and the added ring cost, SP&#160;Guru&#160;Transport&#160;Planner fills up the existing rings first and leaves traffic unrouted (you can route the unrouted traffic on the mesh afterwards). </li></div>
+<a name="wp289453"> </a><div class="pSmartList1"><li>If the mesh cost is higher than the added ring cost, which is in turn higher than the existing ring cost, SP&#160;Guru&#160;Transport&#160;Planner uses existing rings and then creates additional rings. Only traffic that cannot be routed on rings will be left unrouted (you can route the unrouted traffic on the mesh afterwards).</li></div>
+</ul></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_40_rd.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

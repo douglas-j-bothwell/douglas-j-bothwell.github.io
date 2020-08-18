@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:33:53" />
+    <title>Creating Custom Bit Rates</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-04-01.html"> Creating a Baseline Scenario</a> > <a href="User-04-15.html">Creating Network Traffic</a> > Creating Custom Bit Rates</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp323605"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Creating Custom Bit Rates
+</h2>
+
+ 
+
+<a name="wp323606"> </a><p class="pBody">
+You can create custom bit rates at the different layers of traffic (OCH, DCL, and LOP). 
+</p>
+<a name="wp323618"> </a><p class="pBody">
+At the OCH layer, you can create new wavelength services. In case these wavelength services should support higher-layer (DCL) traffic, you should also specify the multiplex factor as the number of equivalent OC-1 (SONET) or STM-1 (SDH) units.
+</p>
+<a name="wp323630"> </a><p class="pBody">
+At the DCL and LOP layer, you can create so-called concatenated bit rates. You can use these bit rates to support data services in a more capacity-efficient way over SONET/SDH. For example, an STS-48 (2.5 Gb/s) circuit can support 1-Gigabit Ethernet service in the existing SONET hierarchy. However, this is inefficient because more than half of the capacity of the circuit is not used. Therefore, you might want to define a new concatenated bit rate of 21 STS-1 containers (21 x 50.112 Mb/s = 1.052 Gb/s) so that the capacity is used more efficiently and with finer granularity.
+</p>
+<a name="wp323634"> </a><p class="pBody">
+To define a new bit rate, choose Network&#160;&gt; Custom&#160;Bit&#160;Rates. To create a new bit rate, click Add Bit Rate. For a new bit rate at the OCH layer, you must define a name and a multiplex factor (that is the amount of equivalent OC-1 or STM-1 units). For a new bit rate at the OCH layer, you must define a name, base bit rate, and concatenation count (that is, the scaling factor applied to the base rate).
+</p>
+<a name="wp323495"> </a><p class="pBody">
+If you define a custom OCH bit rate with a name such as &quot;OC-X&quot; (SONET) or &quot;STM-X&quot; (SDH), SP&#160;Guru&#160;Transport&#160;Planner sets the multiplex factor to X automatically. 
+</p>
+<a name="wp323496"> </a><p class="pBody">
+If you define a concatenated bit rate with a name using the conventional naming scheme (<em class="cEmphasis">&lt;standard_base_bit_rate&gt;-&lt;concatenation_count&gt;-&lt;c_or_vc&gt;</em>), such as &quot;STS-X-Yc&quot;, SP&#160;Guru&#160;Transport&#160;Planner sets the base bit rate to STS-X, and the concatenation count to Y automatically.
+</p>
+<a name="wp323497"> </a><p class="pBody">
+After you define a set of custom bit rates, you can use them as you use any other bit rate: you can define traffic with this bit rate and route it in the network. You can also save the defined set of custom bit rates in the user settings to reuse them again in other projects (for more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-22.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-22.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Importing and Exporting User Data Settings</u></a>).
+</p>
+<a name="wp291597"> </a><p class="pFigCaption">
+Figure&#160;3-22   Concatenated Bit Rates Dialog Box
+</p>
+<a name="wp291600"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-04-16-23.jpg" height="212" width="530" id="wp291599" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_16_cbn.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

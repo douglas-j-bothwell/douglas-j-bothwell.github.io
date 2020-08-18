@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:51" />
+    <title>Specifying Failures</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-15-1.html"> Failure Evaluation</a> > <a href="User-15-5.html">Failure Analysis</a> > Specifying Failures</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp282685"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Specifying Failures
+</h2>
+
+ 
+
+<a name="wp282686"> </a><p class="pBody">
+The Overview of Failures section of the Failure Analysis dialog box describes all the specified failures. You can generate the following failures at the different layers: 
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp282687"> </a><div class="pSmartList1"><li>OTS layer&#8212;Cable failure and complete node failure. A complete node failure means that the node fails at every network layer.</li></div>
+<a name="wp282688"> </a><div class="pSmartList1"><li>OCH layer&#8212;OXC failure, IXC failure, OADM failure, patch panel failure, and complete node failure. Complete node failure applies only at the OCH layer.</li></div>
+<a name="wp282689"> </a><div class="pSmartList1"><li>DCL layer&#8212;DXC failure, failure of all ADMs, and complete node failure. Complete node failure applies only at the DCL layer.</li></div>
+</ul></div>
+<a name="wp294165"> </a><p class="pBody">
+The Project Editor window shows red crosses to indicate user-defined failures, and marks as orange failures due to propagation toward higher layers and other objects that fail as a result of user-defined failures.
+</p>
+<a name="wp294019"> </a><p class="pBody">
+Keep in mind that any failures you specify during the evaluation process affect traffic only while you are in Failure Analysis mode. These effects do not persist in the network model after you exit this mode (by closing the Failure Analysis dialog box).
+</p>
+<a name="wp282690"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp282690", false);</script>Procedure&#160;14-3   Generating One Network Failure<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp282690", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp282690", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp282691"> </a><div style="text-align: left" class="pSmartList2Test"><li>Choose Info&#160;&gt; Failure&#160;Analysis to open the Failure Analysis dialog box. </li></div>
+<a name="wp294542"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+You are now in Failure Analysis mode.
+</p>
+<a name="wp293959"> </a><div style="text-align: left" class="pSmartList2Test"><li>Place the mouse cursor over the specified network layer. </li></div>
+<a name="wp282692"> </a><div style="text-align: left" class="pSmartList2Test"><li>Right-click on the network object you want to fail. </li></div>
+<a name="wp282693"> </a><div style="text-align: left" class="pSmartList2Test"><li>Select the correct option from the popup menu, such as Fail This Link or Fail This Node.</li></div>
+<a name="wp294546"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The list of failures appears in the Overview of Failures section of the Failure Analysis dialog box. 
+</p>
+</ol></div>
+<a name="wp297868"> </a><p class="pProcEnd">
+End of Procedure 14-3
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp297869"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp282700"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp282700", false);</script>Procedure&#160;14-4   Removing One Network Failure<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp282700", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp282700", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp293963"> </a><div style="text-align: left" class="pSmartList2Test"><li>Choose Info&#160;&gt; Failure&#160;Analysis to open the Failure Analysis dialog box.</li></div>
+<a name="wp294550"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+You are now in Failure Analysis mode.
+</p>
+<a name="wp282701"> </a><div style="text-align: left" class="pSmartList2Test"><li>Place the mouse cursor over the specified network layer. </li></div>
+<a name="wp282702"> </a><div style="text-align: left" class="pSmartList2Test"><li>Right-click on the failed network object. </li></div>
+<a name="wp282703"> </a><div style="text-align: left" class="pSmartList2Test"><li>Select the appropriate option from the popup menu, such as Repair This link or Repair This node. </li></div>
+</ol></div>
+<a name="wp297873"> </a><p class="pProcEnd">
+End of Procedure 14-4
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp297874"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp282705"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp282705", false);</script>Procedure&#160;14-5   Removing All Network Failures<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp282705", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp282705", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp293967"> </a><div style="text-align: left" class="pSmartList2Test"><li>Choose Info&#160;&gt; Failure&#160;Analysis to open the Failure Analysis dialog box.</li></div>
+<a name="wp294554"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+You are now in Failure Analysis mode.
+</p>
+<a name="wp282706"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click the Clear Failures button in the Failure Analysis dialog box. </li></div>
+</ol></div>
+<a name="wp297878"> </a><p class="pProcEnd">
+End of Procedure 14-5
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp297879"> </a><h6 class="pHeading6">
+
+</h6>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_43_fe.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

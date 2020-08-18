@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:47" />
+    <title>OADM Dimensioning</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-08-1.html"> Dimensioning</a> > <a href="User-08-2.html">Dimension DCL/OCH Layer Dialog Box</a> > OADM Dimensioning</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp90951"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+OADM Dimensioning
+</h2>
+
+ 
+
+<a name="wp90952"> </a><p class="pBody">
+The OADM Dimensioning<span style="font-weight: bold"> </span>options control how OADMs are added during dimensioning. These options refer to OADMs in higher-degree nodes and are available in transparent network mode only (for more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-03-21.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-21.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Optical Nodes: OADM</u></a>). 
+</p>
+<a name="wp90985"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp90956table90954">
+  <caption><a name="wp90956"> </a><div class="ptblcaption">
+Table&#160;7-4   OADM Dimensioning Options
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp90960"> </a><div class="pCellHeading">
+Option
+</div>
+</th>
+    <th><a name="wp90962"> </a><div class="pCellHeading">
+Description
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp90964"> </a><div class="pCellBody">
+Do not add OADMs
+</div>
+</td>
+    <td><a name="wp90966"> </a><div class="pCellBody">
+Dimensioning does not add OADMs, except in complete OADM nodes (degree 2 or lower). 
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp90968"> </a><div class="pCellBody">
+Expand existing OADM relations
+</div>
+</td>
+    <td><a name="wp90970"> </a><div class="pCellBody">
+Dimensioning can add new OADMs in a node, but only in those directions for which there were already OADMs present. 
+</div>
+<a name="wp90971"> </a><div class="pCellBody">
+For example, assume a degree-four node that has an OADM defined between a fiber in link 1 and a fiber in link 2. In this case, dimensioning can add new OADMs between fibers of link 1 and link 2 but cannot add OADMs for other link relations.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp90973"> </a><div class="pCellBody">
+Add unique OADM relations
+</div>
+</td>
+    <td><a name="wp90975"> </a><div class="pCellBody">
+Dimensioning can add new OADMs in a node, even if no OADMs were defined previously. However, a link can have a unique OADM relationship with one other link only. 
+</div>
+<a name="wp105659"> </a><div class="pCellBody">
+The dimensioning algorithm adds those OADM directions that are most cost-effective within these constraints. The cost of adding OADMs is compared to the cost of performing the switching without OADMs and OADMs are only added if they result in cost savings.
+</div>
+<a name="wp90976"> </a><div class="pCellBody">
+For example, assume a degree-4 node with no OADMs defined yet. In this case, dimensioning can add new OADMs between fibers of link 1 and link 2. However, this change will exclude fibers on link 1 and link 2 from having any OADM relationships with fibers on any other links. Therefore, the only other possible OADM relationship that can be added on top of this is between fibers of link 3 and fibers of link 4.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp90978"> </a><div class="pCellBody">
+Add multiple OADM relations
+</div>
+</td>
+    <td><a name="wp90980"> </a><div class="pCellBody">
+Dimensioning can add new OADMs in a node, even if no OADMs were defined previously. There are no constraints on possible OADM relations. The dimensioning algorithm adds those OADM relations that result in the highest cost savings compared using no OADMs.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp90982"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 7-4	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_28_dim.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

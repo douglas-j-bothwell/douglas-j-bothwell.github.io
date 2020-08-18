@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:38:42" />
+    <title>Link Design</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="wdmgtut-4-01.html"> Network Design Operations</a> > Link Design</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp925830"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Link Design
+</h2>
+
+ 
+
+
+<a name="wp940819"> </a><p class="pBody">
+To overcome signal degradation on long fiber links, the signal must be amplified and regenerated at regular intervals. Amplifier and regenerator locations are calculated according to the transmission characteristics of the line system. This is accomplished through the Link Browser dialog box at the OTS layer or the<b class="cBold"> Design &gt; OTS Link Design</b> dialog box. However, in a production network the locations are already known. You can import this information from a data file, as explained in the <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-01.html#wp239282');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-01.html#wp239282', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Importing and Exporting Data</u></a> chapter of the SP&#160;Guru&#160;Transport&#160;Planner <em class="cEmphasis">User&#160;Guide</em>.
+</p>
+<a name="wp937879"> </a><p class="pBody">
+Example import files are located in the following directory:
+</p>
+<div class="pPreformattedRelative"><pre class="pPreformattedRelative">
+<code class="cCode">&lt;</code><em style="font-style: oblique" class="cEmphasis">install_dir</em><code style="font-style: normal" class="cCode">&gt;\&lt;</code><em style="font-style: oblique" class="cEmphasis">release</em><code style="font-style: normal" class="cCode">&gt;</code>\models\std\wdmguru\examples<a name="wp937874"> </a>
+</pre></div>
+<a name="wp925833"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp925833", false);</script>Procedure&#160;3-1   Calculating Amplifier and Regenerator Locations<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp925833", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp925833", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp925835"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the WDMGuru_Examples project.</li></div>
+<ol type="a">
+<a name="wp925836"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Open...</span>.</li></div>
+<a name="wp925837"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">WDMGuru_Examples</span> project, then click <span style="font-weight: bold">Open</span>.</li></div>
+<a name="wp937888"> </a><p class="pIndentedRelative">
+The example project, which contains multiple scenarios, is loaded. The Australia scenario appears in the workspace.
+</p>
+</ol>
+<a name="wp925838"> </a><div style="text-align: left" class="pSmartList2Test"><li>Select <span style="font-weight: bold">Scenarios &gt; Switch To Scenario &gt; USA</span> to load the USA scenario in the workspace.</li></div>
+<a name="wp925841"> </a><div style="text-align: left" class="pSmartList2Test"><li>Do OTS link design to calculate the amplifier and regenerator locations.</li></div>
+<ol type="a">
+<a name="wp925842"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Design</b> <span style="font-weight: bold">&gt; Link Design...</span>.</li></div>
+<a name="wp937664"> </a><p class="pIndentedRelative">
+The <span style="font-weight: bold">Link Design</span> dialog box appears.
+</p>
+<a name="wp925843"> </a><p class="pIndentedRelative">
+You can select one link or design all the links simultaneously.
+</p>
+<a name="wp938014"> </a><div class="pprocstepSub"><li>Choose <span style="font-weight: bold">ALL LINKS</span> to design all links.</li></div>
+<a name="wp939896"> </a><div class="pprocstepSub"><li>You can design a link for a specific WDM line system type or for ALL LSTYPES (a worst-case link design). For this example, select <span style="font-weight: bold">LH 40-WDM</span> to design for the default line system type (LH 40-WDM). The other options refer to the actual placement of the sites on the link (refer to the SP&#160;Guru&#160;Transport&#160;Planner<span style="font-style: oblique"> User&#160;Guide</span>).</li></div>
+<a name="wp939897"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Asymmetrical, Maximum Span Lengths </span>and <span style="font-weight: bold">Mid Span</span>, then press the <span style="font-weight: bold">Design</span> button.</li></div>
+<a name="wp925845"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-02-01.jpg" height="188" width="471" id="wp933856" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp925851"> </a><p class="pIndentedRelative">
+The <span style="font-weight: bold">Link Design Results</span> window appears with a list of sites added on the links.
+</p>
+<a name="wp933934"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-02-02.jpg" height="300" width="457" id="wp934059" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp925856"> </a><div class="pprocstepSub"><li>Close the <span style="font-weight: bold">Link Design Results</span> and the <span style="font-weight: bold">Link Design</span> dialog box.</li></div>
+</ol>
+<a name="wp925858"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the OTS links.</li></div>
+<ol type="a">
+<a name="wp925859"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Network &gt; Link Browser</span> (or double click on a link) to open the link browser.</li></div>
+<a name="wp925860"> </a><div class="pprocstepSub"><li>Select<b class="cBold"> OTS</b> to inspect the links in the OTS layer. Mark the <b class="cBold">Show in-line sites</b> option.</li></div>
+<a name="wp925861"> </a><div class="pprocstepSub"><li>Click on the <span style="font-weight: bold">+</span> icon (next to the links) to display the details of the amplifier and regeneration site locations. A yellow icon indicates an amplifier site, while a red icon indicates a regenerator site.</li></div>
+<a name="wp925862"> </a><div class="pprocstepSub"><li>Click on the <span style="font-weight: bold">+</span> icon (next to the sites) to see the functionality performed on the specific fibers in that site.</li></div>
+<a name="wp934133"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-02-03.jpg" height="248" width="484" id="wp934254" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp925870"> </a><div class="pprocstepSub"><li>Close the link browser.</li></div>
+</ol>
+<a name="wp925872"> </a><div style="text-align: left" class="pSmartList2Test"><li>Import the amplifier and regenerator locations.</li></div>
+<ol type="a">
+<a name="wp925873"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File &gt; Import &gt; Network Elements...</span>.</li></div>
+<a name="wp925874"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">OA/Regenerator Locations</span> as the <span style="font-weight: bold">Data Type</span> to import.</li></div>
+<a name="wp925875"> </a><div class="pprocstepSub"><li>Click <b class="cBold">Import</b> and select the file <span style="font-weight: bold">WDMGuru_import_USA_OA_regen_locations.csv</span> in the directory <code class="cCode">&lt;</code><em style="font-style: oblique" class="cEmphasis">install_dir</em><code style="font-style: normal" class="cCode">&gt;\&lt;</code><em style="font-style: oblique" class="cEmphasis">release</em><code style="font-style: normal" class="cCode">&gt;\models\std\wdmguru\examples</code>.</li></div>
+<a name="wp925876"> </a><div class="pprocstepSub"><li>After you select the data file, 209 in-line amplifier or regenerator sites are imported. Note that the site locations calculated in the previous paragraph have been overwritten by the imported site locations.</li></div>
+<a name="wp934262"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-02-04.jpg" height="301" width="472" id="wp934269" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp925881"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Import Network Elements</b> dialog box.</li></div>
+</ol>
+<a name="wp925883"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the OTS links.</li></div>
+<ol type="a">
+<a name="wp925884"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Network &gt; Link Browser</span> (or double click on a link) to open the link browser.</li></div>
+<a name="wp925885"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">OTS</span> to inspect the links in the OTS layer. Mark the <b class="cBold">Show in-line sites</b> option. </li></div>
+<a name="wp925886"> </a><div class="pprocstepSub"><li>Click on the <span style="font-weight: bold">+</span> icon (next to the links) to display the details of the amplifier and regeneration site locations.</li></div>
+<a name="wp925887"> </a><div class="pprocstepSub"><li>Click on the <span style="font-weight: bold">+</span> icon (next to the sites) to see the functionality performed on the specific fibers in that site.</li></div>
+<a name="wp940860"> </a><div class="pprocstepSub"><li>Close the link browser.</li></div>
+</ol>
+<a name="wp940861"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the project.</li></div>
+<ol type="a">
+<a name="wp940862"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File &gt; Close</span>. Select <span style="font-weight: bold">Don&#39;t Save</span> in the Close Confirm dialog box.</li></div>
+</ol>
+</ol></div>
+<a name="wp933176"> </a><p class="pProcEnd">
+End of Procedure 3-1
+</p>
+<a name="wp925889"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>To export the OTS in-line sites, use the <span style="font-weight: bold">File &gt; Export &gt; Network&#160;Elements...</span> dialog box. Exporting information from a simple network into a file is a good way to discover the required file format in case you want to generate a file by hand, or by some other means.
+</p>
+
+
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/wdmg_tut_3.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

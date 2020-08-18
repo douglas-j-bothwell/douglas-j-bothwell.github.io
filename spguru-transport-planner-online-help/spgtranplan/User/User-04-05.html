@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:33:53" />
+    <title>Defining a Network Topology</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-04-01.html"> Creating a Baseline Scenario</a> > Defining a Network Topology</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp145619"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Defining a Network Topology
+</h2>
+
+ 
+
+
+<a name="wp269437"> </a><p class="pBody">
+After you create a new project and specify the required information in the Startup Wizard, the Project Editor opens an empty topology, as shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-05.html#wp269438');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-05.html#wp269438', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;3-9</u></a>. One important step in the design process is to define the network topology&#8212;that is, to create node objects and connect the nodes with link objects.
+</p>
+<a name="wp269438"> </a><p class="pFigCaption">
+Figure&#160;3-9   An Empty Topology
+</p>
+<a name="wp306316"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-04-05-09.jpg" height="349" width="530" id="wp306314" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp269460"> </a><p class="pBody">
+There are two methods for creating a topology in SP&#160;Guru&#160;Transport&#160;Planner. You can define a topology manually, as described in this section. You can also import some or all of a topology, as described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-01.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-01.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Importing and Exporting Data</u> </a>.
+</p>
+<a name="wp137599"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+The Object Palette
+</h3>
+<a name="wp137623"> </a><p class="pBody">
+You define nodes and links in your network using the <em class="cEmphasis">object palette</em> (shown in the following diagram). To open this window, click the Open Object Palette toolbar button.
+</p>
+<a name="wp166141"> </a><p class="pFigCaption">
+Figure&#160;3-10   The Object Palette
+</p>
+<a name="wp306333"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-04-05-10.jpg" height="151" width="530" id="wp306324" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp140151"> </a><p class="pBody">
+You can create the following types of objects using the object palette:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp140158"> </a><div class="pSmartList1"><li><em class="cEmphasis">ECC</em> (Electrical Cross-Connect) nodes switch SDH/SONET traffic only and do not have an optical counterpart. These nodes are not visible in the OCH layer.</li></div>
+<a name="wp140171"> </a><div class="pSmartList1"><li><em class="cEmphasis">OCC</em> (Optical Cross-Connect) nodes can switch wavelengths only and do not have an electrical counterpart. These nodes are not visible in the DCL layer.</li></div>
+<a name="wp140185"> </a><div class="pSmartList1"><li><em class="cEmphasis">EOCC</em> (Electrical-Optical Cross-Connect) nodes switch both SDH/SONET traffic and wavelengths. These nodes are visible in both the DCL and OCH layers.</li></div>
+<a name="wp269468"> </a><div class="pSmartList1"><li>A <em class="cEmphasis">cable splitter</em> node is a bifurcation point for optical fiber pairs; it switches fiber pairs at the OTS layer, as described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-06.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-06.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Configuring Cable Splitters and Fiber Routes</u></a>.</li></div>
+<a name="wp269559"> </a><div class="pSmartList1"><li>A <em class="cEmphasis">subnet object</em> is used to include annotations in a scenario. It is good practice to include annotations in a scenario, so that others can understand the details and objectives of the scenario.</li></div>
+</ul></div>
+<a name="wp145540"> </a><p class="pBody">
+The network topology can appear different according the network layer in which it is being viewed, as shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-05.html#wp210213');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-05.html#wp210213', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;3-11-DCL, OCH, OMS, and OTS Views of a Multi-Tiered Topology</u> </a>. For more information about ECCs, OCCs, and EOCCs, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-03-01.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-01.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Concepts and Models</u> </a>.
+</p>
+<a name="wp210213"> </a><p class="pFigCaption">
+Figure&#160;3-11   DCL, OCH, OMS, and OTS Views of a Multi-Tiered Topology
+</p>
+<a name="wp210224"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-04-05-11.jpg" height="810" width="531" id="wp210215" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp137659"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Creating Nodes
+</h3>
+<a name="wp137660"> </a><p class="pBody">
+When you drag a node model icon into the workspace, or select a link icon and connect two nodes, you create an <em class="cEmphasis">instance</em> (copy) of that model.
+</p>
+<a name="wp137780"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp137780", false);</script>Procedure&#160;3-1   Creating a Node Using the Object Palette<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp137780", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp137780", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp137781"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the object palette.</li></div>
+<a name="wp137783"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click on the node model icon in the object palette, then move the cursor into the Project Editor workspace.</li></div>
+<a name="wp137784"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+A square icon outline appears around the cursor to indicate that you are now in &quot;node creation mode.&quot;
+</p>
+<a name="wp137692"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click the location in the workspace where you want to place the new node.</li></div>
+<a name="wp273218"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+SP&#160;Guru&#160;Transport&#160;Planner creates the node in the workspace and gives it a default name. The node&#39;s appearance varies depending on the current network-layer view and the node type (as described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-05.html#wp276507');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-05.html#wp276507', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Node Model Icons</u></a>).
+</p>
+<a name="wp137700"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The default name is a text string followed by a number that is incremented each time another object is created. To rename a node, right-click on it and choose Set Name.
+</p>
+<a name="wp137704"> </a><div style="text-align: left" class="pSmartList2Test"><li>To create another node of the same type, click at a new location. Repeat this step for each node of the same type that you want to create.</li></div>
+<a name="wp137712"> </a><div style="text-align: left" class="pSmartList2Test"><li>When you are finished creating nodes, right-click to end the operation. </li></div>
+<a name="wp198209"> </a><div style="text-align: left" class="pSmartList2Test"><li>If you want to configure individual nodes, open the Node Browser (see <a href="javascript:WWHClickedPopup('wdm_user', 'User-05-08.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-05-08.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Node Browser</u></a> for more information). </li></div>
+</ol></div>
+<a name="wp308294"> </a><p class="pProcEnd">
+End of Procedure 3-1
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp308295"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp308292"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp137715"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Creating Links
+</h3>
+<a name="wp140486"> </a><p class="pBody">
+Links are the communication channels between nodes. You should always add links in the OTS layer. Depending on the type of end nodes, a link looks different at different network layers. There are two types of links, <em class="cEmphasis">optical</em> links and <em class="cEmphasis">electrical</em> links.
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp140505"> </a><div class="pSmartList1"><li>Links between OCC-OCC, OCC-EOCC, and EOCC-EOCC node pairs are <em class="cEmphasis">optical</em> links (that is, OCH links not visible in the DCL layer) on which WDM line systems are deployed. </li></div>
+<a name="wp140506"> </a><div class="pSmartList1"><li>Links between EOCC-ECC and ECC-ECC node pairs are <em class="cEmphasis">electrical</em> links (DCL links drawn in white in the OCH layer) on which SONET/SDH line systems are deployed. These are physical DCL links. SP&#160;Guru&#160;Transport&#160;Planner can also create logical DCL links between EOCC-EOCC node pairs as a result of routing non-native OCH connections between two nodes. </li></div>
+</ul></div>
+<a name="wp140507"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>You cannot create links between OCC-ECC node pairs.
+</p>
+
+<a name="wp269926"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>Links that connect a cable splitter do not appear at other layers before the cable splitter is configured to specify the number of fibers routed between its end nodes.
+</p>
+
+<a name="wp140511"> </a><p class="pBody">
+You can create as many links as you want between the same end nodes. You can right-click on a link in the OTS layer to add a <em class="cEmphasis">parallel</em><em class="cEmphasis"> link</em>. This results in separate cables between the nodes (for example, to provide protection paths). These cables use separate ducts. You can also create a parallel link manually from the object palette. 
+</p>
+<a name="wp140513"> </a><p class="pBody">
+When you add a link in lat/long mode, SP&#160;Guru&#160;Transport&#160;Planner calculates its length (in km) using the coordinates of the nodes. If you move the nodes after adding a link, or change the path of the link, the link length does not adjust automatically; you must change the length manually using the OTS Link Browser. You can also redefine the path of a link. To do so right-click on the link, and select &quot;Redefine Path&quot;. Then draw the path of the link in the project editor by clicking where you want to define the bend points of the link. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-05-03.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-05-03.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Link Browser</u></a>.
+</p>
+<a name="wp140495"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp140495", false);</script>Procedure&#160;3-2   Creating a Link<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp140495", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp140495", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp140496"> </a><div style="text-align: left" class="pSmartList2Test"><li>If the object palette is not already open, click the Open Object Palette toolbar button.</li></div>
+<a name="wp137849"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click on the link model icon in the object palette, then move the cursor into the Project Editor workspace.</li></div>
+<a name="wp137850"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+A diagonal line appears to the upper-right of the cursor to indicate that you are in link-creation mode.
+</p>
+<a name="wp137729"> </a><div style="text-align: left" class="pSmartList2Test"><li>To create a link between two nodes:</li></div>
+<ol type="a">
+<a name="wp137730"> </a><div class="pprocstepSub"><li>Click on the first node.</li></div>
+<a name="wp137732"> </a><div class="pprocstepSub"><li>Click on the second node.</li></div>
+<a name="wp140463"> </a><p class="pIndentedRelative">
+SP&#160;Guru&#160;Transport&#160;Planner draws the link between the two objects.
+</p>
+<a name="wp176183"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-04-05-12.jpg" height="65" width="500" id="wp176182" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp325741"> </a><div class="pprocstepSub"><li>If you want to redefine the link, right-click on the link, and select &quot;Redefine Path&quot;. Then draw the path of the link in the project editor by clicking where you want to define the bend points of the link.</li></div>
+</ol>
+</ol></div>
+<a name="wp308299"> </a><p class="pProcEnd">
+End of Procedure 3-2
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp308300"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp306615"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Deleting, Cutting, Copying and Pasting Nodes and Links
+</h3>
+<a name="wp306616"> </a><p class="pBody">
+The Edit menu includes commands for copying and pasting selected objects. 
+</p>
+<a name="wp306617"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>You can perform these actions in the OTS layer only. 
+</p>
+
+<a name="wp306618"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Cutting and Deleting 
+</h3>
+<a name="wp306619"> </a><p class="pBody">
+The Edit menu includes commands for cutting and deleting network objects. If you cut or delete objects that currently support traffic, SP&#160;Guru&#160;Transport&#160;Planner does the following:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp306623"> </a><div class="pSmartList1"><li>Tears down traffic that runs through a cut/deleted node</li></div>
+<a name="wp306624"> </a><div class="pSmartList1"><li>Deletes traffic that originates in a cut/deleted node</li></div>
+</ul></div>
+<a name="wp306628"> </a><p class="pBody">
+When you perform a cut/delete operation, SP&#160;Guru&#160;Transport&#160;Planner shows how the proposed change will affect traffic so you can identify and reroute the affected traffic after the topology change. 
+</p>
+<a name="wp306629"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp306629", false);</script>Procedure&#160;3-3   Cutting/Deleting Network Objects<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp306629", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp306629", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp306630"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click the OTS toolbar button to show the OTS layer (you must be in this layer to delete network objects).</li></div>
+<a name="wp306631"> </a><div style="text-align: left" class="pSmartList2Test"><li>Select the objects you want to delete by clicking on them (hold down the Shift or Control key on your keyboard to select multiple objects).</li></div>
+<a name="wp306632"> </a><div style="text-align: left" class="pSmartList2Test"><li>Cut or delete the selected objects. </li></div>
+<div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp306633"> </a><div class="pSmartList2"><li>To cut, choose Edit&#160;&gt; Cut or press Ctrl+X.</li></div>
+<a name="wp306634"> </a><div class="pSmartList2"><li>To delete, choose Edit&#160;&gt; Delete or press the Delete key on your keyboard.</li></div>
+<a name="wp306638"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The Topology Change Warning window appears (<a href="javascript:WWHClickedPopup('wdm_user', 'User-04-05.html#wp306640');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-05.html#wp306640', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;3-12</u></a>). This window states that connections and/or rings are affected by the objects you are trying to delete.
+</p>
+<a name="wp306640"> </a><p class="pFigCaption">
+Figure&#160;3-12   Topology Change Warning Window
+</p>
+<a name="wp306644"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-04-05-13.jpg" height="132" width="500" id="wp306642" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ul></div>
+<a name="wp306646"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click &quot;Show Details ...&quot; to view details of the affected connections and rings.</li></div>
+<a name="wp306650"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The Topology Change Effects window appears (<a href="javascript:WWHClickedPopup('wdm_user', 'User-04-05.html#wp306658');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-05.html#wp306658', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;3-13</u></a>). The top treeview lists the objects you selected to cut/delete. The bottom pane includes two treeviews that show the connections to be torn down and deleted. Another treeview shows the rings to be removed as a result of the topology change. The bottom treeviews are as similar to those used in the Connection Browser (<a href="javascript:WWHClickedPopup('wdm_user', 'User-05-13.html#wp266315');" onMouseOver="WWHShowPopup('wdm_user', 'User-05-13.html#wp266315', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;4-11-Connection Browser: Controls</u> </a>) and the Ring Browser (<a href="javascript:WWHClickedPopup('wdm_user', 'User-05-15.html#wp282264');" onMouseOver="WWHShowPopup('wdm_user', 'User-05-15.html#wp282264', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;4-15-Ring Browser: Treeview</u> </a>).
+</p>
+<a name="wp306658"> </a><p class="pFigCaption">
+Figure&#160;3-13   Topology Change Effects Window
+</p>
+<a name="wp306662"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-04-05-14.jpg" height="255" width="500" id="wp306660" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp306664"> </a><div style="text-align: left" class="pSmartList2Test"><li>Examine the &quot;Connections to be torn down,&quot; &quot;Connections to be deleted,&quot; and &quot;Rings to be removed&quot; treeviews to see the effects of the topology change. Use the Layer buttons to see how the topology is affected at each layer. To view a csv report of this data, click Generate CSV Report.</li></div>
+<a name="wp306665"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click Close to return to the Topology Change Warning window.</li></div>
+<a name="wp306666"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click Delete (to delete the selected objects) or Cancel (to cancel the operation).</li></div>
+<a name="wp306670"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+When you click Delete, SP&#160;Guru&#160;Transport&#160;Planner deletes the selected nodes and links, tears down and deletes affected connections, and removes rings. 
+</p>
+<a name="wp306671"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the Topology Change Warning window.</li></div>
+<a name="wp306672"> </a><div style="text-align: left" class="pSmartList2Test"><li>Reroute the connections that were torn down using the existing SP&#160;Guru&#160;Transport&#160;Planner design functionality such as routing, dimensioning, grooming, and so. You might want to split the unrouted connections into a residual traffic matrix.</li></div>
+</ol></div>
+<a name="wp308307"> </a><p class="pProcEnd">
+End of Procedure 3-3
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp308308"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp325860"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Creating Custom Network Documentation
+</h3>
+<a name="wp325915"> </a><p class="pBody">
+In some cases, you might want to create custom documentation for individual network objects. Each node, link, and subnet object has a Documentation attribute that can specify plain-text descriptions and external files that include additional documentation. Examples of useful documentation might include:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp325916"> </a><div class="pSmartList1"><li>A plain-text description that describes important configuration settings for a router</li></div>
+<a name="wp325917"> </a><div class="pSmartList1"><li>An external code or data file used to configure an object</li></div>
+<a name="wp325918"> </a><div class="pSmartList1"><li>An image file that shows the topology of a subnet</li></div>
+</ul></div>
+<a name="wp325919"> </a><p class="pBody">
+To view and edit custom documentation for an object, right-click on the object and choose Edit Documentation. In the resulting dialog box (<a href="javascript:WWHClickedPopup('wdm_user', 'User-04-05.html#wp325924');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-05.html#wp325924', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;3-14</u></a>), you can enter a plain-text description and/or attach external files such as images, data files, and Word documents.
+</p>
+<a name="wp325924"> </a><p class="pFigCaption">
+Figure&#160;3-14   Edit Documentation Dialog Box, &quot;Attachments&quot; Tabbed Page
+</p>
+<a name="wp325928"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-04-05-15.jpg" height="228" width="530" id="wp325926" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp325975"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp325935table325930">
+  <caption><a name="wp325935"> </a><div class="ptblcaption">
+Table&#160;3-2   &quot;Edit Documentation&quot; Dialog Box&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp325939"> </a><div class="pCellHeading">
+Item
+</div>
+</th>
+    <th><a name="wp325941"> </a><div class="pCellHeading">
+Description
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp325943"> </a><div class="pCellBody">
+Notes tabbed page
+</div>
+</td>
+    <td><a name="wp325945"> </a><div class="pCellBody">
+Use this page to view and edit plain-text descriptions.
+</div>
+<a name="wp325946"> </a><div class="pCellBody">
+You can use the standard keyboard combinations for cutting, copying, and pasting text.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp325948"> </a><div class="pCellBody">
+Attachments tabbed page:
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><ul class="pCellBodyBullet"><a name="wp325952"> </a><div class="pCellBodyBullet"><li>
+File Name
+</li></div>
+</ul></td>
+    <td><a name="wp325954"> </a><div class="pCellBody">
+Name of the external file. This field is not editable.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><ul class="pCellBodyBullet"><a name="wp325956"> </a><div class="pCellBodyBullet"><li>
+Description
+</li></div>
+</ul></td>
+    <td><a name="wp325958"> </a><div class="pCellBody">
+Enter a description of the external file here.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><ul class="pCellBodyBullet"><a name="wp325960"> </a><div class="pCellBodyBullet"><li>
+File Location
+</li></div>
+</ul></td>
+    <td><a name="wp325962"> </a><div class="pCellBody">
+Location of the external file.
+</div>
+<a name="wp325963"> </a><div class="pCellBody">
+You can specify one of the following options from the pull-down menu:
+</div>
+<ul class="pCellBodyBullet"><a name="wp325964"> </a><div class="pCellBodyBullet"><li>
+Local to Scenario&#8212;When you initially add an external file, the software retains a link to the file. If you select the Local to Scenario option, OPNET&#160;analysis&#160;software creates a local copy of the file in the scenario directory. (The copy occurs after you click OK.) This option is useful if you want to move the scenario to another location, or if you want to edit the external file with information that applies to a specific set of network objects.
+</li></div>
+<a name="wp325965"> </a><div class="pCellBodyBullet"><li>
+External/Absolute&#8212;Retains a link to the external file; the location is specified using an absolute path. Use this option if you do not need to create a local copy of the file. <b class="cBold">NOTE&#8212;</b>If you select External/Absolute or External/Relative and the external file is moved or renamed, the link will be broken.
+</li></div>
+<a name="wp325966"> </a><div class="pCellBodyBullet"><li>
+External/Relative&#8212;Retains a link to the external file; the link is specified using a relative path from the current scenario directory. You might want to use this instead of External/Absolute if you store your files in an external directory that always has the same relative path from the scenario directory. For example, you might want to add a /doc subdirectory to the project directory (which is the parent of the scenario directory). In this case, you could use relative links (<code class="cCode">./doc/&lt;filename&gt;</code>) and then move the entire project without breaking those links.
+</li></div>
+</ul></td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp325968"> </a><div class="pCellBody">
+&quot;Apply to selected objects&quot; checkbox
+</div>
+</td>
+    <td><a name="wp325970"> </a><div class="pCellBody">
+Select this option if you want to apply the documentation to all selected objects.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp325972"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 3-2	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+<a name="wp276507"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Node Model Icons
+</h3>
+<a name="wp276508"> </a><p class="pBody">
+A node icon varies according to the network layer view and the node type, as shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-05.html#wp276513');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-05.html#wp276513', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;3-15</u></a>. In the OCH layer, the icon color varies depending on whether the node is opaque, transparent, or selective.
+</p>
+<a name="wp276513"> </a><p class="pFigCaption">
+Figure&#160;3-15   Node Icons in OTS, OMS, OCH, and DCL Layers
+</p>
+<a name="wp276658"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-04-05-16.jpg" height="692" width="699" id="wp276515" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_16_cbn.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

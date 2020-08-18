@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:38:42" />
+    <title>Additional Exercises</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="wdmgtut-4-01.html"> Network Design Operations</a> > <a href="wdmgtut-4-07.html">Grooming DCL to OCH Traffic</a> > Additional Exercises</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp926288"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Additional Exercises
+</h2>
+
+ 
+
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp926290"> </a><div class="pSmartList1"><li>Redo the example with different grooming strategies (basic end-to-end grooming, basic link-by-link grooming, and optimized link-by-link grooming) and compare the difference in terms of DCL topology and DCL capacity requirements. Use the <span style="font-weight: bold">Info &gt; Topology &gt; DCL Layer</span> and <span style="font-weight: bold">Info &gt; Topology &gt; OCH Layer</span> dialog boxes to see the link and node capacity in both layers.</li></div>
+<a name="wp926291"> </a><div class="pSmartList1"><li>Redo the example with 1+1 protection in the DCL layer. Using the <span style="font-weight: bold">Link Disjoint</span> setting, you can force disjointness of working and protection path only at the DCL layer or down to the OCH, OMS, or OTS layer. For OTS, it is guaranteed that working and protection path will not use the same physical infrastructure&#8212;both the grooming of the DCL traffic matrix and OCH dimensioning occur in one step.</li></div>
+<a name="wp926292"> </a><div class="pSmartList1"><li>You can disable the grooming function in specific nodes. To do so, select <span style="font-weight: bold">Network &gt; Node Browser</span> (or double click on a node). Select <span style="font-weight: bold">Ports</span> for the <span style="font-weight: bold">View</span> and <span style="font-weight: bold">DCL </span>as the<span style="font-weight: bold"> Layer</span>. Right-click on a node and select <b class="cBold">Change to TM</b>. A terminal multiplexer (TM) replaces the DXC. With the TM in place, the node cannot switch traffic at the DCL level, but can only aggregate or segregate DCL traffic terminated in that node. The node type cannot be changed if traffic has already been routed or groomed.</li></div>
+<a name="wp926293"> </a><div class="pSmartList1"><li>You can groom multiple traffic matrices with or without reusing unused DCL capacity. Grooming with reuse of unused DCL capacity is achieved by grooming, dimensioning, and establishing the DCL traffic of the first traffic matrix before performing the same process for the second traffic matrix. This allows you to reuse the unused part of the DCL capacity created during the first grooming action, to host the traffic of the second traffic matrix. Grooming without reuse of unused DCL capacity is achieved by first grooming all DCL traffic matrices and then accommodating the OCH matrices (resulting from the grooming actions) and the groomed DCL matrices in the network.</li></div>
+<a name="wp926294"> </a><div class="pSmartList1"><li>The <b class="cBold">Design &gt; Groom DCL to OCH Traffic &gt; Optimized Routes</b><b class="cBold">...</b> feature optimizes routes in the DCL layer to get the lowest-cost design. This might result in some unnatural routes (e.g., with backhauling) in the OCH layer. To prevent this, the <b class="cBold">Design &gt; Groom DCL to OCH Traffic &gt; Fixed&#160;Routes</b><b class="cBold">...</b> feature is used. In this case, the (physical) routes of the DCL connections are fixed (calculated on the OTS topology or imported from a file) and the grooming optimization algorithm does not alter these physical routes; it only optimizes whether traffic is best switched optically or electrically in the nodes.</li></div>
+<a name="wp926295"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-08-41.jpg" height="370" width="513" id="wp935939" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ul></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/wdmg_tut_3.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

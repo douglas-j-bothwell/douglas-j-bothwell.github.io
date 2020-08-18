@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:31:27" />
+    <title>Updating from Releases 3.0&#8211;5.1</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="Admin-3-01.html"> Installation Support</a> > <a href="Admin-3-07.html">Update Installation Procedures</a> > Updating from Releases 3.0&#8211;5.1</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp233938"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Updating from Releases 3.0&#8211;5.1
+</h2>
+
+ 
+
+<a name="wp233939"> </a><p class="pBody">
+If you are updating from release 3.0, 3.5, 4.0, 5.0, or 5.1, you must perform the following steps before installing the new release. These procedures are platform-dependent.
+</p>
+<a name="wp233940"> </a><p class="pBody">
+To update from the previous Windows release, do the following procedure:
+</p>
+<a name="wp233943"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp233943", false);</script>Procedure&#160;2-7   Updating from a Previous Release (Windows)<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp233943", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp233943", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp233944"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the Control Panel (Start&#160;&gt; Settings&#160;&gt; Control&#160;Panel).</li></div>
+<a name="wp233945"> </a><div style="text-align: left" class="pSmartList2Test"><li>Double-click the System icon.</li></div>
+<a name="wp233946"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click on the Environment tab, then remove the following system variables, as follows:</li></div>
+<ol type="a">
+<a name="wp233947"> </a><div class="pprocstepSub"><li>Click on the fl_sup_port system variable (if it exists) and click Delete.</li></div>
+<a name="wp233948"> </a><div class="pprocstepSub"><li>Click on the op_license_server.fl_sup_port system variable (if it exists) and click Delete.</li></div>
+<a name="wp233949"> </a><div class="pprocstepSub"><li>Click on the Path system variable. Remove any reference to an old OPNET&#160;analysis&#160;software path (such as <code class="cCode">C:\OPNET\5.1.D\sys\pc_intel_win32\bin</code>) from the existing value of the Path variable, then click Set.</li></div>
+<a name="wp233953"> </a><div class="pprocstepSub"><li>Click on the Lib system variable. Remove any reference to an old OPNET&#160;analysis&#160;software library path (such as <code class="cCode">C:\OPNET\5.1.D\sys\pc_intel_win32\lib</code>) from the existing value of the Lib variable, then click Set.</li></div>
+<a name="wp233957"> </a><div class="pprocstepSub"><li>Click on the Include system variable. Remove any reference to an old OPNET&#160;analysis&#160;software include path (such as <code class="cCode">C:\OPNET\5.1.D\sys\include</code>) from the existing value of the Include variable, and click on Set.</li></div>
+<a name="wp233964"> </a><div class="pprocstepSub"><li>Remove all OPNET&#160;analysis&#160;software-related paths&#8212;not just the most current one&#8212;from the Path, Lib, and Include variables. For example, make sure you delete any paths to installations of OPNET&#160;analysis&#160;software version 4.0, 3.5, or 3.0.</li></div>
+<a name="wp233968"> </a><div class="pprocstepSub"><li>After you verify the changes, click OK to close the System Properties dialog box.</li></div>
+</ol>
+<a name="wp233972"> </a><div style="text-align: left" class="pSmartList2Test"><li>Run the <code class="cCode">setup</code> program from the CD to install the new version of OPNET&#160;analysis&#160;software.</li></div>
+</ol></div>
+<a name="wp233973"> </a><p class="pProcEnd">
+End of Procedure 2-7
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp233974"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp233978"> </a><p class="pBody">
+To update from the previous Solaris or Linux release, do the following procedure:
+</p>
+<a name="wp233985"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp233985", false);</script>Procedure&#160;2-8   Updating from a Previous Release (<b class="cBold">Solaris or Linux</b>)<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp233985", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp233985", false);</script>
+<a name="wp233986"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>If you are prompted during installation to shut down license servers running on this host, answer Yes. If you did not shut down the license servers during installation, do the following steps:
+</p>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp233987"> </a><div style="text-align: left" class="pSmartList2Test"><li>Shut down the floating license supervisor by typing the following command at the command prompt:</li></div>
+<div class="pCodeStep"><ul class="pCodeStep">
+<a name="wp233988"> </a>op_license_util -license_server_kill -license_server&#160;&lt;hostname&gt; 
+-license_port&#160;&lt;port&gt;
+</ul></div>
+<a name="wp233992"> </a><div style="text-align: left" class="pSmartList2Test"><li>You can now install the new release. This process is described in the Solaris or Linux Installation Instructions that come with the software.</li></div>
+</ol></div>
+<a name="wp233993"> </a><p class="pProcEnd">
+End of Procedure 2-8
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp233994"> </a><h6 class="pHeading6">
+
+</h6>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/ag_020_install_support.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

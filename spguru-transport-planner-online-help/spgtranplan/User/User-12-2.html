@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:20" />
+    <title>Workflow Description</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-12-1.html"> Optical Express Layer</a> > Workflow Description</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp999024"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Workflow Description
+</h2>
+
+ 
+
+
+<a name="wp1022169"> </a><p class="pBody">
+You can use the wizard (Design&#160;&gt; Express&#160;Layer&#160;Design) to create and size an express layer based on your physical topology, traffic, and cost parameters. You can override the wizard&#39;s suggestions and design the express layer manually. This wizard consists of three main steps that construct the express layer: 
+</p>
+<div class="pSmartList1"><ol type="1" class="pSmartList1">
+<a name="wp1031850"> </a><div class="pSmartList1"><li>Add or remove gateway nodes between which express links will be created.</li></div>
+<a name="wp1031851"> </a><p class="pBodyRelative">
+The first step is to select the gateway nodes between which express links can be created. The Express Layer Design Wizard enables you to select the gateway nodes based on the estimated amount of traffic processed in the nodes. Gateway nodes are typically nodes that collect and exchange a lot of traffic; these nodes act as the on-ramp for the optical express layer. 
+</p>
+<a name="wp1030353"> </a><p class="pBodyRelative">
+For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-12-3.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-12-3.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Select Gateway Nodes Dialog Box</u></a>.
+</p>
+<a name="wp1031857"> </a><div class="pSmartList1"><li>Add or remove the express links between the gateway nodes.</li></div>
+<a name="wp1031858"> </a><p class="pBodyRelative">
+The Express Layer Design Wizard enables you to select express links based on the estimated amount of traffic supported by these links. You need to select links between gateway nodes that are not physically adjacent&#8212;that is, links that have a direct fiber between them. These links will be implemented by fiber routing, as described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-08.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-08.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Fiber Routing</u></a>. (Links between adjacent gateway nodes are included in the express layer automatically.) 
+</p>
+<a name="wp1022346"> </a><p class="pBodyRelative">
+For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-12-5.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-12-5.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Select Express Links Dialog Box</u></a>.
+</p>
+<a name="wp999089"> </a><div class="pSmartList1"><li>Select the fiber routes that implement the express links. </li></div>
+<a name="wp1022261"> </a><p class="pBodyRelative">
+The last step is to decide how to implement the express links you have selected. SP&#160;Guru&#160;Transport&#160;Planner uses fiber routing for this purpose&#8212;that is, it establishes a new OCH link between two gateway nodes. An express link is supported by a fiber pair in the OMS layer. Because it bypasses any intermediate nodes, an express link avoids the expensive switching cost in intermediate nodes. Keep in mind that fiber routing is applied for express links between non-adjacent gateway nodes only; adjacent gateway nodes are already connected by a direct fiber pair.
+</p>
+<a name="wp1023947"> </a><p class="pBodyRelative">
+For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-12-7.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-12-7.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Implement Express Links Dialog Box</u></a>.
+</p>
+</ol></div>
+<a name="wp1023961"> </a><p class="pBody">
+After you define the express layer, you can apply network design functions such as routing, dimensioning, and so on. SP&#160;Guru&#160;Transport&#160;Planner considers express links as it does other OCH links, and favors an express link over paths that consist of non-express links. 
+</p>
+<a name="wp1024061"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>If you define an express layer in a SONET-only network, ECC nodes that are selected as gateway nodes are transformed to EOCC nodes to allow optical switching of channels between express links within that node. 
+</p>
+
+<a name="wp1031864"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>You can use the Express Layer Design Wizard to create or modify the express layer only if there is no capacity currently equipped in the network.
+</p>
+
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_37_oel.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

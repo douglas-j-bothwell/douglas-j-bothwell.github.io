@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:37:07" />
+    <title>Connection Resource Details Reports</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-16-01.html"> Viewing Network Information</a> > Connection Resource Details Reports</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp57975"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Connection Resource Details Reports
+</h2>
+
+ 
+
+
+<a name="wp147679"> </a><p class="pBody">
+The report gives a detailed overview of the route taken and resources used for each connection, as well as for the SONET/SDH rings, as illustrated in <a href="javascript:WWHClickedPopup('wdm_user', 'User-16-15.html#wp135379');" onMouseOver="WWHShowPopup('wdm_user', 'User-16-15.html#wp135379', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;15-3</u></a>. There are two ways to generate the report. 
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp184328"> </a><div class="pSmartList1"><li>Info&#160;&gt; Export to Web Report&#160;&gt; Connection Resource Details&#160;&gt; By&#160;Resource&#160;Index&#8212;This generates a report based on the index of the resources used, such as fiber index, wavelength index and time slot index. This is illustrated in <a href="javascript:WWHClickedPopup('wdm_user', 'User-16-15.html#wp135379');" onMouseOver="WWHShowPopup('wdm_user', 'User-16-15.html#wp135379', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;15-3</u></a>.</li></div>
+<a name="wp184329"> </a><div class="pSmartList1"><li>Info&#160;&gt; Export to Web Report&#160;&gt; Connection Resource Details&#160;&gt; By&#160;Resource&#160;Designation&#8212;This generates a report based on the designations of the resources used.</li></div>
+<a name="wp135379"> </a><p class="pFigCaption">
+Figure&#160;15-3   Connection Resource Details (By Index) Table in Web Report: Example
+</p>
+<a name="wp135389"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-16-15-3.jpg" height="285" width="530" id="wp135381" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ul></div>
+<a name="wp135391"> </a><p class="pBody">
+This report includes a table for every connection accommodated in the network. If a connection is routed over different rings, or partly over rings and mesh resources, the reports includes a table for each of these subnetwork connections. Each table shows the switching points in the different layers and the resources used between these switching points.
+</p>
+<a name="wp135392"> </a><p class="pBody">
+The first row of the table indicates the connection end points and number, the connection capacity, and connection bit rate (first, second, and third columns respectively).
+</p>
+<a name="wp135393"> </a><p class="pBody">
+Subsequent rows list the nodes along the path. Each row for the &quot;By Resource Index&quot; table includes the following fields:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp135394"> </a><div class="pSmartList1"><li>Type&#8212;The equipment used in that node</li></div>
+<a name="wp135395"> </a><div class="pSmartList1"><li>Switching Layer&#8212;The layer at which traffic is switched in that node</li></div>
+<a name="wp135396"> </a><div class="pSmartList1"><li>Timeslot (DCL layer) on which the traffic is routed</li></div>
+<a name="wp135397"> </a><div class="pSmartList1"><li>Wavelength (OCH layer) on which the traffic is routed</li></div>
+<a name="wp135398"> </a><div class="pSmartList1"><li>Fiber (OMS/OTS layer) on which the traffic is routed</li></div>
+</ul></div>
+<a name="wp184401"> </a><p class="pBody">
+Each row for the &quot;By Resource Designation&quot; table includes the following fields:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp184411"> </a><div class="pSmartList1"><li>Type&#8212;The equipment used in that node</li></div>
+<a name="wp184412"> </a><div class="pSmartList1"><li>Switching Layer&#8212;The layer at which traffic is switched in that node</li></div>
+<a name="wp184413"> </a><div class="pSmartList1"><li>DCL&#8212;Designation of the DCL link and subdesignation(s) of the timeslot(s) on which the traffic is routed</li></div>
+<a name="wp184414"> </a><div class="pSmartList1"><li>OCH&#8212;Designation of the OCH link and subdesignation(s) of the wavelength(s) on which the traffic is routed</li></div>
+<a name="wp184415"> </a><div class="pSmartList1"><li>OTS&#8212;Designation of the OTS link and subdesignation of the fiber on which the traffic is routed</li></div>
+</ul></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_47_ev.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

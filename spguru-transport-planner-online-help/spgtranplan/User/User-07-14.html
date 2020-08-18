@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:27" />
+    <title>Topological Routing Constraints</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-07-01.html"> Routing</a> > Topological Routing Constraints</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp280909"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Topological Routing Constraints
+</h2>
+
+ 
+
+
+<a name="wp301630"> </a><p class="pBody">
+In some cases, you might want to define topology constraints that are considered during a network design action such as routing, grooming, or dimensioning. For example, you might want to specify constraints that force grooming to occur at specific locations (such as hub locations) other than those that SP&#160;Guru&#160;Transport&#160;Planner might consider ideal; meanwhile, the unconstrained section of a route can still be optimized. 
+</p>
+<a name="wp301647"> </a><p class="pBody">
+These constraints are specified as nodes that should or should not be used by a routed connection. You can define topology constraints for one connection or a group of connections that originate from the same node. The topology constraints can be different for the working and protection path of a connection. The constraints can include both &quot;obliged&quot; nodes that must be in the route and &quot;forbidden&quot; nodes that may not be in the route. 
+</p>
+<a name="wp301680"> </a><p class="pBody">
+There are two methods for specifying topological restraints:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp301684"> </a><div class="pSmartList1"><li>Import the constraints from a data file. The data-file format is described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-18.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-18.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Topology Constraints Data Files</u></a>; the procedure for importing the data is described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-02.html#wp239981');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-02.html#wp239981', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;5-1-Importing Network Data into a Project</u></a>.</li></div>
+<a name="wp301685"> </a><div class="pSmartList1"><li>Specify constraints for individual connections in the Connection Browser, as described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-14.html#wp301715');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-14.html#wp301715', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;6-5</u></a>.</li></div>
+</ul></div>
+<a name="wp301715"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp301715", false);</script>Procedure&#160;6-5   Specifying Topology Constraints for a Connection<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp301715", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp301715", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp301721"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the DCL Connection Browser: choose Network &gt; Connection Browser and click the DCL button (under &quot;Traffic&quot;).</li></div>
+<a name="wp301722"> </a><div style="text-align: left" class="pSmartList2Test"><li>Right-click on a DCL connection and choose &quot;Topological Constraints...&quot; from the right-click menu.</li></div>
+<a name="wp301723"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The Topological Constraints dialog box (<a href="javascript:WWHClickedPopup('wdm_user', 'User-07-14.html#wp301794');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-14.html#wp301794', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;6-13</u></a>) appears.
+</p>
+<a name="wp301794"> </a><p class="pFigCaption">
+Figure&#160;6-13   &quot;Topological Routing Constraints - &lt;Connection&gt;&quot; Dialog Box
+</p>
+<a name="wp301797"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-07-14-13.jpg" height="214" width="500" id="wp301796" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp301724"> </a><div style="text-align: left" class="pSmartList2Test"><li>Specify the obliged and forbidden nodes for the working path: select nodes in the Unconstrained Nodes (left pane) and use the &gt; buttons to set them as Obliged Nodes or Forbidden Nodes.</li></div>
+<a name="wp301858"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>You must specify the obliged nodes in the correct sequence. This is the sequence in which the nodes should occur in the path. You can change the sequence using the up and down arrows. The sequence is not import for Forbidden Nodes.
+</p>
+<a name="wp301726"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+You can remove nodes from the Obliged Nodes or Forbidden Nodes list using the &lt; buttons.
+</p>
+<a name="wp301728"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+You cannot add the same node to both the Obliged Nodes and Forbidden Nodes.
+</p>
+<a name="wp301729"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click the &quot;Protection Path&quot; tab and set the topological constraints for the protection path using the same method described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-14.html#wp301724');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-14.html#wp301724', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">step&#160;3</u></a>.</li></div>
+<a name="wp301730"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click OK to confirm the topological constraints and close the dialog box.</li></div>
+</ol></div>
+<a name="wp302577"> </a><p class="pProcEnd">
+End of Procedure 6-5
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp302578"> </a><h6 class="pHeading6">
+
+</h6>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_25_rte.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

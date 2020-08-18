@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:52" />
+    <title>ETE vs. LBL Grooming</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-09-01.html"> Grooming DCL to OCH Traffic</a> > <a href="User-09-18.html">Optimization Algorithms: Descriptions</a> > ETE vs. LBL Grooming</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp53670"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+ETE vs. LBL Grooming
+</h2>
+
+ 
+
+<a name="wp53671"> </a><p class="pBody">
+Both ETE and LBL start with an initial solution and perform cost-driven improvements as described in the previous sections. As shown in the following diagram, these algorithms start with opposite solutions (ETE with no intermediate grooming, LBL with full intermediate grooming) and gradually converge towards each other during optimization. These algorithms can result in different local optima (O<span style="vertical-align: sub">ETE</span> and O<span style="vertical-align: sub">LBL</span>) compared to the global optimum O<span style="vertical-align: sub">All</span>.
+</p>
+<a name="wp88005"> </a><p class="pFigCaption">
+Figure&#160;8-15   ETE vs. LBL Grooming
+</p>
+<a name="wp88008"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-09-21-15.jpg" height="264" width="530" id="wp88007" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp53731"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Which Solution Should You Use?
+</h3>
+<a name="wp53750"> </a><p class="pBody">
+There is no &quot;absolute better&quot; approach for a situation: a solution&#39;s applicability depends on traffic levels, multiplex factors, and the cost structure used for the scenario. <a href="javascript:WWHClickedPopup('wdm_user', 'User-09-21.html#wp88162');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-21.html#wp88162', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;8-11</u></a> lists the parameter values that favor a specific approach. In general, use the LBL-based approach if your parameter value indicates a solution that involves extensive grooming; use the ETE-based approach if your parameter value indicates a solution that involves little grooming.
+</p>
+<a name="wp53776"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>LBL optimization is more calculation-intensive than ETE optimization, especially for large networks and high traffic levels. Therefore, use ETE optimization for a first approximation of grooming level and associated network cost.
+</p>
+
+<a name="wp57616"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp88162table57573">
+  <caption><a name="wp88162"> </a><div class="ptblcaption">
+Table&#160;8-11   Parameters That Affect the Choice of Grooming Algorithm&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp57627"> </a><div class="pCellHeading">
+Parameter
+</div>
+</th>
+    <th><a name="wp57587"> </a><div class="pCellHeading">
+High Value
+</div>
+</th>
+    <th><a name="wp57589"> </a><div class="pCellHeading">
+Low Value
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp57638"> </a><div class="pCellBody">
+DCL Traffic (between node pairs)
+</div>
+</td>
+    <td><a name="wp57640"> </a><div class="pCellBody">
+ETE
+</div>
+</td>
+    <td><a name="wp57642"> </a><div class="pCellBody">
+LBL 
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp57644"> </a><div class="pCellBody">
+Multiplex Factor DCL Unit / DCL Trunk
+</div>
+<a name="wp57665"> </a><div class="pCellBody">
+(for example, 16 for STM-1 / STM-16)
+</div>
+</td>
+    <td><a name="wp57646"> </a><div class="pCellBody">
+LBL
+</div>
+</td>
+    <td><a name="wp57648"> </a><div class="pCellBody">
+ETE
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp57650"> </a><div class="pCellBody">
+Cost per optical channel (transponders, regeneration cards) 
+</div>
+</td>
+    <td><a name="wp57652"> </a><div class="pCellBody">
+LBL
+</div>
+</td>
+    <td><a name="wp57654"> </a><div class="pCellBody">
+ETE
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp57656"> </a><div class="pCellBody">
+DCL switching cost
+</div>
+</td>
+    <td><a name="wp57658"> </a><div class="pCellBody">
+ETE
+</div>
+</td>
+    <td><a name="wp57660"> </a><div class="pCellBody">
+LBL
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="3" rowspan="1"><a name="wp88325"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 8-11	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_31_grm.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

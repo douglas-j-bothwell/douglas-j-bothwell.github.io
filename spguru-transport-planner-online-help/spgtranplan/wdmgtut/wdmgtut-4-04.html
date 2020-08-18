@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:38:42" />
+    <title>Routing Manually</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="wdmgtut-4-01.html"> Network Design Operations</a> > Routing Manually</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp926045"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Routing Manually
+</h2>
+
+ 
+
+
+<a name="wp926046"> </a><p class="pBody">
+The previous routing actions attempt to route all connections that are part of a selected traffic matrix. An algorithm automatically calculates routes, driven by the chosen routing criteria. Automated routing of an entire traffic matrix does not allow you to specify how individual connections are to be routed. To address this need, the <span style="font-weight: bold">Routing Wizard</span> allows you to select individual connections and route them manually.
+</p>
+<a name="wp926048"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp926048", false);</script>Procedure&#160;3-4   Routing OCH and DCL Connections Manually<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp926048", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp926048", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp926050"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the WDMGuru_Examples project.</li></div>
+<ol type="a">
+<a name="wp926051"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Open</span><b class="cBold">...</b>.</li></div>
+<a name="wp926052"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">WDMGuru_Examples</span> project, then press <span style="font-weight: bold">Open</span>.</li></div>
+<a name="wp938486"> </a><p class="pIndentedRelative">
+The example project, which contains multiple scenarios, is loaded. The Australia scenario appears in the workspace.
+</p>
+</ol>
+<a name="wp926054"> </a><div style="text-align: left" class="pSmartList2Test"><li>Select <span style="font-weight: bold">Scenarios &gt; Switch To Scenario &gt; USA</span> to view the USA scenario in the workspace.</li></div>
+<a name="wp926056"> </a><div style="text-align: left" class="pSmartList2Test"><li>Routing manually in the OCH layer.</li></div>
+<ol type="a">
+<a name="wp926057"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Network &gt; Connection Browser</span>.</li></div>
+<a name="wp926058"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">OCH</span> layer and expand the <span style="font-weight: bold">OC-192</span> traffic matrix (using the <span style="font-weight: bold">+</span> icon).</li></div>
+<a name="wp926059"> </a><div class="pprocstepSub"><li>Right click on the <span style="font-weight: bold">ATLANTA &lt;-&gt; BOSTON</span> connection and select <span style="font-weight: bold">Route</span>.</li></div>
+<a name="wp935015"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-04-22.jpg" height="208" width="470" id="wp935022" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp926064"> </a><p class="pIndentedRelative">
+The <span style="font-weight: bold">Routing Wizard</span> <span style="font-weight: bold">ATLANTA = BOSTON</span> dialog box appears.
+</p>
+<a name="wp926065"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Protected</span> to route the connection using the 1+1 protection scheme. Put a checkmark next to <span style="font-weight: bold">Node Disjoint</span> (do not put a checkmark next to <b class="cBold">Client Protection</b>) and select <span style="font-weight: bold">OTS Link Disjoint</span>.</li></div>
+<a name="wp945822"> </a><div class="pprocstepSub"><li>Click <b class="cBold">Calculate Routes</b>. </li></div>
+<a name="wp945833"> </a><p class="pIndentedRelative">
+This dialog box now shows a list of possible routes with the main characteristics of each route (length, cost, capacity, availability, etc.). You can sort the connections according to these criteria by setting the appropriate criterion in the <span style="font-weight: bold">Routing Cost</span> field. By clicking on a proposed route in the list, the path that would be assigned is displayed in the workspace.
+</p>
+<a name="wp945811"> </a><div class="pprocstepSub"><li>Use the <b class="cBold">+</b> icon to inspect the characteristics of the working and protection paths. Select the first route. In the <span style="font-weight: bold">Capacity to Route</span> field you can select the capacity to route along this path. Select <span style="font-weight: bold">2</span> (Capacity to Route), then click <span style="font-weight: bold">Route</span>.</li></div>
+<a name="wp938523"> </a><p class="pIndentedRelative">
+The connection is now accommodated in the network. The connection browser shows that the connection ATLANTA &lt;-&gt; BOSTON is now routed in the network.
+</p>
+<a name="wp946962"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-04-23.jpg" height="238" width="495" id="wp946960" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp926072"> </a><div class="pprocstepSub"><li>Right-click on the connection <span style="font-weight: bold">ATLANTA &lt;-&gt; CHICAGO</span> in the connection browser and select <span style="font-weight: bold">Route...</span> to route this connection manually.</li></div>
+<a name="wp926073"> </a><p class="pIndentedRelative">
+The <span style="font-weight: bold">Routing Wizard</span> dialog box for this connection appears.
+</p>
+<a name="wp938549"> </a><p class="pIndentedRelative">
+Note that it is no longer possible to route this connection unprotected, because all connections of a given traffic matrix must use the same protection scheme. 
+</p>
+<a name="wp938558"> </a><div class="pprocstepSub"><li>Accept the default settings and click <b class="cBold">Calculate Routes</b>.</li></div>
+<a name="wp945872"> </a><p class="pIndentedRelative">
+A list of candidate routes appears in the treeview.
+</p>
+<a name="wp945871"> </a><div class="pprocstepSub"><li>Select the route with the shortest fiber length and click <span style="font-weight: bold">Route</span>.</li></div>
+<a name="wp938561"> </a><p class="pIndentedRelative">
+The connection <b class="cBold">ATLANTA &lt;-&gt; CHICAGO</b> is now also accommodated in the network.
+</p>
+<a name="wp938565"> </a><div class="pprocstepSub"><li>Close the <span style="font-weight: bold">Routing Wizard</span> dialog box and the connection browser.</li></div>
+<a name="wp926074"> </a><div class="pprocstepSub"><li>Select the DCL layer view by clicking on the <span style="font-weight: bold">DCL</span> button in the toolbar.</li></div>
+<a name="wp938568"> </a><p class="pIndentedRelative">
+As a result of routing two connections in the OCH layer, two logical links are created in the DCL layer.
+</p>
+</ol>
+<a name="wp926076"> </a><div style="text-align: left" class="pSmartList2Test"><li>Now you will perform manual routing in the DCL layer.</li></div>
+<ol type="a">
+<a name="wp926077"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Network &gt; Connection Browser</span>.</li></div>
+<a name="wp926078"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">DCL</span> layer and expand the <span style="font-weight: bold">STS-1</span> traffic matrix (using the <span style="font-weight: bold">+</span> icon). </li></div>
+<a name="wp938576"> </a><div class="pprocstepSub"><li>Right-click on the <span style="font-weight: bold">BOSTON &lt;-&gt; CHICAGO</span> connection and select <span style="font-weight: bold">Rou</span><b class="cBold">te.</b></li></div>
+<a name="wp926079"> </a><p class="pIndentedRelative">
+The <span style="font-weight: bold">Routing Wizard</span> dialog box for this connection appears.
+</p>
+<a name="wp945879"> </a><div class="pprocstepSub"><li>Accept the default settings and click <b class="cBold">Calculate Routes</b>. </li></div>
+<a name="wp945881"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+A list of potential routes appears, but now it shows routes through the DCL-layer infrastructure. There is only one possible route, because there are only two links in the DCL layer.
+</p>
+<a name="wp946976"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-04-24.jpg" height="230" width="496" id="wp946974" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp926089"> </a><div class="pprocstepSub"><li>Select the only available route, choose <span style="font-weight: bold">16</span> for the <span style="font-weight: bold">Capacity to Route</span>, and then press <span style="font-weight: bold">Route</span> to accommodate the connection in the network. </li></div>
+<a name="wp926090"> </a><p class="pIndentedRelative">
+The connection appears routed in the connection browser.
+</p>
+<a name="wp938600"> </a><p class="pIndentedRelative">
+You can also visualize the route of the DCL connection in the OCH layer by clicking on the <span style="font-weight: bold">OCH</span> button in the toolbar. Both the working and protection parts are shown. Even though there was no path diversity available at the DCL layer, there is underlying diversity in the OCH layer, as a result of routing the OCH connections with protection.
+</p>
+</ol>
+<a name="wp926092"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the project</li></div>
+<ol type="a">
+<a name="wp926093"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Close</span>.</li></div>
+<a name="wp926094"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Don&#39;t Save</span> in the <span style="font-weight: bold">Close Confirm</span> dialog box.</li></div>
+</ol>
+</ol></div>
+<a name="wp935222"> </a><p class="pProcEnd">
+End of Procedure 3-4
+</p>
+
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/wdmg_tut_3.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

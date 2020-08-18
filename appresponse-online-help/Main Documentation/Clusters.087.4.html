@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Distributing Configuration Information</title>
+    <link rel="StyleSheet" href="css/Clusters.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ald_ug_splash.html">Director User Guide</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="Clusters.087.1.html">Domains</a> &gt; Distributing Configuration Information</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="950585">Distributing Configuration Information</a></div>
+      <div class="body"><a name="950586">An appliance that belongs to a domain receives configuration information from the Domain Director. This allows an administrator to make changes in a single location (on the Director) and apply those changes to all appliances in the domain.</a></div>
+      <div class="body"><a name="950587">Some configuration items are automatically distributed to all appliances within a domain. Other configuration items can be selectively distributed to specific appliances using a distribution list. For these items, the distribution list can be specified in the Distribution tab in the relevant manager. The Distribution tab is only available on the Domain Director.</a></div>
+      <div class="bodyIntro"><a name="950590">For instance, the following figure shows the Distribution tab of the Alert Manager running on the director of a domain that contains three machines: cuda1, cuda2 and cuda3. The Distribution tab shows an alert, initially configured on the director, that is distributed to appliances cuda1 and cuda2, but not cuda3.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;6     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950591">Alert Manager - Distribution Tab</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="953979"><img class="Default" src="images/Clusters.087.4.01.jpg" width="443" height="189" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="953272">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="953273">To add an appliance to the distribution list for a configuration item, select the desired appliance from the Available Appliances pane and click the right arrow button.</a></div>
+      <div class="figAnchor"><a name="950601"><img class="Default" src="images/Clusters.087.4.02.jpg" width="46" height="27" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="953311">&nbsp;</a></div>
+      <div class="body"><a name="954043">When the configuration change is applied (by clicking on the OK or Apply button), the director pushes the configuration item to each appliance in the distribution list. If the configuration push is successful, the Status field in the Distribution List pane shows Distributed. Otherwise, an error appears in the Status field. The error is also recorded in the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'Clusters.087.4.html#950703', '');" title="Distributing Configuration Information">Director Update Log</a></span>.</div>
+      <div class="body"><a name="950605">Configuration items distributed from the director to an appliance show up in the relevant manager on an appliance. These items can be differentiated from locally defined items by looking at the Origin column in the manager.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;7     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950606">Origin of a Distributed Configuration Item</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="953328"><img class="Default" src="images/Clusters.087.4.03.jpg" width="395" height="273" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="953337">&nbsp;</a></div>
+      <div class="body"><a name="954061">Configuration items distributed from the director have a </a><span class="italic">global</span> origin. Global items cannot be modified on an appliance, they must be changed on the director.</div>
+      <div class="body"><a name="950612">Configuration items defined on a specific appliance have a </a><span class="italic">local</span> origin. These items are modified using the relevant manager on the appliance itself.</div>
+      <div class="bodyIntro"><a name="950613">The following types of configuration items can be distributed from the director to the appliances in a domain:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950614">Business Groups</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950615">Alerts</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950616">Applications</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950617">AS Information</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950618">User Accounts</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="950619">In many cases, you may need to distribute a number of Business Groups to the same set of appliances. To simplify this process, the Business Group Manager allows you to set the distribution list for several Business Groups simultaneously. To do so, select the desired Business Groups in the table at the top of the Business Group Manager, right-click and select Configure Distribution to invoke the distribution dialog. </a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;8     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950620">Business Group Manager - Configure Distribution</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="950625"><img class="Default" src="images/Clusters.087.4.04.jpg" width="488" height="210" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="953347">&nbsp;</a></div>
+      <div class="body"><a name="954108">Check off the desired appliances in the distribution dialog and click OK. The distribution list for the all selected Business Groups are set to the selected appliances in the distribution dialog.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;9     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><span style="font-size: 10.5pt; font-weight: normal"><a name="950626">.</a></span>Business Group Manager—Configuration Distribution Window</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="950634"><img class="Default" src="images/Clusters.087.4.05.jpg" width="124" height="69" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="954121">&nbsp;</a></div>
+      <div class="body"><a name="954132">Similarly, the Business Group Manager provides an easy way to configure aggregation of Business Group data to the director (as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'Clusters.087.5.html#950791', '');" title="Aggregating Data to the Director">Aggregating Business Group Data</a></span>) on multiple Business Groups simultaneously. To do so, select the desired Business Groups in the table at the top of the Business Group Manager, right-click and select Configure Collect on Director.</div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;10     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950638">Business Group Manager—Configure Collect on Director Window</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="954142"><img class="Default" src="images/Clusters.087.4.06.jpg" width="124" height="75" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="950646">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="954136">Conflict Resolution</a></div>
+      <div class="body"><a name="950647">A conflict may occur when pushing a global configuration item to an appliance. For instance, a local configuration item may exist with the same name as a new global configuration item. These conflicts are resolved during distribution and recorded in the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'Clusters.087.4.html#950703', '');" title="Distributing Configuration Information">Director Update Log</a></span>. The rules for dealing with a conflict during distribution differ depending on the type of configuration item. These rules are documented in the following sections.</div>
+      <div class="h2NoBreak"><a name="950652">Distributed Business Groups</a></div>
+      <div class="body"><a name="950653">Use the Distribution tab in the Business Group Manager to distribute Business Groups from the director to specific appliances. Data for Business Groups distributed to appliances are collected locally on each appliance. Users connected to each appliance can examine data for these Business Groups using regular tables or charts.</a></div>
+      <div class="h4"><a name="950654">Business Group Conflict Resolution</a></div>
+      <div class="body"><a name="950655">If a local Business Group exists with the same Name, Definition and Status as a new global Business Group, then the existing local group is replaced with the global Business Group. It does not matter if the description or status of the Business Groups differ. The group definition must match exactly. This means that the IP/AS definition for regular Business Groups must be the same or the Member definitions for Business Group containers must be identical.</a></div>
+      <div class="body"><a name="950656">If a local Business Group exists with the same Name as a new global Business Group but the Definition or Status is different, then the local Business Group is renamed to include the suffix “(local)”. For instance, a local Business Group named “New York” that conflicts with a new global Business Group of the same name is renamed to “New York (local)”.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;11     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950657">Conflict Resolution</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="954182"><img class="Default" src="images/Clusters.087.4.07.jpg" width="428" height="90" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="950663">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="954176">Distributed Alerts</a></div>
+      <div class="body"><a name="950664">Alerts defined in the Alert Manager on the director can be distributed to specific appliances using the Distribution tab. The alert executes locally on each appliance. This means that each appliance checks the alert condition against the data seen by this appliance to determine whether to generate a notification. In addition, if the alert actions specify that an SNMP trap is to be generated, the trap is sent to the SNMP Trap destinations configured on that appliance. (See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH05-Config_Maintenance.11.16.html#951218', '');" title="SNMP Traps">Configuring SNMP</a></span>.)</div>
+      <div class="body"><a name="950668">If an alert is defined against a Business Group, then that alert can only be distributed to those appliances that have also received the Business Group configuration.</a></div>
+      <div class="h4"><a name="950669">Alert Conflict Resolution</a></div>
+      <div class="body"><a name="950670">When a new global alert is distributed from the Domain Director, the appliance checks if a local alert exists with the same Name, Group, Condition, Schedule, Status and Actions. If such an alert exists, it is replaced with the new global alert. Notice that the description, email and snmp settings for the alert are not considered during the conflict resolution process.</a></div>
+      <div class="body"><a name="950671">If a local alert exists with the same Name, but with different settings for Group, Condition, Schedule, Status or Actions, the local alert is renamed to include the suffix “(local)”.</a></div>
+      <div class="h2NoBreak"><a name="950673">Distributed Applications</a></div>
+      <div class="body"><a name="950674">Applications defined in the Defined Application Manager on the director are always distributed to all appliances in the domain. As a result, the Distribution tab is only used to display the status of the distribution operation. Recognized Applications are not distributed to appliances until they have been upgraded to v6.0.</a></div>
+      <div class="body"><a name="950675">Scaling is limited to 300 local applications and 300 global applications (600 total).</a></div>
+      <div class="h3NoBreak"><a name="950676">Application Conflict Resolution</a></div>
+      <div class="body"><a name="950677">When a new global application is distributed from the Domain Director, the appliance checks if a local application exists with exactly the same specifications. If such an application exists, it is replaced with the new global application.</a></div>
+      <div class="body"><a name="950678">If a local application exists with the same Name, but with different specifications, the local application is renamed to include the suffix “(local)”. Metrics are collected for both definitions. In the case of otherwise identical applications with different turn tracking, the global application takes precedence, and metrics are not collected for the local application. (For more information, see </a><span class="HTBlue">Turn Tracking</span> on page&nbsp;AL-3-56.)</div>
+      <div class="h2NoBreak"><a name="950684">Distributed AS Information</a></div>
+      <div class="body"><a name="950685">ASes modified in the AS Information Manager on the director are always distributed to all appliances in the domain. As a result, the Distribution tab is only used to display the status of the distribution operation. Since each appliance ships with a default configuration for AS Information, the distribution tab for the AS Information is blank until an AS is modified and pushed to the appliances.</a></div>
+      <div class="h4"><a name="950686">AS Information Conflict Resolution</a></div>
+      <div class="body"><a name="950687">New global AS Information distributed from the domain director always overwrites the local AS Information stored on the appliance.</a></div>
+      <div class="body"><a name="950688">When a global AS Information item is deleted from the director, the appliances revert to the default value for that AS. This default value is defined in the static copy of the WHOIS directory shipped with the appliance software release. See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'metrics_src.html#1053091', '');" title="Metric Sources">AS Information Manager</a></span>.</div>
+      <div class="h2NoBreak"><a name="950692">Distributed User Accounts</a></div>
+      <div class="body"><a name="950696">For an explanation of distributing user account information within a domain, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH05-Config_Maintenance.11.06.html', '');" title="Managing User Accounts">Managing User Accounts</a></span>.</div>
+      <div class="h2NoBreak"><a name="950697">Deleting Global Configuration Items</a></div>
+      <div class="body"><a name="950699">When a global configuration item is deleted on the director, it is also deleted from each of the appliances to which it was distributed. However, if the global configuration item is being used by a local configuration item (e.g., a local static alert can be defined against a global Business Group), then the original global configuration item is simply converted to a local configuration item on appliances that reference it.</a></div>
+      <div class="h2NoBreak"><a name="950703">Director Update Log</a></div>
+      <div class="body"><a name="950704">The Director Update Log maintains a list of errors that may have occurred while the director distributes configuration information to the domain appliances. As a result, the Director Update Log is only accessible on the director.</a></div>
+      <div class="body"><a name="957916">To view the Director Update Log on the Director, choose View&nbsp;&gt; Logs and then select “Director Update Log”.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;12     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950705">Director Update Log</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="954191"><img class="Default" src="images/Clusters.087.4.08.jpg" width="450" height="195" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="950749">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="954185">The director update log records the following conflicts and warnings.</a></div>
+      <div class="tblAnchor"><a name="952853">&nbsp;</a></div>
+      <table class="tableNarrow" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+              <tr style="vertical-align: baseline">
+                <td>
+                  <div class="tblCaption_inner" style="width: 44.64pt; white-space: nowrap">Table&nbsp;2    </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="952860">Directory Update Log: Conflicts and Warnings</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 110.48904pt">
+            <div class="tblHead"><a name="950712">Message</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 357.51096pt">
+            <div class="tblHead"><a name="950714">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950716">Local Item With Duplicate Name Renamed</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950718">A global configuration item has been distributed with the same name as a local configuration item and caused the local item to be renamed according to the conflict resolution rules for that item type.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950720">Deleted Item Demoted Due To Dependencies</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950722">A local configuration item has a dependency on a global configuration item that was just deleted on the director. The dependency does not allow the item to be delete. Instead, it is changed to a local configuration item on the appliance(s) with the dependency.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950724">Could Not Find Resource On Appliance</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950726">A configuration item (resource) that should have been distributed to an appliance is missing. For instance, a global alert that refers to a global Business Group may trigger this log entry if the global alert is distributed correctly, but the global Business Group was not distributed properly.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950728">Could Not Push Item to Appliance</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950730">A global configuration item has not been completely distributed to an appliance. It is not unusual for distribution to require a few minutes to complete. During this time, this entry appears in the log for each configuration item being distributed. The log entry is automatically cleared after distribution is completed successfully. If the entry persists for more than 15 minutes, it is likely that an error occurred (e.g., network connectivity broken) while trying to distribute a global configuration item to an appliance.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950732">Could Not Delete Item from Appliance</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950734">This log entry is the same as the above log entry, except that it is generated when there are problems deleting global configuration items.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950736">Could Not Merge Business Group Tree</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950738">An error occurred while distributing a global Business Group to an appliance. The AppResponse Appliance performs a sanity check on the Business Group hierarchy each time a new group is added. This log entry is generated if a problem is detected during this check. To date, this error condition has never been observed. Please contact Riverbed support if this entry appears in your Director Update Log.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950746">Global Item Not Added Due To Local Item With Duplicate Name</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950748">A global user account has been distributed with the same name as a local user account. As a result, the global account is not distributed and the local account remains unchanged.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="body"><a name="950750">This log shows the last error or warning for every group or appliance. If a problem occurs during a global configuration item distribution, an entry is created for that specific configuration item and the affected appliance in the log. If the operation is reapplied and the configuration item is distributed successfully, the warning remains in the log and must be manually deleted by clicking on the Delete button. If the same configuration item is distributed and there is a new warning on the same appliance, a new log entry overwrites the previous one.</a></div>
+      <div class="body"><a name="950751">The Director Update Log allows you to filter errors by the originating manager of the configuration item or by the affected appliance.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;13     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950752">Director Update Log—Filter by Manager</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="954200"><img class="Default" src="images/Clusters.087.4.09.jpg" width="207" height="122" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="950757">&nbsp;</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;14     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950761">Director Update Log—Filter by Appliance</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="954228"><img class="Default" src="images/Clusters.087.4.10.jpg" width="163" height="97" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="950762">&nbsp;</a></div>
+      <div class="body"><a name="954222">After a conflict has been resolved, the error can be removed from the Director Update Log by clicking the Delete button.</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

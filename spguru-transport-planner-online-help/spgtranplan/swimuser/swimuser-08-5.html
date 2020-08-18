@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:37:59" />
+    <title>Costs in the DCL (Digital Client or Higher-Order SONET/SDH) Layer</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="swimuser-08-1.html"> Transport-Layer Cost Allocation</a> > <a href="swimuser-08-3.html">Cost Modelling in SP&#160;Guru&#160;Transport&#160;Planner</a> > Costs in the DCL (Digital Client or Higher-Order SONET/SDH) Layer</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp929441"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Costs in the DCL (Digital Client or Higher-Order SONET/SDH) Layer
+</h2>
+
+ 
+
+<a name="wp929938"> </a><p class="pBody">
+The <em class="cEmphasis">direct cost</em> of a SONET/SDH route includes the following:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp929939"> </a><div class="pSmartList1"><li>The tributary port cost at the source and destination node of the connection (for example, a DXC or SONET/SDH TM tributary port cost) </li></div>
+<a name="wp929940"> </a><div class="pSmartList1"><li>An LOP terminal multiplexer cost in both end nodes is added for connections that support lower-order SONET traffic. </li></div>
+</ul></div>
+<a name="wp929941"> </a><p class="pBody">
+Both costs depend on the bit rate of the SONET/SDH connection.
+</p>
+<a name="wp929963"> </a><p class="pBody">
+The <em class="cEmphasis">indirect link cost</em> of a SONET/SDH route depends on the optical channel cost of each logical SONET link along the route. These channel costs are divided by the number of SONET/SDH connections that the channel can accommodate. This means that the cost depends on the bit rates of the SONET/SDH connection and the optical channels as well. For example, one optical channel at STM-16 rate can host sixteen STM-1 SDH connections, but it can only host four STM-4 SDH connections.
+</p>
+<a name="wp929965"> </a><p class="pBody">
+The <em class="cEmphasis">indirect node cost </em>is determined by the base cost of the digital switching devices along the route (such as DXCs). For example, if a DXC can host 16 STM-1 ports and one tributary port is needed, the indirect node cost equals the DXC base cost divided by 32.
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/swim_26_tlcost.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

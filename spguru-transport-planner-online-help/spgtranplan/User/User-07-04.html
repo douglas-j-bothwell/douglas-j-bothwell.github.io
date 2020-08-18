@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:27" />
+    <title>Routing Algorithm </title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-07-01.html"> Routing</a> > <a href="User-07-02.html">Route DCL/OCH Traffic Dialog Box</a> > Routing Algorithm </font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp251028"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Routing Algorithm 
+</h2>
+
+ 
+
+<a name="wp253455"> </a><p class="pBody">
+To specify the routing algorithm, choose one of the following options:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp293112"> </a><div class="pSmartList1"><li>Sequential (per connection)&#8212;SP&#160;Guru&#160;Transport&#160;Planner routes an entire connection and all the capacity units requested by that connection completely before it starts with the next connection in the Routing Sequence table. </li></div>
+<a name="wp274892"> </a><div class="pSmartList1"><li>Distributed (per capacity unit)&#8212;If a connection requests multiple units of capacity, SP&#160;Guru&#160;Transport&#160;Planner tries to set up one capacity unit of each connection (as listed in the Routing Sequence table) before it tries to set up the remaining capacity units of each connection. </li></div>
+<a name="wp274917"> </a><p class="pBodyRelative">
+The Distributed approach normally results in higher throughput and a better overall allocation of capacity than the Sequential approach. 
+</p>
+<a name="wp293204"> </a><div class="pSmartList1"><li>Combined&#8212;SP&#160;Guru&#160;Transport&#160;Planner tries four combinations of the sequential/distributive options and retains the result that accommodates the most traffic. The combinations are:</li></div>
+<div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp293205"> </a><div class="pSmartList2"><li>Sequential (shortest first)</li></div>
+<a name="wp293206"> </a><div class="pSmartList2"><li>Sequential (longest first)</li></div>
+<a name="wp293207"> </a><div class="pSmartList2"><li>Distributed (shortest first)</li></div>
+<a name="wp293208"> </a><div class="pSmartList2"><li>Distributed (longest first)</li></div>
+</ul></div>
+<a name="wp253459"> </a><div class="pSmartList1"><li>Optimized&#8212;SP&#160;Guru&#160;Transport&#160;Planner takes the outcome of the Combined routing strategy, then adds a local optimization step (and possibly additional optimization steps) in an attempt to establish as much traffic as possible in the network. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-04.html#wp307368');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-04.html#wp307368', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Routing Optimization</u></a>.</li></div>
+<a name="wp293245"> </a><div class="pSmartList1"><li>Diverse Routing&#8212;This algorithm maximizes the connectivity of the virtual topology that results from routing traffic. SP&#160;Guru&#160;Transport&#160;Planner routes the traffic as unprotected; meanwhile, it tries to route all related connections with the minimal amount of overlap between routes. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-04.html#wp274939');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-04.html#wp274939', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Diverse Routing Algorithm</u></a>.</li></div>
+</ul></div>
+<a name="wp253436"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Connection Order
+</h3>
+<a name="wp253437"> </a><p class="pBody">
+You can specify the sequence in which SP&#160;Guru&#160;Transport&#160;Planner passes traffic matrix connections to the routing function. The available options are:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp253438"> </a><div class="pSmartList1"><li>Longest First (default)&#8212;Sorts connections by physical distance and routes the longest connection first. Because SP&#160;Guru&#160;Transport&#160;Planner solves the hardest problems first, this option generally performs well if most or all of the connections can be routed. This option is recommended for total (100 percent routed) or near-total routing solutions.</li></div>
+<a name="wp253442"> </a><div class="pSmartList1"><li>Shortest First&#8212;Sorts connections by physical distance and routes the shortest connection first. This option improves the output for partial routing solutions if SP&#160;Guru&#160;Transport&#160;Planner cannot accommodate all connections, since the short and easy connections are routed first. Recommended for partial routing with low throughput.</li></div>
+<a name="wp253446"> </a><div class="pSmartList1"><li>Biggest First&#8212;Routes connections with the highest capacity first. Recommended for accommodating large connections; smaller connections might be rejected in partial routing situations.</li></div>
+<a name="wp253447"> </a><div class="pSmartList1"><li>Smallest First&#8212;Routes connections with the lowest capacity first. Recommended for accommodating small connections, because it gives smaller connections higher priority to get their share of the capacity.</li></div>
+<a name="wp253448"> </a><div class="pSmartList1"><li>Unsorted&#8212;Connections are sorted in the order in which they appear in the Traffic Matrix Editor: row1/column2 first, row1/column3 second, etc.</li></div>
+</ul></div>
+<a name="wp274939"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Diverse Routing Algorithm
+</h3>
+<a name="wp280774"> </a><p class="pBody">
+You can apply the diverse routing algorithm to both DCL- and OCH-layer traffic. This algorithm maximizes the connectivity of the virtual topology that results from routing traffic and ensures that if there is a failure, not all related connections fail simultaneously. There is no absolute requirement for diversity, thus the feature will try to route as much as possible, even if the diversity preference cannot be fully met.
+</p>
+<a name="wp307385"> </a><p class="pBody">
+This algorithm works in two phases:
+</p>
+<div class="pSmartList1"><ol type="1" class="pSmartList1">
+<a name="wp307386"> </a><div class="pSmartList1"><li>SP&#160;Guru&#160;Transport&#160;Planner routes the traffic as unprotected; meanwhile, the algorithm tries to route all related connections with the minimal amount of overlap between routes. Therefore, the algorithm sorts the connections and routes them sequentially to ensure a minimal amount of overlap between related connections that were routed in a previous sequence. SP&#160;Guru&#160;Transport&#160;Planner tries to sort the connections based on routing difficulty and route the most difficult connections first.The diverse routing options allow you to define related connections in different ways. </li></div>
+<a name="wp307387"> </a><div class="pSmartList1"><li>An optional step tries to optimize the initial solution by rerouting those connections that have a high degree of overlap with their related connections. SP&#160;Guru&#160;Transport&#160;Planner reroutes connections and considers the overlap of related connections. Because of topological constraints, it might not be possible to obtain a completely diverse routing of all related connections. In this case, SP&#160;Guru&#160;Transport&#160;Planner tries to optimize the diversity without guaranteeing it.</li></div>
+</ol></div>
+<a name="wp293346"> </a><p class="pBody">
+This algorithm can consider both node and link diversity. Two settings under Protection Options, described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-03.html#wp255512');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-03.html#wp255512', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Protection Options</u></a>, affect how the connections are routed:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp293368"> </a><div class="pSmartList1"><li>The layer selected in the Link Disjoint option determines the layer at which the link overlap between related connections is calculated.</li></div>
+<a name="wp293380"> </a><div class="pSmartList1"><li>If the Node Disjoint option is selected, SP&#160;Guru&#160;Transport&#160;Planner also tries to route the traffic so that the related connections are as node-disjoint as possible.</li></div>
+</ul></div>
+<a name="wp305675"> </a><p class="pBody">
+Diversity selection:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp305676"> </a><div class="pSmartList1"><li>Within Traffic Matrices&#8212;All connections of all selected traffic matrices will be routed diverse according to the diversity relationship</li></div>
+<a name="wp305749"> </a><div class="pSmartList1"><li>Between Traffic Matrices&#8212;Connections belonging to different traffic matrices that have a particular diversity relationship will be routed diverse. The connections within one traffic matrix will not be routed diverse however. </li></div>
+</ul></div>
+<a name="wp305678"> </a><p class="pBody">
+Diversity relationship:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp305781"> </a><div class="pSmartList1"><li>All connections&#8212;All connections of the selection will be routed diverse.</li></div>
+<a name="wp305818"> </a><div class="pSmartList1"><li>With Same End Nodes&#8212;All connections of the selection that have a common end node will be routed diverse. For example a connection between node A and B, will be routed diverse from a connection between node A and C, because they share a common end node.</li></div>
+<a name="wp305883"> </a><div class="pSmartList1"><li>Between Node Pairs&#8212;All connections of the selection that are routed between the same node pair will be routed diverse. For example, if there are two connections between node A and B, they will be routed diverse.</li></div>
+<a name="wp305910"> </a><div class="pSmartList1"><li>Optimize&#8212;If selected the diversity will be optimized. This means the algorithm will perform some additional optimization steps to achieve a diversity that is as high as possible between the selected traffic. </li></div>
+</ul></div>
+<a name="wp307366"> </a><p class="pBody">
+The way the options for the algorithm work is that the diversity selection and diversity relationship complement each other, that is, if the option &quot;Within Traffic Matrices&quot; and &quot;Between Node Pairs&quot; is selected, all connections of all traffic matrices between the same node pairs will be routed as diversely as possible. If the option &quot;Between Traffic Matrices&quot; and &quot;Between Node Pairs&quot; is selected connections belonging to different traffic matrices between the same node pairs will be routed as diversely as possible.
+</p>
+<a name="wp307368"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Routing Optimization
+</h3>
+<a name="wp274981"> </a><p class="pBody">
+The Optimized routing approach starts from the best solution of the Combined Routing approach (evaluating different ways of sorting the connections prior to applying the routing algorithm). The optimization process is based on making random changes to this routing solution, followed by an attempt to accommodate the connections not yet routed in the network. A random change selects an established connection at random and then &quot;tears down&quot; that connection. The algorithm contains a number of &quot;major iterations&quot; that make a substantial number of changes to the solution; each major iteration is followed by a local optimization step that contains a number of &quot;minor iterations&quot; to improve the solution. The objective is to maximize the throughput while minimizing the routing cost. The number of changes made and the number of steps taken is specified by following settings and illustrated in the subsequent dialog box. 
+</p>
+<a name="wp275040"> </a><p class="pBody">
+To configure this algorithm (number of changes made, number of steps taken and so on), click on the Options button in the Routing Strategy area of the Routing dialog box. This opens the Optimization Options dialog box (described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-04.html#wp275320');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-04.html#wp275320', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;6-2-Routing Options Dialog Box</u> </a>).
+</p>
+<a name="wp275071"> </a><p class="pFigCaption">
+Figure&#160;6-5   Optimization Options Dialog Box
+</p>
+<a name="wp275075"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-07-04-05.jpg" height="130" width="530" id="wp275073" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp275288"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp275320table275232">
+  <caption><a name="wp275320"> </a><div class="ptblcaption">
+Table&#160;6-2   Routing Options Dialog Box&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp275324"> </a><div class="pCellHeading">
+Field
+</div>
+</th>
+    <th><a name="wp275326"> </a><div class="pCellHeading">
+Description
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp275328"> </a><div class="pCellBody">
+Major Iterations
+</div>
+</td>
+    <td><a name="wp275330"> </a><div class="pCellBody">
+This setting determines the number of major iterations to improve the solution. Each major iteration starts by making a number of changes to the best solution (found by the combined routing approach), followed by a local optimization step. Enter 0 if you want to add a single local optimization step to the best solution. Enter 1 if you want to add one additional optimization step, 2 for two additional steps, etc.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp275332"> </a><div class="pCellBody">
+Initial Changes per Major Iteration
+</div>
+</td>
+    <td><a name="wp275334"> </a><div class="pCellBody">
+This setting determines the number of random changes at the start of a major optimization iteration. For example, suppose the &quot;Major Iterations&quot; field is set to 1 and this field is set to 15. This means that, after SP&#160;Guru&#160;Transport&#160;Planner applies the local optimization step to the outcome of the combined routing approach, SP&#160;Guru&#160;Transport&#160;Planner makes 15 random changes before it starts a new local optimization step.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp275336"> </a><div class="pCellBody">
+Maximum Minor Iterations without Improvement
+</div>
+</td>
+    <td><a name="wp275338"> </a><div class="pCellBody">
+If SP&#160;Guru&#160;Transport&#160;Planner executes the maximum number of minor iterations of the local optimization step without improvement of the routing objective, it stops the local optimization process. 
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp275340"> </a><div class="pCellBody">
+Changes per Minor Iteration
+</div>
+</td>
+    <td><a name="wp275342"> </a><div class="pCellBody">
+This setting determines the number of random changes per minor iteration of the local optimization step. A value of 5 means that 5 connections are selected at random and torn down. Then the routing function makes another attempt to accommodate traffic in the network.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp278898"> </a><div class="pCellBody">
+Penalty per Unrouted Connection
+</div>
+</td>
+    <td><a name="wp278900"> </a><div class="pCellBody">
+This cost is added to the routing objective per connection that cannot be routed.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp275360"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 6-2	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_25_rte.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

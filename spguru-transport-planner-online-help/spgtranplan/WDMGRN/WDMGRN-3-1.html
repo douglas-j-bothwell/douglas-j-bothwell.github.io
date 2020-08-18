@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:31:14" />
+    <title>PL3 Enhancements</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="WDMGRN-3-1.html"> PL3 Enhancements</a> > Enhanced Service Availability Modelling</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp924097"> </a><h2 class="pTitle">
+PL3 Enhancements
+</h2>
+<hr />
+
+ 
+
+
+<a name="wp924112"> </a><p class="pBody">
+The following sections describe changes introduced in release 12.0&#160;PL3:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp1091474"> </a><div class="pSmartList1"><li><a href="javascript:WWHClickedPopup('wdmg_rel_notes', 'WDMGRN-3-1.html#wp929535');" onMouseOver="WWHShowPopup('wdmg_rel_notes', 'WDMGRN-3-1.html#wp929535', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Multiple Links Between Two Nodes</u></a></li></div>
+<a name="wp1091479"> </a><div class="pSmartList1"><li><a href="javascript:WWHClickedPopup('wdmg_rel_notes', 'WDMGRN-3-1.html#wp1091373');" onMouseOver="WWHShowPopup('wdmg_rel_notes', 'WDMGRN-3-1.html#wp1091373', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Cross-Connect Equipment Restrictions</u></a></li></div>
+<a name="wp1091488"> </a><div class="pSmartList1"><li><a href="javascript:WWHClickedPopup('wdmg_rel_notes', 'WDMGRN-3-1.html#wp1091388');" onMouseOver="WWHShowPopup('wdmg_rel_notes', 'WDMGRN-3-1.html#wp1091388', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Multi-Vendor Ring Modelling</u></a></li></div>
+<a name="wp1091520"> </a><div class="pSmartList1"><li><a href="javascript:WWHClickedPopup('wdmg_rel_notes', 'WDMGRN-3-1.html#wp1091431');" onMouseOver="WWHShowPopup('wdmg_rel_notes', 'WDMGRN-3-1.html#wp1091431', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">User-Defined OCH Bit Rates</u></a></li></div>
+<a name="wp1091489"> </a><div class="pSmartList1"><li><a href="javascript:WWHClickedPopup('wdmg_rel_notes', 'WDMGRN-3-1.html#wp1091442');" onMouseOver="WWHShowPopup('wdmg_rel_notes', 'WDMGRN-3-1.html#wp1091442', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Enhanced Service Availability Modelling</u></a></li></div>
+</ul></div>
+<a name="wp929535"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Multiple Links Between Two Nodes
+</h2>
+
+ 
+
+
+<a name="wp1091270"> </a><p class="pBody">
+This release provides the following new features for modelling multiple links between nodes:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp1091295"> </a><div class="pSmartList1"><li>You can now define multiple links between two nodes. Previously, you could define a maximum of two links per node pair. </li></div>
+<a name="wp1091296"> </a><div class="pSmartList1"><li>To improve the visual representation of parallel links, you can also draw links with multiple line segments. </li></div>
+<a name="wp1092957"> </a><p class="pBodyRelative">
+The default length and delay properties of a link are based on the shortest distance between the end nodes; any additional length due to multiple line segments has no effect.
+</p>
+<a name="wp1091267"> </a><div class="pSmartList1"><li>You can now define parallel links at different network layers. At the OTS layer, for example, parallel links represent physically separate cables between two sites. At the OMS layer, parallel links represent fiber bundles that are routed over different underlying cables.</li></div>
+<a name="wp1091316"> </a><p class="pBodyRelative">
+At the OCH layer, parallel links represent fiber pairs that are routed over different underlying fiber bundles. This is also a new feature; previously, you could not model multiple OCH links with different underlying fiber routes. 
+</p>
+</ul></div>
+<a name="wp1091373"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Cross-Connect Equipment Restrictions
+</h2>
+
+ 
+
+
+<a name="wp1091381"> </a><p class="pBody">
+You can now restrict the cross-connect equipment types to be used in a specific node. This enables you to define multiple types of cross-connects within a network scenario, and to specify that certain nodes use only a specific subset of cross-connects (from a specific vendor, for example). The dimensioning algorithms consider these restrictions and upgrade the specific nodes with allowed cross-connect types only. 
+</p>
+<a name="wp1091378"> </a><p class="pBody">
+To specify allowed cross-connect types for a node, select that node in the Node Browser, right-click, and choose &quot;Allowed XC Types.&quot; 
+</p>
+<a name="wp1092467"> </a><p class="pBody">
+For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-05-11.html#wp297426');" onMouseOver="WWHShowPopup('wdm_user', 'User-05-11.html#wp297426', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Setting Allowed XC Types</u></a> in the SP&#160;Guru&#160;Transport&#160;Planner <em class="cEmphasis">User Guide</em>.
+</p>
+<a name="wp1091388"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Multi-Vendor Ring Modelling
+</h2>
+
+ 
+
+
+<a name="wp1091396"> </a><p class="pBody">
+You can now model different types or vendors of ADMs for SDH/SONET rings. Previously, an ADM was defined by ring protection type and bit rate only: you could not represent different ADMs, from different vendors, with different costs. Now, you can create different ring models for the different vendors you want to represent. Each ring model can have different cost values for its ADMs and for individual ADM ports. This enables you to combine rings from different vendors in one scenario. You can also specify the ring model to use when upgrading a ring during a ring dimensioning operation.
+</p>
+<a name="wp1092465"> </a><p class="pBody">
+For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-20.html#wp136071');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-20.html#wp136071', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">SONET/SDH Ring Equipment</u></a> in the SP&#160;Guru&#160;Transport&#160;Planner <em class="cEmphasis">User Guide</em>.
+</p>
+<a name="wp1091431"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+User-Defined OCH Bit Rates
+</h2>
+
+ 
+
+
+<a name="wp1091407"> </a><p class="pBody">
+You can now create user-defined bit rates at the OCH layer to represent custom optical services that are not related to standard SONET/SDH bit rates. This supports the growing use of non-SONET/SDH-based services over optical networks such as ESCON, FICON, 10 GigE, soon 100 GigE, and so on. You can also use customized bit rates to model the newly standardized ODU (Optical Data Unit) frames.
+</p>
+<a name="wp1091441"> </a><p class="pBody">
+For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-16.html#wp323605');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-16.html#wp323605', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Creating Custom Bit Rates</u></a> in the SP&#160;Guru&#160;Transport&#160;Planner <em class="cEmphasis">User Guide</em>.
+</p>
+<a name="wp1091442"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Enhanced Service Availability Modelling
+</h2>
+
+ 
+
+
+<a name="wp1091450"> </a><p class="pBody">
+The availability calculations feature has been significantly enhanced; these enhancements support more flexible and precise calculations of end-to-end services availability at all possible layers. The main enhancements are:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp1091451"> </a><div class="pSmartList1"><li>Availability calculations at all layers. Previously, this was possible at the OCH layer only.</li></div>
+<a name="wp1091452"> </a><div class="pSmartList1"><li>Choice of availability calculation or simulation for all traffic. Analytic calculations provide precise results for unprotected and 1+1 protected traffic.</li></div>
+<a name="wp1091453"> </a><div class="pSmartList1"><li>More modular calculation for any selection of traffic (from one connection to all traffic in the network) and failure type (from entire node failures to individual transponder failures).</li></div>
+<a name="wp1091447"> </a><div class="pSmartList1"><li>A new availability report that lists connections based on their availability target.</li></div>
+</ul></div>
+<a name="wp1091584"> </a><p class="pBody">
+For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-15-2.html#wp282506');" onMouseOver="WWHShowPopup('wdm_user', 'User-15-2.html#wp282506', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Service Availability</u></a> in the SP&#160;Guru&#160;Transport&#160;Planner <em class="cEmphasis">User Guide</em>.
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/release_notes_wdmg_features_120pl3.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

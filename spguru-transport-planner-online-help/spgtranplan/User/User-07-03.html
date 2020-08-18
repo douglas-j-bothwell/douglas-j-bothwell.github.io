@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:27" />
+    <title>Routing Protection</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-07-01.html"> Routing</a> > <a href="User-07-02.html">Route DCL/OCH Traffic Dialog Box</a> > Routing Protection</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp266540"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Routing Protection
+</h2>
+
+ 
+
+<a name="wp255528"> </a><p class="pBody">
+When the Protected option is selected, SP&#160;Guru&#160;Transport&#160;Planner tries to set up a connection with a working path and a disjoint protection path. If SP&#160;Guru&#160;Transport&#160;Planner cannot set up both paths, the set-up attempt fails; SP&#160;Guru&#160;Transport&#160;Planner never sets up a protected connection with just one path. 
+</p>
+<a name="wp256061"> </a><p class="pBody">
+When the Unprotected option is selected, SP&#160;Guru&#160;Transport&#160;Planner tries to set up a connection using just one path.
+</p>
+<a name="wp255512"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Protection Options
+</h3>
+<a name="wp255515"> </a><p class="pBody">
+You can specify the following options when Protection is selected: 
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp255551"> </a><div class="pSmartList1"><li>Node Disjoint&#8212;With this option selected, SP&#160;Guru&#160;Transport&#160;Planner ensures that a connection&#39;s working and protection paths are node disjoint; otherwise only link disjointness is guaranteed. Node disjoint means that the two paths have no intermediate nodes in common. </li></div>
+<a name="wp255487"> </a><div class="pSmartList1"><li>Link Disjoint&#8212;Specifies the layer down to which link disjointness of the working and protection path of a connection should be guaranteed. Link disjointness on the selected layer means that the two paths have no common links on the selected layer. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-03.html#wp280440');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-03.html#wp280440', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Link Disjointness for Working and Protection Paths</u></a>.</li></div>
+<a name="wp255495"> </a><div class="pSmartList1"><li>Client Protection&#8212;With this option selected, 1&#160;+&#160;1 protection occurs at the client; the client protects the connection and hands off two interfaces that must be disjointly routed through the network. </li></div>
+<a name="wp255634"> </a><p class="pBodyRelative">
+If this option is not selected, the network (not the client) handles the protection and the client hands off just one interface. 
+</p>
+</ul></div>
+<a name="wp255552"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>The Client Protection option does not affect the working and protection paths and the link resources that are used. It affects only the number of ports used on the equipment at the end point of the connection. This option affects the number of DXC or IXC ports (for DCL traffic), DXC or IXC trib ports (for OCH traffic) and DXC trunk ports (for non-native OCH traffic). SP&#160;Guru&#160;Transport&#160;Planner also uses the protection transponder for non-client protected OCH traffic. 
+</p>
+
+<a name="wp280440"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Link Disjointness for Working and Protection Paths
+</h3>
+<a name="wp287352"> </a><p class="pBody">
+If a working and protection path are <em class="cEmphasis">link disjoint</em>, their paths have no links in common. You can specify the lowest network layer at which the paths are guaranteed to be link disjoint.
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp287423"> </a><div class="pSmartList1"><li>DCL disjointness disregards underlying optical channels, fiber routes, and cable splitters. Working and protection paths are link disjoint at the DCL layer but are not guaranteed to be link disjoint at lower layers.</li></div>
+<a name="wp287424"> </a><div class="pSmartList1"><li>OCH disjointness disregards underlying fiber routes and cable splitters. Paths are link disjoint at the OCH layer but are not guaranteed to be link disjoint at lower layers.</li></div>
+<a name="wp287425"> </a><div class="pSmartList1"><li>OMS disjointness considers fiber routes but disregards cable splitters. Paths are link disjoint at the OMS layer but are not guaranteed to be link disjoint at the OTS layer.</li></div>
+<a name="wp287426"> </a><div class="pSmartList1"><li>OTS disjointness considers cable splitters and fiber routes so that working and protection paths are disjoint down to the physical layer.</li></div>
+</ul></div>
+<a name="wp287801"> </a><p class="pBody">
+Lower layers of link disjointness increase the ability of the network to route connections in the event of link or node failures. For example, suppose you have a network in which the paths are DCL link disjoint. A DCL connection uses an OCH link that fails. If both working and protection paths use this link, the network cannot set up the DCL connection. However, if the connection is OTS link disjoint, only one path would fail. This means that the connection could still be set up using its working or protection path. Keep in mind that because lower layers of link disjointness ensure higher protection, this might result in higher network costs.
+</p>
+<a name="wp287385"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>If a network has no cable splitters or fiber routes, OTS, OMS and OCH topologies are identical. Therefore, OTS, OMS, and OCH link disjointness have the same effect on the resulting design.
+</p>
+
+<a name="wp280441"> </a><p class="pBody">
+In the most general case, if a network contains cable splitters and fiber routes, it can have different topologies at lower layers (OCH, OMS and OTS). For more information about cable splitters and fiber routes, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-06.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-06.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Configuring Cable Splitters and Fiber Routes</u></a>.
+</p>
+<a name="wp280484"> </a><p class="pBody">
+To illustrate the difference between link disjointness at the OCH,OMS and OTS layer, consider the following example. The topology contains a cable splitter in node_06 that has been configured to create OMS links that connect its adjoining nodes. In addition, a fiber route has been introduced at the OCH layer between node_01 and node_03. This fiber is routed via the links node_01&lt;&#8212;&gt;node_02 and node_02&lt;&#8212;&gt;node_03 (the latter link is also routed using the cable splitter).&quot;
+</p>
+<a name="wp292988"> </a><p class="pBody">
+Protected routing with OCH link disjointness results in a working path over the fiber route between node_01 and node_03 and a protecting path via node_02. These routes are disjoint at the OCH layer only, as shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-03.html#wp280489');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-03.html#wp280489', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;6-2</u></a> (the orange path reflects the overlap of working and protection paths).
+</p>
+<a name="wp280489"> </a><p class="pFigCaption">
+Figure&#160;6-2   Protected Routing with OCH Link Disjointness: Example
+</p>
+<a name="wp280504"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-07-03-02.jpg" height="201" width="698" id="wp280491" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp280506"> </a><p class="pBody">
+Protected routing with OMS link disjointness results in a working path over the fiber route between node_01 and node_03 and a protecting path through node_00. These routes are disjoint at the OCH and OMS layers as shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-03.html#wp280511');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-03.html#wp280511', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;6-3</u></a>. However at the OTS layer, working and protection path share the link between node_06 and node_03, because the link is used to establish the OMS links through the cable splitter.
+</p>
+<a name="wp280511"> </a><p class="pFigCaption">
+Figure&#160;6-3   Protected Routing with OMS Link Disjointness: Example
+</p>
+<a name="wp280526"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-07-03-03.jpg" height="201" width="698" id="wp280513" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp280528"> </a><p class="pBody">
+Protected routing with OTS link disjointness results in a working path over the fiber route between node_01 and node_03 and a protecting path via node_04 and node_05. These routes are disjoint at the OCH, OMS, and OTS layer as shown <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-03.html#wp280533');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-03.html#wp280533', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;6-4</u></a>. 
+</p>
+<a name="wp280533"> </a><p class="pFigCaption">
+Figure&#160;6-4   Protected Routing with OTS Link Disjointness: Example
+</p>
+<a name="wp280548"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-07-03-04.jpg" height="201" width="698" id="wp280535" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_25_rte.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

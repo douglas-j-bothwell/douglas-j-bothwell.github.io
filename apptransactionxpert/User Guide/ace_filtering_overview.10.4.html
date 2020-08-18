@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Multi-Tier Correlation—Overview</title>
+    <link rel="StyleSheet" href="css/ace_filtering_overview.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ace_filtering_overview.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_preview_import_filter_traffic_splash.html#175365">Previewing, Importing, and Filtering Traffic</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ace_filtering_overview.10.1.html#175365">Filtering Traffic</a> &gt; Multi-Tier Correlation—Overview</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="175365">Multi-Tier Correlation—Overview</a></div>
+      <div class="body"><span class="glossterm"><a name="175370">Multi-tier correlation</a></span> is a method for excluding irrelevant traffic from a Transaction&nbsp;Analyzer model file, based on traffic that was captured in a production environment. The goal is to create a file that models the effects of a busy network but excludes all irrelevant traffic. This method is useful when you want to diagnose your production environment and how it affects your applications.</div>
+      <div class="bodyIntro"><a name="175371">Multi-tier correlation is a solution to a common problem when capturing multi-tier applications in production environments. When you try to capture at a tier that does not communicate with the client directly, it is often difficult to filter out irrelevant traffic. (When capturing at the client tier, you can filter traffic using IP addresses.) Filtering traffic is especially difficult when a tier handles multiple transactions simultaneously, as shown in the following figure.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;9-3   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="175376">Multi-Tier Application in a Production Environment: Example</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="175396"><img class="Default" src="images/ace_filtering_overview.10.4.1.jpg" width="489" height="243" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="175397">&nbsp;</a></div>
+      <div class="body"><a name="175401">Multi-tier correlation enables you to create a </a><span class="italic">clean</span> Transaction&nbsp;Analyzer model file by identifying and extracting the traffic that correlates to the transaction of interest, and excluding all other traffic.</div>
+      <div class="bodyIntro"><a name="187363">The following methods are available for performing multi-tier correlation:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_filtering_overview.10.5.html#175414', '');" title="Multi-Tier Correlation using String Filtering" name="181300">Multi-Tier Correlation using String Filtering</a></span>—When using this method, you correlate traffic by searching for connections with packets that contain a specific string. The search string acts as a <span class="italic">flag</span> that identifies individual packets as part of the transaction of interest.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_filtering_overview.10.6.html#175574', '');" title="Multi-Tier Correlation using a Reference File" name="181306">Multi-Tier Correlation using a Reference File</a></span>—When using this method, you correlate traffic by matching packets in two separate Transaction&nbsp;Analyzer model files. To use this method, you must create two files of the transaction: a production file that includes extraneous traffic, and a reference file (captured in a <span class="italic">clean</span> environment) that includes only traffic relevant to the transaction of interest.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_filtering_overview.10.7.html#217575', '');" title="Multi-Tier Correlation Temporal Filtering (Experimental)" name="218020">Multi-Tier Correlation Temporal Filtering (Experimental)</a></span>—When using this method, you correlate traffic by using the timing of messages across tier pairs. First you filter out traffic from the client tier to the first server tier that is not part of the transaction of interest. Then you run one of the three temporal correlation workflows to isolate the transaction of interest on the back-end tiers. All three approaches revolve around a system of scoring messages based on how well they line up with the traffic in the preceding tier pairs.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          // Add related topics
+          //
+          WWHAddRelatedTopic("Filtering Traffic", "main_doc", "ace_filtering_overview.10.1.html#90696");
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

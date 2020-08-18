@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:33:53" />
+    <title>SONET/SDH Mesh Equipment Properties</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-04-01.html"> Creating a Baseline Scenario</a> > <a href="User-04-18.html">Equipment Properties </a> > SONET/SDH Mesh Equipment Properties</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp147449"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+SONET/SDH Mesh Equipment Properties
+</h2>
+
+ 
+
+<a name="wp147450"> </a><p class="pBody">
+You can set parameters for DXC types, for IXC types, and for SONET/SDH multiplexers in the SONET/SDH Mesh Equipment Properties dialog box (Network&#160;&gt; Equipment&#160;Properties&#160;&gt; SONET/SDH&#160;Mesh&#160;Equipment).
+</p>
+<a name="wp183311"> </a><p class="pFigCaption">
+Figure&#160;3-24   SONET/SDH Mesh Equipment Dialog Box
+</p>
+<a name="wp183314"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-04-19-25.jpg" height="532" width="530" id="wp183313" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp205512"> </a><p class="pBody">
+You can add as many DXC or IXC types as you want. By default, two types are always present: 
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp210724"> </a><div class="pSmartList1"><li>Continuous type (when you are using discrete node types, as described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-11.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-11.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">The Node Model</u></a>) </li></div>
+<a name="wp210727"> </a><div class="pSmartList1"><li>Overflow type (when you are using discrete node types and the largest specified XC type is not large enough)</li></div>
+</ul></div>
+<a name="wp205543"> </a><p class="pBody">
+You can also define custom DXC and IXC types in addition to the default continuous and overflow types. To create a new type, click Add DXC/IXC Type. To edit the type properties, click Edit DXC/IXC Type. The number of ports you specify is the number of equivalent STM-1/OC-3 ports. This defines the throughput of the node. The DXC/IXC cost defines the base cost of the switch matrix only. Port costs are specified independently of the DXC/IXC type.
+</p>
+<a name="wp183355"> </a><p class="pFigCaption">
+Figure&#160;3-25   DXC Type Properties Dialog Box
+</p>
+<a name="wp183358"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-04-19-26.jpg" height="89" width="530" id="wp183357" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp212615"> </a><p class="pBody">
+The DXC is used for switching traffic at the SDH/SONET level. It terminates wavelengths or direct SDH/SONET trunks (in the case of two-tier networks) at its trunk ports, and SDH/SONET traffic at its tributary ports. The size of the switch is specified in equivalent STM-1/OC-3 ports. A 1024 STM-1/OC-3 port switch can terminate:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp212616"> </a><div class="pSmartList1"><li>3072 STS-1 ports</li></div>
+<a name="wp212617"> </a><div class="pSmartList1"><li>1024 STM-1/OC-3 ports</li></div>
+<a name="wp212618"> </a><div class="pSmartList1"><li>64 STM-16/OC-48 ports</li></div>
+<a name="wp212619"> </a><div class="pSmartList1"><li>4 STM-64/OC-192 ports</li></div>
+<a name="wp147466"> </a><div class="pSmartList1"><li>A combination of different ports</li></div>
+</ul></div>
+<a name="wp147471"> </a><p class="pBody">
+The IXC is similar to the DXC, except that it switches traffic at both the SONET/SDH and the wavelength levels. This means the IXC also takes optical traffic at its tributary ports. Typically IXCs have a larger throughput than DXCs.
+</p>
+<a name="wp147472"> </a><p class="pBody">
+You can specify a minimum bit rate for the tributary ports and a maximum bit rate for the trunk ports of both the DXC and the IXC. To limit the total number of ports on a DXC/IXC, you can specify a minimum bit rate for the tributary ports (in other words, to allow OC-48 and higher bit rate ports only). Any traffic with a lower bit rate is attached to a terminal multiplexer (also called an <em class="cEmphasis">aggregator</em>) and is not fed directly in the DXC/IXC. This multiplexer aggregates traffic up to the minimum bit rate for the tributary ports. Similarly, you can limit the trunk bit rates of the DXC/IXC ports. The maximum bit rate of trunk ports could be OC-48, for example, while wavelengths in the network use a OC-192 rate. Such a configuration requires a so-called mid-stage multiplexer to multiplex OC-48 ports coming out of the DXC/IXC to OC-192 channels carried on a single wavelength.
+</p>
+<a name="wp147473"> </a><p class="pBody">
+Besides a base cost for the switch matrix, the DXC and IXC switches also have a bit rate-dependent cost for their tributary and trunk ports. For the IXC, a further distinction is made between electrical tributary ports (for SONET/SDH traffic) and optical tributary ports (for wavelength services). 
+</p>
+<a name="wp314612"> </a><p class="pBody">
+Finally, you need to specify the cost of the SONET/SDH terminal multiplexers (TMs) and the cost of their tributary ports. The LOP TM multiplexes LOP traffic into a DCL bit rate. The cost of the LOP TM depends on the DCL bit rate it multiplexes towards. Each tributary port on the LOP TM has a cost depending on the bit rate of the LOP traffic it multiplexes. The SDH TM multiplexes DCL traffic into an OCH bit rate. The cost of the SDH TM depends on the OCH bit rate it multiplexes towards. Each tributary port on the SDH TM has a cost depending on the bit rate of the DCL traffic it multiplexes.
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_16_cbn.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

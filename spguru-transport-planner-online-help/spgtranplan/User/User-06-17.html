@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:04" />
+    <title>SONET/SDH Ring Data Files</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-06-01.html"> Importing and Exporting Data</a> > <a href="User-06-04.html">Data File Formats</a> > SONET/SDH Ring Data Files</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp257610"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+SONET/SDH Ring Data Files
+</h2>
+
+ 
+
+<a name="wp257614"> </a><p class="pBody">
+SONET/SDH ring data files use the format shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-17.html#wp239677');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-17.html#wp239677', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;5-17</u></a>. The first row contains six headers; each subsequent row describes one ring. 
+</p>
+<a name="wp239675"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp239639table239637">
+  <caption><a name="wp239639"> </a><div class="ptblcaption">
+Table&#160;5-12   SONET/SDH Ring Data File Fields
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp239643"> </a><div class="pCellHeading">
+Field
+</div>
+</th>
+    <th><a name="wp239645"> </a><div class="pCellHeading">
+Description
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp239647"> </a><div class="pCellBody">
+Layer
+</div>
+</td>
+    <td><a name="wp239649"> </a><div class="pCellBody">
+Layer on which the rings are specified, currently only SONET/SDH rings are supported, thus the layer should be &quot;DCL&quot;
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp239651"> </a><div class="pCellBody">
+Name
+</div>
+</td>
+    <td><a name="wp239653"> </a><div class="pCellBody">
+A unique name for the ring. Note that each stacked ring must have a unique name.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp239655"> </a><div class="pCellBody">
+Ring Type
+</div>
+</td>
+    <td><a name="wp239657"> </a><div class="pCellBody">
+UPSR, 2F-BLSR or 4F-BLSR in SONET mode
+</div>
+<a name="wp239658"> </a><div class="pCellBody">
+SNCP, 2F-MSSPRing, 4F-MSSPRing in SDH mode
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp239660"> </a><div class="pCellBody">
+Bit Rate
+</div>
+</td>
+    <td><a name="wp239662"> </a><div class="pCellBody">
+A valid OCH bit rate that corresponds to the TDM nomenclature (SONET or SDH). For example: OC-12, OC-48 for SONET.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp239664"> </a><div class="pCellBody">
+Capacity
+</div>
+</td>
+    <td><a name="wp239666"> </a><div class="pCellBody">
+The number of stacked rings to deploy. 0 means that only the ring footprint is created.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp239668"> </a><div class="pCellBody">
+Nodes
+</div>
+</td>
+    <td><a name="wp257892"> </a><div class="pCellBody">
+List of DCL nodes that are part of the ring. 
+</div>
+<a name="wp252324"> </a><div class="pCellBody">
+You can also specify the OCH route of the ring (this information is optional). The route OCH route should be separated from the DCL node list by a blank field. The OCH route should be specified as a node list; each node field should be followed by a field that specifies the layer at which the route is switched (&quot;OTS&quot;, &quot;OMS&quot;, &quot;OCH&quot;, or &quot;DCL&quot;).
+</div>
+<a name="wp257896"> </a><div class="pCellBody">
+If two OCH nodes in a route are connected by multiple parallel links, and you want SP&#160;Guru&#160;Transport&#160;Planner to use a certain parallel link, you can direct the importer by specifying designations. See <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-16.html#wp257661');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-16.html#wp257661', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Specifying Routing Behavior Using Keywords</u></a> for details on how to do this.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp239672"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 5-12	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+<a name="wp239677"> </a><p class="pFigCaption">
+Figure&#160;5-17   SONET/SDH Ring Data File in .csv Format
+</p>
+<a name="wp239681"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-06-17-17.jpg" height="92" width="530" id="wp239679" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_22_imp.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

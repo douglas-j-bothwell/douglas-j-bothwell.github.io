@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Working with Interactions</title>
+    <link rel="StyleSheet" href="css/InsightBuilder_UI.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_idk_guide_splash.html">Insight Development Kit (IDK)</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="InsightBuilder_UI.092.01.html">Insight Development Kit User Interface</a> &gt; Working with Interactions</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="950982">Working with Interactions</a></div>
+      <div class="body"><a name="950984">This section briefly reviews how to add, remove, and sort Interactions. They may not be renamed, but are renamed automatically if the names of either of the Components they link are changed.</a></div>
+      <div class="body"><a name="950987">Moving Interactions from one Layer to another is described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_UI.092.08.html', '');" title="Working with Layers">Working with Layers</a></span>.</div>
+      <div class="h2NoBreak"><a name="950989">Adding an Interaction</a></div>
+      <div class="body"><a name="950991">To add an Interaction, select the desired Layer in the Element pane, then click </a><span class="bold">Add Interaction</span><span class="Online"> </span>from the Insight Development Kit toolbar area.</div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;29     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950992">Add Interaction Button</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="952830"><img class="Default" src="images/InsightBuilder_UI.092.06.1.jpg" width="204" height="29" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="952831">&nbsp;</a></div>
+      <div class="body"><a name="952825">This brings up the Component Interactions dialog.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;30     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="951000">Component Interactions Dialog box</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="952875"><img class="Default" src="images/InsightBuilder_UI.092.06.2.jpg" width="405" height="337" style="display: block; float: none; left: 0.0; top: 0.0" alt="" />	</a></div>
+      <div class="figSpaceAfter"><a name="952876">&nbsp;</a></div>
+      <div class="body"><span class="bold"><a name="952870">Type</a></span> - select type of Interaction from the drop-down pick list. Refer to <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_UI.092.09.html', '');" title="Creating Insight Modules">Creating Insight Modules</a></span> for information on when to use <span class="bold">Insight</span><span class="Online"> </span><span class="bold">Module</span>. Most of the time you use <span class="bold">Insight</span>.</div>
+      <div class="body"><span class="bold"><a name="951010">Interactions</a></span> - select the desired Interaction from the drop-down pick list. Only those Interactions supported by the Components in the Insight are presented.</div>
+      <div class="body"><span class="bold"><a name="951012">Producers</a></span> - select the Component that is to produce (send) the Interaction from the drop-down pick list. Components that do not produce the selected Interaction are not listed.</div>
+      <div class="body"><span class="bold"><a name="951013">Consumers</a></span> - select the Component that is to consume (receive) the Interaction from the drop-down pick list. Components that do not consume the selected Interaction are not listed.</div>
+      <div class="body"><span class="bold"><a name="951014">Apply</a></span> - click <span class="bold">Apply</span> to add the selected Interaction and continue adding more Interactions, or click <span class="bold">OK</span> when done.</div>
+      <div class="body"><a name="951015">The Interaction is automatically named using the default format Interaction_name - From: Component_name To: Component_name; e.g., </a><span class="bold">group - From: Selector:BG1 To: Chart:multigrp2</span>. This is one reason why it is so important to give every Component a meaningful name.</div>
+      <div class="h2NoBreak"><a name="951016">Removing an Interaction</a></div>
+      <div class="body"><a name="951018">To remove an Interaction, select it in the Element pane, right-click to display the Element Pane context menu, and select </a><span class="bold">Remove</span>; or from the Workflow View, select the arrow that represents the Interaction you want to remove, right-click and select Remove Interaction.</div>
+      <div class="h2NoBreak"><a name="951019">Exploring and Sorting Interactions</a></div>
+      <div class="body"><a name="951020">Quite often during the construction of an Insight you may want to review the Interactions you have already added to it. Three functions of the Insight Development Kit are designed to aid this process: Workflow view, Interaction highlighting and sorting.</a></div>
+      <div class="body"><a name="951024">For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_UI.092.03.html#950572', '');" title="Working with the Insight Development Kit Window">Workflow View</a></span>.</div>
+      <div class="h3NoBreak"><a name="951026">Interaction Highlighting</a></div>
+      <div class="body"><a name="951027">When you select an Interaction in the Element pane, the Layout Grid outlines the Producing Visual Component in green and the consuming Visual Component in red.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;31     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="951028">Interaction Highlighting</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="952889"><img class="Default" src="images/InsightBuilder_UI.092.06.3.jpg" width="598" height="309" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="952890">&nbsp;</a></div>
+      <div class="body"><a name="952884">If one of the linked Components is not visible (either because it is a Hidden Component or an Analysis Component), the visible member of the Component pair is highlighted appropriately.</a></div>
+      <div class="body"><a name="951035">Highlighting works in both the Actual and Schematic Views of the Layout Grid.</a></div>
+      <div class="h3NoBreak"><a name="951037">Interaction Sorting</a></div>
+      <div class="body"><a name="951039">Interactions may be sorted by Interaction name (e.g., group, metric, etc.), by Producer name, and by Consumer name. This is useful for checking to see that a given Component produces or consumes all necessary Interactions; or that a given Interaction goes to, or comes from, all necessary Components. The Table shows the format for each sort type.</a></div>
+      <table class="tableNarrow" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+              <tr style="vertical-align: baseline">
+                <td>
+                  <div class="tblCaption_inner" style="width: 44.64pt; white-space: nowrap">Table&nbsp;2    </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="957405">Sorting Formats</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 89.94384pt">
+            <div class="tblHead"><a name="951042">Sort Type</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 193.4424pt">
+            <div class="tblHead"><a name="951044">Display Format</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 184.61376pt">
+            <div class="tblHead"><a name="951046">Example</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="951048">Interaction name</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="951050">Interaction_name From: Component_name To: Component name</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9" style="color: #000000; font-size: 9.0pt; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline"><span class="bold"><a name="951052">group - From: Selector:BG1 To: Chart:multigrp2</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="951054">Producer name</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="951056">From: Component_name To: Component name - Interaction_name</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9" style="color: #000000; font-size: 9.0pt; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline"><span class="bold"><a name="951058">From: Selector:BG1 To: Chart:multigrp2 - group</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="951060">Consumer name</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="951062">To: Component name From: Component_name - Interaction_name</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9" style="color: #000000; font-size: 9.0pt; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline"><span class="bold"><a name="951064">To: Chart:multigrp2 From: Selector:BG1 - group</a></span></div>
+          </td>
+        </tr>
+      </table>
+      <div class="body"><a name="951065">The sorts are always in alphabetical order.</a></div>
+      <div class="bodyIntro"><a name="951066">You may choose the sort order of Interactions in two ways:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="951067">Select Tools&nbsp;&gt; Building&nbsp;Settings in the Insight Development Kit menu to open the Insight&nbsp;Development&nbsp;Kit&nbsp;Settings dialog. The Outline tab in this dialog allows you to specify the default sort for Interactions.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="951068">Select either an Interactions branch or an Interaction in the Element pane, then right-click to display the Element Pane context menu, and click Sort&nbsp;Interactions.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="951072">Select By Interaction Name, By Producer Name, or By Consumer Name.</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

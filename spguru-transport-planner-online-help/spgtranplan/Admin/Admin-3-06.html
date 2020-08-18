@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:31:27" />
+    <title>Windows Installation Troubleshooting</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="Admin-3-01.html"> Installation Support</a> > Windows Installation Troubleshooting</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp138630"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Windows Installation Troubleshooting
+</h2>
+
+ 
+
+
+<a name="wp24663"> </a><p class="pBody">
+This section provides solutions for problems that may occur during Windows installations or operation. Each problem has a discussion section that explains what is happening and a solution section that explains how to solve the problem. If your problem is not listed here, contact technical support.
+</p>
+<a name="wp209152"> </a><h4 style="font-family: Helvetica; margin-bottom: 0pt" class="pHeading4">
+Problem
+</h4>
+<a name="wp208987"> </a><p class="pBody">
+SP&#160;Guru&#160;Transport&#160;Planner obtains a license from the OPNET License Server through a Windows XP firewall. Both machines are in the same classful network, however SP&#160;Guru&#160;Transport&#160;Planner fails to obtain a license. 
+</p>
+<a name="wp209138"> </a><h4 style="font-family: Helvetica; margin-bottom: 0pt" class="pHeading4">
+Discussion
+</h4>
+<a name="wp209147"> </a><p class="pBody">
+The Windows XP firewall blocks SP&#160;Guru&#160;Transport&#160;Planner licensing traffic.
+</p>
+<a name="wp209191"> </a><h4 style="font-family: Helvetica; margin-bottom: 0pt" class="pHeading4">
+Solution
+</h4>
+<a name="wp209212"> </a><p class="pBody">
+Add the <em class="cEmphasis">op_license_server.exe </em>filename to the exceptions list for the Windows XP firewall. For more information, consult your Windows system administrator.
+</p>
+<a name="wp152886"> </a><h4 style="font-family: Helvetica; margin-bottom: 0pt" class="pHeading4">
+Problem
+</h4>
+<a name="wp152896"> </a><p class="pBody">
+Trying to run an OPNET&#160;analysis&#160;software licensed program results in the message: The licensing system depends on the following nonexistent service: Tcpip.
+</p>
+<a name="wp135567"> </a><h4 style="font-family: Helvetica; margin-bottom: 0pt" class="pHeading4">
+Discussion
+</h4>
+<a name="wp135568"> </a><p class="pBody">
+There is a problem with the TCP/IP software.
+</p>
+<a name="wp135569"> </a><h4 style="font-family: Helvetica; margin-bottom: 0pt" class="pHeading4">
+Solution
+</h4>
+<a name="wp153106"> </a><p class="pBody">
+Try installing TCP/IP again (as described in <a href="javascript:WWHClickedPopup('license', 'Admin-3-06.html#wp135592');" onMouseOver="WWHShowPopup('license', 'Admin-3-06.html#wp135592', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;2-2</u></a> or <a href="javascript:WWHClickedPopup('license', 'Admin-3-06.html#wp138661');" onMouseOver="WWHShowPopup('license', 'Admin-3-06.html#wp138661', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;2-3</u></a>), then repeat the step that failed. If the problem persists, contact technical support.
+</p>
+<a name="wp153115"> </a><h4 style="font-family: Helvetica; margin-bottom: 0pt" class="pHeading4">
+Problem
+</h4>
+<a name="wp152908"> </a><p class="pBody">
+The Windows <code class="cCode">setup</code> program reports that TCP/IP is not installed.
+</p>
+<a name="wp135579"> </a><h4 style="font-family: Helvetica; margin-bottom: 0pt" class="pHeading4">
+Discussion
+</h4>
+<a name="wp135581"> </a><p class="pBody">
+The licensing system requires that the Windows TCP/IP software be installed. The TCP/IP software, in turn, requires the presence of an installed network adapter driver.
+</p>
+<a name="wp135582"> </a><h4 style="font-family: Helvetica; margin-bottom: 0pt" class="pHeading4">
+Solution
+</h4>
+<a name="wp153176"> </a><p class="pBody">
+Use the following procedures to install and configure the necessary software:
+</p>
+<div class="pSmartList1"><ol type="1" class="pSmartList1">
+<a name="wp153177"> </a><div class="pSmartList1"><li><a href="javascript:WWHClickedPopup('license', 'Admin-3-06.html#wp135592');" onMouseOver="WWHShowPopup('license', 'Admin-3-06.html#wp135592', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;2-2-Installing TCP/IP for a Network Connection (Windows&#160;NT&#160;4.0)</u></a></li></div>
+<a name="wp165351"> </a><p class="pBodyRelative">
+or
+</p>
+<a name="wp165352"> </a><p class="pBodyRelative">
+<a href="javascript:WWHClickedPopup('license', 'Admin-3-06.html#wp138661');" onMouseOver="WWHShowPopup('license', 'Admin-3-06.html#wp138661', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;2-3-Installing TCP/IP for a Network Connection (Windows 2000)</u></a>
+</p>
+<a name="wp135585"> </a><div class="pSmartList1"><li><a href="javascript:WWHClickedPopup('license', 'Admin-3-06.html#wp165454');" onMouseOver="WWHShowPopup('license', 'Admin-3-06.html#wp165454', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;2-4-Verifying that a Network Adapter Driver is Installed</u></a></li></div>
+<a name="wp135586"> </a><div class="pSmartList1"><li><a href="javascript:WWHClickedPopup('license', 'Admin-3-06.html#wp135642');" onMouseOver="WWHShowPopup('license', 'Admin-3-06.html#wp135642', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;2-6-Configuring TCP/IP</u></a></li></div>
+</ol></div>
+<a name="wp187471"> </a><p class="pBody">
+To install TCP/IP for a network connection on a Windows NT 4.0 computer:
+</p>
+<a name="wp135592"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp135592", false);</script>Procedure&#160;2-2   Installing TCP/IP for a Network Connection (Windows&#160;NT&#160;4.0)<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp135592", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp135592", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp138717"> </a><div style="text-align: left" class="pSmartList2Test"><li>Verify that you are logged on as a user with administrator&#39;s privileges.</li></div>
+<a name="wp135593"> </a><div style="text-align: left" class="pSmartList2Test"><li>Insert your Windows CD-ROM into the CD-ROM drive of the install workstation. If a Windows CD-ROM window opens, close it.</li></div>
+<a name="wp135594"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the Windows Control Panel and double-click the Network icon.</li></div>
+<a name="wp135595"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The Network (Network Settings) dialog box opens.
+</p>
+<a name="wp135596"> </a><div style="text-align: left" class="pSmartList2Test"><li>In the Network (Network Settings) dialog box, click on the Protocols tab. Then click the Add... (Add Software) button.</li></div>
+<a name="wp135597"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The Select Network Protocol (Add Network Software) dialog box opens.
+</p>
+<a name="wp135598"> </a><div style="text-align: left" class="pSmartList2Test"><li>Select TCP/IP Protocol (TCP/IP Protocol and related components) from the list of available software and click OK.</li></div>
+<a name="wp135599"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The TCP/IP Setup dialog box opens.
+</p>
+<a name="wp135600"> </a><div style="text-align: left" class="pSmartList2Test"><li>If the install workstation is not on a network, answer No to the question about using a DHCP server. If the install workstation is on a network, consult your system administrator for the correct response.</li></div>
+<a name="wp135601"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The Windows Setup dialog box opens, showing the path to the software on the CD-ROM.
+</p>
+<a name="wp135602"> </a><div style="text-align: left" class="pSmartList2Test"><li>Verify that the path is <code class="cCode">&lt;CD-ROM_drive&gt;:\i386</code>, where <code class="cCode">&lt;CD-ROM_drive&gt;</code> is the letter of the install workstation CD-ROM drive. Change the path if necessary.</li></div>
+<a name="wp135603"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click Continue.</li></div>
+<a name="wp135604"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The TCP/IP software is installed from the CD-ROM.
+</p>
+<a name="wp138724"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click OK, then Close to close the Windows Setup dialog box and return to the TCP/IP Setup dialog box.</li></div>
+<a name="wp138727"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click on the IP Address tab and enter the IP number, subnet mask, and default gateway. (If you do not know these, ask your system administrator.)</li></div>
+<a name="wp138746"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click on the DNS tab and enter the host name, domain name and DNS service search order. (The latter value is the IP address of your DNS server.)</li></div>
+<a name="wp138751"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click OK to reboot your computer.</li></div>
+</ol></div>
+<a name="wp149651"> </a><p class="pProcEnd">
+End of Procedure 2-2
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp187483"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp208581"> </a><p class="pBody">
+To install TCP/IP for a network connection on a Windows 2000 computer:
+</p>
+<a name="wp138661"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp138661", false);</script>Procedure&#160;2-3   Installing TCP/IP for a Network Connection (Windows 2000)<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp138661", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp138661", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp138673"> </a><div style="text-align: left" class="pSmartList2Test"><li>Verify that you are logged on as an administrator or a member of the administrator&#39;s group.</li></div>
+<a name="wp138676"> </a><div style="text-align: left" class="pSmartList2Test"><li>Insert your Windows 2000 CD-ROM into the CD-ROM drive of the install workstation. If a Windows CD-ROM window opens, close it.</li></div>
+<a name="wp138674"> </a><div style="text-align: left" class="pSmartList2Test"><li>From the Windows Start menu, choose Settings&#160;&gt; Network&#160;and&#160;Dial-up&#160;Connections.</li></div>
+<a name="wp138681"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The Network and Dialup Connections dialog box appears.
+</p>
+<a name="wp138699"> </a><div style="text-align: left" class="pSmartList2Test"><li>Double-click on the network connection for which you want install TCP/IP, then click Properties.</li></div>
+<a name="wp138682"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click the General tab for a LAN connection, or the Networking tab for all other connection types.</li></div>
+<a name="wp138687"> </a><div style="text-align: left" class="pSmartList2Test"><li>If Internet Protocol (TCP/IP) does not appear in the list of installed components, perform the following steps:</li></div>
+<ol type="a">
+<a name="wp138688"> </a><div class="pprocstepSub"><li>Click Install, then Protocol, then Add.</li></div>
+<a name="wp138696"> </a><p class="pIndentedRelative">
+The Select Network Protocol dialog appears.
+</p>
+<a name="wp138697"> </a><div class="pprocstepSub"><li>Select Internet Protocol (TCP/IP) from the protocols list, then click OK.</li></div>
+<a name="wp138698"> </a><p class="pIndentedRelative">
+Internet Protocol (TCP/IP) now appears in the list of supported protocols for the selected connection.
+</p>
+</ol>
+<a name="wp138752"> </a><div style="text-align: left" class="pSmartList2Test"><li>Double-click on the Internet Protocol (TCP/IP) list item to open the Internet Protocol (TCP/IP) Properties dialog box.</li></div>
+<a name="wp138753"> </a><div style="text-align: left" class="pSmartList2Test"><li>Specify your machine&#39;s IP address.</li></div>
+<a name="wp138754"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+If your network is run on a DHCP server, choose Obtain IP address automatically.
+</p>
+<a name="wp138755"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+If your network is not run on an DHCP server:
+</p>
+<ol type="a">
+<a name="wp138756"> </a><div class="pprocstepSub"><li>Click Use&#160;the&#160;following&#160;IP&#160;address... and enter the IP address, subnet mask, default gateway, preferred DNS server, and alternate DNS server.</li></div>
+</ol>
+<a name="wp138757"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click Advanced... to open the Advanced TCP/IP Settings dialog box, then click the DNS tab. </li></div>
+<a name="wp138758"> </a><div style="text-align: left" class="pSmartList2Test"><li>Enter the DNS suffix in the DNS suffix for this connection field.</li></div>
+<a name="wp138759"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click OK to close the Advanced TCP/IP Settings dialog box and return to the Internet Protocol (TCP/IP) Properties dialog box.</li></div>
+<a name="wp138760"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click OK to close the Internet Protocol (TCP/IP) Properties dialog box.</li></div>
+</ol></div>
+<a name="wp165451"> </a><p class="pProcEnd">
+End of Procedure 2-3
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp165452"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp208662"> </a><p class="pBody">
+Confirm that a network adapter driver is installed. If not, install a dummy driver. To verify that a network adapter driver is installed, perform the following procedure.
+</p>
+<a name="wp165454"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp165454", false);</script>Procedure&#160;2-4   Verifying that a Network Adapter Driver is Installed<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp165454", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp165454", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp165455"> </a><div style="text-align: left" class="pSmartList2Test"><li>If it is not already available, open the Network dialog box.</li></div>
+<a name="wp153233"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click the Adapters tab to see if there is at least one adapter in the Network Adapters list.</li></div>
+<div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp135612"> </a><div class="pSmartList2"><li>If there is at least one adapter in the list, continue with <a href="javascript:WWHClickedPopup('license', 'Admin-3-06.html#wp135642');" onMouseOver="WWHShowPopup('license', 'Admin-3-06.html#wp135642', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;2-6-Configuring TCP/IP</u></a>.</li></div>
+<a name="wp135613"> </a><div class="pSmartList2"><li>If there are no adapters in the list, you must install a &quot;dummy&quot; driver. Continue with <a href="javascript:WWHClickedPopup('license', 'Admin-3-06.html#wp135619');" onMouseOver="WWHShowPopup('license', 'Admin-3-06.html#wp135619', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;2-5</u></a>.</li></div>
+</ul></div>
+</ol></div>
+<a name="wp153217"> </a><p class="pProcEnd">
+End of Procedure 2-4
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp187587"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp208736"> </a><p class="pBody">
+To install a network adapter driver, do the following procedure.
+</p>
+<a name="wp135619"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp135619", false);</script>Procedure&#160;2-5   Installing a Network Adapter Driver<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp135619", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp135619", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp135620"> </a><div style="text-align: left" class="pSmartList2Test"><li>In the Network (Network Settings) dialog box, click the Add... (Add Adapter) button.</li></div>
+<a name="wp135621"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The Select Network Adapter (Add Network Adapter) dialog box opens.
+</p>
+<a name="wp135622"> </a><div style="text-align: left" class="pSmartList2Test"><li>Select MS Loopback Adapter from the list of available drivers.</li></div>
+<a name="wp135623"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click OK (Continue) button.</li></div>
+<a name="wp135624"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The MS Loopback Adapter Card Setup dialog box opens.
+</p>
+<a name="wp135625"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click OK.</li></div>
+<a name="wp135626"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The standard 802.3 frame type is selected.
+</p>
+<a name="wp135633"> </a><div style="text-align: left" class="pSmartList2Test"><li>If prompted, enter the path to the software:</li></div>
+<div class="pCodeStep"><ul class="pCodeStep">
+<a name="wp153328"> </a>&lt;CD-ROM_drive&gt;:\i386
+<a name="wp135635"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The software is installed from the CD-ROM.
+</p>
+</ul></div>
+</ol></div>
+<a name="wp149722"> </a><p class="pProcEnd">
+End of Procedure 2-5
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp135636"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp208810"> </a><p class="pBody">
+To configure TCP/IP to work with OPNET&#160;analysis&#160;software, use the following procedure.
+</p>
+<a name="wp135642"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp135642", false);</script>Procedure&#160;2-6   Configuring TCP/IP<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp135642", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp135642", false);</script>
+<a name="wp135643"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>This procedure may result in numerous error messages about various network services. You can ignore these messages.
+</p>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp135644"> </a><div style="text-align: left" class="pSmartList2Test"><li>In the Network dialog box, click the Protocols tab.</li></div>
+<a name="wp135645"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click the Properties... (Configure) button.</li></div>
+<a name="wp135646"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The Microsoft TCP/IP Properties (TCP/IP Configuration) dialog box opens.
+</p>
+<a name="wp135647"> </a><div style="text-align: left" class="pSmartList2Test"><li>Enter the following configuration information for the workstation. Your network administrator can provide appropriate values for your network.</li></div>
+<a name="wp135648"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+IP Address&#8212;Enter the network address of the install workstation. If the workstation is not connected to a network, you can enter any value (1.1.1.1, for example).
+</p>
+<a name="wp135649"> </a><div style="text-align: left" class="pSmartList2Test"><li>Subnet Mask&#8212;Enter a value appropriate for the install workstation, if one is not entered automatically. (With the example IP Address in step 3a, the Subnet Mask would be 255.0.0.0.)</li></div>
+<a name="wp135650"> </a><div style="text-align: left" class="pSmartList2Test"><li>Default Gateway&#8212;Enter the address of the gateway used by the install workstation. Again, if the workstation is not connected to a network, you can enter any value (use 1.1.1.1 again).</li></div>
+<a name="wp135651"> </a><div style="text-align: left" class="pSmartList2Test"><li>Click OK.</li></div>
+<a name="wp135652"> </a><div style="text-align: left" class="pSmartList2Test"><li>If an alert dialog about adapter cards with an empty primary WINS address appears, you can generally continue by clicking Yes. If a problem occurs, consult your network administrator.</li></div>
+<a name="wp135653"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the Network (Network Settings) dialog box. Restart the install workstation if a dialog box suggesting this appears.</li></div>
+</ol></div>
+<a name="wp149746"> </a><p class="pProcEnd">
+End of Procedure 2-6
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp135654"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp208884"> </a><p class="pBody">
+The necessary TCP/IP software is now ready for use with the Floating License System.
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/ag_020_install_support.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

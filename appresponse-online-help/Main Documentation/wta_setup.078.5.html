@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Page Analysis: Enabling and Configuring</title>
+    <link rel="StyleSheet" href="css/wta_setup.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_user_guide_splash.html">User Guide</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="wta.html">Web Transaction Analysis</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="wta_setup.078.1.html">Setup: Web Transaction Analysis</a> &gt; Page Analysis: Enabling and Configuring</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h2"><a name="1113422">Page Analysis: Enabling and Configuring</a></div>
+      <div class="h4"><a name="1113423">Enabling Web Transaction Analysis</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1113425&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procCaption_inner" style="width: 90pt; white-space: nowrap">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1113425", false);</script>Procedure&nbsp;2    </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="1113425">Enabling Web Transaction Analysis</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1113425", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113429">Configure AppResponse to mask out all sensitive information contained in key-value pairs that might appear in observed web traffic (URLs, cookies, and POST messages):</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113433">In the Desktop Console, choose Tools&nbsp;&gt; Pages&nbsp;&gt; Information&nbsp;Privacy&nbsp;Manager </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1113434">Specify all parameters</a><span style="font-size: 11.0pt"> </span>that might contain sensitive information in the observed web traffic. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="1113437">For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.4.html', '');" title="Masking Private Data in Observed Web Traffic">Masking Private Data in Observed Web Traffic</a></span><span style="font-size: 11.0pt">.</span></div>
+      <div class="procStepCont"><span class="zRedBold"><a name="1113439">WARNING—</a></span>There is no way to mask sensitive data after it is saved on an appliance. For this reason, you must specify all sensitive parameters <span class="italic">before you enable Web Transaction Analysis</span>.</div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113443">Go to the Administration &gt; System &gt; Pages web page.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepResult_inner" style="width: 18.72pt; white-space: nowrap">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="1113447">The </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.5.html#1113475', '');" title="Page Analysis: Enabling and Configuring">Page Analysis Configuration Page</a></span> appears.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113451">Select the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.5.html#1113498', '');" title="Page Analysis: Enabling and Configuring">Enable Page Analysis</a></span> check box.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113458">Specify the ports and IPs (</a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.5.html#1113506', '');" title="Page Analysis: Enabling and Configuring">on Ports</a></span>...<span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.5.html#1113508', '');" title="Page Analysis: Enabling and Configuring">and IP Addresses</a></span>) for which you want to collect page-level metrics, or select the <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.5.html#1113510', '');" title="Page Analysis: Enabling and Configuring">All</a></span> checkbox on the right. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note: </span><a name="1113462">Collecting web page data can be highly resource-intensive, especially on very large networks with a lot of web traffic. To minimize the performance impact on the appliance, it is good practice to limit web page tracking to ports and hosts of interest only.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	5.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113466">Change the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.5.html#1113520', '');" title="Page Analysis: Enabling and Configuring">Detault Slow Page Threshold</a></span>, if desired.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	6.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1113467">At the bottom of the page, click the Apply button to apply your changes.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepResult_inner" style="width: 18.72pt; white-space: nowrap">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="1113471">AppResponse starts collecting web page statistics on the specified ports and IP addresses. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap">End of Procedure 2</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1113472">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1113473">&nbsp;</a></div>
+      <div class="h3Top"><a name="1113475">Page Analysis Configuration Page</a></div>
+      <div class="bodyIntro"><a name="1113476">The Page Analysis Configuration web page (Administration &gt; System &gt; Pages) has options for collecting web page data and decoding SSL traffic. </a><span class="zBoldRed">WARNING—</span>Before you enable Page Analysis or SSL Decoding, you should mask out all sensitive parameter values in any HTTPS traffic that might get decoded, as described in <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.4.html', '');" title="Masking Private Data in Observed Web Traffic">Masking Private Data in Observed Web Traffic</a></span>.</div>
+      <div class="tblAnchor"><a name="1113564">&nbsp;</a></div>
+      <table class="tableNarrow" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+              <tr style="vertical-align: baseline">
+                <td>
+                  <div class="tblCaption_inner" style="width: 44.64pt; white-space: nowrap">Table&nbsp;1    </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="1113489">“Page Analysis Configuration” Page&nbsp;</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 155.9124pt">
+            <div class="tblHead"><a name="1113493">Item</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 312.08688pt">
+            <div class="tblHead"><a name="1113495">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113498">Enable Page Analysis</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113503">When this option is selected, AppResponse collects detailed page data for web traffic on the specified ports and IP addresses. </a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113506">on Ports</a></div>
+            <div class="tblBody9"><a name="1113508">and IP Addresses</a></div>
+            <div class="tblBody9"><a name="1113510">All</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113512">Specify the ports and IP addresses for which you want to collect page-level metrics. This section includes the following options:</a></div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1113513">on Port(s)—Collect page data for web traffic seen on the specified ports only.</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1113514">and IP Address(es)—Collect page data for web traffic from the following IP addresses only.</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="1113515">All—Collect web traffic on all IP addresses</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9"><a name="1113516">To enable this option, you must have the Enable Recognized Application Detection option already enabled (this option is located on the Administration &gt; System &gt; Advanced web page). </a></div>
+            <div class="tblBody9"><span class="bold"><a name="1113517">NOTE—</a></span>Collecting web page data can be highly resource-intensive, especially on very large networks with a lot of web traffic. To minimize the performance impact on the appliance, it is good practice to limit web page tracking to ports and hosts of interest only.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113520">Detault Slow Page Threshold</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113527">The appliance uses this threshold to determine metrics such as Slow Pages, Slow Page Rate (Servers), and % Slow Pages.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113534">Enable SSL Decoding</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113539">When this option is selected, AppResponse decodes web-over-SSL traffic on the ports and IP addresses specified under </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.5.html#1113498', '');" title="Page Analysis: Enabling and Configuring">Enable Page Analysis</a></span>.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113544">Private Key Configuration</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113549">This table describes the set of private keys that AppResponse uses to decode encrypted traffic, by displaying a user-defined label for each key. </a></div>
+            <div class="tblBody9"><a name="1113550">If you want to decode traffic from a server that uses SSL certificates, you must specify the private key used by that server. For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.6.html#1113654', '');" title="SSL Decoding: Enabling and Configuring">Specifying Private Keys</a></span>.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113555">SSL Servers with Missing Private Keys</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="1113557">This table shows all servers that have sent web-over-SSL traffic that AppResponse has observed, but could not decode because it did not have the required private key. It is good practice to update this list periodically, as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_setup.078.6.html#1113718', '');" title="SSL Decoding: Enabling and Configuring">Periodic Updating (Recommended)</a></span>.</div>
+          </td>
+        </tr>
+      </table>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

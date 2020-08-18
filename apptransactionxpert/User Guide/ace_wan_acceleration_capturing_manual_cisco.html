@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Direct Captures on Cisco WAE Accelerators</title>
+    <link rel="StyleSheet" href="css/ace_wan_acceleration_capturing_manual_cisco.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ace_wan_acceleration_capturing_manual_cisco.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_appendices_splash.html#898312">Appendices</a> &gt; Direct Captures on Cisco WAE Accelerators</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="hAppendix"><a name="898312">Direct Captures on Cisco WAE Accelerators</a></div>
+      <div class="body"><a name="979266">This workflow is provided in case you prefer to capture directly on the accelerators themselves using tcpdump. However, it is recommended that you capture on the accelerators using Capture&nbsp;Manager, as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_capturing.13.3.html#955289', '');" title="Capturing on Cisco and Riverbed Accelerators">Capturing on Cisco and Riverbed Accelerators</a></span>.</div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="979270">The following information is based on the experiences of engineers working in a lab environment, and is not intended to provide comprehensive documentation about specific devices. If you need detailed information about capturing on a specific device, contact your IS organization or the device vendor.</a></div>
+      <div class="bodyIntro"><a name="979241">The direct workflow consists of the following steps. </a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="979094">Log in to both accelerators using telnet, putty, or a similar utility. <br /></a><span class="bold">Note—</span>You must be in Executive mode to capture traffic.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="979097">Identify the interfaces to capture on (see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_capturing_manual_cisco.html#979131', '');" title="Direct Captures on Cisco WAE Accelerators">Identifying the WAE Interfaces for Capturing Traffic</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><a name="979099">Ideally, you should be able to run the application and start/stop the captures from the same host. Suppose you are capturing on two accelerators with two interfaces each. In this situation, the most efficient way to capture is to have the following windows open on the same host:</a></div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="979100">Accelerator 1, LAN interface</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="979101">Accelerator 1, WAN interface</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="979102">Accelerator 2, LAN interface</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="979103">Accelerator 2, WAN interface</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="979104">Window for running the application to capture</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="979105">Start the capture(s) on each accelerator.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><a name="979106">Cisco WAE devices support tcpdump, a common utility for capturing traffic. For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_capturing_manual_tcpdump.html#898312', '');" title="Capturing Application Traffic with tcpdump">Capturing Application Traffic with tcpdump</a></span>.</div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	4)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="979110">Run the user-level application transaction you want to capture.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	5)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="979111">When the transaction finishes, stop the capture on each accelerator: make the corresponding window active, then press Ctrl-C.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	6)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="979115">Transfer the packet&nbsp;traces from the accelerators to the AppTransaction&nbsp;Xpert host (see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_capturing_manual_cisco.html#979131', '');" title="Direct Captures on Cisco WAE Accelerators">Identifying the WAE Interfaces for Capturing Traffic</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	7)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="979119">Delete the original packet&nbsp;traces on the accelerators. You can use the following command to delete files:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><span class="code"><a name="979120">delfile &lt;</a></span><span class="italic">file_name</span><span class="code" style="color: #000000; font-style: normal; font-weight: normal">&gt;</span> </div>
+      <div class="listNumCont"><span class="bold"><a name="979121">Note—</a></span>For specific information about how to capture on these devices, consult the Cisco WAE documentation.</div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	8)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="979125">Fill out the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_worksheet.html#898312', '');" title="WAN Acceleration Worksheet">WAN Acceleration Worksheet</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumContLast"><a name="979126">Although this step is not required, you might find this information useful when you import the packet&nbsp;traces into Transaction&nbsp;Analyzer.</a></div>
+      <div class="h1NoBreak"><a name="979131">Identifying the WAE Interfaces for Capturing Traffic</a></div>
+      <div class="body"><a name="979132">Cisco WAE devices use a logical in-path configuration by default, with one bidirectional interface that processes both LAN-side and WAN-side traffic (as shown in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_capturing.13.2.html#952160', '');" title="Direct Captures (On the Accelerators)">Figure&nbsp;11-5</a></span>). In this case, you need to capture on one interface only per accelerator.</div>
+      <div class="body"><a name="979136">If the accelerator has an in-line module, it will use a WAN-side interface and a LAN-side interface. In this case, you must capture on both interfaces.</a></div>
+      <div class="bodyIntro"><a name="979137">Interface names are specified like this:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="code"><a name="979138">eth0</a></span> - GigabitEthernet 1/0</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="code"><a name="979139">eth1</a></span> - GigabitEthernet 2/0</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="code"><a name="979140">eth2</a></span> - InlinePort 1/1/wan</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="code"><a name="979141">eth3</a></span> - InlinePort 1/1/lan</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="code"><a name="979142">eth4</a></span> - InlinePort 1/0/wan</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><span class="code"><a name="979143">eth5</a></span> - InlinePort 1/0/lan</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="979144">If you cannot identify the exact interface(s) on which to capture, contact your IS organization.</a></div>
+      <div class="h1TopNoBreak"><a name="979149">Transferring Packet&nbsp;Traces from the WAE Device to the AppTransaction&nbsp;Xpert Host</a></div>
+      <div class="bodyIntro"><a name="979150">The following steps describe how to transfer packet&nbsp;traces over a secure connection.</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="979151">Enable SSH (Secure Shell) on the accelerator:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap;">a)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="979152">Log in to the accelerator.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap;">b)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="979153">Enter the following commands:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSubCont"><span class="code"><a name="979154">cmd&gt; </a></span><span class="codebold">ssh-key-generate</span> </div>
+      <div class="listNumSubCont"><span class="code"><a name="979155">cmd&gt; </a></span><span class="codebold">sshd enable</span> </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="979156">Use a Secure Copy Program (SCP) to transfer the file.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><a name="979157">Typically, an SCP program uses a syntax similar to the </a><span class="codebold">cp</span> command. For example, PSCP (PuTTY Secure Copy client) uses the following syntax:</div>
+      <div class="listNumCont"><span class="code"><a name="979158">pscp [</a></span><span class="italic">options</span><span class="code" style="color: #000000; font-style: normal; font-weight: normal">][&lt;</span><span class="italic">user&gt;</span><span class="code" style="color: #000000; font-style: normal; font-weight: normal">@]&lt;</span><span class="italic">host</span><span class="code" style="color: #000000; font-style: normal; font-weight: normal">&gt;:&lt;</span><span class="italic">source_file</span><span class="code" style="color: #000000; font-style: normal; font-weight: normal">&gt; &lt;</span><span class="italic">dest_path</span><span class="code" style="color: #000000; font-style: normal; font-weight: normal">&gt;</span></div>
+      <div class="listNumContLast"><a name="979159">PSCP has options for specifying passwords (pw) for logging in with a specific username/password. You can also use wildcards (such as </a><span class="code">*.cap</span>) to transfer multiple files at once.</div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;F-1   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="979160">Enabling SSH on a Cisco WAE Accelerator: Example Session</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="codeColumnLarge"><a name="979161">cisco-edge#config<br />cisco-edge(config)#</a><span class="bold">ssh-key-generate</span>&nbsp;&nbsp;&nbsp;<br />Ssh host key generated successfully<br />Save the host key to box...<br />Host key was saved successfully and will take effect in new ssh sessions.<br />cisco-edge(config)#<span class="bold">sshd enable</span>&nbsp;&nbsp;&nbsp;<br />cisco-edge(config)#</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:31:28" />
+    <title>Restricting License Users</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="Admin-4-01.html"> Licensing</a> > Restricting License Users</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp143655"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Restricting License Users
+</h2>
+
+ 
+
+
+<a name="wp143658"> </a><p class="pBody">
+You can restrict the users of a particular license server by creating a user authorization file (<code class="cCode">user_auth</code>). In this file you list machine-user pairs that are allowed to receive licenses from that server. A license server with a <code class="cCode">user_auth</code> file will grant licenses only to those machine-user pairs listed in the file.
+</p>
+<a name="wp150205"> </a><p class="pBodyWarning">
+<span style="font-weight: bold; color: red;">WARNING&#8212;</span>If you do not create a user authorization file, any user from any machine can obtain licenses and run applications.
+</p>
+<a name="wp143660"> </a><p class="pBody">
+A user authorization file is a text file with the same format as an administration authorization file (see <a href="javascript:WWHClickedPopup('license', 'Admin-4-12.html');" onMouseOver="WWHShowPopup('license', 'Admin-4-12.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Restricting License Server Administration</u></a> for details). Name the user authorization file as <code class="cCode">user_auth</code> and place it on the license server for which you want to specify users, in the same directory as the license file:
+</p>
+<a name="wp143664"> </a><p class="pBodyRelative">
+Windows: <code class="cCode">&lt;primary_hard_drive&gt;:\OPNET_License\</code>
+</p>
+<a name="wp200676"> </a><p class="pBodyRelative">
+Solaris: <code class="cCode">/opt/OPNET_license/</code> or<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<code class="cCode">/var/adm/OPNET_license/</code>
+</p>
+<a name="wp200677"> </a><p class="pBodyRelative">
+Linux: <code class="cCode">/opt/OPNET_license/</code>
+</p>
+<a name="wp214373"> </a><p class="pBody">
+After adding or editing a user authorization file, you must do one of the following things to make it take effect:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp143667"> </a><div class="pSmartList1"><li>In the License Manager, choose Tools&#160;&gt; Refresh&#160;Server&#160;Authorization&#160;Files.</li></div>
+<a name="wp143668"> </a><div class="pSmartList1"><li>Stop and restart the license server.</li></div>
+</ul></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/ag_035_licensing.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

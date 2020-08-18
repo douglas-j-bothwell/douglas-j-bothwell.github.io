@@ -1,0 +1,517 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:37:20" />
+    <title>Grooming: Batch Options</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-17-01.html"> Batch Console</a> > <a href="User-17-08.html">Editing a Batch File Manually</a> > Grooming: Batch Options</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp224649"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Grooming: Batch Options
+</h2>
+
+ 
+
+<a name="wp224654"> </a><p class="pBody">
+If a batch file runs a grooming operation with 1+1 protection and link disjointness at the OCH, OMS, or OTS layer, SP&#160;Guru&#160;Transport&#160;Planner automatically accommodates the supporting OCH traffic matrix in the network. 
+</p>
+<a name="wp254192"> </a><p class="pBody">
+In all other cases, the batch file must also include a command to accommodate the supporting OCH traffic matrix in the network. To do this, run a routing or dimensioning action. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-09-01.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-01.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Grooming DCL to OCH Traffic</u> </a>.
+</p>
+<a name="wp254219"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('wdm_user', 'User-17-11.html#wp269748');" onMouseOver="WWHShowPopup('wdm_user', 'User-17-11.html#wp269748', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;16-7</u></a> lists the options you can specify for a grooming command.
+</p>
+<a name="wp224776"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp269748table224658">
+  <caption><a name="wp269748"> </a><div class="ptblcaption">
+Table&#160;16-7   Grooming: Batch Options&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp269754"> </a><div class="pCellHeading">
+Option
+</div>
+</th>
+    <th><a name="wp269756"> </a><div class="pCellHeading">
+Description
+</div>
+</th>
+    <th><a name="wp269758"> </a><div class="pCellHeading">
+Comment
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp269760"> </a><div class="pCellBody">
+-cp
+</div>
+</td>
+    <td><a name="wp269762"> </a><div class="pCellBody">
+Client protection:
+</div>
+<ul class="pCellBodyBullet"><a name="wp269763"> </a><div class="pCellBodyBullet"><li>
+0 = no client protection
+</li></div>
+<a name="wp269764"> </a><div class="pCellBodyBullet"><li>
+1 = client protection
+</li></div>
+</ul></td>
+    <td><a name="wp269766"> </a><div class="pCellBody">
+For grooming with 1+1 protection only
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp269768"> </a><div class="pCellBody">
+-gra
+</div>
+</td>
+    <td><a name="wp269770"> </a><div class="pCellBody">
+Grooming algorithm:
+</div>
+<ul class="pCellBodyBullet"><a name="wp269771"> </a><div class="pCellBodyBullet"><li>
+0 = end to end grooming
+</li></div>
+<a name="wp269772"> </a><div class="pCellBodyBullet"><li>
+1 = link by link grooming
+</li></div>
+</ul></td>
+    <td><a name="wp269774"> </a><div class="pCellBody">
+For grooming with optimized routes only
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp269776"> </a><div class="pCellBody">
+-grbr
+</div>
+</td>
+    <td><a name="wp269778"> </a><div class="pCellBody">
+Target bit rate optical channels (if DCL layer):
+</div>
+<ul class="pCellBodyBullet"><a name="wp269779"> </a><div class="pCellBodyBullet"><li>
+0 = STM-1 / OC-3
+</li></div>
+<a name="wp269780"> </a><div class="pCellBodyBullet"><li>
+1 = STM-4 / OC-12
+</li></div>
+<a name="wp269781"> </a><div class="pCellBodyBullet"><li>
+2 = STM-16 / OC-48
+</li></div>
+<a name="wp269782"> </a><div class="pCellBodyBullet"><li>
+3 = STM-64 / OC-192
+</li></div>
+<a name="wp269783"> </a><div class="pCellBodyBullet"><li>
+4 = STM-256 / OC-768
+</li></div>
+<a name="wp269784"> </a><div class="pCellBodyBullet"><li>
+5 = STM-512 / OC-1536
+</li></div>
+<a name="wp269785"> </a><div class="pCellBodyBullet"><li>
+6 = STM-1024 / OC-3072
+</li></div>
+</ul><a name="wp269786"> </a><div class="pCellBody">
+Target bit rate digital trunks (if LOP layer):
+</div>
+<ul class="pCellBodyBullet"><a name="wp269787"> </a><div class="pCellBodyBullet"><li>
+0 = STM-1 / STS-1
+</li></div>
+<a name="wp269788"> </a><div class="pCellBodyBullet"><li>
+1 = STM-4 / STS-3
+</li></div>
+<a name="wp269789"> </a><div class="pCellBodyBullet"><li>
+2 = STM-16 / STS-12
+</li></div>
+<a name="wp269790"> </a><div class="pCellBodyBullet"><li>
+3 = STM-64 / STS-48
+</li></div>
+<a name="wp269791"> </a><div class="pCellBodyBullet"><li>
+4 = 1 GbE / STS-192
+</li></div>
+<a name="wp269792"> </a><div class="pCellBodyBullet"><li>
+5 = 1 GbE
+</li></div>
+</ul></td>
+    <td>&#160;</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp269796"> </a><div class="pCellBody">
+-grfixed
+</div>
+</td>
+    <td><a name="wp269798"> </a><div class="pCellBody">
+Grooming approach:
+</div>
+<ul class="pCellBodyBullet"><a name="wp269799"> </a><div class="pCellBodyBullet"><li>
+0 = optimized routes
+</li></div>
+<a name="wp269800"> </a><div class="pCellBodyBullet"><li>
+1 = fixed routes
+</li></div>
+</ul></td>
+    <td><a name="wp269802"> </a><div class="pCellBody">
+For DCL grooming only
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp269804"> </a><div class="pCellBody">
+-gro
+</div>
+</td>
+    <td><a name="wp269806"> </a><div class="pCellBody">
+Grooming optimization:
+</div>
+<ul class="pCellBodyBullet"><a name="wp269807"> </a><div class="pCellBodyBullet"><li>
+0 = no optimization
+</li></div>
+<a name="wp269808"> </a><div class="pCellBodyBullet"><li>
+1 = optimization
+</li></div>
+</ul></td>
+    <td><a name="wp269810"> </a><div class="pCellBody">
+For DCL grooming only
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp269812"> </a><div class="pCellBody">
+-gruec
+</div>
+</td>
+    <td><a name="wp269814"> </a><div class="pCellBody">
+Use existing capacity:
+</div>
+<ul class="pCellBodyBullet"><a name="wp269815"> </a><div class="pCellBodyBullet"><li>
+0 = no
+</li></div>
+<a name="wp269816"> </a><div class="pCellBodyBullet"><li>
+1 = yes
+</li></div>
+</ul></td>
+    <td><a name="wp269818"> </a><div class="pCellBody">
+For LOP grooming only
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp269820"> </a><div class="pCellBody">
+-granc
+</div>
+</td>
+    <td><a name="wp269822"> </a><div class="pCellBody">
+Add new capacity:
+</div>
+<ul class="pCellBodyBullet"><a name="wp269823"> </a><div class="pCellBodyBullet"><li>
+0 = no
+</li></div>
+<a name="wp269824"> </a><div class="pCellBodyBullet"><li>
+1 = yes
+</li></div>
+</ul></td>
+    <td><a name="wp269826"> </a><div class="pCellBody">
+For LOP grooming only 
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp269828"> </a><div class="pCellBody">
+-imname
+</div>
+</td>
+    <td><a name="wp269830"> </a><div class="pCellBody">
+Name and path of the file containing the OTS routes to import
+</div>
+</td>
+    <td><a name="wp269832"> </a><div class="pCellBody">
+For grooming with fixed routes only
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp269917"> </a><div class="pCellBody">
+-k
+</div>
+</td>
+    <td><a name="wp269919"> </a><div class="pCellBody">
+Value for K shortest paths
+</div>
+</td>
+    <td><a name="wp269922"> </a><div class="pCellBody">
+For DCL grooming with 1+1 protection only
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp269834"> </a><div class="pCellBody">
+-layer
+</div>
+</td>
+    <td><a name="wp269836"> </a><div class="pCellBody">
+Layer in which to groom:
+</div>
+<ul class="pCellBodyBullet"><a name="wp269837"> </a><div class="pCellBodyBullet"><li>
+LOP = lower order path layer
+</li></div>
+<a name="wp269838"> </a><div class="pCellBodyBullet"><li>
+DCL = digital client layer
+</li></div>
+</ul></td>
+    <td>&#160;</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp269842"> </a><div class="pCellBody">
+-ldlay
+</div>
+</td>
+    <td><a name="wp269844"> </a><div class="pCellBody">
+Link disjointness down to: 
+</div>
+<ul class="pCellBodyBullet"><a name="wp269845"> </a><div class="pCellBodyBullet"><li>
+DCL = digital client layer
+</li></div>
+<a name="wp269846"> </a><div class="pCellBodyBullet"><li>
+OCH = optical channel layer
+</li></div>
+<a name="wp269847"> </a><div class="pCellBodyBullet"><li>
+OMS = optical multiplex section
+</li></div>
+<a name="wp269848"> </a><div class="pCellBodyBullet"><li>
+OTS = optical transmission section
+</li></div>
+</ul></td>
+    <td><a name="wp269850"> </a><div class="pCellBody">
+For grooming with optimized routes and with 1+1 protection only
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp269852"> </a><div class="pCellBody">
+-load
+</div>
+</td>
+    <td><a name="wp269854"> </a><div class="pCellBody">
+Traffic matrix subject to the grooming action
+</div>
+</td>
+    <td>&#160;</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp269941"> </a><div class="pCellBody">
+-lut
+</div>
+</td>
+    <td><a name="wp269943"> </a><div class="pCellBody">
+Apply link usage thresholds
+</div>
+<ul class="pCellBodyBullet"><a name="wp269959"> </a><div class="pCellBodyBullet"><li>
+0 = no
+</li></div>
+<a name="wp269963"> </a><div class="pCellBodyBullet"><li>
+1 = yes
+</li></div>
+</ul></td>
+    <td>&#160;</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp269858"> </a><div class="pCellBody">
+-nd
+</div>
+</td>
+    <td><a name="wp269860"> </a><div class="pCellBody">
+Disjointness of working and protecting path:
+</div>
+<ul class="pCellBodyBullet"><a name="wp269861"> </a><div class="pCellBodyBullet"><li>
+0 = link disjoint
+</li></div>
+<a name="wp269862"> </a><div class="pCellBodyBullet"><li>
+1 = link and node disjoint
+</li></div>
+</ul></td>
+    <td><a name="wp269864"> </a><div class="pCellBody">
+For grooming with 1+1 protection only
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp269866"> </a><div class="pCellBody">
+-pt
+</div>
+</td>
+    <td><a name="wp269868"> </a><div class="pCellBody">
+1+1 protection in DCL:
+</div>
+<ul class="pCellBodyBullet"><a name="wp269869"> </a><div class="pCellBodyBullet"><li>
+0 = no protection
+</li></div>
+<a name="wp269870"> </a><div class="pCellBodyBullet"><li>
+1 = 1+1 protection
+</li></div>
+</ul></td>
+    <td><a name="wp269872"> </a><div class="pCellBody">
+For DCL grooming only
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp269874"> </a><div class="pCellBody">
+-rc
+</div>
+</td>
+    <td><a name="wp269876"> </a><div class="pCellBody">
+Routing cost to calculate OTS routes:
+</div>
+<ul class="pCellBodyBullet"><a name="wp269877"> </a><div class="pCellBodyBullet"><li>
+0 = hop+fiber
+</li></div>
+<a name="wp269878"> </a><div class="pCellBodyBullet"><li>
+1 = hop+reg+fiber
+</li></div>
+<a name="wp269879"> </a><div class="pCellBodyBullet"><li>
+2 = fiber length
+</li></div>
+<a name="wp269880"> </a><div class="pCellBodyBullet"><li>
+3 = real cost
+</li></div>
+<a name="wp269881"> </a><div class="pCellBodyBullet"><li>
+4 = user specified
+</li></div>
+<a name="wp269882"> </a><div class="pCellBodyBullet"><li>
+5 = max availability
+</li></div>
+<a name="wp269883"> </a><div class="pCellBodyBullet"><li>
+6 = least used
+</li></div>
+</ul></td>
+    <td><a name="wp269885"> </a><div class="pCellBody">
+For grooming with fixed routes only. These options are applicable only if the option &quot;Calculate OTS Routes&quot; is chosen (that is, if the routes are not imported from a data file)
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp270048"> </a><div class="pCellBody">
+-rnp
+</div>
+</td>
+    <td><a name="wp270064"> </a><div class="pCellBody">
+Name and path of the file containing the candidate node pairs to import
+</div>
+</td>
+    <td><a name="wp270052"> </a><div class="pCellBody">
+For DCL grooming only
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp269971"> </a><div class="pCellBody">
+-sits
+</div>
+</td>
+    <td><a name="wp269973"> </a><div class="pCellBody">
+Apply service identifiers
+</div>
+<ul class="pCellBodyBullet"><a name="wp269998"> </a><div class="pCellBodyBullet"><li>
+0 = no
+</li></div>
+<a name="wp270002"> </a><div class="pCellBodyBullet"><li>
+1 = yes
+</li></div>
+</ul></td>
+    <td><a name="wp269975"> </a><div class="pCellBody">
+For DCL grooming only
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp269965"> </a><div class="pCellBody">
+-split
+</div>
+</td>
+    <td><a name="wp269967"> </a><div class="pCellBody">
+Split off ungroomable
+</div>
+<ul class="pCellBodyBullet"><a name="wp270009"> </a><div class="pCellBodyBullet"><li>
+0 = no
+</li></div>
+<a name="wp270036"> </a><div class="pCellBodyBullet"><li>
+1 = yes
+</li></div>
+</ul></td>
+    <td><a name="wp269969"> </a><div class="pCellBody">
+For DCL grooming only
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="3" rowspan="1"><a name="wp269887"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 16-7	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_50_bc.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:52" />
+    <title>End-to-End (ETE) Optimization Algorithm</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-09-01.html"> Grooming DCL to OCH Traffic</a> > <a href="User-09-18.html">Optimization Algorithms: Descriptions</a> > End-to-End (ETE) Optimization Algorithm</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp58879"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+End-to-End (ETE) Optimization Algorithm
+</h2>
+
+ 
+
+<a name="wp55261"> </a><p class="pBody">
+The end-to-end (ETE) optimization algorithm is a two-step attempt to improve network cost:
+</p>
+<div class="pSmartList1"><ol type="1" class="pSmartList1">
+<a name="wp55329"> </a><div class="pSmartList1"><li>Select DCL traffic that results in poorly utilized optical channels.</li></div>
+<a name="wp55331"> </a><div class="pSmartList1"><li>Reroute this traffic on unused time-slots of other optical channels and remove the channel if this results in cost savings.</li></div>
+</ol></div>
+<a name="wp55333"> </a><p class="pBody">
+The result is that fewer optical channels (with higher effective utilizations) are required, at the expense of switching cost in intermediate DXCs.
+</p>
+<a name="wp56986"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Algorithm Description
+</h3>
+<a name="wp87393"> </a><p class="pBody">
+The end-to-end algorithm does the following steps:
+</p>
+<div class="pSmartList1"><ol type="1" class="pSmartList1">
+<a name="wp53141"> </a><div class="pSmartList1"><li>Initial Solution (no intermediate grooming)&#8212;Establish a direct trunk for each traffic demand. If you specified 1&#160;+&#160;1 protection with disjoint routes in the physical layer (that is, if Link Disjoint is set to OTS, OMS, or OCH), the algorithm establishes two direct trunks: one for the working path, the other for the protection path. There is no switching (no intermediate grooming) in the DXCs.</li></div>
+<a name="wp58848"> </a><p class="pBodyRelative">
+If you specified 1&#160;+&#160;1 protection with disjoint routes in the DCL layer, SP&#160;Guru&#160;Transport&#160;Planner uses the shortest-cycle approach to create link-disjoint working and protecting paths in a fully meshed DCL layer. In this event the protecting path is a multiple-hop path, which implies switching in the DXCs.
+</p>
+<a name="wp58866"> </a><div class="pSmartList1"><li>Select the DCL link with the maximum redundant cost (= unused part * DCL cost) that has not yet been inspected.</li></div>
+<a name="wp53143"> </a><div class="pSmartList1"><li>New solution&#8212;Try to reroute the traffic using available time slots on other trunks. This might involve splitting traffic over multiple trunks. If you specified 1&#160;+&#160;1 protection, the algorithm will ensure that the working and protection paths for a DCL demand are disjoint (down to the specified layer of disjointness).</li></div>
+<div class="pSmartList2"><ol type="a" class="pSmartList2">
+<a name="wp53147"> </a><div class="pSmartList2"><li>Calculate cost: Calculate the cost difference between the previous solution and the new solution.</li></div>
+<a name="wp53327"> </a><div class="pSmartList2"><li>Choose solution for selected link: Accept the new solution (that is, remove the selected link and reroute traffic) if it results in net cost savings.</li></div>
+<a name="wp56998"> </a><div class="pSmartList2"><li>Mark the selected link as inspected.</li></div>
+</ol></div>
+<a name="wp56999"> </a><div class="pSmartList1"><li>Repeat steps 2 and 3 until all links have been inspected.</li></div>
+</ol></div>
+<a name="wp53599"> </a><p class="pBody">
+The following diagram provides an example of end-to-end grooming in action (in this case, a DCL demand without protection). The optimization step runs only if this results in a net cost saving, which depends on the cost parameters used.
+</p>
+<a name="wp87403"> </a><p class="pFigCaption">
+Figure&#160;8-13   OCH Topology and DCL Demands Before End-to-End Grooming
+</p>
+<a name="wp87406"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-09-19-13.jpg" height="616" width="700" id="wp87405" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_31_grm.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

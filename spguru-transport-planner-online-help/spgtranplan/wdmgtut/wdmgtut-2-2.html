@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:38:22" />
+    <title>Designing a Network Manually</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="wdmgtut-2-1.html"> Introduction</a> > Designing a Network Manually</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp925445"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Designing a Network Manually
+</h2>
+
+ 
+
+
+<a name="wp925446"> </a><p class="pBody">
+The process of network modeling consists of specifying the information that describes all aspects of the network, such as
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp925447"> </a><div class="pSmartList1"><li>Network topology</li></div>
+<a name="wp925448"> </a><div class="pSmartList1"><li>Traffic pattern</li></div>
+<a name="wp925449"> </a><div class="pSmartList1"><li>SONET/ SDH rings</li></div>
+<a name="wp925450"> </a><div class="pSmartList1"><li>Amplification and regeneration locations</li></div>
+<a name="wp925451"> </a><div class="pSmartList1"><li>Fibers lit</li></div>
+<a name="wp925452"> </a><div class="pSmartList1"><li>Traffic routes</li></div>
+</ul></div>
+<a name="wp925454"> </a><p class="pBody">
+You can do modeling tasks manually within the user interface or by importing files that specify the network information (see <a href="javascript:WWHClickedPopup('wdmg_tut', 'wdmgtut-2-3.html');" onMouseOver="WWHShowPopup('wdmg_tut', 'wdmgtut-2-3.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Importing Network Elements</u></a>).
+</p>
+<a name="wp925456"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp925456", false);</script>Procedure&#160;1-2   Creating a SP&#160;Guru&#160;Transport&#160;Planner Project Manually<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp925456", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp925456", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp925458"> </a><div style="text-align: left" class="pSmartList2Test"><li>Create a new project.</li></div>
+<ol type="a">
+<a name="wp925459"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">New...</span>.</li></div>
+<a name="wp936163"> </a><p class="pIndentedRelative">
+The <span style="font-weight: bold">New</span> dialog box appears.
+</p>
+<a name="wp936169"> </a><div class="pprocstepSub"><li>Choose <span style="font-weight: bold">OK</span>.</li></div>
+<a name="wp938001"> </a><div class="pprocstepSub"><li>Enter <span style="font-weight: bold">Example2</span> as the project name (do not change the scenario name), and then press <span style="font-weight: bold">OK</span>.</li></div>
+<a name="wp938002"> </a><p class="pIndentedRelative">
+The <span style="font-weight: bold">Create a New Network</span> dialog box appears.
+</p>
+<a name="wp938003"> </a><div class="pprocstepSub"><li>Choose <span style="font-weight: bold">SONET</span> as the TDM nomenclature of the bit rates. SONET and SDH are the US and European standards used in today&#39;s transport networks. </li></div>
+<a name="wp937094"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">km</span> as the distance unit and <span style="font-weight: bold">Logical</span> in the <span style="font-weight: bold">View</span> category. (In logical view, no background map is displayed.)</li></div>
+<a name="wp938014"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">OK</span>.</li></div>
+</ol>
+<a name="wp938015"> </a><div style="text-align: left" class="pSmartList2Test"><li>Add nodes.</li></div>
+<ol type="a">
+<a name="wp938016"> </a><div class="pprocstepSub"><li>Press the <img src="images/wdmgtut-2-2-06.jpg" height="24" width="24" id="wp938059" border="0" hspace="0" vspace="-2"/> button on the toolbar or choose <span style="font-weight: bold">Edit &gt; Open Object Palette</span> to open the Object Pallet. The Object Palette displays. From this window, you can add nodes (cable splitter, ECC, EOCC, or OCC) and links.<br />
+<img src="images/wdmgtut-2-2-07.jpg" height="155" width="473" id="wp933790" border="0" hspace="0" vspace="-2"/><br />
+</li></div>
+<a name="wp925479"> </a><div class="pprocstepSub"><li>Click on the <span style="font-weight: bold">wdm_site_EOCC</span> icon. Drag it to the workspace and click on each of the places where you want to add sites. For this example, create four EOCC nodes (which will have as default names node_0 to node_3). Right-click or press <span style="font-weight: bold">Esc</span> to stop adding sites.</li></div>
+<a name="wp938160"> </a><div class="pprocstepSub"><li>In the same way, create one node of the ECC type (node_4) and one of the OCC type (node_5). </li></div>
+<a name="wp938157"> </a><div class="pprocstepSub"><li>Inspect the different layers by using the <span style="font-weight: bold">OTS</span>, <span style="font-weight: bold">OMS</span>, <span style="font-weight: bold">OCH</span>, and <span style="font-weight: bold">DCL</span> buttons on the toolbar (do not close the Object Palette yet). All six nodes display in the OTS and OMS layer. All nodes also display in the OCH layer, but node_4 displays in gray. Because this node is an ECC (electrical cross-connect), it can only switch at the electrical level. In the DCL layer, node_5 is not shown, as it is an OCC (optical cross-connect). Such a node only supports switching at the optical level. The EOCC (electrical-optical cross-connect) nodes display in all layers. Switching at both the optical and electrical level is possible in these nodes.</li></div>
+<a name="wp938098"> </a><div class="pprocstepSub"><li>Press the <span style="font-weight: bold">OTS</span> button on the toolbar. Remove node_4 and node_5 by left-clicking the nodes and and pressing the <span style="font-weight: bold">Delete</span> button on the keyboard.</li></div>
+<a name="wp938099"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>The <b class="cBold">wdm_cable_spitter</b> icon is used to add a cable splitter node. These nodes are only displayed in the OTS layer. The <b class="cBold">Subnet</b> icon is used to add text fields to the canvas.
+</p>
+</ol>
+<a name="wp925482"> </a><div style="text-align: left" class="pSmartList2Test"><li>Add OTS links.</li></div>
+<ol type="a">
+<a name="wp925483"> </a><div class="pprocstepSub"><li>Click on the <span style="font-weight: bold">wdm_link</span> icon in the object palette to add a link between two nodes. </li></div>
+<a name="wp925484"> </a><div class="pprocstepSub"><li>Click on the two nodes that you want to connect with a link. Create the following links: </li></div>
+<div class="pSmartList3"><ul class="pSmartList3">
+<a name="wp941065"> </a><div class="pSmartList3"><li><b class="cBold">node_0 &lt;-&gt; node_1</b></li></div>
+<a name="wp941076"> </a><div class="pSmartList3"><li><b class="cBold">node_1 &lt;-&gt; node_2</b></li></div>
+<a name="wp941077"> </a><div class="pSmartList3"><li><b class="cBold">node_2 &lt;-&gt; node_3</b></li></div>
+<a name="wp941078"> </a><div class="pSmartList3"><li><b class="cBold">node_3 &lt;-&gt; node_0</b></li></div>
+<a name="wp941079"> </a><div class="pSmartList3"><li><b class="cBold">node_0 &lt;-&gt; node_2</b></li></div>
+</ul></div>
+<a name="wp925485"> </a><div class="pprocstepSub"><li>Right-click in the Project Editor workspace or press <span style="font-weight: bold">Esc</span> to stop adding links. The nature of the link depends on the end nodes of the link. Links connecting OCC/OCC, OCC/EOCC and EOCC/EOCC node pairs are OCH links, on which WDM line systems are deployed. Links connecting ECC/ECC and ECC/EOCC node pairs are physical DCL links, on which SONET/ SDH line systems are deployed. Links between OCC/ECC node pairs are not allowed.</li></div>
+<a name="wp934501"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-2-2-08.jpg" height="228" width="471" id="wp934509" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp925490"> </a><div class="pprocstepSub"><li>Close the <span style="font-weight: bold">Object Palette</span>.</li></div>
+</ol>
+<a name="wp925492"> </a><div style="text-align: left" class="pSmartList2Test"><li>Create a traffic matrix.</li></div>
+<ol type="a">
+<a name="wp925493"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Network</span> &gt; <span style="font-weight: bold">Traffic Matrix Editor</span> to open the dialog box for managing traffic matrices.</li></div>
+<a name="wp925494"> </a><div class="pprocstepSub"><li>Choose <span style="font-weight: bold">OCH</span> and press <span style="font-weight: bold">New</span>.</li></div>
+<a name="wp936036"> </a><p class="pIndentedRelative">
+An empty traffic matrix labeled OCH_0 is created. The bit rate of the traffic matrix is OC-48 (2.5 Gb/s).
+</p>
+<a name="wp938281"> </a><div class="pprocstepSub"><li>Set the <span style="font-weight: bold">Native</span> flag of the traffic matrix to <span style="font-weight: bold">No</span>. If an OCH traffic demand is native, it supports optical traffic only, and no SONET/SDH traffic can ride on top of the wavelengths. In the opposite case, OCH demands are trailed to the client SONET/SDH layer, where they appear as links to support traffic in this layer.</li></div>
+<a name="wp938282"> </a><div class="pprocstepSub"><li>The <span style="font-weight: bold">Patch Panel</span> flag of the traffic matrix is set to <span style="font-weight: bold">No</span>. This implies that the traffic matrix is not hardwired (using the patch panel) in the nodes, but uses OXC (or IXC, OADM) ports instead.</li></div>
+<a name="wp925495"> </a><div class="pprocstepSub"><li>The matrix can be filled in manually by selecting an element of the matrix. Select the element <b class="cBold">node_01/node_1</b> and fill in <b class="cBold">1</b>. Do the same for the elements <b class="cBold">node_0/node_2 </b>and <b class="cBold">node_1/node_2</b>.</li></div>
+<a name="wp938401"> </a><div class="pprocstepSub"><li>The <span style="font-weight: bold">Random</span> button is used to fill the matrix with randomized values. You can specify the range for the random values. The <span style="font-weight: bold">Uniform</span> button sets all values of the traffic matrix to the specified value.</li></div>
+<a name="wp938398"> </a><div class="pprocstepSub"><li>As shown below, a traffic matrix was created with a bi-directional demand of 1 wavelength between node_0 and node_1, between node_0 and node_2 and between node_1 and node_2.</li></div>
+<a name="wp934585"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-2-2-09.jpg" height="219" width="472" id="wp934593" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp925504"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">DCL</span> as the layer. Now you can create and manage traffic matrices with SONET demands. </li></div>
+<a name="wp936272"> </a><div class="pprocstepSub"><li>Press <span style="font-weight: bold">New</span>.</li></div>
+<a name="wp936273"> </a><p class="pIndentedRelative">
+An empty traffic matrix, DCL_0, is created.
+</p>
+<a name="wp936280"> </a><p class="pIndentedRelative">
+The bit rate of the traffic matrix is STS-3 (i.e., 150 Mb/s). The traffic matrix is native implying it only supports SONET traffic and no LOP traffic.
+</p>
+<a name="wp941139"> </a><div class="pprocstepSub"><li>Fill in <b class="cBold">1 </b>as traffic demand between <b class="cBold">node_0</b> and <b class="cBold">node_2</b> and between <b class="cBold">node_1</b> and<b class="cBold"> node_3</b>.</li></div>
+<a name="wp941143"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-2-2-10.jpg" height="217" width="472" id="wp941141" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp925509"> </a><div class="pprocstepSub"><li>Close the <span style="font-weight: bold">Traffic Matrix Editor</span> dialog box.</li></div>
+</ol>
+<a name="wp925511"> </a><div style="text-align: left" class="pSmartList2Test"><li>Equip fiber pairs on the links.</li></div>
+<ol type="a">
+<a name="wp925512"> </a><div class="pprocstepSub"><li>Open the link browser by selecting <span style="font-weight: bold">Network</span> &gt; <span style="font-weight: bold">Link Browser</span> (or by double clicking on a link).</li></div>
+<a name="wp925513"> </a><div class="pprocstepSub"><li>Choose the <span style="font-weight: bold">OCH</span> layer in this dialog box.</li></div>
+<a name="wp925514"> </a><div class="pprocstepSub"><li>Right-click on the link <b class="cBold">node_0 &lt;-&gt; node_2</b> and select <b class="cBold">Equip Fiber Pairs</b>.</li></div>
+<a name="wp934776"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-2-2-11.jpg" height="214" width="478" id="wp934790" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp925523"> </a><p class="pIndentedRelative">
+The <span style="font-weight: bold">Equip Fiber Pairs</span> dialog box appears.
+</p>
+<a name="wp936291"> </a><div class="pprocstepSub"><li>Select the WDM line system type to use in lighting the fiber. For example, pick <span style="font-weight: bold">LH 16-WDM</span>. Press <span style="font-weight: bold">Equip</span>. This action lights a fiber pair of the LH 16-WDM type on the selected OCH link.</li></div>
+<a name="wp925529"> </a><div class="pprocstepSub"><li>Click on the <b class="cBold">+</b> icon next on the link <b class="cBold">node_0 &lt;-&gt; node_2</b>. The lit fiber pairs on the link appear.</li></div>
+<a name="wp934975"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-2-2-12.jpg" height="176" width="471" id="wp934999" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp925534"> </a><div class="pprocstepSub"><li>Close the link browser.</li></div>
+</ol>
+<a name="wp935053"> </a><div style="text-align: left" class="pSmartList2Test"><li>Save the project.</li></div>
+<ol type="a">
+<a name="wp925537"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Save</span> to save the Example2 project</li></div>
+</ol>
+<a name="wp925538"> </a><div style="text-align: left" class="pSmartList2Test"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Close</span> to close the project.</li></div>
+</ol></div>
+<a name="wp925540"> </a><p class="pProcEnd">
+End of Procedure 1-2
+</p>
+
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/wdmg_tut_1.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

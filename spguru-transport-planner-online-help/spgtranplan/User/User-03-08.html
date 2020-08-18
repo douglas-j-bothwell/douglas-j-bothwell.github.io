@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:33:27" />
+    <title>Optical Transparency</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-03-01.html"> Concepts and Models</a> > <a href="User-03-08.html">Optical Transparency</a> > Transparent Mode</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp44862"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Optical Transparency
+</h2>
+
+ 
+
+
+<a name="wp44866"> </a><p class="pBody">
+The term <em class="cEmphasis">transparency</em> applies to transporting information in the OCH layer: a connection travels transparently if it is not converted electrically (for regeneration purposes) in any node along the way. 
+</p>
+<a name="wp44877"> </a><p class="pBody">
+SP&#160;Guru&#160;Transport&#160;Planner can work both in <a href="javascript:WWHClickedPopup('wdm_user', 'User-03-08.html#wp44878');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-08.html#wp44878', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Opaque Mode</u></a> and <a href="javascript:WWHClickedPopup('wdm_user', 'User-03-08.html#wp44967');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-08.html#wp44967', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Transparent Mode</u></a>.
+</p>
+<a name="wp44878"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Opaque Mode
+</h2>
+
+ 
+
+<a name="wp44879"> </a><p class="pBody">
+SP&#160;Guru&#160;Transport&#160;Planner uses the opaque mode for the OCH layer by default, which means that an optical signal gets regenerated at every intermediate node. Regeneration is done by the long-reach transponders, which are used at the WDM multiplexers. 
+</p>
+<a name="wp44906"> </a><p class="pBody">
+Long-reach transponders convert a standard optical signal at 1310 nm (a <em class="cEmphasis">gray interface</em>) to a specific WDM wavelength in the 1500 nm region (a <em class="cEmphasis">colored interface</em>). The 1310 nm transponder input then interconnects with the trunk ports of the OXC. All signals in the OXC operate at 1310&#160;nm; therefore, these signals can interconnect any &quot;internal&quot; wavelength (that is, from any WDM line system that terminates in that node) with any &quot;external&quot; wavelength (from any other WDM line system). For this purpose, SP&#160;Guru&#160;Transport&#160;Planner assumes that the OXC deployed in the node provides full internal connectivity. The OXC can have either an electrical or an optical core. 
+</p>
+<a name="wp44908"> </a><p class="pBody">
+An important advantage of an opaque network is that it is fully compatible with WDM line systems of different types. The major disadvantage of opaque systems is the high cost of the transponders. 
+</p>
+<a name="wp88851"> </a><p class="pBody">
+SP&#160;Guru&#160;Transport&#160;Planner considers long-reach transponders used at the line systems to be part of the line cost. In addition, short-reach transponders are used at the tributary ports of the OXC. These transponders provide an interface to signals from the client equipment (SONET signals, for example).
+</p>
+<a name="wp67414"> </a><p class="pFigCaption">
+Figure&#160;2-8   Opaque Node
+</p>
+<a name="wp67417"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-08-08.jpg" height="109" width="530" id="wp67416" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp44967"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Transparent Mode
+</h2>
+
+ 
+
+<a name="wp44968"> </a><p class="pBody">
+In transparent mode, the long-reach transponders are at the tributary ports of the OXC/OADM, where they guide the signal, at the correct wavelength, into the network. (In opaque mode, by contrast, the transponders are in the WDM line systems.) Wavelengths pass transparently through the OXC, which imposes two constraints:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp44993"> </a><div class="pSmartList1"><li>The OXC cannot cross-connect different wavelengths between line systems that terminate in a node.</li></div>
+<a name="wp44995"> </a><div class="pSmartList1"><li>The OXC cannot cross-connect wavelengths between different types of line systems.</li></div>
+</ul></div>
+<a name="wp80596"> </a><p class="pBody">
+These constraints mean that, in transparent network mode, all links in the network should use the same line system type. This constraint enables the network to be divided into a number of wavelength planes. The number of available planes is equal to the number of wavelengths on the default WDM line system. Each plane represents a separate network that routes optical connections transparently. 
+</p>
+<a name="wp89885"> </a><p class="pBody">
+Transparent routing also requires an optical switch matrix, since an electrical switch matrix does not allow optical signals to pass through transparently. Performing regeneration or wavelength conversion breaks the connection out of the wavelength plane. Wavelength conversion provides a mechanism for changing between different wavelength planes. Both regeneration and wavelength conversion require adding/dropping the signal through the OXC and using transponders at the appropriate wavelength.
+</p>
+<a name="wp80597"> </a><p class="pBody">
+Transparent networks use ultra-long-haul WDM systems that can transmit signals for thousands of kilometers without regeneration. However, in US or pan-European transmission networks, some paths exceed the maximum transparency length and require regeneration along the way. 
+</p>
+<a name="wp45065"> </a><p class="pBody">
+A transparent network can use two methods to regenerate connections that exceed the maximum transparency length. One method is to connect a regeneration bank to the OXC. Connections that pass through the node can be selectively regenerated using two additional OXC tributary ports (to drop to the regeneration bank) and two long-reach transponders (one for each line system). The regeneration bank can also be used to convert wavelengths and thereby overcome blocking.
+</p>
+<a name="wp72712"> </a><p class="pFigCaption">
+Figure&#160;2-9   Transparent Node with Regeneration Bank
+</p>
+<a name="wp72715"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-08-09.jpg" height="152" width="530" id="wp72714" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp45088"> </a><p class="pBody">
+The other method is to support regeneration or wavelength conversion through the DXC. Two long-reach transponders are used between the tributary ports of the OXC and the trunk ports of the DXC. This configuration has the advantage that the transponders can be flexibly allocated for regeneration or for setting up additional connections.
+</p>
+<a name="wp72935"> </a><p class="pFigCaption">
+Figure&#160;2-10   Transparent Node with Regeneration Using DXC
+</p>
+<a name="wp72938"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-08-10.jpg" height="164" width="530" id="wp72937" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp116963"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>SP&#160;Guru&#160;Transport&#160;Planner also supports opaque nodes in a transparent network. For more information about opaque nodes, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-03-08.html#wp44878');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-08.html#wp44878', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Opaque Mode</u></a>.
+</p>
+
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_13_co.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

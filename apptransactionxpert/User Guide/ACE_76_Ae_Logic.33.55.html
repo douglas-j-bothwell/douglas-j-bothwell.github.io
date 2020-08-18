@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Modeling Web Services Dynamically</title>
+    <link rel="StyleSheet" href="css/ACE_76_Ae_Logic.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ACE_76_Ae_Logic.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_edit_design_apps_whiteboard_splash.html#205672">Editing and Designing Applications with Transaction&nbsp;Whiteboard</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ACE_76_Ae_Logic.33.01.html#205672">Modeling Complex Application Behavior with Logic Scripts</a> &gt; Modeling Web Services Dynamically</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="205672">Modeling Web Services Dynamically</a></div>
+      <div class="body"><a name="205673">This section describes how to model web services using Transaction&nbsp;Whiteboard model files and special “discovery nodes” (UDDI nodes, in web-services terminology). Using this workflow, you can create scenarios in which the requesting node determines the end node dynamically using a discovery node during a simulation, rather than having the requesting node determine the end node statically (that is, using destination preferences).</a></div>
+      <div class="h2NoBreak"><a name="205674">Workflow Description</a></div>
+      <div class="bodyIntro"><a name="205675">To create a dynamic web-services scenario, you must do the following:</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="205676">Create a new Transaction&nbsp;Whiteboard model file—or use an existing file—that defines the discovery behavior (we will refer to this as the </a><span class="italic">discovery file</span>). This client models the communication patterns between the node that initiates the discovery and the discovery node itself. This file also models the logic used to determine the end node.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="205677">Create a new Transaction&nbsp;Whiteboard model file—or use an existing file—that defines the application behavior (we will refer to this as the </a><span class="italic">application file</span>). This file models the application behavior between the client and the end node; this end node will be “discovered” during the simulation. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="205678">Create or modify a network scenario so that it contains at least one of each of the following: a client node, an end node, and a discovery node (UDDI server).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumLast_inner" style="width: 21.6pt; white-space: nowrap;">	4)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumLast_inner"><a name="205679">In the Deploy Applications dialog box, configure the destination preferences (to map the client’s destination to the discovery node) and the service registration (to register the end node with the discovery node).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="205680">Step 1: Define the Discovery File</a></div>
+      <div class="bodyIntro"><a name="205681">To simulate a discovery scenario, you need a Transaction&nbsp;Whiteboard model that contains a Client and a Discovery Node tier. The file should specify the messages exchanged between the tiers and the logic by which the Discovery Node tier determines the end node.</a></div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="205682">If you create your own discovery file, the initiating tier in the Transaction&nbsp;Whiteboard model must be called “Client.” During a discrete event simulation, the simulation kernel maps this tier to the node that initiates the conversation.</a></div>
+      <div class="bodyIntro"><a name="205687">The model library includes a Transaction&nbsp;Whiteboard model file (Simple_Discovery.aed.m) that models a simple type of discovery logic, in which the Discovery Node selects an end node based on the relative weights of the candidate nodes. The transaction in this file is executed as a child task of the main application, and consists of the following events: </a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="205688">Client (initiating) tier sends a 1000-byte request to the Discovery Node tier.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="205689">Discovery Node tier looks at the “Service Registration” attribute on the node that is acting as the discovery node, and uses this information to map a network node to the unknown tier. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><a name="205690">The discovery logic is specified in the functions </a><span class="code">resolve_tier()</span> and <span class="code">get_actual_name_for_tier()</span>; to see these functions, choose Scripting&nbsp;&gt; Function Block.</div>
+      <div class="listNumLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumLast_inner" style="width: 21.6pt; white-space: nowrap;">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumLast_inner"><a name="205691">Discovery Node tier returns a 1000-byte response to the Client tier. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="205692">Step 2: Enable Discovery in the Application File</a></div>
+      <div class="bodyIntro"><a name="205693">Before configuring the discovery node in the network scenario (as described in the following steps), you must enable discovery in the Transaction&nbsp;Whiteboard model file that models the transaction (such as an FTP download) between the initiating node and the end node. To do this, perform the following steps:</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="205694">Open the Transaction&nbsp;Whiteboard model file that models the application transaction.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="205695">Choose Scripting&nbsp;&gt; Deployment&nbsp;Options…</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumLast_inner" style="width: 21.6pt; white-space: nowrap;">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumLast_inner"><a name="205696">Make sure that the “Allow discovery using a ‘Discovery Node’” option is selected.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="205697">When discovery is enabled in a Transaction&nbsp;Whiteboard application file, it uses the Transaction&nbsp;Whiteboard discovery file Simple_Discovery.aed.m by default. If you want to use a different discovery file, the Transaction&nbsp;Whiteboard application file must include a “Discovery Model” parameter that specifies the name of the discovery file.</a></div>
+      <div class="bodyIntro"><a name="205698">To create this parameter in the application file, do the following:</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="205699">Choose Scripting&nbsp;&gt; Declare&nbsp;Parameters.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="205700">Create a parameter called “Discovery Model” and specify the file name of the Transaction&nbsp;Whiteboard discovery file, as shown in the following figure.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap;">Figure&nbsp;26-11   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="205705">Specifying a “Discovery Model” Parameter</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="205709"><img class="Default" src="images/ACE_76_Ae_Logic.33.55.1.jpg" width="447" height="126" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="205710">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="205711">Step 3: Create the Network Scenario</a></div>
+      <div class="bodyIntro"><a name="205712">The discovery scenario should contain the following:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="205713">A client node that initiates the transaction</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="205714">A discovery node. If discovery is enabled in the Transaction&nbsp;Whiteboard model file (as described in the previous step), you can use the eth4_slip4_discovery_node model found in the AppTransaction&nbsp;Xpert object palette.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="205715">One or more end nodes that are possible candidates for the discovery node</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="205716">Step 4: Deploy the Discovery Application</a></div>
+      <div class="body"><a name="205717">After you specify the network topology, you can deploy the discovery application. In the Project Editor, choose Protocols&nbsp;&gt; Applications&nbsp;&gt; Deploy&nbsp;AppTransaction&nbsp;Xpert&nbsp;Application&nbsp;on&nbsp;Existing&nbsp;Network&nbsp;&gt; as&nbsp;Discrete&nbsp;Traffic.</a></div>
+      <div class="h2NoBreak"><a name="205718">Step 5: Configure the Discovery Node</a></div>
+      <div class="body"><a name="205719">The easiest way to configure the discovery node is by opening the Deploy Applications dialog box (Protocols&nbsp;&gt; Applications&nbsp;&gt; Deploy&nbsp;Defined&nbsp;Applications). There are three sets of configurations you need to verify: application deployment, destination preferences, and service registration. You can change between the different configuration sets using the pull-down menu in the top-right corner of the dialog box.</a></div>
+      <div class="body"><a name="205720">The following examples show the settings for a network that contains a client, a discovery node, and two destination nodes. The discovery node uses the Simple_Discovery model to choose between the two destinations based on their relative weights.</a></div>
+      <div class="h3NoBreak"><a name="205721">Application Deployment Settings</a></div>
+      <div class="bodyIntro"><a name="205722">In the Deploy Applications view, make sure that:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="205723">The initiating node—that is, the node that initiates the transaction—is assigned to the initiating tier of the application</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="205724">The destination nodes are assigned to the tier that acts as the destination tier</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;26-12   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="205725">Application Deployment Settings: Example</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="205729"><img class="Default" src="images/ACE_76_Ae_Logic.33.55.2.jpg" width="348" height="206" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="354341">&nbsp;</a></div>
+      <div class="h3NoBreak"><a name="354342">Destination Preference Settings</a></div>
+      <div class="bodyIntro"><a name="354343">In the Edit Destination Preferences view, make sure that the discovery node is assigned to the symbolic name of the destination tier.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;26-13   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="205733">Destination Preference Settings: Example</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="205737"><img class="Default" src="images/ACE_76_Ae_Logic.33.55.3.jpg" width="411" height="130" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="205738">&nbsp;</a></div>
+      <div class="h3NoBreak"><a name="205739">Service Registration Settings</a></div>
+      <div class="bodyIntro"><a name="205740">Use the Edit Service Registration view to configure the discovery node. In this view, make sure that:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="205741">The destination tier of the application is registered with the discovery node for that application</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="205742">The candidate end nodes—the nodes that act as possible candidates for the discovery node—are assigned to the destination tier</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;26-14   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="205743">Service Registration Settings: Example</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="205756"><img class="Default" src="images/ACE_76_Ae_Logic.33.55.4.jpg" width="495" height="179" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="205757">&nbsp;</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

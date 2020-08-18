@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>op_license_util Command Line Utility</title>
+    <link rel="StyleSheet" href="css/ag_037_license_cmdline.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ag_037_license_cmdline.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">Solution Overview &gt; <a class="WebWorks_Breadcrumb_Link" href="ag_splash.html#476480">License and Installation Support</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ag_037_licensing_overview.09.1.html#476480">Licensing</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ag_037_license_cmdline.11.01.html#476480">Managing Licenses from the Command Line</a> &gt; op_license_util Command Line Utility</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h2Top"><a name="476480">op_license_util Command Line Utility</a></div>
+      <div class="body"><a name="476481">This section covers the </a><span class="code">op_license_util</span> command line utility for licensing as well as the command line options available. Use this section as a reference for<span class="code"> op_license_util</span>, which can be helpful for troubleshooting or for applications other than OPNET&nbsp;analysis&nbsp;software. It is recommended that whenever possible, however, you use the License Manager GUI (see <span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.01.html#384550', '');" title="License Manager Graphical User Interface">License Manager Graphical User Interface</a></span>). </div>
+      <div class="bodyIntro"><span class="code"><a name="476488">op_license_util</a></span> supports the following single-operation modes. These are specified by invoking<span class="code"> op_license_util</span> with the corresponding commands, as listed below.</div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="476489">Check the status of a server’s ports (</a><span class="code">-port_check</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="476493">(OPNET&nbsp;analysis&nbsp;software only) Kill a license server (</a><span class="code">-license_server_kill</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h3NoBreak"><a name="476495">license_server_kill</a></div>
+      <div class="bodyWarning">
+        <span class="zRedBold">WARNING—</span><a name="476499">Do not use this command for AppInternals&nbsp;Xpert.</a></div>
+      <div class="body"><a name="476500">Specifies that the license server process be stopped. This operation sends a message to the license server, causing it to log its status just before exiting. This operation prevents </a><span class="code">op_license_util</span> from presenting an interactive user interface.   Only a user account that has write permissions on the license file can perform this operation. The values of the preferences <span class="code">-license_server</span> and <span class="code">license_port</span> are used to determine the location of the license server process. If these attributes are not set, the license file is checked for the location of the license server.</div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="476501">Once you exit the license server with this command, the license server process can only be started at the license server machine by restarting the license server service from Control Panel services.</a></div>
+      <div class="h3NoBreak"><a name="476503">portchk</a></div>
+      <div class="body"><a name="476504">Specifies that the status of the three UDP/IP ports potentially used by the licensing system be checked for availability on the local host computer. A list of the three ports and their statuses is printed on the standard output device.</a></div>
+      <div class="body"><a name="476505">This operation prevents</a><span class="code"> op_license_util</span> from presenting an interactive user interface.</div>
+      <div class="h3NoBreak"><a name="476507">session_id</a></div>
+      <div class="body"><a name="476508">Specifies that the opnet session ID be printed to the standard output device. The session ID is a time-varying value that provides installation reference information to OPNET Technical Support.</a></div>
+      <div class="h3"><a name="476509">Example Usage for op_license_util</a></div>
+      <div class="codeColumn"><a name="476510">% </a><span class="bold">op_license_util -port_check<br /></span><br />The status of the ports on "titan"<br />usable for the license server:<br /><br />	port_a: unavailable<br />	port_b: available<br />	port_c: available<br /><br />% <span class="bold">op_license_util -license_server_kill TRUE -license_server unreliable -license_port port_b<br /></span><br />%<br /></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

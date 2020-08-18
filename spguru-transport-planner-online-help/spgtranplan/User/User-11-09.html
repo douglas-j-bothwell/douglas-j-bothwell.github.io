@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:16" />
+    <title>Defining OADMs Manually</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-11-01.html"> Transparent Networks</a> > <a href="User-11-07.html">Workflow Description: Transparent Network Routing or Dimensioning</a> > Defining OADMs Manually</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp257402"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Defining OADMs Manually
+</h2>
+
+ 
+
+<a name="wp294826"> </a><p class="pBody">
+This operation is not supported on WP-OXC nodes. The OADM transparency mode follows that of the node: if you are in opaque node, the OADMs will be opaque; if you are in a transparent node, the OADMs will be transparent. 
+</p>
+<a name="wp302674"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>You can only add OADMs between fibers that have been equipped with the same WDM line system.
+</p>
+
+<a name="wp302677"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp302677", false);</script>Procedure&#160;10-1   Defining OADMs Manually for a Node<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp302677", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp302677", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp302678"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the Node Browser (choose Network&#160;&gt; Node&#160;Properties, or right-click on a node and choose Node&#160;Properties).</li></div>
+<a name="wp294829"> </a><div style="text-align: left" class="pSmartList2Test"><li>Set the Layer to OCH.</li></div>
+<a name="wp294830"> </a><div style="text-align: left" class="pSmartList2Test"><li>Right-click on a node and choose Configure OADMs.</li></div>
+<a name="wp294918"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The Configure OADMs dialog box appears and shows all fiber pairs that terminate in that node. This window shows only those fibers that are equipped (using the default line system in transparent mode) but do not carry any traffic. The fiber pairs are identified by the name of the &quot;Opposite node&quot; and the &quot;Fiber index.&quot;
+</p>
+<a name="wp294937"> </a><p class="pFigCaption">
+Figure&#160;10-3   Configure OADMs Dialog Box
+</p>
+<a name="wp294940"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-11-09-3.jpg" height="117" width="500" id="wp294939" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp295005"> </a><div style="text-align: left" class="pSmartList2Test"><li>To introduce an OADM between two fibers, do the following:</li></div>
+<ol type="a">
+<a name="wp295006"> </a><div class="pprocstepSub"><li>Click on a fiber to select it. (This also highlights the fiber in the Project Editor window.) </li></div>
+<a name="wp295007"> </a><div class="pprocstepSub"><li>While holding down the Control key, click on the second fiber and choose Add OADM.</li></div>
+<a name="wp294927"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+After you add the required OADMs, you can view them in the OCH Node Browser. The Node Type field indicates whether OADMs are present in the node; for example, the field might read &quot;OXC + OADMs&quot;. The OADM subtree shows the total number of ports for all OADMs in that node and lists (as children) the individual OADMs and their port usage. To remove an OADM, right-click on an OADM and select Remove OADM. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-05-11.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-05-11.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">OCH Node Browser</u></a>.
+</p>
+</ol>
+</ol></div>
+<a name="wp300670"> </a><p class="pProcEnd">
+End of Procedure 10-1
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp300671"> </a><h6 class="pHeading6">
+
+</h6>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_34_trn.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

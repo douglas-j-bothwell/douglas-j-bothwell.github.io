@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:16" />
+    <title>Selective Regeneration</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-11-01.html"> Transparent Networks</a> > <a href="User-11-04.html">Algorithm Descriptions</a> > Selective Regeneration</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp258701"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Selective Regeneration
+</h2>
+
+ 
+
+<a name="wp279131"> </a><p class="pBody">
+The Link Design operation (described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-30.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-30.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Link Design</u></a>) places amplifiers and regenerators on the links to overcome transmission length limitations. For each link that exceeds the MTL, SP&#160;Guru&#160;Transport&#160;Planner places regenerators every MTL kilometers/miles (at least). This is called <em class="cEmphasis">in-line regeneration</em>.
+</p>
+<a name="wp279132"> </a><p class="pBody">
+Besides in-line regeneration, SP&#160;Guru&#160;Transport&#160;Planner can also perform <em class="cEmphasis">in-node regeneration </em>on a connection as it passes through a node. Whether this occurs depends on two factors:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp302817"> </a><div class="pSmartList1"><li>If the incoming and outgoing fibers on which the connection through the node is routed are not equipped with the same WDM line system, regeneration is always performed.</li></div>
+<a name="wp279524"> </a><div class="pSmartList1"><li>If the incoming and outgoing fibers on which the connection through the node is routed are equipped with the same WDM line system, regeneration is performed if the distance between the last point of regeneration (in-node or in-line) and the next possible point of regeneration exceeds the MTL.</li></div>
+</ul></div>
+<a name="wp279133"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('wdm_user', 'User-11-05.html#wp279212');" onMouseOver="WWHShowPopup('wdm_user', 'User-11-05.html#wp279212', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;10-1</u></a> shows an example of how regeneration works. This network uses the same WDM line system on all links in the network, and this system has an MTL of 600 km. On the link A&lt;&#8212;&gt;B, an in-line regenerator is placed at 600 km from node A. This splits the link into two transparent sections: one 600 km and one 200 km long. This means that
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp279320"> </a><div class="pSmartList1"><li>A connection between A and C requires an in-node regenerator in node B because the distance between the last regenerator (200 km) and the next possible regenerator (500 km towards node C) is 700 km and exceeds the MTL</li></div>
+<a name="wp279321"> </a><div class="pSmartList1"><li>A connection between A and D does not require an in-node regenerator in node B because the distance between the last regenerator (200 km) and the next possible regenerator (200 km towards node D) is 400 km and does not exceed the MTL</li></div>
+<a name="wp279212"> </a><p class="pFigCaption">
+Figure&#160;10-1   Selective Regeneration Example
+</p>
+<a name="wp279237"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-11-05-1.jpg" height="188" width="530" id="wp279214" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ul></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_34_trn.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

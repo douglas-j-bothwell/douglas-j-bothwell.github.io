@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:40" />
+    <title>Configuration Options</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-14-01.html"> Hardware Configurator</a> > <a href="User-14-09.html">Configuring Hardware</a> > Configuration Options</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp136767"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Configuration Options
+</h2>
+
+ 
+
+<a name="wp137093"> </a><p class="pBody">
+To configure an equipment type, click on the equipment in the Configure field and choose the correct option from the menu. <a href="javascript:WWHClickedPopup('wdm_user', 'User-14-10.html#wp137139');" onMouseOver="WWHShowPopup('wdm_user', 'User-14-10.html#wp137139', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Table&#160;13-6</u></a> lists the available configuration options.
+</p>
+<a name="wp137320"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp137139table137137">
+  <caption><a name="wp137139"> </a><div class="ptblcaption">
+Table&#160;13-6   Configuration Options&#160;
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp137143"> </a><div class="pCellHeading">
+Option
+</div>
+</th>
+    <th><a name="wp137145"> </a><div class="pCellHeading">
+Description
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp141041"> </a><div class="pCellBody">
+Best Family Network Wide
+</div>
+</td>
+    <td><a name="wp141043"> </a><div class="pCellBody">
+Choose the same product family for all devices of this type. Evaluate all possible product families and configure all devices. Select the family with the lowest cost over the entire network.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp141045"> </a><div class="pCellBody">
+Best Family Per Bit Rate
+</div>
+</td>
+    <td><a name="wp141047"> </a><div class="pCellBody">
+This option is available for ADM and TM devices only, and is similar to the &quot;Optimize Per LS Type&quot; option. The algorithm chooses the most cost-effective product family per bit rate for all devices of this type in the network.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp141049"> </a><div class="pCellBody">
+Best Family Per Fiber
+</div>
+</td>
+    <td><a name="wp141051"> </a><div class="pCellBody">
+This option is valid for WDM line systems (LS) only. The algorithm chooses the most cost-effective product family per fiber. Therefore, a 40-wavelength WDM system might be configured using a different product family on different fibers.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp141053"> </a><div class="pCellBody">
+Best Family Per LS Type
+</div>
+</td>
+    <td><a name="wp141055"> </a><div class="pCellBody">
+This option is available for OADM, INT-OADM, WP-OXC, INT-OXC devices only. The algorithm chooses the cost-optimal product family for all devices of this type per line system type. For example, all 40-wavelength WDM systems in the network will be configured using the same product family; all 80-wavelength WDM systems will be configured with another product family, which is the same for all systems used, but might be different from the one used for the 40-wavelength system.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp141057"> </a><div class="pCellBody">
+Best Family Per Node
+</div>
+</td>
+    <td><a name="wp141059"> </a><div class="pCellBody">
+Choose the most cost-effective product family for each node with a device of this type, independent of the other nodes. This means that different nodes of the same type might be configured with devices from different vendors and product families. However all devices of the same SP&#160;Guru&#160;Transport&#160;Planner type within one node are of the same product family, according to the SP&#160;Guru&#160;Transport&#160;Planner type.
+</div>
+<a name="wp142002"> </a><div class="pCellBody">
+If you are running an upgrade design, this is the default option because upgrade design will upgrade the existing product families in each node.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp141061"> </a><div class="pCellBody">
+Best Family Per Node Per Bit Rate
+</div>
+</td>
+    <td><a name="wp141063"> </a><div class="pCellBody">
+This option is a combination of &quot;Best Family Per Node&quot; and &quot;Best Family per Bit Rate.&quot; The algorithm chooses the most cost-effective product family per bit rate and per node. Therefore, devices of a different bit rate in a node can have a different product family, and devices of the same bit rate in different nodes can also have a different product family. Devices of the same bit rate within a node should use the same product family.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp141065"> </a><div class="pCellBody">
+Best Family Per Node Per LS Type
+</div>
+</td>
+    <td><a name="wp141067"> </a><div class="pCellBody">
+This option is available for OADM, INT-OADM, WP-OXC, and INT-OXC only. It is a combination of &quot;Best Family Per Node&quot; and &quot;Best Family per LS Type.&quot; The algorithm chooses the most cost-effective product family per LS Type and per node. Therefore, devices of a different LS Type in a node can have a different product family, and devices of the same LS Type in different nodes can also have a different product family. Devices of the same LS Type within a node should use the same product family.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp141069"> </a><div class="pCellBody">
+Best Family Per Tier
+</div>
+</td>
+    <td><a name="wp141071"> </a><div class="pCellBody">
+This option is valid for WDM line systems (LS) only. The algorithm optimizes the DCL links and OCH links separately in a two-tier network. It chooses the best product family for all DCL links (network wide) and the best product family for all OCH links (network wide).
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp141428"> </a><div class="pCellBody">
+Not Needed
+</div>
+</td>
+    <td><a name="wp141430"> </a><div class="pCellBody">
+Indicates that no devices of this equipment type are present in the network.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp141073"> </a><div class="pCellBody">
+Ignore
+</div>
+</td>
+    <td><a name="wp141075"> </a><div class="pCellBody">
+Do not configure this SP&#160;Guru&#160;Transport&#160;Planner type. 
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp141077"> </a><div class="pCellBody">
+Same Family As LS 
+</div>
+</td>
+    <td><a name="wp141079"> </a><div class="pCellBody">
+This option is available for OADMs, INT-OADMs, WP-OXCs and INT-OXCs only. The algorithm chooses the same product family for these devices as for the WDM line systems. Therefore, HCON runs a combined design on these different types and selects the most cost-effective family for all types. 
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp137348"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 13-6	
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_41_hcon.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

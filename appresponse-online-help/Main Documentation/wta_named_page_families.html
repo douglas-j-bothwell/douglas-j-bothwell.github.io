@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Named Page Families</title>
+    <link rel="StyleSheet" href="css/wta_named_page_families.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_user_guide_splash.html">User Guide</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="wta.html">Web Transaction Analysis</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="wta_config.079.1.html">Configuration Options for Tracking WTA Data</a> &gt; Named Page Families</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h2Top"><a name="1155418">Named Page Families</a></div>
+      <div class="body"><a name="1160162">Named Page Families enable you to organize your page views and to define user-friendly names for cryptic URL strings. This can make it much easier to discover and identify pages of interest. </a></div>
+      <div class="body"><a name="1160164">WTA assigns every page view it observes to a Page Family. The default behavior is to assign views to families based on the page view URL, for example:</a></div>
+      <div class="codeColumn"><a name="1160165">www.dropbox.com/check_update/query?type=automatic ----&gt; www.dropbox.com/check_update/query...</a></div>
+      <div class="body"><a name="1160167">Named Page Families enable you to customize this behavior. You can create an NPF definition with a user-friendly family name and a set of matching criteria—URL patterns, URL parameters, and/or HTML page titles—to assign matching views to that Page Family. For example:</a></div>
+      <div class="codeColumn"><a name="1160168">www.dropbox.com/check_update/query?type=automatic ----&gt; Dropbox Update</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;1     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="1160193">Default and Named Page Families</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1160200"><img class="Default" src="images/wta_named_page_families.080.1.1.jpg" width="623" height="339" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1155419">&nbsp;</a></div>
+      <div class="body"><a name="1160409">This section discusses the following:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_named_page_families.html#1155432', '');" title="Named Page Families" name="1155423">Important Notes</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a href="javascript:WWHClickedPopup('main_doc', 'wta_named_page_families.html#1155445', '');" title="Named Page Families" name="1155427">&nbsp;</a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_named_page_families.html#1155445', '');" title="Named Page Families">Creating a Named Page Family</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a href="javascript:WWHClickedPopup('main_doc', 'wta_named_page_families.html#1155466', '');" title="Named Page Families" name="1155431">&nbsp;</a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'wta_named_page_families.html#1155466', '');" title="Named Page Families">Built-In Rule for Grouping Salesforce.com Pages into Named Page Families</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h3NoBreak"><a name="1155432">Important Notes</a></div>
+      <div class="bodyIntro"><a name="1160437">Note the following:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1160438">Any change to your Named Page Family list applies only to pages observed after you apply your changes; older page views are not affected.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1164933">You can define up to 500 Named Page Families per appliance.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1160629">Riverbed recommends an iterative approach to defining Named Page Families:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1160630">Define your Web Apps to group pages into high-level groups.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1160631">Navigate through your page tables and drill down into individual pages.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1160632">Examine the URLs of important page views and see how you might want to further group them into families.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1160633">Define or edit your Named Page Families based on criteria that makes sense to you.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1160439">For each page view it observes, WTA does the following:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1160440">Iterates through the list of Named Page Families on the appliance.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1160441">If it finds a matching NPF definition, assigns the view to the corresponding Page Family.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1160442">If no matching NPF is found, assigns to a Page Family based on the page URL (default behavior).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="1160443">This means that the order in which the NPF definitions are listed can determine the Page Family to which a specific view is assigned. If a specific view matches multiple NPF definitions, it is assigned to the first (topmost) matching NPF listed in the AppResponse web UI. </a></div>
+      <div class="listBulletCont"><a name="1160445">In general, it is good practice to include more specific NPFs higher in the list and more general, all-inclusive NPFs lower in the list. Otherwise you might find that all views are assigned to the general NPF rather than to more targeted NPFs lower in the list. </a></div>
+      <div class="figAnchor"><a name="1160490">&nbsp;</a></div>
+      <div class="figSpaceAfter"><a name="1168608"><img class="Default" src="images/wta_named_page_families.080.1.2.jpg" width="623" height="107" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1173413">The Page Families table (Desktop Console &gt; View &gt; Table &gt; Web Application &gt; Page Families) includes a right-click operation for defining a new Defined Application of type Web (Define &gt; Application &gt; New). </a><span class="zRed">Do not use this right-click operation for a Named Page Family </span>if the Named Page Family name is not a valid URL pattern. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h3NoBreak"><a name="1155445">Creating a Named Page Family</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1155447">In the Web Console, choose Administration &gt; System.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1155448">In the Administration &gt; System web UI, choose System &gt; Pages.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1160651">If the Named Page Families Configuration options are not visible, click the ‘+’ button to show them.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1160678"><img class="Default" src="images/wta_named_page_families.080.1.3.jpg" width="623" height="80" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1160679">&nbsp;</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	4)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1155449">Click Add (below the table, second from left). A new, generic name appears in the Named Page Families table and the Name field.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1160708"><img class="Default" src="images/wta_named_page_families.080.1.4.jpg" width="623" height="471" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1160709">&nbsp;</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	5)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1155450">In the Name field (top right), enter a user-friendly name for the page family. All pages in this family appear with this name in the Page Family and other navigator views.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	6)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1155451">Define the page filter: if the appliance sees a page view that matches this filter, the page is added to the family. You can include or exclude each set of criteria using the check boxes.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSubCont"><a name="1155452">URL Pattern — The HTTP GET data includes one or more of these patterns. </a></div>
+      <div class="listNumSubCont"><a name="1155453">and URL Parameters — The HTTP GET data includes one or more of these key/value pairs.</a></div>
+      <div class="listNumSubCont"><a name="1155454">and Title Pattern — The HTML title includes one or more of these strings. </a></div>
+      <div class="listNumCont"><a name="1155455">When matching, the appliance performs an OR match for elements in the same field and an AND match for elements in different fields: </a></div>
+      <div class="listNumSubCont"><span class="code"><a name="1155456">((urlPattern1 || urlPattern2) &amp;&amp; <br />(urlKeyVal1 || urlKeyVal2) &amp;&amp; <br />(titlePattern1 || titlePattern2))</a></span> </div>
+      <div class="listNumCont"><span class="bold"><a name="1155457">Note—</a></span>Aside from asterisk (*) wildcards, AppResponse does not encode or decode the data in these fields. Therefore, you must specify fully-encoded URL patterns and parameters so that they match exactly the data observed on the monitoring interfaces. Because spaces are illegal in URLs, for example, you should specify <span class="codebold">%20</span> (in URL paths) and <span class="codebold">+</span> (in URL parameters) instead:</div>
+      <div class="figAnchor"><a name="1155460"><img class="Default" src="images/wta_named_page_families.080.1.5.jpg" width="447" height="437" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1155461">&nbsp;</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	7)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1155462">Use the Up and Down buttons (below the Named Page Families list) to order the new NPF definition in the list. The order of NPFs in this list is important because </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1155463">A page can belong to one and only one family.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="1155464">For each page, WTA searches the table (top to bottom) and adds the page to the first family in the list that matches the filters included in its definition. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	8)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1160762">Click Apply (at the very bottom of the page) to save your changes on the appliance.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h3NoBreak"><a name="1155466">Built-In Rule for Grouping Salesforce.com Pages into Named Page Families</a></div>
+      <div class="body"><a name="1155467">This release includes the following built-in rule for grouping Salesforce.com page views into Named Page Families:</a></div>
+      <div class="codeStep"><span class="bold"><a name="1155468">IF</a></span> the HTTP URL includes the pattern <span class="italic" style="font-size: 10.0pt">company-name.my.salesforce.com</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="bold">IF</span> the HTML page title includes the string “<span class="italic" style="font-size: 10.0pt">~ salesforce</span>” <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rename the page family to:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="italic" style="font-size: 10.0pt">[salesforce:company-name] html-page-title-before-tilde-salesforce</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="bold">ELSE</span> rename the page family to:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="italic" style="font-size: 10.0pt">[company-name:salesforce] url-path-from-domain-to-question-mark</span> </div>
+      <div class="body"><a name="1155470">Examples: </a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1155471">URL = </a><span class="code">https://mycompany.my.salesforce.com/sales/usa/east/month</span> </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="1155472">Title = </a><span class="code">USA Sales (East Coast)~salesforce.com Unlimited Edition</span></div>
+      <div class="listBulletCont"><a name="1155473">Named Page Family = </a><span class="code">[salesforce:mycompany] USA Sales (East Coast)</span> </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1155474">URL = </a><span class="code">https://mycompany.my.salesforce.com/ts/srch?status=open&amp;assigned=jsmith</span> </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="1155475">Title = </a><span class="code">salesforce</span> </div>
+      <div class="listBulletCont"><a name="1155476">Named Page Family = </a><span class="code">[mycompany:salesforce]/ts/srch...</span> </div>
+      <div class="bodyNote">
+        <span class="bold">Note: </span><a name="1155478">This rule is built in to the software and takes precedence over any user-defined Named Page Family rules for Salesforce.com that might be defined on the appliance. This rule does not appear in the interface for defining Named Page Families (web UI &gt; System &gt; Pages Named Page Families Configuration) <br /><br />If you want to disable or override this rule, log in to the CLI and enter the following command: <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><span class="code">WTA-StitcherConfig add disable-sfdc-support<br /></span><br />To re-enable this rule, enter the following command:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code">WTA-StitcherConfig delete disable-sfdc-support</span></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

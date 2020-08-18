@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:38:42" />
+    <title>Additional Exercises</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="wdmgtut-4-01.html"> Network Design Operations</a> > <a href="wdmgtut-4-05.html">Dimensioning</a> > Additional Exercises</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp926194"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Additional Exercises
+</h2>
+
+ 
+
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp932184"> </a><div class="pSmartList1"><li>After dimensioning the OCH layer for a specific traffic matrix, you can upgrade the design for another traffic matrix. This traffic matrix could represent traffic later in time, or additional traffic that needs to be established using a different protection mechanism. For each traffic matrix, a separate dimensioning action can be applied using the most appropriate protection mechanism for that traffic matrix. This allows you to accommodate traffic with different service levels within the same network.</li></div>
+<a name="wp932185"> </a><div class="pSmartList1"><li>In the examples considered in this tutorial, the OTS, OMS, and OCH topologies are identical. This means that protected routing on the OCH layer results in working and protecting paths that are disjoint from the OCH layer down to the OTS layer. With the introduction of cable splitters (<span style="font-weight: bold">Edit&#160;&gt; Open Object&#160;Palette</span>) and fiber routes (<span style="font-weight: bold">Design &gt; Fiber&#160;Routing</span><b class="cBold">...</b>), you can create a network with different topologies at each network layer. In such a network, the <span style="font-weight: bold">Link Disjoint</span> option becomes important. The routing and dimensioning algorithm take the shared risk link group concept into account down to the layer selected. For example, selecting <span style="font-weight: bold">OCH Link Disjoint</span> results in a working and protecting path that are disjoint at the OCH layer, but these paths are not necessarily disjoint down to the OMS or OTS layer. To make sure that the working and protecting paths are disjoint to the physical layer in such a network, choose <span style="font-weight: bold">OTS Link Disjoint</span> in the routing or dimensioning dialog box.</li></div>
+<a name="wp932186"> </a><div class="pSmartList1"><li>In the examples in this tutorial, the routing or dimensioning algorithm always determines the routes. However, SP&#160;Guru&#160;Transport&#160;Planner lets you define routes. Therefore, select <span style="font-weight: bold">Import OTS Routes</span> in the routing or dimensioning dialog box and specify the .csv file containing the routes. The routing or dimensioning algorithm then takes these routes into account. For a description of the file format, see the SP&#160;Guru&#160;Transport&#160;Planner User&#160;Guide.</li></div>
+<a name="wp935545"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-06-34.jpg" height="296" width="510" id="wp935543" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932193"> </a><div class="pSmartList1"><li>Even when the routing or dimensioning algorithm determines the routes, SP&#160;Guru&#160;Transport&#160;Planner still allows you to control the route. This is done by defining routing constraints. Select <span style="font-weight: bold">Network &gt; Connection Browser</span>, right-click on a connection and select <span style="font-weight: bold">Routing Constraints</span>. In this dialog you can specify constraints that apply only to the selected connection. Repeat this step for each connection that you want to have constraints, and confirm each constraint by clicking <b class="cBold">OK </b>in the <b class="cBold">Routing Constraints </b>dialog box. When you&#39;re done, close the Connection Browser and select a design action (routing, dimensioning, and so on). The routing and dimensioning<span style="font-weight: bold"> </span>algorithm then searches the optimal route that satisfies the routing constraints of the connection. If the algorithm cannot find a route that meets the routing constraints, it does not set up a connection. See the figure below. The routing or dimensioning algorithm will search a working path shorter than 200 km and a protecting path shorter than 500 km for the given connection. Also, the number of hops of the working path has to be smaller than or equal to three. If SP&#160;Guru&#160;Transport&#160;Planner does not find a working path shorter than 200 km and shorter than 3 hops, the given connection is not set up and left unrouted.</li></div>
+<a name="wp935552"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-06-35.jpg" height="134" width="510" id="wp935560" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp941891"> </a><div class="pSmartList1"><li>The Utilization Viewer allows visualizing the utilization of the nodes and the links in a layer of the network. Select <span style="font-weight: bold">Info &gt; Inspect Utilization</span>. In the <span style="font-weight: bold">Inspect Utilization</span> dialog box, three levels of utilization can be defined. The links and nodes are colored according to the specified levels. The links and nodes reaching utilization level 1, 2, or 3 are colored in yellow, orange, or red, respectively. By using the toolbar buttons (<span style="font-weight: bold">DCL</span>, <span style="font-weight: bold">OCH</span>, <span style="font-weight: bold">OMS</span> or <span style="font-weight: bold">OTS</span>), the utilization can be visualized in the different layers. See the following figure. The link between Chicago and Detroit is red, which means that the utilization on this link is higher than 83.1percent. The link between San Francisco and Los Angeles is not colored, implying that the utilization on this link is lower than 32 percent. The utilization in node Houston lies between 32 and 68 percent. To generate a report containing link utilization information, click <span style="font-weight: bold">Generate Report</span> in the <b class="cBold">Inspect Utilization</b> dialog box.</li></div>
+<a name="wp935569"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-06-36.jpg" height="277" width="505" id="wp935576" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ul></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/wdmg_tut_3.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

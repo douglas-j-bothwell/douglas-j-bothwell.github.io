@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Turn Tracking</title>
+    <link rel="StyleSheet" href="css/metrics_misc_turn_track.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_user_guide_splash.html">User Guide</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="metrics.html">Metrics</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="metrics_misc.html">Metric Topics - Miscellaneous</a> &gt; Turn Tracking</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h2Top"><a name="1086875">Turn Tracking</a></div>
+      <div class="body"><a name="1048230">The Turn Tracking feature is designed to help deliver meaningful metrics about the user experience of an application using Layer-4 turn-based semantics, thus eliminating the processing burden of real-time application-level packet decodes and the concomitant effort of keeping these up to date. It may be helpful to understand some of the considerations behind the design of this feature before reviewing how to set Turn Tracking when defining an application as discussed in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'metrics_misc_turn_track.html#1048262', '');" title="Turn Tracking">Setting Turn Tracking</a></span>.</div>
+      <div class="h3NoBreak"><a name="1048234">Users and Turn Metrics</a></div>
+      <div class="body"><a name="1048235">In any application flow that represents interaction between a user and a server, many metrics are meaningless for the user side. Consider Server Response Time—the average time elapsed between the receipt of a request and the dispatch of a response. On the user side that metric would include user “think time:” the time between the last response of the server and the user’s next query. What if he or she goes for a coffee break? </a></div>
+      <div class="h3NoBreak"><a name="1048239">Turn Semantics</a></div>
+      <div class="body"><a name="1048240">There is, as well, an additional consideration, due to the distinction between client-server roles in setting up a connection (TCP Clients and TCP Servers) and client-server roles in an application turn (Clients and Servers). </a></div>
+      <div class="body"><a name="1048244">TCP Clients and TCP Servers act </a><span class="italic">when setting up and tearing down a connection</span>: the TCP Client initiates a connection request and the TCP Server responds to a connection request. Clients and Servers, on the other hand, act <span class="italic">in a turn within the connection</span>: the Client sends requests for data in a turn and the Server sends data in response to a request in a turn. </div>
+      <div class="body"><a name="1048249">Thus, AppResponse TCP Connection metrics are labeled either TCP Clients or TCP Servers, while TCP Turn metrics are labeled Clients and Servers. TCP turn metrics labeled Clients represent data from clients that initiate turns within the group. TCP turn metrics labeled Servers represent data from servers within the group that respond to client data requests in a turn. For instance, Server Response Time (Clients) represents the average server response time seen by Clients within a group.The corresponding metric in the group to which the Clients were connected would be Server Response Time (Servers). </a></div>
+      <div class="h3NoBreak"><a name="1048254">Why Turn Tracking?</a></div>
+      <div class="body"><a name="1048255">In most applications, the TCP Client and Client, and the TCP Server and Server, are the same machine. But some applications are client/client in nature, where both machines can send and receive data after the connection is established. In Citrix, for example, the client sends keystrokes and mouse clicks while the server sends screen updates.</a></div>
+      <div class="body"><a name="1048256">It is not possible, at Layer 4, to distinguish in all cases between request and response packets, and misinterpreting the beginning of a turn throws off all future turn measurements in that connection, thus rendering all its turn metrics meaningless. To avoid this problem, Turn Tracking enables the user to specify, for each defined TCP-based application, which IP address is to be considered the Server in a turn, based on its role in setting up the connection. As a result, Server Response metrics are then recorded only for the Server side of any given turn, and data packets sent by the Client are not counted in Payload and Data Transfer Time metrics.</a></div>
+      <div class="h3NoBreak"><a name="1048262">Setting Turn Tracking</a></div>
+      <div class="body"><a name="1048264">Select Track Server in the Defined Application Manager when defining an application to make the appliance treat the TCP Server as the turn Server. In effect, this means that all data packets from the TCP Server are treated as part of a turn response, while all data packets from the TCP Client are treated as part of a data request.There may, of course, be more than one data packet in a request or response; the end of either is recognized by the initiation of a data transmission from the other side: a reversal of direction for data packets indicating one-half turn.</a></div>
+      <div class="body"><a name="1048268">This is the default setting, as it is appropriate in most cases.</a></div>
+      <div class="body"><a name="1048270">Select Track Client in the Defined Application Manager when defining an application to make the appliance treat the TCP Client (the machine that initiated the connection request) as the turn Server. In effect, this means that all data packets from the TCP Client are treated as part of a turn response, while all data packets from the TCP Server are treated as part of a data request. There may, of course, be more than one data packet in a request or response—the end of either is recognized by the initiation of a data transmission from the other side: a reversal of direction for data packets indicating one-half turn.</a></div>
+      <div class="body"><a name="1048274">This setting may be needed for certain custom applications, or for specialized measurements of standard applications.</a></div>
+      <div class="body"><a name="1048275">Unchecking Track application turns in the Defined Application Manager when defining an application disables Turn Tracking. No TCP Turn metrics are available for that application.This setting is used for applications where the turn semantics are unknown, ambiguous (e.g., Citrix), or, as in the case of IM or peer-to-peer applications (e.g., BitTorrent) that are not business-related, where you do not want the application to affect the average response time of a Business Group. </a></div>
+      <div class="h3NoBreak"><a name="1048328">Server Response Time and Total Traffic</a></div>
+      <div class="bodyIntro"><a name="1048329">Server Response Time from each Server or Web Application contributes to the average response time for a group. Because it is possible to define two Server or Web Applications that are identical except for their Turn Tracking, this requires the establishment of precedence rules to determine which application is counted for the total Server Response Time of a group. The precedence is as follows:</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1048330">Globally-defined&nbsp;application&nbsp;&gt; locally-defined&nbsp;application.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1048331">URL&nbsp;application&nbsp;&gt; Server&nbsp;application&nbsp;&gt; Standard&nbsp;application</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1048332">None&nbsp;&gt; Track&nbsp;on&nbsp;TCP&nbsp;client&nbsp;side&nbsp;&gt; Track&nbsp;on&nbsp;TCP&nbsp;server&nbsp;side</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:52" />
+    <title>Undoing a DCL Grooming Operation</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-08-1.html"> Dimensioning</a> > <a href="User-08-9.html">Strip Capacity</a> > Undoing a DCL Grooming Operation</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp124971"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Undoing a DCL Grooming Operation
+</h2>
+
+ 
+
+<a name="wp124973"> </a><p class="pBody">
+You can undo the effects of a grooming operation using the Tear Down or Undo buttons in the Groom DCL to OCH Traffic dialog box:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp124974"> </a><div class="pSmartList1"><li>Tear Down&#8212;Tears down the OCH and DCL matrix (that is, undoes the effects of step 4) but retains the grooming action. The result is that the new OCH matrix is unrouted, but still exists.This button is not available if you specified grooming protection with OTS, OMS, or OCH link disjointness.</li></div>
+<a name="wp124976"> </a><div class="pSmartList1"><li>Undo&#8212;Undoes the grooming action and removes the new OCH matrix. If you specified grooming protection with OTS, OMS, or OCH link disjointness, the Undo operation also tears down the DCL and OCH traffic matrices. If you specified protection with DCL link disjointness or no protection, you must tear down the DCL and OCH matrices before you undo the grooming operation. </li></div>
+</ul></div>
+<a name="wp144528"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>If you tear down or undo a DCL traffic matrix that has been groomed simultaneously with other DCL traffic matrices, the tear down or undo operation will also apply to these other DCL traffic matrices because all of the DCL traffic matrices are groomed to the same OCH traffic matrix.
+</p>
+
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_31_grm.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

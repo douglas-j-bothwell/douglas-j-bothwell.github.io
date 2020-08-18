@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:27" />
+    <title>Routing</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2">Routing</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp250989"> </a><h2 class="pTitle">
+Routing
+</h2>
+<hr />
+
+ 
+
+
+<a name="wp274656"> </a><p class="pBody">
+After you equip your network and create an OCH or a DCL traffic matrix, you can route the traffic to establish connections in a network. In general, the objective of a routing operation is to maximize throughput while minimizing network cost.
+</p>
+<a name="wp274649"> </a><p class="pBody">
+SP&#160;Guru&#160;Transport&#160;Planner routes one or multiple traffic matrices with common routing and protection options at a time. If you want to route multiple traffic matrices with different routing or protection options, you must route them sequentially. You can only route matrices that are partially or entirely unrouted (that is, matrices that have unrouted connections). 
+</p>
+<a name="wp255336"> </a><p class="pBody">
+The following rules apply to routing in SP&#160;Guru&#160;Transport&#160;Planner: 
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp255373"> </a><div class="pSmartList1"><li>You can route traffic at the DCL and OCH layer. At the DCL layer, the granularity of traffic is one or more timeslots at the SONET/SDH higher-order path layer. At the OCH layer, the granularity is one or more wavelengths.</li></div>
+<a name="wp305362"> </a><div class="pSmartList1"><li>At the OCH layer you can run routing operations on both opaque and transparent networks. To access options specific to transparent networks, click the Transparent Routing Options button in the Routing and Dimensioning dialog boxes. These options are described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-11-12.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-11-12.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Transparent Routing Options Dialog Box</u></a>.</li></div>
+<a name="wp274715"> </a><div class="pSmartList1"><li>A routing operation on an OCH or DCL traffic matrix requires unused, equipped capacity in the corresponding network layer.</li></div>
+<a name="wp274723"> </a><p class="pBodyRelative">
+OCH-layer capacity is provided by lit fiber pairs. To increase OCH capacity, you can
+</p>
+<div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp274776"> </a><div class="pSmartList2"><li>Increase the number of equipped fiber pairs or wavelength bands</li></div>
+<a name="wp274778"> </a><div class="pSmartList2"><li>Dimension the network (see <a href="javascript:WWHClickedPopup('wdm_user', 'User-08-1.html#wp111706');" onMouseOver="WWHShowPopup('wdm_user', 'User-08-1.html#wp111706', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Dimensioning a Topology</u></a> for details)</li></div>
+<a name="wp274726"> </a><p class="pBodyRelative">
+DCL-layer capacity is provided by DCL trunks. DCL trunks can be created by non-native OCH connections between EOCC nodes, or by lit fiber pairs between ECC nodes. To increase DCL capacity, you can
+</p>
+<a name="wp274761"> </a><div class="pSmartList2"><li>Increase the number of equipped fiber pairs between ECC nodes</li></div>
+<a name="wp274762"> </a><div class="pSmartList2"><li>Create non-native connections in the OCH layer; these connections result in logical DCL links, which provide the capacity necessary to support DCL traffic. You can create these non-native OCH connections automatically (through a grooming operation of DCL traffic into OCH traffic) or you can manually create non-native OCH connections in the Traffic Matrix Editor (set the Native field to No).</li></div>
+</ul></div>
+</ul></div>
+<a name="wp297087"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>You cannot route LOP traffic directly using the routing operation. You must groom the LOP traffic into DCL traffic first, then route the resulting DCL traffic matrix on the DCL layer. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-10-1.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-10-1.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Grooming LOP to DCL Traffic</u> </a>.
+</p>
+
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_25_rte.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

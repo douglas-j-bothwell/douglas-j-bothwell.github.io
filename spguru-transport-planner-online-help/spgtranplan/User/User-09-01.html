@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:52" />
+    <title>Grooming DCL to OCH Traffic</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-08-1.html"> Dimensioning</a> > <a href="User-08-9.html">Strip Capacity</a> > Workflow Description</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp63107"> </a><h2 class="pTitle">
+Grooming DCL to OCH Traffic
+</h2>
+<hr />
+
+ 
+
+
+<a name="wp56827"> </a><p class="pBody">
+A DCL grooming operation maps SONET/SDH traffic demands (a DCL traffic matrix) into optical wavelength demands (an OCH traffic matrix). DCL grooming uses a &quot;top-down&quot; approach to network design, in which DCL traffic demands drive OCH demands. The connections in the resulting OCH matrix form logical DCL links; the network uses these links to route the DCL traffic.
+</p>
+<a name="wp58988"> </a><p class="pBody">
+The aim of DCL grooming is to determine a combined network design for the DCL and OCH layers that minimizes the total network cost. The grooming algorithms use the cost parameters you specify (as equipment properties) to ensure that the combined DCL/OCH network design results in the lowest possible network cost. (For more information about the available equipment properties, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-18.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-18.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Equipment Properties</u></a>.)
+</p>
+<a name="wp135006"> </a><p class="pBody">
+SP&#160;Guru&#160;Transport&#160;Planner supports DCL grooming with optimized routes (defined by the grooming algorithm) and fixed routes (user-defined physical routes). 
+</p>
+<a name="wp124871"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Workflow Description
+</h2>
+
+ 
+
+<a name="wp125778"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('wdm_user', 'User-09-01.html#wp124872');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-01.html#wp124872', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;8-1</u></a> describes how to groom DCL traffic matrices. This workflow is shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-09-01.html#wp133999');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-01.html#wp133999', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;8-1-DCL Grooming Workflow</u> </a>.
+</p>
+<a name="wp124872"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp124872", false);</script>Procedure&#160;8-1   Grooming DCL Traffic Matrices<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp124872", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp124872", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp124873"> </a><div style="text-align: left" class="pSmartList2Test"><li>Choose Design&#160;&gt; Groom&#160;DCL&#160;to&#160;OCH&#160;Traffic&#160;&gt; Optimized&#160;Routes to open the Grooming&#160;DCL&#160;to&#160;OCH Traffic dialog box.</li></div>
+<a name="wp124874"> </a><div style="text-align: left" class="pSmartList2Test"><li>Specify grooming options.</li></div>
+<a name="wp135028"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+Select the DCL traffic matrices you want to groom, the target bit rate for the OCH traffic matrix, the cost parameters and the grooming algorithm you want to use (for more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-09-04.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-04.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">DCL Grooming Input and Options</u></a>). 
+</p>
+<a name="wp135036"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+If you select &quot;1&#160;+&#160;1 Protection in DCL&quot;, you must specify some additional options. The Link Disjoint setting is an import consideration because it impacts the subsequent workflow, as explained in the following steps.
+</p>
+<a name="wp124885"> </a><div style="text-align: left" class="pSmartList2Test"><li>Groom the DCL traffic matrices.</li></div>
+<a name="wp131152"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+After you specify grooming options, click Groom. This determines the logical DCL topology (that is, an OCH matrix) on which to route the DCL connections.
+</p>
+<a name="wp124886"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+If the grooming operation is finished, SP&#160;Guru&#160;Transport&#160;Planner shows the results in the Grooming Results and Grooming Performance fields on the right (see <a href="javascript:WWHClickedPopup('wdm_user', 'User-09-06.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-06.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">DCL Grooming Results and Performance</u></a> for details).
+</p>
+<a name="wp124890"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+If you selected 1&#160;+&#160;1 Protection in DCL with Link Disjointness down to the OTS, OMS, or OCH layer, the grooming algorithm ensures that working and protection paths of the DCL traffic are disjoint down to the selected layer. To ensure this, the grooming algorithm also determines the routes of the resulting OCH traffic matrix; then it accommodates both the DCL and the resulting OCH traffic matrices in the network. 
+</p>
+<a name="wp135066"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+In all other cases&#8212;that is, if you specified grooming with no protection or with 1+1 protection and DCL link disjointness&#8212;the grooming algorithm does not set up the OCH traffic matrix, and you might need to do <a href="javascript:WWHClickedPopup('wdm_user', 'User-09-01.html#wp124892');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-01.html#wp124892', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">step&#160;4</u></a> to accommodate this matrix. This gives you the freedom to decide the routing and protection strategy for the OCH traffic.
+</p>
+<a name="wp124892"> </a><div style="text-align: left" class="pSmartList2Test"><li>Route or dimension the resulting OCH traffic matrix.</li></div>
+<a name="wp131165"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+In some cases you can skip this step. There might be enough spare DCL capacity to support the SONET/SDH demand; if so, the resulting OCH traffic matrix is empty.
+</p>
+<div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp124893"> </a><div class="pSmartList2"><li>To dimension the new OCH traffic matrix, click Dimension in the Groom DCL to OCH Traffic dialog box. This opens the Dimension DCL/OCH Layer dialog box; for more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-08-2.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-08-2.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Dimension DCL/OCH Layer Dialog Box</u></a>.</li></div>
+<a name="wp136236"> </a><div class="pSmartList2"><li>To route the new OCH matrix, close the Groom DCL to OCH Traffic dialog box and choose Design&#160;&gt; Route&#160;DCL/OCH&#160;Traffic; for more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-07-02.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-07-02.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Route DCL/OCH Traffic Dialog Box</u></a>.</li></div>
+<a name="wp136240"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>After the routing or dimensioning or routing operation accommodates the entire OCH traffic matrix in the network, SP&#160;Guru&#160;Transport&#160;Planner automatically accommodates the contained DCL traffic.
+</p>
+</ul></div>
+</ol></div>
+<a name="wp142695"> </a><p class="pProcEnd">
+End of Procedure 8-1
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp142696"> </a><h6 class="pHeading6">
+
+</h6>
+<a name="wp133999"> </a><p class="pFigCaption">
+Figure&#160;8-1   DCL Grooming Workflow
+</p>
+<a name="wp134057"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-09-01-01.jpg" height="457" width="530" id="wp134001" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_31_grm.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

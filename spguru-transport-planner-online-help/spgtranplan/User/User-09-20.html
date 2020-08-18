@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:52" />
+    <title>Link-by-Link (LBL) Optimization Algorithm</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-09-01.html"> Grooming DCL to OCH Traffic</a> > <a href="User-09-18.html">Optimization Algorithms: Descriptions</a> > Link-by-Link (LBL) Optimization Algorithm</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp53159"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Link-by-Link (LBL) Optimization Algorithm
+</h2>
+
+ 
+
+<a name="wp53391"> </a><p class="pBody">
+The initial solution of the link-by-link grooming algorithm assumes full grooming in intermediate nodes. SP&#160;Guru&#160;Transport&#160;Planner does this by routing the DCL demands on a DCL trunk topology that contains only the links present in the OCH layer. 
+</p>
+<a name="wp58385"> </a><p class="pBody">
+If you specified grooming with protection, SP&#160;Guru&#160;Transport&#160;Planner routes the DCL demands using the shortest-cycle approach; if you specified grooming without protection, SP&#160;Guru&#160;Transport&#160;Planner routes the DCL demands using the shortest-path approach. 
+</p>
+<a name="wp58386"> </a><p class="pBody">
+This solution has the following characteristics: 
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp58414"> </a><div class="pSmartList1"><li>If a DCL connection is unsupported by an underlying OCH link, it is accommodated over multiple DCL trunks (multiple hops in the DCL layer). This implies switching in the intermediate DXCs.</li></div>
+<a name="wp58422"> </a><div class="pSmartList1"><li>All optical channels are single-hop connections in the OCH layer; this implies no switching in the OXCs.</li></div>
+<a name="wp53402"> </a><div class="pSmartList1"><li>SP&#160;Guru&#160;Transport&#160;Planner obtains the initial trunk size by adding all DCL capacity that was routed over that particular link.</li></div>
+<a name="wp58815"> </a><div class="pSmartList1"><li>SP&#160;Guru&#160;Transport&#160;Planner derives the corresponding wavelength demand by applying the multiplex factor between both the DCL and OCH layers. For example, 18 STM-1&#39;s on a DCL trunk require two optical channels at STM-16.</li></div>
+</ul></div>
+<a name="wp58816"> </a><p class="pBody">
+Consequently, wavelength utilization is high and all traffic is switched in intermediate DCL nodes, resulting in a high switching cost in the DCL layer. The optimization algorithm reduces the cost figure by inspecting the transit traffic in the DXC nodes and inserting DCL trunks where appropriate.
+</p>
+<a name="wp58817"> </a><p class="pBody">
+For example, assume that there is a lot of traffic between nodes X and Y, but there is no direct DCL trunk (no optical channel between these nodes). In this case, the link-by-link algorithm adds a direct trunk between X and Y; then it off loads the traffic towards this trunk. This reduces switching in intermediate nodes, possibly at the expense of an additional optical channel.
+</p>
+<a name="wp58818"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Algorithm Description
+</h3>
+<a name="wp87631"> </a><p class="pBody">
+The link-by-link algorithm does the following steps:
+</p>
+<div class="pSmartList1"><ol type="1" class="pSmartList1">
+<a name="wp53234"> </a><div class="pSmartList1"><li>Initial solution (full intermediate grooming): Route DCL traffic on a DCL topology identical to the OCH-layer topology, and size DCL trunks accordingly.</li></div>
+<a name="wp58461"> </a><div class="pSmartList1"><li>Check for a new DCL trunk to add: Calculate cost savings by adding a new DCL trunk between nodes that exchange a lot of traffic. If you specified protection, SP&#160;Guru&#160;Transport&#160;Planner must ensure that the working and protection paths used by a DCL demand remain disjoint. Retain the DCL link that results in the greatest cost savings. </li></div>
+<a name="wp58479"> </a><p class="pBodyRelative">
+If SP&#160;Guru&#160;Transport&#160;Planner finds a link that results in a cost savings, continue with step 3.
+</p>
+<a name="wp58485"> </a><p class="pBodyRelative">
+If SP&#160;Guru&#160;Transport&#160;Planner does not find a link that results in a cost savings, continue with step 4.
+</p>
+<a name="wp53456"> </a><div class="pSmartList1"><li>If a new DCL trunk is found (which results in a cost savings): </li></div>
+<div class="pSmartList2"><ol type="a" class="pSmartList2">
+<a name="wp53470"> </a><div class="pSmartList2"><li>Add the DCL trunk (results in an additional optical channel demand) and off load traffic to this trunk. </li></div>
+<a name="wp53471"> </a><div class="pSmartList2"><li>Remove (possibly empty) wavelength channels on which DCL traffic was off-loaded.</li></div>
+<a name="wp56814"> </a><div class="pSmartList2"><li>Return to Step 2.</li></div>
+</ol></div>
+<a name="wp56815"> </a><div class="pSmartList1"><li>If no new DCL trunk is found: end</li></div>
+</ol></div>
+<a name="wp56816"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('wdm_user', 'User-09-20.html#wp87683');" onMouseOver="WWHShowPopup('wdm_user', 'User-09-20.html#wp87683', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;8-14</u></a> provides an example of link-by-link grooming in action (in this case, without using protection). Adding another trunk requires an additional channel between B and C, but reduces the channel requirement between A-C and A-B. Optimization increases the meshing degree of the DCL topology and adapts the demand for the OCH layer. As in the end-to-end grooming example, the optimization step is accepted only if it results in a net cost saving.
+</p>
+<a name="wp87683"> </a><p class="pFigCaption">
+Figure&#160;8-14   OCH Topology and DCL Demands Before Link-by Link Grooming
+</p>
+<a name="wp87686"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-09-20-14.jpg" height="586" width="700" id="wp87685" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_31_grm.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:24" />
+    <title>Creating Rings</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-13-01.html"> Ring Design</a> > Creating Rings</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp303654"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Creating Rings
+</h2>
+
+ 
+
+
+<a name="wp288683"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('wdm_user', 'User-13-03.html#wp276074');" onMouseOver="WWHShowPopup('wdm_user', 'User-13-03.html#wp276074', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;12-1</u></a> describes how to create SONET rings manually. (You can also create rings by importing data from a data file; for more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-17.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-17.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">SONET/SDH Ring Data Files</u></a>.)
+</p>
+<a name="wp276074"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp276074", false);</script>Procedure&#160;12-1   Creating a SONET Ring<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp276074", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp276074", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp276271"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the Ring Browser (Network&#160;&gt; Ring&#160;Browser) and click Create. </li></div>
+<a name="wp286203"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The Create a DCL Ring dialog box appears.
+</p>
+<a name="wp286204"> </a><div style="text-align: left" class="pSmartList2Test"><li>Define the properties of the ring. You can specify the ring cost model, usage type, technology type, and bit rate. You must also specify the disjointness properties of the ring. This is especially important if the ring path includes non-adjacent EOCC nodes (that is, nodes that are not connected directly with a physical link). In this case, the logical DCL ring topology can differ from the physical ring topology. </li></div>
+<a name="wp286205"> </a><p class="pFigCaption">
+Figure&#160;12-4   Create a DCL Ring Dialog Box
+</p>
+<a name="wp286209"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-13-03-04.jpg" height="117" width="500" id="wp286207" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp286236"> </a><p class="pBodyRelative">
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp303678table286210">
+  <caption><a name="wp303678"> </a><div class="ptblcaption">
+Table&#160;12-1   <span style="font-style: normal; font-weight: bold; text-decoration: none; vertical-align: baseline">Create a DCL Ring Dialog Box</span>
+</div>
+</caption>
+  <tr bgcolor="#C0C0C0" align="center">    <th><a name="wp303682"> </a><div class="pCellHeading">
+Field
+</div>
+</th>
+    <th><a name="wp303684"> </a><div class="pCellHeading">
+Description
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp303703"> </a><div class="pCellBody">
+Create Ring As
+</div>
+</td>
+    <td><a name="wp303705"> </a><div class="pCellBody">
+Usage type of the ring (Legacy, New or Candidate). Legacy and new rings are used during ring dimensioning. Candidate rings are used by the <a href="javascript:WWHClickedPopup('wdm_user', 'User-13-09.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-13-09.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Ring Identification</u></a> operation: when Ring Identification determines that a candidate ring is suitable to add to the network, it converts the candidate ring to a new ring.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp314014"> </a><div class="pCellBody">
+Model
+</div>
+</td>
+    <td><a name="wp314016"> </a><div class="pCellBody">
+Ring model type. This ring model type determines the ring costs.
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp303686"> </a><div class="pCellBody">
+Type 
+</div>
+</td>
+    <td><a name="wp303688"> </a><div class="pCellBody">
+Ring technology type (UPSR, 2F-BLSR, or 4F-BLSR)
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp303690"> </a><div class="pCellBody">
+Bit Rate
+</div>
+</td>
+    <td><a name="wp303692"> </a><div class="pCellBody">
+OCH bit rate of the ring
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp303694"> </a><div class="pCellBody">
+Disjointness
+</div>
+</td>
+    <td><a name="wp303696"> </a><div class="pCellBody">
+Disjointness properties of the ring. You can specify whether you want the links of the ring to be DCL, OCH, OMS, or OTS disjoint. 
+</div>
+<a name="wp303697"> </a><div class="pCellBody">
+You can also specify whether you want the ring to be link disjoint only, or to be node disjoint as well (node disjoint means that no physical nodes appear twice in the same ring).
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td colspan="2" rowspan="1"><a name="wp303699"> </a><div style="margin-bottom: 0pt; margin-top: 0pt" class="pEndTbl">
+End of Table 12-1	
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+</p>
+<a name="wp286275"> </a><div style="text-align: left" class="pSmartList2Test"><li>In the Project Editor, left-click on each component DCL node to include it in the ring path. You can include ECC and EOCC nodes. Note the following:</li></div>
+<div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp276456"> </a><div class="pSmartList2"><li>If a ring link connects ECC-ECC or ECC-EOCC nodes, it <em class="cEmphasis">must</em> be supported by a physical DCL link (that is, a direct fiber pair between both nodes). </li></div>
+<a name="wp276460"> </a><div class="pSmartList2"><li>If a ring link connects EOCC-EOCC nodes, it can be supported by a logical link (that is, an OCH connection). Therefore, you can include EOCC nodes in the ring without a direct fiber pair between them, as long as the network can find an OCH path between the nodes.</li></div>
+<a name="wp286280"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+After you include all nodes in the ring, click Create in the Create a DCL Ring dialog box to create the ring.
+</p>
+<a name="wp276306"> </a><p class="pFigCaption">
+Figure&#160;12-5   Creating a Ring 
+</p>
+<a name="wp276310"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-13-03-05.jpg" height="156" width="500" id="wp276308" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp287955"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+If you created the ring successfully, SP&#160;Guru&#160;Transport&#160;Planner adds the DCL links to support the rings. Note that the capacity indicated on the ring links is the <em class="cEmphasis">usable</em> capacity. A USPR at an OC-48 rate has a usable capacity of 48 STS-1 time slots per link. A 2F-BLSR at an OC-48 rate has a usable capacity of 24 time slots, because half of the capacity is reserved for protection. However, a 4F-BLSR OC-48 has a usable capacity of 48 time slots since the protection capacity is provided on two protection fibers.
+</p>
+</ul></div>
+</ol></div>
+<a name="wp306498"> </a><p class="pProcEnd">
+End of Procedure 12-1
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp306499"> </a><h6 class="pHeading6">
+
+</h6>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_40_rd.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

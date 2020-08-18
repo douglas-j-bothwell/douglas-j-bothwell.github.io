@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:38:42" />
+    <title>Grooming LOP to DCL Traffic</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="wdmgtut-4-01.html"> Network Design Operations</a> > Grooming LOP to DCL Traffic</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp942304"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Grooming LOP to DCL Traffic
+</h2>
+
+ 
+
+
+<a name="wp942305"> </a><p class="pBody">
+An analogous relationship as between DCL and OCH traffic (see paragraph 3.5) exists between LOP (Lower Order Path layer) and DCL traffic. Also in this case we can distinguish two approaches. The first approach is the &quot;bottom-up&quot; approach. Firstly, a logical LOP topology is created by accommodating non-native DCL traffic in the network. Secondly, LOP traffic is routed in this logical topology. The other approach is referred to as &quot;top-down&quot; or the &quot;grooming&quot; approach. Here, dimensioning of the LOP layer drives the demand for the DCL layer, which can subsequently be dimensioned. SP&#160;Guru&#160;Transport&#160;Planner supports only one approach to groom LOP to DCL traffic, namely the basic end-to-end grooming approach. This implies that all LOP connections have one-hop routes (only working path) and that no switching is performed in the nodes at the LOP layer. 
+</p>
+<a name="wp942235"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp942235", false);</script>Procedure&#160;3-7   Grooming LOP to DCL traffic<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp942235", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp942235", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp942236"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the <b class="cBold">WDMGuru_Examples</b> project.</li></div>
+<ol type="a">
+<a name="wp942237"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Open</span><b class="cBold">...</b>.</li></div>
+<a name="wp942238"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">WDMGuru_Examples</span> project, then press <span style="font-weight: bold">Open</span>.</li></div>
+<a name="wp942281"> </a><p class="pIndentedRelative">
+The example project which contains various scenarios loads. The Australia scenario appears in the workspace.
+</p>
+</ol>
+<a name="wp942493"> </a><div style="text-align: left" class="pSmartList2Test"><li>Groom the LOP traffic matrix.</li></div>
+<ol type="a">
+<a name="wp942494"> </a><div class="pprocstepSub"><li>Go to the <b class="cBold">Design &gt; Groom LOP to DCL Traffic</b> dialog box.</li></div>
+<a name="wp942495"> </a><div class="pprocstepSub"><li>Select the <b class="cBold">VC-12 </b>LOP traffic matrix in the traffic matrix table. Select <b class="cBold">STM-4</b> as target bit rate in which the DCL traffic matrix will carry the LOP traffic. This results in a multiplex factor of 252 between the LOP signal and the DCL signal.</li></div>
+<a name="wp942496"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Use existing capacity</b>, implying the grooming algorithm to use the spare capacity present in the LOP layer to accommodate the LOP traffic. Note that in this example there is no spare capacity in the LOP layer, because no DCL traffic has yet been accommodated in the network. Use the<b class="cBold"> DCL</b> toolbar button to verify this in the DCL layer view before opening the LOP grooming dialog box.</li></div>
+<a name="wp942497"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Add new capacity</b>. This implies that the grooming algorithm creates (if needed) a new DCL traffic matrix to host the LOP traffic.</li></div>
+<a name="wp942559"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-09-42.jpg" height="272" width="513" id="wp942533" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp942564"> </a><div class="pprocstepSub"><li>Press <b class="cBold">Groom</b>. Close the results dialog box. Note that a new DCL traffic matrix (i.e. DCL_VC-12_Grooming) has been created to host the LOP traffic.</li></div>
+<a name="wp942579"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-09-43.jpg" height="272" width="513" id="wp942582" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp942603"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Grooming LOP to DCL Traffic </b>dialog box.</li></div>
+<a name="wp942604"> </a><div class="pprocstepSub"><li>Go to <b class="cBold">Design &gt; Routing Results.</b> Select <b class="cBold">DCL</b> (Layer) and <b class="cBold">DCL_VC-12_Grooming</b> (Traffic Matrix). Note that this traffic matrix has 78 connection units, but none of them are yet accommodated in the network (0% routed).</li></div>
+<a name="wp942632"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-09-44.jpg" height="284" width="513" id="wp942635" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp942660"> </a><div class="pprocstepSub"><li>Close the Routing Results dialog box.</li></div>
+</ol>
+<a name="wp946603"> </a><div style="text-align: left" class="pSmartList2Test"><li>	Groom the DCL traffic matrix (resulting from the LOP grooming action).</li></div>
+<ol type="a">
+<a name="wp942661"> </a><div class="pprocstepSub"><li>Return to the <b class="cBold">Design &gt; Groom LOP to DCL Traffic</b> dialog box.</li></div>
+<a name="wp942662"> </a><div class="pprocstepSub"><li>Press the<b class="cBold"> Groom DCL to OCH </b>button.<b class="cBold">The Groom DCL to OCH Traffic</b> dialog box appears.</li></div>
+<a name="wp942663"> </a><div class="pprocstepSub"><li>Select the traffic matrix <b class="cBold">DCL_VC-12_Grooming</b> and <b class="cBold">STM-16 </b>as target bit rate (resulting in multiplex factor 4 between the DCL and the OCH traffic)</li></div>
+<a name="wp942664"> </a><div class="pprocstepSub"><li>Select the following options:<b class="cBold"> Link by Link Grooming</b>, <b class="cBold">Optimize</b>, <b class="cBold">1+1 Protection in DCL</b>, <b class="cBold">Client Protection</b>, <b class="cBold">Node Disjoint</b>,<b class="cBold"> </b>and <b class="cBold">OTS Link Disjoint</b>.</li></div>
+<a name="wp942710"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-09-45.jpg" height="339" width="513" id="wp942713" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp942785"> </a><div class="pprocstepSub"><li>Press <b class="cBold">Groom</b>. The <b class="cBold">Grooming Optimization Progress</b> dialog appears. Once the status is Finished, close this dialog box.</li></div>
+<a name="wp942786"> </a><div class="pprocstepSub"><li>	The grooming algorithm has created a new OCH traffic matrix, <b class="cBold">OCH_DCL_VC-12_Grooming_Grooming</b>, to host the DCL traffic.</li></div>
+<a name="wp942833"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-09-46.jpg" height="340" width="513" id="wp942836" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp942849"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Grooming Optimization Progress</b>, <b class="cBold">Groom DCL to OCH Traffic</b>, and <b class="cBold">Groom LOP to DCL Traffic</b> dialog boxes. </li></div>
+<a name="wp946607"> </a><div class="pprocstepSub"><li>Go to the <b class="cBold">Design &gt; Routing Results</b> dialog box.</li></div>
+<a name="wp942850"> </a><div class="pprocstepSub"><li>Select <b class="cBold">OCH</b> (Layer) and <b class="cBold">OCH_DCL_VC-12_Grooming_Grooming</b> (Traffic Matrix). All connection units of this traffic matrix are accommodated in the network (without protection).</li></div>
+<a name="wp942851"> </a><div class="pprocstepSub"><li>Select <b class="cBold">DCL</b> as layer and <b class="cBold">DCL_VC-12_Grooming</b> as traffic matrix. Note that this traffic matrix is entirely accommodated in the network exploiting the 1+1 protection scheme.</li></div>
+<a name="wp942852"> </a><div class="pprocstepSub"><li>Select the <b class="cBold">LOP</b> layer and the traffic matrix <b class="cBold">VC-12</b>. This traffic matrix is entirely accommodated in the network without protection. The link utilization in the LOP layer amounts to 4.64%. Note that the total number of hops amounts to 912 units, which is the same as the number of connection units of the traffic matrix. This could be expected, because each connection is routed along a one-hop path (basic end-to-end grooming approach).</li></div>
+<a name="wp942880"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-09-47.jpg" height="237" width="513" id="wp942883" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp942908"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Routing Results</b> dialog box.</li></div>
+</ol>
+<a name="wp942909"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the routed connections:</li></div>
+<ol type="a">
+<a name="wp942910"> </a><div class="pprocstepSub"><li>Go to<b class="cBold"> Network &gt; Connection Browser</b>.</li></div>
+<a name="wp942980"> </a><div class="pprocstepSub"><li>	Select <b class="cBold">LOP</b> (Traffic), <b class="cBold">All</b> (Layout) and <b class="cBold">Traffic Matrix </b>(Order). Expand the <b class="cBold">VC-12</b> traffic matrix (using the<b class="cBold"> + </b>icon) and select the connection <b class="cBold">Adelaide &lt;-&gt; Alice Springs.</b></li></div>
+<a name="wp943008"> </a><div class="pprocstepSub"><li>Use the <b class="cBold">DCL</b> button on the toolbar to view the route of the selected connection in the DCL layer. Note that the connection is protected at the DCL layer level (however, it is not protected at the LOP layer level). The protection path of the connection is switched at the electrical level in the nodes <b class="cBold">Darwin</b> and <b class="cBold">Brisbane</b>.</li></div>
+<a name="wp943015"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-09-48.jpg" height="316" width="513" id="wp943018" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp943046"> </a><div class="pprocstepSub"><li>Click on the <b class="cBold">OCH</b> toolbar button. The route of the selected connection is now displayed in the OCH layer. Note that the protection path of the connection is switched at the optical level in the nodes <b class="cBold">Cairns</b> and <b class="cBold">Townsville</b>.</li></div>
+<a name="wp942904"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-09-49.jpg" height="313" width="513" id="wp943101" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ol>
+<a name="wp943072"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the project.</li></div>
+<ol type="a">
+<a name="wp943073"> </a><div class="pprocstepSub"><li>Select <b class="cBold">File &gt; Close</b>.</li></div>
+<a name="wp943089"> </a><div class="pprocstepSub"><li>Click <b class="cBold">Don&#39;t Save</b> in the <b class="cBold">Close Confirm</b> dialog.</li></div>
+</ol>
+</ol></div>
+<a name="wp944397"> </a><p class="pProcEnd">
+End of Procedure 3-7
+</p>
+
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/wdmg_tut_3.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

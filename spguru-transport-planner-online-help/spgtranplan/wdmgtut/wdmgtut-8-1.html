@@ -1,0 +1,404 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:41:27" />
+    <title>Hardware Configuration</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2">Hardware Configuration</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp927592"> </a><h2 class="pTitle">
+Hardware Configuration
+</h2>
+<hr />
+
+ 
+
+
+<a name="wp932086"> </a><p class="pBody">
+The Hardware Configurator enables you to design network hardware with characteristics different from the generic equipment models provided with SP&#160;Guru&#160;Transport&#160;Planner. The Hardware Configurator relies on two major building blocks:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp932087"> </a><div class="pSmartList1"><li>Equipment files that contain detailed modeling of telecommunications equipment based on a set of devices and the relationships between them</li></div>
+<a name="wp932088"> </a><div class="pSmartList1"><li>A configuration algorithm to select and configure the most suitable node and link equipment for the subject network</li></div>
+</ul></div>
+<a name="wp933433"> </a><p class="pBody">
+For more information about the equipment files and the configuration algorithm, see the SP&#160;Guru&#160;Transport&#160;Planner User&#160;Guide.
+</p>
+<a name="wp933434"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>The example equipment files are located in the following directory: <code class="cCode">&lt;</code><em style="font-style: oblique" class="cEmphasis">install_dir</em><code style="font-style: normal" class="cCode">&gt;</code>\<code class="cCode">&lt;</code><em style="font-style: oblique" class="cEmphasis">release</em><code style="font-style: normal" class="cCode">&gt;</code>\models\std\wdmguru\examples.
+</p>
+
+<a name="wp932093"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp932093", false);</script>Procedure&#160;7-1   Configuring Hardware in SP&#160;Guru&#160;Transport&#160;Planner<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp932093", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp932093", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp932095"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the <b class="cBold">WDMGuru_Tutorial_Hardware_Configurator</b> project.</li></div>
+<ol type="a">
+<a name="wp932096"> </a><div class="pprocstepSub"><li>Select <b class="cBold">File &gt; Open...</b></li></div>
+<a name="wp932097"> </a><div class="pprocstepSub"><li>Select the <b class="cBold">WDMGuru_Tutorial_Hardware_Configurator</b> project, then press <b class="cBold">Open</b>.</li></div>
+<a name="wp933442"> </a><p class="pIndentedRelative">
+The example project loads, and scenario <b class="cBold">scenario1 </b>appears in the workspace.
+</p>
+</ol>
+<a name="wp932098"> </a><div style="text-align: left" class="pSmartList2Test"><li>Groom a SONET traffic matrix.</li></div>
+<ol type="a">
+<a name="wp932099"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Design &gt; Groom DCL to OCH Traffic &gt; Fixed Routes...</b></li></div>
+<a name="wp932100"> </a><div class="pprocstepSub"><li>Select the DCL traffic matrix <b class="cBold">DCL_0</b>.</li></div>
+<a name="wp933458"> </a><div class="pprocstepSub"><li>Select <b class="cBold">OC-48</b> as the bit rate for the OCH traffic matrix and <b class="cBold">Hop Count </b>as routing cost. Put a checkmark next to <b class="cBold">Optimize</b>, <b class="cBold">1+1 Protection in DCL</b>, <b class="cBold">Client Protection</b> and <b class="cBold">Node Disjoint</b>.</li></div>
+<a name="wp932584"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-01.jpg" height="336" width="471" id="wp932591" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932102"> </a><div class="pprocstepSub"><li>Press <b class="cBold">Groom</b>.</li></div>
+<a name="wp933461"> </a><p class="pIndentedRelative">
+The <b class="cBold">Grooming Optimization Progress </b>dialog box appears.
+</p>
+<a name="wp933480"> </a><div class="pprocstepSub"><li>When the status is <b class="cBold">Finished</b>, close this dialog box.</li></div>
+<a name="wp935082"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Groom DCL to OCH Traffic - Fixed Routes</b> dialog box.</li></div>
+<a name="wp935109"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-02.jpg" height="336" width="471" id="wp935107" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp934115"> </a><div class="pprocstepSub"><li>The SONET traffic matrix <b class="cBold">DCL_0</b> and the wavelength traffic matrix <b class="cBold">OCH_DCL_0_Grooming</b> (created by the grooming algorithm) are both entirely accommodated in the network. You can verify this in the DCL and OCH layer view (use he <b class="cBold">DCL</b> and <b class="cBold">OCH</b> toolbar buttons).</li></div>
+<a name="wp933856"> </a><p class="pIndentedRelative">
+After you complete the initial network design, you can assign the appropriate set of hardware for this design using the Hardware Configurator.
+</p>
+</ol>
+<a name="wp932106"> </a><div style="text-align: left" class="pSmartList2Test"><li>Import the hardware library.</li></div>
+<ol type="a">
+<a name="wp932107"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Hardware &gt; Import Hardware Library...</b> This dialog box allows specifying the files that contain the device and card equipment.</li></div>
+<a name="wp932108"> </a><div class="pprocstepSub"><li>Select <b class="cBold">...</b> in the <b class="cBold">Devices</b> table to import a device file. Browse for the file <b class="cBold">devices_tutorial.csv</b> in the example directory.</li></div>
+<a name="wp932109"> </a><div class="pprocstepSub"><li>Select <b class="cBold">...</b> in the <b class="cBold">Cards</b> table to import a card file. Browse for the file <b class="cBold">cards_tutorial.csv</b> in the example directory.</li></div>
+<a name="wp932110"> </a><div class="pprocstepSub"><li>Press <b class="cBold">OK</b> to import the equipment files and to add the devices and cards specified in the files to the equipment database.</li></div>
+<a name="wp932618"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-03.jpg" height="254" width="472" id="wp932627" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ol>
+<a name="wp933873"> </a><div style="text-align: left" class="pSmartList2Test"><li>Browse the equipment files.</li></div>
+<ol type="a">
+<a name="wp933874"> </a><div class="pprocstepSub"><li>From a spreadsheet program or text editor, open the example file <b class="cBold">devices_tutorial.csv</b>.</li></div>
+<a name="wp934130"> </a><p class="pIndentedRelative">
+This file contains specifications for the different equipment types supported in SP&#160;Guru&#160;Transport&#160;Planner.
+</p>
+<a name="wp934131"> </a><p class="pIndentedRelative">
+The first three columns in the device file (<b class="cBold">Vendor</b>, <b class="cBold">Family</b>, and <b class="cBold">Model</b>) define a unique device. The Cost column contains the base cost of the device. Note that the first device (dxc1) has 2 base costs (separated by a +), implying this device is upgradeable. It has an initial cost of 500 and a cost of 850 after the upgrade.
+</p>
+<a name="wp934132"> </a><p class="pIndentedRelative">
+The <b class="cBold">WDMG:Type</b> column specifies the SP&#160;Guru&#160;Transport&#160;Planner equipment type(s) supported by the device. The <b class="cBold">WDMG:LS</b> column defines the corresponding line system in SP&#160;Guru&#160;Transport&#160;Planner and the <b class="cBold">WDMG:Bit Rate</b> column specifies the aggregation bit rate for some devices.
+</p>
+<a name="wp934133"> </a><p class="pIndentedRelative">
+The last columns define the slot types supported by a device. The cards fitting into a certain slot are specified in the card file, by referring to the name of the slot type. A device contains a number of slots of a particular type. The upgradeable device dxc1 has an initial number of 16 and 32 after the upgrade.
+</p>
+<a name="wp932635"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-04.jpg" height="141" width="699" id="wp932642" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932119"> </a><div class="pprocstepSub"><li>Open the example file <b class="cBold">cards_tutorial.csv</b>. This file determines which cards fits in which slot type.</li></div>
+<div class="pSmartList3"><ul class="pSmartList3">
+<a name="wp932120"> </a><div class="pSmartList3"><li>The first two columns in the card file (<b class="cBold">Vendor</b> and <b class="cBold">Model</b>) define a unique card. The <b class="cBold">Cost</b> column contains the cost of a card.</li></div>
+<a name="wp932121"> </a><div class="pSmartList3"><li>The <b class="cBold">Fits In</b> column relates the cards to the devices: it specifies which card fits in a particular slot type. The <b class="cBold">Slots Taken</b> determines the number of slots taken by the card.</li></div>
+<a name="wp932122"> </a><div class="pSmartList3"><li>The last columns define the client interfaces supported by the card.</li></div>
+<a name="wp932650"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-05.jpg" height="224" width="472" id="wp932657" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ul></div>
+</ol>
+<a name="wp932124"> </a><div style="text-align: left" class="pSmartList2Test"><li>Manage the hardware library.</li></div>
+<ol type="a">
+<a name="wp932125"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Hardware &gt; Manage Hardware Library...</b> In this dialog box, the devices and cards in the equipment database can be verified per SP&#160;Guru&#160;Transport&#160;Planner equipment type.</li></div>
+<a name="wp932126"> </a><div class="pprocstepSub"><li>Select <b class="cBold">DXC</b> (Type). All DXC devices and cards and their cost are shown. The <b class="cBold">Consider for design</b> column indicates whether the device or card can be used for the next configuration run. Left clicking on <b class="cBold">Yes</b> can change this setting. In this example, we are using all cards and devices for the configuration run.</li></div>
+<a name="wp932667"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-06.jpg" height="332" width="471" id="wp932674" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932128"> </a><div class="pprocstepSub"><li>Right-click on a device or card and select <b class="cBold">View Equipment Details</b> to see the detailed properties of a device or card.</li></div>
+<a name="wp933918"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Manage Hardware Library</b> dialog box.</li></div>
+</ol>
+<a name="wp932130"> </a><div style="text-align: left" class="pSmartList2Test"><li>Configure the hardware (design run 0).</li></div>
+<ol type="a">
+<a name="wp932131"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Hardware &gt; Configure Hardware...</b> This dialog box allows performing the hardware configuration for each SP&#160;Guru&#160;Transport&#160;Planner equipment type present in the network.</li></div>
+<a name="wp932132"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Best Family Network Wide</b> for each type, implying the same family for each device of a certain type in the network. Note that for SP&#160;Guru&#160;Transport&#160;Planner types that are not present in the given network the setting &quot;Not needed&quot; is fixed in the Configure column.</li></div>
+<a name="wp932133"> </a><div class="pprocstepSub"><li>Uncheck <b class="cBold">Upgrade Design</b> and choose <b class="cBold">Exhaustive search </b>to perform an exhaustive search over all equipment for a particular SP&#160;Guru&#160;Transport&#160;Planner type in the hardware library and a configuration for each possibility, and choose the most economic solution for each SP&#160;Guru&#160;Transport&#160;Planner type.</li></div>
+<a name="wp932684"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-07.jpg" height="266" width="468" id="wp932691" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932135"> </a><div class="pprocstepSub"><li>Press <b class="cBold">Configure</b>.</li></div>
+<a name="wp933537"> </a><p class="pIndentedRelative">
+The <b class="cBold">Hardware Configurator Report</b> dialog box appears to show the results of the hardware configuration algorithm; note that a valid configuration has been found for all equipment in the network.
+</p>
+<a name="wp932709"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-08.jpg" height="148" width="470" id="wp932716" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932138"> </a><div class="pprocstepSub"><li>Close the dialog box.</li></div>
+</ol>
+<a name="wp933552"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the installed hardware (design run 0).</li></div>
+<ol type="a">
+<a name="wp932139"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Hardware &gt; Open Hardware Browser</b>. The <b class="cBold">Hardware Browser</b> dialog box gives an overview of all the installed hardware in the network.</li></div>
+<a name="wp932140"> </a><div class="pprocstepSub"><li>Select<b class="cBold"> By Node</b> to inspect the installed equipment per node.</li></div>
+<a name="wp932141"> </a><div class="pprocstepSub"><li>Select <b class="cBold">node_06</b>. This node contains one patch panel device and one DXC device. The patch panel (type pp) contains 16 cards resulting in 16 used slots (out of the 64 available). On the DXC (of type dxc1) six of the 16 slots are in use.</li></div>
+<a name="wp932142"> </a><div class="pprocstepSub"><li>Click on the <b class="cBold">+</b> icon next to a device to see the cards on the device. The DXC in node_06 contains six cards: two 2.5 Gbps (quad) DXC cards (for the trunk ports), three 155 Mbps (hex) cards and one 155 Mbps (quad) card (both for the tributary ports). Note that instead of installing a fourth 155 Mbps (hex) card, the algorithm has chosen for the cheaper 155 Mbps (quad) card.</li></div>
+<a name="wp932143"> </a><div class="pprocstepSub"><li>Click on <b class="cBold">+</b> left of a card to inspect the ports on the card: two ports on the 155 Mbps (quad) card are in use (with STS-3 as interface).</li></div>
+<a name="wp932729"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-09.jpg" height="319" width="472" id="wp932737" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932146"> </a><div class="pprocstepSub"><li>Select<b class="cBold"> By Link</b>. This shows the installed equipment per link. Select the link <b class="cBold">node_06 &lt;-&gt; node_05</b>; two WDM terminal multiplexers, six optical amplifiers and one regenerator are installed on this link. The total cost of the equipment on this link is 7600.</li></div>
+<a name="wp932754"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-10.jpg" height="381" width="472" id="wp932761" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932148"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Hardware Browser</b>.</li></div>
+</ol>
+<a name="wp932150"> </a><div style="text-align: left" class="pSmartList2Test"><li>Generate the hardware web report (design run 0).</li></div>
+<ol type="a">
+<a name="wp932151"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Hardware &gt; Generate Web Report...</b></li></div>
+<a name="wp932152"> </a><p class="pIndentedRelative">
+The web browser is launched and the hardware configurator web report appears.
+</p>
+<a name="wp933597"> </a><p class="pIndentedRelative">
+This report gives an overview of the installed hardware in the network.
+</p>
+<a name="wp932153"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Summary</b>. This table gives an overview of all installed hardware per SP&#160;Guru&#160;Transport&#160;Planner equipment type.</li></div>
+<a name="wp932771"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-11.jpg" height="229" width="469" id="wp932778" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932155"> </a><div class="pprocstepSub"><li>Click on <b class="cBold">DXC</b> in the Summary table.</li></div>
+<a name="wp933601"> </a><p class="pIndentedRelative">
+A new table appears with information about all DXC devices installed in the network.
+</p>
+<a name="wp932790"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-12.jpg" height="133" width="700" id="wp932797" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932157"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Summary By Node</b> to get an overview table of the hardware installed in the nodes.</li></div>
+<a name="wp932803"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-13.jpg" height="187" width="471" id="wp932811" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932159"> </a><div class="pprocstepSub"><li>Click on <b class="cBold">node_06</b> in the Summary By Node table: an overview of all devices installed in node_06 is displayed.</li></div>
+<a name="wp932824"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-14.jpg" height="87" width="470" id="wp932833" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932161"> </a><div class="pprocstepSub"><li>Select <b class="cBold">DXC</b> in the node_06 table. This table lists the DXC devices and cards in the node.</li></div>
+<a name="wp932847"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-15.jpg" height="74" width="525" id="wp932855" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932163"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Summary By Link </b>to inspect the hardware installed on the links.</li></div>
+<a name="wp932863"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-16.jpg" height="229" width="472" id="wp932870" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932165"> </a><div class="pprocstepSub"><li>Click on <b class="cBold">node_06 &lt;-&gt; node_02 </b>in the Summary By Link table to get an overview of all devices installed on the link between node_06 and node_02 is given.</li></div>
+<a name="wp932878"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-17.jpg" height="109" width="471" id="wp932886" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932167"> </a><div class="pprocstepSub"><li>Select <b class="cBold">OA</b> in the <b class="cBold">node_06 &lt;-&gt; node_02</b> table. A table listing all optical amplifier devices and cards installed on the link is displayed.</li></div>
+<a name="wp932892"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-18.jpg" height="87" width="699" id="wp932899" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932170"> </a><div class="pprocstepSub"><li>Close the hardware web report.</li></div>
+</ol>
+<a name="wp934237"> </a><div style="text-align: left" class="pSmartList2Test"><li>Route an OCH traffic matrix.</li></div>
+<ol type="a">
+<a name="wp932171"> </a><div class="pprocstepSub"><li>Select the <b class="cBold">Design &gt; Route DCL/OCH Traffic...</b> dialog box.</li></div>
+<a name="wp932172"> </a><div class="pprocstepSub"><li>Select the <b class="cBold">OCH Layer </b>and the traffic matrix <b class="cBold">OCH_0</b>. </li></div>
+<a name="wp933614"> </a><div class="pprocstepSub"><li>Choose <b class="cBold">Protected</b> (Protection) and <b class="cBold">OTS Link Disjoint</b>. Put a checkmark next to <b class="cBold">Node Disjoint </b>and <b class="cBold">Client Protection</b>. Select <b class="cBold">Sequential</b> (Routing Algorithm), <b class="cBold">Longest First</b> (Connection Order), <b class="cBold">Hop Count </b>(Routing Cost). Uncheck <b class="cBold">Allow Equipping Dark Bands</b> (Link Model Options), <b class="cBold">Impose Node Limitations</b>, and <b class="cBold">Constrain OCH Routing By DCL Node Size</b> (Node Model Options).</li></div>
+<a name="wp932912"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-19.jpg" height="291" width="473" id="wp932919" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932174"> </a><div class="pprocstepSub"><li>Press <b class="cBold">Route</b>.</li></div>
+<a name="wp933797"> </a><p class="pIndentedRelative">
+The <b class="cBold">Routing Results</b> dialog box indicates that only 26&#160;percent of the traffic matrix is accommodated in the network. Note that the bit rate of this traffic matrix is OC-192 (i.e. 10 Gb/s). This can be checked in the <b class="cBold">Network&#160;&gt; Traffic Matrix Editor</b> dialog box.
+</p>
+<a name="wp932925"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-20.jpg" height="265" width="456" id="wp932939" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932176"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Routing Results</b> and the <b class="cBold">Route DCL/OCH Traffic</b> dialog boxes.</li></div>
+</ol>
+<a name="wp932178"> </a><div style="text-align: left" class="pSmartList2Test"><li>Configure the hardware (design run 1).</li></div>
+<ol type="a">
+<a name="wp932179"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Hardware &gt; Configure Hardware...</b></li></div>
+<a name="wp932180"> </a><div class="pprocstepSub"><li>Check <b class="cBold">Upgrade Design.</b> This implies that the configuration algorithm starts from the present configuration (no present devices are removed) and only adds new devices and cards if needed. Note that the newly added devices and cards are marked with design run number 1, while those that were already present are marked with design run number 0.</li></div>
+<a name="wp933945"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>When a design is upgraded, only the devices of the current family are upgraded or added&#8212;no new equipment family is added. That is why the <b class="cBold">Configure</b> column is fixed to <b class="cBold">Best Family per Node</b>.
+</p>
+<a name="wp932959"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-21.jpg" height="291" width="472" id="wp932966" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932182"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Exhaustive Search</b> and click on <b class="cBold">Configure</b>.</li></div>
+<a name="wp933632"> </a><p class="pIndentedRelative">
+The <b class="cBold">Hardware Configurator Report</b> dialog box shows that a valid configuration has been found for all equipment in the network.
+</p>
+<a name="wp932974"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-22.jpg" height="140" width="474" id="wp932982" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp933638"> </a><div class="pprocstepSub"><li>Close this dialog box.</li></div>
+</ol>
+<a name="wp933644"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the installed hardware (design run 1).</li></div>
+<ol type="a">
+<a name="wp932185"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Hardware &gt; Open Hardware Browser</b>.</li></div>
+<a name="wp932186"> </a><div class="pprocstepSub"><li>Select<b class="cBold"> By Node</b> and <b class="cBold">node_06</b>.</li></div>
+<a name="wp933651"> </a><p class="pIndentedRelative">
+The patch panel device and the DXC device were already installed during the previous design run. After design run 0, the number of available slots on the DXC was 16, but now the number of slots is 32. The DXC of type dxc1 is an upgradeable device and it has been upgraded to host all the needed cards.
+</p>
+<a name="wp933661"> </a><p class="pIndentedRelative">
+The DXC now contains 14 cards. Six of the cards were installed during the previous design run (0), and eight 10 Gbps (single) cards were added during the current design run (1). Note that the interfaces on the latter cards are OC-192 interfaces, which is the bit rate of the traffic matrix OCH_0.
+</p>
+<a name="wp932999"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-23.jpg" height="383" width="468" id="wp933007" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp934285"> </a><div class="pprocstepSub"><li>Click on the <b class="cBold">Show by Design Run...</b> button to customize the view of the Hardware Browser so it shows only the hardware included up to a specified design run or of one specific design run.</li></div>
+<a name="wp934292"> </a><div class="pprocstepSub"><li>Close the hardware browser.</li></div>
+</ol>
+<a name="wp934287"> </a><div style="text-align: left" class="pSmartList2Test"><li>Examine the upgrade history.</li></div>
+<ol type="a">
+<a name="wp932190"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Hardware &gt; Show Upgrade History</b>. These dialog boxes show the cost of installed equipment per design run.</li></div>
+<a name="wp932191"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Equipment Types</b> in the lower left corner of the tabular dialog box. The total cost of the equipment is displayed per design run. Note that only a smaller part of the equipment has been added during the last design run.</li></div>
+<a name="wp933021"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-24.jpg" height="217" width="513" id="wp933028" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932193"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Device Types</b> to verify the cost of the devices per design run. Only OXC and TM devices have been added during the last design run.</li></div>
+<a name="wp933036"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-25.jpg" height="241" width="516" id="wp933043" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932249"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Card Types</b>. The cost of the cards per design run is displayed. Because the traffic matrix OCH_0 has bit rate OC-192, all added cards during the last design run are 10 Gbps cards.</li></div>
+<a name="wp933053"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-8-1-26.jpg" height="240" width="514" id="wp933060" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp934318"> </a><div class="pprocstepSub"><li>Close the dialog boxes.</li></div>
+</ol>
+<a name="wp934320"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the project</li></div>
+<ol type="a">
+<a name="wp934321"> </a><div class="pprocstepSub"><li>Select<b class="cBold"> File &gt; Close.</b></li></div>
+<a name="wp934338"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Don&#39;t Save</b> in the Close Confirm dialog.</li></div>
+</ol>
+</ol></div>
+<a name="wp932388"> </a><p class="pProcEnd">
+End of Procedure 7-1
+</p>
+
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/wdmg_tut_8.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

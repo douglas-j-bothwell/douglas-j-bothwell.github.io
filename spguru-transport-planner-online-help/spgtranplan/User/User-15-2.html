@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:51" />
+    <title>Service Availability</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-15-1.html"> Failure Evaluation</a> > <a href="User-15-2.html">Service Availability</a> > Evaluating Service Availability: Workflow Description</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp282506"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Service Availability
+</h2>
+
+ 
+
+
+<a name="wp282507"> </a><p class="pBody">
+You can use the Evaluate Availability operation to simulate link and node device failures. Given a set of routed connections and failure element, SP&#160;Guru&#160;Transport&#160;Planner calculates the expected availability (per capacity unit) and loss of traffic over the course of a year for each connection in the selected set.
+</p>
+<a name="wp292601"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>SP&#160;Guru&#160;Transport&#160;Planner can calculate the availability of OCH, DCL, and LOP connections.
+</p>
+
+<a name="wp282513"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Evaluating Service Availability: Workflow Description
+</h2>
+
+ 
+
+<a name="wp292642"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('wdm_user', 'User-15-2.html#wp282514');" onMouseOver="WWHShowPopup('wdm_user', 'User-15-2.html#wp282514', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;14-1</u></a> describes how to run an Evaluate Availability operation.
+</p>
+<a name="wp282514"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp282514", false);</script>Procedure&#160;14-1   Evaluating Service Availability<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp282514", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp282514", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp293270"> </a><div style="text-align: left" class="pSmartList2Test"><li>Before you evaluate availability, you must specify the failure probabilities of all equipment in the network. You do this in the Availability Settings dialog box (Network&#160;&gt; Availability&#160;Settings) or by clicking the Availability Settings button in the Info&#160;&gt; Evaluate&#160;Availability dialog box. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-25.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-25.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Availability Settings</u></a>.</li></div>
+<a name="wp282521"> </a><div style="text-align: left" class="pSmartList2Test"><li>Choose Info&#160;&gt; Evaluate&#160;Availability to open the Evaluate Availability dialog box. (shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-15-3.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-15-3.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Evaluate Availability Dialog Box</u></a>).</li></div>
+<a name="wp282523"> </a><div style="text-align: left" class="pSmartList2Test"><li>Select the Analysis Method. SP&#160;Guru&#160;Transport&#160;Planner can evaluate the service availability in an analytical way or by failure simulation. In the latter method, different failure scenarios (combining the selected failure elements) are simulated to inspect their impact on the selected traffic. </li></div>
+<a name="wp301635"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>The analytical method does not give exact results for traffic accommodated in the network with shared path protection or with restoration. In that case, the traffic is treated as unprotected traffic. This implies that the calculated value for the availability is a lower bound for the exact value.
+</p>
+<a name="wp301631"> </a><div style="text-align: left" class="pSmartList2Test"><li>Specify the Simulation Options. If you have selected the simulation method, some extra parameters must be set:</li></div>
+<div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp301640"> </a><div class="pSmartList2"><li>Maximum Number of Simultaneous Failures&#8212;This parameter is used to limit the number of failure scenarios considered by the simulation method. For example, if this number is two, only failure scenarios with zero, single, and double failures are simulated to calculate the availability of the traffic. Thus, the higher this number is set, the more precise the calculated value for the availability will be. However, a higher number also increases the calculation time.</li></div>
+<a name="wp301644"> </a><div class="pSmartList2"><li>Maximum Number of Simultaneous Failures to Restore for Shared Path Protection&#8212;This parameter is used to limit the number of failure scenarios in which shared path protection is considered. For example, if this number is set to two, the connection accommodated in the network with shared path protection are assumed to be unprotected in the failure scenarios with more than two simultaneous failures.</li></div>
+<a name="wp301653"> </a><div class="pSmartList2"><li>Maximum Number of Simultaneous Failures to Restore for Link or Path Restoration&#8212;This parameter is used analogously to the previous parameter. This parameter is used to limit the number of failure scenarios in which link or path restoration is considered.</li></div>
+<a name="wp301654"> </a><div class="pSmartList2"><li>Connection Order For Restoration &#8212;This parameter is used in case link or path restoration or shared path protection is applied in the network. This parameter prioritizes one connection above the other to use the protection capacity available in the network. Consider this example:</li></div>
+<a name="wp301651"> </a><p class="pFigCaption">
+Figure&#160;14-1   Connection Order for Restoration Example
+</p>
+<a name="wp301663"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-15-2-01.jpg" height="196" width="503" id="wp301664" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp301639"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+In this example, two connections are accommodated with shared path protection in the network: a connection between node A and B and a connection between node E and D. Both protection paths are routed along the link between nodes F and C (marked in red in the figure above). The protection capacity on the link between C and F is shared among both connections. However, if the link between A and B and the link between E and D both fail, there is not enough protection capacity between F and C to restore both connections. In that case, the Connection Order for Restoration parameter determines which connection is restored. For example, assume the distance between A and B is higher than the distance between E and D. If the sorting order parameter is set to &quot;Longest First,&quot; the connection between A and B is restored, while the connection between E and D cannot be restored and is failing. However, if the sorting order is set to &quot;Shortest First,&quot; the connection between E and D is restored and the other connection fails.
+</p>
+</ul></div>
+<a name="wp301801"> </a><div style="text-align: left" class="pSmartList2Test"><li>Select the connections for which you want to calculate the availability in the Traffic To Analyze section. Only connections accommodated in the network are selectable.</li></div>
+<a name="wp301802"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>The connections part of an OCH or DCL traffic matrix that has been created by the grooming algorithm are not displayed in the Traffic To Analyze connection list.
+</p>
+<a name="wp301803"> </a><div style="text-align: left" class="pSmartList2Test"><li>Select failure elements in the Failure Elements To Analyze section. Only the selected failure elements are taken into account while calculating the availability. SP&#160;Guru&#160;Transport&#160;Planner supports the following failure elements.</li></div>
+<div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp301804"> </a><div class="pSmartList2"><li>Cable Failures&#8212;Each OTS link in the network is displayed in this list. If a cable fails, traffic can no longer traverse this cable.</li></div>
+<a name="wp301863"> </a><div class="pSmartList2"><li>OTS Node Failures&#8212;Each OTS node in the network is displayed in this list. If an OTS node fails, each switching device in this node fails. This implies that no traffic can be switched, added or dropped in each switching device present in this node (e.g. OXC, patch panel, DXC, TMs,...).</li></div>
+<a name="wp301868"> </a><div class="pSmartList2"><li>OXC Failures&#8212;Each OXC present in the network is displayed in the list. If an OXC fails, it is no longer possible to switch, add or drop traffic in that OXC. Note that each node can contain one OXC at most.</li></div>
+<a name="wp301873"> </a><div class="pSmartList2"><li>OADM Failures&#8212;Each OADM present in the network is displayed in the list. If an OADM fails, it is no longer possible to switch, add or drop traffic in this OADM. Note that a node can contain more than one OADM. An OADM is defined by its node name and the name of its incoming fiber(s).</li></div>
+<a name="wp301876"> </a><div class="pSmartList2"><li>Patch Panel Failures&#8212;The list displays each patch panel present in the network. If a patch panel fails, it is no longer possible to switch, add or drop traffic in this patch panel. Note that each node can contain one patch panel at most.</li></div>
+<a name="wp301883"> </a><div class="pSmartList2"><li>IXC Failures&#8212;This list displays each IXC present in the network. If an IXC fails, it is no longer possible to switch, add or drop traffic in this IXC. Note that each node can contain one IXC at most.</li></div>
+<a name="wp301886"> </a><div class="pSmartList2"><li>DXC Failures&#8212;Each DXC present in the network is displayed in this list. If a DXC fails, it is no longer possible to switch, add or drop traffic in this DXC. Note that each node can contain one DXC at most.</li></div>
+<a name="wp301889"> </a><div class="pSmartList2"><li>ADM Failures&#8212;Each ADM present in the network is shown in this list. If an ADM fails, traffic can no longer be added or dropped at this ADM. A node can contain more than one ADM. Each ADM is defined by its node and its ring name.</li></div>
+<a name="wp301892"> </a><div class="pSmartList2"><li>SDH TM Failures&#8212;This list shows every SDH TM present in the network. If an SDH TM fails, DCL traffic can no longer be added or dropped at this TM. A node can contain more than one SDH TM. Each SDH TM is defined by its node name and the name of the incoming DCL trunk.</li></div>
+<a name="wp301911"> </a><div class="pSmartList2"><li>LOP TM Failures&#8212;This list shows every LOP TM present in the network. If a LOP TM fails, LOP traffic can no longer be added or dropped at this LOP TM. A node can contain more than one LOP TM. Each LOP TM is defined by its node name and the name of its incoming DCL connection.</li></div>
+<a name="wp301914"> </a><div class="pSmartList2"><li>In-line Regenerator Failures&#8212;If an in-line regenerator fails, traffic can no longer traverse the fibre attached to the in-line regenerator. Note that a fibre can contain more than one regenerator. However, one in-line regenerator failure is displayed per fibre in the In-line Regenerator Failures list. The availability of such failure equals: (availability of one in-line regenerator)<sup class="cSuperscript">n</sup> (where <em class="cEmphasis">n</em> = number of in-line regenerators on the fibre).</li></div>
+<a name="wp301929"> </a><div class="pSmartList2"><li>Optical Amplifier Failures&#8212;If an optical amplifier fails, traffic can no longer traverse the fibre attached to the optical amplifier. Note that a fibre can contain more than one optical amplifier. However, one optical amplifier failure is displayed per fibre in the Optical Amplifier Failures list. The availability of such failure equals: (availability of one optical amplifier)<sup class="cSuperscript">n</sup> (where <em class="cEmphasis">n</em> = number of optical amplifiers on the fibre).</li></div>
+<a name="wp301932"> </a><div class="pSmartList2"><li>Transponder Failures&#8212;If an LR transponder fails, each OCH connection path using this transponder fails. The LR transponders are displayed per OCH node and per path of an OCH connection. Note that the OCH connection can drop or add in the node, or can traverse the node. In the latter case, the path traverses two LR transponders. Therefore, the availability of such failure equals: (availability of one LR transponder)<sup class="cSuperscript">2</sup>. In case of 1+1 protection, the number of transponders in an end node of a connection depends on the client protection option. If the connection is client protected, there are two LR (regular) transponders in each of its end nodes: one for the working path and one for the protecting path. However, in case of non-client 1+1 protection, only one LR (protection) transponder is present in each end node. If such a transponder fails, the working and the protecting path of the connection are failing (implying the connection fails).</li></div>
+</ul></div>
+<a name="wp301957"> </a><div style="text-align: left" class="pSmartList2Test"><li>After you have specified the analysis method, the simulation options (if applicable), the traffic and failure elements to analyze, click Evaluate. </li></div>
+<a name="wp301961"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+SP&#160;Guru&#160;Transport&#160;Planner evaluates your network and displays the results in the Availability Analysis report. This web report pops up automatically once the availability calculation has been finished.
+</p>
+</ol></div>
+<a name="wp297858"> </a><p class="pProcEnd">
+End of Procedure 14-1
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp297859"> </a><h6 class="pHeading6">
+
+</h6>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_43_fe.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

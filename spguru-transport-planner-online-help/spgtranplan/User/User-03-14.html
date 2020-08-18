@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:33:27" />
+    <title>Protection Methods in Ring Networks</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-03-01.html"> Concepts and Models</a> > <a href="User-03-14.html">Protection Methods in Ring Networks</a> > Bidirectional Line Switched Ring (BLSR)</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp80785"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Protection Methods in Ring Networks
+</h2>
+
+ 
+
+
+<a name="wp113628"> </a><p class="pBody">
+SP&#160;Guru&#160;Transport&#160;Planner supports two protection methods in ring architectures:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp150995"> </a><div class="pSmartList1"><li>UPSRs (<a href="javascript:WWHClickedPopup('wdm_user', 'User-03-14.html#wp80803');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-14.html#wp80803', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Unidirectional Path Switched Ring (UPSR)</u></a></li></div>
+<a name="wp150689"> </a><div class="pSmartList1"><li>BLSRs (<a href="javascript:WWHClickedPopup('wdm_user', 'User-03-14.html#wp45294');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-14.html#wp45294', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Bidirectional Line Switched Ring (BLSR)</u></a>)</li></div>
+</ul></div>
+<a name="wp80803"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Unidirectional Path Switched Ring (UPSR)
+</h2>
+
+ 
+
+<a name="wp80849"> </a><p class="pBody">
+The UPSR consists of two corresponding rings (a working and a protection ring) that transfer data in opposite directions. This configuration ensures that each connection on the working ring can be protected along the reverse side on the protection ring. Because a protected bi-directional connection is thus routed on both sides of the ring, it uses up an entire capacity slot along the ring. This capacity cannot be shared by any other connection. The capacity requirements of the ring equal the total amount of traffic to be protected on the UPSR.
+</p>
+<a name="wp114299"> </a><p class="pBody">
+The ADMs within the ring nodes perform protection switching: the transmitting ADM duplicates the traffic, and single-ended switching occurs at the receiving ADM.
+</p>
+<a name="wp114305"> </a><p class="pBody">
+<a href="javascript:WWHClickedPopup('wdm_user', 'User-03-14.html#wp81205');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-14.html#wp81205', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;2-11</u></a> shows the concept of a UPSR before and after a link failure. The working fiber is drawn in white, the protection fiber appears in gray. Both working paths (solid lines) of the bidirectional demand are routed along different sides of the ring. The protection paths (dashed lines) are transmitted on the reverse side. One fiber has working traffic only; the reverse fiber has protection traffic only. Thus the link failure affects the working path in a single direction and causes a switchover to the protection path.
+</p>
+<a name="wp81205"> </a><p class="pFigCaption">
+Figure&#160;2-11   UPSR Before and After Link Failure
+</p>
+<a name="wp81208"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-14-11.jpg" height="384" width="530" id="wp81207" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp45294"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Bidirectional Line Switched Ring (BLSR)
+</h2>
+
+ 
+
+<a name="wp81405"> </a><p class="pBody">
+A BLSR ensures that multiple connections can share the ring capacity. Both directions of a bidirectional connection can be routed on one side of the ring; as a result, multiple non-overlapping connections can reuse capacity on the other side. If multiple connections share the same ring capacity, a single failure affects one connection only (in both directions); this means that protection bandwidth can be shared among multiple connections. 
+</p>
+<a name="wp81520"> </a><p class="pBody">
+A particular node failure might affect two connections that share the same ring capacity; these connections cannot recover from the node failure anyway, since both connections terminate in that node. 
+</p>
+<a name="wp81696"> </a><p class="pBody">
+The shared protection ring can be implemented using either two or four fibers. The two-fiber implementation (2F-BLSR) uses two fiber rings that transfer data in opposite directions. Half of the capacity on each fiber is reserved for protection capacity. Thus working connections in one fiber can be protected using the protection capacity in the other fiber. Both directions of a bi-directional connection are routed in different fibers on the same side of the ring (see <a href="javascript:WWHClickedPopup('wdm_user', 'User-03-14.html#wp81605');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-14.html#wp81605', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;2-12-2F-BLSR Before and After Failures</u></a>). The same ring protection capacity can be reused for another connection between different nodes. There is no dedicated protection connection; instead, different connections can access a pool of spare capacity. If a failure occurs at the multiplex section level, ADMs near the failure will use the ring&#39;s protection capacity to simultaneously loop back all the affected connections (see <a href="javascript:WWHClickedPopup('wdm_user', 'User-03-14.html#wp81605');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-14.html#wp81605', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;2-12</u></a>). An Automatic Protection Switching (APS) protocol is required to coordinate the switching and the shared use of protection capacity (to prevent the loopback from getting initiated after a second failure).
+</p>
+<a name="wp81407"> </a><p class="pBody">
+In the four-fiber implementation (4F-BLSR), two fibers are used (one in each direction) for working traffic and two fibers are reserved for protection capacity. Therefore the 4F-BLSR has twice the capacity of a 2F-BLSR. The four-fiber arrangement combines both ring protection and span protection on the same architecture. Span protection implies that if a failure affects the multiplex section in the ring&#39;s working fiber only, the parallel protection fiber can be addressed by a simple span switch and no loopback occurs. This way, some types of multiple failures can be fully protected.
+</p>
+<a name="wp81605"> </a><p class="pFigCaption">
+Figure&#160;2-12   2F-BLSR Before and After Failures
+</p>
+<a name="wp81608"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-14-12.jpg" height="682" width="530" id="wp81607" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_13_co.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

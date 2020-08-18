@@ -1,0 +1,442 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:40:52" />
+    <title>Bill of Materials and Other Reports</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2">Bill of Materials and Other Reports</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp927592"> </a><h2 class="pTitle">
+Bill of Materials and Other Reports
+</h2>
+<hr />
+
+ 
+
+
+<a name="wp932096"> </a><p class="pBody">
+After performing network design tasks, SP&#160;Guru&#160;Transport&#160;Planner enables you to view related metrics and design results. Files containing more detailed results can be extracted anytime from SP&#160;Guru&#160;Transport&#160;Planner by selecting <b class="cBold">Info &gt; Export to Spreadsheet</b> or <b class="cBold">Info &gt; Export to Web&#160;Report</b>.
+</p>
+<a name="wp933983"> </a><p class="pBody">
+The next sections describe how to generate reports.
+</p>
+<a name="wp932098"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp932098", false);</script>Procedure&#160;6-1   Generating the Bill-of-Materials File<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp932098", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp932098", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp932319"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the <b class="cBold">WDMGuru_Examples</b> project.</li></div>
+<ol type="a">
+<a name="wp932320"> </a><div class="pprocstepSub"><li>Select <b class="cBold">File &gt; Open...</b>.</li></div>
+<a name="wp932321"> </a><div class="pprocstepSub"><li>Select the <b class="cBold">WDMGuru_Examples</b> project, then press <b class="cBold">Open</b>.</li></div>
+<a name="wp933548"> </a><p class="pIndentedRelative">
+The example project, which contains multiple scenarios, is loaded. The Australia scenario appears in the workspace.
+</p>
+</ol>
+<a name="wp934786"> </a><div style="text-align: left" class="pSmartList2Test"><li>Switch to the USA scenario</li></div>
+<ol type="a">
+<a name="wp934787"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Scenarios &gt; Switch To Scenario &gt; USA</b> to open the USA scenario.</li></div>
+</ol>
+<a name="wp933551"> </a><div style="text-align: left" class="pSmartList2Test"><li>Groom a SONET traffic matrix.</li></div>
+<ol type="a">
+<a name="wp932106"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Design &gt; Groom DCL to OCH Traffic &gt; Fixed Routes...</b></li></div>
+<a name="wp932107"> </a><div class="pprocstepSub"><li>Select the following options:</li></div>
+<div class="pSmartList3"><ul class="pSmartList3">
+<a name="wp933569"> </a><div class="pSmartList3"><li>Traffic matrix <b class="cBold">STS-1</b></li></div>
+<a name="wp935969"> </a><div class="pSmartList3"><li>Bit Rate of OCH Traffic Matrix is <b class="cBold">OC-48</b></li></div>
+<a name="wp933582"> </a><div class="pSmartList3"><li><b class="cBold">Hop Count </b>as routing cost</li></div>
+<a name="wp935527"> </a><div class="pSmartList3"><li>Check <b class="cBold">Optimize</b></li></div>
+<a name="wp933588"> </a><div class="pSmartList3"><li>Check <b class="cBold">1+1 Protection</b></li></div>
+<a name="wp933589"> </a><div class="pSmartList3"><li>Leave <b class="cBold">Client Protection </b>and<b class="cBold"> Node Disjoint </b>unchecked</li></div>
+<a name="wp933594"> </a><p class="pIndentedRelative">
+The traffic matrix will be groomed with 1+1 protection in the DCL layer.
+</p>
+</ul></div>
+<a name="wp932108"> </a><div class="pprocstepSub"><li>Press <b class="cBold">Groom</b>. </li></div>
+<a name="wp933641"> </a><p class="pIndentedRelative">
+The <b class="cBold">Grooming Optimization Progress</b> dialog box appears.
+</p>
+<a name="wp935149"> </a><p class="pIndentedRelative">
+This dialog box shows the decrease of the network cost during the optimization steps of the grooming algorithm. 
+</p>
+<a name="wp935171"> </a><div class="pprocstepSub"><li>When the status is <b class="cBold">Finished</b>, close the dialog box. </li></div>
+<a name="wp935179"> </a><p class="pIndentedRelative">
+Due to the grooming action, an OCH traffic matrix (STS_1_Grooming) has been created to create the logical DCL topology. This OCH traffic matrix and the groomed DCL traffic matrix STS-1 are both entirely accommodated in the network.
+</p>
+<a name="wp935153"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-01.jpg" height="334" width="468" id="wp935151" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp933655"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Groom DCL to OCH Traffic - Fixed Routes</b> dialog box.</li></div>
+</ol>
+<a name="wp932110"> </a><div style="text-align: left" class="pSmartList2Test"><li>Generate the bill of materials.</li></div>
+<ol type="a">
+<a name="wp932111"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Info &gt; Export to Web Report &gt; Bill of Materials</b>.</li></div>
+<a name="wp933662"> </a><p class="pIndentedRelative">
+The web browser is launched and the Bill Of Materials file appears.
+</p>
+</ol>
+<a name="wp932112"> </a><div style="text-align: left" class="pSmartList2Test"><li>Browse the <b class="cBold">Overview Cost Parameters</b> section.</li></div>
+<div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp932113"> </a><div class="pSmartList2"><li>Select <b class="cBold">Overview Cost Parameters</b> at the left side of the report. This section consists of different parts giving an overview of all equipment cost settings for the network.</li></div>
+<a name="wp932114"> </a><div class="pSmartList2"><li>The first part is the <b class="cBold">Node Fixed Cost</b> section: it gives an overview of the node types used in the network. Note that for the DXCs and IXCs only a continuous type is shown, because we use the continuous node models for these node types. For OXCs we use the discrete node model: several discrete OXC types are provided. For each type the cost is displayed and for each discrete type the number of available ports is shown.</li></div>
+<a name="wp932605"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-02.jpg" height="620" width="491" id="wp932612" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932116"> </a><div class="pSmartList2"><li>The next part is the <b class="cBold">Node Port Cost</b> section: this shows the port cost per bit rate. The first table shows the DXC, IXC, and ADM tributary port cost per DCL bit rate. The second table displays the trunk and tributary port, the terminal multiplexer, the short reach transponder and the ADM cost per OCH bit rate.</li></div>
+<a name="wp933128"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-03.jpg" height="129" width="487" id="wp933126" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932623"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-04.jpg" height="279" width="486" id="wp932635" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932119"> </a><div class="pSmartList2"><li>The <b class="cBold">Link Fixed Cost</b> table gives an overview of the generic cost parameters per cable, per fiber and per channel.</li></div>
+<a name="wp932641"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-05.jpg" height="194" width="479" id="wp932648" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932121"> </a><div class="pSmartList2"><li>The <b class="cBold">Link Fiber Cost</b> table shows the cost of a WDM terminal multiplexer, an optical amplifier and regenerator (common equipment) per line system type.</li></div>
+<a name="wp932658"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-06.jpg" height="294" width="472" id="wp932665" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932123"> </a><div class="pSmartList2"><li>The <b class="cBold">Link Channel Cost</b> table displays the cost of a WDM channel card per line system type and of a regeneration card and a long reach transponder per line system type and per OCH bit rate.</li></div>
+<a name="wp932671"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-07.jpg" height="164" width="700" id="wp932678" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932125"> </a><div class="pSmartList2"><li>The <b class="cBold">Link SDH Equipment Cost</b> table shows the cost of an SDH regenerator and SDH amplifier per OCH bit rate. </li></div>
+<a name="wp932688"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-08.jpg" height="70" width="472" id="wp932695" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ul></div>
+<a name="wp932127"> </a><div style="text-align: left" class="pSmartList2Test"><li>Browse through <b class="cBold">Overview Node Cost </b>section.</li></div>
+<ol type="a">
+<a name="wp932128"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Overview Node Cost</b>.</li></div>
+<a name="wp933806"> </a><p class="pIndentedRelative">
+This table gives an overview of the cost of the node equipment installed in the network. In this example there are DXCs and OXCs installed in the network. Also (short-reach) transponders have been installed in the nodes. In the next sections, more details are given about the installed node equipment.
+</p>
+<a name="wp932701"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-09.jpg" height="500" width="472" id="wp932708" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932130"> </a><div class="pprocstepSub"><li>Select <b class="cBold">DXC</b>.</li></div>
+<a name="wp933810"> </a><p class="pIndentedRelative">
+This table gives an overview of the used tributary ports (per DCL bit rate) and the used trunk ports (per OCH bit rate) on the DXCs in the network. Next, the installed DXC type is shown. Because we have chosen the continuous DXC model in this example, all installed DXCs are of the Continuous type. To conclude the table, the total cost per DXC is calculated.
+</p>
+<a name="wp932718"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-10.jpg" height="381" width="474" id="wp932725" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932132"> </a><div class="pprocstepSub"><li>Select <b class="cBold">OXC</b>.</li></div>
+<a name="wp933817"> </a><p class="pIndentedRelative">
+This table gives an overview of the used tributary ports and the used trunk ports (both per OCH bit rate) on the OXCs in the network. Next, the installed discrete OXC type is shown. In some nodes Type1 is installed, while in other nodes it is needed to install a bigger type&#8212;Type2. To conclude this table, the cost per OXC is calculated.
+</p>
+<a name="wp932733"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-11.jpg" height="312" width="471" id="wp932740" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932134"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Transponder</b>.</li></div>
+<a name="wp933824"> </a><p class="pIndentedRelative">
+This table gives an overview of the installed transponders in the nodes (per OCH bit rate) and their cost. Because the OCH layer mode is opaque in this example, only short-reach transponders are installed in the nodes (long-reach transponders are installed on the links at the WDM terminal multiplexers).
+</p>
+<a name="wp932135"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-12.jpg" height="124" width="472" id="wp932752" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932137"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>If there are additional types of nodes in the network (such as ADMs, IXCs, and OADMs), similar tables appear in the Bill-of-Materials for these types of nodes.
+</p>
+</ol>
+<a name="wp934126"> </a><div style="text-align: left" class="pSmartList2Test"><li>Browse through the <b class="cBold">Overview Link Cost </b>section.</li></div>
+<ol type="a">
+<a name="wp932138"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Overview Link Cost</b>.</li></div>
+<a name="wp933832"> </a><p class="pIndentedRelative">
+This table gives an overview of the cost of the link equipment installed in the network per level: cable, fiber, channel and SDH equipment. In the next sections, the installed link equipment is described more in detail.
+</p>
+<a name="wp932763"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-13.jpg" height="367" width="470" id="wp932777" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932140"> </a><div class="pprocstepSub"><li>Select <b class="cBold">WDM Terminal Equipment</b>.</li></div>
+<a name="wp933839"> </a><p class="pIndentedRelative">
+This table displays the number of equipped fibers and the number of WDM terminal multiplexers per line system type and per link. Next, it shows the available and used channels, the installed channel cards and the (long reach) transponders on each link. To conclude the table, the cost of all this equipment is calculated.
+</p>
+<a name="wp932783"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-14.jpg" height="302" width="695" id="wp932790" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932142"> </a><div class="pprocstepSub"><li>Select <b class="cBold">In-line Regeneration/Amplification</b>.</li></div>
+<a name="wp933846"> </a><p class="pIndentedRelative">
+This table shows the regeneration and optical amplification equipment installed on the links. The cost for this equipment is calculated per link.
+</p>
+<a name="wp932800"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-15.jpg" height="345" width="690" id="wp932807" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ol>
+<a name="wp932145"> </a><div style="text-align: left" class="pSmartList2Test"><li>Browse the <b class="cBold">Topology</b> section.</li></div>
+<a name="wp932146"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+This section shows the OTS (Optical Transport Section) Layer, the OMS (Optical Multiplex Section) Layer, the OCH (Optical Channel) Layer, and the DCL (Digital Client) Layer. See <a href="javascript:WWHClickedPopup('wdmg_tut', 'wdmgtut-7-1.html#wp934183');" onMouseOver="WWHShowPopup('wdmg_tut', 'wdmgtut-7-1.html#wp934183', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;6-1-Layers Shown in the Topology Section</u> </a>.
+</p>
+<a name="wp934183"> </a><p class="pFigCaption">
+Figure&#160;6-1   Layers Shown in the Topology Section
+</p>
+<a name="wp936009"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-16.jpg" height="874" width="531" id="wp936004" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp935203"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the <b class="cBold">Bill of Materials</b> report.</li></div>
+</ol></div>
+<a name="wp935211"> </a><p class="pProcEnd">
+End of Procedure 6-1
+</p>
+<a name="wp935204"> </a><p class="pBody">
+Without closing the project or scenario, perform the following procedure.
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp934294"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp934294", false);</script>Procedure&#160;6-2   Generating the Connection Resources Details File<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp934294", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp934294", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp932154"> </a><div style="text-align: left" class="pSmartList2Test"><li>Select<b class="cBold"> Info &gt; Export to Web Report &gt; Connection Resources Details &gt; By&#160;Resource&#160;Index</b>.</li></div>
+<a name="wp933775"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The web browser is launched and the <b class="cBold">Connection Resources Details</b> report appears.
+</p>
+<a name="wp932155"> </a><div style="text-align: left" class="pSmartList2Test"><li>Browse through the DCL traffic section.</li></div>
+<div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp932156"> </a><div class="pSmartList2"><li>This section gives the connection details of each of the (partly) accommodated traffic matrices in the DCL layer. In this example, only the traffic matrix STS-1 is routed in the DCL layer.</li></div>
+<a name="wp932157"> </a><div class="pSmartList2"><li>Select <b class="cBold">STS-1</b>. This section gives the details of each connection of the traffic matrix STS-1.</li></div>
+</ul></div>
+<a name="wp932485"> </a><div style="text-align: left" class="pSmartList2Test"><li>Check the routes of a DCL connection.</li></div>
+<div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp932486"> </a><div class="pSmartList2"><li>Check the working path of the connection <b class="cBold">Atlanta &lt;-&gt; Boston</b>. This connection consists of four STS-1 units. The working path starts in the DXC and the OXC at Atlanta. Next, it is routed along the link from Atlanta to Washington using the first wavelength on the first fiber on the link. In Washington it is routed to New York along the first wavelength on the first fiber. In New York it is again switched at the optical level. Next, it uses the first wavelength on the first fiber on the link between New York and Boston. In Boston it is dropped in the OXC and the DXC. Note that the connection is not switched at the electrical level between its end nodes. This means that the DCL path of the connection is a one-hop route, while the OCH path of the connection is a three-hop route. The connection uses the first to the fourth timeslot on the (logical) DCL link between Atlanta and Boston. </li></div>
+<a name="wp932160"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-17.jpg" height="98" width="489" id="wp932870" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932161"> </a><div class="pSmartList2"><li>Check the protecting path of the connection <b class="cBold">Atlanta &lt;-&gt; Boston</b>. The protecting path starts in the DXC and the OXC at Atlanta. Next, it is routed along the link from Atlanta using the first wavelength on the first fiber on the link. In Chicago the connection is dropped on the OXC and switched at the DCL layer (using the DXC). From Chicago it is routed to Detroit along the first wavelength on the first fiber. In Detroit, the connection is switched at the DCL layer (using the DXC). On the logical DCL link between Atlanta and Chicago the connection uses the first to the fourth timeslot. Also, on the logical link between Chicago and Detroit those timeslots are used. Next, the connection is dropped on the OXC in Detroit and routed along the first wavelength on the first fiber on the link between Detroit and Boston. In Boston it is dropped in the OXC and the DXC. Between Detroit and Boston the connection uses the first to the fourth timeslot on the (logical) DCL link. Note that the DCL protecting path is a three-hop path at the DCL layer because it is switched at the digital level in the intermediate nodes Chicago and Detroit. The protecting path of the connection at the OCH layer is also a three-hop route. This can be checked with the node browser (as shown in step 4).</li></div>
+<a name="wp932876"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-18.jpg" height="97" width="487" id="wp932883" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932163"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+Close the <b class="cBold">Connection Resource Details </b>report.
+</p>
+</ul></div>
+<a name="wp932165"> </a><div style="text-align: left" class="pSmartList2Test"><li>Check the routes of a DCL connection using the connection browser.</li></div>
+<ol type="a">
+<a name="wp932166"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Network &gt; Connection Browser</b>.</li></div>
+<a name="wp932167"> </a><div class="pprocstepSub"><li>Select <b class="cBold">DCL</b> (Traffic), <b class="cBold">All</b> (Layout) and <b class="cBold">Traffic Matrix</b> (Order).</li></div>
+<a name="wp933935"> </a><div class="pprocstepSub"><li>Expand the traffic matrix STS-1 (using the <b class="cBold">+</b> icon) and then expand the connection <b class="cBold">ATLANTA &lt;-&gt; BOSTON</b>. The working and protecting path of the connection in the DCL layer are shown on the workspace. As mentioned in step 3, the working path is a one-hop path at the DCL layer and the protecting path is a three-hop (through Chicago and Detroit) path.</li></div>
+<a name="wp932889"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-19.jpg" height="404" width="472" id="wp932896" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932169"> </a><div class="pprocstepSub"><li>Press the <b class="cBold">OCH</b> button on the Project Editor toolbar. The paths of the DCL connection are now shown in the OCH layer. Note that both the working path (through Washington and New York) and the protecting path (through Chicago and Detroit) are three-hop paths in the OCH layer.</li></div>
+<a name="wp932902"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-20.jpg" height="324" width="525" id="wp932909" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932171"> </a><div class="pprocstepSub"><li>Close the connection browser.</li></div>
+</ol>
+</ol></div>
+<a name="wp934320"> </a><p class="pProcEnd">
+End of Procedure 6-2
+</p>
+<a name="wp934309"> </a><p class="pBody">
+Without closing the project or scenario, do the following procedure.
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp932173"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp932173", false);</script>Procedure&#160;6-3   Generating Spreadsheet Reports<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp932173", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp932173", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp932174"> </a><div style="text-align: left" class="pSmartList2Test"><li>Select <b class="cBold">Info &gt; Export to Spreadsheet...</b></li></div>
+<a name="wp933856"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The <b class="cBold">CSV Report Generation</b> dialog box appears.
+</p>
+<a name="wp936622"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+This dialog box lets you select the reports to generate. The .csv files are written to the following directory: <em class="cEmphasis">op_reports\&lt;protect_name&gt;\&lt;scenario_name&gt;\</em>SP&#160;Guru&#160;Transport&#160;Planner Reports<em class="cEmphasis">\</em>Spreadsheets\<em class="cEmphasis">&lt;date&gt;_&lt;time&gt;.</em>
+</p>
+<a name="wp936623"> </a><div style="text-align: left" class="pSmartList2Test"><li>Select <b class="cBold">All</b>, then press <b class="cBold">OK</b> to generate the reports.</li></div>
+<a name="wp934575"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-21.jpg" height="216" width="472" id="wp934573" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp934580"> </a><div style="text-align: left" class="pSmartList2Test"><li>Browse the directory for the .csv files, then open them to view the reports, as follows.</li></div>
+<div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp932176"> </a><div class="pSmartList2"><li>The <b class="cBold">overview.csv</b> file gives an overview of the traffic matrices in the network. In case traffic matrices are accommodated in the network with shared path protection or with restoration, the restoration capacity per link is listed.</li></div>
+<a name="wp932928"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-22.jpg" height="240" width="533" id="wp932935" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932178"> </a><div class="pSmartList2"><li>The <b class="cBold">nodes.csv</b> file gives an overview of the traffic in each node in the network, both at the OCH and DCL layer.</li></div>
+<a name="wp932945"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-23.jpg" height="260" width="702" id="wp932952" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932180"> </a><div class="pSmartList2"><li>The <b class="cBold">connections.csv</b> file shows details about each connection accommodated in the OCH, DCL, and LOP layer.</li></div>
+<a name="wp932958"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-24.jpg" height="151" width="489" id="wp932965" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932182"> </a><div class="pSmartList2"><li>The <b class="cBold">links.csv</b> file displays details of all links in each layer (OTS, OMS, DCL, and LOP) of the network.</li></div>
+<a name="wp932971"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-25.jpg" height="292" width="490" id="wp932978" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932184"> </a><div class="pSmartList2"><li>The <b class="cBold">cost.csv</b> file gives an overview of the cost of the link and node equipment installed in the network.</li></div>
+<a name="wp932988"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-26.jpg" height="416" width="491" id="wp932995" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932186"> </a><div class="pSmartList2"><li>The <b class="cBold">wavelength_usage.csv</b> file gives an overview of the wavelength usage (network wide and per OCH link).</li></div>
+<a name="wp933001"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-7-1-27.jpg" height="322" width="488" id="wp933008" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932188"> </a><div class="pSmartList2"><li>The <b class="cBold">transparent_routing.csv</b> file lists detailed information specific for transparent networks. This file can only be generated while in transparent OCH layer mode.</li></div>
+<a name="wp932189"> </a><div class="pSmartList2"><li>The <b class="cBold">srlg.csv file</b> lists which resources are sharing common infrastructure in the lower layers, thus having a shared risk of failing together.</li></div>
+<a name="wp932190"> </a><div class="pSmartList2"><li>The <b class="cBold">restoration.csv</b> file lists for every link failure the affected capacity and the restoration routes for those connections that can be restored.</li></div>
+<a name="wp932191"> </a><div class="pSmartList2"><li>The <b class="cBold">bom.csv</b> file contains the same information as the bill-of-materials in .html format (see above).</li></div>
+<a name="wp932192"> </a><div class="pSmartList2"><li>The <b class="cBold">rings.csv</b> file provides an overview of all rings present at the DCL layer.</li></div>
+<a name="wp932193"> </a><div class="pSmartList2"><li>The <b class="cBold">cable_splitters.csv</b> file lists the configuration of each cable splitter in the network.</li></div>
+<a name="wp932194"> </a><div class="pSmartList2"><li>The<b class="cBold"> fiber_routes.csv</b> file lists the active fiber routes in the network.</li></div>
+<a name="wp932195"> </a><div class="pSmartList2"><li>The <b class="cBold">connection_routing_details.csv</b> file displays details about the connections accommodated in the OCH layer or the DCL layer.</li></div>
+</ul></div>
+</ol></div>
+<a name="wp935240"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>In this example, not all reports will contain information.
+</p>
+
+<a name="wp933021"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/wdmgtut-7-1-28.jpg" height="166" width="700" id="wp933028" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp932198"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the project.</li></div>
+<ol type="a">
+<a name="wp933209"> </a><div class="pprocstepSub"><li>Select <b class="cBold">File &gt; Close</b>.</li></div>
+<a name="wp933210"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Don&#39;t Save</b> in the <b class="cBold">Close Confirm</b> dialog box.</li></div>
+</ol>
+</ol></div>
+<a name="wp933211"> </a><p class="pProcEnd">
+End of Procedure 6-3
+</p>
+
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/wdmg_tut_6.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

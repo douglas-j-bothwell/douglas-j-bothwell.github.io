@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:33:27" />
+    <title>Optical Nodes: OADM</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-03-01.html"> Concepts and Models</a> > <a href="User-03-15.html">Node Modeling Capabilities in SP&#160;Guru&#160;Transport&#160;Planner</a> > Optical Nodes: OADM</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp118514"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Optical Nodes: OADM
+</h2>
+
+ 
+
+<a name="wp118517"> </a><p class="pBody">
+An Optical Add/Drop Multiplexer (OADM) is a type of node equipment that connects two fiber pairs (using the same WDM line system) and allows traffic to pass-through or add/drop between both fiber pairs. You can define OADMs for each line system in the WDM Link Equipment dialog box (Network&#160;&gt;&#160;Equipment&#160;Properties&#160;&gt;&#160;WDM&#160;Link&#160;Equipment).
+</p>
+<a name="wp118521"> </a><p class="pBody">
+SP&#160;Guru&#160;Transport&#160;Planner can model OADMs two ways: it can define nodes as complete OADM nodes and it can specify selective OADMs between two fiber pairs.
+</p>
+<a name="wp118524"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Complete OADM Node
+</h3>
+<a name="wp118528"> </a><p class="pBody">
+SP&#160;Guru&#160;Transport&#160;Planner supports OADM nodes in both opaque and transparent mode, but only in nodes of degree 2 or lower. In this case, the node contains OADM equipment only. The number and type of OADMs in the node depends on the line systems used on the fibers that terminate at the node. Each fiber terminates at an OADM of the same line system. If two terminating fibers use the same line system, the same OADM is reused as shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-03-21.html#wp118533');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-21.html#wp118533', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;2-24</u></a>.
+</p>
+<a name="wp118533"> </a><p class="pFigCaption">
+Figure&#160;2-24   OADM Node
+</p>
+<a name="wp118537"> </a><p class="pBodyRelative">
+</p>
+<div><img src="images/User-03-21-24.jpg" height="134" width="530" id="wp118535" border="0" hspace="0" vspace="-2"/></div><p class="pBodyRelative">
+
+</p>
+<a name="wp118539"> </a><h3 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading3">
+Selective OADMs Between Two Fiber Pairs
+</h3>
+<a name="wp118543"> </a><p class="pBody">
+SP&#160;Guru&#160;Transport&#160;Planner supports selective OADMs in nodes of any degree, but in transparent mode only (that is, when the same type of line system is used on all fiber pairs). In this case, the node contains both of the following:
+</p>
+<div class="pSmartList1"><ol type="1" class="pSmartList1">
+<a name="wp118544"> </a><div class="pSmartList1"><li>OADM equipment for selected fiber pairs</li></div>
+<a name="wp118545"> </a><div class="pSmartList1"><li>Conventional node equipment (such as OXC, IXC or Patch Panel) to deal with the traffic on fiber pairs that are not directly interconnected by an OADM, as shown in <a href="javascript:WWHClickedPopup('wdm_user', 'User-03-21.html#wp118551');" onMouseOver="WWHShowPopup('wdm_user', 'User-03-21.html#wp118551', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Figure&#160;2-25</u></a></li></div>
+<a name="wp118551"> </a><p class="pFigCaption">
+Figure&#160;2-25   Selective OADMs Between Fiber Pairs
+</p>
+<a name="wp118555"> </a><p class="pBodyRelative">
+<br />
+<img src="images/User-03-21-25.jpg" height="199" width="530" id="wp118553" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ol></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_13_co.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

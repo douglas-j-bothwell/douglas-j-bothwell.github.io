@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:37:49" />
+    <title>Workflow Description</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="swimuser-04-1.html"> Creating a Multi-Layered Network Model</a> > Mapping Layer-2/3 Links to Transport Connections</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp922829"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Workflow Description
+</h2>
+
+ 
+
+
+<a name="wp923127"> </a><p class="pBody">
+The following steps outline the workflow for creating an multi-layered network model:
+</p>
+<div class="pSmartList1"><ol type="1" class="pSmartList1">
+<a name="wp922830"> </a><div class="pSmartList1"><li>Create the Layer-2/3 network in SP&#160;Guru&#160;Network&#160;Planner</li></div>
+<a name="wp922831"> </a><div class="pSmartList1"><li>Create the transport-layer network in SP&#160;Guru&#160;Transport&#160;Planner</li></div>
+<a name="wp922512"> </a><div class="pSmartList1"><li>Map Layer-2/3 nodes (such as IP routers) to the transport nodes (such as OXCs and DXCs)</li></div>
+<a name="wp922513"> </a><div class="pSmartList1"><li>Map Layer-2/3 links to the transport connections that support those links</li></div>
+</ol></div>
+<a name="wp922684"> </a><p class="pBody">
+After you map the two layers, SWIM keeps the two model states consistent with each other. For example, SP&#160;Guru&#160;Network&#160;Planner fails any link as failed if it depends on a connection that has not yet been set up in SP&#160;Guru&#160;Transport&#160;Planner. SP&#160;Guru&#160;Network&#160;Planner also sets link delays based on delays experienced by the underlying Transport connections. SWIM ensures this inter-layer consistency automatically, even if one of the network models changes.
+</p>
+<a name="wp922514"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Creating a Network Model in SP&#160;Guru&#160;Network&#160;Planner
+</h2>
+
+ 
+
+
+<a name="wp922522"> </a><p class="pBody">
+To create a Layer-2/3 network model, you can use any of the standard methods available in SP&#160;Guru&#160;Network&#160;Planner. At the very least, your network scenario should include the following:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp922527"> </a><div class="pSmartList1"><li>Topology information (nodes and links)</li></div>
+<a name="wp922528"> </a><div class="pSmartList1"><li>Traffic information (traffic flows, connections, and/or discrete traffic)</li></div>
+</ul></div>
+<a name="wp922536"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Creating a Transport Network Model
+</h2>
+
+ 
+
+
+<a name="wp922542"> </a><p class="pBody">
+After you create the Layer-2/3 network, SP&#160;Guru&#160;Transport&#160;Planner can create the Transport network that supports it. The simplest method is to generate the network directly from SP&#160;Guru&#160;Network&#160;Planner: in the Project Editor, choose SWIM &gt; Create Corresponding SP&#160;Guru&#160;Transport&#160;Planner Project. After you do this, you can create the nodes and links using one of the following methods:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp922591"> </a><div class="pSmartList1"><li>Manually, using the object palette</li></div>
+<a name="wp922600"> </a><div class="pSmartList1"><li>Import the network model from another SP&#160;Guru&#160;Transport&#160;Planner scenario</li></div>
+<a name="wp922609"> </a><div class="pSmartList1"><li>Import the topology from a comma-separate-value (CSV) file</li></div>
+<a name="wp922610"> </a><div class="pSmartList1"><li>Import a complete SP&#160;Guru&#160;Transport&#160;Planner project</li></div>
+</ul></div>
+<a name="wp922616"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Mapping Layer-2/3 Nodes to Transport Nodes
+</h2>
+
+ 
+
+
+<a name="wp922621"> </a><p class="pBody">
+SWIM includes a Node Mapping dialog box that you can use to identify the Layer-2/3 nodes that are connected to, or collocated with, Transport nodes. Node mappings can be many-to-one&#8212;that is, multiple Layer-2/3 nodes can be collocated with, or connected to, one Transport node. You can use the Map Nodes dialog box to specify the node mapping between the two layers. You can also use this dialog box to create new Transport nodes and map them to Layer-2/3 nodes in one step.
+</p>
+<a name="wp922649"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Mapping Layer-2/3 Links to Transport Connections
+</h2>
+
+ 
+
+
+<a name="wp922667"> </a><p class="pBody">
+SWIM also includes a Map Links dialog box that you can use to identify the Layer-2/3 links that need to be supported by Transport connections. Link mappings are always one-to-one: each link is supported by exactly one transport connection. SWIM groups mapped connections with the same bit rate and protection strategy into a unified traffic matrix, which you can use to perform design operations such as routing and dimensioning. These types of matrices are denoted as &quot;External&quot; and cannot be edited in the Traffic Matrix Editor in SP&#160;Guru&#160;Transport&#160;Planner.
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/swim_16_cre.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

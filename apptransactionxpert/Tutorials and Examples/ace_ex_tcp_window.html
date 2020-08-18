@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Impact of TCP Window Size on a File Transfer</title>
+    <link rel="StyleSheet" href="css/ace_ex_tcp_window.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ace_ex_tcp_window.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">Tutorials and Examples &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_tut_examples_splash.html#998205">Transaction Analyzer Examples</a> &gt; Impact of TCP Window Size on a File Transfer</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="hChapterNoNum"><a name="998205">Impact of TCP Window Size on a File Transfer</a></div>
+      <div class="bodyKeyConcept">
+        <span class="zBlueItalics">Key Concept—</span><a name="998522">This example shows how AppTransaction&nbsp;Xpert diagnoses and visualizes application and network problems; it is not a step-by-step tutorial. If you have experience with AppTransaction&nbsp;Xpert, you can recreate this study by following the instructions in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('tutorials', 'ace_ex_tcp_window.html#998328', '');" title="Impact of TCP Window Size on a File Transfer">Recreate the Example</a></span>. The screen images in this example were captured while running AppTransaction&nbsp;Xpert with the AppTransaction&nbsp;Xpert Decode&nbsp;Module (ADM) installed. If you do not have ADM installed, some screens might look different.</div>
+      <div class="body"><a name="998216">In this network, the client connects to the FTP server, located in the data center, through a WAN that consists of a T1 circuit (1.544&nbsp;Mbps). When the client performs a 1&nbsp;MB file transfer, the response time is about 25&nbsp;seconds. Given the file size and the data rate, the ideal response time is about 5&nbsp;seconds (1&nbsp;MB&nbsp;x&nbsp;8&nbsp;bits/byte&nbsp;/&nbsp;1.544&nbsp;Mbps).</a></div>
+      <div class="body"><a name="998217">Possible causes for the slow response time fall into two general categories: network bottlenecks and server bottlenecks. This study identifies the cause of the performance problems and recommends possible solutions.</a></div>
+      <div class="body"><a name="998218">We begin our investigation by identifying and capturing a transaction of the file transfer. A probe was placed on both the client site and the data center, as shown in the following figure.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;10-1   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="998223">Network Diagram</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="998559"><img class="Default" src="images/ace_ex_tcp_window.13.1.1.jpg" width="413" height="243" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="998224">&nbsp;</a></div>
+      <div class="body"><a name="1004859">Packet&nbsp;trace captures were taken simultaneously at both the client and FTP server, then merged and synchronized to obtain the best possible analysis of delays at each tier and the network. A single probe would have sufficed, but it was not difficult to obtain data from both probes.</a></div>
+      <div class="h1TopNoBreak"><a name="998225">AppTransaction&nbsp;Xpert Analysis</a></div>
+      <div class="body"><a name="998581">After opening the packet&nbsp;trace into AppTransaction&nbsp;Xpert, we looked at the transaction in the Data&nbsp;Exchange&nbsp;Chart, which shows the flow of application messages between tiers over time. You might have to adjust the window size to match the scale shown.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;10-2   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="998243">Data Exchange Chart (Application Chart with Dependencies)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="998616"><img class="Default" src="images/ace_ex_tcp_window.13.1.2.jpg" width="501" height="333" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="998250">&nbsp;</a></div>
+      <div class="body"><a name="1004889">The Data&nbsp;Exchange&nbsp;Chart shows the client initiating the file transfer and the server responding with several large (1,460&nbsp;bytes or greater) application messages, as represented by the blue arrows between the Client and FTP_Server tiers. When we check the Show Dependencies box, AppTransaction&nbsp;Xpert shows that the delays are network-related, as indicated by the purple triangles on the FTP_Server tier.</a></div>
+      <div class="body"><a name="998251">Zooming in to a group of application messages and displaying both the Application Message Chart and the Network Packet Chart allows us to examine the relationship between the network packets and the application messages.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;10-3   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="1000866">Zoomed View of Application and Network Charts</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1000870"><img class="Default" src="images/ace_ex_tcp_window.13.1.3.jpg" width="500" height="377" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="998257">&nbsp;</a></div>
+      <div class="body"><a name="1005196">The Network&nbsp;Packet&nbsp;Chart displays the task as an exchange of packets as seen by the network. The Application&nbsp;Message&nbsp;Chart displays the task as an application-layer exchange of messages, excluding details from below the application layer.</a></div>
+      <div class="body"><a name="998258">We can see the FTP&nbsp;Server sends packets to the client and waits for the arrival of acknowledgements before sending additional application data. This is not optimal behavior because it lengthens the file transfer time.</a></div>
+      <div class="body"><a name="998259">From the Data&nbsp;Exchange&nbsp;Chart, we can graph specific statistics relating to the transaction that we are diagnosing. We know the delays are network-related, but we want to see how bandwidth is being used during this file transfer.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;10-4   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="1000746">Time-Based Statistic of Network Throughput</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1000750"><img class="Default" src="images/ace_ex_tcp_window.13.1.4.jpg" width="341" height="238" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1000751">&nbsp;</a></div>
+      <div class="body"><a name="1005177">The Network Throughput statistic above shows that the maximum download speed is about 350&nbsp;Kbps, far less than the 1,544&nbsp;Mbps the circuit provides.</a></div>
+      <div class="body"><a name="998266">AppDoctor’s Summary of Delays is used to identify the factors contributing to the delay.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;10-5   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="998271">Summary of Delays for the File Download</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1005158"><img class="Default" src="images/ace_ex_tcp_window.13.1.5.jpg" width="456" height="350" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="998272">&nbsp;</a></div>
+      <div class="body"><a name="1005164">The chart identifies protocol delay as the primary source of delay in this file transfer. From this chart, we can also “drill down” into the protocol delay and view a graphical analysis of the different factors that might cause this particular delay.</a></div>
+      <div class="body"><a name="998275">Application delay (client/server processing time) is negligible for this transaction. In this case, the network is the cause of slow application response time.</a></div>
+      <div class="body"><a name="998276">The AppDoctor Diagnosis provides a more granular analysis of possible bottlenecks. This feature tests the current transaction against factors that often cause performance problems in network-based applications. Values that cross a specified threshold are marked as bottlenecks or potential bottlenecks.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;10-6   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="998290">Diagnosis for the File Download</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1002084"><img class="Default" src="images/ace_ex_tcp_window.13.1.6.jpg" width="341" height="362" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="998291">&nbsp;</a></div>
+      <div class="body"><a name="1005145">Diagnosis identifies three bottlenecks and one potential bottleneck. Each should be investigated. Descriptions of each are below.</a></div>
+      <div class="h2NoBreak"><a name="998292">Effect of Bandwidth</a></div>
+      <div class="body"><a name="998293">Packet transmission delay is a function of the size of the packet. Lower transmission speeds cause larger delays. This value is the total delay incurred due to transmission speed, as a percentage of the overall application response time.</a></div>
+      <div class="h2NoBreak"><a name="998294">Effect of Protocol</a></div>
+      <div class="body"><a name="998295">Network protocols (such as TCP) frequently perform flow control, congestion control, etc., which may throttle the rate at which applications send data. Other protocol effects that can impact application performance include retransmissions and collisions. This value is the total delay incurred due to protocol effects, represented as a percentage of the overall application response time.</a></div>
+      <div class="h2NoBreak"><a name="1005856">Effect of Network Transfer</a></div>
+      <div class="body"><a name="1005860">Network&nbsp;Transfer delay is a combination of Bandwidth, Protocol, and Congestion delays. If the bandwidths are not know/specified, then you don’t know which combination of the three is the root cause. If the bandwidths are known/specified, AppTransaction&nbsp;Xpert still reports the network transfer delay, but it also specifies the breakdown between the three categories. (See AppDoctor’s “Summary of Delays” and “Statistics” tabs.)</a></div>
+      <div class="h2NoBreak"><a name="998296">TCP Windowing</a></div>
+      <div class="body"><a name="998297">When an application is sending bulk data over a high-bandwidth and high-latency network, TCP window sizes must be large enough to permit TCP to send many packets in a row without having to wait for TCP acknowledgements.</a></div>
+      <div class="body"><a name="998298">TCP will send data only if the amount of sent-but-not-yet-acknowledged data is less than the minimum of the congestion control window, sender window, and receiver window sizes.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="998299">Sender and receiver windows have default sizes that can be overridden by an application.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="998300">The congestion control window is dynamically-sized by TCP in response to retransmissions and other factors.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="998301">TCP will be forced to wait for acknowledgments if any windows are less than the “bandwidth-delay product”. The bandwidth-delay product is (2&nbsp;x&nbsp;Bandwidth&nbsp;x&nbsp;Propagation&nbsp;Delay).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="998302">TCP is reducing the rate at which the application can send data because of a window that is too small. AppTransaction&nbsp;Xpert auto-calculates the optimum window size based on the “bandwidth-delay product” as 29,974&nbsp;bytes.</a></div>
+      <div class="body"><a name="998303">The “TCP In-Flight Data (bytes): FTP Server to Client” statistic illustrates this effect.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;10-7   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="998308">Time-based Statistic Graph of TCP In-Flight Data</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="998903"><img class="Default" src="images/ace_ex_tcp_window.13.1.7.jpg" width="341" height="241" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="998309">&nbsp;</a></div>
+      <div class="body"><a name="1005099">The graph shows TCP is limiting the unacknowledged, in-flight data to about 8&nbsp;KB although the ideal window size is about 30&nbsp;KB.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;10-8   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="998323">Data Exchange Chart (Network View)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="998938"><img class="Default" src="images/ace_ex_tcp_window.13.1.8.jpg" width="379" height="311" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="998324">&nbsp;</a></div>
+      <div class="body"><a name="1004995">AppTransaction&nbsp;Xpert diagnosed the bottleneck for this application transaction to be TCP windowing. The Data Exchange Chart above highlights this process. As an application transmits data, TCP increases the amount of allowable, unacknowledged data that can be sent, up to the TCP window size.</a></div>
+      <div class="body"><a name="999857">Because TCP normally increases throughput as the network proves it can handle the traffic, the beginning of the transmission is called “slow start.” The TCP window prevents application throughput from growing forever and saturating the network. The graph above shows that by the sixth exchange, the flow has reached steady state.</a></div>
+      <div class="h1NoBreak"><a name="998325">Conclusion</a></div>
+      <div class="body"><a name="998326">Analysis of this transaction revealed that the client had the send window size set to 8&nbsp;KB. The window protects the network from being saturated by a single application, however in this example, TCP’s flow control mechanism was the cause of the poor file download time. AppDoctor’s Diagnosis suggested increasing the TCP window size to about 30&nbsp;KB. It was not necessary to increase processing power at the client or server tiers, nor was it necessary to increase bandwidth. Any of these </a><span class="italic">solutions</span> would been both costly and ineffective.</div>
+      <div class="body"><a name="998327">AppTransaction&nbsp;Xpert allows you to troubleshoot poor application performance and pinpoint the potential causes.</a></div>
+      <div class="h1TopNoBreak"><a name="998328">Recreate the Example</a></div>
+      <div class="body"><a name="998329">Load the Transaction&nbsp;Analyzer model “FTP_download_over_WAN” (from </a><span class="italic">&lt;reldir&gt;</span>\sys\examples\AppTransaction&nbsp;Xpert\examples) or perform the following procedure.</div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1005382&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1005382", false);</script>Procedure&nbsp;10-1   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="1005382">Recreating the Example</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1005382", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1005396">Open the following packet&nbsp;traces in AppTransaction&nbsp;Xpert:<br />(</a><span class="bold">File</span>&nbsp;&gt; <span class="bold">Open&nbsp;Packet&nbsp;Trace(s)</span>&nbsp;&gt; <span class="bold">In&nbsp;Transaction&nbsp;Analyzer&nbsp;(Simultaneous&nbsp;Captures)…</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1005399">FTP_download_server.enc</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1005405">FTP_download_client.enc</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="998333">Rename the tiers:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="998334">Rename 172.16.4.52 to Client</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="998335">Rename 192.168.2.2 to FTP_Server</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="998336">Set bandwidth and latency between tiers:<br />(</a><span class="bold">AppDoctor</span>&nbsp;&gt; <span class="bold">Refine&nbsp;Network&nbsp;Effects</span>…)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="998337">Set remote&nbsp;bandwidth to T1 (1.544&nbsp;Mbps)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="998338">Latency should have been automatically detected as 76.2&nbsp;ms</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="998339">Open the Treeview window.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="1005230">Notice that there are two TCP connections in this trace:</a></div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="998341">Connection 1 carries the FTP control messages</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="998342">Connection 2 carries the FTP data transfer</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 10-1</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1005386">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1005390">&nbsp;</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

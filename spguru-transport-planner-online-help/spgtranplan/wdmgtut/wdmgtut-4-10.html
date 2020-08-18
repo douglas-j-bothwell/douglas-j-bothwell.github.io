@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:38:42" />
+    <title>Ring Design</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="wdmgtut-4-01.html"> Network Design Operations</a> > Ring Design</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp942219"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Ring Design
+</h2>
+
+ 
+
+
+<a name="wp926304"> </a><p class="pBody">
+This section shows how to design a network based on interconnected rings. You can manually define or import SONET rings and then route traffic on these rings. You can also expand these legacy rings by adding stacked rings on top of them. The first example shows how to create rings. The second example shows how to size the rings. You can start from the second example by opening the appropriate file.
+</p>
+<a name="wp926306"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp926306", false);</script>Procedure&#160;3-8   Creating a Ring<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp926306", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp926306", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp926308"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the WDMGuru_Tutorial_Ring_topology project.</li></div>
+<ol type="a">
+<a name="wp926309"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Open</span><b class="cBold">...</b>.</li></div>
+<a name="wp926310"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">WDMGuru_Tutorial_Ring_topology</span> project, then press <span style="font-weight: bold">Open</span>. </li></div>
+<a name="wp939217"> </a><p class="pIndentedRelative">
+The example project is loaded. 
+</p>
+</ol>
+<a name="wp945537"> </a><div style="text-align: left" class="pSmartList2Test"><li>Save the file under a new name.</li></div>
+<ol type="a">
+<a name="wp945538"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Save As</span><b class="cBold">...</b>.</li></div>
+<a name="wp945539"> </a><p class="pIndentedRelative">
+The <span style="font-weight: bold">Save As</span> dialog box appears. 
+</p>
+<a name="wp945540"> </a><div class="pprocstepSub"><li>In the treeview (left) pane, select your default models directory; the folder icon has a small green mark to indicate that it is the default directory.</li></div>
+<a name="wp945547"> </a><div class="pprocstepSub"><li>Specify <span style="font-weight: bold">Example14</span> as file name, and click <span style="font-weight: bold">Save</span>.</li></div>
+</ol>
+<a name="wp926312"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the SONET/SDH Ring Equipment dialog box.</li></div>
+<ol type="a">
+<a name="wp949543"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Network &gt; Equipment Properties &gt; SONET/SDH Ring Equipment...</b></li></div>
+<a name="wp949544"> </a><p class="pIndentedRelative">
+This dialog box gives an overview of the different ring models supported in this project file. Note that there is only one ring model in this example. This is the default ring model, called &quot;Generic&quot;. You can add, remove, edit, and copy ring models from this dialog box.
+</p>
+<a name="wp935995"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-10-50.jpg" height="158" width="475" id="wp936002" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp926318"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Generic</b> and click on <b class="cBold">Edit Ring Model</b> to inspect the <b class="cBold">Generic</b> ring equipment model.</li></div>
+<a name="wp949607"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-10-51.jpg" height="270" width="473" id="wp949611" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp949627"> </a><p class="pIndentedRelative">
+Use the Ring Model Properties dialog box to manage the costs for the selected ring model. You can specify costs for the SONET/SDH ADM equipment and the SONET/SDH tributary cards for each distinct bit rate. Select any field under Cost to edit and enter new values.
+</p>
+<a name="wp949628"> </a><div class="pprocstepSub"><li>Click <b class="cBold">Cancel</b> to close both dialog boxes.</li></div>
+</ol>
+<a name="wp926320"> </a><div style="text-align: left" class="pSmartList2Test"><li>Create SONET rings.</li></div>
+<ol type="a">
+<a name="wp926321"> </a><div class="pprocstepSub"><li>Select <b style="font-weight: bold" class="cBold">Network</b><span style="font-weight: bold"> &gt; Ring </span><b class="cBold">Browser </b>(or press the <img src="images/wdmgtut-4-10-52.jpg" height="31" width="34" id="wp947965" border="0" hspace="0" vspace="-2"/>	 icon on the toolbar) In this dialog box you can view, add, and edit rings. At this point, no rings are present in the network.</li></div>
+<a name="wp926322"> </a><div class="pprocstepSub"><li>Press <span style="font-weight: bold">Create</span> to define rings.</li></div>
+<a name="wp939240"> </a><p class="pIndentedRelative">
+The <span style="font-weight: bold">Create a DCL Ring</span> dialog box appears.
+</p>
+<a name="wp939244"> </a><div class="pprocstepSub"><li>Define the path of the ring by left-clicking on the nodes. Select <span style="font-weight: bold">node_01</span>, <span style="font-weight: bold">node_00</span>, <span style="font-weight: bold">node_06,</span> and <span style="font-weight: bold">node_02</span>.</li></div>
+<a name="wp926323"> </a><div class="pprocstepSub"><li>Set the properties of the ring you want to create in the <span style="font-weight: bold">Create a DCL Ring</span> dialog box:</li></div>
+<div class="pSmartList3"><ul class="pSmartList3">
+<a name="wp939245"> </a><div class="pSmartList3"><li><span style="font-weight: bold">OC-48</span> (Bit Rate)</li></div>
+<a name="wp939252"> </a><div class="pSmartList3"><li><span style="font-weight: bold">2F-BLSR</span> (Type)</li></div>
+<a name="wp949663"> </a><div class="pSmartList3"><li><b class="cBold">Generic </b>(Model) </li></div>
+<a name="wp946617"> </a><div class="pSmartList3"><li><b class="cBold">Legacy</b> (Create Ring As)</li></div>
+<a name="wp949674"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-10-53.jpg" height="101" width="472" id="wp949678" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp939259"> </a><p class="pIndentedRelative">
+The following parameters are important only if you create a DCL ring supported by the OCH layer, such as a DCL ring that contains EOCC nodes:
+</p>
+<a name="wp939253"> </a><div class="pSmartList3"><li><b class="cBold">OTS Link Disjoint</b></li></div>
+<a name="wp939257"> </a><div class="pSmartList3"><li><span style="font-weight: bold">Node Disjoint</span> </li></div>
+</ul></div>
+<a name="wp939258"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">Create</span>.</li></div>
+<a name="wp939293"> </a><p class="pIndentedRelative">
+The ring is added to the ring browser.
+</p>
+<a name="wp926327"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-10-54.jpg" height="338" width="471" id="wp936039" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp926332"> </a><div class="pprocstepSub"><li>Define five more OC-48 2F-BLSR rings, as follows:</li></div>
+<div class="pSmartList3"><ul class="pSmartList3">
+<a name="wp939299"> </a><div class="pSmartList3"><li>A first ring between <span style="font-weight: bold">node_02</span>, <span style="font-weight: bold">node_06</span>, <span style="font-weight: bold">node_08</span>, <span style="font-weight: bold">node_05</span>, <span style="font-weight: bold">node_04,</span> and <span style="font-weight: bold">node_03</span></li></div>
+<a name="wp939303"> </a><div class="pSmartList3"><li>A second ring between <span style="font-weight: bold">node_06</span>, <span style="font-weight: bold">node_07</span>, <span style="font-weight: bold">node_11,</span> and <span style="font-weight: bold">node_08</span></li></div>
+<a name="wp939305"> </a><div class="pSmartList3"><li>A third ring between <span style="font-weight: bold">node_05</span>, <span style="font-weight: bold">node_08</span>, <span style="font-weight: bold">node_11,</span> and <span style="font-weight: bold">node_12</span></li></div>
+<a name="wp939307"> </a><div class="pSmartList3"><li>A fourth ring between <span style="font-weight: bold">node_07</span>, <span style="font-weight: bold">node_09</span>, <span style="font-weight: bold">node_15</span>, <span style="font-weight: bold">node_10,</span> and <span style="font-weight: bold">node_11</span></li></div>
+<a name="wp939308"> </a><div class="pSmartList3"><li>A fifth ring between <span style="font-weight: bold">node_11</span>, <span style="font-weight: bold">node_10</span>, <span style="font-weight: bold">node_14</span>, <span style="font-weight: bold">node_13,</span> and <span style="font-weight: bold">node_12</span></li></div>
+</ul></div>
+<a name="wp926333"> </a><div class="pprocstepSub"><li>Close the ring browser.</li></div>
+</ol>
+<a name="wp926335"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the DCL nodes.</li></div>
+<ol type="a">
+<a name="wp926336"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Network</span> &gt; <span style="font-weight: bold">Node Browser</span>.</li></div>
+<a name="wp926337"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Ports</span> (View) and <span style="font-weight: bold">DCL</span> (Layer).</li></div>
+<a name="wp939325"> </a><p class="pIndentedRelative">
+The browser lists the number of ADMs used per node.
+</p>
+<a name="wp939329"> </a><div class="pprocstepSub"><li>Right-click on a node in the node browser to change the ring interconnection type. Three types of ring interconnection are supported:</li></div>
+<div class="pSmartList3"><ul class="pSmartList3">
+<a name="wp939330"> </a><div class="pSmartList3"><li>ADM back-to-back</li></div>
+<a name="wp939334"> </a><div class="pSmartList3"><li>ADM plus DXC</li></div>
+<a name="wp939335"> </a><div class="pSmartList3"><li>MSSP</li></div>
+</ul></div>
+<a name="wp939336"> </a><div class="pprocstepSub"><li>Set the interconnection type of <span style="font-weight: bold">node_05</span>, <span style="font-weight: bold">node_06,</span> and <span style="font-weight: bold">node_12</span> to <span style="font-weight: bold">ADM plus DXC</span>.</li></div>
+<a name="wp946167"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-10-55.jpg" height="237" width="471" id="wp946165" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp939340"> </a><div class="pprocstepSub"><li>Set the interconnection type of <span style="font-weight: bold">node_08 </span>and <span style="font-weight: bold">node_11</span> to <span style="font-weight: bold">MSSP</span>.</li></div>
+<a name="wp939341"> </a><div class="pprocstepSub"><li>Leave the interconnection type of all other nodes as <span style="font-weight: bold">ADM back-to-back</span>.</li></div>
+<a name="wp943145"> </a><p class="pIndentedRelative">
+For more information on the different ring interconnection types supported in SP&#160;Guru&#160;Transport&#160;Planner, refer to the<em class="cEmphasis"> </em>SP&#160;Guru&#160;Transport&#160;Planner<em class="cEmphasis"> User Manual</em>. 
+</p>
+<a name="wp939342"> </a><div class="pprocstepSub"><li>Close the node browser.</li></div>
+</ol>
+<a name="wp926345"> </a><div style="text-align: left" class="pSmartList2Test"><li>Create the UPSR scenario.</li></div>
+<ol type="a">
+<a name="wp926346"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Scenarios &gt; Duplicate Scenario</span><b class="cBold">...</b>.</li></div>
+<a name="wp926347"> </a><div class="pprocstepSub"><li>Enter <span style="font-weight: bold">UPSR</span> as <span style="font-weight: bold">Scenario Name</span> in the <span style="font-weight: bold">Enter Name</span> dialog box.</li></div>
+<a name="wp936083"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-10-56.jpg" height="84" width="473" id="wp936090" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ol>
+<a name="wp926353"> </a><div style="text-align: left" class="pSmartList2Test"><li>Change the type of the rings (UPSR scenario).</li></div>
+<ol type="a">
+<a name="wp926354"> </a><div class="pprocstepSub"><li>Select <b style="font-weight: bold" class="cBold">Network</b><span style="font-weight: bold"> &gt; Ring Browser</span> to visualize the rings. Expand the ring information by clicking on the <b class="cBold">+</b> icon. Right-click on each stacked ring (for example, <span style="font-weight: bold">Ring#1-1</span>), choose <span style="font-weight: bold">Set Type,</span> and choose <span style="font-weight: bold">UPSR</span>.</li></div>
+<a name="wp939357"> </a><p class="pIndentedRelative">
+Each ring changes to an UPSR ring.
+</p>
+<a name="wp936100"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-10-57.jpg" height="190" width="471" id="wp936107" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp926362"> </a><div class="pprocstepSub"><li>Close the ring browser.</li></div>
+</ol>
+<a name="wp926364"> </a><div style="text-align: left" class="pSmartList2Test"><li>Save and close the project</li></div>
+<ol type="a">
+<a name="wp926365"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Save</span>.</li></div>
+<a name="wp945584"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Close</span>.</li></div>
+</ol>
+</ol></div>
+<a name="wp926367"> </a><p class="pProcEnd">
+End of Procedure 3-8
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp932317"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp932317", false);</script>Procedure&#160;3-9   Sizing a Ring<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp932317", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp932317", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp926370"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the project.</li></div>
+<ol type="a">
+<a name="wp926371"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Open</span><b class="cBold">...</b>.</li></div>
+<a name="wp926372"> </a><div class="pprocstepSub"><li>Select the project <span style="font-weight: bold">Example14</span>.</li></div>
+<a name="wp939377"> </a><p class="pIndentedNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>The project file <span style="font-weight: bold">Example14 </span>was created in <a href="javascript:WWHClickedPopup('wdmg_tut', 'wdmgtut-4-10.html#wp926306');" onMouseOver="WWHShowPopup('wdmg_tut', 'wdmgtut-4-10.html#wp926306', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;3-8-Creating a Ring</u></a>. If you did not do this procedure, select the <span style="font-weight: bold">WDMGuru_Tutorial_Rings</span> project, then press <span style="font-weight: bold">Open</span>.
+</p>
+<a name="wp939400"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+The project contains two scenarios. Both scenarios contain a network of six rings. The <span style="font-weight: bold">UPSR</span> scenario uses Unidirectional Path Switched Rings and the <span style="font-weight: bold">BLSR</span> scenario uses Bidirectional Line Switched Rings. Start with the <span style="font-weight: bold">BLSR</span> scenario.
+</p>
+</ol>
+<a name="wp943196"> </a><div style="text-align: left" class="pSmartList2Test"><li>Choose <b class="cBold">Scenarios&#160;&gt; Switch to Scenario&#160;&gt; BLSR</b>.</li></div>
+<a name="wp946206"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the SONET rings.</li></div>
+<ol type="a">
+<a name="wp943197"> </a><div class="pprocstepSub"><li>Select <b style="font-weight: bold" class="cBold">Network</b><span style="font-weight: bold"> &gt; Ring Browser</span> or press the <img src="images/wdmgtut-4-10-58.jpg" height="31" width="34" id="wp947972" border="0" hspace="0" vspace="-2"/> icon to visualize the rings.</li></div>
+<a name="wp943198"> </a><p class="pIndentedRelative">
+On the first level of the ring browser, the so-called ring footprint is shown (i.e. the topological location of the ring).
+</p>
+<a name="wp939422"> </a><div class="pprocstepSub"><li>Click on the <b class="cBold">+</b> icon to expand the footprint ring and on the second level of the ring browser all rings deployed in this location are shown (i.e. the stacked rings).</li></div>
+<a name="wp926376"> </a><div class="pprocstepSub"><li>Click on a ring to highlight the ring location on the screen.</li></div>
+<a name="wp939432"> </a><div class="pprocstepSub"><li>Click again on the <span style="font-weight: bold">+</span> icon next to a ring to highlight all the nodes or links (depending on the <span style="font-weight: bold">View</span> setting) in the third level of the ring browser.</li></div>
+<a name="wp946176"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-10-59.jpg" height="441" width="494" id="wp946174" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp939436"> </a><p class="pIndentedRelative">
+By switching between layers, you can also see how the ring is accommodated in the lower layers.
+</p>
+<a name="wp926377"> </a><div class="pprocstepSub"><li>Close the ring browser.</li></div>
+</ol>
+<a name="wp926386"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the DCL nodes.</li></div>
+<ol type="a">
+<a name="wp926387"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Network</span> &gt; <span style="font-weight: bold">Node Browser</span>.</li></div>
+<a name="wp926388"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Ports</span> (View) and <span style="font-weight: bold">DCL</span> (Layer).</li></div>
+<a name="wp939440"> </a><p class="pIndentedRelative">
+The number of ADMs used per node is shown. You can also change the ring interconnection type in the node browser by right-clicking on a node.
+</p>
+<a name="wp946622"> </a><div class="pprocstepSub"><li>Close the node browser.</li></div>
+</ol>
+<a name="wp926389"> </a><div style="text-align: left" class="pSmartList2Test"><li>Route SONET traffic on the ring (without adding SONET rings).</li></div>
+<ol type="a">
+<a name="wp926390"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Design</span> &gt; <b class="cBold">Dimension DCL Rings...</b>.</li></div>
+<a name="wp939448"> </a><p class="pIndentedRelative">
+This dialog box allows you to route traffic on the rings in the network.
+</p>
+<a name="wp926391"> </a><div class="pprocstepSub"><li>Select the traffic matrix <span style="font-weight: bold">DCL_0</span>.</li></div>
+<a name="wp926392"> </a><div class="pprocstepSub"><li>Uncheck the option <b class="cBold">Add stacked rings</b>. With this option selected, the algorithm tries to route the traffic in the existing set of rings without adding new rings.</li></div>
+<a name="wp926393"> </a><div class="pprocstepSub"><li>Select the routing method <b style="font-weight: bold" class="cBold">Overall Cost </b><span style="font-weight: bold">Optimized</span>, then click <span style="font-weight: bold">Route on Rings</span> to route the traffic matrix DCL_0 on the rings.</li></div>
+<a name="wp926394"> </a><p class="pIndentedRelative">
+The results show that the ring capacity is used at about 89&#160;percent.
+</p>
+<a name="wp946695"> </a><p class="pIndentedRelative">
+The traffic matrix table shows that about 81&#160;percent of the traffic has been routed on the rings. The rest of the traffic could not be routed on rings due to a capacity shortage and has been off-loaded to a mesh traffic matrix. This traffic can be accommodated in the network using the mesh routing or grooming functions.
+</p>
+<a name="wp946710"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-10-60.jpg" height="228" width="469" id="wp946708" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ol>
+<a name="wp946701"> </a><div style="text-align: left" class="pSmartList2Test"><li>Route SONET traffic on the ring (adding 2F-BLSR rings).</li></div>
+<ol type="a">
+<a name="wp926404"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">Tear Down </span>in the <span style="font-weight: bold">Dimension DCL Rings </span>dialog box to remove the traffic from the rings again.</li></div>
+<a name="wp926405"> </a><div class="pprocstepSub"><li>Put checkmarks next to the options <span style="font-weight: bold">Add stacked rings</span> and <span style="font-weight: bold">Equip new fibers</span>. This allows new rings to be added on top of existing rings. </li></div>
+<a name="wp939492"> </a><div class="pprocstepSub"><li>Select<b class="cBold"> 2F-BLSR </b>rings of the<b class="cBold"> Generic</b> ring model at <b class="cBold">OC-48 </b>rate as the rings to add.</li></div>
+<a name="wp926406"> </a><div class="pprocstepSub"><li>Choose the routing method <span style="font-weight: bold">Overall Cost Optimized</span>, then press <span style="font-weight: bold">Route on Rings</span>.</li></div>
+<a name="wp926407"> </a><p class="pIndentedRelative">
+The results show that six new rings were added to route all traffic. The ring capacity has been used at about 78&#160;percent. The traffic matrix table indicates that the rings accommodate 100&#160;percent of the traffic.
+</p>
+<a name="wp946723"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-10-61.jpg" height="210" width="472" id="wp946721" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932342"> </a><div class="pprocstepSub"><li>Close the <span style="font-weight: bold">Dimension DCL Rings </span>dialog box.</li></div>
+</ol>
+<a name="wp926417"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the SONET rings.</li></div>
+<ol type="a">
+<a name="wp926418"> </a><div class="pprocstepSub"><li>Select <b style="font-weight: bold" class="cBold">Network</b><span style="font-weight: bold"> &gt; Ring Browser</span>.</li></div>
+<a name="wp926419"> </a><div class="pprocstepSub"><li>Expand the ring information using the <span style="font-weight: bold">+</span> icon and inspect the stacked rings added to each ring footprint.</li></div>
+<a name="wp939530"> </a><p class="pIndentedRelative">
+Also inspect the detailed link and node usage of each individual ring, by using the <span style="font-weight: bold">View</span> per <span style="font-weight: bold">Node</span> or <span style="font-weight: bold">Link</span> radio buttons.
+</p>
+<a name="wp946246"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-10-62.jpg" height="300" width="473" id="wp946244" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp932352"> </a><div class="pprocstepSub"><li>Close the ring browser.</li></div>
+</ol>
+<a name="wp926429"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the routed connections.</li></div>
+<ol type="a">
+<a name="wp926430"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Network &gt; Connection Browser</span>.</li></div>
+<a name="wp926431"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">DCL</span> layer.</li></div>
+<a name="wp939536"> </a><div class="pprocstepSub"><li>Expand the <span style="font-weight: bold">DCL_0</span> traffic matrix (using the <span style="font-weight: bold">+</span> icon) and inspect the routes of this traffic matrix.</li></div>
+<a name="wp939537"> </a><p class="pIndentedRelative">
+Some connections are routed over one ring and others are routed over multiple rings.
+</p>
+<a name="wp939541"> </a><p class="pIndentedRelative">
+Connections routed over more than one ring can be expanded and the individual paths on the rings can be inspected in more detail. Note that on BLSR rings, no protection path is shown since the protection path is intrinsic to the ring and is failure-dependent.
+</p>
+<a name="wp926432"> </a><div class="pprocstepSub"><li>Close the connection browser.</li></div>
+<a name="wp936230"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-10-63.jpg" height="472" width="470" id="wp936244" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ol>
+<a name="wp926442"> </a><div style="text-align: left" class="pSmartList2Test"><li>Select <span style="font-weight: bold">Scenarios</span> &gt; <span style="font-weight: bold">Switch to Scenario &gt; UPSR</span> to view the <span style="font-weight: bold">UPSR </span>scenario.</li></div>
+<a name="wp926443"> </a><div style="text-align: left" class="pSmartList2Test"><li>Route SONET traffic on the ring (adding UPSR rings).</li></div>
+<ol type="a">
+<a name="wp926444"> </a><div class="pprocstepSub"><li>Select <b class="cBold">Design &gt; Dimension DCL Rings...</b>. </li></div>
+<a name="wp943267"> </a><div class="pprocstepSub"><li>Select the traffic matrix <span style="font-weight: bold">DCL_0</span>.</li></div>
+<a name="wp926446"> </a><div class="pprocstepSub"><li>Select the options <span style="font-weight: bold">Add stacked rings</span> and <span style="font-weight: bold">Equip new fibers</span>. This allows new rings to be added on top of the existing rings.</li></div>
+<a name="wp939604"> </a><div class="pprocstepSub"><li>Select <b class="cBold">UPSR</b> rings of the <b class="cBold">Generic</b> ring model at<b class="cBold"> OC-48</b> rate as the rings to add.</li></div>
+<a name="wp926447"> </a><div class="pprocstepSub"><li>Choose the routing method <b style="font-weight: bold" class="cBold">Overall Cost </b><span style="font-weight: bold">Optimized</span>, then click <span style="font-weight: bold">Route on Rings</span>.</li></div>
+<a name="wp926448"> </a><p class="pIndentedRelative">
+The results show that now 11 new rings are added in the BLSR case. This is because BLSR rings are more capacity-efficient than USPR rings.
+</p>
+<a name="wp946754"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-10-64.jpg" height="226" width="472" id="wp946752" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+</ol>
+<a name="wp926456"> </a><div style="text-align: left" class="pSmartList2Test"><li>	Close the<b class="cBold"> Dimension DCL Rings </b>dialog box.</li></div>
+<a name="wp943276"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the routed connections.</li></div>
+<ol type="a">
+<a name="wp926457"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Network &gt; Connection Browser</span>.</li></div>
+<a name="wp926458"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">DCL</span> layer.</li></div>
+<a name="wp939623"> </a><div class="pprocstepSub"><li>Expand the <span style="font-weight: bold">DCL_0</span> traffic matrix (using the <span style="font-weight: bold">+</span> icon) and inspect the routes of this traffic matrix.</li></div>
+<a name="wp939626"> </a><p class="pIndentedRelative">
+Connections on a UPSR ring have an explicit protection path (in red), because the protection path is not failure-dependent. The overlap of working and protection paths is indicated in orange.
+</p>
+<a name="wp946309"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-10-65.jpg" height="454" width="483" id="wp946307" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp926459"> </a><div class="pprocstepSub"><li>Close the connection browser.</li></div>
+</ol>
+<a name="wp926470"> </a><div style="text-align: left" class="pSmartList2Test"><li>Compare scenarios.</li></div>
+<ol type="a">
+<a name="wp926471"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Scenarios &gt; Compare Scenarios</span>.</li></div>
+<a name="wp943298"> </a><p class="pIndentedRelative">
+This shows the differences between the UPSR and BLSR design in terms of cost and capacity. The BLSR design is the cheapest solution, although the ADMs for BLSR are more expensive than for UPSR rings.
+</p>
+<a name="wp946801"> </a><p class="pBodyRelative">
+<br />
+<img src="images/wdmgtut-4-10-66.jpg" height="237" width="472" id="wp946798" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp926473"> </a><div class="pprocstepSub"><li>Close the dialog boxes.</li></div>
+</ol>
+<a name="wp926483"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the project</li></div>
+<ol type="a">
+<a name="wp936356"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File</span> &gt; <span style="font-weight: bold">Close</span>.</li></div>
+<a name="wp936358"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Don&#39;t Save</span> in the Close Confirm dialog box.</li></div>
+</ol>
+</ol></div>
+<a name="wp936359"> </a><p class="pProcEnd">
+End of Procedure 3-9
+</p>
+
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/wdmg_tut_3.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

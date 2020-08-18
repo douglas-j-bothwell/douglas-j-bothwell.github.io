@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:35:47" />
+    <title>Dimensioning</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-07-01.html"> Routing</a> > <a href="User-07-16.html">Service Identifiers</a> > Dimensioning a Topology</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp58130"> </a><h2 class="pTitle">
+Dimensioning
+</h2>
+<hr />
+
+ 
+
+
+<a name="wp58219"> </a><p class="pBody">
+You can dimension your network topology according to one or more traffic matrices. In general, SP&#160;Guru&#160;Transport&#160;Planner does &quot;upgrade&quot; dimensioning: it upgrades the network capacity to meet the input traffic but does not change or remove existing facilities or traffic. 
+</p>
+<a name="wp58225"> </a><p class="pBody">
+The following steps outline the basic workflow:
+</p>
+<div class="pSmartList1"><ol type="1" class="pSmartList1">
+<a name="wp86055"> </a><div class="pSmartList1"><li>Design the links.</li></div>
+<a name="wp90149"> </a><p class="pBodyRelative">
+This operation places amplification and regeneration equipment along a link. Make sure you design the links before you dimension your network. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-30.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-30.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Link Design</u></a>.
+</p>
+<a name="wp58233"> </a><div class="pSmartList1"><li>Dimension the network&#8212;For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-08-1.html#wp111706');" onMouseOver="WWHShowPopup('wdm_user', 'User-08-1.html#wp111706', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Dimensioning a Topology</u></a>.</li></div>
+<a name="wp58237"> </a><div class="pSmartList1"><li>Strip network capacity<b style="font-style: normal; font-weight: bold" class="cBold"> </b><span style="font-style: oblique; font-weight: normal">(</span><em class="cEmphasis">optional</em><em class="cEmphasis">)</em>. </li></div>
+<a name="wp90152"> </a><p class="pBodyRelative">
+This operation enables you to strip traffic or capacity from the network to undo the effects of a dimensioning operation. For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-08-9.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-08-9.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Strip Capacity</u></a>.
+</p>
+</ol></div>
+<a name="wp111706"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Dimensioning a Topology
+</h2>
+
+ 
+
+<a name="wp84622"> </a><p class="pBody">
+When you dimension a network at a network layer, SP&#160;Guru&#160;Transport&#160;Planner installs the required node and link equipment to support a traffic matrix at that layer. SP&#160;Guru&#160;Transport&#160;Planner performs upgrade dimensioning: it upgrades the network equipment to meet the new traffic demands, but retains existing equipment and traffic. SP&#160;Guru&#160;Transport&#160;Planner can dimension at two layers:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp84689"> </a><div class="pSmartList1"><li>The DCL layer of a network that contains ECC nodes only. This type of network can accommodate DCL traffic only. When you dimension for a DCL traffic matrix, SP&#160;Guru&#160;Transport&#160;Planner equips the fibers with the appropriate SONET/SDH systems at a specific bit rate and accommodates the nodes with the correct SONET/SDH switches.</li></div>
+<a name="wp84698"> </a><div class="pSmartList1"><li>The OCH layer of a network that contains EOCC and OCC nodes. When you dimension for an OCH traffic matrix, SP&#160;Guru&#160;Transport&#160;Planner equips the fibers with the correct WDM line systems and accommodates the nodes with the correct regeneration equipment (if the network is transparent) and optical switches (OXCs, OADMs, etc.). </li></div>
+</ul></div>
+<a name="wp84699"> </a><p class="pBodyNote">
+<span style="font-weight: bold; color: black;">Note&#8212;</span>If your network contains a mix of ECC, EOCC, and OCC nodes, a dimensioning operation at the DCL layer can affect multiple network layers. A multi-layer design is accomplished by a grooming action instead of a dimensioning action.
+</p>
+
+<a name="wp104976"> </a><p class="pBody">
+You can apply the dimensioning algorithms multiple times in the same network for different traffic matrices and protection strategies, as shown in the following equation. You can dimension for multiple traffic matrices simultaneously if these traffic matrices have the same protection type and routing option. For each subsequent matrix that is added, SP&#160;Guru&#160;Transport&#160;Planner uses spare capacity on existing line facilities and adds new systems as needed. The different traffic matrices might also represent the different time frames for which you want to design the network.
+</p>
+<a name="wp104985"> </a><p class="pBodyRelative">
+</p>
+<div align="left">
+<table border=".5" cellpadding="3" cellspacing="2" bordercolor="Gray" id="wp104989table104987">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp104989"> </a><div class="pCellBody">
+&#160;&#160;&#160;Matrix A + Matrix B
+</div>
+</td>
+    <td><a name="wp104991"> </a><div class="pCellBody">
+dimension with 1&#160;+&#160;1 protection
+</div>
+</td>
+    <td><a name="wp104993"> </a><div class="pCellBody">
+adds X1 line facilities at cost Y1
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp104995"> </a><div class="pCellBody">
+&#160;&#160;&#160;Matrix C + Matrix D
+</div>
+</td>
+    <td><a name="wp104997"> </a><div class="pCellBody">
+dimensioned with restoration
+</div>
+</td>
+    <td><a name="wp104999"> </a><div class="pCellBody">
+adds X2 line facilities at cost Y2
+</div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp105001"> </a><div class="pCellBody">
+&#160;&#160;&#160;Matrix E + Matrix F
+</div>
+</td>
+    <td><a name="wp105003"> </a><div class="pCellBody">
+dimensioned unprotected
+</div>
+</td>
+    <td><a name="wp105005"> </a><div class="pCellBody">
+adds X3 line facilities at cost Y3
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBodyRelative">
+
+</p>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_28_dim.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

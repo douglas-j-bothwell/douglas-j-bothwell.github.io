@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:40" />
+    <title>Network Design vs. Hardware Design</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-14-01.html"> Hardware Configurator</a> > Network Design vs. Hardware Design</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp140405"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Network Design vs. Hardware Design
+</h2>
+
+ 
+
+
+<a name="wp140406"> </a><p class="pBody">
+HCON is a &quot;post-design&quot; step in the network design workflow. This means that you must design the network in SP&#160;Guru&#160;Transport&#160;Planner before you assign the required equipment configurations. You can use the typical SP&#160;Guru&#160;Transport&#160;Planner design operations such as dimensioning, grooming, and ring design. After all traffic has been routed, and adequate network capacity has been added, the HCON&#160;algorithms can do a more in-depth configuration of the different devices.
+</p>
+<a name="wp140407"> </a><p class="pBody">
+Because there is a tight relationship between SP&#160;Guru&#160;Transport&#160;Planner equipment types (such as OXC, DXC, and ADM) and the specified equipment in the HCON file format, you must create the design in SP&#160;Guru&#160;Transport&#160;Planner with the correct SP&#160;Guru&#160;Transport&#160;Planner types and properties. For example:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp140408"> </a><div class="pSmartList1"><li>To design a network with a specific node type such as OADM, OXC, or IXC, set the desired node type in SP&#160;Guru&#160;Transport&#160;Planner. HCON does not decide which equipment type to use. However, HCON does decide which OXC model (or set of models) to use in a node, and which cards to deploy. The cards are set according to the port requirements in that node, which are a result of the network design in SP&#160;Guru&#160;Transport&#160;Planner. (The equipment type is specified in the device file using the WDMG:Type field.)</li></div>
+<a name="wp140409"> </a><div class="pSmartList1"><li>Within SP&#160;Guru&#160;Transport&#160;Planner, a network is designed for a specific WDM line system type (LS type) or a combination of different LS types. SP&#160;Guru&#160;Transport&#160;Planner has an internal set of LS models and design algorithms that can select the lowest-cost LS type according to the cost factors and traffic requirements on a link. HCON does not determine which LS type to use. However, it does determine which link equipment matches the LS type and how to configure the link equipment. This means that when you design a network in SP&#160;Guru&#160;Transport&#160;Planner, you must ensure that the LS types used in the network match the link equipment specified in the device file. (The line system type of the node and link equipment is specified in the device file using the WDMG:LS field.)</li></div>
+<a name="wp140410"> </a><div class="pSmartList1"><li>When you groom traffic to a specific bit rate or use SONET rings of a specific bit rate, you must ensure that the bit rate is supported by devices that are defined in the device file. (The bit rate of the SONET equipment is specified in the device file using the WDMG:Bit Rate field.)</li></div>
+</ul></div>
+<a name="wp140411"> </a><p class="pBody">
+These examples illustrate the difference between the network design in SP&#160;Guru&#160;Transport&#160;Planner and the hardware design in HCON:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp140412"> </a><div class="pSmartList1"><li>The network design makes high-level decisions such as which node type to use, how to route the existing traffic, and how much capacity is required to support the traffic (that is, what line systems and bit rates to use).</li></div>
+<a name="wp140413"> </a><div class="pSmartList1"><li>The hardware design makes low-level decisions, such as which hardware devices to use for each SP&#160;Guru&#160;Transport&#160;Planner type (for example, which vendors and models for a DXC) and how each device should be configured.</li></div>
+</ul></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_41_hcon.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

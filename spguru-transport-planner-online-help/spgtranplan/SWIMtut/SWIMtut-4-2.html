@@ -1,0 +1,481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:42:08" />
+    <title>Instructions</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="SWIMtut-4-1.html"> Protection in an MPLS-Enabled IP-Over-WDM Network</a> > Instructions</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp941985"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading1">
+Instructions
+</h2>
+
+ 
+
+
+<a name="wp942652"> </a><p class="pBody">
+In the first procedure, <a href="javascript:WWHClickedPopup('swim_tut', 'SWIMtut-4-2.html#wp941986');" onMouseOver="WWHShowPopup('swim_tut', 'SWIMtut-4-2.html#wp941986', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;3-1</u></a>, you set up an MPLS network with LSPs and define the mapping between the Layer-2/3 network and the Transport network.
+</p>
+<a name="wp941986"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp941986", false);</script>Procedure&#160;3-1   Defining the MPLS Label Switched Paths<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp941986", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp941986", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp941988"> </a><div style="text-align: left" class="pSmartList2Test"><li>Open the <b class="cBold">SWIM_Tutorial_MPLS_Protection</b> project SP&#160;Guru&#160;Network&#160;Planner.</li></div>
+<ol type="a">
+<a name="wp941989"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File &gt; Open</span>.</li></div>
+<a name="wp941990"> </a><div class="pprocstepSub"><li>Select the project file <span style="font-weight: bold">SWIM_Tutorial_MPLS_Protection</span>. Click <span style="font-weight: bold">Open</span>. Note that the current scenario is called<b class="cBold"> bare.</b></li></div>
+</ol>
+<a name="wp941991"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the Layer-2/3 and Transport networks.</li></div>
+<ol type="a">
+<a name="wp943460"> </a><div class="pprocstepSub"><li>Note that 10 LSPs are defined in SP&#160;Guru&#160;Network&#160;Planner. These LSPs are displayed in different colors in the workspace. The network has been configured to enable MPLS: the OSPF routing protocol is running on all routers, RSVP is running on all interfaces for control messages to set up the LSPs, and MPLS is also enabled on these interfaces.</li></div>
+<a name="wp943461"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold"> &gt; Switch To Corresponding Transport Network </span>to view the transport network topology.</li></div>
+<a name="wp941994"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold"> &gt; Switch To Corresponding Layer-2/3 Network</span>.</li></div>
+</ol>
+<a name="wp941995"> </a><div style="text-align: left" class="pSmartList2Test"><li>Verify that SWIM<span style="font-weight: bold"> &gt; Automatically Update Operational Status Visualization </span>is turned on. This displays overlay icons for Layer-2/3 links if they are mapped onto Transport connections when those connections are not up.</li></div>
+<a name="wp941996"> </a><div style="text-align: left" class="pSmartList2Test"><li>Define the node mapping to relate the Layer-2/3 network to the underlying Transport network.</li></div>
+<ol type="a">
+<a name="wp941997"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold"> &gt; Node/Link Mapping &gt; Map Nodes...</span>.</li></div>
+<a name="wp941998"> </a><div class="pprocstepSub"><li>Map the Layer-2/3 nodes to their respective namesakes at the Transport Nodes side by selecting a node in the left pane and clicking the <span style="font-weight: bold">&gt;&gt;</span> button.</li></div>
+<a name="wp941999"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">OK</span> to close the dialog box.</li></div>
+</ol>
+<a name="wp942000"> </a><div style="text-align: left" class="pSmartList2Test"><li>Import the link mapping from an XML file containing the mapping information.</li></div>
+<ol type="a">
+<a name="wp942001"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold"> &gt; Node/Link Mapping &gt; Map Links...</span>.</li></div>
+<a name="wp942002"> </a><div class="pprocstepSub"><li>Click the <span style="font-weight: bold">Import</span> button.</li></div>
+<a name="wp942621"> </a><div class="pprocstepSub"><li>Browse for the file <span style="font-weight: bold">SWIM_Tutorial_MPLS_Protection_Mapping_to_Import.xml</span> in the folder <code class="cCode">&lt;</code><em style="font-style: oblique" class="cEmphasis">install_dir</em><code style="font-style: normal" class="cCode">&gt;\&lt;</code><em style="font-style: oblique" class="cEmphasis">release</em><code style="font-style: normal" class="cCode">&gt;\models\std\swim\examples directory</code>. Click <span style="font-weight: bold">Open</span>. This results in the successful import of 15 link mappings. Close the <b class="cBold">SWIM &#8211; Import Link Mapping Results </b>dialog box that appears.</li></div>
+<a name="wp942622"> </a><div class="pprocstepSub"><li>Apply the link mapping by choosing <span style="font-weight: bold">OK</span> from the <b class="cBold">SWIM &#8211; Map Links </b>dialog. Note that the operational status of all 1000BaseX links is down since they have now been mapped onto Transport connections that have not been set up yet (they will have an overlay icon). <br />
+<img src="images/SWIMtut-4-2-01.jpg" height="30" width="31" align="right" id="wp943653" border="0" hspace="0" vspace="-2"/><br />
+</li></div>
+<a name="wp943652"> </a><div class="pprocstepSub"><li>Note that the overlay icons are not displayed automatically if SWIM &gt; <span style="font-weight: bold">Automatically Update Operational Status Visualization</span> is off. In that case, you can either turn it on or manually display the icons by selecting <span style="font-weight: bold">Topology &gt; Visualize Operational Status &gt; Visualize</span>.</li></div>
+</ol>
+<a name="wp942005"> </a><div style="text-align: left" class="pSmartList2Test"><li>Save the project.</li></div>
+<ol type="a">
+<a name="wp942006"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File &gt; Save as </span>and save the file as <b class="cBold">&lt;</b><em style="font-style: oblique" class="cBoldItalics">initials</em><b style="font-style: normal" class="cBold">&gt;_SWIM_Tutorial_MPLS_Protection</b>.</li></div>
+</ol>
+</ol></div>
+<a name="wp942312"> </a><p class="pProcEnd">
+End of Procedure 3-1
+</p>
+<a name="wp942340"> </a><p class="pBody">
+After setting up the integrated network, you can do the first design. This design maps the IP links to transport network connections, routed without protection in SP&#160;Guru&#160;Transport&#160;Planner. The LSPs are set up using the traffic engineering design action in SP&#160;Guru&#160;Network&#160;Planner. The LSPs are protected by routing them along a link disjoint primary and secondary explicit route (ER) without accounting for any transport layer information.
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp942342"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp942342", false);</script>Procedure&#160;3-2   Dimension with MPLS Protection<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp942342", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp942342", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp942335"> </a><div style="text-align: left" class="pSmartList2Test"><li>Create the <b class="cBold">MPLS_protection_link_disjoint</b> scenario.</li></div>
+<ol type="a">
+<a name="wp942010"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Scenarios &gt; Duplicate Scenario</span>.</li></div>
+<a name="wp942011"> </a><div class="pprocstepSub"><li>Name the scenario <span style="font-weight: bold">MPLS_protection_link_disjoint</span>. Click <span style="font-weight: bold">OK</span>. This copies the <b class="cBold">bare</b> scenario to the <b class="cBold">MPLS_protection_link_disjoint</b> scenario (in the same project).</li></div>
+</ol>
+<a name="wp942012"> </a><div style="text-align: left" class="pSmartList2Test"><li>Switch to the Transport network: select SWIM<span style="font-weight: bold">&#160;&gt; Switch To Corresponding Transport Network</span>.</li></div>
+<a name="wp942014"> </a><div style="text-align: left" class="pSmartList2Test"><li>Accommodate the IP links on the transport network in an unprotected way.</li></div>
+<ol type="a">
+<a name="wp942015"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Design &gt; Groom DCL to OCH Traffic &gt; Optimized Routes...</span>.</li></div>
+<a name="wp942016"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">1Gbps_Eth_Links</span> traffic matrix, choose <span style="font-weight: bold">OC-48</span> as bit rate for the supporting OCH traffic matrix and select <span style="font-weight: bold">End to End Grooming</span>. Do not select <b class="cBold">Optimize </b>or <b class="cBold">1+1 Protection in DCL</b>. Click <span style="font-weight: bold">Groom</span>.</li></div>
+<a name="wp942017"> </a><p class="pFigCaption">
+Figure&#160;3-1   Groom DCL to OCH Traffic Dialog Box
+</p>
+<a name="wp942870"> </a><p class="pBodyRelative">
+<br />
+<img src="images/SWIMtut-4-2-02.jpg" height="389" width="514" id="wp942873" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp942018"> </a><div class="pprocstepSub"><li>A new OCH traffic matrix <b class="cBold">OCH_1Gbps_Eth_Links_Grooming</b> is created as a result of this grooming action. Click <span style="font-weight: bold">Dimension</span> to accommodate this optical traffic matrix in the network.</li></div>
+<a name="wp942019"> </a><div class="pprocstepSub"><li>The <span style="font-weight: bold">Dimension DCL/OCH Layer</span> dialog box appears. Select the newly created OCH traffic matrix <span style="font-weight: bold">OCH_1Gbps_Eth_Links_Grooming</span>. Select <span style="font-weight: bold">Unprotected</span> (Protection) and keep the default settings for the other options.</li></div>
+<a name="wp942020"> </a><p class="pFigCaption">
+Figure&#160;3-2   Dimension DCL/OCH Layer Dialog Box
+</p>
+<a name="wp942884"> </a><p class="pBodyRelative">
+<br />
+<img src="images/SWIMtut-4-2-03.jpg" height="427" width="445" id="wp942887" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp943686"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">Dimension</span>. The <span style="font-weight: bold">Results of Dimensioning</span> dialog box appears. Note that both the traffic matrices, <b class="cBold">OCH_1Gbps_Eth_Links_Grooming</b> and <b class="cBold">1Gbps_Eth_Links</b>,<b class="cBold"> </b>are now entirely accommodated in the network. This is possible due to the addition of 13 fiber pairs and 76 OXC ports.</li></div>
+<a name="wp942022"> </a><div class="pprocstepSub"><li>Close all dialog boxes.</li></div>
+</ol>
+<a name="wp942023"> </a><div style="text-align: left" class="pSmartList2Test"><li>Switch to the Layer-2/3 network.</li></div>
+<ol type="a">
+<a name="wp942024"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold"> &gt; Switch To Corresponding Layer-2/3 Network</span>.</li></div>
+<a name="wp942025"> </a><div class="pprocstepSub"><li>Note the links no longer have overlay icons&#8212;all links are up and running.</li></div>
+</ol>
+<a name="wp942026"> </a><div style="text-align: left" class="pSmartList2Test"><li>The transport network has been designed to support the IP links and route the LSPs in the IP network on a primary and a secondary route, using the traffic engineering design action.</li></div>
+<ol type="a">
+<a name="wp942027"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Design &gt; Configure/Run Design Action...</span>.</li></div>
+<a name="wp942028"> </a><div class="pprocstepSub"><li>Click on the <span style="font-weight: bold">+</span> icon next to <span style="font-weight: bold">Traffic Engineering</span> on the left side of the <span style="font-weight: bold">Configure/Run Design Action</span> dialog box. Select <span style="font-weight: bold">mpls_te</span>.</li></div>
+<a name="wp942029"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Current</span> (Target Scenario) in the lower-left corner of the <span style="font-weight: bold">Configure/Run Design Action</span> dialog box.</li></div>
+<a name="wp942030"> </a><p class="pFigCaption">
+Figure&#160;3-3   Configure/Run Design Action Dialog Box
+</p>
+<a name="wp942936"> </a><p class="pBodyRelative">
+<br />
+<img src="images/SWIMtut-4-2-04.jpg" height="340" width="531" id="wp942939" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp942031"> </a><div class="pprocstepSub"><li>Click the <span style="font-weight: bold">Edit Attributes...</span> button to specify the details of the design action. The <span style="font-weight: bold">Design Action: mpls_te</span> dialog box appears.</li></div>
+<a name="wp942032"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Link Disjoint</span> (Primary &lt;-&gt; Secondary ER Relationship). This ensures that the primary and secondary explicit routes are not using a common IP link.</li></div>
+<a name="wp942033"> </a><div class="pprocstepSub"><li>Click on the <span style="font-weight: bold">Value</span> field for <span style="font-weight: bold">Primary ER Computation</span>. The <span style="font-weight: bold">(Primary ER Computation) Table</span> dialog box opens. Choose <span style="font-weight: bold">Min Subscribed Bandwidth</span> (Optimization Objective) and click <span style="font-weight: bold">OK</span>. This ensures that the primary paths are routed such that the amount of subscribed bandwidth on the links is minimized.</li></div>
+<a name="wp942034"> </a><p class="pFigCaption">
+Figure&#160;3-4   Primary ER Computation Attribute
+</p>
+<a name="wp942953"> </a><p class="pBodyRelative">
+<br />
+<img src="images/SWIMtut-4-2-05.jpg" height="171" width="508" id="wp942956" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp942035"> </a><div class="pprocstepSub"><li>Repeat the previous step for <span style="font-weight: bold">Secondary ER Computation</span>.</li></div>
+<a name="wp942036"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">OK</span> in the <span style="font-weight: bold">Design Action: mpls_te</span> dialog box.</li></div>
+<a name="wp942037"> </a><div class="pprocstepSub"><li>Ensure that the <b class="cBold">Target Scenario </b>setting at the bottom of the <span style="font-weight: bold">Configure/Run Design Action</span> dialog box is <b class="cBold">Current</b> and click <span style="font-weight: bold">Run</span>.</li></div>
+</ol>
+<a name="wp942038"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the results of traffic engineering.</li></div>
+<ol type="a">
+<a name="wp942039"> </a><div class="pprocstepSub"><li>Click the <span style="font-weight: bold">View Log</span> button in the <span style="font-weight: bold">Action Completed</span> dialog box that appears.</li></div>
+<a name="wp942040"> </a><div class="pprocstepSub"><li>The <span style="font-weight: bold">Log Browser</span> dialog box opens.</li></div>
+<a name="wp942041"> </a><p class="pFigCaption">
+Figure&#160;3-5   Log Browser for MPLS TE Design Action 
+</p>
+<a name="wp942964"> </a><p class="pBodyRelative">
+<br />
+<img src="images/SWIMtut-4-2-06.jpg" height="342" width="531" id="wp942967" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp942042"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Category &gt; Summary</span> and click <span style="font-weight: bold">Primary Route Summary Statistics</span> (Message column). The <span style="font-weight: bold">Log Entry 2 </span>dialog box opens. Note that all of the LSPs have been successfully routed. The log reports that 1,800 Mb/s out of 30,000 Mb/s have been subscribed.</li></div>
+<a name="wp944392"> </a><div class="pprocstepSub"><li>Close the <span style="font-weight: bold">Log Entry 2 </span>dialog box.</li></div>
+<a name="wp944398"> </a><div class="pprocstepSub"><li>Repeat the previous steps for the <b class="cBold">Secondary Route Summary Statistics</b>. The log shows that both the primary and secondary routes subscribed 2,800 Mb/s out of 30,000 Mb/s. Compared to the total subscribed bandwidth for primary route in 6.3, the additional subscribed bandwidth for secondary route is only 1,000 Mb/s. Because the mpls_te action uses shared path protection to compute secondary routes, these routes can share their subscribed bandwidth whenever their primary routes do not fail at the same time. This is the reason for the low subscribed bandwidth of the secondary routes.</li></div>
+<a name="wp950248"> </a><div class="pprocstepSub"><li>Close the dialog boxes.</li></div>
+</ol>
+<a name="wp950250"> </a><div style="text-align: left" class="pSmartList2Test"><li>Inspect the route followed by the LSP from <b class="cBold">Dublin </b>to <b class="cBold">Milan.</b></li></div>
+<ol type="a">
+<a name="wp950265"> </a><div class="pprocstepSub"><li>Select <b class="cBold">View &gt; Show Network Browser</b>.</li></div>
+<a name="wp950266"> </a><div class="pprocstepSub"><li>Select <b class="cBold">LSPs by Source</b> in the drop-down list.</li></div>
+<a name="wp950267"> </a><div class="pprocstepSub"><li>Click on the<b class="cBold"> +</b> icon next to the node <b class="cBold">Dublin</b>. Expand the connection <b class="cBold">Dublin - Milan</b>. </li></div>
+<a name="wp950296"> </a><div class="pprocstepSub"><li>Mark both explicit routes. </li></div>
+<a name="wp950292"> </a><p class="pIndentedRelative">
+Both routes are now displayed in the lower part of the dialog box. 
+</p>
+<a name="wp950297"> </a><div class="pprocstepSub"><li>Select the routes by using Ctrl-click.</li></div>
+<a name="wp942050"> </a><p class="pFigCaption">
+Figure&#160;3-6   MPLS Paths Between Dublin and Milan
+</p>
+<a name="wp943001"> </a><p class="pBodyRelative">
+<br />
+<img src="images/SWIMtut-4-2-07.jpg" height="362" width="531" id="wp943004" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp942051"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold"> &gt; Open Connections Browser For Selection...</span> to view the two explicit routes in the SWIM connections browser (do not close the Connections Browser).</li></div>
+<a name="wp942052"> </a><p class="pFigCaption">
+Figure&#160;3-7   SWIM Connections Browser
+</p>
+<a name="wp943018"> </a><p class="pBodyRelative">
+<br />
+<img src="images/SWIMtut-4-2-08.jpg" height="227" width="526" id="wp943021" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp942053"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">OTS</span> (Network Layer to Display In Project Editor) to visualize the primary and secondary routes on the physical layer. Both primary and secondary routes for the LSP from Dublin to Milan pass through the cable between <b class="cBold">Dublin</b> and <b class="cBold">Paris</b>. Therefore, the LSP is lost if that cable breaks. This is because MPLS-TE designed the routes to be IP link disjoint rather than OTS link disjoint.</li></div>
+<a name="wp942054"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">SWIM Connections Browser</b>.</li></div>
+</ol>
+<a name="wp942057"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the <b class="cBold">Network Browser</b>.</li></div>
+<a name="wp942058"> </a><div style="text-align: left" class="pSmartList2Test"><li>Ensure that SWIM<span style="font-weight: bold"> &gt; Automatically Update Operational Status Visualization</span> is on.</li></div>
+<a name="wp942059"> </a><div style="text-align: left" class="pSmartList2Test"><li>Switch to the Transport network: select SWIM<span style="font-weight: bold">&#160;&gt; Switch To Corresponding Transport Network</span>.</li></div>
+<a name="wp942061"> </a><div style="text-align: left" class="pSmartList2Test"><li>Perform failure analysis.</li></div>
+<ol type="a">
+<a name="wp942062"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Info &gt; Failure Analysis</span>. The <span style="font-weight: bold">Failure Analysis</span> dialog box appears.</li></div>
+<a name="wp942063"> </a><div class="pprocstepSub"><li>Click on the <span style="font-weight: bold">OTS</span> button on the toolbar to visualize the OTS layer. Right-click on the link between the nodes <span style="font-weight: bold">Lisbon</span> and <span style="font-weight: bold">Paris</span>. Select <span style="font-weight: bold">Fail This Cable</span>.</li></div>
+<a name="wp942064"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">Evaluate</span> in the <span style="font-weight: bold">Failure Analysis</span> dialog box. This reveals that 2 wavelengths and 2 STS connections are affected by the cable failure. None are recovered since the network was designed without protection at the DCL and OCH layers.</li></div>
+<a name="wp942065"> </a><div class="pprocstepSub"><li>Keep the <span style="font-weight: bold">Failure Analysis</span> dialog box open.</li></div>
+<a name="wp942066"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold"> &gt; Switch To Corresponding Layer-2/3 Network</span>. The operational status visualization shows that the IP links <b class="cBold">Dublin &lt;-&gt; Lisbon</b> and <b class="cBold">Paris &lt;-&gt; Lisbon </b>are failing due to the cable break.</li></div>
+<a name="wp950319"> </a><div class="pprocstepSub"><li>Select <b class="cBold">View &gt; Show Network Browser</b>.</li></div>
+<a name="wp950320"> </a><div class="pprocstepSub"><li>Select <b class="cBold">LSPs by Source </b>in the drop-down list.</li></div>
+<a name="wp950321"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Network Browser</b>.</li></div>
+<a name="wp942071"> </a><div class="pprocstepSub"><li>&#160;Return to SP&#160;Guru&#160;Transport&#160;Planner: select SWIM<span style="font-weight: bold"> &gt; Switch To Corresponding<br />&#160;&#160;Transport Network</span>.</li></div>
+<a name="wp942072"> </a><div class="pprocstepSub"><li>&#160;Close the <span style="font-weight: bold">Failure Analysis</span> dialog box to end the failure simulation.</li></div>
+</ol>
+<a name="wp942073"> </a><div style="text-align: left" class="pSmartList2Test"><li>Switch to the Layer-2/3 network: select SWIM<span style="font-weight: bold"> &gt; Switch To Corresponding Layer-2/3 Network</span>.</li></div>
+<a name="wp942075"> </a><div style="text-align: left" class="pSmartList2Test"><li>Save the project.</li></div>
+<ol type="a">
+<a name="wp942076"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File &gt; Save </span>(or click <b style="font-weight: bold" class="cBold">Ct</b><span style="font-weight: bold">rl+S</span>).</li></div>
+</ol>
+<a name="wp942077"> </a><div style="text-align: left" class="pSmartList2Test"><li>Perform survivability analysis in the Layer-2/3 network.</li></div>
+<ol type="a">
+<a name="wp942078"> </a><div class="pprocstepSub"><li>Right-click on the router in the <span style="font-weight: bold">Paris</span> node and select <span style="font-weight: bold">Fail This Node</span>.</li></div>
+<a name="wp942079"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">View&#160;&gt; Show Network Browser </span>to inspect the LSPs that are affected and lost by the router failure in node<b class="cBold"> Paris</b>. You will find that the LSPs <b class="cBold">Brussels -&gt; Lisbon</b>, <b class="cBold">Dublin -&gt; Milan</b> and<b class="cBold"> Lisbon -&gt; Brussels</b> are all affected by the router failure. None of these are lost, however, because their secondary routes do not cross the<b class="cBold"> Paris </b>node.</li></div>
+<a name="wp942080"> </a><div class="pprocstepSub"><li>Right-click on the <span style="font-weight: bold">Paris</span> node and select <span style="font-weight: bold">Recover This Node</span> to repair the router failure.</li></div>
+</ol>
+<a name="wp944331"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the <b class="cBold">Network Browser</b>.</li></div>
+</ol></div>
+<a name="wp942703"> </a><p class="pProcEnd">
+End of Procedure 3-2
+</p>
+<a name="wp943091"> </a><p class="pBody">
+In <a href="javascript:WWHClickedPopup('swim_tut', 'SWIMtut-4-2.html#wp942081');" onMouseOver="WWHShowPopup('swim_tut', 'SWIMtut-4-2.html#wp942081', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;3-3</u></a>, you will do another design. The optical layer is designed as it was in the first design, which means that the IP links are mapped to transport network connections without protection. This time, however, the primary and secondary explicit routes of the LSPs are diverse down to the physical layer.
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp942081"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp942081", false);</script>Procedure&#160;3-3   Dimension with MPLS protection and SRGs<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp942081", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp942081", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp942083"> </a><div style="text-align: left" class="pSmartList2Test"><li>Create the <b class="cBold">MPLS_protection_SRG_disjoint </b>scenario.</li></div>
+<ol type="a">
+<a name="wp942084"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Scenarios &gt; Duplicate Scenario</span>.</li></div>
+<a name="wp942085"> </a><div class="pprocstepSub"><li>Name the scenario <span style="font-weight: bold">MPLS_protection_SRG_disjoint</span> and click <span style="font-weight: bold">OK</span>. </li></div>
+</ol>
+<a name="wp942086"> </a><div style="text-align: left" class="pSmartList2Test"><li>Create Shared Risk Groups (SRGs) based on a single cable break in the optical Transport network. SRGs express the relationship between Risk Elements (in this case, cable failures) and Impacted Elements (in this case, IP links). </li></div>
+<ol type="a">
+<a name="wp942087"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold"> &gt; Create Shared Risk Groups From Transport Network...</span>.</li></div>
+<a name="wp942088"> </a><div class="pprocstepSub"><li>Select only <span style="font-weight: bold">Cables</span> in the Elements to Fail list and select <span style="font-weight: bold">Single element failures</span> (Element Failure Combination). Click <span style="font-weight: bold">OK</span>. This creates one SRG for every cable on the transport layer. The impacted elements of each SRG represent the IP links that fail as a result of the cable failure.</li></div>
+<a name="wp943129"> </a><p class="pFigCaption">
+Figure&#160;3-8   Create Shared Risk Group from Transport Layer Dialog Box
+</p>
+<a name="wp943133"> </a><p class="pBodyRelative">
+<br />
+<img src="images/SWIMtut-4-2-09.jpg" height="175" width="501" id="wp943136" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp942091"> </a><div class="pprocstepSub"><li>Inspect the SRGs created in the network browser at the left side of the Project Editor. The SRGs are named <b class="cBold">Transport Risk Group &#8211; Cable X &lt;-&gt; Y</b>, representing a SRG for a cable between nodes <b class="cBold">X</b> and <b class="cBold">Y</b>. For instance, there is a risk group for the cable break between <b class="cBold">Brussels</b> and <b class="cBold">London</b>&#8212;if this cable breaks, the IP links <b class="cBold">Copenhagen&lt;-&gt;Dublin </b>and <b class="cBold">Dublin&lt;-&gt;Brussels</b> will fail.</li></div>
+<a name="wp942092"> </a><div class="pprocstepSub"><li>Turn off <span style="font-weight: bold">View &gt; Show Network Browser</span> (or click <span style="font-weight: bold">Ctrl+B</span>) to close the network browser.</li></div>
+</ol>
+<a name="wp942093"> </a><div style="text-align: left" class="pSmartList2Test"><li>Design the LSP routes again. Use the traffic engineering algorithm, taking the SRGs into account to obtain primary and secondary routes at the physical layer.</li></div>
+<ol type="a">
+<a name="wp942094"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Design &gt; Configure/Run Design Action...</span>.</li></div>
+<a name="wp942095"> </a><div class="pprocstepSub"><li>Click on the <span style="font-weight: bold">+</span> icon next to <span style="font-weight: bold">Traffic Engineering</span> at the left side of the <span style="font-weight: bold">Configure/Run Design Action</span> dialog box. Select <span style="font-weight: bold">mpls_te</span>.</li></div>
+<a name="wp942096"> </a><div class="pprocstepSub"><li>Ensure that <span style="font-weight: bold">Current</span> (Target Scenario) is selected in the lower-left corner of the <span style="font-weight: bold">Configure/Run Design Action</span> dialog box.</li></div>
+<a name="wp942097"> </a><div class="pprocstepSub"><li>Click the <span style="font-weight: bold">Edit Attributes...</span> button. The <span style="font-weight: bold">Design Action: mpls_te</span> dialog box appears. Select <span style="font-weight: bold">SRG Disjoint</span> (Primary &lt;-&gt; Secondary ER Relationship).</li></div>
+<a name="wp942098"> </a><div class="pprocstepSub"><li>Click on the <span style="font-weight: bold">Value</span> field for <span style="font-weight: bold">Primary ER Computation</span>. The <span style="font-weight: bold">Primary ER Computation</span> dialog box opens. Select <span style="font-weight: bold">Min Subscribed Bandwidth</span> (Optimization Objective) and click <span style="font-weight: bold">OK</span>.</li></div>
+<a name="wp942099"> </a><div class="pprocstepSub"><li>Repeat the previous step for <span style="font-weight: bold">Secondary ER Computation</span>.</li></div>
+<a name="wp942100"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">OK</span> in the <span style="font-weight: bold">Design Action: mpls_te</span> dialog box.</li></div>
+<a name="wp942101"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">Run</span> in the <span style="font-weight: bold">Configure/Run Design Action</span> dialog box.</li></div>
+<a name="wp942102"> </a><div class="pprocstepSub"><li>Click the <span style="font-weight: bold">View Log</span> button when the <span style="font-weight: bold">Action Completed</span> dialog box appears.</li></div>
+<a name="wp942103"> </a><div class="pprocstepSub"><li>The <span style="font-weight: bold">Log Browser</span> dialog box opens.</li></div>
+<a name="wp942104"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Category &gt; Summary</span> and click on <span style="font-weight: bold">Primary Route Summary Statistics</span>. The <span style="font-weight: bold">Log Entry 2 </span>dialog box appears. Inspect the results and close the dialog box. Do the same for <span style="font-weight: bold">Secondary Route Summary Statistics</span>. The log messages report that primary routes have subscribed 1,800 Mb/s for the LSPs and the secondary 3,700 Mb/s. Note that the value for the secondary route is higher without considering SRGs (see <a href="javascript:WWHClickedPopup('swim_tut', 'SWIMtut-4-2.html#wp942053');" onMouseOver="WWHShowPopup('swim_tut', 'SWIMtut-4-2.html#wp942053', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">step&#160;7.7</u></a> in <a href="javascript:WWHClickedPopup('swim_tut', 'SWIMtut-4-2.html#wp942342');" onMouseOver="WWHShowPopup('swim_tut', 'SWIMtut-4-2.html#wp942342', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;3-2</u></a> of this tutorial). This is due to the fact that the secondary routes have to follow longer paths to respect the SRG disjointedness. This is also due to the fact that the chance to share the subscribed bandwidth among secondary routes is also smaller for SRG disjointness. </li></div>
+<a name="wp942709"> </a><div class="pprocstepSub"><li>Close the dialog boxes.</li></div>
+</ol>
+<a name="wp942710"> </a><div style="text-align: left" class="pSmartList2Test"><li>Switch to the Transport network: select SWIM<span style="font-weight: bold">&#160;&gt; Switch To Corresponding Transport Network</span>.</li></div>
+<a name="wp942108"> </a><div style="text-align: left" class="pSmartList2Test"><li>Perform failure analysis.</li></div>
+<ol type="a">
+<a name="wp942109"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Info &gt; Failure Analysis </span>to start the failure simulation.</li></div>
+<a name="wp942110"> </a><div class="pprocstepSub"><li>Use the <span style="font-weight: bold">OTS</span> toolbar button to visualize the OTS layer. Right-click on the link between <span style="font-weight: bold">Lisbon</span> and <span style="font-weight: bold">Paris</span> and select <span style="font-weight: bold">Fail This Cable</span>.</li></div>
+<a name="wp942111"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">Evaluate</span> in the <span style="font-weight: bold">Failure Analysis</span> dialog box.</li></div>
+<a name="wp942634"> </a><div class="pprocstepSub"><li>Without closing the <span style="font-weight: bold">Failure Analysis</span> dialog box, select SWIM<span style="font-weight: bold"> &gt; Switch To Corresponding Layer-2/3 Network</span>.</li></div>
+<a name="wp950359"> </a><div class="pprocstepSub"><li>Select <b class="cBold">View &gt; Show Network Browser</b>.</li></div>
+<a name="wp950382"> </a><div class="pprocstepSub"><li>Select <b class="cBold">LSPs by Source</b> in the drop-down list to inspect the primary and secondary routes taken by each LSP. You will find that the primary routes of the LSPs between <b class="cBold">Lisbon</b> and <b class="cBold">Brussels</b> are affected by the cable break. Both LSPs are recovered because their secondary route remains unaffected.</li></div>
+<a name="wp950361"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Network Browser</b>.</li></div>
+</ol>
+<a name="wp942116"> </a><div style="text-align: left" class="pSmartList2Test"><li>Switch to the Transport network: select SWIM<span style="font-weight: bold">&#160;&gt; Switch To Corresponding Transport Network</span>.</li></div>
+<ol type="a">
+<a name="wp942118"> </a><div class="pprocstepSub"><li>Close the <span style="font-weight: bold">Failure Analysis</span> dialog box to end the failure simulation.</li></div>
+</ol>
+<a name="wp942119"> </a><div style="text-align: left" class="pSmartList2Test"><li>Save the project.</li></div>
+<ol type="a">
+<a name="wp942120"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File &gt; Save </span>(or click <span style="font-weight: bold">Ctrl+S</span>).</li></div>
+</ol>
+<a name="wp942121"> </a><div style="text-align: left" class="pSmartList2Test"><li>Perform failure analysis for a node failure.</li></div>
+<ol type="a">
+<a name="wp942122"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Info &gt; Failure Analysis </span>to start the failure simulation.</li></div>
+<a name="wp942123"> </a><div class="pprocstepSub"><li>Use the <span style="font-weight: bold">OTS</span> toolbar button to view the OTS layer. Right-click on the node <b class="cBold">Paris</b> and select <span style="font-weight: bold">Fail This Node</span>.</li></div>
+<a name="wp942124"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">Evaluate</span> in the <span style="font-weight: bold">Failure Analysis</span> dialog box.</li></div>
+<a name="wp942125"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold"> &gt; Switch To Corresponding Layer-2/3 Network </span>(do not close the <span style="font-weight: bold">Failure Analysis</span> dialog box).</li></div>
+<a name="wp942126"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">View&#160;&gt; Show Network Browser </span>to inspect the affected LSPs. None of the LSPs are lost. Note that this is not guaranteed by the MPLS-TE design, since we only based it on SRGs for single cable breaks. (You could design the LSP routes to be resilient to all optical node failures&#8212;except LSP end node failures&#8212;by first generating SRGs for single node failures and subsequently running the mpls_te design action to find primary and secondary ERs that are SRG disjoint.)</li></div>
+<a name="wp951117"> </a><div class="pprocstepSub"><li>Switch to the Transport network: select<b class="cBold"> </b>SWIM<span style="font-weight: bold">&#160;&gt; Switch To Corresponding Transport Network</span>.</li></div>
+<a name="wp951118"> </a><div class="pprocstepSub"><li>Close the <span style="font-weight: bold">Failure Analysis</span> dialog box to end the failure simulation.</li></div>
+<a name="wp942129"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold"> &gt; Switch To Corresponding Layer-2/3 Network</span>.</li></div>
+</ol>
+<a name="wp944343"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the Connections Browser.</li></div>
+</ol></div>
+<a name="wp942714"> </a><p class="pProcEnd">
+End of Procedure 3-3
+</p>
+<a name="wp943239"> </a><p class="pBody">
+A final design investigates the effect of protection at the optical layer (instead of protection at the MPLS layer). To create this effect, the LSPs are routed without protection, but the IP links are protected by mapping them on protected connections at the transport layer. This also ensures protection against all single cable failures.
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+<a name="wp942130"> </a><p class="pDropDownClosed">
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorOpen("exwp942130", false);</script>Procedure&#160;3-4   Dimension with Protection at the Optical OCH Layer<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteAnchorClose("exwp942130", false);</script>
+</p>
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("exwp942130", false);</script>
+<div class="pSmartList2Test" style="text-align: left"><ol type="1" class="pSmartList2Test" style="text-align: left">
+<a name="wp942132"> </a><div style="text-align: left" class="pSmartList2Test"><li>Create the <b class="cBold">OCH_protection</b> scenario.</li></div>
+<ol type="a">
+<a name="wp942133"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Scenarios &gt; Switch to Scenario &gt; bare </span>to return to the <b class="cBold">bare</b> scenario.</li></div>
+<a name="wp942134"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Scenarios &gt; Duplicate Scenario</span>.</li></div>
+<a name="wp942135"> </a><div class="pprocstepSub"><li>Name the scenario <span style="font-weight: bold">OCH_protection</span> and click <span style="font-weight: bold">OK</span>.</li></div>
+</ol>
+<a name="wp942136"> </a><div style="text-align: left" class="pSmartList2Test"><li>Switch to the Transport network: select SWIM<span style="font-weight: bold">&#160;&gt; Switch To Corresponding Transport Network</span>.</li></div>
+<a name="wp942138"> </a><div style="text-align: left" class="pSmartList2Test"><li>Dimension the Transport network with protection at the optical layer.</li></div>
+<ol type="a">
+<a name="wp942139"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Design &gt; Groom DCL to OCH Traffic &gt; Optimized Routes...</span>.</li></div>
+<a name="wp942140"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">1Gbps_Eth_Links</span> traffic matrix, choose <span style="font-weight: bold">OC-48</span> as the bit rate for the supporting OCH traffic matrix and select <span style="font-weight: bold">End to End Grooming</span>. Do not select <b class="cBold">Optimize</b> or <b class="cBold">1+1 Protection in DCL</b>. Click <span style="font-weight: bold">Groom</span>.</li></div>
+<a name="wp942141"> </a><p class="pFigCaption">
+Figure&#160;3-9   Groom DCL to OCH Traffic Dialog Box
+</p>
+<a name="wp943266"> </a><p class="pBodyRelative">
+<br />
+<img src="images/SWIMtut-4-2-10.jpg" height="386" width="517" id="wp943272" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp943877"> </a><div class="pprocstepSub"><li>Click the <span style="font-weight: bold">Dimension</span> button. This opens the <span style="font-weight: bold">Dimension OCH/DCL Layer</span> dialog box, which lets you accommodate the newly created OCH traffic matrix <b class="cBold">OCH_1Gbps_Eth_Links_Grooming</b> in the network (with protection).</li></div>
+<a name="wp943878"> </a><div class="pprocstepSub"><li>Select the <span style="font-weight: bold">OCH_1Gbps_Eth_Links_Grooming</span> traffic matrix and <b class="cBold">1+1 Protected </b>(Protection). Keep the default settings for the other options. Click <span style="font-weight: bold">Dimension</span>.</li></div>
+<a name="wp942144"> </a><p class="pFigCaption">
+Figure&#160;3-10   Dimension DCL/OCH Layer Dialog Box
+</p>
+<a name="wp943287"> </a><p class="pBodyRelative">
+<br />
+<img src="images/SWIMtut-4-2-11.jpg" height="431" width="521" id="wp943290" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp942145"> </a><div class="pprocstepSub"><li>The traffic matrix <b class="cBold">OCH_1Gbps_Eth_Links_Grooming</b> is now entirely accommodated in the network using the 1+1 protection scheme. The <span style="font-weight: bold">Dimensioning Results</span> dialog box opens. It reports that 14 fiber pairs and 138 OXC ports have been added to the network. This is more than in previous tasks (see <a href="javascript:WWHClickedPopup('swim_tut', 'SWIMtut-4-2.html#wp942032');" onMouseOver="WWHShowPopup('swim_tut', 'SWIMtut-4-2.html#wp942032', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">step&#160;5.5</u></a> of <a href="javascript:WWHClickedPopup('swim_tut', 'SWIMtut-4-2.html#wp942342');" onMouseOver="WWHShowPopup('swim_tut', 'SWIMtut-4-2.html#wp942342', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;3-2</u></a>). We have dimensioned the optical layer for the same traffic matrix but additional capacity is now needed to ensure optical protection.</li></div>
+<a name="wp942146"> </a><div class="pprocstepSub"><li>Close all dialog boxes.</li></div>
+</ol>
+<a name="wp942147"> </a><div style="text-align: left" class="pSmartList2Test"><li>Switch to the Layer-2/3 network: Select SWIM<span style="font-weight: bold"> &gt; Switch To Corresponding Layer-2/3 Network</span> to return to the SP Guru network. </li></div>
+<a name="wp951188"> </a><p style="font-family: Helvetica" class="pprocStepResult">
+If SWIM<span style="font-weight: bold"> &gt; Automatically Update Operational Status Visualization</span> was on, notice that the overlay icons [U] have disappeared because the Transport connections that support mapped SP Guru links are now set up.
+</p>
+<a name="wp942149"> </a><div style="text-align: left" class="pSmartList2Test"><li>Design the LSP routes again, using the traffic engineering algorithm, this time do not provide protection at the MPLS layer.</li></div>
+<ol type="a">
+<a name="wp942150"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Design &gt; Configure/Run Design Action...</span>.</li></div>
+<a name="wp942641"> </a><div class="pprocstepSub"><li>Click on the <span style="font-weight: bold">+</span> icon next to <span style="font-weight: bold">Traffic Engineering</span> at the left side of the <span style="font-weight: bold">Configure/Run Design Action</span> dialog box. Select <span style="font-weight: bold">mpls_te</span>.</li></div>
+<a name="wp942642"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Current</span> (Target Scenario) in the lower left corner of the <span style="font-weight: bold">Configure/Run Design Action</span> dialog box.</li></div>
+<a name="wp942153"> </a><div class="pprocstepSub"><li>Click <b class="cBold">Edit Attributes...</b>. The <span style="font-weight: bold">Design Action: mpls_te</span> dialog box appears. Select <span style="font-weight: bold">No Secondary ER</span> (Primary &lt;-&gt; Secondary ER Relationship).</li></div>
+<a name="wp942154"> </a><div class="pprocstepSub"><li>Click on the <span style="font-weight: bold">Value</span> field for <span style="font-weight: bold">Primary ER Computation</span>. The <span style="font-weight: bold">(Primary ER Computation) Table</span> dialog box opens. Select <span style="font-weight: bold">Min Subscribed Bandwidth</span> (Optimization Objective) and click <span style="font-weight: bold">OK</span>.</li></div>
+<a name="wp942155"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">OK</span> in the <span style="font-weight: bold">Design Action: mpls_te</span> dialog box.</li></div>
+<a name="wp942156"> </a><div class="pprocstepSub"><li>Ensure that <span style="font-weight: bold">Current</span> is selected as<b class="cBold"> Target</b>. Click <span style="font-weight: bold">Run</span> in the <span style="font-weight: bold">Configure/Run Design Action</span> dialog box.</li></div>
+<a name="wp942157"> </a><div class="pprocstepSub"><li>Click the <span style="font-weight: bold">View Log</span> button when the <span style="font-weight: bold">Action Completed</span> dialog box appears.</li></div>
+<a name="wp942158"> </a><div class="pprocstepSub"><li>The <span style="font-weight: bold">Log Browser</span> dialog box opens.</li></div>
+<a name="wp942159"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Category &gt; Summary</span> and click <span style="font-weight: bold">Primary Route Summary Statistics</span>. The <span style="font-weight: bold">Log Entry 2 </span>dialog box appears. The results reported in the logs show that only primary routes are set up and that they consume 1,800 Mb/s. Thus, we save bandwidth at the MPLS layer compared to previous designs because no secondary explicit routes were set up.</li></div>
+<a name="wp942160"> </a><div class="pprocstepSub"><li>Close the dialog boxes.</li></div>
+</ol>
+<a name="wp942161"> </a><div style="text-align: left" class="pSmartList2Test"><li>Generate a SWIM failure analysis web report to study the effect of optical cable cuts on the SP Guru network.</li></div>
+<ol type="a">
+<a name="wp942162"> </a><div class="pprocstepSub"><li>From the menu in SP Guru, choose SWIM<span style="font-weight: bold"> &gt; Generate Failure Analysis Report For Transport Network Failures...</span></li></div>
+<a name="wp942163"> </a><div class="pprocstepSub"><li>In the dialog that appears, ensure that <b class="cBold">Cables</b> are selected as Elements To Fail, and <b class="cBold">Single</b> as Element Failure Combination.</li></div>
+<a name="wp942164"> </a><p class="pFigCaption">
+Figure&#160;3-11   Generate Failure Analysis Report Dialog Box
+</p>
+<a name="wp943340"> </a><p class="pBodyRelative">
+<br />
+<img src="images/SWIMtut-4-2-12.jpg" height="241" width="412" id="wp943343" border="0" hspace="0" vspace="-2"/><br />
+
+</p>
+<a name="wp942165"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">OK</span> in the <b class="cBold">Generate Failure Analysis Report... </b>dialog box. This opens a web browser for the requested failure analysis report. </li></div>
+<a name="wp942166"> </a><div class="pprocstepSub"><li>In the <span style="font-weight: bold">Summary Per Transport Layer Failure</span> sheet that opens by default, scroll down to the <b class="cBold">Transport Layer Failure Cases</b> table. Note that none of the single cable failures causes SP Guru links to go down, since you have provided protection at the optical layer (OCH).</li></div>
+<a name="wp942167"> </a><div class="pprocstepSub"><li>From the Transport Layer Failure Cases list in the left- hand side frame, select <span style="font-weight: bold">Cable Lisbon &lt;-&gt; Paris</span>.</li></div>
+<a name="wp942168"> </a><div class="pprocstepSub"><li>The <span style="font-weight: bold">Affected SP Guru Links</span> table shows that a cable cut between Lisbon and Paris results in two SP Guru links to be affected: their delay increases because of a switch over to a longer protection path at the optical OCH layer.</li></div>
+<a name="wp943367"> </a><p class="pFigCaption">
+Figure&#160;3-12   SWIM Failure Analysis Rep<br />
+<img src="images/SWIMtut-4-2-13.jpg" height="683" width="535" id="wp943373" border="0" hspace="0" vspace="-2"/><br />
+ort
+</p>
+</ol>
+<a name="wp942170"> </a><div style="text-align: left" class="pSmartList2Test"><li>Investigate the effect of a router failure.</li></div>
+<ol type="a">
+<a name="wp942171"> </a><div class="pprocstepSub"><li>Right-click on the router in node <span style="font-weight: bold">Paris</span> and select <span style="font-weight: bold">Fail This Node</span>.</li></div>
+<a name="wp942172"> </a><div class="pprocstepSub"><li>Select<b class="cBold"> View &gt; Show Network Browser</b> and select <b class="cBold">LSPs by Source</b> in the drop-down list to inspect the LSPs that are affected and lost by the router failure in the <b class="cBold">Paris</b> node. Notice that the LSPs <b class="cBold">Brussels -&gt; Lisbon</b>, <b class="cBold">Dublin -&gt; Milan</b>, and <b class="cBold">Lisbon -&gt; Brussels</b> are lost due to the router failure. There are no secondary routes and the optical layer protection does not protect against IP router failures.</li></div>
+<a name="wp942173"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Network Browser</b>.</li></div>
+<a name="wp942174"> </a><div class="pprocstepSub"><li>Right-click on the <span style="font-weight: bold">Paris</span> node and select <span style="font-weight: bold">Recover This Node</span> to repair the router failure.</li></div>
+</ol>
+<a name="wp942175"> </a><div style="text-align: left" class="pSmartList2Test"><li>Investigate the effect of a node failure.</li></div>
+<ol type="a">
+<a name="wp942176"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold">&#160;&gt; Switch To Corresponding Transport Network</span> to return to the Transport network.</li></div>
+<a name="wp942177"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">Info &gt; Failure Analysis </span>to start the failure simulation.</li></div>
+<a name="wp942178"> </a><div class="pprocstepSub"><li>Use the <span style="font-weight: bold">OTS</span> button on the toolbar to view the OTS layer. Right-click on the <b class="cBold">Paris</b> node and select <span style="font-weight: bold">Fail This Node</span>.</li></div>
+<a name="wp942179"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">Evaluate</span> in the <span style="font-weight: bold">Failure Analysis</span> dialog box.</li></div>
+<a name="wp942180"> </a><div class="pprocstepSub"><li>Return to SP Guru by selecting SWIM<span style="font-weight: bold"> &gt; Switch To Corresponding Layer-2/3 Network</span> (do not close the <span style="font-weight: bold">Failure Analysis</span> dialog box).</li></div>
+<a name="wp942181"> </a><div class="pprocstepSub"><li>Select <b class="cBold">View &gt; Show Network Browser </b>and select<b class="cBold"> LSPs by Source</b> in the drop-down list to inspect the affected LSPs. The LSPs <b class="cBold">Brussels -&gt; Lisbon,</b> <b class="cBold">Dublin -&gt; Milan</b>, <b class="cBold">Lisbon -&gt; Brussels</b> are lost. OCH protection does protect against optical node failures unless the node is an end point of an optical connection. In this case, the IP links terminating in the<b class="cBold"> Paris</b> node are mapped to optical connections terminating in the <b class="cBold">Paris</b> node and they cannot recover from an optical node failure. Note that an optical node failure in <b class="cBold">London</b> would not result in lost LSPs because no IP links terminate in <b class="cBold">London</b>.</li></div>
+<a name="wp942182"> </a><div class="pprocstepSub"><li>Close the <b class="cBold">Network Browser</b>.</li></div>
+<a name="wp942183"> </a><div class="pprocstepSub"><li>Select SWIM<span style="font-weight: bold">&#160;&gt; Switch To Corresponding Transport Network</span> to return to the Transport network.</li></div>
+<a name="wp942184"> </a><div class="pprocstepSub"><li>Close the <span style="font-weight: bold">Failure Analysis</span> dialog box to end the failure simulation.</li></div>
+</ol>
+<a name="wp942185"> </a><div style="text-align: left" class="pSmartList2Test"><li>Close the project.</li></div>
+<ol type="a">
+<a name="wp942186"> </a><div class="pprocstepSub"><li>Select <span style="font-weight: bold">File &gt; Close</span>.</li></div>
+<a name="wp942187"> </a><div class="pprocstepSub"><li>Click <span style="font-weight: bold">Save</span> in the <span style="font-weight: bold">Close Confirm</span> dialog box.</li></div>
+</ol>
+</ol></div>
+<a name="wp942765"> </a><p class="pProcEnd">
+End of Procedure 3-4
+</p>
+
+<script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/swim_tut_3.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

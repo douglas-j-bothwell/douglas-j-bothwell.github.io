@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>License Server Operations within License Manager GUI</title>
+    <link rel="StyleSheet" href="css/ag_037_license_gui.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ag_037_license_gui.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">Solution Overview &gt; <a class="WebWorks_Breadcrumb_Link" href="ag_splash.html#379308">License and Installation Support</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ag_037_licensing_overview.09.1.html#379308">Licensing</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ag_037_license_gui.10.01.html#379308">License Manager Graphical User Interface</a> &gt; License Server Operations within License Manager GUI</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h2"><a name="379308">License Server Operations within License Manager GUI</a></div>
+      <div class="body"><a name="473060">There are several ways to start </a><span class="code">op_license_server</span>, the process that is commonly referred to as the <span class="italic">license server</span>; however it is typically started by the host operating system during system startup. Methods for starting the process manually are described in this section.</div>
+      <div class="bodyWarning">
+        <span class="zRedBold">WARNING—</span><a name="476012">You cannot manage a version 15.0 (or higher) license server from a pre-15.0 license manager or from the license server included with AppInternals&nbsp;Xpert or Transaction Trace Analyzer (as these products use a pre-15.0 version of the license server). Version 15.0 (or higher) license servers can only be managed from 15.0 (or higher) license managers. </a></div>
+      <div class="bodyIntro"><a name="379309">When a license server is selected in the license manager treeview, you can perform the following license server operations. You must have administrative privileges on the license server to make changes.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.07.html#472778', '');" title="License Server Operations within License Manager GUI" name="472879">Starting the License Server from the License Manager GUI</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.07.html#379320', '');" title="License Server Operations within License Manager GUI" name="379313">Right-Click License Server Operations</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.07.html#379363', '');" title="License Server Operations within License Manager GUI" name="379317">License Server Operations (Buttons)</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="473083">If you installed OPNET&nbsp;analysis&nbsp;software in standalone licensing mode, it will obtain licenses on its own. There is no need to start the license server in this case. Standalone licensing is not a typical use case and is not available for AppInternals&nbsp;Xpert or VNE&nbsp;Server.</a></div>
+      <div class="h3"><a name="472778">Starting the License Server from the License Manager GUI</a></div>
+      <div class="bodyIntro"><a name="472779">The procedures in this section describe how to start a local or remote license server from the License Manager GUI. Use the following procedure to start a local license server.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd472786&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd472786", false);</script>Procedure&nbsp;3-9   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="472786">Starting a Local License Server from the License Manager GUI</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd472786", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472790">Run the License Manager (as in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.02.html#473610', '');" title="Starting the License Manager GUI">Starting the License Manager GUI</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472791">Select the License Server for your computer in the License Manager treeview. (It will have a red dot in front of its name, indicating that it is not running).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472792">Click the Start Server button.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 3-9</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="472793">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="472794">&nbsp;</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd472796&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd472796", false);</script>Procedure&nbsp;3-10   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="472796">Starting a Remote License Server from the License Manager GUI</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd472796", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472800">Run the License Manager (as in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.02.html#473610', '');" title="Starting the License Manager GUI">Starting the License Manager GUI</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472801">Select the License Server in the License Manager treeview under “Other servers on this IP network.”</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="472802">Click the Start Server button.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 3-10</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="472803">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="472804">&nbsp;</a></div>
+      <div class="h3"><a name="379320">Right-Click License Server Operations</a></div>
+      <div class="bodyIntro"><a name="379321">Right-click on a license server that is in a stopped condition to use these menu options, as shown in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.07.html#379333', '');" title="License Server Operations within License Manager GUI">Figure&nbsp;3-8</a></span>:</div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="379328">Start Server (See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.07.html#472778', '');" title="License Server Operations within License Manager GUI">Starting the License Server from the License Manager GUI</a></span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="496389">Show Usage Statistics—Shows brief usage statistics for the selected license server. See also </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_reporting.html#157546', '');" title="License Server Reporting">License Server Usage Reports</a></span> for more ways to obtain information about the usage of the license server.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="496393">Reset Usage Statistics—Sets the license server usage statistics back to zero.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="379331">Set as Default Server (See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.07.html#379391', '');" title="License Server Operations within License Manager GUI">Set as Default Server (Button)</a></span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;3-8   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="379333">Right-Click Server Operations</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="379337"><img class="Default" src="images/ag_037_license_gui.10.07.1.jpg" width="499" height="438" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="379338">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="379339">Right-click on a license server that is in a started condition to use these menu options, as shown in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.07.html#379356', '');" title="License Server Operations within License Manager GUI">Figure&nbsp;3-9</a></span>:</div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="379346">Stop Server (See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.11.html#474577', '');" title="Stopping the License Server">Stopping the License Server from the License Manager GUI</a></span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="379350">Add License (See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.09.html#471575', '');" title="Add Licenses">Add License from License Manager GUI</a></span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="379353">Update System Date (See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.11.html#474714', '');" title="Stopping the License Server">Updating the System Date on a License Server</a></span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;3-9   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="379356">Right-Click Server Operations</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="379360"><img class="Default" src="images/ag_037_license_gui.10.07.2.jpg" width="500" height="258" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="379361">&nbsp;</a></div>
+      <div class="h3"><a name="379363">License Server Operations (Buttons)</a></div>
+      <div class="bodyIntro"><a name="379364">When a license server is selected in the License Manager treeview, additional buttons appear on the right side of the GUI.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;3-10   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="379365">License Server Actions</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="379376"><img class="Default" src="images/ag_037_license_gui.10.07.3.jpg" width="478" height="308" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="379377">&nbsp;</a></div>
+      <div class="h4RunIn"><a name="379380">Start Server (Button)</a></div>
+      <div class="bodyIntro"><a name="379381">This button starts the selected server, allowing it to issue licenses and perform other license server functions. You can also right-click on the server in the treeview and select “Start Server” from the pop-up menu. If the selected license server is already running, this button is not visible.</a></div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="379382">This button is active only when the selected server is your own (local) machine. To determine if a machine is local, type </a><span class="fCompOutput">hostname</span> in a shell window. See <span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.07.html#472786', '');" title="License Server Operations within License Manager GUI">Procedure&nbsp;3-9</a></span> for details. </div>
+      <div class="h4RunIn"><a name="379386">Stop Server (Button)</a></div>
+      <div class="body"><a name="379387">This button stops the selected server. You can also right-click on the server in the treeview and select “Stop Server” from the pop-up menu. If the selected license server is already stopped, this button is not visible.</a></div>
+      <div class="h4RunIn"><a name="379391">Set as Default Server (Button)</a></div>
+      <div class="body"><a name="379392">When a license server is selected in the treeview, this button lets you set your user preferences so that the selected server is your default server. This server will be the requested server the next time you start OPNET&nbsp;analysis&nbsp;software, and the values of the </a><span class="code">license_server </span>and <span class="code">license_port</span> preferences will correspond to this server. You can also right-click on a server other than the server you are currently using, and select “Set as Default Server” from the pop-up menu.</div>
+      <div class="h4RunIn"><a name="379397">Create License File (Button)</a></div>
+      <div class="body"><a name="379398">This button appears only if there is no license file on the computer where the license server is running. When you click this button, a new license file is created. It will not have any licenses in it. Use the methods described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'ag_037_license_gui.10.09.html#471575', '');" title="Add Licenses">Add License from License Manager GUI</a></span> to add licenses. The Create License File button is not commonly used.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

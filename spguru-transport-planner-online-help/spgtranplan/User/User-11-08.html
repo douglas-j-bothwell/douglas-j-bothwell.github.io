@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.5844.3" />
+    <meta name="TEMPLATEBASE" content="SPG_TranPlan_1.0.5" />
+    <meta name="LASTUPDATED" content="05/09/07 15:36:16" />
+    <title>Preparing a Transparent Network</title>
+    <link rel="StyleSheet" href="spguru.css" type="text/css" />
+    
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+
+<!--Comment out OPNET Logo 
+   <p>
+      <img id="LongDescNotReq1" src="images/opnet.gif" width="174" height="46" alt=" OPNET logo" />
+    </p>
+-->
+<blockquote> 
+
+<b><font face="arial" size="2"><a href="User-11-01.html"> Transparent Networks</a> > <a href="User-11-07.html">Workflow Description: Transparent Network Routing or Dimensioning</a> > Preparing a Transparent Network</font></b> 
+
+</blockquote>
+
+    <hr align="left" />
+
+    <blockquote>
+<a name="wp258114"> </a><h2 style="font-family: Helvetica; margin-bottom: 7pt" class="pHeading2">
+Preparing a Transparent Network
+</h2>
+
+ 
+
+<a name="wp293497"> </a><p class="pBody">
+Before you run a routing or dimensioning operation on a transparent network, you must do the following:
+</p>
+<div class="pSmartList1"><ol type="1" class="pSmartList1">
+<a name="wp293498"> </a><div class="pSmartList1"><li>Specify the following properties in the Network Properties dialog box: </li></div>
+<div class="pSmartList2"><ol type="a" class="pSmartList2">
+<a name="wp293684"> </a><div class="pSmartList2"><li>Set the OCH Layer Mode to Transparent</li></div>
+<a name="wp293499"> </a><div class="pSmartList2"><li>Specify the default WDM line system type using the Default WDM Line System for OCH Link setting</li></div>
+<a name="wp293574"> </a><p class="pBodyRelative">
+For more information about this dialog box, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-09.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-09.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Network Properties</u></a>.
+</p>
+</ol></div>
+<a name="wp293500"> </a><div class="pSmartList1"><li>Run the Link Design operation. This operation places the required amplification and regeneration sites along each physical link in the network. This ensures that each link contains the necessary equipment to overcome OA spans and the maximum transparency length. </li></div>
+<a name="wp293706"> </a><p class="pBodyRelative">
+For more information, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-04-30.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-04-30.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Link Design</u></a>.
+</p>
+<a name="wp293501"> </a><div class="pSmartList1"><li>Specify the following properties for individual nodes in the OCH Node Browser:</li></div>
+<div class="pSmartList2"><ol type="a" class="pSmartList2">
+<a name="wp293639"> </a><div class="pSmartList2"><li>Transparency setting (transparent, selective or opaque)</li></div>
+<a name="wp293502"> </a><div class="pSmartList2"><li>Regeneration capacity present in selective nodes. You must do this for routing operations. You can also do this for dimensioning operations to define the present regeneration capacity from which the dimensioning action starts.</li></div>
+<a name="wp293503"> </a><div class="pSmartList2"><li>Tap, tributary and trunk port configuration on wavelength plane OXCs (you can do this in the Ports view of the OCH Node Browser).</li></div>
+<a name="wp294492"> </a><div class="pSmartList2"><li>Configure OADMs in higher-degree nodes. You can define OADMs manually, as described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-11-09.html#wp302677');" onMouseOver="WWHShowPopup('wdm_user', 'User-11-09.html#wp302677', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">Procedure&#160;10-1</u></a>. You can also import OADMs from a data file, as described in <a href="javascript:WWHClickedPopup('wdm_user', 'User-06-10.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-06-10.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">OADM Data Files</u></a>.</li></div>
+<a name="wp295941"> </a><p class="pBodyRelative">
+For more information about the OCH Node browser, see <a href="javascript:WWHClickedPopup('wdm_user', 'User-05-11.html');" onMouseOver="WWHShowPopup('wdm_user', 'User-05-11.html', (document.all||document.getElementById||document.layers)?event:null);" onMouseOut="WWHHidePopup();"><u class="cUnderline">OCH Node Browser</u></a>.
+</p>
+</ol></div>
+<a name="wp293504"> </a><div class="pSmartList1"><li>To view a detailed report after a design operation, select Info &gt; View Details after Design Operations. This report shows detailed data about the results of the design operation such as wavelength utilization, regenerators and converters used, and connections routed.</li></div>
+</ol></div>
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Clear related topics
+    //
+    WWHClearRelatedTopics();
+
+   // -->
+  </script>
+    </blockquote>
+
+    <hr />
+
+    <table id="SummaryNotReq1" align="left" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        
+    <td align="left"> <!--Comment out Title
+  <span style="font-size: 11px ; font-weight: bold ; font-family: arial, sans-serif">
+            OPNET Technologies, Inc.<br />
+          </span>
+--> <span style="font-size: 9px ; font-family: arial, sans-serif"> <a href="../wwhelp/wwhimpl/common/html/default.htm"><b><font size="3">Home</font></b></a><br/> 
+      © 1987-2007 OPNET Technologies, Inc. <br />
+            All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Copyright/Copyright-1-1.html">Legal Notices</a> section.<br />
+
+            <a href="http://www.opnet.com/support" target="_blank"> OPNET Support Center </a><br />
+          </span>
+        </td>
+      </tr>
+    </table>
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function PDFLocation()
+    {
+        var PDFLocation = "pdfs/WDM_34_trn.pdf";
+        return PDFLocation;     // Used by the PDF control.
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+   // -->
+  </script>
+
+  </body>
+</html>

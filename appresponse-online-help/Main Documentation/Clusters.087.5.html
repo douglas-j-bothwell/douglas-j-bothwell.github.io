@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Aggregating Data to the Director</title>
+    <link rel="StyleSheet" href="css/Clusters.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ald_ug_splash.html">Director User Guide</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="Clusters.087.1.html">Domains</a> &gt; Aggregating Data to the Director</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="950765">Aggregating Data to the Director</a></div>
+      <div class="bodyIntro"><a name="950766">Data collected on each appliance can be aggregated back to the director. It is desirable to aggregate Business Group data to the director for a few reasons:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950767">Data collected on multiple appliances can be summed on the director. This is useful when traffic for a single logical Business Group is spread across multiple appliances. This should only be done when each appliance sees unique traffic for the Business Group in question.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950768">The director provides a single location for examining cluster-wide data if relevant Business Groups from each appliance are aggregated.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950769">Users can connect directly to the director to examine data collected for each Business Group. This saves time since it is not necessary to connect directly to each appliance separately.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyIntro"><a name="950770">Data for the following group types can be aggregated to the director:</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="950771">Business Groups [implicit Director Group]</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="950772">Applications [implicit Director Group]</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="950773">Total Traffic (or any Total Traffic drill-down) [explicit Director Group]</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	4)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="950774">ISP AS (or any ISP AS drill-down) [explicit Director Group]</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="950775">Data aggregated from an appliance to the director is said to belong to a Director Group and must be examined using a Director Group path. In the case of Business Groups (and applications), a Director Group is defined implicitly after following the procedures in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'Clusters.087.5.html#950791', '');" title="Aggregating Data to the Director">Aggregating Business Group Data</a></span> and <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'Clusters.087.5.html#950815', '');" title="Aggregating Data to the Director">Aggregating Application Data</a></span> respectively. In the case of Total Traffic or ISP group path, a Director Group must be explicitly defined using the Director Group Manager. See <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'Clusters.087.5.html#950834', '');" title="Aggregating Data to the Director">Aggregating Total Traffic or ISP Group Path Data</a></span>.</div>
+      <div class="bodyNote">
+        <span class="bold">Note: </span><a name="950785">If an appliance is unavailable (either due to network connectivity or the appliance being down), the director waits up to 20 minutes before it aggregates the data. If an appliance is not available within this time-out period the director aggregates the data of the available appliances and moves on. At this point the data are incomplete.</a></div>
+      <div class="h2TopNoBreak"><a name="950791">Aggregating Business Group Data</a></div>
+      <div class="body"><a name="950792">To aggregate Business Group data to the director, click the Collect on Director checkbox in the Business Group Manager Distribution tab.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;15     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950793">Business Group Manager - Collect on Director</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="954256"><img class="Default" src="images/Clusters.087.5.1.jpg" width="317" height="140" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="950798">&nbsp;</a></div>
+      <div class="body"><a name="954248">Each appliance with Collect on Director enabled aggregates data collected for that Business Group to the director. The data for the Business Group on the appliance represents the sum of all data collected by each appliance with Collect on Director enabled. This option should only be enabled for appliances that see unique traffic for the Business Group, otherwise some data is counted twice (or more).</a></div>
+      <div class="body"><a name="950801">Appliances with Collect on Director enabled do not aggregate 1-minute metrics to the director. As a result, only 5-minute, 1-hour and 1-day metric granularities are available for these Business Groups on the director. To examine 1-minute metrics, users must connect directly to the appliance or transparently connect to the appliance using a group table on the director. </a></div>
+      <div class="body"><a name="950806">Business group data aggregated to the director can only be examined through a Director Group (see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'Clusters.087.7.html', '');" title="Director Group Table">Director Group Table</a></span>) or through the group topology window (see <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Topology.037.2.html', '');" title="Business Group Topology">Business Group Topology</a></span>).</div>
+      <div class="h2TopNoBreak"><a name="950815">Aggregating Application Data</a></div>
+      <div class="body"><a name="950816">Application data collected on each appliance can be aggregated back to the director in the same way as Business Group data (as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'Clusters.087.5.html#950791', '');" title="Aggregating Data to the Director">Aggregating Business Group Data</a></span>). In fact, application data is only aggregated to the director for those Business Groups that are also being aggregated. Aggregating application data to the director is meaningless if Business Groups are not already aggregated, since applications are drill-downs within Business Groups.</div>
+      <div class="body"><a name="950820">To aggregate application data to the director, click the Collect on Director checkbox in the Defined Application Manager.</a></div>
+      <div class="bodyNote">
+        <span class="bold">Note: </span><a name="950821">No more than 10 applications can be aggregated to the director for Business Groups.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;16     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950822">Defined Application Manager—Collect on Director</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="954265"><img class="Default" src="images/Clusters.087.5.2.jpg" width="528" height="321" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="950827">&nbsp;</a></div>
+      <div class="body"><a name="954259">Application data aggregated to the director can only be examined through Director Groups. See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'Clusters.087.7.html', '');" title="Director Group Table">Director Group Table</a></span>.</div>
+      <div class="h2TopNoBreak"><a name="950834">Aggregating Total Traffic or ISP Group Path Data</a></div>
+      <div class="body"><a name="950835">The Director Group Manager is used to define explicit Director Groups for the purpose of aggregating Total Traffic or ISP group data from the appliances to the director. Director Groups can be defined for Total Traffic and ISP groups or for any of the drill-downs available from these groups. See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Groups.026.04.html', '');" title="Group Drill-Down">Group Drill-Down</a></span>.</div>
+      <div class="bodyIntro"><a name="950839">Follow these steps to define a Director Group:</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd954929&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procCaption_inner" style="width: 90pt; white-space: nowrap">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd954929", false);</script>Procedure&nbsp;7    </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="954929">Defining a Director Group</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd954929", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="950843">Go to the Tools menu on a Desktop Console connected to the director and select Director Group Manager.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap">Figure&nbsp;17    </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="950844">Director Group Manager</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="954293"><img class="Default" src="images/Clusters.087.5.3.jpg" width="438" height="359" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="954287">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="955021">Click the New button.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="950850">Select the Director Group Type. You may select a Total Traffic or ISP.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="950851">Enter the Name and optional Description for the Director Group.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	5.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="950852">Click the Add button to specify the group types that belong to the Director Group. A multi-appliance group selection dialog appears. Specify the appliance (drop-down list) and group (drill-down) that should be added to the Director Group and click Apply.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap">Figure&nbsp;18    </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="950853">Director Group/Drilldown Chooser Dialog</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="954304"><img class="Default" src="images/Clusters.087.5.4.jpg" width="321" height="277" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="954298">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	6.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="955071">Repeat step #5 to add all desired appliance/group pairs to the Director Group</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	7.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="950859">Click OK or Apply to save changes.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap">End of Procedure 7</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="955081">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="955085">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="950861">All HTTP Traffic across all Appliances</a></div>
+      <div class="body"><a name="950862">The following Director Group aggregates all HTTP traffic seen by all appliances in a domain to the Director. Assume that the domain consists of an director named cuda0 and two appliances named cuda1 and cuda2.</a></div>
+      <div class="tblAnchor"><a name="956489">&nbsp;</a></div>
+      <table class="tblAttributes" style="text-align: left" cellspacing="0" summary="">
+        <caption></caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 110.37888pt">
+            <div class="tblHead"><a name="950865">Field</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 357.62112pt">
+            <div class="tblHead"><a name="950867">Value</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950869">Director Group Type</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950871">Total Traffic</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950873">Members</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950875">cuda1:Total&nbsp;Traffic&nbsp;&gt;TCP&nbsp;&gt;Applications&nbsp;&gt;&nbsp;HTTP</a></div>
+            <div class="tblBody9"><a name="950876">cuda2:Total&nbsp;Traffic&nbsp;&gt;TCP&nbsp;&gt;Applications&nbsp;&gt;&nbsp;HTTP</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="body"><a name="950877">All HTTP traffic captured by cuda1 and cuda2 is aggregated to the Director (cuda0) and made available in the new Director Group. The traffic captured by cuda1 and cuda2 is summed together in the Director Group. The Director Group can be examined in a </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'Clusters.087.7.html', '');" title="Director Group Table">Director Group Table</a></span>.</div>
+      <div class="body"><a name="950881">Similarly, a Director Group can be used to sum the total utilization of protocols that include both TCP and UDP ports. For instance, Real Audio and Video often uses TCP ports 554 and 7070 as well as UDP ports 6970 to 7170. A Director Group is required to sum the utilization across all these ports.</a></div>
+      <div class="h2NoBreak"><a name="958725">Incomplete Aggregation</a></div>
+      <div class="body"><a name="950885">If aggregation is incomplete due to an appliance being unreachable, the director automatically recollects and aggregates the data from this appliance up to the last 6 hours from the time the appliance becomes available again. This process is called </a><span class="italic">Online Data Recovery</span> to distinguish it from <span class="italic">Offline Data Recovery</span>, which is user-driven.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>
