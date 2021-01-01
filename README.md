@@ -6,12 +6,14 @@
 
 * [Completed sections](./pdf/doug-bothwell-ucsc-sv.completed-sections.2020-08-17.png)
 
-* [Certificate in Computer Programming -- April 2019](./pdf/doug-bothwell-ucsc-certificate-computer-programming.png)
+* [Certificate in Computer Programming -- April 2019](./pdf/doug-bothwell-ucsc-transcript-dec-2020.png)
 
 
 ### Moogsoft (2018-Present)
 
 * Wrote entire v1 doc set from scratch for Moogsoft Observability Cloud, which uses advanced AI-based algorithms to monitor, observe, filter, deduplicate, and correlate raw monitoring data into a single, interactive list of actionable incidents. This doc set is now the centerpiece of https://docs.moogsoft.com.
+
+* Developed a fully automated, end-to-end pipeline for publishing and updating docs using Python, Bash, and REST calls. 
 
 * API work:
 
