@@ -11,9 +11,9 @@
 
 ### Moogsoft (2018-Present)
 
-* Primary writer for [Moogsoft Express](https://docs.moogsoft.com/express/index.html?lang=en), currently in beta, which extends Moogsoft's industry-leading AIOps (AI for IT Operations monitoring) technology to small and midsize organizations.
+* Wrote entire v1 doc set from scratch for Moogsoft Observability Cloud, which uses advanced AI-based algorithms to monitor, observe, filter, deduplicate, and correlate raw monitoring data into a single, interactive list of actionable incidents. This doc set is now the centerpiece of https://docs.moogsoft.com.
 
-* Express API work:
+* API work:
 
    * Reorganized swagger files in coordination with engineering director.
 
