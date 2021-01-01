@@ -4,7 +4,7 @@
 
 ### UCSC Silicon Valley Extension
 
-* [Completed sections](./pdf/doug-bothwell-ucsc-sv.completed-sections.2020-08-17.png)
+* [Completed sections -- December 2020](./pdf/doug-bothwell-ucsc-transcript-dec-2020.png)
 
 * [Certificate in Computer Programming -- April 2019](./pdf/doug-bothwell-ucsc-transcript-dec-2020.png)
 
