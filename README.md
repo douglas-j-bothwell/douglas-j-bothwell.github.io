@@ -15,7 +15,7 @@
 
 * Developed a fully automated, end-to-end pipeline for publishing and updating docs using Python, Bash, and REST calls. 
 
-* API work:
+* Lead writer for API docs. Work includes:
 
    * Reorganized swagger files in coordination with engineering director.
 
