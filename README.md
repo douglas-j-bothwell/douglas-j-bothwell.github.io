@@ -11,34 +11,34 @@
 
 ### Moogsoft (2018-Present)
 
-* Wrote entire v1 doc set from scratch for Moogsoft Observability Cloud, which uses advanced AI-based algorithms to monitor, observe, filter, deduplicate, and correlate raw monitoring data into a single, interactive list of actionable incidents. This doc set is now the centerpiece of https://docs.moogsoft.com.
+* Currently the API writer for Moogsoft Observability Cloud. Work includes:
 
-* Developed a fully automated, end-to-end pipeline for publishing and updating docs using Python, Bash, and REST calls. 
+   * Implemented a major revamp of the [Moogsoft API docs](https://api.docs.moogsoft.com/reference/overview), with new intros/overviews and object references.
 
-* Lead writer for API docs. Work includes:
+   * Edit Java code to update auto-generated Swagger files.
+
+   * Writing guided "hello-world" code samples to onboard users to specific APIs (in progress).
+
+   * Test and review API specs for clarity, consistency, and usability.
 
    * Reorganized swagger files in coordination with engineering director.
 
    * Wrote Swagger conversion utility in Python that converts YAML files to JSON, organizes files by release number, and imports external schema referenced in swagger specs.
 
-   * Created and ran extensive tests using Postman and wrote bash scripts to reproduce errors.
+* Wrote entire v1 doc set from scratch for Moogsoft Observability Cloud, which uses advanced AI-based algorithms to monitor, observe, filter, deduplicate, and correlate raw monitoring data into a single, interactive list of actionable incidents. This doc set is now the centerpiece of https://docs.moogsoft.com.
 
-   * Reviewing Swagger specs for grammer, consistency, and usability (_in progress_)
+* Manage the git repos and publishing processes for Tech Content group.  Developed a fully-automated, end-to-end pipeline for publishing and updating docs using Python, bash, and REST calls. 
 
-* Wrote, tested, and deployed Express demo utility in Python that
+* Wrote, tested, and deployed demo utility in Python that
    * Generates sample event and metric data based on parameterized randomization
    * Supports customization of hostnames, metrics, events, and anomaly severity levels
    * Sends generated data to Express ingestion API
 
+* Evaluated Jekyll as a possible publishing platform. Forked and modified a Jekyll doc theme and added Swagger UI functionality. Created a semi-automated pipeline to convert Moogsoft docs to markdown. 
+
 * Evaluated Oxygen XML as a possible authoring tool
 
-* Created XML repo that illustrates how you can perform various tasks using DITA and Oxygen:
-
-   * Define global variables for company and product names
-
-   * Define and apply conditions to show/hide content based on company and product name
-
-   * Publish output to HTML and PDF  
+* Evaluated Oxygen XML as a possible authoring tool. Created an XML repo that illustrates how to perform various tasks using DITA and Oxygen: define global variables, apply conditions to show/hide content, and publish output to HTML and PDF.  
 
 ### AppDynamics (2016-2018)
 
