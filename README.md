@@ -13,11 +13,11 @@
 
 * Currently the API writer for Moogsoft Observability Cloud. Work includes:
 
-   * Implemented a major revamp of the [Moogsoft API docs](https://api.docs.moogsoft.com/reference/overview), with new intros/overviews and object references.
+   * Named an [Employee of the Quarter](https://www.linkedin.com/feed/update/urn:li:activity:6800049491429990400/?commentUrn=urn%3Ali%3Acomment%3A(activity%3A6800049491429990400%2C6801192805843791872)) for my revamp of the [Moogsoft API docs](https://api.docs.moogsoft.com/reference/overview)
 
    * Edit Java code to update auto-generated Swagger files.
 
-   * Writing guided "hello-world" code samples to onboard users to specific APIs (in progress).
+   * Write guided "hello-world" code samples to onboard users to specific APIs (in progress).
 
    * Test and review API specs for clarity, consistency, and usability.
 
