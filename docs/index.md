@@ -1,5 +1,7 @@
 
-## Douglas J. Bothwell Portfolio /docs/index.md
+## Doug Bothwell
+
+20+ years experience documenting highly complex topics with a focus on application performance monitoring (APM), IT infrastructure monitoring, DevOps, and cloud technologies. Highly versatile, with contributions in scripting/utilities, technical support, QA, UI design, information architecture, and online help production. Extensive programming coursework with working knowledge of Java, Python, REST APIs, C++, and UNIX. 
 
 ### UCSC Silicon Valley Extension
 
