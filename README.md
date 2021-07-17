@@ -1,6 +1,5 @@
-# douglas-j-bothwell.github.io
 
-## Douglas J. Bothwell Portfolio
+## Douglas J. Bothwell Portfolio README.md
 
 ### UCSC Silicon Valley Extension
 
