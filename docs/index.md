@@ -1,37 +1,88 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
+## Douglas J. Bothwell Portfolio /docs/index.md
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### UCSC Silicon Valley Extension
 
-### Markdown
+* [Completed sections -- December 2020](./pdf/doug-bothwell-ucsc-transcript-dec-2020.png)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+* [Certificate in Computer Programming -- April 2019](./pdf/doug-bothwell-ucsc-transcript-dec-2020.png)
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+### Moogsoft (2018-Present)
 
-- Bulleted
-- List
+* Currently the API writer for Moogsoft Observability Cloud. Work includes:
 
-1. Numbered
-2. List
+   * Named an [Employee of the Quarter](https://www.linkedin.com/feed/update/urn:li:activity:6800049491429990400/?commentUrn=urn%3Ali%3Acomment%3A(activity%3A6800049491429990400%2C6801192805843791872)) for my revamp of the [Moogsoft API docs](https://api.docs.moogsoft.com/reference/overview)
 
-**Bold** and _Italic_ and `Code` text
+   * Edit Java code to update auto-generated Swagger files.
 
-[Link](url) and ![Image](src)
-```
+   * Write guided "hello-world" code samples to onboard users to specific APIs (in progress).
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+   * Test and review API specs for clarity, consistency, and usability.
 
-### Jekyll Themes
+   * Reorganized swagger files in coordination with engineering director.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+   * Wrote Swagger conversion utility in Python that converts YAML files to JSON, organizes files by release number, and imports external schema referenced in swagger specs.
 
-### Support or Contact
+* Wrote entire v1 doc set from scratch for Moogsoft Observability Cloud, which uses advanced AI-based algorithms to monitor, observe, filter, deduplicate, and correlate raw monitoring data into a single, interactive list of actionable incidents. This doc set is now the centerpiece of https://docs.moogsoft.com.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+* Manage the git repos and publishing processes for Tech Content group.  Developed a fully-automated, end-to-end pipeline for publishing and updating docs using Python, bash, and REST calls. 
+
+* Wrote, tested, and deployed demo utility in Python that
+   * Generates sample event and metric data based on parameterized randomization
+   * Supports customization of hostnames, metrics, events, and anomaly severity levels
+   * Sends generated data to Express ingestion API
+
+* Evaluated Jekyll as a possible publishing platform. Forked and modified a Jekyll doc theme and added Swagger UI functionality. Created a semi-automated pipeline to convert Moogsoft docs to markdown. 
+
+* Evaluated Oxygen XML as a possible authoring tool
+
+* Evaluated Oxygen XML as a possible authoring tool. Created an XML repo that illustrates how to perform various tasks using DITA and Oxygen: define global variables, apply conditions to show/hide content, and publish output to HTML and PDF.  
+
+### AppDynamics (2016-2018)
+
+* Primary writer for the [Server Visibility](https://docs.appdynamics.com/display/PRO44/Server+Visibility), [Network Visibility](https://docs.appdynamics.com/display/PRO44/Network+Visibility), and Docker Visibility products 
+
+* Wrote entire Network Visibility doc set from scratch for v1 release. Doc includes [Setup/Install Workflows](https://docs.appdynamics.com/display/PRO44/Set+Up+Network+Visibility), [Network Troubleshooting Workflows](https://docs.appdynamics.com/display/PRO44/Network+Visibility+Workflows+and+Example+Use+Cases), [Metric References](https://docs.appdynamics.com/display/PRO44/Network+Visibility+Metrics), and [Concepts](https://docs.appdynamics.com/display/PRO44/Network+Visibility+Concepts)
+ 
+
+* Documented [Tier Metric Correlator](https://docs.appdynamics.com/display/PRO44/Tier+Metric+Correlator) feature that enables DevOps engineers to identify performance outliers in blue-green deployment scenarios
+
+* Collected, edited, and organized new and legacy content into a new Monitoring Cloud Applications doc set to highlight AppDynamics cloud monitoring capabilities
+
+* Tested and documented workflows for monitoring applications in Pivotal Cloud Foundry using AppDynamics
+
+* Updated AppDynamics docs in [Pivotal Partner Documentation](https://docs.pivotal.io/partners/appdynamics/index.html) using markdown, git, and GitHub
+
+* Refactored, organized, and collected [machine/server metric descriptions](https://docs.appdynamics.com/display/PRO44/Hardware+Resources+Metrics) in one central reference page
+
+
+### Riverbed Technology (2012-2016)
+
+Lead writer for AppResponse Xpert, the highest-revenue product in SteelCentral product line for network and application performance monitoring. Topics include:
+
+* Metrics Reference with in-depth explanations and graphics to describe exactly how application, transport, and network metrics are calculated
+
+* Web Transaction Analysis feature for performing in-depth analysis of web page usage
+
+* SteelFlow WTA feature for studying the impact of WAN optimization on web application performance
+
+* Tested git repository and workflows. Wrote internal git guide for other writers to integrate doc source files and online help with engineering code base.
+
+* Information architecture and topic templates for new help infrastructure based on “Every Page is Page One” principles
+
+### OPNET Technologies (1999-2012)
+
+Lead writer for AppResponse Xpert and AppTransaction Xpert, the highest-revenue products in OPNET's industry-leading product line of APM solutions. Extensive experience writing documentation for application developers and other technical audiences. Topics include:
+
+* Application troubleshooting by analyzing network and tier delays
+
+* Running analytical network simulations to predict application performance
+
+* Installing virtual appliances in VMWare Workstation
+
+* Using advanced protocol decodes from packet-trace data
+
+* Capturing application transactions in WAN-optimized environments to ensure visibility in both LAN and WAN segments
+
+* SP Guru Transport Planner User Guide -- Optical network design tool for enterprise Service Providers
