@@ -1,3 +1,4 @@
+# Doug Bothwell
 
 * 20+ years experience documenting highly complex topics with a focus on application performance monitoring (APM), AI for IT Operations (AIOps), observability, DevOps, REST APIs, containerization, and cloud technologies. 
 
@@ -5,38 +6,21 @@
  
 * Extensive experience designing and writing entire doc sets from scratch. 
  
-* Completed coursework includes Java, Python, REST APIs, Android, JavaScript, SQL, AWS, DevOps, and Kubernetes. 
+* Completed coursework: Kubernetes Orchestration, Relational Databases and SQL Programming, Devop Technologies, Cloud Programming with AWS, Designing and Building REST APIs, Python for Programmers, JavaScript, Java, Android, C++, C#, and Go. 
 
 ## Experience 
 
 ### Moogsoft (2018-Present)
 
-* Currently the API writer for Moogsoft Observability Cloud. Work includes:
+* Currently the lead writer for Moogsoft's flagship product.  Wrote entire v1 doc set from scratch for Moogsoft Observability Cloud, which uses advanced AI-based algorithms to monitor, observe, filter, deduplicate, and correlate raw monitoring data into a single, interactive list of actionable incidents. This doc set is now the centerpiece of https://docs.moogsoft.com.
 
-   * Named an [Employee of the Quarter](https://www.linkedin.com/feed/update/urn:li:activity:6800049491429990400/?commentUrn=urn%3Ali%3Acomment%3A(activity%3A6800049491429990400%2C6801192805843791872)) for my revamp of the [Moogsoft API docs](https://api.docs.moogsoft.com/reference/overview)
+* Named an [Employee of the Quarter](https://www.linkedin.com/feed/update/urn:li:activity:6800049491429990400/?commentUrn=urn%3Ali%3Acomment%3A(activity%3A6800049491429990400%2C6801192805843791872)) for my revamp of the [Moogsoft API docs](https://api.docs.moogsoft.com/reference/overview). 
 
-   * Edit Java code to update auto-generated Swagger files.
+* Update Java codebase to update and improve auto-generated Swagger specs. Test and review API specs for clarity, consistency, and usability.  Writing guided "hello-world" code samples to onboard users to specific APIs (in progress). 
 
-   * Write guided "hello-world" code samples to onboard users to specific APIs (in progress).
+* Manage the git repos and publishing processes for Tech Content group. Developed a fully-automated, end-to-end pipeline for publishing and updating docs using Python, bash, and REST calls. 
 
-   * Test and review API specs for clarity, consistency, and usability.
-
-   * Reorganized swagger files in coordination with engineering director.
-
-   * Wrote Swagger conversion utility in Python that converts YAML files to JSON, organizes files by release number, and imports external schema referenced in swagger specs.
-
-* Wrote entire v1 doc set from scratch for Moogsoft Observability Cloud, which uses advanced AI-based algorithms to monitor, observe, filter, deduplicate, and correlate raw monitoring data into a single, interactive list of actionable incidents. This doc set is now the centerpiece of https://docs.moogsoft.com.
-
-* Manage the git repos and publishing processes for Tech Content group.  Developed a fully-automated, end-to-end pipeline for publishing and updating docs using Python, bash, and REST calls. 
-
-* Wrote, tested, and deployed demo utility in Python that
-   * Generates sample event and metric data based on parameterized randomization
-   * Supports customization of hostnames, metrics, events, and anomaly severity levels
-   * Sends generated data to Express ingestion API
-
-* Evaluated Jekyll as a possible publishing platform. Forked and modified a Jekyll doc theme and added Swagger UI functionality. Created a semi-automated pipeline to convert Moogsoft docs to markdown. 
-
-* Evaluated Oxygen XML as a possible authoring tool
+* Evaluated Jekyll as a possible publishing platforms. Forked and modified a Jekyll doc theme and added Swagger UI functionality. Created a semi-automated pipeline to convert Moogsoft docs to markdown. 
 
 * Evaluated Oxygen XML as a possible authoring tool. Created an XML repo that illustrates how to perform various tasks using DITA and Oxygen: define global variables, apply conditions to show/hide content, and publish output to HTML and PDF.  
 
