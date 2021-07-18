@@ -94,6 +94,7 @@ Lead writer for AppResponse Xpert and AppTransaction Xpert, the highest-revenue 
 
 #### Certificate in Computer Programming
 
+
 * [Completed sections -- December 2020](../pdf/doug-bothwell-ucsc-transcript-dec-2020.png)
 
 * [Certificate in Computer Programming -- April 2019](../pdf/doug-bothwell-ucsc-transcript-dec-2020.png)
