@@ -1,14 +1,9 @@
 
-## Doug Bothwell
+# Doug Bothwell
 
-20+ years experience documenting highly complex topics with a focus on application performance monitoring (APM), IT infrastructure monitoring, DevOps, and cloud technologies. Highly versatile, with contributions in scripting/utilities, technical support, QA, UI design, information architecture, and online help production. Extensive programming coursework with working knowledge of Java, Python, REST APIs, C++, and UNIX. 
+20+ years experience documenting highly complex topics with a focus on application performance monitoring (APM), AI for IT Operations (AIOps), observability, DevOps, REST APIs, containerization, and cloud technologies. Highly versatile, with contributions in bash/python scripting, automation, testing, UI design, QA, and tech support. Extensive experience designing and writing entire doc sets from scratch. Completed coursework includes Java, Python, REST APIs, Android, JavaScript, SQL, AWS, DevOps, and Kubernetes. 
 
-### UCSC Silicon Valley Extension
-
-* [Completed sections -- December 2020](./pdf/doug-bothwell-ucsc-transcript-dec-2020.png)
-
-* [Certificate in Computer Programming -- April 2019](./pdf/doug-bothwell-ucsc-transcript-dec-2020.png)
-
+## Experience 
 
 ### Moogsoft (2018-Present)
 
@@ -88,3 +83,26 @@ Lead writer for AppResponse Xpert and AppTransaction Xpert, the highest-revenue 
 * Capturing application transactions in WAN-optimized environments to ensure visibility in both LAN and WAN segments
 
 * SP Guru Transport Planner User Guide -- Optical network design tool for enterprise Service Providers
+
+## Education
+
+### UCSC Silicon Valley Extension
+
+#### Certificate in Computer Programming
+
+* [Completed sections -- December 2020](../pdf/doug-bothwell-ucsc-transcript-dec-2020.png)
+
+* [Certificate in Computer Programming -- April 2019](../pdf/doug-bothwell-ucsc-transcript-dec-2020.png)
+
+
+### Harvard University
+
+#### Bachelor of Liberal Arts in Extension Studies Cum Laude
+
+Coursework included: UNIX Systems Programming, Windows NT
+Programming, Digital Circuit Design, Assembler Language Programming,
+Object-Oriented Programming, Multimedia Design, Website Development,
+Writing for the Web, and Editing Technical Prose
+
+
+
