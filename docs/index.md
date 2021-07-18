@@ -1,7 +1,11 @@
 
-# Doug Bothwell
+* 20+ years experience documenting highly complex topics with a focus on application performance monitoring (APM), AI for IT Operations (AIOps), observability, DevOps, REST APIs, containerization, and cloud technologies. 
 
-20+ years experience documenting highly complex topics with a focus on application performance monitoring (APM), AI for IT Operations (AIOps), observability, DevOps, REST APIs, containerization, and cloud technologies. Highly versatile, with contributions in bash/python scripting, automation, testing, UI design, QA, and tech support. Extensive experience designing and writing entire doc sets from scratch. Completed coursework includes Java, Python, REST APIs, Android, JavaScript, SQL, AWS, DevOps, and Kubernetes. 
+* Highly versatile, with contributions in bash/python scripting, automation, testing, UI design, QA, and tech support. 
+ 
+* Extensive experience designing and writing entire doc sets from scratch. 
+ 
+* Completed coursework includes Java, Python, REST APIs, Android, JavaScript, SQL, AWS, DevOps, and Kubernetes. 
 
 ## Experience 
 
