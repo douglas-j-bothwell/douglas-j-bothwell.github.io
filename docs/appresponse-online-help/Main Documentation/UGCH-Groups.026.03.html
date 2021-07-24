@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Business Groups</title>
+    <link rel="StyleSheet" href="css/UGCH-Groups.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_user_guide_splash.html">User Guide</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="UGCH-Groups.026.01.html">Groups</a> &gt; Business Groups</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="930386">Business Groups</a></div>
+      <div class="body"><a name="930387">The built-in groups provide a level of aggregation that simplifies data analysis. However, these groups are generic and might not provide the most meaningful insight into the behavior of data exchanges between business units. Business groups provide the aggregation necessary to understand the relevance of data exchanges within your business.</a></div>
+      <div class="body"><a name="930388">Business groups are user-defined lists of IP addresses or autonomous systems. Business groups can also be hierarchical; that is, a Business Group definition can include other Business Groups. Such a group is called a Business Group Container. Business groups can be defined, using the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Groups.026.05.html', '');" title="Business Group Manager">Business Group Manager</a></span>, to represent any set of relevant network users or resources, such as customers, field offices, application servers and remote offices.</div>
+      <div class="body"><a name="930395">The appliance automatically records all network traffic to and from each Business Group. It is often useful to examine traffic between two specific Business Groups. This data, known as</a><span class="glossterm"> connected group</span> data<span style="font-weight: bold">,</span> is automatically collected for the top Business Group pairs by the value of the metric Throughput (Inbound and Outbound).</div>
+      <div class="body"><a name="1317015">Business group and connected group data can be examined using </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ui_tables_types_group.html', '');" title="Group Table">Group Table</a></span><span class="HTBlue">s</span>.</div>
+      <div class="bodyWarning">
+        <span class="zRedBold">WARNING: </span><a name="1317017">The appliance was designed for deployments requiring up to 1500 Business Groups. The interface allows you to configure more, but is not supported and can cause significant performance issues. The 1500 Business Groups includes a maximum of 100 Business Group Links configured in the Desktop Console under Tools.</a></div>
+      <div class="h2NoBreak"><a name="930410">Preconfigured Business Groups</a></div>
+      <div class="bodyIntro"><a name="930414">The appliance comes preconfigured with four Business Groups that are visible in the Business Group Manager and</a><span class="bold"> </span>View&nbsp;&gt; Table&nbsp;&gt; Business&nbsp;Group… These preconfigured groups are as follows:</div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="930415">Public Internet IP address range</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="930416">Private IP address range 10.0.0.0/8</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="930417">Private IP address range 172.16.0.0 - 172.31.255.255</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="930418">Private IP address range 192.168.0.0/16</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="930421">It is recommended to change the name of these Business Groups. For more information on changing the name of a Business Group, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Groups.026.05.html#931418', '');" title="Business Group Manager">Editing a Business Group</a></span>.</div>
+      <div class="h2NoBreak"><a name="930426">Hierarchy Through Business Group Containers</a></div>
+      <div class="bodyIntro"><a name="930427">There are two different types of Business Groups:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="930428">Business Group—A Business Group defined as a list of IP addresses or Autonomous Systems.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="930431">Business Group Container—A Business Group defined as a list of other Business Groups or Business Group containers.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="930432">Business group containers are used to define a hierarchy of Business Groups. For instance, a multinational network that covers all of Europe may define a set of Business Groups representing networks within each country in Europe. Each Business Group would be named after the country it represents. A Business Group container could then be defined to encompass all European Business Groups. The Business Group container would be named Europe and would encompass all of the country Business Groups.</a></div>
+      <div class="h2NoBreak"><a name="1028612">AppResponseConnected Group Metrics for Business Groups</a></div>
+      <div class="body"><a name="1028613">AppResponse collected detailed Connected Group metrics that measure the traffic patterns between Business Groups that exchange traffic. The available drill-downs for connected groups are described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Groups.026.04.html#943909', '');" title="Group Drill-Down">Business Group Drill-Downs</a></span>. </div>
+      <div class="bodyKeyConcept">
+        <span class="zBlueItalics">Key Concept—</span><a name="1188407">AppResponse does not collect Connected Group metrics for Business Groups or Business Group Containers that are overlapping. <br /><br />Two Business Groups are considered overlapping if they share at least one IP or AS Number.<br /><br />Two Business Group Containers are considered overlapping if they share at least one Business Group or Container, anywhere in their hierarchies.<br /><br />A Container and a Group are considered overlapping if the Group is a member of the Container, anywhere in the Container's hierarchy.<br /><br />If you need to collect Connected Group metrics between two overlapping Groups or Containers, define </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Groups.026.03.html#1027407', '');" title="Business Groups">Business Group Links</a></span> between them.</div>
+      <div class="h2NoBreak"><a name="1027407">Business Group Links</a></div>
+      <div class="body"><a name="1022340">AppResponseBusiness Group Links are useful for collecting metrics between pairs of Business Groups or Business Group Containers that have one or more common elements (these BG or BGC pairs are considered to be </a><span class="glossterm">overlapping</span>). AppResponse does not collect Connected Group metrics between overlapping BGs or BGCs, as described in <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Groups.026.03.html#1028612', '');" title="Business Groups">AppResponseConnected Group Metrics for Business Groups</a></span>. </div>
+      <div class="body"><a name="1029309">This section does not apply to AppResponse Standard.</a></div>
+      <div class="body"><a name="930452">Business group links are defined using the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Groups.026.06.html', '');" title="Business Group Link Manager">Business Group Link Manager</a></span> and link data can be examined using <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ui_tables_types_group.html', '');" title="Group Table">Group Table</a></span><span class="HTBlue">s</span>.</div>
+      <div class="h2NoBreak"><a name="930458">Other Group</a></div>
+      <div class="body"><a name="930461">Setting up Business Groups is instrumental in maximizing the value provided by the appliance. However, this procedure requires intimate knowledge of all machines that communicate on the network. While most network administrators can readily identify the most important Business Groups, it is impossible to know all devices on a complex network.</a></div>
+      <div class="body"><a name="930466">To simplify the process of discovering unknown network devices, the appliance provides a dynamic Business Group, known as the </a><span class="glossterm">Other Group</span>, that keeps track of IP addresses that have not been assigned to a Business Group. The Other Group can be used to easily detect the most active network devices that may have been overlooked during the Business Group configuration process.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

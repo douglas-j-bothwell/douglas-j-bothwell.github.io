@@ -1,0 +1,845 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Batch&nbsp;Analyzer</title>
+    <link rel="StyleSheet" href="css/ace_import_overview.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ace_import_overview.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_preview_import_filter_traffic_splash.html#219533">Previewing, Importing, and Filtering Traffic</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ace_import_overview.09.01.html#219533">Creating a Transaction&nbsp;Analyzer Model</a> &gt; Batch&nbsp;Analyzer</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="219533">Batch&nbsp;Analyzer</a></div>
+      <div class="bodyIntro"><a name="219535">Batch&nbsp;Analyzer is used to import multiple transactions in one operation. Batch&nbsp;Analyzer streamlines the import process (when you capture multiple transactions), and eliminates the need to import each new transaction manually.</a></div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="219536">This feature is not available in all solutions.</a></div>
+      <div class="bodyIntro"><a name="219538">You can specify the following information for each batch import:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="219539">The set of transactions to import. Each transaction includes the following information:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="219540">The set of packet&nbsp;traces that record the transaction</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="219541">The import settings for that transaction—You can specify the import options you want using an editable configuration file. This file specifies hostnames, segment bandwidth, etc.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="219542">The Transaction&nbsp;Analyzer model files to create (</a><span class="italic">optional</span>)—In some cases, you might want to generate reports for a set of transactions, and do not need to view the transactions in AppTransaction&nbsp;Xpert. In this case, you can choose not to create Transaction&nbsp;Analyzer model files for the imported transactions. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="219546">The type of reports to generate for the transactions (</a><span class="italic">optional</span>)—For the set of imported transactions, choose Word reports, Multi-Transaction reports, or Comparison reports.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyIntro"><a name="219547">This topic includes the following sections:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219569', '');" title="Batch Analyzer" name="219551">Procedure Description: Running a Batch Import</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219612', '');" title="Batch Analyzer" name="219555">Batch Analyzer Dialog Box</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219705', '');" title="Batch Analyzer" name="219559">Adding Transactions for a Batch Import</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219813', '');" title="Batch Analyzer" name="219563">Editing Transactions</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219821', '');" title="Batch Analyzer" name="219567">Specifying Import Configurations</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2TopNoBreak"><a name="219569">Procedure Description: Running a Batch Import</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd219572&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd219572", false);</script>Procedure&nbsp;8-4   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="219572">Running a Batch Import</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd219572", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="219573">Choose File&nbsp;&gt; Open&nbsp;Packet&nbsp;Trace(s)&nbsp;&gt; In&nbsp;Transaction&nbsp;Analyzer (Batch&nbsp;Analyzer)…</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="219577">The </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219620', '');" title="Batch Analyzer">Batch Analyzer Dialog Box</a></span> appears.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="219584">Use the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219642', '');" title="Batch Analyzer">Add Transaction…</a></span> and <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219651', '');" title="Batch Analyzer">Add Multiple Transactions…</a></span> buttons to specify the packet&nbsp;traces and transactions to import, as described in <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219705', '');" title="Batch Analyzer">Adding Transactions for a Batch Import</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="219589">For each transaction, verify that the import configuration is correct. To edit an import configuration, click in the Import Configuration field.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="219593">For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219821', '');" title="Batch Analyzer">Specifying Import Configurations</a></span>.</div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="219594">For each transaction, verify that the capture agent locations are correct. To edit a location, click in the Location field.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="219597">For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.08.html#218812', '');" title="“Merge Capture Files” Options: Packet Traces and Packet Filters">“Merge Capture Files” Options: Packet&nbsp;Traces and Packet Filters</a></span>.</div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="219604">Specify the file (</a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219683', '');" title="Batch Analyzer">Save Transaction Analyzer (*.atc.m) files</a></span>) and the reporting (<span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219683', '');" title="Batch Analyzer">Save Transaction Analyzer (*.atc.m) files</a></span>) options.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="219606">When all options are specified, click Import.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="219607">If you choose to save Transaction&nbsp;Analyzer model files of the transactions, the files are saved in the specified output directory. The files themselves do not open automatically.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="219608">If you choose to generate reports, a report appears for each transaction.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 8-4</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="219609">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="219610">&nbsp;</a></div>
+      <div class="h2TopNoBreak"><a name="219612">Batch Analyzer Dialog Box</a></div>
+      <div class="body"><a name="219613">To open this dialog box, click File&nbsp;&gt; Open&nbsp;Packet&nbsp;Trace(s)&nbsp;&gt; In&nbsp;Transaction&nbsp;Analyzer&nbsp;(Batch&nbsp;Analyzer)…</a></div>
+      <div class="body"><a name="219614">This dialog box shows the options for a batch import: the transactions to import, the options for each transaction, the output directory (if any), and the reports to generate (if any). These options are listed in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219633', '');" title="Batch Analyzer">Table&nbsp;8-3</a></span>.</div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;8-10   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="219620">Batch Analyzer Dialog Box</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="219624"><img class="Default" src="images/ace_import_overview.09.10.1.jpg" width="509" height="357" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="219625">&nbsp;</a></div>
+      <div class="tblAnchor"><a name="219703">&nbsp;</a></div>
+      <table class="tableNarrow" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="">
+              <tr style="vertical-align: baseline;">
+                <td>
+                  <div class="tblCaption_inner" style="width: 61.2pt; white-space: nowrap;">Table&nbsp;8-3   </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="219633">Batch Import Dialog Box&nbsp;</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 89.36856pt">
+            <div class="tblHead"><a name="219637">Control</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 292.92768pt">
+            <div class="tblHead"><a name="219639">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="219642">Add Transaction…</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="219644">Adds a single transaction to the Transactions table: click “Add&nbsp;Transaction…” and select the packet&nbsp;traces for that transaction.</a></div>
+            <div class="tblBody9"><a name="219648">For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219720', '');" title="Batch Analyzer">Adding One Transaction</a></span>.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="219651">Add Multiple Transactions…</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="219653">Adds multiple transactions to the Transactions table in one operation. You can specify how to select the packet&nbsp;traces and how to arrange them into transactions.</a></div>
+            <div class="tblBody9"><a name="219657">For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219729', '');" title="Batch Analyzer">Adding Multiple Transactions</a></span>.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="219660">Remove Transaction</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="219662">Removes a transaction: select the Transactions field in the table and click “Remove&nbsp;Transaction”.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="219664">Transactions table</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="219666">Lists the packet&nbsp;traces to import, organized by transaction. Use the Add and Remove buttons on the right to modify this table.</a></div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="219667">Transaction—The name of the application transaction. All names must be unique.</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="219668">Settings—Specifies a settings file, which defines all settings needed to open/merge capture data, such as tier names, tier locations, and bandwidth/latency settings. (To create a settings file, open or merge traces in Transaction Analyzer; specifying any tier location, bandwidth, or latency settings using Refine&nbsp;Network&nbsp;Effect; then choose the Save&nbsp;Settings option.)</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="219669">Packet Trace—The name of the packet&nbsp;trace file.</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="219670">Location—The capture agent location. This specifies the network location of the agent that generated the packet&nbsp;trace.</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="219671">Filter—Specifies a filter file.</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9"><a name="219672">For more information, see:</a></div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219821', '');" title="Batch Analyzer" name="219676">Specifying Import Configurations</a></span></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.08.html#218812', '');" title="“Merge Capture Files” Options: Packet Traces and Packet Filters" name="219680">“Merge Capture Files” Options: Packet&nbsp;Traces and Packet Filters</a></span></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="219683">Save Transaction Analyzer (*.atc.m) files</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="219685">When selected, generates Transaction&nbsp;Analyzer model files in the specified output directory. To generate reports without viewing the files from which they were generated, do not select this option.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="219687">Generate Report(s)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="219689">When selected, generates reports for the imported transactions automatically. To specify a report template, set the menu next to the report type.</a></div>
+            <div class="tblBody9"><a name="219690">For more information, see:</a></div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_publishing.29.3.html#81225', '');" title="Microsoft Word Reports (RTF Format)" name="219694">Microsoft Word Reports (RTF Format)</a></span></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_publishing.29.8.html#82190', '');" title="Multiple-Transaction Reports (RTF Format)" name="219698">Multiple-Transaction Reports (RTF Format)</a></span></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_publishing.29.5.html#54788', '');" title="Comparison Reports (RTF Format)" name="219702">Comparison Reports (RTF Format)</a></span></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div class="h2TopNoBreak"><a name="219705">Adding Transactions for a Batch Import</a></div>
+      <div class="body"><a name="219709">The Transactions table (at the top of the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219612', '');" title="Batch Analyzer">Batch Analyzer Dialog Box</a></span>) lists the transactions to create and the import options and packet&nbsp;traces to use for each transaction. To edit this table, use the <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219642', '');" title="Batch Analyzer">Add Transaction…</a></span>, <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219651', '');" title="Batch Analyzer">Add Multiple Transactions…</a></span>, and <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219660', '');" title="Batch Analyzer">Remove Transaction</a></span> buttons.</div>
+      <div class="h3NoBreak"><a name="219720">Adding One Transaction</a></div>
+      <div class="body"><a name="219724">To add one transaction to the table, click </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219642', '');" title="Batch Analyzer">Add Transaction…</a></span> and select the packet&nbsp;trace(s) in the “Select Packet Traces” dialog box. You can only select packet&nbsp;traces from one directory. To specify packet&nbsp;traces from different directories, you must add the external packet&nbsp;traces in the Transactions table (as described in <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219813', '');" title="Batch Analyzer">Editing Transactions</a></span>).</div>
+      <div class="h3NoBreak"><a name="219729">Adding Multiple Transactions</a></div>
+      <div class="bodyIntro"><a name="219733">To add multiple transactions to the table, click </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219651', '');" title="Batch Analyzer">Add Multiple Transactions…</a></span>, which displays the Add Multiple Transactions dialog box.</div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;8-11   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="219735">Batch Analyzer: Add Multiple Transactions Dialog Box</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="219739"><img class="Default" src="images/ace_import_overview.09.10.2.jpg" width="345" height="163" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="219740">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="219741">The general workflow for this dialog box is:</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="219743">Specify whether to select the capture files individually or by directory.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="219745">Specify how to organize the selected capture files into transactions: one transaction per capture file, one transaction for each set of capture files with the same name, or one transaction for each directory that contains capture files.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="219746">Click Next…</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	4)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="219747">A file or directory chooser appears (depending on the option you selected in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219743', '');" title="Batch Analyzer">step&nbsp;1)</a></span>. Select the file(s) or directory/subdirectories containing the packet&nbsp;trace.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumLast_inner" style="width: 21.6pt; white-space: nowrap;">	5)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumLast_inner"><a name="219751">Click OK in the file/directory chooser. The transactions appear in the Transactions table of the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219612', '');" title="Batch Analyzer">Batch Analyzer Dialog Box</a></span> (the organization depends on the option you specified in <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.10.html#219745', '');" title="Batch Analyzer">step&nbsp;2)</a></span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="219758">The following sections show how the different transaction settings operate on this set of capture files.</a></div>
+      <div class="h4RunIn"><a name="219759">Add Transactions by Individual File</a></div>
+      <div class="bodyIntro"><a name="219761">When the “Add one transaction per capture file” option is selected, every selected capture file results in a separate transaction.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;8-12   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="219762">Adding Transactions (One Transaction per Capture File)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="219773"><img class="Default" src="images/ace_import_overview.09.10.3.jpg" width="623" height="176" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="219774">&nbsp;</a></div>
+      <div class="h4RunIn"><a name="219775">Add Transactions by File Name</a></div>
+      <div class="bodyIntro"><a name="219776">When the “Add one transaction for each set of capture files with the same name” option is selected, every capture task name in the set of selected files results in a separate transaction.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;8-13   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="219777">Adding Transactions (One Transaction per Capture Name)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="219792"><img class="Default" src="images/ace_import_overview.09.10.4.jpg" width="623" height="164" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="219793">&nbsp;</a></div>
+      <div class="figAnchor"><a name="219794">&nbsp;</a></div>
+      <div class="h4RunIn"><a name="219795">Add Transactions by File Name</a></div>
+      <div class="bodyIntro"><a name="219796">When the “Add one transaction for each directory that contains capture files” option is selected, every capture task name in the set of selected files results in a separate transaction.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;8-14   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="219797">Adding Transactions (One Transaction per Directory)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="219810"><img class="Default" src="images/ace_import_overview.09.10.5.jpg" width="629" height="162" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="219811">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="219813">Editing Transactions</a></div>
+      <div class="bodyIntro"><a name="219814">To add or remove packet&nbsp;traces from an existing transaction, click on a file&nbsp;name in the Capture File column.</a></div>
+      <div class="figAnchor"><a name="219818"><img class="Default" src="images/ace_import_overview.09.10.6.jpg" width="207" height="67" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="219819">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="219821">Specifying Import Configurations</a></div>
+      <div class="bodyIntro"><a name="219823">Every transaction must have an import configuration selected. An import configuration specifies settings such as tier names and bandwidth/latency settings. When you click in the Import Configuration field of the Transactions table, you can specify one of the following options:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="219824">Use defaults—Use the default settings.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="219825">Browse—Choose this option if you have an existing Import Configuration (*.ace.ic.txt) file.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="219826">Edit—Choose this option to edit an import configuration in the Import Configuration Editor, shown in the following figure.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;8-15   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="219828">Import Configuration Editor</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="219832"><img class="Default" src="images/ace_import_overview.09.10.7.jpg" width="329" height="179" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="219833">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="219834">The following table lists the tabbed pages available in the Import Configuration Editor.</a></div>
+      <div class="tblAnchor"><a name="219890">&nbsp;</a></div>
+      <table class="tableNarrow" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="">
+              <tr style="vertical-align: baseline;">
+                <td>
+                  <div class="tblCaption_inner" style="width: 61.2pt; white-space: nowrap;">Table&nbsp;8-4   </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="219843">Import Configuration Editor&nbsp;</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 96.17184pt">
+            <div class="tblHead"><a name="219847">Page</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 284.90832pt">
+            <div class="tblHead"><a name="219849">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="219851">Location</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="219853">Specify import filters and preprocessors for each possible capture location.</a></div>
+            <div class="tblBody9"><a name="219857">For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_filtering_overview.10.1.html#90696', '');" title="Filtering Traffic">Filtering Traffic</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="219859">Tiers</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="219861">Map captured hostnames/IP addresses to tier names.</a></div>
+            <div class="tblBody9"><a name="219862">Specify the location of tiers in relation to capture locations (for example, tier A is the “capturing machine at”, “local to,” or “remote from” capture location X).</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="219864">Local Bandwidth</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="219866">Specify the bandwidth of each network segment.</a></div>
+            <div class="tblBody9"><a name="219870">For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.03.html#201056', '');" title="Refine Network Effects">Refine Network Effects</a></span>.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="219872">Remote Bandwidth</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="219874">Specify the bandwidth and latency between network segments.</a></div>
+            <div class="tblBody9"><a name="219878">For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.03.html#201056', '');" title="Refine Network Effects">Refine Network Effects</a></span>.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="219880">Manual Merge</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="219882">If a transaction requires a manual merge, you can choose one of the following options:</a></div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="219883">Accept the default synchronization of the packet&nbsp;traces</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="219884">Terminate the import of that transaction</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9"><span class="bold"><a name="219885">Note—</a></span>Manual merge is an advanced feature. If these options are not appropriate for a transaction, you should import the transaction manually so that you can specify the synchronization that you want.</div>
+            <div class="tblBody9"><a name="219888">For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.09.html#218954', '');" title="Manual Merge (Synchronizing Packet Traces Manually)">Manual Merge (Synchronizing Packet&nbsp;Traces Manually)</a></span>.</div>
+          </td>
+        </tr>
+      </table>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          // Add related topics
+          //
+          WWHAddRelatedTopic("Creating a Transaction\u00A0Analyzer Model", "main_doc", "ace_import_overview.09.01.html#44546");
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

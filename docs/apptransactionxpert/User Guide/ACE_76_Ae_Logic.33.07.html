@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Application Task Chaining</title>
+    <link rel="StyleSheet" href="css/ACE_76_Ae_Logic.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ACE_76_Ae_Logic.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_edit_design_apps_whiteboard_splash.html#87811">Editing and Designing Applications with Transaction&nbsp;Whiteboard</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ACE_76_Ae_Logic.33.01.html#87811">Modeling Complex Application Behavior with Logic Scripts</a> &gt; Application Task Chaining</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="87811">Application Task Chaining</a></div>
+      <div class="body"><a name="87812">The Transaction&nbsp;Whiteboard API includes an </a><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_76_Ae_Logic.33.24.html#58313', '');" title="invoke_child_task()">invoke_child_task()</a></span> method for launching tasks defined in external Transaction&nbsp;Analyzer or Transaction&nbsp;Whiteboard model files. You can use this method to create a “task chain” in which a parent task calls one or more child tasks. Task chaining is useful for modeling applications that span multiple tiers and consist of multiple tasks. </div>
+      <div class="bodyIntro"><a name="87816">The following figure shows an example of task chaining. The parent task has an application parameter called request_type; depending on the value of this parameter, the logic script at the web_services (bottom) tier calls either of two child tasks. The result is a dynamic web-services task with three tiers, in which the parent task models the client-side traffic and the child task models the back-end traffic.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;26-2   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="87818">Task Chaining Example</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="87845"><img class="Default" src="images/ACE_76_Ae_Logic.33.07.1.jpg" width="501" height="318" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="87846">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="87847">Blocking and Non-Blocking Mode</a></div>
+      <div class="bodyIntro"><a name="88133">You can specify that a child task be launched in </a><span class="italic">blocking</span> or <span class="italic">non-blocking</span> mode. When a parent launches a child in blocking mode, execution of the parent task is blocked until the child task finishes. (The application shown in <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_76_Ae_Logic.33.07.html#124342', '');" title="Application Task Chaining">Figure&nbsp;26-3</a></span> is an example of blocking mode.) When a parent launches a child in non-blocking mode, the parent resumes execution after launching the child and the two tasks run at the same time.</div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;26-3   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="124342">Effect of Launching a Child Task in Blocking and Non-Blocking Mode</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="124369"><img class="Default" src="images/ACE_76_Ae_Logic.33.07.2.jpg" width="483" height="506" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="124370">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="377419">The following figure shows the practical effect of launching a child task in blocking vs. non-blocking mode.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;26-4   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="124638">Launching Child Tasks in Blocking Mode in the Same Logic Script</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="124698"><img class="Default" src="images/ACE_76_Ae_Logic.33.07.3.jpg" width="433" height="434" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="124699">&nbsp;</a></div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="377797">If a logic script calls multiple child tasks in blocking mode, the child tasks are inserted into the event stream in a stack-like (first-in-last-out) manner, as shown in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_76_Ae_Logic.33.07.html#124638', '');" title="Application Task Chaining">Figure&nbsp;26-4</a></span>.</div>
+      <div class="h2TopNoBreak"><a name="377449">Final Response</a></div>
+      <div class="body"><a name="137631">The end of a child task can be difficult to determine in advance. To identify the end of a child task to its parent task, Transaction&nbsp;Whiteboard uses the concept of a </a><span class="glossterm">Final Response</span>. This is a designated message created by the child task (though not necessarily the last one sent). Receipt of the Final Response triggers notification to the parent task that the child task is complete (if such notification was requested by registering a completion callback function from the <span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_76_Ae_Logic.33.24.html#58313', '');" title="invoke_child_task()">invoke_child_task()</a></span> method). Note that the Final Response message has no effect on the child task, which might continue executing. The Final Response simply provides feedback to the parent task about the progress of the child task, allowing the parent task to resume execution.</div>
+      <div class="body"><a name="137708">Each child task has a designated Final Response message when Transaction&nbsp;Whiteboard saves the file. This message is chosen automatically by Transaction&nbsp;Whiteboard using simple network estimation to identify the last message to complete.</a></div>
+      <div class="body"><a name="138077">Logic scripts can set a different Final Response while a child task is executing. You can use the </a><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_76_Ae_Logic.33.30.html#137388', '');" title="set_final_response()">set_final_response()</a></span> method to designate any message of the child task as the Final Response, or to clear the designation so that there is no Final Response.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

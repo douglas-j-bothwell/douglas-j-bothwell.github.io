@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Multi-Tier Correlation using String Filtering</title>
+    <link rel="StyleSheet" href="css/ace_filtering_overview.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ace_filtering_overview.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_preview_import_filter_traffic_splash.html#175414">Previewing, Importing, and Filtering Traffic</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ace_filtering_overview.10.1.html#175414">Filtering Traffic</a> &gt; Multi-Tier Correlation using String Filtering</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="175414">Multi-Tier Correlation using String Filtering</a></div>
+      <div class="body"><a name="175416">String filtering is a method in which you correlate packets that contain a specific string. If you know that the transaction of interest uses a specific string, you can identify and extract every connection that contains one or more packets with that string. Unlike the reference&nbsp;file method, this method does not require a second Transaction&nbsp;Analyzer model file.</a></div>
+      <div class="bodyIntro"><a name="175420">This method is most useful when</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="175421">the transaction uses one or more connections that are not used by other transactions</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="175422">these connections use a specific string or sequence of bytes that identify them as part of the transaction</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="175423">the transaction does not involve connection multiplexing at any tiers whose traffic you want to correlate</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd175427&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd175427", false);</script>Procedure&nbsp;9-3   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="175427">Correlating Traffic using String Filtering</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd175427", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="175431">Open the Transaction&nbsp;Analyzer model containing the traffic that you want to correlate.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="175432">Choose Advanced&nbsp;&gt; Multi-Tier&nbsp;Correlation&nbsp;&gt; Using&nbsp;String&nbsp;Filtering.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><span style="font-size: 11.0pt"><a name="175433">Y</a></span>ou are then guided through the correlation and extraction process:</div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="175434">Step 1: Select the tier pairs that contain the traffic to correlate (see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_filtering_overview.10.5.html#175456', '');" title="Multi-Tier Correlation using String Filtering">Select Tier Pairs to Filter Dialog Box</a></span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="175438">Step 2: Enter the search string or hexadecimal pattern for correlating the traffic (see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_filtering_overview.10.5.html#175470', '');" title="Multi-Tier Correlation using String Filtering">Choose Search Pattern Dialog Box</a></span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="175444">Step 3: View the correlation results and exclude the unmatched traffic (see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_filtering_overview.10.5.html#175529', '');" title="Multi-Tier Correlation using String Filtering">View Results and Exclude Unmatched Dialog Box</a></span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note—</span><a name="175446">It is good practice to save the extracted production task under a different name so you still have a copy of the original task.</a></div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 9-3</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="175447">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="175448">&nbsp;</a></div>
+      <div class="procSpaceAfter"><a name="175454">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="175456">Select Tier Pairs to Filter Dialog Box</a></div>
+      <div class="bodyIntro"><a name="175458">The Select Tier Pairs to Filter dialog box appears immediately after you choose Advanced&nbsp;&gt; Multi-Tier&nbsp;Correlation&nbsp;&gt; Using&nbsp;String&nbsp;Filtering. This dialog box lists all tier pairs in the transaction&nbsp;analyzer</a><span style="font-size: 10.0pt"> model</span>, and prompts for the tier pairs that contain the traffic that you want to correlate. (The correlation operation has no effect on tier pairs that are not selected.)</div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;9-4   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="175459">Select Tier Pairs to Filter Dialog Box</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="175463"><img class="Default" src="images/ace_filtering_overview.10.5.1.jpg" width="270" height="221" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="175464">&nbsp;</a></div>
+      <div class="body"><a name="175467">After you select the tier pairs, click Next to open the next window (see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_filtering_overview.10.5.html#175470', '');" title="Multi-Tier Correlation using String Filtering">Choose Search Pattern Dialog Box</a></span>).</div>
+      <div class="h2NoBreak"><a name="175470">Choose Search Pattern Dialog Box</a></div>
+      <div class="body"><a name="175474">The Choose Search Pattern dialog box appears after you click Next in the</a><span style="font-size: 10.0pt"> </span><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_filtering_overview.10.5.html#175456', '');" title="Multi-Tier Correlation using String Filtering">Select Tier Pairs to Filter Dialog Box</a></span><span style="font-size: 10.0pt">. </span>This dialog box prompts for the string or byte sequence to search for in the selected tier pairs.</div>
+      <div class="bodyIntro"><a name="175476">To correlate traffic accurately, you must search on a string that is expected to appear only in the transaction of interest, based on your knowledge of the application. Examples of possible strings include a transaction ID or the search string used in a database query. To see the packets that correlate to a string or byte sequence, you can do a preliminary search using the Find Packets operation (Edit&nbsp;&gt; Find&nbsp;Packets). To search for a hexadecimal string, you can obtain possible values by viewing hexadecimal decodes in the Protocol Decode Viewer. For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_51_Protocol.23.1.html#48809', '');" title="Protocol Decodes">Protocol Decodes</a></span>.</div>
+      <div class="figSpaceAfter"><a name="175480">&nbsp;</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;9-5   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="175481">Choose Search Pattern Dialog Box</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="175485"><img class="Default" src="images/ace_filtering_overview.10.5.2.jpg" width="280" height="180" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="175486">&nbsp;</a></div>
+      <div class="tblAnchor"><a name="175527">&nbsp;</a></div>
+      <table class="tableNarrow" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="">
+              <tr style="vertical-align: baseline;">
+                <td>
+                  <div class="tblCaption_inner" style="width: 61.2pt; white-space: nowrap;">Table&nbsp;9-1   </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="175492">Choose Search Pattern Dialog Box&nbsp;</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 154.4724pt">
+            <div class="tblHead"><a name="175496">Option / Field</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 226.476pt">
+            <div class="tblHead"><a name="175498">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="175500">Select protocol layer to search</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="175502">Restricts the search to a specific protocol layer. Only packets that contain the search pattern within this protocol layer are marked for correlation.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="175504">Search for string<br />Search for HEX/binary</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="175506">Specifies whether to search on ASCII text or a hexadecimal/binary sequence of bytes</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="175508">Select areas to search</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="175510">Selects the packet sections to search.</a></div>
+            <div class="tblBody9"><a name="175511">The available options are:</a></div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="175512">Summaries—Search protocol summary information, as shown in the Decode Summary column (“Search for string” option only)</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="175513">Details—Search all protocol data, as shown in the protocol decodes for individual frames (“Search for string” option only)</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="175514">Binary—Search the binary/hexadecimal bytes in each frame, as shown in the HEX decodes for individual frames</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9"><a name="175515">You can view the summary, details and binary contents of frames in the Protocol Decode Viewer (see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_51_Protocol.23.2.html#114715', '');" title="Protocol Decode Viewer">Protocol Decode Viewer</a></span>).</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="175520">Search string</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="175522">Specifies the search string for correlating traffic. All connections with at least one packet that contains this string are marked for correlation.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="175524">Case sensitive</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="175526">Specifies to use case-sensitive searching</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="h2TopNoBreak"><a name="175529">View Results and Exclude Unmatched Dialog Box</a></div>
+      <div class="body"><a name="175531">The View Results and Exclude Unmatched dialog box appears after you </a><span style="font-size: 10.0pt">click Next in the </span><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_filtering_overview.10.5.html#175470', '');" title="Multi-Tier Correlation using String Filtering">Choose Search Pattern Dialog Box</a></span><span style="font-size: 10.0pt">, and </span>shows the results of the correlation based on the specified search string. The table shows the number of matched and unmatched connections for each tier pair. You can view matched traffic in the Protocol Decode Viewer and exclude unmatched connections.</div>
+      <div class="body"><a name="175535">If you are not satisfied with the correlation, click Cancel and repeat this procedure using a different search string. Otherwise, click Exclude&nbsp;Unmatched to exclude the unmatched connections.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;9-6   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="175536">View Results and Exclude Unmatched Dialog Box</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="175540"><img class="Default" src="images/ace_filtering_overview.10.5.3.jpg" width="408" height="113" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="tblAnchor"><a name="175572">&nbsp;</a></div>
+      <table class="tableNarrow" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="">
+              <tr style="vertical-align: baseline;">
+                <td>
+                  <div class="tblCaption_inner" style="width: 61.2pt; white-space: nowrap;">Table&nbsp;9-2   </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="175546">View Results and Exclude Unmatched Dialog Box&nbsp;</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 118.4364pt">
+            <div class="tblHead"><a name="175550">Column</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 262.66392pt">
+            <div class="tblHead"><a name="175552">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="175554">Tier Pair table</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="175556">Shows all tier pairs selected for correlation.</a></div>
+            <div class="tblBody9"><a name="175557">For each tier pair, this table shows:</a></div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="175558">Connections Matched—The number of connections that contain packets with the search string</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="175559">Connections Unmatched—The number of connections that contain no packets with the search string</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="175560">Exclude Unmatched?—By default, this field is set to Yes. If you do not want to exclude the unmatched connections for a tier pair, set the field to No.</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="175562">View Matched</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="175564">Views all matched traffic in the Protocol Decode Viewer</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="175566">Exclude Unmatched</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="175571">Excludes unmatched connections from the Transaction&nbsp;Analyzer model file</a></div>
+          </td>
+        </tr>
+      </table>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          // Add related topics
+          //
+          WWHAddRelatedTopic("Multi-Tier Correlation using a Reference File", "main_doc", "ace_filtering_overview.10.6.html#175574");
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Scheduling Application Transactions</title>
+    <link rel="StyleSheet" href="css/ACE_23_DAC.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ACE_23_DAC.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_capture_app_traffic_splash.html#179416">Capturing Application Traffic</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ACE_23_DAC.06.1.html#179416">Distributed Agent Controller</a> &gt; Scheduling Application Transactions</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="179416">Scheduling Application Transactions</a></div>
+      <div class="body"><a name="175663">Windows and Linux platforms support task scheduling, in which the operating system launches an application at scheduled times.</a></div>
+      <div class="body"><a name="175664">You can schedule tasks in Windows by clicking the “Scheduled Tasks” icon in the Windows Control Panel (choose Settings&nbsp;&gt; Control&nbsp;Panel from the Windows Start menu). For more information, see the Windows documentation.</a></div>
+      <div class="body"><a name="175665">You can schedule tasks in Linux using the “cron” command-line utility. For more information, enter “man cron” from a command line. </a></div>
+      <div class="body"><a name="175666">To capture for a specific length of time, create two batch files: one file starts the capture, the other stops it. Then create two scheduled tasks. For example, you could create start.bat and stop.bat files; then you can schedule start.bat to run at 10pm, and stop.bat to run at 11pm, as shown in the following examples.</a></div>
+      <div class="codeColumn"><a name="175667">#start.bat file (example):<br />opnet_appcapture -start -task_name nightly_task -agent_list my_agent_list.agents</a></div>
+      <div class="codeColumn"><a name="175668">#stop.bat (example):<br />opnet_appcapture -finish -task_name nightly_task<br />opnet_appcapture -download_task_console -task_name nightly_task -move_files</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          // Add related topics
+          //
+          WWHAddRelatedTopic("Distributed Agent Controller", "main_doc", "ACE_23_DAC.06.1.html#180217");
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

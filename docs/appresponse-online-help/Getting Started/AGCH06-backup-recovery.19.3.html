@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Best Practices and Guidelines for Backup and Recovery</title>
+    <link rel="StyleSheet" href="css/AGCH06-backup-recovery.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_admin_guide_splash.html">Administrator Guide</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="AGCH06-backup-recovery.19.1.html">Backup and Recovery of Appliance Data</a> &gt; Best Practices and Guidelines for Backup and Recovery</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="1096198">Best Practices and Guidelines for Backup and Recovery</a></div>
+      <div class="bodyIntro"><a name="1096199">For best practices and guidelines, see:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH06-backup-recovery.19.3.html#1096214', '');" title="Best Practices and Guidelines for Backup and Recovery" name="1096203">Recommendation: Use SSH If Possible</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH06-backup-recovery.19.3.html#1096218', '');" title="Best Practices and Guidelines for Backup and Recovery" name="1096207">Estimating Backup/Recovery Times</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH06-backup-recovery.19.3.html#1096242', '');" title="Best Practices and Guidelines for Backup and Recovery" name="1096211">Recovery Guidelines</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="1096214">Recommendation: Use SSH If Possible</a></div>
+      <div class="body"><a name="1096215">If you have an SSH server, Riverbed recommends that you back up and restore over SSH. SSH is more reliable than FTP, especially for large backup/restore operations.</a></div>
+      <div class="h2NoBreak"><a name="1096218">Estimating Backup/Recovery Times</a></div>
+      <div class="bodyIntro"><a name="1096219">The average speed of a backup/restore operation ranges from 35Mbps to 50Mbps (megabits per second), with a maximum possible speed of 55Mbps. You can estimate the amount of time a backup/restore operation will take based on the amount of data that needs to compressed and archived (or uncompressed and extracted). For example, suppose you want to back up 100GB (gigabytes) of data. You can estimate the backup time as follows:</a></div>
+      <div class="listBulletCont"><a name="1096220">100GB * 8 = 800Gb of data</a></div>
+      <div class="listBulletSubCont"><span class="italic"><a name="1096221">convert gigabytes to gigabits</a></span> </div>
+      <div class="listBulletCont"><a name="1096222">800Gb / 50Mbps = ~16k seconds backup time</a></div>
+      <div class="listBulletSubCont"><span class="italic"><a name="1096223">total backup data (bits) / estimated backup speed (bits per second)</a></span> </div>
+      <div class="listBulletCont"><a name="1096224">16k / 60 = ~267 minutes backup time</a></div>
+      <div class="listBulletCont"><a name="1096225">267 / 60 = ~4.44 hours</a><span class="bold"> </span>backup time </div>
+      <div class="body"><a name="1096226">You can estimate the size of a proposed backup using the “Estimate&nbsp;size” option (Backup&nbsp;&gt; backup&nbsp;now page). (See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH06-backup-recovery.19.2.html#1095935', '');" title="Backup and Recovery">step&nbsp;3.</a></span> in <span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH06-backup-recovery.19.2.html#1177745', '');" title="Backup and Recovery">Procedure&nbsp;3</a></span>&nbsp;<span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH06-backup-recovery.19.2.html#1177745', '');" title="Backup and Recovery">Performing an On-Demand Backup</a></span>.) The Backup&nbsp;&gt; recovery page shows the size of each available archive.</div>
+      <div class="bodyIntro"><a name="1096236">Note the following:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1096237">Backup operations can take longer if the appliance is busy.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1096238">Restore operations take slightly longer than backup operations.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1096239">Restore operations can take longer if you are restoring data from one release to another (for example, restoring 8.0.x data onto an 8.5.x appliance).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="1096242">Recovery Guidelines</a></div>
+      <div class="bodyIntro"><a name="1096243">Before you perform a Recovery operation, note the following:</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1096244">To restore an appliance in a domain, you must first disconnect the appliance from the domain using the Domain Manager on the director, as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'Clusters.087.3.html#950565', '');" title="Domain Operations">Disconnecting an Appliance from a Domain</a></span>AppResponse. After the restore, you must re-connect the appliance to the domain.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1096251">Most of the Administration&nbsp;&gt; System web UI functionality becomes unavailable during recovery. Therefore it is best to perform a restore during off-peak hours. Also note that a recovery replaces the data on the AppResponse appliance. Therefore, any changes to the appliance or packet capture data collected during a recovery (on appliances without High Speed Capture) will be lost. Therefore, it is best to restore when you don’t need the appliance to collect data.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1096255">When you perform a recovery operation that includes tables, reports, or packet capture data (on appliances without High Speed Capture)—that is, when you want to recover anything in addition to configuration data—it is best to split the operation into separate phases:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">a)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1096256">On the restore system, open the License Manager (Tools&nbsp;&gt; License&nbsp;Manager in the Desktop Console) and verify that the appliance has a valid, unexpired license installed. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">b)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1096260">Perform the “Recovering Data on an Appliance” procedure with all Content checkboxes (Traffic Data, Reports, and Packet Capture) unselected. This will recover the configuration data only. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">c)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1096261">When the Recover operation finishes, click Reboot.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">d)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1096262">When the appliance finishes rebooting, re-connect using the Administration&nbsp;&gt; System web UI and return to the Backup&nbsp;&gt; Recovery.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 17.856pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap">e)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1096263">Select the additional data you want to recover (under Continue Recovery Process) and click “Continue&nbsp;Recovery”.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

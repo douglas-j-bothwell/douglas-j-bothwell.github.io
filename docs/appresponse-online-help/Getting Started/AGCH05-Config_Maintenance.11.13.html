@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Setting Up Private-Address to AS-Number Maps</title>
+    <link rel="StyleSheet" href="css/AGCH05-Config_Maintenance.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_admin_guide_splash.html">Administrator Guide</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="AGCH05-Config_Maintenance.11.01.html">Administration and Maintenance</a> &gt; Setting Up Private-Address to AS-Number Maps</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="950956">Setting Up Private-Address to AS-Number Maps</a></div>
+      <div class="bodyIntro"><a name="950960">The AppResponse Appliance maps IP addresses to AS groups before data is displayed to the user. Each IP address is mapped to the ISP AS, Peer AS and Dest AS groups. Private IP addresses (RFC 1918) are mapped to AS Unknown unless they are present in both the local BGP table and the appliance’s WHOIS database. The following two steps must be taken to ensure that Private IP addresses are mapped to a specific AS number (instead of AS Unknown):</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950973">BGP table - Enter the private IP addresses into the local BGP table. Follow the instructions provided by your router vendor to add private IP addresses to BGP.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><span class="bold"><a name="950974">Note—</a></span><span class="Online_Italic" style="font-weight: normal">These CLI commands must query the BGP routing table and may take up to 2 minutes to execute.</span></div>
+      <div class="listBulletCont"><a name="966121">The AppResponse Appliance automatically uses this information to map private IP addresses to the appropriate ISP AS and Peer AS if it has been configured as a BGP peer.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="966128">Appliance WHOIS database - The AppResponse Appliance provides CLI commands that can be used to add private IP address entries from BGP to the appliance WHOIS database. The commands used to manage this process are:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="code"><a name="950992">ipas-display-private-ips</a></span> </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSubCont"><a name="1039742">List the private IP addresses that are already in the AppResponse Appliance WHOIS database.</a></div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="code"><a name="950993">ipas-add-private-ips</a></span> </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSubCont"><a name="1039735">Add the private IP addresses from the BGP table to the appliance WHOIS database. The Desktop Console must be restarted before the changes resulting from ipas-add-private-ips take effect on a desktop machine.</a></div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="code"><a name="950997">ipas-undo-private-ips</a></span> </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSubCont"><a name="1039725">Remove the private IP address entries from the appliance WHOIS database. The Desktop Console must be uninstalled then reinstalled before the changes resulting from ipas-undo-private-ips take effect on a desktop machine. Remove the Desktop Console using the Java Web Start Application Manager and download it again from the appliance web interface.</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          // Add related topics
+          //
+          WWHAddRelatedTopic("Administration and Maintenance", "getting_started", "AGCH05-Config_Maintenance.11.01.html");
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

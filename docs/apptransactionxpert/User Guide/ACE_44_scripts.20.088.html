@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Task Class</title>
+    <link rel="StyleSheet" href="css/ACE_44_scripts.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ACE_44_scripts.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_visualizing_apps_splash.html#293116">Visualizing Applications</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ACE_44_scripts.20.001.html#293116">Scripts for Filtering, Analyzing, and Visualizing</a> &gt; Task Class</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="293116">Task Class</a></div>
+      <div class="body"><a name="293117">The Task class provides access to and control of tasks.</a></div>
+      <div class="bodyIntro"><a name="1124562">You can save arbitrary state information onto a Task object by defining new properties. This can be used, for example, to create advanced multi-step workflows in which some data needs to be saved for later use. To define a new property, use code such as</a></div>
+      <div class="codeColumn"><a name="1177675">task = Ace_Tool.get_current_task()<br />task[“new_property”] = &lt;value&gt;</a></div>
+      <div class="body"><a name="1177679">The </a><span class="italic">__setitem__, __getitem__</span>, and <span class="italic">__delitem__</span> methods are defined for this class to implement this state-saving capability. </div>
+      <div class="body"><a name="1111891">The </a><span class="italic">__cmp__</span> method is defined for this class, allowing network packets to be tested for equality. </div>
+      <div class="body"><a name="1111897">The </a><span class="italic">__iter__</span> method is defined for this class to be equivalent to calling <span class="italic">task.get_tier_pairs(hide_excluded = True)</span>.</div>
+      <div class="h2NoBreak"><a name="296959">Parent Class</a></div>
+      <div class="body"><a name="296963">__builtin__.object</a></div>
+      <div class="h2NoBreak"><a name="293118">Methods</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.089.html#1111979', '');" title="clear_labels()" name="1111908">clear_labels()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.090.html#293120', '');" title="delete()" name="704891">delete()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.091.html#305016', '');" title="delete_others()" name="304997">delete_others()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.092.html#305213', '');" title="exclude()" name="304998">exclude()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.093.html#825682', '');" title="exclude_others()" name="304999">exclude_others()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.094.html#1112046', '');" title="get_model_name()" name="1111916">get_model_name()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.095.html#305621', '');" title="get_num_tier_pairs()" name="305000">get_num_tier_pairs()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.096.html#305825', '');" title="get_num_transactions()" name="305001">get_num_transactions()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.097.html#306029', '');" title="get_protocol_name()" name="305002">get_protocol_name()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.098.html#1112101', '');" title="get_root_messages()" name="1111924">get_root_messages()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.099.html#1112134', '');" title="get_selected_messages()" name="1111928">get_selected_messages()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.100.html#1112167', '');" title="get_selected_network_packets()" name="1111932">get_selected_network_packets()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.101.html#1112200', '');" title="get_state_dict()" name="1111936">get_state_dict()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.102.html#707401', '');" title="get_tier_pair()" name="305003">get_tier_pair()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.103.html#306437', '');" title="get_tier_pairs()" name="305004">get_tier_pairs()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.104.html#306641', '');" title="get_transaction()" name="305005">get_transaction()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.105.html#306845', '');" title="get_transactions()" name="305006">get_transactions()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.106.html#1112265', '');" title="get_visualization_manager()" name="1111944">get_visualization_manager()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.107.html#307049', '');" title="has_decode_version()" name="305007">has_decode_version()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.108.html#307253', '');" title="include()" name="308681">include()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.109.html#307457', '');" title="include_all()" name="305008">include_all()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.110.html#307661', '');" title="is_binary_available()" name="700314">is_binary_available()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.111.html#1112320', '');" title="redraw()" name="1111952">redraw()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.112.html#1112353', '');" title="get_visible_time_range()" name="1111956">get_visible_time_range()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.113.html#1112392', '');" title="show_dec()" name="1111960">show_dec()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.114.html#307865', '');" title="show_protocol_decodes()" name="700326">show_protocol_decodes()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.115.html#1112429', '');" title="show_tier_pair_circle()" name="1111968">show_tier_pair_circle()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_44_scripts.20.116.html#1112462', '');" title="show_tree_view()" name="1111972">show_tree_view()</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          // Add related topics
+          //
+          WWHAddRelatedTopic("Ace_Tool Classes", "main_doc", "ACE_44_scripts.20.004.html#341278");
+          WWHAddRelatedTopic("Ace_Tool Functions", "main_doc", "ACE_44_scripts.20.004.html#314094");
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

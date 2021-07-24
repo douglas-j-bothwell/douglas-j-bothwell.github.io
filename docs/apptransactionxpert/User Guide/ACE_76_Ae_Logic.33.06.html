@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Parameters</title>
+    <link rel="StyleSheet" href="css/ACE_76_Ae_Logic.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ACE_76_Ae_Logic.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_edit_design_apps_whiteboard_splash.html#87800">Editing and Designing Applications with Transaction&nbsp;Whiteboard</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ACE_76_Ae_Logic.33.01.html#87800">Modeling Complex Application Behavior with Logic Scripts</a> &gt; Parameters</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="87800">Parameters</a></div>
+      <div class="body"><a name="87801">A parameter describes a task property. Parameters make a task configurable, because they can be set by a user before a QuickPredict run or a discrete event simulation. In a task-chaining scenario, a parent task can also set parameters for a child task before running it.</a></div>
+      <div class="body"><a name="110378">Unlike attributes for other types of objects, a parameter cannot be changed during QuickPredict or a simulation after the task is started. For an example of how parameters work, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_76_Ae_Logic.33.03.html#110301', '');" title="Logic Scripts">Figure&nbsp;26-1</a></span>.</div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="bold"><a name="110418">Declaring Parameters—</a></span>To declare new parameters, choose Scripting&nbsp;&gt;&nbsp;Declare&nbsp;Parameters. You can specify a parameter name, type, default value, and description.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="374948">Setting a Parameter—Unlike variables or external attributes, parameters cannot be changed after a task starts running. There are three ways that a parameter can be set before the task runs:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="87806">Set the default value—Every parameter has a default value. You can specify the value for each parameter manually in the Declare Parameters dialog box (Scripting&nbsp;&gt;&nbsp;Declare&nbsp;Parameters). The task will run with the default value unless it is changed by either of the following processes.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="87807">Discrete event simulations—When you generate a scenario from a Transaction&nbsp;Whiteboard model, the scenario includes a Task Definition configuration object that lists the application parameters of the underlying task. <br /><br />To view and set the parameters related to a specific Transaction&nbsp;Whiteboard model:<br />1. Right-click on the Tasks Definition configuration object and choose Edit&nbsp;Attributes.<br />2. In the Attributes dialog box, search for the attribute.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><span class="bold"><a name="87810">Launching a child task—</a></span>The <span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_76_Ae_Logic.33.24.html#58313', '');" title="invoke_child_task()">invoke_child_task()</a></span><span style="font-size: 9.0pt"> </span>method includes a <span class="zBlueItalics"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_76_Ae_Logic.33.24.html#58350', '');" title="invoke_child_task()">task_params</a></span> argument, so a parent task can set application parameters in a child task before launching it. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

@@ -1,0 +1,2184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Alert Manager</title>
+    <link rel="StyleSheet" href="css/UGCH-Dashboard_and_Alerts.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_user_guide_splash.html">User Guide</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="UGCH-Dashboard_and_Alerts.072.1.html">Alerting and the Dashboard</a> &gt; Alert Manager</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="950401">Alert Manager</a></div>
+      <div class="bodyIntro"><a name="950402">The alert manager is used to create, edit and delete static alerts, and to customize adaptive alerts. To begin managing alerts, click the Desktop Console Tools menu, then select Alert Manager.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;1     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950410">Alert Manager</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="951801"><img class="Default" src="images/UGCH-Dashboard_and_Alerts.072.2.01.jpg" width="567" height="424" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="951802">&nbsp;</a></div>
+      <div class="body"><a name="950415">The Alert Manager comprises three sections: the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.2.html#950431', '');" title="Alert Manager">Alert Manager Information Pane</a></span> at the top; the tabbed work area, where configuration takes place, as reviewed below; and the Control Bar at the bottom.</div>
+      <div class="body"><a name="950419">A newly installed appliance does not have any static alerts defined. However, it lists a number of adaptive alerts. The alert manager can be used to modify adaptive alerts (see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.2.html#951123', '');" title="Alert Manager">Customizing Adaptive Alerts</a></span>).</div>
+      <div class="body"><a name="950428">If your appliance belongs to a domain, you should review distributed alerts. (See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'Clusters.087.1.html', '');" title="Domains">Domains</a></span> and <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'Clusters.087.4.html#954176', '');" title="Distributing Configuration Information">Distributed Alerts</a></span>)</div>
+      <div class="h2NoBreak"><a name="950431">Alert Manager Information Pane</a></div>
+      <div class="bodyIntro"><a name="950432">The Alert Manager Information Pane displays various parameters of an alert in tabular form. Most of these are specified using the tabbed work area: Name, Description, Type, Status, Dashboard Section, Group, Condition, Days, End&nbsp;Time, Frequency, and Actions. These are described in the following sections. Other columns are available:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950433">Origin - local/global: whether it was specified on the local appliance or the Domain Director).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950434">Edited - a check mark indicates it has been edited and not saved.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950435">Modified By - the last user to edit the alert definition.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950436">Last Modified - the time and data of the last edit.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950437">Current Severity - the current severity of the alert, including Not Occurring.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyIntro"><a name="950438">Right-clicking on a row in the Information Pane displays a context menu for that alert.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;2     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950439">Alert Manager - Information Pane Context Menu</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="951810"><img class="Default" src="images/UGCH-Dashboard_and_Alerts.072.2.02.jpg" width="160" height="179" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="951811">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="950444">The following operations are available:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="955144">Duplicate—Make a copy of the selected Alert.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950445">Delete—Permanently delete an alert from the appliance. Deleted alerts that have already triggered remain in the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.2.html#951200', '');" title="Alert Manager">Alert Log</a></span> and the Dashboard. You may prefer to set the status of the Alert to Inactive instead using the <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.2.html#950501', '');" title="Alert Manager">Identity Tab</a></span>. You cannot delete an Adaptive Alert.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950452">Select Active/Inactive—Activate or deactivate the alert.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950456">Evaluate Condition—See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.2.html#950776', '');" title="Alert Manager">Evaluating Alert Conditions</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950460">Reset Analysis Defaults—See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.2.html#951141', '');" title="Alert Manager">Modifying Adaptive Alert Analysis Parameters</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950461">Show/Hide Columns and Show Default Columns—These operations are common to all tables in the Desktop Console; the other menu choices are discussed below in the appropriate sections.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="950466">Static Alerts</a></div>
+      <div class="bodyIntro"><a name="950470">Static alerts are generated when the appliance observes a traffic condition that crosses a user-defined threshold. There are two kinds of static alerts.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950473">Standard Static Alerts (called simply “Static Alerts”) are generated when their conditions, defined as complex Boolean operations on any desired set of metrics, are fulfilled for a </a><span class="Emphasis" style="font-style: italic">single</span> specified group or group path against that group’s <span class="Emphasis" style="font-style: italic">total</span> traffic, i.e., for the <span class="Emphasis" style="font-style: italic">sum</span> of all applications seen by that group. Static Alerts are useful for monitoring the behavior of a specific group or application; e.g., generate an alert when the Initial Application Response Time for the Business Group SAP Servers Chicago exceeds 100 ms and Connection Request Rate is less than 10/second. You may define up to 100 Static-Alerts per appliance or director.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950477">Static-Any Alerts are generated when their conditions, defined as simple Boolean operations (AND, OR) on up to three metrics, are fulfilled for one or more groups within a specified type of group against either those group’s total traffic (the sum of all applications seen by those groups) or a single application or any of one or more applications within a specified type of application seen by those groups. Applications are divided into two categories for Static-Any Alerts: Defined Applications and Other Applications, e.g., TCP or UDP applications. A Static-Any Alert may not be defined against an undefined non-TCP-non-UDP application.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyNote">
+        <span class="bold">Note: </span><a name="950480">Because a Static-Any alert with a misconfigured condition (e.g., all IP addresses with Throughput (Inbound and Outbound) &gt; 0) is capable of generating an almost unlimited number of events, only 10 events are reported for each Static-Any alert, regardless of the number of groups that satisfy the alert conditions.</a></div>
+      <div class="body"><a name="950482">The difference between </a><span class="Emphasis" style="font-style: italic">total</span> traffic and <span class="Emphasis" style="font-style: italic">any</span> application is important to understanding Static-Any Condition Types. <span class="Emphasis" style="font-style: italic">Total</span> traffic means that the alert condition is evaluated against the sum of all applications seen by that group or set of groups. <span class="Emphasis" style="font-style: italic">Any</span> of a set of applications means that the condition is evaluated against each of the applications seen by the group. For instance, a Static Alert set to detect the condition Throughput (Inbound and Outbound &gt; 1 megabit/second against <span class="Emphasis" style="font-style: italic">total</span> traffic would trigger if the sum of application activity for the group(s) involved exceeded that threshold. But a Static-Any alert set to detect the condition Throughput (Inbound and Outbound &gt; 1 megabit/second against <span class="Emphasis" style="font-style: italic">any</span> application would trigger only if the throughput of any one of the applications specified exceeded that threshold. For details on how such as alert is defined using the Alert Manager, see <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.2.html#950645', '');" title="Alert Manager">Group - Static-Any</a></span>.</div>
+      <div class="body"><a name="950489">Static-Any Alerts are useful for detecting a given behavior on a large set of groups or any groups, e.g., generate an alert when Connections Failed Rate (TCP Servers) exceeds 10/second for any IP address, which would detect any self-propagating worm. You may specify up to 100 Static-Any Alerts per appliance or director.</a></div>
+      <div class="body"><a name="950491">We first review how to create Static Alerts as an introduction to the use of the Alert Manager, and then review the similar steps needed to create a Static-Any Alert.</a></div>
+      <div class="h3"><a name="950493">Creating a Static Alert</a></div>
+      <div class="body"><a name="950494">To create a static alert, click the New button in the Alert Manager. The tabs in the Alert Manager work area allow the user to define the identity, group (traffic monitored), condition, schedule, action, and links to </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'insights.html', '');" title="Insights">Insights</a></span> for all static alerts. Alternatively, you may right-click an existing alert in the Information Pane and select Duplicate to populate all the tabs with the specifications of that alert, which you may then modify; a unique name is automatically assigned to the new alert.</div>
+      <div class="h4"><a name="950501">Identity Tab</a></div>
+      <div class="bodyIntro"><a name="950502">The Identity tab is used to configure the alert name, description, type, dashboard section, and status.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;3     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950503">Alert Manager - Identity Tab</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="951817"><img class="Default" src="images/UGCH-Dashboard_and_Alerts.072.2.03.jpg" width="473" height="190" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="951818">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="950508">This page has the following options:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="955525">Name—an arbitrary label used to identify the alert. The alert name is displayed in the dashboard window when an alert occurs.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="978761">Description—an arbitrary label used to identify the alert. The description is displayed only in the Information Pane if that field is selected using the Field Chooser (similar to the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ui_tables_types_favorites.html#1014215', '');" title="Favorites Table">Group/Drilldown Chooser</a></span> for adding groups to a Favorites Table).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="978768">Type—defaults to Static but you may also choose Static-Any. A user cannot create Adaptive Alerts.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950520">Dashboard Section—determines in which section of the dashboard to place the notification when the alert is triggered: Client, Network, or Server (see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.3.html', '');" title="Problem Management Dashboard">Problem Management Dashboard</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950522">Status—defaults to Active. The condition for an Inactive alert is never checked, so inactive alerts never take an action. The alert must be set to active in order to generate a notification.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h4"><a name="950525">Group Tab</a></div>
+      <div class="body"><a name="950526">The Group tab is used to specify the group that is associated with this alert, which can be any </a><span class="Emphasis" style="font-style: italic">single</span> group or drill-down (group path) available within the Desktop Console (e.g., total traffic, ISP AS groups, specific protocols, etc.).</div>
+      <div class="bodyIntro"><a name="950530">Click the Group drop-down list, click the drop-down menu, and select Browse&nbsp;Groups to invoke the group selection dialog.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;4     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950531">Alert Manager - Group Tab</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><span style="color: #000000; font-size: 4.0pt; font-weight: normal"><a name="951876">\</a></span><img class="Default" src="images/UGCH-Dashboard_and_Alerts.072.2.04.jpg" width="292" height="219" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></div>
+      <div class="figSpaceAfter"><a name="951877">&nbsp;</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;5     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950538">Alert Manager - Group Path Selector Window</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="951917"><img class="Default" src="images/UGCH-Dashboard_and_Alerts.072.2.05.jpg" width="293" height="258" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="951918">&nbsp;</a></div>
+      <div class="h4"><a name="950546">Condition</a></div>
+      <div class="body"><a name="950547">The Condition tab is used to specify the threshold that triggers the static alert. An alert is generated when the network traffic for the group crosses the specified threshold. For Static Alerts, the Condition tab offers both a basic and advanced interface.</a></div>
+      <div class="body"><a name="950548">The basic interface lets you specify conditions involving simple Boolean conditions (AND, OR) on up to three metrics.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;6     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950549">Alert Manager - Condition Tab</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="951924"><img class="Default" src="images/UGCH-Dashboard_and_Alerts.072.2.06.jpg" width="471" height="221" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="951925">&nbsp;</a></div>
+      <div class="body"><a name="950554">Multiple severity levels can be defined in the condition section. The severity is included in the alert notification.</a></div>
+      <div class="body"><a name="950555">A condition specified in the basic Condition interface may involve a single metric (e.g., server response time &gt; 80 msec), or up to three traffic metrics using a logical expression (e.g., round trip time &gt; 200 msec OR outbound packet loss &gt; 10%). </a></div>
+      <div class="body"><a name="950557">Click the Advanced checkbox to configure alerts using logical expressions involving more than three metrics. See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.2.html#950727', '');" title="Alert Manager">Advanced Alert Expression Syntax</a></span>.</div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;7     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950561">Alert Manager - Condition Tab - Advanced</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="951983"><img class="Default" src="images/UGCH-Dashboard_and_Alerts.072.2.07.jpg" width="472" height="220" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="951984">&nbsp;</a></div>
+      <div class="h4"><a name="950569">Schedule Tab</a></div>
+      <div class="bodyIntro"><a name="950570">The Schedule tab is used to configure specific time periods when the static alert is active. By default, the static alert is active at all times, but can be disabled for certain hours of the day or days of the week. The schedule can also be used to specify the Frequency with which the alert condition is checked. Alert conditions can be checked at the following intervals: 1 minute, 5 minutes, 1 hour or 1 day.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;8     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950571">Alert Manager - Schedule Tab</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="951990"><img class="Default" src="images/UGCH-Dashboard_and_Alerts.072.2.08.jpg" width="350" height="127" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="1021771">&nbsp;</a></div>
+      <div class="body"><a name="1021798">The Minimum Duration field specifies the minimum duration for which a Static-Any condition must be in continuous violation before the alert is triggered. If you set this field to 10, for example, the alert is not triggered unless the condition is violated continuously for 10 minutes.</a></div>
+      <div class="h4"><a name="1021775">Actions</a></div>
+      <div class="bodyIntro"><a name="1021777">The Actions tab is used to specify what operations to perform when the alert condition is met. The action section allows the user to define whether an SNMP trap, Syslog, an email, or all three, are generated when the alert condition is met.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;9     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950581">Alert Manager - Action Tab</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="951997"><img class="Default" src="images/UGCH-Dashboard_and_Alerts.072.2.09.jpg" width="618" height="214" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="951998">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="950586">The following table describes the options available in the Actions tab.</a></div>
+      <div class="tblAnchor"><a name="984290">&nbsp;</a></div>
+      <table class="tableWide" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+              <tr style="vertical-align: baseline">
+                <td>
+                  <div class="tblCaption_inner" style="width: 44.64pt; white-space: nowrap">Table&nbsp;1    </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="984314">Configuration Options in “Actions” Tab</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 108.56952pt">
+            <div class="tblHead"><a name="984318">Option/Tab</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 359.43048pt">
+            <div class="tblHead"><a name="984320">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="984322">Email</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="984324">Email—Email a notification to the destination email addresses listed in the text field labeled Email. Click Add to call up the Email Address Selection dialog. If necessary, SMTP relay parameters can be set using the Administration&nbsp;&gt; System web interface. (See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH05-Config_Maintenance.11.10.html', '');" title="Configuring Outgoing Email Parameters">Configuring Outgoing Email Parameters</a></span>.) </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 10.8pt; white-space: nowrap">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="985312">Verbose—By default, email alerts include only the metric that is specified in the alert condition. If the Verbose email option is checked, all other metric values at the time the alert was triggered are included in the email notification.</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="986779">on crossing </a></div>
+            <div class="tblBody9"><a name="1021712">continuous</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="986781">Can be selected for all actions. An “on crossing” alert triggers actions only when the alert threshold is crossed. A continuous alert triggers actions as long as traffic is in violation of the alert condition. The frequency with which a continuous alert triggers actions is the same as the Frequency specified on the Schedule tab of the Alert Manager.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="984326">SNMP</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="984328">Send an SNMP trap when the alert condition is met. The SNMP trap destination must be configured using the Administration&nbsp;&gt; System web interface. See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH05-Config_Maintenance.11.16.html#951218', '');" title="SNMP Traps">Configuring SNMP</a></span>.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="984330">Syslog</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="984332">Forward the alert to a SYSLOG server. The syslog server destination must be configured using the Administration&nbsp;&gt; System web interface. See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH05-Config_Maintenance.11.14.html', '');" title="Configuring SYSLOG Alert Destinations">Configuring SYSLOG Alert Destinations</a></span>.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="986514">Snapshot</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="986516">Retain a snapshot of the associated packets whenever the alert is generated. Snapshots are especially useful for investigating intermittent problems that cannot be anticipated in advance or reproduced.</a></div>
+            <div class="tblBody9"><span class="bold"><a name="986644">Note—</a></span>Snapshots are available only on appliances that support <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Capture-advanced.074.02.html', '');" title="High-Speed Captures">High-Speed Captures</a></span>. </div>
+            <div class="tblBody9"><a name="986654">The options in this tabbed page are described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Capture-advanced.074.06.html#954855', '');" title="Alert Snapshots">Generating Alert Snapshots</a></span>.</div>
+            <div class="tblBody9"><a name="986761">For general information about snapshots, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Capture-advanced.074.06.html', '');" title="Alert Snapshots">Alert Snapshots</a></span>.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="984338">Trace</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="984340">Issue a traceroute to the IP address or set of addresses specified in the text field. Click Add to call up a Group Selection dialog, which enables you to choose a Business Group. The dialog enters the IP address definition of the Business Group into the text field as a convenience. (Although you can also choose a Business Group Container, the dialog does not enter an IP address definition for it.)</a></div>
+            <div class="tblBody9"><span class="bold"><a name="985275">Note—</a></span>The traceroute destination specified here is not updated if the Business Group definition is changed.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="h4"><a name="950615">Links</a></div>
+      <div class="bodyIntro"><a name="950620">The Links tab of the Alert Manager lets you specify an Insight that is linked from the alert report in the Dashboard.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;10     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950621">Alert Manager—Links Tab</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="952038"><img class="Default" src="images/UGCH-Dashboard_and_Alerts.072.2.10.jpg" width="307" height="136" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="952039">&nbsp;</a></div>
+      <div class="body"><a name="950629">The drop-down list lets you choose any Insight available in the Desktop Console. The link appears in the alert report in the Dashboard; clicking on the link brings up the Insight already focused on the associated alert information as an aid to rapid troubleshooting.</a></div>
+      <div class="h4"><a name="950630">Finish Specifying the Alert</a></div>
+      <div class="body"><a name="950631">At any time during the alert specification process click Apply to save your work. When finished, click OK or Close; the Alert Manager does not close without querying you about saving your changes.</a></div>
+      <div class="h3"><a name="950635">Creating a Static-Any Alert</a></div>
+      <div class="bodyIntro"><a name="950636">The process of specifying a Static-Any alert is similar to that of a Static Alert. The major difference is in the Group and Condition tabs.</a></div>
+      <div class="body"><a name="950637">Because a misconfigured Static-Any alert is capable of generating an almost unlimited number of events (e.g., all IP addresses with Throughput (Inbound and Outbound &gt; 0), only 10 events are reported for each Static-Any alert, regardless of the number of groups that satisfy the alert conditions.</a></div>
+      <div class="h4"><a name="950638">Identity - Static-Any</a></div>
+      <div class="body"><a name="950639">The Identity tab for Static-Any Alerts is the same as for Static Alerts. (See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.2.html#950501', '');" title="Alert Manager">Identity Tab</a></span>.)</div>
+      <div class="h4"><a name="950645">Group - Static-Any</a></div>
+      <div class="body"><a name="950646">Unlike Standard Static Alerts, Static-Any Alerts allow you to specify a complex set of groups or applications, or in some cases groups and applications, to which the alert applies.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;11     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950647">Alert Manager - Group Tab (Static-Any Alerts)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="952045"><img class="Default" src="images/UGCH-Dashboard_and_Alerts.072.2.11.jpg" width="308" height="225" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="952046">&nbsp;</a></div>
+      <div class="body"><a name="950652">The first text box in the Static-Any Group tab is the Group List (which may include applications), the second text box is the Application List. You may find it useful to think of the set of groups specified in the Group list as being filtered by the set of applications specified in the Applications list.</a></div>
+      <div class="body"><a name="950654">It is not possible to define a Static-Any alert for a non-TCP-non-UDP application unless that application is specifically defined in the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Apps.028.3.html', '');" title="Defined Application Manager">Defined Application Manager</a></span>.</div>
+      <div class="body"><a name="950658">Each list may be specified either as a Set of groups or applications of a single type Including those entered in the text box, or as Any groups or applications of a single type Excluding those entered in the text box, if any.</a></div>
+      <div class="bodyIntro"><a name="950695">The following table lists the possible combinations.</a></div>
+      <div class="tblAnchor"><a name="956075">&nbsp;</a></div>
+      <table class="tableNarrow" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+              <tr style="vertical-align: baseline">
+                <td>
+                  <div class="tblCaption_inner" style="width: 44.64pt; white-space: nowrap">Table&nbsp;2    </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="956101">Group List/Filter Combinations for Static-Any Alerts&nbsp;</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 181.92456pt">
+            <div class="tblHead"><a name="950666"><!--o--></a>Group List<sup><a name="wwfootnote_inline_48" href="#48">1</a></sup></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 286.07544pt">
+            <div class="tblHead"><span class="Emphasis" style="font-style: normal"><a name="950668">And</a></span> Application List (“Filter”)</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950670">IP Addresses</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950675"><!--o--></a>All<sup><a name="wwfootnote_inline_49" href="#49">2</a></sup></div>
+            <div class="tblBody9"><a name="950676">Defined Applications</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950678">Business Groups</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950680">All</a></div>
+            <div class="tblBody9"><a name="950681">Defined Applications</a></div>
+            <div class="tblBody9"><a name="950682">Other Applications</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950684">Destination ASes</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950686">Not Available</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950688">Defined Applications</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950690">Not Available</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950692">Other Applications</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="950694">Not Available</a></div>
+          </td>
+        </tr>
+      </table>
+      <hr />
+      <div style="font-size: smaller; float: left; padding-right: 10px;">
+        <a name="48" href="#wwfootnote_inline_48">1</a>
+      </div>
+      <div class="tblFootnote"><a name="950665">The first set (Group List) may of course be specified as Any, Any (Exclusive), or Set of (Inclusive). Total is of course not possible for the Group List; that is what a Standard Static Alert does.</a></div>
+      <br style="clear: both;" />
+      <div style="font-size: smaller; float: left; padding-right: 10px;">
+        <a name="49" href="#wwfootnote_inline_49">2</a>
+      </div>
+      <div class="tblFootnote"><a name="950674">All assumes you have not checked </a><span class="Bold" style="font-weight: bold">And</span>.</div>
+      <br style="clear: both;" />
+      <div class="bodyIntro"><a name="950696">For each group type, selecting it in the drop-down menu above the text entry box and clicking Add calls up a Group Selection dialog (like that in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.2.html#950538', '');" title="Alert Manager">Figure&nbsp;5</a></span>) but limited to the choices appropriate for that group type, as noted below.</div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950701">IP Addresses—Choose IP Address, Prefix/24, or Business Group. In the latter case, the dialog enters the IP address definition of the Business Group or Business Group Container into the text field as a convenience; an error message is returned if the Business Group was not defined using IP addresses. This allows you to specify a alert group consisting of mixed Business Groups and IP addresses.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950702">Business Group—Choose the Business Group or Business Group Container; its name is entered and the alert remains valid if the group definition is changed. You cannot mix Business Group names and IP addresses. Note that here you may choose Other Group, enabling you to specify an alert against any IP address not included in specified Business Groups.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><span class="bold"><a name="950703">Note</a></span>—If you enter a Business Group or Business Group Container as AS numbers using this dialog, those As numbers are not updated if the group definition is changed.</div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950704">Destination ASes—Choose Dest AS or Business Group. In the latter case, the dialog enters the AS number(s) defining the Business Group or Business Group Container into the text field as a convenience; an error message is returned if the Business Group was not defined using AS numbers.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950705">Defined Applications—Choose the desired application from the Business&nbsp;Application drop-down list. The name is entered, and the alert remains valid if the application definition changes.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="950706">Other Applications—enter the TCP or UDP port desired, using the drill-down icon to specify the port; alternatively, you may enter any TCP or UDP port directly in the text field in the format TCP:# or UDP:#. You may also select a Defined Application from the Business Application drop-down list. In this case the protocol/port portion of the application definition is entered. Note that this is not a complete specification for a Server or Web Application; those applications should generally be alerted using the Defined Applications selection dialog. However, specifying a Server application using the protocol/port method can be useful if you want to alert on all Server applications using that protocol/port definition regardless of what server they are defined on.</a></div>
+      <div class="h4"><a name="950708">Condition - Static-Any</a></div>
+      <div class="body"><a name="950709">The Condition tab for Static-Any Alerts is similar to the basic condition tab for Static Alerts (see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.2.html#950546', '');" title="Alert Manager">Condition</a></span>), except that you may not specify negative alerts (<span class="Emphasis" style="font-style: italic">metric</span>&nbsp;<span class="Symbol">&lt;</span>&nbsp;<span class="Emphasis" style="font-style: italic">value </span>or<span class="Emphasis" style="font-style: italic"> metric</span>&nbsp;<span class="Symbol">≤</span>&nbsp;<span class="Emphasis" style="font-style: italic">value</span>) and the metrics can only be ANDed together. The Advanced condition tab is not available.</div>
+      <div class="h4"><a name="950713">Schedule - Static-Any</a></div>
+      <div class="body"><a name="950714">The Schedule tab for Static-Any Alerts is the same as for Static Alerts (see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.2.html#950569', '');" title="Alert Manager">Schedule Tab</a></span>), except that Static-Any Alerts are only available on a one-minute <span class="bold">Frequency</span>.</div>
+      <div class="h4"><a name="950719">Links - Static-Any</a></div>
+      <div class="body"><a name="950720">The Links tab for Static-Any Alerts is the same as for Static Alerts. See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.2.html#950615', '');" title="Alert Manager">Links</a></span>.</div>
+      <div class="h3"><a name="950727">Advanced Alert Expression Syntax</a></div>
+      <div class="body"><a name="950728">The advanced mode of the condition tab is used to configure alerts using complex expressions. The alert condition is a logical expression that can be composed of metrics, numeric constants, boolean constants and operators. The following constants, types and operators are valid.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950729">numeric constants</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="956181">floating point number</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950731">NaN</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950732">+infinity</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950733">-infinity</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="956194">boolean constants</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="956196">true</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950736">false</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950737">operators</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950738">a and b (logical and)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950739">a or b (logical or)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950740">not a (logical not)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950741">a &lt; b (less than)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950742">a &lt;= b (less than or equal)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950743">a &gt; b (greater than)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950744">a &gt;= b (greater than or equal)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950745">a &lt; b &lt; c (b in range a to c)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950746">a &lt; b &lt;= c (b in range a to c)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950747">a &lt;= b &lt; c (b in range a to c)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950748">a &lt;= b &lt;= c (b in range a to c)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950749">a &gt; b &gt; c (b in range a to c)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950750">a &gt; b &gt;= c (b in range a to c)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950751">a &gt;= b &gt; c (b in range a to c)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950752">a &gt;= b &gt;= c (b in range a to c)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950753">a = b (equal)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950754">a &lt;&gt; b (not equal)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950755">if a then b else c</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950756">(a)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950757">+a (positive)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950758">-a (negative)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950759">a + b (add)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950760">a - b (subtract)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950761">a * b (multiply)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950762">a / b (divide)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950763">abs(a)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950764">ceil(a)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950765">floor(a)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950766">log(a)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950767">max(a, b, …)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950768">min(a, b, …)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950769">pow(a, b)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950770">remainder(a, b)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950771">round(a)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950772">sqrt(a)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="950773">exp(a)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="950776">Evaluating Alert Conditions</a></div>
+      <div class="bodyIntro"><a name="950777">After an alert is defined and saved in the database, the alert condition can be compared against the metrics stored in the appliance database. To do so, right-click the alert in the alert manager and select “Evaluate&nbsp;Condition”. The alert condition is evaluated against the metric values for the current time selection.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;12     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950778">Alert Manager - Condition Evaluator</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="952104"><img class="Default" src="images/UGCH-Dashboard_and_Alerts.072.2.12.jpg" width="401" height="178" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="952105">&nbsp;</a></div>
+      <div class="body"><a name="950783">The condition evaluator displays alert details (name, group, condition and period) and the current value of the metric specified in the alert condition. Other metrics related to the selected metric are also displayed. The Result field at the bottom of the window displays the alert status for the current time selection. If the metric(s) defined in the alert cross the threshold(s) specified in the condition, the Result field indicates that the alert is occurring in this time selection, its priority, and specifically when it would trigger (if its frequency is less than the time selection of the current project).</a></div>
+      <div class="h2NoBreak"><a name="950785">Adaptive Alerts</a></div>
+      <div class="body"><a name="950790">The appliance can measure and record a quantity of network data that may overwhelm all but the most advanced network engineers, and even they may not be familiar with some of the correlations and collective behaviors that can reveal the cause and even location of Internet problems.</a></div>
+      <div class="body"><a name="950791">The Problem Management Dashboard provides a set of built-in analyses called Adaptive Alerts that automatically detect a wide range of problems. These analyses attempt to identify a common problem, such as an overloaded server, by finding outliers in the metrics collected by the appliance. When an outlier is identified, the appliance determines whether this abnormal behavior is correlated with another metric in an attempt to localize the problem. The appliance then generates an alert describing the outlier and the correlations. The alert appears in the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.3.html', '');" title="Problem Management Dashboard">Problem Management Dashboard</a></span> and may also trigger any other action possible for an alert. (See <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.2.html#1021775', '');" title="Alert Manager">Actions</a></span>.) The default action for an adaptive alert is to generate an SNMP trap on crossing.</div>
+      <div class="body"><a name="950801">As an example, the adaptive alert named 'Increased APPLICATION RESPONSE TIME (SERVERS) due to Overloaded Server(s)' is triggered when a Business Group containing servers has a simultaneous increase (outlier) in Application Response Time (Servers) and Connection Requests (Servers). In this event, Outbound Application Response Time and Inbound Connection Requests are said to be correlated.</a></div>
+      <div class="body"><a name="950802">In contrast, the adaptive alert named 'Increased APPLICATION RESPONSE TIME (SERVERS) due to Potential Server or Backend Problem' is triggered when an Application Response Time (Servers) outlier is identified, but there is no corresponding increase in Connection Requests (Servers), i.e., there is no correlation. This scenario would indicate a server that is taking longer to process requests for some reason other than increased network requests.</a></div>
+      <div class="bodyIntro"><a name="950807">The following table lists the built-in automated analyses provided with the appliance. The analysis column lists the metrics that are used in identifying outliers and correlations for each alert. The traffic analyzed column identifies the set of traffic that the analysis is executed against. (For a detailed description of the metrics involved in these analyses, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'metrics.html', '');" title="Metrics">Metrics</a></span>.)</div>
+      <div class="tblAnchor"><a name="956363">&nbsp;</a></div>
+      <table class="tableWide" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+              <tr style="vertical-align: baseline">
+                <td>
+                  <div class="tblCaption_inner" style="width: 44.64pt; white-space: nowrap">Table&nbsp;3    </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="962829">Build-In Alerts&nbsp;</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 104.15232pt">
+            <div class="tblHead"><a name="962837">Alert Name</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 67.27248pt">
+            <div class="tblHead"><a name="962839">Traffic Analyzed</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 87.24888pt">
+            <div class="tblHead"><a name="962841">Analysis</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top; width: 209.32704pt">
+            <div class="tblHead"><a name="962843">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962845">Increased APPLICATION RESPONSE TIME (SERVERS) due to Overloaded Server(s)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962847">All traffic to and from each Business Group</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962849">Application Response Time (Servers) outlier correlated to Connection Requests (Servers) outliers</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962851">Application Response Time (TCP Servers) measures the average time it takes for the server(s) within the Business Group to respond to the first data request(s) from a client. Increases in Application Response Time (ART) may be a result of an increased load (Connection Requests) on the server(s) or a problem with the Application, Server, or Backend (tiered applications). This alert is triggered when there are anomalous spikes in ART that DO have a corresponding anomalous spike in Connection Requests on the servers in the BG. Since there is a correlation, the increase in ART may be a result of the increase in load on the server or a result of problems with the Application, Server, or Backend (tiered applications). </a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962853">Increased APPLICATION RESPONSE TIME (SERVERS) due to Potential Server or Backend Problem</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962855">All traffic to and from each Business Group</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962857">Application Response Time (Servers) outlier with no correlation to Connection Requests (Servers)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962859">Application Response Time (TCP Servers) measures the average time it takes for the server(s) within the Business Group to respond to the first data request(s) from a client. Increases in Application Response Time (ART) may be a result of an increased load (Connection Requests) on the server(s) or a problem with the Application, Server, or Backend (tiered applications). This alert is triggered when there are anomalous spikes in ART that DO NOT have a corresponding anomalous spike in Connection Requests on the servers in the BG. Since there is no correlation, the increase in ART is a most likely the result of problems with the Application, Server, or Backend (tiered applications). </a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962861">Increased THROUGHPUT (OUTBOUND)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962863">All traffic to and from each Business Group</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962865">Throughput (Outbound) outlier</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962867">Throughput (OUTBOUND) measures the average Mbits/sec per minute being transferred within the Business Group to destinations outside the Business Group. When an alert is triggered, there has been an anomalous increase in the throughput of data within the Business Group. Anomalous increases in Throughput may be a result of sudden large file transfers, retransmissions, new applications, increased load on the servers, misbehaving application, or a change in user behavior. If it is the latter, the automatic baseline self-adjusts to the changes over time to suppress alerts triggered by this type of increase. </a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962869">Increased THROUGHPUT (INBOUND)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962871">All traffic to and from each Business Group</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962873">Throughput (Inbound) outlier</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962875">Throughput (INBOUND) measures the average Mbits/sec per minute being transferred to the Business Group. When an alert is triggered, there has been an anomalous increase in the throughput of data to the Business Group. Anomalous increases in Throughput may be a result of sudden large file transfers, retransmissions, new/change in application usage, infected hosts, or a change in user behavior. If it is the latter, the automatic baseline self-adjusts to the changes over time to suppress alerts triggered by this type of increase. </a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962877">Potential SYN Flood DoS ATTACK on Server</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962879">All traffic to and from each Business Group</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962881">Connection Requests (Servers) outlier with no correlation to Throughput (Outbound)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962883">A SYN Flood DoS (Denial of Service) ATTACK is either; a) an attempt by a hacker to make an application inaccessible for legitimate client requests by overloading the application with an inordinate number of bogus connection requests or, b) a client application gone haywire. With legitimate connection requests there is typically some data transferred back to the client as a result of the completed TCP session. During a SYN Flood DoS Attack the connection requests are bogus, therefore there is usually NO data transferred back to the client. The SYN Flood DoS Attack adaptive alert correlates connection requests to the server(s) within a Business Group against the amount of data being transferred (THROUGHPUT) back to the clients. In the case where there is an anomalous spike in Connection Requests with NO corresponding increase in throughput we consider this a SYN Flood DoS ATTACK on the server.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962885">Increased CONNECTION REQUESTS (TCP SERVERS)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962887">All traffic to and from each Business Group</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962889">Connection Requests (Servers) outlier</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962891">Connection Requests (TCP Servers) measures the average number of Connection Requests per minute initiated by clients outside the Business Group to servers within the Business Group. When an alert is triggered, there has been an anomalous increase in the number of connection requests initiated by clients. Anomalous increases in Connection Requests may be a result of an infected host(s), a bad client application, or a change in user behavior. If it is the latter, the automatic baseline self-adjusts to the changes over time. This signals an increase in the number of users requesting time from the applications and servers within the Business Group to suppress alerts triggered by this type of increase.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962893">Increased CONNECTION REQUESTS (TCP CLIENTS)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962895">All traffic to and from each Business Group</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962897">Connection Requests (Clients) outlier</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962899">Connection Requests (TCP Clients) measures the average number of Connection Requests per minute initiated by clients within a Business Group. When an alert is triggered, there has been an anomalous increase in the number of connection requests initiated by clients. Anomalous increases in Connection Requests are a client side issue and may be a result of an infected host(s), a bad client application, or a change in user behavior. If it is the latter, the automatic baseline self-adjusts to suppress alerts triggered by this type of increase.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962901">Increased PACKET LOSS (OUTBOUND) through ISP</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962903">All traffic routed over each ISP AS</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962905">Packet Loss (Outbound) outlier</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962907">Packet Loss (OUTBOUND) is the percentage of packets lost (as measured by retransmissions) per minute for TCP sessions over the selected time interval. When an alert is triggered, there has been an anomalous increase in the amount of Packet Loss for TCP Sessions transiting that ISP AS. Anomalous increases in Packet Loss may be a result of routers/switches dropping packets, ISP's dropping packets, routing issues, Worms, or physical layer issues. This signals a possible network problem causing packet loss between the appliance and client through the ISP.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962912">Increased ROUND TRIP TIME (OUTBOUND) through ISP</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962914">All traffic routed over each ISP AS</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962916">Round Trip Time (Outbound) outliers</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962918">Round Trip Time (OUTBOUND) is the average time it takes for a data packet to be received and acknowledged by external clients. The measurement is the round trip latency between the appliance and the client for all TCP sessions over the selected time interval. When an alert is triggered for an ISP, there has been an anomalous increase in Round Trip Time for TCP Sessions transiting that ISP AS. Anomalous increases in Round Trip Time may be a result of routers/switches dropping packets, ISP's dropping packets, routing issues, Worms, Queuing, or physical layer issues. This signals a possible network problem causing network latency between the appliance and client through the ISP.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962926">Increased THROUGHPUT (OUTBOUND) through ISP</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962928">All traffic routed over each ISP AS</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962930">Throughput (Outbound) outlier</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962932">Throughput (OUTBOUND) measures the average Mbits/sec per minute being sent from IP addresses routed through a specific ISP. When an alert is triggered, there has been an anomalous increase in the throughput transiting that ISP AS. Anomalous increases in Throughput may be a result of sudden large file transfers, retransmissions, new/change in application usage, infected hosts, or a change in user behavior. If it is the latter, the automatic baseline self-adjusts to the changes over time to suppress alerts triggered by this type of increase.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962934">Increased PACKET LOSS (OUTBOUND)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962936"><!--o--></a>Traffic between each Business Group and all other Business Groups <sup><a name="wwfootnote_inline_51" href="#51">1</a></sup></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962948">Packet Loss (Outbound) outlier</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962950">Packet Loss (OUTBOUND) is the percentage of packets lost (as measured by retransmissions) per minute for TCP sessions over the selected time interval. When an alert is triggered, there has been an anomalous increase in the amount of Packet Loss between the clients in the connected group and the servers in the root Business Group.</a></div>
+            <div class="tblBody9"><a name="962951">(Business Group 1&gt; Connected Groups &gt; Business Group 2). </a></div>
+            <div class="tblBody9"><a name="962952">Anomalous increases in Packet Loss may be a result of routers/switches dropping packets, ISP's dropping packets, routing issues, Worms, or physical layer issues. This signals a possible network problem causing packet loss between the appliance and the connected group.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962957">Increased PACKET LOSS (INBOUND)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962959">Traffic between each Business Group and all other Business Groups</a><span style="vertical-align: super">1</span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962964">Packet Loss (Inbound) outlier</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962966">Packet Loss (INBOUND) is the average percentage of packets lost (as measured by retransmissions) per minute for TCP sessions over the selected time interval. When an alert is triggered, there has been a anomalous increase in the amount of Packet Loss between the servers in the connected group and the clients in the primary group. </a></div>
+            <div class="tblBody9"><a name="962967">(Business Group 1&gt; Connected Groups &gt; Business Group 2). </a></div>
+            <div class="tblBody9"><a name="962968">Anomalous increases in Packet Loss may be a result of routers/switches Group to Group dropping packets, ISP's dropping packets, routing issues, Worms, or physical layer issues. </a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962970">Increased ROUND TRIP TIME (OUTBOUND)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962972">Traffic between each Business Group and all other Business Groups</a><span style="vertical-align: super">1</span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962977">Round Trip Time (Outbound) outlier</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962979">Round Trip Time (OUTBOUND) is the average time it takes for a data packet to be received and acknowledged by the clients outside the Business Group. The measurement is the latency between the appliance and the client for all TCP sessions over the selected time interval. When an alert is triggered, there has been an anomalous increase in Round Trip Time for data between the clients in the connected group and the servers in the root Business Group. </a></div>
+            <div class="tblBody9"><a name="962983">(Business Group 1&gt; Connected Groups &gt; Business Group 2). </a></div>
+            <div class="tblBody9"><a name="962984">Anomalous increases in Round Trip Time may be a result of routers/switches dropping packets, ISP's dropping packets, routing issues, Worms, Queuing, or physical layer issues. This signals a possible network problem causing network latency between the appliance and the connected group. </a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962989">Increased ROUND TRIP TIME (INBOUND)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962991">Traffic between each Business Group and all other Business Groups</a><span style="vertical-align: super">1</span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962996">Round Trip Time (Inbound) outlier</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="962998">Round Trip Time (INBOUND) is the average time it takes for a data packet to be received and acknowledged by the clients within the Business Group. The measurement is the round trip latency between the appliance and the client for all TCP sessions over the selected time interval. When an alert is triggered, there has been an anomalous increase in Round Trip Time for data between the servers in the connected group and the clients in the root Business Group. </a></div>
+            <div class="tblBody9"><a name="963002">(Business Group 1&gt; Connected Groups &gt; Business Group 2). </a></div>
+            <div class="tblBody9"><a name="963003">Anomalous increases in Round Trip Time may be a result of routers/switches dropping packets, ISP's dropping packets, routing issues, Worms, Queuing, or physical layer issues. This signals a possible network problem causing network latency between the appliance and root Business Group. </a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963008">Increased DATA TRANSFER TIME (TCP SERVERS) due to outbound queuing delay</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963010">Traffic between each Business Group and all other Business Groups</a><span style="vertical-align: super">1</span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963015">Data Transfer Time (Servers) and Round Trip Time (Outbound) outliers with no correlation to Connection Payload (Servers)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963017">The Data Transfer Time (TCP Servers) is the amount of time it takes all data packets to be received and acknowledged by the clients communicating with servers within a Business Group on a per session basis. Characteristics that affect DTT are the amount of good data being transferred (Payload), packet loss (resulting in retransmission of data) and network latency (Round Trip Time). This alert correlates Data Transfer Time, Round Trip Time, and Payload to determine if an anomalous increase in DTT can be attributed to either of these factors. When this alert is triggered it means that an anomalous increase in DTT is associated with an anomalous increase in network latency for data between servers in the root Business Group and clients in the connected group. </a></div>
+            <div class="tblBody9"><a name="963018">(Business Group 1 &gt; Connected Groups &gt; Business Group 2). </a></div>
+            <div class="tblBody9"><a name="963019">This signals a possible network problem causing network latency between the appliance and the connected group.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963024">Increased DATA TRANSFER TIME (TCP CLIENTS) due to inbound queuing delay</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963026">Traffic between each Business Group and all other Business Groups</a><span style="vertical-align: super">1</span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963031">Data Transfer Time (Clients) and Round Trip Time (Inbound) outliers with no correlation to Connection Payload (Clients)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963033">Data Transfer Time (TCP Clients) is the amount of time it takes all data packets to be received and acknowledged by the clients within a Business Group on a per session basis. Characteristics that affect DTT are the amount of good data being transferred (Payload), packet loss (resulting in retransmission of data) and network latency (Round Trip Time). This alert correlates Data Transfer Time, Round Trip Time, and Payload to determine if an anomalous increase in DTT can be attributed to either of these factors. When this alert is triggered it means that an anomalous increase in DTT is associated with an anomalous increase in network latency for data between servers in the connected group and clients in the root Business Group. </a></div>
+            <div class="tblBody9"><a name="963034">(Business Group 1 &gt; Connected Groups &gt; Business Group 2). </a></div>
+            <div class="tblBody9"><a name="963035">This signals a possible network problem causing network latency between the appliance and root Business Group.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963040">Increased DATA TRANSFER TIME (TCP SERVERS) due to PACKET LOSS (OUTBOUND)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963042">Traffic between each Business Group and all other Business Groups</a><span style="vertical-align: super">1</span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963047">Data Transfer Time (Servers) and Packet Loss (Outbound) outliers with no correlation to Connection Payload (Servers)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963049">Data Transfer Time (TCP Servers) is the amount of time it takes all data packets to be received and acknowledged by the clients communicating with servers within a Business Group on a per session basis. Characteristics that affect DTT are the amount of good data being transferred (Payload), packet loss (resulting in retransmission of data) and network latency (Round Trip Time). This alert correlates Data Transfer Time, Packet Loss, and Payload to determine if an anomalous increase in DTT can be attributed to either of these factors. When this alert is triggered it means that an anomalous increase in DTT is associated with an anomalous increase in packet loss for data between servers in the root Business Group and clients in the connected group.</a></div>
+            <div class="tblBody9"><a name="963050">(Business Group 1 &gt; Connected Groups &gt; Business Group 2). </a></div>
+            <div class="tblBody9"><a name="963051">This signals a possible network problem causing packet loss between the appliance and the connected group.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963056">Increased DATA TRANSFER TIME (TCP CLIENTS) due to PACKET LOSS (INBOUND)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963058">Traffic between each Business Group and all other Business Groups</a><span style="vertical-align: super">1</span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963063">Data Transfer Time (Clients) and Packet Loss (Inbound) outliers with no correlation to Connection Payload (Clients)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963065">Data Transfer Time (TCP Clients) is the amount of time it takes all data packets to be received and acknowledged by the clients within a Business Group on a per session basis. Characteristics that affect DTT are the amount of good data being transferred (Payload), packet loss (resulting in retransmission of data) and network latency (Round Trip Time). This alert correlates Data Transfer Time, Packet Loss, and Payload to determine if an anomalous increase in DTT can be attributed to either of these factors. When this alert is triggered it means that an anomalous increase in DTT is associated with an anomalous increase in packet loss for data between servers in the connected group and clients in the root Business Group.</a></div>
+            <div class="tblBody9"><a name="963066">(Business Group 1&gt; Connected Groups &gt;Business Group 2). </a></div>
+            <div class="tblBody9"><a name="963067">This signals a possible network problem causing packet loss between the appliance and root Business Group.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963072">Increased DATA TRANSFER TIME (TCP SERVERS) due to PAYLOAD (TCP SERVERS)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963074">Traffic between each Business Group and all other Business Groups</a><span style="vertical-align: super">1</span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963079">Data Transfer Time (Servers) outlier correlated to Payload (Servers) outlier</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963081">Data Transfer Time (TCP Servers) is the amount of time it takes all data packets to be received and acknowledged by the clients communicating with servers within a Business Group on a per session basis. Characteristics that affect DTT are the amount of good data being transferred (Payload), packet loss (resulting in retransmission of data) and network latency (Round Trip Time). This alert correlates Data Transfer Time and Payload to determine if an anomalous increase in DTT can be attributed to either of these factors. When this alert is triggered it means that an anomalous increase in DTT is associated with an anomalous increase in the amount of data being transferred between servers in the root Business Group and clients in the connected group </a></div>
+            <div class="tblBody9"><a name="963082">(Business Group 1&gt; Connected Groups &gt;Business Group 2). </a></div>
+            <div class="tblBody9"><a name="963083">This signals a behavioral change in data being requested from the servers in the root Business Group. </a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963085">Increased DATA TRANSFER TIME (TCP CLIENTS) due to PAYLOAD (TCP CLIENTS)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963087">Traffic between each Business Group and all other Business Groups </a><span style="vertical-align: super">1</span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963092">Data Transfer Time (Clients) outlier correlated Payload (Clients) outlier</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="963094">Data Transfer Time (TCP Clients) is the amount of time it takes all data packets to be received and acknowledged by the clients within a Business Group on a per session basis. Characteristics that affect DTT are the amount of good data being transferred (Payload), packet loss (resulting in retransmission of data) and network latency (Round Trip Time). This alert correlates Data Transfer Time and Payload to determine if an anomalous increase in DTT can be attributed to either of these factors. When this alert is triggered it means that an anomalous increase in DTT is associated with an anomalous increase in the amount of data being transferred between servers in the connected group and clients in the root Business Group.</a></div>
+            <div class="tblBody9"><a name="963095">(Business Group 1&gt; Connected Groups &gt;Business Group 2). </a></div>
+          </td>
+        </tr>
+      </table>
+      <hr />
+      <div style="font-size: smaller; float: left; padding-right: 10px;">
+        <a name="51" href="#wwfootnote_inline_51">1</a>
+      </div>
+      <div class="tblFootnote"><a name="962943">In order to bound processor utilization for these dashboard analyses, the appliance only monitors the Top 100 Business Group pairs. The Top 100 is determined by taking all defined </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Groups.026.03.html#1027407', '');" title="Business Groups">Business Group Links</a></span>, followed by the top connected groups ranked by Throughput (Inbound and Outbound).</div>
+      <br style="clear: both;" />
+      <div class="body"><a name="951077">The adaptive alert analyses can be modified using the Alert Manager. (See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.2.html#951123', '');" title="Alert Manager">Customizing Adaptive Alerts</a></span>.)</div>
+      <div class="h3"><a name="951081">Adaptive Alert Analysis</a></div>
+      <div class="body"><a name="951085">The appliance automatically establishes an adaptive threshold for each metric involved in an alert analyses. This threshold is based on the moving average of the metric value over the latest time interval, known as the time window. The size of the time window can be adjusted using a parameter called “window size.” By reducing the window size for a specific adaptive alert, the moving average becomes more responsive to fluctuations in metric value, resulting in less alerts. All calculations performed in adaptive alert analysis are done using the 1 minute metric values.</a></div>
+      <div class="bodyIntro"><a name="951088">The appliance uses an algorithm known as the outlier method to calculate the adaptive threshold based on the moving average for a metric. Two different outlier methods can be used to calculate the threshold:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="951090">Offset outlier method</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="951091">The offset outlier method determines the adaptive threshold by adding an offset to the moving average. The size of the offset is determined by two parameters: sigma and threshold factor. Sigma is the standard deviation from the moving average over the time interval specified in the window size. The threshold factor is the number of sigmas added to the moving average to determine the adaptive threshold. The threshold factor can be modified for each adaptive alert using the alert manager.</a></div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap">Figure&nbsp;13    </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="951094">Adaptive Alert - offset outlier method</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSubCont"><span class="code"><a name="970073">adaptive threshold = </a></span><span class="codebold">µ + mó</span><span class="code" style="font-weight: normal"> <br />where </span><span class="codebold">µ </span><span class="code" style="font-weight: normal">is the moving average, </span><span class="codebold">m</span><span class="code" style="font-weight: normal"> is the threshold factor, and </span><span class="codebold">ó </span><span class="code" style="font-weight: normal">is the sigma</span> </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="951099">Multiplicative outlier method</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="951100">The multiplicative outlier method determines the adaptive threshold by multiplying the moving average by the threshold factor. The threshold factor can be modified for each adaptive alert using the alert manager.</a></div>
+      <div class="figCaptionStep_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionStep_inner" style="width: 57.6pt; white-space: nowrap">Figure&nbsp;14    </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionStep_inner"><a name="970142">Adaptive Alert - multiplicative outlier method</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSubCont"><span class="code"><a name="970148">adaptive threshold = </a></span><span class="codebold">mµ</span><span class="code" style="font-weight: normal"> <br />where </span><span class="codebold">µ </span><span class="code" style="font-weight: normal">is the moving average and </span><span class="codebold">m</span><span class="code" style="font-weight: normal"> is the threshold factor</span> </div>
+      <div class="listBulletCont"><a name="970120">The outlier method used depends on the variability of the metrics involved. Outliers for metrics that normally have low variability, such as Application Response Time for a typical HTTP server, are more readily detected using the multiplicative outlier method, rather than the offset outlier method, since the sigma (standard deviation) is normally quite low. This may not be true of Application Response Time for other servers, such as streaming media servers. When modifying adaptive alert analysis parameters, use a time series chart to examine the variability of the metric for the desired group and choose an appropriate outlier method. Running the analysis manually (as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.2.html#951184', '');" title="Alert Manager">Running the Analysis Manually</a></span>) can facilitate this process.</div>
+      <div class="body"><a name="951111">The maxOutlierValue parameter specifies the maximum value for the adaptive threshold, regardless of the outlier method used to determine the threshold. For instance, for groups with relatively high packet loss, the outlier method may calculate an adaptive threshold approaching 100%. In these instances, it may be desirable to specify that the adaptive threshold should never exceed 30% (or any another value of the user’s choosing) because this condition.</a></div>
+      <div class="body"><a name="951112">Naturally, changing the outlier method or the parameters that are used in determining the adaptive threshold affects the number of adaptive alerts that are triggered. A higher adaptive threshold results in less alerts, while lower thresholds results in more alerts.</a></div>
+      <div class="body"><a name="951113">Once the adaptive threshold is determined for a metric, the appliance can examine metric values to identify outliers. Outliers are metric values that exceed the adaptive threshold; however, not all outliers qualify as adaptive alerts. There are a number of analysis parameters (minimum duration, minCount, minSignifCount and minMeasurementValue) that affect this determination.</a></div>
+      <div class="body"><a name="951114">In some cases, an outlier should not trigger an alert unless the metric value exceeds the adaptive threshold for a minimum period of time. This can be configured using an analysis parameter known as minimum duration. The minimum duration, specified in seconds, identifies the minimum amount of time that the metric value must exceed the adaptive threshold before an adaptive alert is triggered.</a></div>
+      <div class="body"><a name="951116">To ensure that adaptive alerts are not biased by fluctuations observed in time intervals that have very little traffic, the analysis only considers time intervals that have a sufficient number of data measurements or packets. This behavior is controlled by the parameters </a><span class="code">minCount</span> and <span class="code">minSignifCount</span> respectively. The <span class="code">minCount</span> analysis parameter specifies the minimum number of measurements required for an outlier to trigger an adaptive alert. This parameter can be modified for each applicable metric in the alert analysis. For instance, if <span class="code">minCount</span> is set to 5 for Application Response Time, there must be 5 Application Response Time measurements in a 1 minute time interval for the alert analysis to include this data in the calculations. Anything less than 5 measurements is considered insufficient to be used in the analysis. Similarly, the <span class="code">minSignifCount</span> parameter specifies the minimum number of packets that must be measured in a given 1 minute time interval for the alert analysis to include this data in the calculations.</div>
+      <div class="body"><a name="951120">The </a><span class="code">minMeasurementValue</span> parameter specifies the minimum metric value that results in an adaptive alert. For instance, this parameter can be used to ensure that adaptive alerts based on packet loss are not triggered if the packet loss metric is less than 1% (or any other value of the user’s choosing). </div>
+      <div class="h4"><a name="951123">Customizing Adaptive Alerts</a></div>
+      <div class="body"><a name="951124">The alert manager can be used to customize the parameters used in adaptive alert analysis. This section assumes a basic understanding of the alert manager. For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.2.html', '');" title="Alert Manager">Alert Manager</a></span>.</div>
+      <div class="body"><a name="951128">The built-in adaptive alerts are listed in the alert manager as tasks of type “adaptive”. The alert manager can be used to modify the adaptive alert identity and analysis parameters. The group, schedule and metrics used in the alert analysis cannot be modified.</a></div>
+      <div class="body"><a name="951129">At present, new adaptive alerts cannot be created and the group assigned to each alert cannot be changed. However, the analysis parameters for existing alerts can be modified.</a></div>
+      <div class="h4"><a name="951130">Modifying Adaptive Alert Identity</a></div>
+      <div class="body"><a name="951134">The </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.2.html#950501', '');" title="Alert Manager">Identity Tab</a></span> of the alert manager may used to change the description, section, and status of an adaptive alert. The adaptive alert name cannot be changed.</div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;15     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="951135">Alert Manager - Identity tab - Modify Adaptive Alert Identity</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="952155"><img class="Default" src="images/UGCH-Dashboard_and_Alerts.072.2.13.jpg" width="324" height="205" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="952156">&nbsp;</a></div>
+      <div class="h4"><a name="951141">Modifying Adaptive Alert Analysis Parameters</a></div>
+      <div class="body"><a name="951142">The Condition tab of the alert manager is used to change the analysis parameters that trigger adaptive alerts (as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.2.html#951081', '');" title="Alert Manager">Adaptive Alert Analysis</a></span>). The condition tab provides two modes for modifying analysis parameters.</div>
+      <div class="h4"><a name="951146">Basic Parameter Modification</a></div>
+      <div class="body"><a name="951147">The basic mode (default) can only be used to modify the window size and threshold factor. Advanced mode must be used to change other alert parameters.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;16     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="951148">Alert Manager - Condition tab - Basic Analysis Parameter Modification</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="952204"><img class="Default" src="images/UGCH-Dashboard_and_Alerts.072.2.14.jpg" width="471" height="221" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="952205">&nbsp;</a></div>
+      <div class="body"><a name="951153">In basic mode, the analysis window size can be changed using the slidebar near the top of the condition tab. The values displayed in the slidebar are normalized between 1 and 100. A larger window size results in more alerts since the moving average is less sensitive to fluctuations in the metric value. Advanced mode must be used to specify the window size in units of time.</a></div>
+      <div class="body"><a name="951154">The analysis threshold factor can be changed using the slidebar near the bottom of the condition tab. Each metric involved in the alert can have a different threshold factor. Select the desired metric in the drop-down list above the slidebar. The values displayed in the slidebar are normalized between 1 and 100. A larger threshold factor results in less alerts since the adaptive threshold is greater. Advanced mode must be used to specify the numeric value of the threshold factor.</a></div>
+      <div class="h4"><a name="951155">Advanced Parameter Modification</a></div>
+      <div class="body"><a name="951156">Basic mode provides a simplified, conceptual means to change the sensitivity of adaptive alerts. Advanced mode provides a more flexible way to fine tune the behavior of adaptive alert analysis. Advanced mode can be used to specify the numeric value of analysis parameters. If necessary, review the explanation of the analysis parameters in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.2.html#951081', '');" title="Alert Manager">Adaptive Alert Analysis</a></span>.</div>
+      <div class="bodyIntro"><a name="951160">To access advanced mode, click the Advanced checkbox in the Condition tab.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;17     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="951161">Alert Manager - Condition tab - Advanced Analysis Parameter Modification</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="952211"><img class="Default" src="images/UGCH-Dashboard_and_Alerts.072.2.15.jpg" width="470" height="222" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="952212">&nbsp;</a></div>
+      <div class="body"><a name="951166">The Metric field allows you to select each of the metrics used in the analysis for modification.</a></div>
+      <div class="bodyIntro"><a name="951167">The following analysis parameters are applicable to all metrics.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="951168">Window Size—The window size is specified in seconds but is rounded to the nearest minute value. The window size cannot be less than 30 minutes and cannot exceed 12 hours. The default value is 7200 seconds (2 hours).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="951169">Minimum Duration—The minimum duration is specified in seconds.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyIntro"><a name="951170">The remaining analysis parameters can have different values for each metric involved in the adaptive alert analysis. Select the desired metric from the pull-down box. The metric selected determines which analysis parameters are available, since not all parameters apply to each metric.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="951171">Threshold Factor (aka outlierFactor)—The threshold factor used to determine the adaptive threshold based on the outlier method.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="951172">outlierMethod—Set the value of outlierMethod to 2 to use the offset outlier method. Set the value of outlierMethod to 4 to use the multiplicative outlier method.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="951173">minCount—Set the minimum number of metric measurements required for a 1 minute time interval to be included in the analysis.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="951174">minSignifCount—Set the minimum number of packets required for a 1 minute time interval to be included in the analysis.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="951175">minMeasurementValue—Set the minimum value for a metric to be included in the analysis.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="951176">maxOutlierValue—Set the maximum value the adaptive threshold can be assigned by the outlier method.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyIntro"><a name="951177">Modified analysis parameters can be reset to the factory defaults, by right-clicking on an alert in the alert manager and selecting Reset Analysis Defaults.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;18     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="951178">Alert Manager - Reset Analysis Defaults</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="952218"><img class="Default" src="images/UGCH-Dashboard_and_Alerts.072.2.16.jpg" width="426" height="202" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="952219">&nbsp;</a></div>
+      <div class="h4"><a name="951184">Running the Analysis Manually</a></div>
+      <div class="body"><a name="951185">After modifying the analysis parameters, you want to see how your changes would have affected the number of adaptive alerts triggered. This allows you to run “what-if” analysis of parameter changes. These questions can be answered by running the adaptive alert analysis manually. To do so, click the Run Analysis button in the Condition tab.</a></div>
+      <div class="body"><a name="951189">The Desktop Console asks you which group to run the analysis against. Select a group of interest. The console then displays a </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Dashboard_and_Alerts.072.3.html#951293', '');" title="Problem Management Dashboard">Detailed Adaptive Alert View</a></span> of the adaptive alert for the specific group using the new analysis parameters. This view shows the moving average, adaptive threshold and all outliers identified using the new analysis parameters run against metrics collected in the time selection of the project.</div>
+      <div class="h2NoBreak"><a name="951200">Alert Log</a></div>
+      <div class="body"><a name="963701">All alerts are automatically recorded in the Alert Log for later inspection and analysis. To see the Alert Log in the Desktop Console, on the View menu, click Alert Log. The Alert Log allows the user to view all historic alerts and sort according to any alert field. </a><span class="Online_Italic" style="font-style: italic; font-weight: bold">For more information, see </span><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH05-Config_Maintenance.11.17.html#951373', '');" title="Diagnostics in the Web Interface">Alerts</a></span><span class="Online_Italic" style="color: #000000">.</span></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;19     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="963713">Alert Log Window - Director</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="952232"><img class="Default" src="images/UGCH-Dashboard_and_Alerts.072.2.17.jpg" width="662" height="265" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="952233">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="961445">The Alert&nbsp;Log window has the following controls:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="961448">Appliance (</a><span class="italic">director only</span>)—The Alert Log on a allows you to examine all the alerts generated by every appliance in the domain, or to select a specific appliance to examine. For more information, see <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'Clusters.087.2.html#950405', '');" title="Domain Architecture">Domain Director</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="951223">List By—Group alerts by </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="981450">Issues (list individual alerts sorted by Name column)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="981451">Alert Task (group alerts by type in Name column)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="981452">Business Group (Group Column)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 16.128pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBulletSub_inner" style="width: 16.128pt; white-space: nowrap">–	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="981453">Alert type (Type column)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="981426">Filter by: Priority—Click and select to display only those alerts that are Minor, Major, or Critical.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="951224">Show Occurring—Toggles between displaying all alerts that have triggered, or only those currently triggering.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="951226">Delete Alert Events—Once the condition that caused an alert to trigger has been resolved, it may be desirable to remove the triggered alert from the alert log. Select Delete Alert Events to delete past events associated with this alert.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="951227">View Definitions—Opens the Alert Manager on that alert.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

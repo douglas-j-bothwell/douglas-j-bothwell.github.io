@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Filtering Irrelevant Traffic from WAN-Accelerated Transaction&nbsp;Analyzer Models</title>
+    <link rel="StyleSheet" href="css/ace_wan_acceleration_importing_overview.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ace_wan_acceleration_importing_overview.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_wan_accelerators_splash.html#981245">WAN Accelerators</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ace_wan_acceleration_importing_overview.14.1.html#981245">Importing WAN-Accelerated Capture Data</a> &gt; Filtering Irrelevant Traffic from WAN-Accelerated Transaction&nbsp;Analyzer Models</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="981245">Filtering Irrelevant Traffic from WAN-Accelerated Transaction&nbsp;Analyzer Models</a></div>
+      <div class="bodyIntro"><a name="981246">After importing traffic captured in a WAN-accelerated environment, it is good practice to filter out irrelevant traffic from the resulting Transaction&nbsp;Analyzer model. This section describes two general workflows for filtering out WAN-accelerated traffic.</a></div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="981247">These workflows are recommended for applications captured in Cisco or Riverbed environments only.</a></div>
+      <div class="bodyIntro"><a name="981248">This section describes the following workflows:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="bold"><a name="981249">Incremental workflow—</a></span>This is a multi-step process, as follows:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="981250">Select a LAN and a WAN (accelerator&lt;--&gt;accelerator) tier pair. Filter out WAN traffic based on the LAN tier pair (all WAN connections that have no corresponding connections in the LAN tier pair are excluded).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="981251">Repeat this step for every other LAN tier pair that is involved in the transaction of interest.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="981252">This workflow is useful when you know the relevant tier pairs for the transaction of interest, but you cannot positively determine the relevant connections within these tier pairs. Using this incremental workflow, you can filter out WAN traffic that is definitely irrelevant and then perform more targeted filtering.</a></div>
+      <div class="listBulletCont"><a name="981255">This workflow is described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_importing_overview.14.4.html#981264', '');" title="Filtering Irrelevant Traffic from WAN-Accelerated Transaction Analyzer Models">Filtering Irrelevant WAN-Accelerated Traffic: Incremental Workflow</a></span>.</div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="bold"><a name="981257">End-to-end workflow—</a></span>This is a single-step process, in which you select the relevant LAN connections and then filter out all uncorrelated connections on all tier pairs. This workflow is useful when you can positively identify and select all of the relevant LAN connections for the transaction of interest.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletContLast"><a name="981260">This workflow is described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_importing_overview.14.4.html#981298', '');" title="Filtering Irrelevant Traffic from WAN-Accelerated Transaction Analyzer Models">Filtering Irrelevant WAN-Accelerated Traffic: End-to-End Workflow</a></span>.</div>
+      <div class="body"><a name="981262">Remember that these two workflows are not mutually exclusive. You might want to perform the incremental workflow, identify the relevant connections in the remaining traffic, and then perform the end-to-end workflow.</a></div>
+      <div class="h2TopNoBreak"><a name="981264">Filtering Irrelevant WAN-Accelerated Traffic: Incremental Workflow</a></div>
+      <div class="bodyIntro"><a name="981265">This workflow uses the connections in one or more LAN segments to identify, and exclude, uncorrelated traffic in the WAN segment.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd981267&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd981267", false);</script>Procedure&nbsp;12-2   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="981267">Filtering Irrelevant WAN-Accelerated Traffic: Incremental Workflow</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd981267", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="981268">Create (or open) the Transaction&nbsp;Analyzer model.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="981269">Iterate through each LAN tier pair and filter out all traffic that you know is irrelevant to the transaction of interest.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="981270">Filter irrelevant WAN traffic by performing these steps:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3.1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="981272">Choose Edit&nbsp;&gt; Filter&nbsp;Unrelated&nbsp;Traffic (WAN Acceleration).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubResult_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubResult_inner"><a name="981273">The Filter Unrelated Traffic Across a WAN Accelerator dialog box appears.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="981277"><img class="Default" src="images/ace_wan_acceleration_importing_overview.14.4.1.jpg" width="414" height="160" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="981278">&nbsp;</a></div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3.2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="981279">In the Accelerated LAN Tier Pair pull-down menu, select the client-side LAN tier pair that contains the traffic of interest.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3.3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="981280">In the Accelerated WAN Tier Pair pull-down menu, select the WAN (accelerator&lt;—&gt;accelerator) tier pair with the traffic you want to filter.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3.4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="981281">Click Filter.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubResult_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubResult_inner"><a name="981285">AppTransaction&nbsp;Xpert excludes all WAN-side connections that have no corresponding connections in the selected LAN tier pair.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3.5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="981292">Repeat </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_importing_overview.14.4.html#981272', '');" title="Filtering Irrelevant Traffic from WAN-Accelerated Transaction Analyzer Models">step&nbsp;3.1</a></span> through <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_importing_overview.14.4.html#981272', '');" title="Filtering Irrelevant Traffic from WAN-Accelerated Transaction Analyzer Models">step&nbsp;3.1</a></span> for every other LAN tier pair that is relevant to the transaction of interest.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="981293">Optionally, if you are sure that all irrelevant—and </a><span class="italic">only</span> irrelevant—traffic has been excluded, choose Edit&nbsp;&gt; Permanently&nbsp;Delete&nbsp;Excluded&nbsp;Items.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note—</span><a name="981294">Because you cannot undo this operation, it is good practice to create a back-up copy of the Transaction&nbsp;Analyzer model (both before and after you delete the excluded traffic).</a></div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 12-2</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="981295">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="981296">&nbsp;</a></div>
+      <div class="h2TopNoBreak"><a name="981298">Filtering Irrelevant WAN-Accelerated Traffic: End-to-End Workflow</a></div>
+      <div class="bodyIntro"><a name="981299">This workflow uses one or more selected LAN connections to identify, and exclude, uncorrelated traffic in all segments (not just the WAN segment, as in the previous workflow).</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd981301&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd981301", false);</script>Procedure&nbsp;12-3   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="981301">Filtering Irrelevant WAN-Accelerated Traffic: End-to-End Workflow</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd981301", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="981302">Create (or open) the Transaction&nbsp;Analyzer model.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="981303">In the Tree&nbsp;View page, do the following:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="981304">Drill down to the client-side tier pair that initiated the transaction of interest.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="981305">Select all connections within this tier pair that are relevant to the transaction of interest, so that all relevant connections are highlighted.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubCont"><a name="981306">Use Ctrl-click to select multiple connections. If all connections are relevant, you can select the tier pair itself.</a></div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="981307">Right-click on the selection and choose Exclude Others (Across Accelerators). This excludes all traffic in the Transaction&nbsp;Analyzer model that is not correlated to the selected connections.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubResult_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubResult_inner"><a name="981311">AppTransaction&nbsp;Xpert uses the traffic in the selected connection(s) to identify relevant traffic in the client-side LAN segment, the WAN segment, and the LAN segment on the other side. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubResult_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubResult_inner"><a name="981312">Having identified the traffic relevant to the initial client request, AppTransaction&nbsp;Xpert then excludes all other traffic from the WAN segment and the connected LAN segments. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="hSideHead"><a name="981317">Notes about Extraneous WAN Traffic After Filtering</a></div>
+      <div class="procStepCont"><a name="981318">The Transaction&nbsp;Analyzer model might still include irrelevant traffic, even after the Exclude Others (Across Accelerators) operation. In some cases, the accelerators might exchange other traffic over a WAN connection that is also used for the application transaction of interest. Therefore, you might see the following: </a></div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="981319">WAN traffic before the first client request message.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBulletCont"><a name="981320">WAN accelerators often create several connections for anticipated future transactions (connection pooling), including the connection used for the application transaction of interest. This connection opening will appear before the first client request, and should be excluded for application analysis purposes.</a></div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="981321">Intervals of low- or no-payload WAN traffic for which there is no corresponding LAN traffic. These messages are expected “chatter”—specifically, the accelerators exchanging state information.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="981322">Both of these types of traffic are shown in the following figure.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;12-2   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="981324">Extraneous WAN Traffic After Exclude Operation: Example</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="981339"><img class="Default" src="images/ace_wan_acceleration_importing_overview.14.4.2.jpg" width="663" height="313" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="981340">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="981341">WAN traffic exchanged before the initial client request.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="981342">Switch over to the Data Exchange Chart and do the following:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4.1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="981344">If necessary, arrange the order of the tiers in the order in which they exchange traffic for the application transaction of interest: </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <span class="bold">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="981345">Client-side LAN tier on top (</a><span class="bold">Note—</span>This is the tier that sends the initial client request message. This tier might not be the “first talker” in the Transaction&nbsp;Analyzer model, as described in <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_importing_overview.14.4.html#981317', '');" title="Filtering Irrelevant Traffic from WAN-Accelerated Transaction Analyzer Models">Notes about Extraneous WAN Traffic After Filtering</a></span>.) </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <span class="bold">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="981349">Client-side WAN accelerator</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <span class="bold">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="981350">Server-side WAN accelerator</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <span class="bold">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><a name="981351">Server-side LAN tier</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4.2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="981352">Identify the first client request message, then exclude all traffic before this message. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubCont"><a name="981356">As noted in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_importing_overview.14.4.html#981344', '');" title="Filtering Irrelevant Traffic from WAN-Accelerated Transaction Analyzer Models">step&nbsp;4.1</a></span>, you might still see traffic before the initial client request. </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4.3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="981357">Examine the entire Data Exchange Chart, from left to right, and verify that WAN traffic is visible during the intervals when LAN traffic is visible.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubCont"><span class="bold"><a name="981358">Note—</a></span>If you see significant intervals of LAN traffic for which there is no corresponding WAN traffic, this might indicate that some relevant WAN traffic was either filtered out of the Transaction&nbsp;Analyzer model or was not captured.</div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4.4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="981359">Right-click on the first client request message and choose Set as Time Zero. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4.5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="981360">Examine the traffic between the accelerators. If you find intervals of low- or no-payload WAN traffic for which there is no corresponding LAN traffic, exclude these messages. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubCont"><a name="981361">The messages are expected “chatter” and are irrelevant to the response time of your application (as discussed in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_importing_overview.14.4.html#981317', '');" title="Filtering Irrelevant Traffic from WAN-Accelerated Transaction Analyzer Models">Notes about Extraneous WAN Traffic After Filtering</a></span>).</div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="981365">Optionally, examine the entire Transaction&nbsp;Analyzer model again to verify that all irrelevant—and only irrelevant traffic—has been excluded. If the server-side LAN includes back-end traffic across multiple tiers, for example, you might want to examine this traffic and include/exclude specific packets based on their relevance to the transaction of interest.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="981366">Optionally, if you are sure that all irrelevant—and </a><span class="italic">only</span> irrelevant—traffic has been excluded, permanently remove this excluded traffic from the Transaction&nbsp;Analyzer model:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6.1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="981367">Create a back-up copy of the Transaction&nbsp;Analyzer model. (This step is recommended because you cannot undo a Delete operation.)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6.2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="981368">Choose Edit&nbsp;&gt; Permanently&nbsp;Delete&nbsp;Excluded&nbsp;Items.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubResult_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubResult_inner"><a name="981369">All excluded traffic is removed from the Transaction&nbsp;Analyzer model.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 12-3</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="981370">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="981371">&nbsp;</a></div>
+      <div class="procSpaceAfter"><a name="981372">&nbsp;</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Working with Visual Components</title>
+    <link rel="StyleSheet" href="css/InsightBuilder_UI.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_idk_guide_splash.html">Insight Development Kit (IDK)</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="InsightBuilder_UI.092.01.html">Insight Development Kit User Interface</a> &gt; Working with Visual Components</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="950773">Working with Visual Components</a></div>
+      <div class="body"><a name="950774">This section briefly reviews how to add, position, resize, and edit Visual Components. Visual Components may also be sorted in the Element pane by name or grid position.</a></div>
+      <div class="body"><a name="950778">Adding Controls to a Toolbar is covered in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_Components.093.14.html#954106', '');" title="Utility Components">Edit Toolbar</a></span>.</div>
+      <div class="body"><a name="950779">With a few exceptions, Layer-related Visual Component operations are discussed in the section </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_UI.092.08.html', '');" title="Working with Layers">Working with Layers</a></span>.</div>
+      <div class="h2NoBreak"><a name="950784">Adding, Removing, and Replacing Visual Components</a></div>
+      <div class="body"><a name="950785">The Insight Development Kit enables you to add, remove, and replace Visual Components.</a></div>
+      <div class="h3NoBreak"><a name="950787">Add Visual Components</a></div>
+      <div class="bodyIntro"><a name="950788">You may add a Visual Component in two ways. First make sure that you have selected the correct Layer in the Element pane.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950789">Click on the Insight Development Kit toolbar icon for the desired Visual Component, then click on the active Layout Grid pane where you want it.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950790">Click and drag the Insight Development Kit toolbar icon, for the desired Visual Component, to the active Layout Grid pane where you want it.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="950791">Clicking on any Insight Development Kit toolbar control turns off the Grid Edit Mode if it is on.</a></div>
+      <div class="body"><a name="950792">The Insight Development Kit automatically assigns a unique name to the Visual Component, which consists of its display name as listed in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_Components.093.05.html', '');" title="Components">Components</a></span>, plus an incremental number; e.g., <span class="bold">Chart:multigrp1</span>. It is suggested you rename the Visual Component immediately to a name that has more meaning to your Insight (this is helpful when you start to add Interactions). To do this, right-click the Component in the Element pane and select <span class="bold">Rename</span>.</div>
+      <div class="h3NoBreak"><a name="950798">Remove or Replace a Visual Component</a></div>
+      <div class="bodyIntro"><a name="950799">You may remove or replace a Visual Component in a number of ways, using the Layout Grid layout context menu or the Element pane context menu:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950800">In the Grid Edit mode, right-click on the Visual Component to display the Layout Grid layout context menu and select </a><span class="bold">Remove</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="950802">Select </a><span class="bold">Remove from All Layers</span> if you wish to remove the Component from all Layers in which it exists. </div>
+      <div class="listBulletCont"><a name="950806">Select </a><span class="bold">Replace with New Component</span> to display the <span class="bold">Select Component</span> dialog (<span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_UI.092.04.html#950930', '');" title="Working with Visual Components">Figure&nbsp;27</a></span>), and select the desired Component to replace it in any Layer in which it exists. Interaction links that existed between the old Component and other Components remain if the new Component is capable of consuming/producing them. Interactions that the new Component cannot consume/produce will be removed.</div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950807">In the Element pane, select the Visual Component, right-click to display the Element pane context menu, and select </a><span class="bold">Remove</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="950808">Select </a><span class="bold">Remove from All Layers</span> if you wish to remove the Component from all Layers in which it exists. </div>
+      <div class="listBulletCont"><a name="950812">Select </a><span class="bold">Replace with New Component</span> to display the <span class="bold">Select Component</span> dialog (<span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_UI.092.04.html#950930', '');" title="Working with Visual Components">Figure&nbsp;27</a></span>) and select the desired Component to replace it in all Layers in which it exists. Interaction links that existed between the old Component and other Components remain if the new Component is capable of consuming/producing them. Interactions that the new Component cannot consume/produce are removed.</div>
+      <div class="h2NoBreak"><a name="950813">Sizing, Positioning, and Spanning Visual Components</a></div>
+      <div class="body"><a name="950814">The Insight Development Kit allows you to resize, reposition, and span (occupy more than one pane) Components.</a></div>
+      <div class="h3NoBreak"><a name="950817">Resize Visual Components</a></div>
+      <div class="bodyIntro"><a name="950818">You may resize Visual Components in two ways. In all cases, resizing affects an entire row or column.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950825">In the Layout Grid, in Component Edit mode (see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_UI.092.03.html#952549', '');" title="Working with the Insight Development Kit Window">Selector Control (Edit Mode)</a></span>) of the Actual View (see <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_UI.092.03.html#950622', '');" title="Working with the Insight Development Kit Window">Layout Grid - Actual View</a></span>), click-drag a divider. Resizing Visual Components vertically in this manner is governed by the size change mode, as described in <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_UI.092.03.html#950648', '');" title="Working with the Insight Development Kit Window">Size Change Mode</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950829">You can use the Test/Layout to resize the window or any Visual Components within it. Those changes are recorded when you save the Insight. This is a handy way to put the finishing touches on the appearance of an Insight. Click </a><span class="bold">Apply</span> to apply any size changes and continue working in the preview window.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h3NoBreak"><a name="950832">Reposition Visual Components</a></div>
+      <div class="bodyIntro"><a name="950833">You may reposition Visual Components in two ways. Repositioning operations affect only the Layer currently selected. The size of the Component and all its Interaction links are maintained. You may only reposition into an Active pane.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950841">In the Layout Grid, in the Grid Edit mode (see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_UI.092.03.html#952549', '');" title="Working with the Insight Development Kit Window">Selector Control (Edit Mode)</a></span>) of the Actual View, click and drag a Component to a different Active pane. The Component does not move until you release the mouse button.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950842">In the Element pane (with the Layout Pane in either Actual or Schematic View), click on the Component name, right-click to display the Element Pane context menu, and select </a><span class="bold">Move To</span> to display the <span class="bold">Move Visual Component</span> dialog.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;23     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950843">Move Visual Component dialog box</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="952674"><img class="Default" src="images/InsightBuilder_UI.092.04.1.jpg" width="192" height="84" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="952675">&nbsp;</a></div>
+      <div class="listBulletCont"><a name="952665">The drop-down pick list allows you to choose the new grid location of the Visual Component in “row, column” format. Panes already filled by a Visual Component are not displayed. The Move Visual Component dialog only shows the available cells in the grid.</a></div>
+      <div class="h3NoBreak"><a name="950853">Span Visual Components</a></div>
+      <div class="body"><a name="950854">For visual purposes, you may also span a Visual Component so that it takes up two or more panes in a row or column. You may only span into an active pane. The span is not visible in the Schematic or Workflow Views.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950858">In the Layout Grid, in the Grid Edit mode (see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_UI.092.03.html#952549', '');" title="Working with the Insight Development Kit Window">Selector Control (Edit Mode)</a></span>) of the Actual View, click on a Visual Component to select in and right-click to display the Layout Grid layout context menu. Select <span class="bold">Fill to Right</span> to fill both its current pane and the pane to the right.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="950859">Select </a><span class="bold">Fill Below</span><span class="Online"> </span>to make the Component fill both its current pane and the pane below it. </div>
+      <div class="listBulletCont"><a name="950860">The new span does not appear until you either click </a><span class="bold">Test/Layout</span> and return to the Actual View, click the Refresh button on the Selector toolbar, or select the Schematic or Workflow View and return to the Actual View.</div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950861">In the Element pane (with the Layout Pane in either Actual or Schematic View), click on the Component name, right-click to display the Element Pane context menu, and select </a><span class="bold">Fill to Right</span> to make the Component fill both its current pane and the pane to the right.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="950862">Select </a><span class="bold">Fill Below</span> to make the Component fill both its current pane and the pane below it.</div>
+      <div class="listBulletCont"><a name="950863">The new span does not appear until you either click </a><span class="bold">Test/Layout</span> and return to the Actual View, click the Refresh button on the Selector toolbar, or select the Schematic or Workflow View and return to the Actual View.</div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950864">In the Layout Grid, in either the Component Edit mode of the Actual View or in the Schematic View, right-click on the Active pane into which you wish the Component to move. This brings up the Active Pane context menu.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;24     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950867">Active Pane Context Menu</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="952689"><img class="Default" src="images/InsightBuilder_UI.092.04.2.jpg" width="168" height="47" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="952690">&nbsp;</a></div>
+      <div class="listBulletCont"><a name="952684">Select </a><span class="bold">Replace With Component To The Left</span> to allow the Component to the Left to span into this Active pane.</div>
+      <div class="listBulletCont"><a name="950874">Select </a><span class="bold">Replace With Component From Above</span> to allow the Component Above to span into this Active pane.</div>
+      <div class="listBulletCont"><a name="950875">The new span does not appear until you either click </a><span class="bold">Test/Layout</span> and return to the Actual View, click the Refresh button on the Selector toolbar, or select the Schematic or Workflow View and return to the Actual View. </div>
+      <div class="body"><a name="950879">To undo a span, the Layout Grid must be in Actual View, Grid Edit mode (see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_UI.092.03.html#952549', '');" title="Working with the Insight Development Kit Window">Selector Control (Edit Mode)</a></span>). Click on the Component to select it, right-click to display the Layout Grid context menu, and select <span class="bold">Remove Component Assignments (Fill Right, Fill Below)</span>. The change appears immediately.</div>
+      <div class="h2NoBreak"><a name="950880">Editing, Renaming, and Sorting Visual Components</a></div>
+      <div class="body"><a name="950881">The Insight Development Kit enables you to edit and rename Visual Components.</a></div>
+      <div class="h3NoBreak"><a name="950884">Edit Visual Components</a></div>
+      <div class="bodyIntro"><a name="950885">There are five ways to edit a Visual Component:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950886">In the Schematic View of the Layout Grid, edit the Component using its edit dialog.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950887">In the Actual View, Grid Edit mode of the Layout Grid, either double-click on the Component, or right-click it to display the Layout Grid layout context menu and select </a><span class="bold">Edit Visual Component</span> to display its edit dialog.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950888">In the Actual View, Component Edit mode of the Layout Grid, select any control in the Component or use any relevant method to call up a dialog, e.g., in a Chart, double-click to display the </a><span class="bold" style="color: #000000; font-style: normal">Chart&nbsp;Setting</span> dialog.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950890">In the Element pane, select the Visual Component, right-click to display the Element Pane context menu, and select </a><span class="bold">Edit&nbsp;Visual&nbsp;Component</span> to display its edit dialog.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950891">In the Workflow View, either double-click on the Component node, or right-click on it to display the Layout Grid layout context menu and select </a><span class="bold">Edit&nbsp;Component</span> to display its edit dialog.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h3NoBreak"><a name="950894">Rename Visual Components</a></div>
+      <div class="bodyIntro"><a name="950895">The are three ways to rename a Visual Component:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950896">In any view, select it in the Element pane, right-click to display the Element Pane context menu, and select </a><span class="bold">Rename</span> to display the <span class="bold">Rename</span> dialog.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950897">In any view, double-click it in the Element pane to display a text box.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="950899">In the Workflow View, select the Component node, right-click to display the Element Pane context menu, and select </a><span class="bold">Rename</span> to display the <span class="bold">Rename</span> dialog.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;25     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950900">Rename dialog box</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="952737"><img class="Default" src="images/InsightBuilder_UI.092.04.3.jpg" width="294" height="71" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="952738">&nbsp;</a></div>
+      <div class="body"><a name="952732">Any Interactions that this Component produces or consumes are also renamed.</a></div>
+      <div class="h3NoBreak"><a name="950908">Sort Visual Components</a></div>
+      <div class="body"><a name="950909">You may sort Visual Components in the Element pane by name or grid position, by using the Insight Development Kit Settings dialog, </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_UI.092.11.html#951534', '');" title="Insight Development Kit Menu Reference">Figure&nbsp;46</a></span>.</div>
+      <div class="h2NoBreak"><a name="950914">Working with Hidden Visual Components</a></div>
+      <div class="body"><a name="970050">Hidden Visual Components are used to construct multi-Layer Insights (see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_UI.092.08.html', '');" title="Working with Layers">Working with Layers</a></span>) and Tabbed Containers (see <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'InsightBuilder_Components.093.14.html#954074', '');" title="Utility Components">Tab Container</a></span>). To add a Hidden Visual Component, in the Element pane select the <span class="bold">Visual Components</span> branch of the Layer you want the Hidden Visual Component to be in.</div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;26     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="970057">Select Visual Components Branch</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="970061"><img class="Default" src="images/InsightBuilder_UI.092.04.4.jpg" width="198" height="114" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="952752">&nbsp;</a></div>
+      <div class="body"><a name="952746">Right-click on the selected branch to display the Element Pane context menu and select </a><span class="bold">Add Hidden Visual Component</span>. This brings up the <span class="bold">Select&nbsp;Component</span> dialog from which you may select the desired Visual Component.</div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;27     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="950930">Select Component Dialog</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="952763"><img class="Default" src="images/InsightBuilder_UI.092.04.5.jpg" width="475" height="282" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="952764">&nbsp;</a></div>
+      <div class="body"><a name="952758">Select the Component you want and click </a><span class="bold">OK</span> to add the selected Hidden Visual Component.</div>
+      <div class="h3NoBreak"><a name="950937">Other Operations on Hidden Visual Components</a></div>
+      <div class="body"><a name="950938">Hidden Visual Components can only be edited, renamed, replaced, or removed using the Element Pane context menu. The operations are the same as with visible Visual Components.</a></div>
+      <div class="body"><a name="950940">Hidden Visual Components can become visible by selecting them in the Element pane and dragging to the Layout Grid. Remember that you must drag to an Active pane.	</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

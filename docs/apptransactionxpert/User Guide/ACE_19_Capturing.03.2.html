@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>General Advice for Capturing Application Traffic</title>
+    <link rel="StyleSheet" href="css/ACE_19_Capturing.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ACE_19_Capturing.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_capture_app_traffic_splash.html#93664">Capturing Application Traffic</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ACE_19_Capturing.03.1.html#93664">Capturing Application Traffic: Overview</a> &gt; General Advice for Capturing Application Traffic</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="93664">General Advice for Capturing Application Traffic</a></div>
+      <div class="body"><a name="93667">AppTransaction&nbsp;Xpert includes an application capture utility (described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_appcap_overview_plus.04.01.html#87132', '');" title="Capturing Traffic with AppTransaction Xpert">Capturing Traffic with AppTransaction&nbsp;Xpert</a></span>) that enables you to capture traffic. Alternately, you can use a number of third-party tools to capture traffic. These tools are generally called <span class="italic">network&nbsp;analyzers</span>, although certain RMON probes can also capture traffic. (This section refers to both kinds of tools as <span class="italic">analyzers</span> for the sake of simplicity.) AppTransaction&nbsp;Xpert can import capture data from both .enc (uncompressed) and .csv formats. You can also assign preprocessor scripts to convert packet&nbsp;traces automatically in other formats during the import process, as described in <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_19_Capturing.03.4.html#148967', '');" title="Capturing Traffic with Other Programs">Supported Packet&nbsp;Trace Formats</a></span>.</div>
+      <div class="bodyIntro"><a name="87032">Analyzer-specific information is beyond the scope of this documentation, as individual equipment can vary. However, the following are guidelines for capturing traffic for analysis by AppTransaction&nbsp;Xpert:</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="87033">Configure the analyzer’s filtering capabilities to focus on hosts of interest. Filtering traffic is not imperative because the Trace File Filter operation enables you to filter on specific hosts. However, filtering keeps the packet&nbsp;traces smaller and enables the analyzer to accommodate a longer duration for the capture, given limited memory and disk resources.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="87034">Aim for a capture that is as </a><span class="italic">clean</span> (that is, clear of irrelevant traffic) as possible. It may be best to perform captures when network traffic is minimal, such as late in the evening or during the weekend, to exclude irrelevant packets from the packet&nbsp;trace. In any event, traffic can be removed during and after the import process. For more information, see <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_filtering_overview.10.1.html#90696', '');" title="Filtering Traffic">Filtering Traffic</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="87035">Place the analyzer as close as possible to the application instance(s) relevant to the study. For example, to study performance on a file server, capture on the same LAN as the server so that network delays across a WAN link or the Internet do not affect the analyzer’s view of the relevant information (application performance on the file server).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	4)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="87036">Capture one user-level application in its entirety. For example, to study an FTP application, capture the exchange from the initial request on the client host to the conclusion of the download.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumContLast"><span class="bold"><a name="123402">Note—</a></span>If an application includes user <span class="italic">think&nbsp;time</span> (for example, waiting for a user to click OK before proceeding), you must identify this think time in the resulting Transaction&nbsp;Analyzer model. This is especially important to ensure valid results and diagnoses from AppDoctor. For more information, see <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_46_Delay.22.5.html#146616', '');" title="User Think Time">User Think Time</a></span>.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          // Add related topics
+          //
+          WWHAddRelatedTopic("Capturing Application Traffic: Overview", "main_doc", "ACE_19_Capturing.03.1.html#44546");
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

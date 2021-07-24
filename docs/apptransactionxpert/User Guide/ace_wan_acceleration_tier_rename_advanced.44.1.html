@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Tier Renaming: Advanced Workflow for WAN-Accelerated Environments</title>
+    <link rel="StyleSheet" href="css/ace_wan_acceleration_tier_rename_advanced.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ace_wan_acceleration_tier_rename_advanced.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_appendices_splash.html#898312">Appendices</a> &gt; Tier Renaming: Advanced Workflow for WAN-Accelerated Environments</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="hAppendix"><a name="898312">Tier Renaming: Advanced Workflow for WAN-Accelerated Environments</a></div>
+      <div class="body"><a name="970647">In most cases, you should be able to rename tiers correctly using the workflow described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.07.html#202020', '');" title="Rename Tiers">Tier Renaming for WAN-Accelerated Packet&nbsp;Traces: Standard Workflow</a></span>. However, the import engine might have insufficient information to assign hostnames to the correct logical tiers. This workflow is provided in case you need to override the auto-assignment of hostnames to logical tiers.</div>
+      <div class="bodyIntro"><a name="970649">The following symptoms in a Transaction&nbsp;Analyzer model indicate that the auto-assignment of tier names is incorrect:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="970651">The network diagram is correct. See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.02.html#200602', '');" title="Defining the Network Effects">Defining the Network Effects</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="978036">Tier pairs are exchanging traffic in the Transaction&nbsp;Analyzer model, but the corresponding hosts did not exchange traffic in the network. (For example, the client and server tiers exchange traffic directly when you know that all traffic went through the accelerators.)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="970653">Bandwidth and latency statistics and results in the Transaction&nbsp;Analyzer model are inconsistent with the bandwidth/latency measurements you specified when </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_import_overview.09.02.html#200602', '');" title="Defining the Network Effects">Defining the Network Effects</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyIntro"><a name="970656">Before overriding the tier name auto-assignment, you should verify that the following settings are correct:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="970658">The following settings are specified correctly in the Define Sites window:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="970659">Geographic Location</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="970660">Packet&nbsp;traces from same geographic location were captured on the same machine</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="970661">Accelerated</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="970663">The tier names are assigned correctly in the standard version of the Rename&nbsp;Tiers dialog box. (That is, with the Advanced option turned off.)</a></div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="970665">If the WAN accelerators use non-standard ports, verify that the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_87_Pref.html#217729', '');" title="Preferences">WAN Acceleration Preferences</a></span> are set correctly.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h1NoBreak"><a name="971612">Workflow Description</a></div>
+      <div class="bodyIntro"><a name="971649">The following steps outline the advanced workflow for assigning hostnames to logical tiers manually in a WAN-accelerated environment.</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="971651">If you have not already done so, fill out the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_worksheet.html#898312', '');" title="WAN Acceleration Worksheet">WAN Acceleration Worksheet</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="971713">Review the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.3.html#969480', '');" title="Key Concepts">Key Concepts</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="971716">Import the packet&nbsp;traces until you reach the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.2.html#969388', '');" title="“Rename Hosts” Dialog Box: Options for Advanced Workflow">“Rename Hosts” Window</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	4)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="971746">Select the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.2.html#971077', '');" title="“Rename Hosts” Dialog Box: Options for Advanced Workflow">Advanced: Manually override auto-detected assignment from observed IPs to logical tiers</a></span> option. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	5)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="971892">Click the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.2.html#971264', '');" title="“Rename Hosts” Dialog Box: Options for Advanced Workflow">Location where Original Hostname was seen</a></span> to sort the table entries by capture location.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><a name="971756">It is recommended that you assign logical tiers by iterating through each capture location. This makes it easier to consider each hostname in the context of the location where that hostname was seen. The capture location affects whether you assign a hostname to the local host (</a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.3.html#969513', '');" title="Key Concepts">Direct Assignment</a></span>) or the local accelerator (<span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.3.html#969522', '');" title="Key Concepts">Indirect Assignment</a></span>).</div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	6)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="971749">Iterate through each row of the table. For each row, set the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.2.html#971249', '');" title="“Rename Hosts” Dialog Box: Options for Advanced Workflow">Tier Name</a></span> according to one of the following conditions. (<span class="bold">Note—</span>The WAN Acceleration Worksheet is very useful when you need to determine if a host is local to, or remote from, the capture location.)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap;">a)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><span class="boldItalic"><a name="971843">Condition:</a></span> <span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.2.html#971275', '');" title="“Rename Hosts” Dialog Box: Options for Advanced Workflow">Location auto-detected during Trace Merge?</a></span> is set to Yes.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSubCont"><span class="italic"><a name="972297">Action: </a></span>Leave the auto-assigned tier name (in other words, do nothing).</div>
+      <div class="listNumSubCont"><a name="971858">You can be reasonably confident that these auto-assignments are correct if the “geographic location” and “captures files form the same geographic location were captured on the same machine” fields are set correctly.</a></div>
+      <div class="listNumSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap;">b)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><span class="boldItalic"><a name="971958">Condition:</a></span><span class="italic"> </span>Host is local to the capture location (i.e., there is no accelerator between the capture location and the host).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSubCont"><span class="italic"><a name="972030">Action:</a></span> Assign the hostname to the tier that directly corresponds to that host (<span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.3.html#969513', '');" title="Key Concepts">Direct Assignment</a></span>).</div>
+      <div class="listNumSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap;">c)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><span class="boldItalic"><a name="972476">Condition:</a></span><span class="italic"> </span>Host is remote from the capture location (i.e., the host and the capture location are separated by one or more accelerators).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSubCont"><span class="italic"><a name="972477">Action:</a></span> Assign the hostname to the accelerator tier that is closest to the capture location (<span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.3.html#969522', '');" title="Key Concepts">Indirect Assignment</a></span>). This accelerator acts as the logical tier for all traffic between the capture location and the remote host.</div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	7)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="972706">After you verify that all tier names are set correctly, click OK to proceed to the Local Bandwidth window. Proceed with the import.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	8)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="972840">After the import, verify that the resulting Transaction&nbsp;Analyzer model is correct.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="hSideHead"><a name="970637">&nbsp;</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

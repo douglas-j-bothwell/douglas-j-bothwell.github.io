@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Traffic Monitoring: Enabling, Disabling, and Applying Packet (BPF) Filters</title>
+    <link rel="StyleSheet" href="css/UGCH-Capture-advanced.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_user_guide_splash.html">User Guide</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="UGCH-Capture-advanced.074.01.html">Packet Captures</a> &gt; Traffic Monitoring: Enabling, Disabling, and Applying Packet (BPF) Filters</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1"><a name="987694">Traffic Monitoring: Enabling, Disabling, and Applying Packet (BPF) Filters</a></div>
+      <div class="body"><a name="987696">You can filter the traffic monitored by an appliance and enable/disable traffic monitoring on individual interfaces. This functionality enables you to specify filtering/enabling/disabling criteria that is separate from the criteria for capturing packets.</a></div>
+      <div class="bodyIntro"><a name="1023051">Advanced traffic filtering offers you great flexibility for selectively filtering both live monitored traffic and packets that are captured and written to disk. For example, you can configure the AppResponse appliance to</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1023052">Exclude some traffic from both live monitoring and packet captures.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1023053">Include some traffic in live monitoring, but exclude it from packet captures.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1023054">Specify some traffic for "packet-slicing"—for example, to prevent sensitive payload data from being written to disk, without affecting the metrics used for live monitoring.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="1023055">You can specify and apply filters for live monitored traffic in the CLI, as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Capture-advanced.074.09.html#987700', '');" title="Traffic Monitoring: Enabling, Disabling, and Applying Packet (BPF) Filters">Procedure&nbsp;4</a></span>.</div>
+      <div class="body"><a name="1023062">You can specify and apply packet filters for High Speed Captures in the CLI, as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Capture-advanced.074.04.html', '');" title="CLI captureconfig Utility: Filtering Packets and Advanced Options">CLI </a></span><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Capture-advanced.074.04.html', '');" title="CLI captureconfig Utility: Filtering Packets and Advanced Options">captureconfig Utility: Filtering Packets and Advanced Options</a></span>.</div>
+      <div class="body"><a name="1023069">To configure “packet slicing” and enable/disable packet captures on individual interfaces, go to Administration&nbsp;&gt; System&nbsp;&gt; Capture. These and other packet-capture configuration options are described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Capture-advanced.074.02.html#954754', '');" title="High-Speed Captures">Starting, Stopping, and Configuring High-Speed Captures</a></span>.</div>
+      <div class="bodyNote">
+        <span class="bold">Note: </span><a name="987698">If you specify different filtering and enabling/disabling criteria for traffic monitoring and packet captures, features that depend on </a><span class="italic">the same traffic flows included in both monitored traffic and packet captures</span> might not work. If you enable traffic monitoring but disable packet captures on interface 2, for example, you cannot use AppTransaction or Wireshark to analyze traffic monitored on that interface. </div>
+      <div class="bodyIntro"><a name="987699">The following procedure describes how to use the </a><span class="code">mondata</span> utility in the CLI to configure traffic monitoring on an appliance.</div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd987700&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procCaption_inner" style="width: 90pt; white-space: nowrap">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd987700", false);</script>Procedure&nbsp;4    </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="987700">Configuring Traffic Monitoring using the CLI</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd987700", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="987701">Log in to the appliance using a terminal emulator or SSH client program, as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH05-Config_Maintenance.11.04.html', '');" title="Using the Command Line Interface">Using the Command Line Interface</a></span> of the AppResponse <span class="italic">Administrators Guide</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note: </span><a name="987708">You must have administrator privileges on the appliance to configure traffic monitoring.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="987709">Enter the following command: </a><span class="codebold">captureconfig</span> </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepResult_inner" style="width: 18.72pt; white-space: nowrap">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><span class="code"><a name="987710">captureconfig</a></span> lists the available operations:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="codeStep"><a name="987711">AppResponse</a><span class="code"> Packet Capture Configuration</span> </div>
+      <div class="codeSubStep"><a name="987712">filter - configure packet captures BPF filter<br />mondata - configure monitored traffic filters<br />headers - configure packet captures headers-only mode<br />autoneg - configure Ethernet autonegotiation settings<br />showall - show current configuration values<br />commit - update appliance with new configuration<br />quit - exit without saving changes </a></div>
+      <div class="procNote">
+        <span class="bold">Note: </span><a name="987716">The AppResponse appliance has no default packet filter for monitored traffic. This means that, by default, the appliance monitors all traffic observed on any interface. </a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="987717">To configure traffic monitoring, enter the command: </a><span class="codebold">mondata </span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepResult_inner" style="width: 18.72pt; white-space: nowrap">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="987718">The utility prompts you to specify the filter you want.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="z-Top_of_Form" style="color: #000000; font-size: 2.0pt; font-style: normal; font-variant: normal; font-weight: normal; margin-left: 0pt; margin-top: 0.0pt; text-align: Center; text-indent: 0pt; text-transform: none; vertical-align: baseline"><a name="987719">&nbsp;</a></div>
+      <div class="codeStep"><a name="987720">Enter '-' to delete the configuration parameter value. <br />Specify the BPF expression used to filter monitored traffic. <br />Monitored traffic packet filter (BPF to keep): </a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="987721">Specify the packet filter that you want to apply to monitored traffic:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	4.1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="987722">At the CLI prompt, enter a BPF packet filter expression–for example, </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="codeStep"><a name="987723">Monitored traffic packet filter (BPF to keep): </a><span class="bold">(ip proto \tcp or ip proto \udp)</span> </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	4.2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="987724">Specify whether you have VLANs in your network. If you answer yes, the BPF filter is converted so that the filter works correctly for both VLAN and non-VLAN packets: </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="z-Top_of_Form" style="color: #000000; font-size: 2.0pt; font-style: normal; font-variant: normal; font-weight: normal; margin-left: 0pt; margin-top: 0.0pt; text-align: Center; text-indent: 0pt; text-transform: none; vertical-align: baseline"><a name="987725">&nbsp;</a></div>
+      <div class="codeStep"><a name="987726">Do you have VLANs? (yes/no) </a><span class="codebold">yes</span> <br />Transformed with VLAN-compatibility to: (((not ether proto 0x8100) and ((ip proto \tcp or ip proto \udp))) or (vlan and ((ip proto \tcp or ip proto \udp))))</div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	5.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="987727">The utility asks if you want to enable or disable traffic monitoring on each interface. For each interface, answer </a><span class="code">true</span> or <span class="code">false</span> (or simply press Enter to accept the current setting). </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="codeStep"><a name="987728">Monitor traffic on interface 1 (true/false) [true]:<br />Monitor traffic on interface 2 (true/false) [true]: </a><span class="codebold">false</span> <br />Monitor traffic on interface 3 (true/false) [true]: <span class="codebold">true</span> <br />Monitor traffic on interface 4 (true/false) [true]:</div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	6.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="987730">The utility asks if you want to apply these settings to packet captures as well as to monitored traffic. Answer </a><span class="code">true</span> or <span class="code">false</span> (or simply press Enter to accept the current setting).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="codeStep"><a name="987731">Specify whether or not the monitoring filters above also apply to packet captures instead of their own separate BPF and capture interface status.</a></div>
+      <div class="codeStep"><a name="987732">Make packet captures use the monitored traffic BPF expression and interface status (true/false) [true]: </a><span class="codebold">false</span> </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	7.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="987733">When the </a><span class="code">Config menu: </span>prompt appears, enter <span class="code">show</span> to review your settings.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="codeStep"><a name="987734">Config menu: </a><span class="codebold">showall</span> </div>
+      <div class="codeStep"><a name="987735">Current buffered configuration (may not yet be active):<br />Packet capture filter:  &lt;not set&gt;<br />Monitored traffic packet filter = (((not ether proto 0x8100) and ((ip proto \tcp or ip proto \udp))) or (vlan and ((ip proto \tcp or ip proto \udp))))<br />Monitor traffic on interface 1 = true<br />Monitor traffic on interface 2 = false<br />Monitor traffic on interface 3 = true<br />Monitor traffic on interface 4 = true<br />Make packet captures use the monitored traffic BPF expression and interface status = false<br />Store only protocol headers in packet captures = false<br />Monitoring interface 1 speed:  &lt;not set&gt;<br />Monitoring interface 1 full-duplex:  &lt;not set&gt;<br />Monitoring interface 2 speed:  &lt;not set&gt;<br />Monitoring interface 2 full-duplex:  &lt;not set&gt;<br />Monitoring interface 3 speed:  &lt;not set&gt;<br />Monitoring interface 3 full-duplex:  &lt;not set&gt;<br />Monitoring interface 4 speed:  &lt;not set&gt;<br />Monitoring interface 4 full-duplex:  &lt;not set&gt;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	8.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="987736">When the </a><span class="code">Config menu: </span>prompt appears, enter <span class="code">commit</span> to save the new settings.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="codeStep"><a name="987737">Config menu: </a><span class="codebold">commit</span> </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	9.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="987738">At the </a><span class="code">Config menu: </span>prompt, enter <span class="code">quit</span>. <span class="bold">Note–</span>Your new settings will not take effect until you quit the <span class="code">captureconfig</span> utility.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="codeStep"><a name="987739">Config menu: </a><span class="codebold">quit</span> </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	10.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="987743">If you applied your interface-status settings to packet captures in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Capture-advanced.074.09.html#987730', '');" title="Traffic Monitoring: Enabling, Disabling, and Applying Packet (BPF) Filters">step&nbsp;6.</a></span>, do the following:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	10.1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="987744">Go to the Administration &gt; System &gt; Capture page.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	10.2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="987745">Set the Capture on Monitoring Interface(s) checkboxes to reflect the settings you specified in the </a><span class="code">mondata</span> utility.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	10.3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="987746">Click Apply.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap">End of Procedure 4</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="987747">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="987748">&nbsp;</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>
