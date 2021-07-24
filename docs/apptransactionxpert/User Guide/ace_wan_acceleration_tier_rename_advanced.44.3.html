@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Key Concepts</title>
+    <link rel="StyleSheet" href="css/ace_wan_acceleration_tier_rename_advanced.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ace_wan_acceleration_tier_rename_advanced.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_appendices_splash.html#969480">Appendices</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ace_wan_acceleration_tier_rename_advanced.44.1.html#969480">Tier Renaming: Advanced Workflow for WAN-Accelerated Environments</a> &gt; Key Concepts</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="969480">Key Concepts</a></div>
+      <div class="bodyIntro"><a name="972886">Review the following sections carefully before assigning tier names:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.3.html#972897', '');" title="Key Concepts" name="973307">Capture Locations, Accelerators, and Local/Remote Hosts</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.3.html#969507', '');" title="Key Concepts" name="973323">Direct and Indirect Assignment</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.3.html#969565', '');" title="Key Concepts" name="973334">Accelerator Addressing Modes</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="972897">Capture Locations, Accelerators, and Local/Remote Hosts</a></div>
+      <div class="body"><a name="972906">Assigning tier names requires careful consideration when the application was captured in a WAN-accelerated environment. When the remote hosts converse across the WAN, they are conversing via the accelerators (not directly with each other via one end-to-end TCP connection). The accelerators converse with each other using their own separate connection. Within each location, the accelerator acts as a proxy for remote hosts on the other side of the WAN. (This is described in more detail in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_overview.html#950337', '');" title="WAN Accelerators and AppTransaction Xpert">How WAN Accelerators Work</a></span>).</div>
+      <div class="bodyIntro"><a name="973254">This means that an IP address as seen in a packet might correspond to different tiers, depending on the capture location where the packet is seen. In </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.3.html#969529', '');" title="Key Concepts">Figure&nbsp;E-4</a></span>, traffic sent to <span class="code">server_addr</span> corresponds to three different tiers—to client_accel, server_accel, and server—depending on where <span class="code">server_addr</span> is seen.</div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;E-2   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="973259">One Hostname ==&gt; Multiple Tiers (With Accelerators)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="973263"><img class="Default" src="images/ace_wan_acceleration_tier_rename_advanced.44.3.1.jpg" width="669" height="123" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="973252">&nbsp;</a></div>
+      <div class="bodyKeyConcept">
+        <span class="zBlueItalics">Key Concept—</span><a name="970168">If an accelerator stands between a capture location and the host referenced by &lt;</a><span class="italic">hostname</span>&gt;, the local accelerator—not the remote host—acts as the logical tier for &lt;<span class="italic">hostname</span>&gt; at that location.</div>
+      <div class="figSpaceAfter"><a name="969506">&nbsp;</a></div>
+      <div class="h2TopNoBreak"><a name="969507">Direct and Indirect Assignment</a></div>
+      <div class="bodyIntro"><a name="969508">To assign a hostname to the correct tier in a WAN-accelerated environment, consider the following:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="969509">The network location where the hostname was seen (that is, where the packet&nbsp;trace was generated)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="969510">Whether an accelerator is between this location and the host referenced by the hostname</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="969511">There are two types of hostname-to-tier assignment: direct and indirect.</a></div>
+      <div class="h3NoBreak"><a name="969513">Direct Assignment</a></div>
+      <div class="body"><a name="969514">If there is no accelerator between the capture location and the host, assign the host name to the tier that directly corresponds to that host. Examples: &lt;</a><span class="italic">client_ip</span>&gt; to “client,” &lt;<span class="italic">appserver_ip</span>&gt; to “app server,” &lt;<span class="italic">accelerator1_ip</span>&gt; to “accelerator 1” or “client accelerator.”</div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;E-3   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="969515">Direct Assignment: Example</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="969519"><img class="Default" src="images/ace_wan_acceleration_tier_rename_advanced.44.3.2.jpg" width="672" height="316" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="969520">&nbsp;</a></div>
+      <div class="h3TopNoBreak"><a name="969522">Indirect Assignment</a></div>
+      <div class="body"><a name="969523">If there is an accelerator between the capture location and the host, assign the hostname to the accelerator tier within that location. This accelerator tier will send and receive all traffic that uses the &lt;</a><span class="italic">hostname</span>&gt; address within that location.</div>
+      <div class="bodyIntro"><a name="969527">In </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.3.html#969529', '');" title="Key Concepts">Figure&nbsp;E-4</a></span>, there is an accelerator between the client site (capture location) and the server (host). The client sends traffic to <span class="code">server_addr</span>, but this traffic actually goes to the client-side accelerator and not the server. Therefore, you need to assign <span class="code">server_addr</span> to “client_accel” because it acts as the server tier at this location.</div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;E-4   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="969529">Indirect Assignment: Example</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="969533"><img class="Default" src="images/ace_wan_acceleration_tier_rename_advanced.44.3.3.jpg" width="672" height="318" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="969534">&nbsp;</a></div>
+      <div class="h3NoBreak"><a name="969538">Example: Direct and Indirect Assignment in the Same Network</a></div>
+      <div class="bodyIntro"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.3.html#969540', '');" title="Key Concepts" name="973092">Figure&nbsp;E-5</a></span> shows an accelerated network with four tiers, each with its own address. In this case, <span class="code">server_addr</span> gets assigned to three different tiers, depending on the capture location, the server, and the presence of an accelerator between the capture location and the server.</div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;E-5   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="969540">Direct and Indirect Assignment: Example</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="969562"><img class="Default" src="images/ace_wan_acceleration_tier_rename_advanced.44.3.4.jpg" width="672" height="340" style="display: block; float: none; left: 0.0; top: 0.0" title="" usemap="#EuiUAP3axB4_969542" border="0" /><map name="EuiUAP3axB4_969542"><area href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.3.html#969522', '');" coords="115,262.77286135693214,251,318.9380530973451" shape="rect" title="" /><area href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.3.html#969522', '');" coords="375,263.7758112094395,498,319.9410029498525" shape="rect" title="" /><area href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.3.html#969513', '');" coords="543,261.7699115044248,662,329.97050147492626" shape="rect" title="" /></map></a></div>
+      <div class="figSpaceAfter"><a name="969563">&nbsp;</a></div>
+      <div class="h2TopNoBreak"><a name="969565">Accelerator Addressing Modes</a></div>
+      <div class="body"><a name="969566">The addressing mode used by the accelerators will affect the hostnames you see in the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.2.html#969388', '');" title="“Rename Hosts” Dialog Box: Options for Advanced Workflow">“Rename Hosts” Window</a></span>, and how you assign these hostnames to logical tiers.</div>
+      <div class="bodyIntro"><a name="973191">Accelerators generally use one of two addressing modes when they exchange traffic over the WAN:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.3.html#969576', '');" title="Key Concepts" name="969570">Accelerators Use Distinct WAN-Side Addresses</a></span>—The two accelerators exchange accelerated traffic using their own unique addresses, which are distinct from the addresses of end nodes at either side of the WAN.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.3.html#969601', '');" title="Key Concepts" name="969574">Accelerators Reuse LAN-Side Addresses</a></span>—The two accelerators exchange traffic using the same addresses used by the source and destination nodes at either side of the WAN.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="hSideHead"><a name="969576">Accelerators Use Distinct WAN-Side Addresses</a></div>
+      <div class="body"><a name="969580">In </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.3.html#969582', '');" title="Key Concepts">Figure&nbsp;E-6</a></span> the accelerators communicate with each other using their own WAN-side addresses (<span class="code">client_accel_addr</span> and <span class="code">server_accel_addr</span>) which are different from the client and server addresses. This mode is sometimes referred to as “non-transparent” or “correct” addressing. </div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;E-6   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="969582">WAN Accelerator Addressing Mode 1: Accelerators Use Distinct WAN-Side Addresses</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="969598"><img class="Default" src="images/ace_wan_acceleration_tier_rename_advanced.44.3.5.jpg" width="672" height="313" style="display: block; float: none; left: 0.0; top: 0.0" title="" usemap="#EuiUAP3axB4_969584" border="0" /><map name="EuiUAP3axB4_969584"><area href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.3.html#969513', '');" coords="83,258.8269230769231,639,306.9807692307692" shape="rect" title="" /></map></a></div>
+      <div class="figSpaceAfter"><a name="969599">&nbsp;</a></div>
+      <div class="hSideHeadTop"><a name="969601">Accelerators Reuse LAN-Side Addresses</a></div>
+      <div class="bodyIntro"><a name="969605">In </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_tier_rename_advanced.44.3.html#969607', '');" title="Key Concepts">Figure&nbsp;E-7</a></span>, the accelerators communicate using the same hostnames as the end tiers on either side of the WAN. Instead of four hostnames, as in the previous example, we have only two: <span class="code">client_addr </span>and <span class="code">server_addr</span>. This mode is sometimes referred to as “transparent” addressing. </div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;E-7   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="969607">Accelerator Addressing Mode 2: Accelerators Reuse LAN-Side Addresses</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="969618"><img class="Default" src="images/ace_wan_acceleration_tier_rename_advanced.44.3.6.jpg" width="672" height="291" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="969619">&nbsp;</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

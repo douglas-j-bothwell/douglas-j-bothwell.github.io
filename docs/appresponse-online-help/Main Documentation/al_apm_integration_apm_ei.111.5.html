@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>SNMP Query Insight</title>
+    <link rel="StyleSheet" href="css/al_apm_integration_apm_ei.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_al_apm_integration_splash.html">Integration with Other Riverbed Solutions</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="al_apm_integration_apm_ei.111.1.html">NetSensor Integration</a> &gt; SNMP Query Insight</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="953318">SNMP Query Insight</a></div>
+      <div class="bodyIntro"><a name="952375">The SNMP Query Insight is useful when you identify a network host for which you want to view detailed performance metrics. This Insight lets you navigate through all MIB data collected in NetSensor, and is the only way to view metric classes that were user-defined in APM EI.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.792pt; white-space: nowrap">
+                <span class="bold">Figure&nbsp;6     </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="958697">SNMP Query Insight</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="958700"><img class="Default" src="images/al_apm_integration_apm_ei.111.5.1.jpg" width="709" height="458" style="display: block; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="figSpaceAfter"><a name="958701">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="953876">Workflow Description</a></div>
+      <div class="bodyIntro"><a name="954189">The following steps outline the general workflow for this Insight:</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="953880">Identify the host that you want to analyze.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><a name="953887">You can open this Insight from any individual IP address in the Desktop Console: right-click on the address and choose Analyze&nbsp;In&nbsp;&gt; Element&nbsp;Polling&nbsp;&gt; SNMP&nbsp;Query. This provides an end-to-end workflow in which you</a></div>
+      <div class="listNumCont"><a name="953891">• Identify a host with problematic performance (slow servers, for example) in the Desktop Console</a></div>
+      <div class="listNumCont"><a name="953897">• Adjust the project time (if needed) to the time window where you observe the problematic performance</a></div>
+      <div class="listNumCont"><a name="953898">• Send the IP address to the SNMP Query Insight</a></div>
+      <div class="listNumCont"><a name="953899">• Analyze performance on the host by selecting and viewing different performance metrics</a></div>
+      <div class="listNumCont"><a name="953900">If you already know the host you want to analyze, you can open the Insight directly (Insights&nbsp;&gt; Element&nbsp;Polling&nbsp;&gt; SNMP&nbsp;Query) and select the host from the Polled System List.</a></div>
+      <div class="listNumCont"><span class="dingbats"><a name="967596">➥</a></span>&nbsp;After you select a host, the appliance queries NetSensor for all classes of metric data that might have been collected for that host within the project time window.</div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="953906">Adjust the project time (if necessary) to focus on the time window of interest, if you have not already done so. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="954991">If the Querying&nbsp;Metric&nbsp;Classes progress window appears, wait until this window closes and the Metric&nbsp;Classes&nbsp;on&nbsp;System table is populated. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	4)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="953908">Select a metric class in the Metric&nbsp;Classes&nbsp;on&nbsp;System table.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><span class="dingbats"><a name="953912">➥</a></span><span class="bold" style="color: #000000">&nbsp;</span>The Metric Class table is populated with all metrics for that class.</div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	5)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="953921">Click on a metric cell of interest in the Metric Class table. You can Ctrl-click multiple metric cells to overlay their graphs in the chart.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><span class="dingbats"><a name="953922">➥</a></span><span class="bold" style="color: #000000">&nbsp;</span>The time-series chart shows the variation in that metric over the project time window.</div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listNum_inner" style="width: 16.128pt; white-space: nowrap">	6)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="953932">Repeat this workflow as needed to view all metrics of interest on the host. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          // Add related topics
+          //
+          WWHAddRelatedTopic("NetSensor Integration", "main_doc", "al_apm_integration_apm_ei.111.1.html");
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

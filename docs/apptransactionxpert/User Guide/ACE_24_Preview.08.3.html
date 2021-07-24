@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Trace&nbsp;Explorer</title>
+    <link rel="StyleSheet" href="css/ACE_24_Preview.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ACE_24_Preview.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_preview_import_filter_traffic_splash.html#145256">Previewing, Importing, and Filtering Traffic</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ACE_24_Preview.08.1.html#145256">Previewing and Extracting Traffic from Packet&nbsp;Traces</a> &gt; Trace&nbsp;Explorer</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="145256">Trace&nbsp;Explorer</a></div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="176323">This feature requires a license for AppTransaction&nbsp;Xpert Decode&nbsp;Module.</a></div>
+      <div class="body"><a name="145257">In some cases, you might have large packet&nbsp;traces that contain irrelevant traffic or even multiple runs of one or more applications. This is especially true of packet&nbsp;traces generated during scheduled or continuous captures. A packet&nbsp;trace might contain numerous user-level transactions—web-page downloads, FTP transfers, database queries, and so on—captured over an extended time period.</a></div>
+      <div class="body"><a name="145258">Trace&nbsp;Explorer is a stand-alone window for browsing packet&nbsp;traces and extracting relevant traffic. This window is useful if a packet&nbsp;trace is too large to be imported within a reasonable amount of time. The Trace&nbsp;Explorer window makes it easy to browse large packet&nbsp;traces, filter out irrelevant traffic, find user-level transactions of interest, and import those transactions.</a></div>
+      <div class="bodyIntro"><a name="176333">To begin examining or filtering a trace quickly, Trace&nbsp;Explorer extracts basic IP information from the trace, allowing traffic to be classified by tier pairs and connections. Detailed information is then extracted in the background and made available as it is decoded.</a></div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="180473">Be sure to close Trace&nbsp;Explorer</a><span style="font-size: 10.0pt"> </span>when finished with it to cancel background decoding and to free computing resources.</div>
+      <div class="bodyIntro"><a name="180477">Use Trace&nbsp;Explorer to:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="180478">Quickly open a large packet&nbsp;trace</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="145262">View high-level information about traffic, whether that traffic is relevant to a specific application</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="145263">Filter irrelevant traffic and find user-level transactions of interest</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="145264">Select traffic of interest and save the traffic to a new, smaller packet&nbsp;trace file, which you can then import</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyIntro"><a name="217741">For more information, see the following sections:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="217759">Workflow descriptions</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_24_Preview.08.2.html#146644', '');" title="Trace Summary" name="217763">Trace&nbsp;Summary: Workflow Description</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_24_Preview.08.6.html#141645', '');" title="Example Workflow: Drilling Down, Searching, Extracting, and Importing" name="217737">Example Workflow: Drilling Down, Searching, Extracting, and Importing</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="217786">Task descriptions</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_24_Preview.08.5.html#141213', '');" title="Common Tasks in Trace Explorer/Trace Summary" name="217790">Filtering Traffic</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_24_Preview.08.5.html#136442', '');" title="Common Tasks in Trace Explorer/Trace Summary" name="217794">Finding a User-Level Transaction of Interest</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_24_Preview.08.5.html#189153', '');" title="Common Tasks in Trace Explorer/Trace Summary" name="217798">Including Packets for a User-Level Transaction</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSubLast_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSubLast_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSubLast_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_24_Preview.08.5.html#137296', '');" title="Common Tasks in Trace Explorer/Trace Summary" name="217780">Saving Included Packets to a New Packet&nbsp;Trace (Trace&nbsp;Explorer Only)</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

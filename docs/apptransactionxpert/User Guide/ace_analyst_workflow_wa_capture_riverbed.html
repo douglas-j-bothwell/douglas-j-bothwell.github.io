@@ -1,0 +1,1331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Capturing Packets in Riverbed Steelhead Environments</title>
+    <link rel="StyleSheet" href="css/ace_analyst_workflow_wa_capture_riverbed.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ace_analyst_workflow_wa_capture_riverbed.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="ace_analyst_workflows_splash.html#153867">Workflows</a> &gt; Capturing Packets in Riverbed Steelhead Environments</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="hChapter"><a name="153867">Capturing Packets in Riverbed Steelhead Environments</a></div>
+      <div class="body"><a name="163734">Capturing packets in a Riverbed environment requires some special knowledge and some practice. It is strongly recommend that you read this document and to practice capturing and importing before you start your first production troubleshooting effort.</a></div>
+      <div class="bodyIntro"><a name="178395">This document has the following sections:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#167035', '');" title="Capturing Packets in Riverbed Steelhead Environments" name="178396">Prerequisites</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#165826', '');" title="Capturing Packets in Riverbed Steelhead Environments" name="178400">Setup and Configuration</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#169045', '');" title="Capturing Packets in Riverbed Steelhead Environments" name="178401">Capturing, Importing, and Filtering</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#170089', '');" title="Capturing Packets in Riverbed Steelhead Environments" name="178402">Example</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h1NoBreak"><a name="167035">Prerequisites</a></div>
+      <div class="bodyIntro"><a name="167039">This workflow assumes familiarity with the following topics:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="169192">General requirements for capturing in WAN-accelerated environments, as described in:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_capturing.13.1.html#950373', '');" title="Capturing Application Traffic in a WAN-Accelerated Environment" name="167490">Capturing Application Traffic in a WAN-Accelerated Environment</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_importing_overview.14.1.html#962001', '');" title="Importing WAN-Accelerated Capture Data" name="167500">Importing WAN-Accelerated Capture Data</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="167544">Capturing on WAN accelerators using Capture&nbsp;Manager, as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_capturing.13.3.html#955289', '');" title="Capturing on Cisco and Riverbed Accelerators">Capturing on Cisco and Riverbed Accelerators</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h1NoBreak"><a name="165826">Setup and Configuration</a></div>
+      <div class="bodyIntro"><a name="165807">The following steps guide you through building traffic source models:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#165788', '');" title="Capturing Packets in Riverbed Steelhead Environments" name="166350">Step 1: Understand the Steelhead Deployment</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#171111', '');" title="Capturing Packets in Riverbed Steelhead Environments" name="166354">Step 2: Set Up the Agent List</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#163965', '');" title="Capturing Packets in Riverbed Steelhead Environments" name="166362">Step 3: Select the Correct Interfaces</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#167645', '');" title="Capturing Packets in Riverbed Steelhead Environments" name="169233">Step 4: Set Up the Packet Filters</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#169075', '');" title="Capturing Packets in Riverbed Steelhead Environments" name="173976">Step 5: Save the Capture Agent List</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#172096', '');" title="Capturing Packets in Riverbed Steelhead Environments" name="169252">Step 6: Practice/Troubleshoot Captures</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2TopNoBreak"><a name="165788">Step 1: Understand the Steelhead Deployment</a></div>
+      <div class="bodyIntro"><a name="171276">Steelhead accelerators can be deployed in a few different ways. The deployment affects how you capture traffic. This section discusses two critical considerations:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#171286', '');" title="Capturing Packets in Riverbed Steelhead Environments" name="171280">In-Path Deployment (“How many capture agents do I need?”)</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#171309', '');" title="Capturing Packets in Riverbed Steelhead Environments" name="171284">Addressing Mode (“What IP addresses do I filter on?”)</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h3NoBreak"><a name="171286">In-Path Deployment (“</a><span class="italic">How many capture agents do I need?</span>”)</div>
+      <div class="bodyIntro"><a name="167565">Riverbed Steelhead devices can be deployed in a few different ways. The deployment affects how you capture traffic:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#171038', '');" title="Capturing Packets in Riverbed Steelhead Environments" name="170401">Virtual In-Path Deployment</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#171047', '');" title="Capturing Packets in Riverbed Steelhead Environments" name="170413">Physical In-Path Deployment</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="170424">AppTransaction&nbsp;Xpert does not support out-of-path deployment configurations.</a></div>
+      <div class="h4RunIn"><a name="171038">Virtual In-Path Deployment</a></div>
+      <div class="bodyIntro"><a name="171039">In a virtual in-path deployment, the accelerator handles both LAN and WAN traffic through the same interface. In this deployment, you create one capture agent for each Steelhead; each agent captures both LAN and WAN traffic at the same interface.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;30-1   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="171041">Virtual In-Path Deployment </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="171045"><img class="Default" src="images/ace_analyst_workflow_wa_capture_riverbed.38.1.01.jpg" width="509" height="223" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="171046">&nbsp;</a></div>
+      <div class="h4RunIn"><a name="171047">Physical In-Path Deployment</a></div>
+      <div class="bodyIntro"><a name="171048">In this deployment, the accelerator handles traffic through separate LAN and WAN interfaces. In this case, you would create two agents for the device—one for each interface.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;30-2   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="171049">Physical In-Path Deployment</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="171053"><img class="Default" src="images/ace_analyst_workflow_wa_capture_riverbed.38.1.02.jpg" width="660" height="145" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="169327">&nbsp;</a></div>
+      <div class="h3NoBreak"><a name="171309">Addressing Mode (“</a><span class="italic">What IP addresses do I filter on?</span>”)</div>
+      <div class="body"><a name="171310">When you specify packet filters for your capture agents, you need to consider the addressing mode that the accelerators use when exchanging WAN traffic with each other. Steelhead devices commonly exchange WAN traffic using their own WAN-side IP addresses which are different from the LAN-side IP addresses of the end tiers. This addressing mode is referred to as “non-transparent” or “correct” addressing.</a></div>
+      <div class="bodyIntro"><a name="171478">If your accelerators use this mode, your packet filters need to include the WAN (or WAN/LAN) interface IPs on the accelerators in addition to the LAN IPs of the end tiers.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;30-3   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="171457">Non-Transparent Addressing</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="171461"><img class="Default" src="images/ace_analyst_workflow_wa_capture_riverbed.38.1.03.jpg" width="656" height="145" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="171462">&nbsp;</a></div>
+      <div class="body"><a name="171443">Some accelerators also support </a><span class="glossterm">transparent addressing</span>, where the accelerators exchange WAN traffic by reusing the LAN-side IP addresses. In this case, you can filter on the local LAN IPs only and filter out all other IPs.</div>
+      <div class="h2TopNoBreak"><a name="171111">Step 2: Set Up the Agent List</a></div>
+      <div class="bodyIntro"><a name="167202">Create one entry for each interface:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="169510">Virtual in-path device—one agent per device (LAN/WAN interface)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="169516">Physical in-path device—two agents per device (LAN interface and WAN interface) </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="169542">Use the management IP address of the Steelhead as the hostname of the capture agent. The management IP is the same address that an administrator would use to configure a Steelhead through the web interface (the Steelhead administrator should know this IP address).</a></div>
+      <div class="bodyIntro"><a name="170578">When you set up the agent list, it is good practice to</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="169557">Specify meaningful names in the Description field (such as </a><span class="code">Client LAN</span>, <span class="code">Client WAN</span>, or <span class="code">Server LAN/WAN</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="169604">Use a consistent order for the agents in the list (LAN first, WAN second)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="163965">Step 3: Select the Correct Interfaces</a></div>
+      <div class="bodyIntro"><a name="169043">To capture packets from a Steelhead, you must select the correct appliance interface. The Network adapter list in the Capture Manager will list many different options.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="171904">For virtual in-path configurations, select the (</a><span class="code">wan0_0</span>) interface. Virtual in-path configurations use only the WAN interfaces on the Steelhead.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="171955">For physical in-path configurations, select the (</a><span class="code">lanX_X</span>) or (<span class="code">wanY_Y</span>) interface.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="tblAnchor"><a name="169644">&nbsp;</a></div>
+      <table class="tableNarrow" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="">
+              <tr style="vertical-align: baseline;">
+                <td>
+                  <div class="tblCaption_inner" style="width: 61.2pt; white-space: nowrap;">Table&nbsp;30-1   </div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="169629">Common Steelhead Monitoring Interfaces&nbsp;</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 88.67232pt">
+            <div class="tblHead"><a name="169633">Interface Name</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 292.92768pt">
+            <div class="tblHead"><a name="169635">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="169641">lan0_0</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="169643">LAN-side interface for physical in-path configurations</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="169650">wan0_0</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="169652">WAN interface for physical in-path configurations (also handles LAN traffic in many virtual in-path configurations)</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="body"><a name="172029">In some cases, the Steelhead will use multiple interfaces to handle the traffic of interest; thus, you might need to capture on multiple interfaces to ensure that you capture the user transaction you want. Note that each individual agent captures on one and only one interface; therefore, if you need to capture on multiple interfaces, you must add multiple agents for the device.</a></div>
+      <div class="bodyKeyConcept">
+        <span class="zBlueItalics">Key Concept—</span><a name="172030">Selecting the wrong interface is a common mistake. If you do not know which interfaces handle the traffic of interest, ask the person who manages the accelerators.</a></div>
+      <div class="h2NoBreak"><a name="167645">Step 4: Set Up the Packet Filters</a></div>
+      <div class="bodyIntro"><a name="169061">It is good practice to assign a packet filter to each capture agent. Packet filters are essential because they help to </a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="169699">Minimize capture file sizes</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="169700">Minimize resource consumption on the Steelhead</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="169720">Streamline the workflow for importing your capture data into AppTransaction&nbsp;Xpert</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyIntro"><a name="169742">Your goal is to capture unaccelerated packets on the LAN side as well as accelerated WAN packets between the two Steelhead devices. The specific IPs specified in your packet filter depends on the addressing mode used by the Steelhead devices, as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#171309', '');" title="Capturing Packets in Riverbed Steelhead Environments">Addressing Mode (“What IP addresses do I filter on?”)</a></span>.</div>
+      <div class="hSideHead"><a name="169816">&nbsp;</a></div>
+      <div class="body"><a name="172039">Beyond this, the filter should exclude all other traffic that you know is irrelevant to the application(s) you want to analyze.</a></div>
+      <div class="body"><a name="169818">To determine the in-path interface IP for a device, log in to the Riverbed Steelhead management console and choose Configure&nbsp;&gt; Networking&nbsp;&gt; In-path&nbsp;Interface &lt;</a><span class="italic">interface_name</span>&gt;.</div>
+      <div class="bodyIntro"><a name="170885">When setting up your packet filters, it is good practice to</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="169819">Include client&lt;--&gt;server traffic in every filter. Even with Correct Addressing, some packets on the WAN might contain the client IP and server IP address.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="169823">Specify one filter per device; if you are capturing on multiple interfaces, use the same filter for all agents on that device.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="170914">Save the packet filter with a meaningful name.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="169075">Step 5: Save the Capture Agent List</a></div>
+      <div class="body"><a name="169917">When you change and update the capture agent settings, save the settings to an Agent List.</a></div>
+      <div class="h2TopNoBreak"><a name="172096">Step 6: Practice/Troubleshoot Captures</a></div>
+      <div class="bodyIntro"><a name="172097">After you set up the agent list, run a few test captures and import the resulting files into AppTransaction&nbsp;Xpert (as described in the following sections) to verify that the capture agent settings are correct. Some important questions you want to answer at this stage are:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="italic"><a name="172098">Are my packet filters configured correctly?</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="172099">In this context, “configured correctly” means that the agent is capturing packets for all IPs of interest, and only those IPs.</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="italic"><a name="172100">Are my agents capturing on the correct interfaces?</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="172101">A specific accelerator might transfer traffic over several different interfaces; you want to be sure that you are capturing on the correct ones. Make sure that you capture on the interface used to handle the traffic of interest. (Do not</a><span class="italic"> </span>capture on the management interface of the accelerator.)</div>
+      <div class="listBullet_outer" style="margin-left: 0pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="italic"><a name="172102">The capture files are considerably larger than I expect. What can I do to make them smaller?</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="172103">Capturing too much traffic at once can result in heavy network loads or even cause an accelerator to run out of disk space. Your goal is to capture traffic related to one user-level transaction, rather than open-ended streams of traffic, and to filter out traffic from irrelevant IPs.</a></div>
+      <div class="listBulletCont"><a name="172104">If the capture files are larger than you expect or want, consider one or more of the following options:</a></div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="172105">Check the packet filter to verify that you are not capturing on irrelevant IPs.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="172106">Capture smaller transactions (for example, capturing a 20Mb file transfer rather than a 120Mb transfer).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSub_outer" style="margin-left: 14.399999999999998pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletSub_inner" style="width: 18pt; white-space: nowrap;">—	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletSub_inner"><a name="172107">Limit the number of bytes captured per packet.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletSubCont"><a name="172108">Even with a good filter, the capture files will include unrelated traffic. You might want to limit the number of bytes captured per packet, and thereby further minimize the size of the packet trace file. To do this, set the “Maximum size of packet data to store (bytes)” field in the Remote Application Capture Agent Editor.</a></div>
+      <div class="listBulletSubContLast"><span class="zBoldRed"><a name="172109">WARNING—</a></span>Consider this option as a “last resort.”<span class="zBoldRed"> </span>Packet slicing might reduce the ability of AppTransaction&nbsp;Xpert to decode the original LAN traffic. If you do use slicing, capture at least 100 bytes of each packet to guarantee that AppTransaction&nbsp;Xpert can decode and merge the capture files.</div>
+      <div class="h1TopNoBreak"><a name="169045">Capturing, Importing, and Filtering</a></div>
+      <div class="h2NoBreak"><a name="170090">Capturing Packets</a></div>
+      <div class="bodyIntro"><a name="169080">When you capture in a Steelhead environment, do the following:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="169971">Always capture the initial TCP three-way handshake. This handshake enables AppTransaction&nbsp;Xpert to distinguish the LAN and WAN TCP connections.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="169990">Note the capture file name. If you capture on two interfaces of the same device, the capture file names might differ only by a timestamp or by a “</a><span class="code">_0</span>”. Pay attention to where each capture file comes from (WAN side or LAN side).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="169088">Importing Capture Files</a></div>
+      <div class="bodyIntro"><a name="170057">The full end-to-end import workflow is described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#172865', '');" title="Capturing Packets in Riverbed Steelhead Environments">Merging the Capture Files</a></span>. This section discusses a few key Riverbed-specific issues:</div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="169091">You must set the “Geographic Location” correctly. AppTransaction&nbsp;Xpert cannot auto-detect these settings; you MUST set these manually. Make sure that capture files from the same Steelhead all have the same location name. It is useful to specify a meaningful name such as “client_site” or “HQ.”</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="170088">Save the Transaction&nbsp;Analyzer model file immediately after you import the capture data. Use “_unfiltered” in the file name; you might need to return to this file.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="169092">Filtering Irrelevant Traffic</a></div>
+      <div class="body"><a name="169093">Even if you captured with packet filters, the resulting Transaction&nbsp;Analyzer model file probably still contains irrelevant traffic. It is good practice to filter out this traffic, as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#167645', '');" title="Capturing Packets in Riverbed Steelhead Environments">Step 4: Set Up the Packet Filters</a></span>.</div>
+      <div class="h1TopNoBreak"><a name="170089">Example</a></div>
+      <div class="bodyIntro"><a name="172130">The the following figure shows a simple Steelhead deployment. The client (left) and server (right) communicate across the WAN through two accelerators. This section describes the various considerations for capture agents and packet filters.</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;30-4   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="172131">Simple Steelhead Deployment</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="172135"><img class="Default" src="images/ace_analyst_workflow_wa_capture_riverbed.38.1.04.jpg" width="616" height="194" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="172136">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="172137">Note the following about this network:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="172138">The client-side accelerator (</a><span class="code">5.5.5.2</span>) has a physical in-line deployment, where separate interfaces handle LAN and WAN traffic.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><span class="italic"><a name="172139">Implication: </a></span>We need to create two separate capture agent entries for this device: one agent for the LAN interface (<span class="code">lan0_0)</span> and another for the WAN interface (<span class="code">wan0_0)</span>.</div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="172140">The server-side accelerator (</a><span class="code">6.6.6.2</span>) has a virtual in-line deployment, where one interface handles both LAN and WAN traffic.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><span class="italic"><a name="172141">Implication: </a></span>We need to create one capture agent only for this device, which captures at the LAN/WAN interface (<span class="code">wan0_0</span>).</div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="172142">The two accelerators use their own distinct IP addresses to exchange WAN traffic, instead of reusing the end-tier LAN IPs.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><span class="italic"><a name="172214">Implication: </a></span>We need to specify packet filters that include the IPs of the WAN interfaces on the accelerators (<span class="code">5.5.5.5&lt;—&gt;6.6.6.6</span>) in addition to the client and server IPs (<span class="code">5.5.5.1&lt;—&gt;6.6.6.1</span>).</div>
+      <div class="listBulletContLast"><span class="bold"><a name="173097">Note—</a></span>Some Steelhead appliances can also support a “full transparency” addressing mode, in which the accelerators reuse the LAN IPs (rather than distinct WAN IPs) to exchange traffic with each other. In this case, your packet filters need to include the LAN IPs only.</div>
+      <div class="bodyIntro"><a name="172311">Given how these devices are deployed, our goal is to set up three capture agents as follows:</a></div>
+      <div class="figCaptionPage_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionPage_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;30-5   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionPage_inner"><a name="172312">Simple Steelhead Deployment with Capture Agents</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="172316"><img class="Default" src="images/ace_analyst_workflow_wa_capture_riverbed.38.1.05.jpg" width="639" height="316" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="172317">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="172318">Now we will proceed to set up each of these agents, run a simple capture, and import the packet traces into AppTransaction&nbsp;Xpert. The following sections walk you through the general workflow:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#172361', '');" title="Capturing Packets in Riverbed Steelhead Environments" name="170148">Client-Side LAN Agent</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#172496', '');" title="Capturing Packets in Riverbed Steelhead Environments" name="172952">Client-Side WAN Agent</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#172682', '');" title="Capturing Packets in Riverbed Steelhead Environments" name="172953">Server-Side LAN/WAN Agent</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#172865', '');" title="Capturing Packets in Riverbed Steelhead Environments" name="172968">Merging the Capture Files</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2TopNoBreak"><a name="172361">Client-Side LAN Agent</a></div>
+      <div class="bodyIntro"><a name="172362">The following table lists the correct settings for this capture agent. The complete Capture Agent Editor entry appears in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#172437', '');" title="Capturing Packets in Riverbed Steelhead Environments">Figure&nbsp;30-6</a></span>.</div>
+      <div class="tblAnchor"><a name="172424">&nbsp;</a></div>
+      <table class="tableWide" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="">
+              <tr style="vertical-align: baseline;">
+                <td>
+                  <div class="tblCaption_inner" style="width: 61.2pt; white-space: nowrap;">Table&nbsp;30-2	</div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="172371">Settings for Client-Side LAN Capture Agent&nbsp;</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 94.19328pt">
+            <div class="tblHead"><a name="172377">Option</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 206.04816pt">
+            <div class="tblHead"><a name="172379">Setting</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 202.23216pt">
+            <div class="tblHead"><a name="172381">Comment</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172383">Hostname</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172385">5.5.5.2</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172387">Use the IP address of the management interface on the Steelhead device.</a></div>
+            <div class="tblBody9"><span class="zRedBold"><a name="172388">REQUIRED</a></span> </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172390">Description</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172392">Remote Office Steelhead (LAN side, physical in-path lan0_0)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172394">Optional, but recommended</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172396">Capture Agent Type</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172398">WAN Accelerator</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="zRedBold"><a name="172400">REQUIRED</a></span> </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172402">Device</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172404">Riverbed Steelhead</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="zRedBold"><a name="172406">REQUIRED</a></span> </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172408">Filter</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="172410">lan_wan_ips_filter (</a><span class="italic">correct addressing</span>)</div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="173300">lan_ips_filter (</a><span class="italic">fully transparent addressing</span>)</div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="zRedBold"><a name="175032">REQUIRED</a></span> </div>
+            <div class="tblBody9"><a name="172416">See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#172426', '');" title="Capturing Packets in Riverbed Steelhead Environments">Specifying the Packet Filter</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172418">Network Adapter</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172420">[lan0_0]</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172422">Interface used for sending and receiving LAN traffic at the remote site</a></div>
+            <div class="tblBody9"><span class="zRedBold"><a name="172423">REQUIRED</a></span> </div>
+          </td>
+        </tr>
+      </table>
+      <div class="hSideHead"><a name="172426">Specifying the Packet Filter</a></div>
+      <div class="body"><a name="173177">As noted previously, we configure the packet filter based on the addressing mode used by the two accelerators to exchange traffic across the WAN. </a></div>
+      <div class="body"><a name="173752">In our example the Steelheads exchange traffic using their own distinct IPs, which are different from the LAN-side client and server IPs. This means that we need to capture packets with the LAN IPs for the client and server (</a><span class="code">5.5.5.1</span> and <span class="code">6.6.6.1</span>) and also the WAN interface IPs on the accelerators (<span class="code">5.5.5.5</span> and <span class="code">6.6.6.6</span>).</div>
+      <div class="bodyIntro"><a name="173279">In the Remote Application Capture Agent Editor, we choose Filter&nbsp;&gt; Edit and specify the packet filter as follows. Then we save the filter with the name </a><span class="code">lan_wan_ips_filter</span>.</div>
+      <div class="figAnchor"><a name="172432"><img class="Default" src="images/ace_analyst_workflow_wa_capture_riverbed.38.1.06.jpg" width="489" height="130" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="172433">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="173212">If the Steelheads exchanged traffic across the WAN by reusing the client and server IPs (</a><span class="glossterm">fully transparent addressing</span>), the filter would capture only these IPs and exclude all others. In that case, the filter would look like this: </div>
+      <div class="figAnchor"><a name="173216"><img class="Default" src="images/ace_analyst_workflow_wa_capture_riverbed.38.1.07.jpg" width="589" height="117" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="173217">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="172435">The completed agent settings for this capture agent look like this:</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;30-6   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="172437">Capture Agent Editor Settings for Client-Side Agent (LAN Interface)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="172441"><img class="Default" src="images/ace_analyst_workflow_wa_capture_riverbed.38.1.08.jpg" width="416" height="265" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="172442">&nbsp;</a></div>
+      <div class="h2TopNoBreak"><a name="172496">Client-Side WAN Agent</a></div>
+      <div class="bodyIntro"><a name="172497">The settings for this capture agent should look like this. Note that the required settings for this agent are nearly identical to those for the </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#172361', '');" title="Capturing Packets in Riverbed Steelhead Environments">Client-Side LAN Agent</a></span>; the only difference is that this agent captures on the WAN-side network adapter <span class="codebold">wan0_0</span>. </div>
+      <div class="tblAnchor"><a name="172559">&nbsp;</a></div>
+      <table class="tableWide" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="">
+              <tr style="vertical-align: baseline;">
+                <td>
+                  <div class="tblCaption_inner" style="width: 61.2pt; white-space: nowrap;">Table&nbsp;30-3	</div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="172506">Settings for Client-Side WAN Capture Agent&nbsp;</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 94.19328pt">
+            <div class="tblHead"><a name="172512">Option</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 212.15376pt">
+            <div class="tblHead"><a name="172514">Setting</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 198.41616pt">
+            <div class="tblHead"><a name="172516">Comment</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172605">Hostname</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172607">5.5.5.2</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172609">Use the IP address of the management interface on the Steelhead device.</a></div>
+            <div class="tblBody9"><span class="zRedBold"><a name="172610">REQUIRED</a></span> </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172612">Description</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172614">Remote Office Steelhead (WAN side, physical in-path wan0_0)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172616">Optional, but recommended</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172618">Capture Agent Type</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172620">WAN Accelerator</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="zRedBold"><a name="172622">REQUIRED</a></span> </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172624">Device</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172626">Riverbed Steelhead</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="zRedBold"><a name="172628">REQUIRED</a></span> </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172630">Filter</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="173315">lan_wan_ips_filter (</a><span class="italic">correct addressing</span>)</div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="173316">lan_ips_filter (</a><span class="italic">fully transparent addressing</span>)</div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="zRedBold"><a name="175040">REQUIRED</a></span> </div>
+            <div class="tblBody9"><a name="173322">See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#172426', '');" title="Capturing Packets in Riverbed Steelhead Environments">Specifying the Packet Filter</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172640">Network Adapter</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172642">[wan0_0]</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172644">Interface used for sending and receiving WAN traffic at the remote site</a></div>
+            <div class="tblBody9"><span class="zRedBold"><a name="172645">REQUIRED</a></span> </div>
+          </td>
+        </tr>
+      </table>
+      <div class="bodyIntro"><a name="172560">The completed agent settings for this capture agent look like this:</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;30-7   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="172561">Capture Agent Editor Settings for Client-Side Agent (WAN Interface)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="172565"><img class="Default" src="images/ace_analyst_workflow_wa_capture_riverbed.38.1.09.jpg" width="415" height="265" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="172566">&nbsp;</a></div>
+      <div class="h2TopNoBreak"><a name="172682">Server-Side LAN/WAN Agent</a></div>
+      <div class="bodyIntro"><a name="172683">The settings for this capture agent should look like this. This agent requires a packet filter that includes both WAN and LAN IP addresses (</a><span class="codebold">lan_wan_ips_filter</span>). Because this device handles both WAN and LAN traffic through one interface, we need to create only one capture agent for this device.</div>
+      <div class="tblAnchor"><a name="172742">&nbsp;</a></div>
+      <table class="tableWide" style="text-align: left" cellspacing="0" summary="">
+        <caption>
+          <div class="tblCaption_outer" style="margin-left: 0pt">
+            <table border="0" cellspacing="0" cellpadding="0" summary="">
+              <tr style="vertical-align: baseline;">
+                <td>
+                  <div class="tblCaption_inner" style="width: 61.2pt; white-space: nowrap;">Table&nbsp;30-4	</div>
+                </td>
+                <td width="100%">
+                  <div class="tblCaption_inner"><a name="172689">Settings for Server-Side WAN/LAN Capture Agent&nbsp;</a></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </caption>
+        <tr>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 94.19328pt">
+            <div class="tblHead"><a name="172695">Option</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 212.15376pt">
+            <div class="tblHead"><a name="172697">Setting</a></div>
+          </td>
+          <td style="background-color: Gainsboro; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: bottom; width: 198.41616pt">
+            <div class="tblHead"><a name="172699">Comment</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172701">Hostname</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172703">6.6.6.2</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172705">Use the IP address of the </a><span class="boldItalic">management interface</span> on the Steelhead device.</div>
+            <div class="tblBody9"><span class="zRedBold"><a name="172706">REQUIRED</a></span> </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172708">Description</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172710">Data Center Steelhead (WAN/LAN, virtual in-path wan0_0)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172712">Optional, but recommended</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172714">Capture Agent Type</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172716">WAN Accelerator</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="zRedBold"><a name="172718">REQUIRED</a></span> </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172720">Device</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172722">Riverbed Steelhead</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9" style="color: #ff0000; font-family: Helvetica; font-size: 9.0pt; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline"><span class="zRedBold"><a name="172724">REQUIRED </a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172726">Filter</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="173324">lan_wan_ips_filter (</a><span class="italic">correct addressing</span>)</div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tblBody9Bullet_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="tblBody9Bullet_inner" style="width: 7.2pt; white-space: nowrap;">•	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="tblBody9Bullet_inner"><a name="173325">lan_ips_filter (</a><span class="italic">fully transparent addressing</span>)</div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><span class="zRedBold"><a name="173327">REQUIRED</a></span> </div>
+            <div class="tblBody9"><a name="173331">See </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_analyst_workflow_wa_capture_riverbed.html#172426', '');" title="Capturing Packets in Riverbed Steelhead Environments">Specifying the Packet Filter</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-left-color: #000000; border-left-style: solid; border-left-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172736">Network Adapter</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172738">[wan0_0]</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.25pt; border-right-color: #000000; border-right-style: solid; border-right-width: 0.25pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.25pt; padding-bottom: 2pt; padding-left: 6pt; padding-right: 6pt; padding-top: 4pt; vertical-align: top">
+            <div class="tblBody9"><a name="172740">Interface used for sending and receiving both LAN and WAN traffic at the data center</a></div>
+            <div class="tblBody9"><span class="zRedBold"><a name="172741">REQUIRED</a></span> </div>
+          </td>
+        </tr>
+      </table>
+      <div class="tblAnchor"><a name="172743">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="173392">The completed agent settings for this capture agent look like this:</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;30-8   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="173393">Capture Agent Editor Settings for Server-Side Agent (WAN/LAN Interface)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="172749"><img class="Default" src="images/ace_analyst_workflow_wa_capture_riverbed.38.1.10.jpg" width="415" height="265" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="172750">&nbsp;</a></div>
+      <div class="h2TopNoBreak"><a name="172865">Merging the Capture Files</a></div>
+      <div class="bodyIntro"><a name="172866">Now that we have set up the capture agents, we are ready to perform captures. We capture a simple client/server transaction and now have the following capture files:</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="172867">client_accelerator_lan </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="172868">client_accelerator_wan</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumLast_inner" style="width: 21.6pt; white-space: nowrap;">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumLast_inner"><a name="172869">server_accelerator_wan_lan</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyIntro"><a name="172870">We will now go through the process of merging these files:</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="172871">In AppTransaction&nbsp;Xpert, choose Merge&nbsp;&gt; Capture&nbsp;Files from a WAN-accelerated Environment.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="172872">The first window that appears prompts us for the capture files and the packet filter to apply for each file.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="172876"><img class="Default" src="images/ace_analyst_workflow_wa_capture_riverbed.38.1.11.jpg" width="351" height="118" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="172877">&nbsp;</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="172878">Next, we are prompted to specify the type of traffic in each capture file (LAN only, WAN only, WAN/LAN, or no accelerated traffic). Note that AppTransaction&nbsp;Xpert can often detect the type of traffic in each file and select the correct setting for this file. If AppTransaction&nbsp;Xpert does not detect the WAN-side traffic correctly, you might have captured the traffic incorrectly.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="172882"><img class="Default" src="images/ace_analyst_workflow_wa_capture_riverbed.38.1.12.jpg" width="509" height="145" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="172883">&nbsp;</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	4)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="172884">Next, we are prompted to specify the logical tier names for the IP addresses found in the capture files.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="172888"><img class="Default" src="images/ace_analyst_workflow_wa_capture_riverbed.38.1.13.jpg" width="426" height="174" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="172889">&nbsp;</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	5)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="172890">The end result is a four-tier application: client, client-side accelerator, server-side accelerator, and server.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="172894"><img class="Default" src="images/ace_analyst_workflow_wa_capture_riverbed.38.1.14.jpg" width="609" height="264" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="172895">&nbsp;</a></div>
+      <div class="listBulletCont"><a name="173891">Because the accelerators work to reduce the amount of data transmitted across the WAN, the resulting Transaction Analyzer file has more LAN than WAN traffic.</a></div>
+      <div class="listBulletCont"><span class="bold"><a name="173892">Note—</a></span>When you merge your capture data, it is good practice to determine whether the resulting Transaction Analyzer file has the characteristics you expect. If you get unexpected results after you merge your capture files, this indicates that you captured the data incorrectly or that you specified the wrong settings during the merge process.</div>
+      <div class="listBulletCont"><a name="173904">Remember that your “expected results” can vary depending on the network and the traffic you want to capture. For example, you might be unable to predict beforehand the WAN source/destination IPs for the traffic of interest. In this case, you might need to capture a fair amount of irrelevant traffic initially and then filter out this traffic after merging.</a></div>
+      <div class="listBulletContLast"><a name="173875">For specific troubleshooting advice, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ace_wan_acceleration_importing_overview.14.5.html#981458', '');" title="Troubleshooting WAN Acceleration Imports">Troubleshooting WAN Acceleration Imports</a></span>.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

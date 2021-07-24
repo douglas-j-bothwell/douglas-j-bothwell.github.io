@@ -1,0 +1,1100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Transaction&nbsp;Whiteboard: Modifying an Application Model</title>
+    <link rel="StyleSheet" href="css/ace_tut_wb_mod_ace_file.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ace_tut_wb_mod_ace_file.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">Tutorials and Examples &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_tut_whiteboard_splash.html#1089291">Transaction Whiteboard Tutorials</a> &gt; Transaction&nbsp;Whiteboard: Modifying an Application Model</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="hChapterNoNum"><a name="1089291">Transaction&nbsp;Whiteboard: Modifying an Application Model</a></div>
+      <div class="body"><a name="1079501">For this tutorial, assume that you are asked to determine the expected response time for a portion of a new “Staff&nbsp;Listing” application that will be rolled out in a few months. You used AppTransaction&nbsp;Xpert to capture a beta version of this application, and you will now use Transaction&nbsp;Whiteboard to create an application model that accurately represents the anticipated final application version.</a></div>
+      <div class="bodyIntro"><a name="1079502">The objectives of this tutorial are to</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1079503">Open a Transaction&nbsp;Analyzer model in Transaction&nbsp;Whiteboard.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1079504">Modify the application model so that it matches the final version of the application.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumLast_inner" style="width: 21.6pt; white-space: nowrap;">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumLast_inner"><a name="1079895">Create a parameter that specifies the message size. By making this value a parameter, you enable different applications to use the same Transaction&nbsp;Whiteboard file (with different message sizes) in the Project Editor.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h1TopNoBreak"><a name="1079507">Creating the Transaction&nbsp;Whiteboard Model</a></div>
+      <div class="body"><a name="1079910">The following procedure describes how to create a Transaction&nbsp;Whiteboard model.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1086593&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1086593", false);</script>Procedure&nbsp;12-1   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="1086593">Creating a Transaction&nbsp;Whiteboard Model</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1086593", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079508">Choose </a><span class="bold">File&nbsp;&gt; Open&nbsp;Model&nbsp;&gt; Transaction&nbsp;Whiteboard…</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079509">In the </a><span class="bold">Transaction&nbsp;Whiteboard Startup Wizard</span>, select <span class="bold">Import&nbsp;application&nbsp;from&nbsp;Transaction&nbsp;Analyzer</span> and click <span class="bold">Next&nbsp;&gt;</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1090011">In the </a><span class="bold">Import&nbsp;Transaction&nbsp;Analyzer&nbsp;model</span> dialog box, select <span class="bold">tutorial_staff_listing_beta</span> under <span class="bold">&lt;</span><span class="boldItalic">reldir</span><span class="bold" style="color: #000000; font-style: normal">&gt;\sys\examples\AppTransaction&nbsp;Xpert\examples</span> and click <span class="bold">Import</span>… <br /><br /><span class="bold">Note—&lt;reldir&gt;</span> is the release directory where AppTransaction&nbsp;Xpert is installed. In the Windows environment, this is often C:\Program&nbsp;Files\OPNET\&lt;<span class="italic">release&nbsp;number</span>&gt;.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="1087850">The existing Transaction&nbsp;Analyzer model opens in Transaction&nbsp;Whiteboard.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079512">In the </a><span class="bold">Data&nbsp;Exchange&nbsp;Chart</span>, notice that the task contains three tiers and some messages, as shown in the following figure.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1080005"><img class="Default" src="images/ace_tut_wb_mod_ace_file.16.1.01.jpg" width="501" height="212" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1079517">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1086801">Choose </a><span class="bold">File&nbsp;&gt; Save</span> and save the file as<span class="bold"> &lt;</span><span class="boldItalic">initials</span><span class="bold" style="color: #000000; font-style: normal">&gt;_tutorial_auth</span>. Keep the file open.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="1079518">The application contains the messages sent as a result of the client selecting the division of interest from a Web page. The transaction begins with an HTTP message from the Client to the Oracle&nbsp;App&nbsp;Server. The Oracle&nbsp;App&nbsp;Server processes this message and requests the appropriate data from the Oracle&nbsp;DB&nbsp;Server. The Oracle&nbsp;App&nbsp;Server then sends a Web page containing the requested data to the Client.</a></div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 12-1</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1086598">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1086602">&nbsp;</a></div>
+      <div class="h1TopNoBreak"><a name="1079519">Modifying the Application Model in Transaction&nbsp;Whiteboard</a></div>
+      <div class="body"><a name="1079520">Before sending a message to the Oracle DB Server, the Oracle App Server needs to authenticate with the Authentication Server.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1086608&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1086608", false);</script>Procedure&nbsp;12-2   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="1086608">Modifying the Application Model in Transaction&nbsp;Whiteboard</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1086608", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079521">Insert a new tier for the Authentication Server.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1.1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079522">Choose </a><span class="bold">Insert&nbsp;&gt; Tier</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1.2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079523">In the Insert Tier dialog box, enter </a><span class="bold">Authentication&nbsp;Server</span> as the tier name.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1080106"><img class="Default" src="images/ace_tut_wb_mod_ace_file.16.1.02.jpg" width="286" height="94" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1079528">&nbsp;</a></div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1.3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1086930">Click </a><span class="bold">OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079529">Create a single request/response pattern between Oracle&nbsp;App&nbsp;Server and Authentication&nbsp;Server.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1084024"><img class="Default" src="images/ace_tut_wb_mod_ace_file.16.1.03.jpg" width="490" height="313" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1079557">&nbsp;</a></div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1086949">Choose </a><span class="bold">Insert&nbsp;&gt; Message</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079558">Click on the </a><span class="bold">Oracle&nbsp;App&nbsp;Server</span><span class="ftUserInput"> </span>tier just after the orange message.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079559">Click on the </a><span class="bold">Authentication&nbsp;Server</span> tier to complete the message.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079560">Click on the </a><span class="bold">Authentication&nbsp;Server</span> tier just after the arrival of the newly created message.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079561">Click on the </a><span class="bold">Oracle&nbsp;App&nbsp;Server</span> tier to complete the message.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079562">Right-click in the workspace to exit message creation mode.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1080362">Modify the first message between Oracle&nbsp;App&nbsp;Server and Oracle&nbsp;DB Server so that it is dependent on the last message you just created. Notice that this message is currently dependent on the orange message from the Oracle App Server to the Client.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4.1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079564">In the Data Exchange Chart, right-click on the dependency just before the first message from Oracle App Server to Oracle DB Server (the yellow message).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4.2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079565">Select </a><span class="bold">Change Parent Dependency</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1080378"><img class="Default" src="images/ace_tut_wb_mod_ace_file.16.1.04.jpg" width="250" height="66" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1079570">&nbsp;</a></div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4.3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1087035">Click on the </a><span class="bold">Oracle App Server</span> tier near where the green message from Authentication Server to Oracle App Server was received.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1080417"><img class="Default" src="images/ace_tut_wb_mod_ace_file.16.1.05.jpg" width="168" height="50" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1079574">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1087062">Notice that this causes the yellow message to shift to the right, as seen in the following figure.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1082456"><img class="Default" src="images/ace_tut_wb_mod_ace_file.16.1.06.jpg" width="490" height="174" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1080537">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1087069">Edit the two messages you created in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('tutorials', 'ace_tut_wb_mod_ace_file.html#1079529', '');" title="Transaction Whiteboard: Modifying an Application Model">step&nbsp;2</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6.1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1080582">Select the two messages in the </a><span class="bold">Data&nbsp;Exchange&nbsp;Chart</span>. You can select two messages by clicking in the background, holding the mouse button down, and drawing a rectangle around the two messages. Alternatively, you can shift-click to select the messages individually.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6.2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1080598">In the message editor, change the </a><span class="bold">Bytes</span> of the first green message (ID: 15) to <span class="bold">50</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6.3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1080599">Change the </a><span class="bold">Bytes</span> of the second green message (ID: 16) to <span class="bold">100</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6.4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1080609">Change the </a><span class="bold">Processing&nbsp;Time</span> value of the first message (ID:15) to <span class="bold">0.05</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1080618"><img class="Default" src="images/ace_tut_wb_mod_ace_file.16.1.07.jpg" width="192" height="167" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1079595">&nbsp;</a></div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6.5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1087121">In the </a><span class="bold">Message&nbsp;Editor</span>, change the <span class="bold">Processing&nbsp;Time</span><span style="font-weight: bold"> </span>value for the second message (ID: 16) to a <span class="bold">Uniform</span><span style="font-weight: bold"> </span>distribution from <span class="bold">0.2</span><span style="font-weight: bold"> </span>to <span class="bold">0.3</span>:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubCont"><a name="1080680">Click into the </a><span class="bold">Processing Time</span> field for the response message (ID: 16).</div>
+      <div class="procStepSubCont"><a name="1079597">Select </a><span class="bold">Edit&nbsp;As&nbsp;Distribution…</span>, and then change the distribution to <span class="bold">Uniform</span><span style="font-weight: bold"> </span>in the Specify Distribution<span style="font-weight: bold"> </span>dialog box.</div>
+      <div class="procStepSubCont"><a name="1079598">Change the </a><span class="bold">Minimum&nbsp;Outcome</span> to <span class="bold">0.2</span>.</div>
+      <div class="procStepSubCont"><a name="1079599">Change the </a><span class="bold">Maximum&nbsp;Outcome</span> to <span class="bold">0.3</span>, as shown in the following figure.</div>
+      <div class="figAnchor"><a name="1080741"><img class="Default" src="images/ace_tut_wb_mod_ace_file.16.1.08.jpg" width="325" height="123" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1079604">&nbsp;</a></div>
+      <div class="procStepSubCont"><a name="1087230">Click </a><span class="bold">OK</span>. The Message Editor should now look like the following figure.</div>
+      <div class="figAnchor"><a name="1080788"><img class="Default" src="images/ace_tut_wb_mod_ace_file.16.1.09.jpg" width="514" height="45" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1079609">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	7	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1087243">Change the zoom level to Full Zoom by right-clicking on a blank portion of the </a><span class="bold">Data&nbsp;Exchange&nbsp;Chart</span><span style="font-weight: bold">,</span> and then choosing <span class="bold">Full&nbsp;Zoom</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	8	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079610">The </a><span class="bold">Data&nbsp;Exchange&nbsp;Chart</span> should look similar to the following figure.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1080840"><img class="Default" src="images/ace_tut_wb_mod_ace_file.16.1.10.jpg" width="499" height="216" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1079615">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	9	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1087252">Choose </a><span class="bold">File&nbsp;&gt; Save</span><span style="font-weight: bold"> </span>to save the file. Keep the file open.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 12-2</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1086616">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1086892">&nbsp;</a></div>
+      <div class="body"><a name="1079616">At this point, you have opened a Transaction&nbsp;Analyzer model in Transaction&nbsp;Whiteboard, created a new tier, added two messages, used a distribution to specify a processing time dependency, and reassigned a message’s parent dependency.</a></div>
+      <div class="h1NoBreak"><a name="1079617">Adding a Parameter to the Transaction&nbsp;Whiteboard Model</a></div>
+      <div class="body"><a name="1079618">Assume that based on your knowledge of the application, you know that the size of the last response message from the Oracle&nbsp;DB&nbsp;Server to the Oracle&nbsp;App&nbsp;Server depends on the number of employees in the division (specified by the user in the initial request). Since you want to be able to change this value in the Project Editor before running a simulation, you should parameterize the response size.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1086626&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1086626", false);</script>Procedure&nbsp;12-3   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="1086626">Adding a Parameter to the Transaction&nbsp;Whiteboard Model</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1086626", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079619">Add a parameter to the task:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1.1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079620">Choose </a><span class="bold">Scripting&nbsp;&gt; Declare&nbsp;Parameters…</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubResult_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubResult_inner"><a name="1089695">The Declare&nbsp;Parameters dialog box displays.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1.2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079621">Click </a><span class="bold">Add</span><span style="font-weight: bold"> </span>to add a new row to the table and specify the following:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <span class="bold">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><span class="bold"><a name="1089705">Parameter:</a></span> num_employees</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <span class="bold">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><span class="bold"><a name="1089709">Type:</a></span> Integer</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <span class="bold">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><span class="bold"><a name="1089714">Default&nbsp;Value:</a></span> 15</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubBullet_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubBullet_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <span class="bold">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubBullet_inner"><span class="bold"><a name="1089717">Description:</a></span> Number of employees in the given division</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubCont"><a name="1089718">The Declare&nbsp;Parameters dialog box should look as follows.</a></div>
+      <div class="figAnchor"><a name="1080938"><img class="Default" src="images/ace_tut_wb_mod_ace_file.16.1.11.jpg" width="423" height="167" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1079626">&nbsp;</a></div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1.3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1087316">Click </a><span class="bold">OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079627">Identify the last message from Oracle&nbsp;DB&nbsp;Server to Oracle&nbsp;App&nbsp;Server by giving it a unique tag. This enables you to access this message from within a logic script.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1080962"><img class="Default" src="images/ace_tut_wb_mod_ace_file.16.1.12.jpg" width="499" height="245" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1079632">&nbsp;</a></div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1087341">In the </a><span class="bold">Data Exchange Chart</span>, select the last message from Oracle DB Server to Oracle App Server.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079633">In the </a><span class="bold">Message Editor</span>, click the <span class="bold">Tag</span> field for message 11, and then change the value to <span class="bold">db_response</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079634">Logic scripts can be used to dynamically modify the behavior of an application model. You will write a logic script that changes the size of the </a><span class="bold">db_response</span> message based on the value of the parameter <span class="bold">num_employees</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3.1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079635">Add a logic script before the message you just tagged as </a><span class="bold">db_response</span>. Right-click on the dependency before the message (not on the message itself) and choose <span class="bold">Add&nbsp;Logic&nbsp;Script&nbsp;at&nbsp;End</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1081073"><img class="Default" src="images/ace_tut_wb_mod_ace_file.16.1.13.jpg" width="480" height="114" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1081143">&nbsp;</a></div>
+      <div class="procStepSubResult_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubResult_inner"><a name="1087430">The </a><span class="bold">Edit function</span> window displays.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3.2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1088147">Add the following lines of code to the logic script:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="codeSubStep"><a name="1081561">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num_employees = self.get_parameter ('num_employees')</a></div>
+      <div class="codeSubStep"><a name="1081562">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response_msg = self.get_message ('db_response')</a></div>
+      <div class="codeSubStep"><a name="1081572">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response_msg.size = num_employees * 2000</a></div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3.3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079655">Choose </a><span class="bold">File&nbsp;&gt; Commit</span><span class="ftUserInput"> </span>to save the logic script.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 12-3</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1086634">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1086638">&nbsp;</a></div>
+      <div class="h1TopNoBreak"><a name="1079658">Using QuickPredict to Determine the Expected Response Time</a></div>
+      <div class="body"><a name="1081243">Use QuickPredict to determine the expected response time.</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1086642&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1086642", false);</script>Procedure&nbsp;12-4   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="1086642">Determining the Expected Response Time (with QuickPredict)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1086642", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079659">In the Transaction&nbsp;Whiteboard window, choose </a><span class="bold">Prediction&nbsp;&gt; QuickPredict</span> to open the QuickPredict dialog box.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079660">Click </a><span class="bold">Load&nbsp;Template…</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079661">Select the </a><span class="bold">tutorial_staff_listing_modified.ace.qpb</span> in <span class="bold">&lt;</span><span class="boldItalic">reldir</span><span class="bold" style="color: #000000; font-style: normal">&gt;\sys\examples\AppTransaction&nbsp;Xpert\examples</span> and click <span class="bold">Open</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079662">If the </a><span class="bold">Choose Tier Pair Mapping</span> dialog displays, make sure the tiers map correctly, then click <span class="bold">Done</span>. (You may have to click the <span class="bold">From&nbsp;Trace</span> field for the new tier, Authentication Server, and select <span class="bold">Authentication Tier</span>.) The specified template is applied to the QuickPredict results and the following bar chart displays.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1081274"><img class="Default" src="images/ace_tut_wb_mod_ace_file.16.1.14.jpg" width="509" height="389" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1079667">&nbsp;</a></div>
+      <div class="procStepCont"><a name="1087643">Notice that the revised application takes less than 1 second to complete when there are 15 employees. (</a><span class="ftUserInput" style="font-weight: bold">Note</span>—We gave the parameter num_employees a default value of 15 earlier in this tutorial.)</div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079668">In the Transaction&nbsp;Whiteboard window, select </a><span class="bold">Scripting&nbsp;&gt; Declare&nbsp;Parameters…</span> Change the default value of <span class="bold">num_employees</span> to <span class="bold">200</span>, and then click <span class="bold">OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079669">In QuickPredict, click the </a><span class="bold">Update&nbsp;Results</span> button.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1081373"><img class="Default" src="images/ace_tut_wb_mod_ace_file.16.1.15.jpg" width="509" height="392" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1079674">&nbsp;</a></div>
+      <div class="procStepCont"><a name="1087698">Notice that increasing the default value for the num_employees parameter caused an increase in the response time of the application.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	7	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079675">Click the </a><span class="bold">Close</span><span style="font-weight: bold"> </span>button to close QuickPredict.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	8	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079676">Choose</a><span class="bold"> File&nbsp;&gt; Save</span> to save the Transaction&nbsp;Whiteboard file.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	9	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079677">Choose </a><span class="bold">File&nbsp;&gt; Close</span> to close Transaction&nbsp;Whiteboard.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 12-4</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1086646">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1086650">&nbsp;</a></div>
+      <div class="h1TopNoBreak"><a name="1079678">Conclusion</a></div>
+      <div class="body"><a name="1084842">Starting with a Transaction&nbsp;Analyzer model of a beta version of your application, you used Transaction&nbsp;Whiteboard to modify the behavior of the application. These modifications included adding a request/response pattern to a new Authentication&nbsp;Server tier, changing the parent dependency of a message, adding variability to the application using a distribution, and specifying the size of a message based on a parameter. You also learned how to use QuickPredict to determine the response time of the application for two different values of the parameter.</a></div>
+      <div class="h2NoBreak"><a name="1079680">Additional Details</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1079681">In this tutorial, you wrote a logic script to dynamically change the size of a message based on a parameter. If you had deployed this application on a network in the Project Editor to run a Discrete Event Simulation, you would be able to specify the message size in the AppTransaction&nbsp;Xpert</a><span class="bold">&nbsp;Parameters</span> field of the task specification.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1079682">Instead of manually adding a request/response pattern to an authentication server, you could have created a separate Transaction&nbsp;Whiteboard file to handle the authentication. Then, you could have invoked your authentication Transaction&nbsp;Whiteboard model. You will see an example of this in the next tutorial.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="1079683">When making multiple changes to a Transaction&nbsp;Whiteboard model, it is often useful to turn on </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_73_Ae_Proc.32.6.html#64970', '');" title="Message Operations">Multi-Message Editing</a></span> Mode. (Choose <span class="bold">Edit</span>&nbsp;&gt; <span class="bold">Enable&nbsp;Multi-Message&nbsp;Editing</span>.)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

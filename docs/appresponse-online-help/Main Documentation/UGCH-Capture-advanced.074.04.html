@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>CLI captureconfig Utility: Filtering Packets and Advanced Options</title>
+    <link rel="StyleSheet" href="css/UGCH-Capture-advanced.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_user_guide_splash.html">User Guide</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="UGCH-Capture-advanced.074.01.html">Packet Captures</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="UGCH-Capture-advanced.074.02.html">High-Speed Captures</a> &gt; CLI captureconfig Utility: Filtering Packets and Advanced Options</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h2Top"><a name="993954">CLI </a><span class="code">captureconfig</span> Utility: Filtering Packets and Advanced Options</div>
+      <div class="bodyIntro"><a name="986921">AppResponse includes a CLI </a><span class="code">captureconfig</span> utility for configuring high speed captures. This section discusses the following:</div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Capture-advanced.074.04.html#986941', '');" title="CLI captureconfig Utility: Filtering Packets and Advanced Options" name="986946">Filtering Packets</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Capture-advanced.074.04.html#986613', '');" title="CLI captureconfig Utility: Filtering Packets and Advanced Options" name="986972">Headers-Only Mode</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Capture-advanced.074.04.html#986623', '');" title="CLI captureconfig Utility: Filtering Packets and Advanced Options" name="986976">Auto-Negotiating Monitoring Interfaces</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h3NoBreak"><a name="986941">Filtering Packets </a></div>
+      <div class="body"><a name="961535">AppResponse includes a CLI </a><span class="code">captureconfig</span> utility for specifying a packet filter using Berkeley Packet Filter (BPF) syntax. The workflow is described in the following procedure.</div>
+      <div class="bodyIntro"><a name="1023728">Note the following:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="963215">Each appliance uses the same packet filter on all monitoring interfaces; you cannot specify separate filters for individual interfaces.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1023707">If you specify different filtering and enabling/disabling criteria for traffic monitoring and packet captures, features that depend on </a><span class="italic">the same traffic flows included in both monitored traffic and packet captures</span> might not work. If you enable traffic monitoring but disable packet captures on interface 2, for example, you cannot use AppTransaction or Wireshark to analyze traffic monitored on that interface. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd961540&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procCaption_inner" style="width: 90pt; white-space: nowrap">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd961540", false);</script>Procedure&nbsp;1    </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="961540">Configuring the Packet Filter using the CLI</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd961540", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="961541">Log in to the appliance using a terminal emulator or SSH client program, as described in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'AGCH05-Config_Maintenance.11.04.html', '');" title="Using the Command Line Interface">Using the Command Line Interface</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procNote">
+        <span class="bold">Note: </span><a name="961543">You must have administrator privileges on the appliance to configure the packet filter.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="961544">Enter the following command: </a><span class="codebold">captureconfig</span> </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepResult_inner" style="width: 18.72pt; white-space: nowrap">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><span class="code"><a name="961545">captureconfig</a></span> lists the available operations:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="961546">AppResponse</a><span class="code"> Packet Capture Configuration</span> <br /><span class="code">&nbsp;&nbsp;filter - configure packet captures BPF filter<br />&nbsp;&nbsp;excluded - configure packet captures excluded packet policy<br />&nbsp;&nbsp;mondata - configure monitored traffic filters<br />&nbsp;&nbsp;headers - configure packet captures headers-only mode<br />&nbsp;&nbsp;showall - show current configuration values<br />&nbsp;&nbsp;commit - update appliance with new configuration<br />&nbsp;&nbsp;quit - exit without saving changes</span></div>
+      <div class="procNote">
+        <span class="bold">Note: </span><a name="961548">The AppResponse appliance has no default packet filter. This means that, by default, the appliance captures every packet seen on any monitoring interface. </a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="961549">Specify the filter you want by entering the command: </a><span class="codebold">filter</span> </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepResult_inner" style="width: 18.72pt; white-space: nowrap">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="961550">The utility prompts you to specify the filter you want.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><span class="code"><a name="961551">Specify the BPF filter expression to use for rejecting packets from storage.<br />Enter '-' to delete or skip the configuration parameter value.</a></span> </div>
+      <div class="procStepCont"><span class="code"><a name="961552">Enter Packet storage filter (BPF):</a></span> </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="977088">Enter the filter expression for the packets that you want to capture.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="977089">For information about how to specify packet filters, see the following:</a></div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Capture-advanced.074.04.html#1148742', '');" title="CLI captureconfig Utility: Filtering Packets and Advanced Options" name="1151061">Packet Filter Examples</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'UGAP02-tcpdump.html', '');" title="Berkeley Packet Filter Syntax" name="977097">Berkeley Packet Filter Syntax</a></span> of AppResponse <span class="italic">Administrators Guide</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	5.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="961560">The CLI then asks if you have VLANs in your network. If you enter </a><span class="codebold">yes</span>, the appliance converts the filter to make it VLAN-compatible.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="codeStep"><a name="1151299">Packet capture filter (BPF to keep): </a><span class="codebold">net 192.70.0 or net 192.70.101</span> <br />Do you have VLANs? (yes/no) <span class="codebold">yes</span> <br />Transformed with VLAN-compatibility to: ((not ether proto 0x8100) and (net 192.70.0 or net 192.70.101)) or (vlan and (net 192.70.0 or net 192.70.101))</div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	6.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1151111">To save the filter you specified, enter the command: </a><span class="codebold">commit</span> </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	7.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1151368">You can customize how the appliance handles packets that are excluded by the BPF filter. The appliance can</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1151638">Discard all excluded packets (the default)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1151676">Save protocol-header data only (and discard application payload data) for all excluded packets </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepBullet_inner" style="width: 12.240000000000002pt; white-space: nowrap">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1151820">Save up to a specified number of bytes from each excluded packet and discard any remaining bytes</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="1151989">To override the current exclude behavior (default = discard all excluded packets) for the filter you save, enter the </a><span class="codebold">excluded</span> command:</div>
+      <div class="codeStep"><a name="1152320">Config menu: </a><span class="codebold">excluded</span> </div>
+      <div class="codeStep"><a name="1152322">Specify the slice size for packets that the capture filter expression rejects.<br />To discard the packets, enter 0.<br />To store only packet protocol headers, enter -1.<br />Enter '-' to delete the configuration parameter value and select the default discard policy.</a></div>
+      <div class="codeStep"><a name="1152327">Excluded packet slice size (multiple of 64 bytes) [64]: </a><span class="codebold">-1</span> </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap">
+                <span class="bold">	8.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1151365">Exit the </a><span class="code">captureconfig</span> program by entering the following command: <span class="codebold">quit </span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepResult_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procStepResult_inner" style="width: 18.72pt; white-space: nowrap">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepResult_inner"><a name="961562">The new configuration takes effect and the appliance uses the new filter when capturing packets on all monitoring interfaces.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap">End of Procedure 1</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="961563">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1148767">&nbsp;</a></div>
+      <div class="procSpaceAfter"><a name="1148740">&nbsp;</a></div>
+      <div class="h3NoBreak"><a name="1148742">Packet Filter Examples</a></div>
+      <div class="bodyIntro"><a name="1148775">This section provides the following examples of how you can specify packet filters using BPF. For more information about BPF notation, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('getting_started', 'UGAP02-tcpdump.html', '');" title="Berkeley Packet Filter Syntax">Berkeley Packet Filter Syntax</a></span> of AppResponse <span class="italic">Administrators Guide</span>.</div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Capture-advanced.074.04.html#1150283', '');" title="CLI captureconfig Utility: Filtering Packets and Advanced Options" name="1150742">Capture Packets for an IP Range (Exclude All Others)</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Capture-advanced.074.04.html#1150492', '');" title="CLI captureconfig Utility: Filtering Packets and Advanced Options" name="1150760">Exclude Packets for an IP Range (Capture All Others)</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Capture-advanced.074.04.html#1148898', '');" title="CLI captureconfig Utility: Filtering Packets and Advanced Options" name="1150048">Exclude Traffic from Four Networks (and Make the Filter VLAN-Compatible)</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Capture-advanced.074.04.html#1149492', '');" title="CLI captureconfig Utility: Filtering Packets and Advanced Options" name="1150054">Capture HTTP Traffic Only</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Capture-advanced.074.04.html#1149558', '');" title="CLI captureconfig Utility: Filtering Packets and Advanced Options" name="1150060">Exclude FTP Traffic on Two Ports and Capture Everything Else</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="listBullet_inner" style="width: 16.128pt; white-space: nowrap">
+                <span style="color: #000000; font-family: Arial; font-size: 7.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline">
+                  <img src="HTML_Bullet.gif" alt="*" border="0" width="5" height="7" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'UGCH-Capture-advanced.074.04.html#1149799', '');" title="CLI captureconfig Utility: Filtering Packets and Advanced Options" name="1150132">Exclude SMTP Traffic from Two Source Hosts and Capture Everything Else</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h4"><a name="1150283">Capture Packets for an IP Range (Exclude All Others)</a></div>
+      <div class="bodyIntro"><a name="1150284">The following example illustrates a filter that captures all packets to or from IPs in the range </a><span class="code">128.3.</span><span class="code" style="font-style: normal">x.x</span>.</div>
+      <div class="codeColumn"><a name="1150919">Config menu: </a><span class="bold">filter</span> </div>
+      <div class="codeColumn"><a name="1150920">Specify the BPF expression used to filter packet captures.<br />Enter '-' to delete the configuration parameter value.</a></div>
+      <div class="codeColumn"><a name="1150287">Packet capture filter (BPF to keep): </a><span class="codebold">src or dst net 128.3</span> <br />Do you have VLANs? (yes/no) <span class="bold">no</span> </div>
+      <div class="h4"><a name="1150492">Exclude Packets for an IP Range (Capture All Others)</a></div>
+      <div class="bodyIntro"><a name="1150493">The following example uses the </a><span class="codebold">not</span> keyword to invert the previous filter: packets to or from <span class="code">128.3.</span><span class="italic">x</span><span class="code" style="font-style: normal">.</span><span class="italic">x</span> are excluded and all other packets are captured.</div>
+      <div class="codeColumn"><a name="1150903">Config menu: </a><span class="bold">filter</span> </div>
+      <div class="codeColumn"><a name="1150904">Specify the BPF expression used to filter packet captures.<br />Enter '-' to delete the configuration parameter value.</a></div>
+      <div class="codeColumn"><a name="1150494">Packet capture filter (BPF to keep): </a><span class="codebold">not (src or dst net 128.3)</span> <br />Do you have VLANs? (yes/no) <span class="bold">no</span> </div>
+      <div class="h4"><a name="1148898">Exclude Traffic from Four Networks (and Make the Filter VLAN-Compatible)</a></div>
+      <div class="bodyIntro"><a name="1148913">The following example illustrates a filter that excludes traffic from four networks. The user then chooses to convert the filter into a VLAN-compatible equivalent.</a></div>
+      <div class="codeColumn"><a name="1150774">Config menu: </a><span class="bold">filter</span> </div>
+      <div class="codeColumn"><a name="1150775">Specify the BPF expression used to filter packet captures.<br />Enter '-' to delete the configuration parameter value.</a></div>
+      <div class="codeColumn"><a name="1149169">Packet capture filter (BPF to keep): </a><span class="bold">not(net 172.16.1.0/24 or net 10.3.60.0/24 or net 172.30.1.0/24 or net 172.16.22.0/24</span>) </div>
+      <div class="codeColumn"><a name="1149170">Do you have VLANs? (yes/no) </a><span class="bold">yes</span> </div>
+      <div class="codeColumn"><a name="1149312">Transformed with VLAN-compatibility to: ((not ether proto 0x8100) and (not(net 172.16.1.0/24 or net 10.3.60.0/24 or net 172.30.1.0/24 or net 172.16.22.0/24))) or (vlan and (not(net 172.16.1.0/24 or net 10.3.60.0/24 or net 172.30.1.0/24 or net 172.16.22.0/24)))</a></div>
+      <div class="procSpaceAfter"><a name="986609">&nbsp;</a></div>
+      <div class="h4"><a name="1149492">Capture HTTP Traffic Only</a></div>
+      <div class="bodyIntro"><a name="1149493">The following example illustrates a filter that captures HTTP traffic only.</a></div>
+      <div class="codeColumn"><a name="1149494">Config menu: </a><span class="bold">filter</span> </div>
+      <div class="codeColumn"><a name="1149495">Specify the BPF expression used to filter packet captures.<br />Enter '-' to delete the configuration parameter value.</a></div>
+      <div class="codeColumn"><a name="1149496">Packet capture filter (BPF to keep): </a><span class="bold">tcp port 80</span> <br />Do you have VLANs? (yes/no) noDo you have VLANs? (yes/no) <span class="bold">no</span> </div>
+      <div class="h4"><a name="1149558">Exclude FTP Traffic on Two Ports and Capture Everything Else</a></div>
+      <div class="bodyIntro"><a name="1149559">The following example illustrates a filter that captures everything </a><span class="italic">except</span> FTP traffic on ports 20 and 21.</div>
+      <div class="codeColumn"><a name="1149560">Config menu: </a><span class="bold">filter</span> </div>
+      <div class="codeColumn"><a name="1149561">Specify the BPF expression used to filter packet captures.<br />Enter '-' to delete the configuration parameter value.</a></div>
+      <div class="codeColumn"><a name="1149562">Packet capture filter (BPF to keep): </a><span class="bold">not (tcp port 20 or tcp port 21) <br /></span>Do you have VLANs? (yes/no) noDo you have VLANs? (yes/no) <span class="bold">no</span> </div>
+      <div class="h4"><a name="1149799">Exclude SMTP Traffic from Two Source Hosts and Capture Everything Else</a></div>
+      <div class="bodyIntro"><a name="1149800">The following example illustrates a filter that captures everything </a><span class="italic">except</span> SMTP traffic that originates from source hosts 10.8.60.266 or 10.8.60.148.</div>
+      <div class="codeColumn"><a name="1149801">Config menu: </a><span class="bold">filter</span> </div>
+      <div class="codeColumn"><a name="1149802">Specify the BPF expression used to filter packet captures.<br />Enter '-' to delete the configuration parameter value.</a></div>
+      <div class="codeColumn"><a name="1149803">Packet capture filter (BPF to keep): </a><span class="bold">not (tcp port 25 and (src host 10.8.60.266 or src host 10.8.60.148)) <br /></span>Do you have VLANs? (yes/no) noDo you have VLANs? (yes/no) <span class="bold">no</span> </div>
+      <div class="h3NoBreak"><a name="986613">Headers-Only Mode</a></div>
+      <div class="body"><a name="986614">The </a><span class="codebold">headers</span> command enables you to enable and disable headers-only mode. When headers-only mode is enabled, AppResponse captures protocol headers only and discards all application payload data; all non-IP packets are discarded. This option is useful when you want to ensure that the appliance captures no sensitive application data (such as customer names or internal company information). </div>
+      <div class="bodyIntro"><a name="986615">Example session:</a></div>
+      <div class="codeStep"><a name="987076">my-arx-appliance.riverbed.com&gt; </a><span class="bold">captureconfig</span> <br />Checking system configuration files for current values.</div>
+      <div class="codeStep"><a name="1148477">AppResponse Packet Capture Configuration <br />&nbsp;&nbsp;filter - configure packet captures BPF filter<br />&nbsp;&nbsp;excluded - configure packet captures excluded packet policy<br />&nbsp;&nbsp;mondata - configure monitored traffic filters<br />&nbsp;&nbsp;headers - configure packet captures headers-only mode<br />&nbsp;&nbsp;showall - show current configuration values<br />&nbsp;&nbsp;commit - update appliance with new configuration<br />&nbsp;&nbsp;quit - exit without saving changes</a></div>
+      <div class="codeStep"><a name="1148711">Config menu: </a><span class="bold">headers</span></div>
+      <div class="codeStep"><a name="1148734">Enter '-' to delete the configuration parameter value.<br />Retain just protocol headers for a TCP or UDP packet. A packet for other IP protocols is truncated to just its IP header. A non-IP packet is discarded.</a></div>
+      <div class="codeStep"><a name="986616">   Store only protocol headers in packet captures (true/false) [false]:</a><span class="bold">true</span> </div>
+      <div class="codeStep"><a name="1148729">trueConfig menu: </a><span class="bold">commit</span> </div>
+      <div class="h3NoBreak"><a name="986623">Auto-Negotiating Monitoring Interfaces</a></div>
+      <div class="zBody"><a name="986624">Some appliance models include an </a><span class="codebold">autoneg</span> command that enables you to specify the Ethernet bit rate and duplex mode for each monitoring interface. You can also specify auto-negotiation mode on individual interfaces. <span class="bold">Note—</span>This functionality is available only on 3170, 3200, 3300, 3700, 3800, 4200 and 4300 appliances that have a 100baseT-compatible SFP module.</div>
+      <div class="bodyIntro"><a name="986625">Example session:</a></div>
+      <div class="codeStep"><a name="987197">my-arx-appliance.riverbed.com&gt; </a><span class="bold">captureconfig</span> <br />Checking system configuration files for current values.</div>
+      <div class="codeStep"><a name="1148531">AppResponse Packet Capture Configuration <br />&nbsp;&nbsp;filter - configure packet captures BPF filter<br />&nbsp;&nbsp;excluded - configure packet captures excluded packet policy<br />&nbsp;&nbsp;mondata - configure monitored traffic filters<br />&nbsp;&nbsp;headers - configure packet captures headers-only mode<br />&nbsp;&nbsp;autoneg - configure Ethernet autonegotiation settings<br />&nbsp;&nbsp;showall - show current configuration values<br />&nbsp;&nbsp;commit - update appliance with new configuration<br />&nbsp;&nbsp;quit - exit without saving changes</a></div>
+      <div class="codeStep"><a name="1148599">Config menu: </a><span class="bold">autoneg</span> </div>
+      <div class="codeStep"><a name="1148706">Enter 0/10/100/1000 for interface speed (0 to enable autonegotiation).<br />Enter true or false for full-duplex setting.<br />Enter '-' to delete the configuration parameter value.</a></div>
+      <div class="codeStep"><a name="1148604">	Monitoring interface 1 speed: </a><span class="bold">100</span> <br />	Monitoring interface 1 full-duplex: <span class="bold">true</span> <br />	Monitoring interface 2 speed: <span class="bold">100</span> <br />	Monitoring interface 2 full-duplex: <span class="bold">true</span> <br />	Monitoring interface 3 speed: <span class="bold">0</span> <br />	Monitoring interface 4 speed: <span class="bold">0</span> </div>
+      <div class="codeStep"><a name="1148653">Config menu: </a><span class="bold">commit</span> </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>

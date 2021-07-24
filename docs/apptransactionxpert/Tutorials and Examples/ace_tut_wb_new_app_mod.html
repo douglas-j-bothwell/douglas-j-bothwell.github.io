@@ -1,0 +1,1036 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Transaction&nbsp;Whiteboard: Creating an Application Model</title>
+    <link rel="StyleSheet" href="css/ace_tut_wb_new_app_mod.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ace_tut_wb_new_app_mod.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">Tutorials and Examples &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_tut_whiteboard_splash.html#1079500">Transaction Whiteboard Tutorials</a> &gt; Transaction&nbsp;Whiteboard: Creating an Application Model</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="hChapterNoNum"><a name="1079500">Transaction&nbsp;Whiteboard: Creating an Application Model</a></div>
+      <div class="body"><a name="1079502">Transaction&nbsp;Whiteboard allows you to create and modify application definitions graphically, ranging from small changes in existing applications captured with AppTransaction&nbsp;Xpert to creating new application models from scratch.</a></div>
+      <div class="bodyIntro"><a name="1079503">Sample use cases for Transaction&nbsp;Whiteboard include the following:</a></div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	1)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1079787">You created a Transaction&nbsp;Analyzer model of an application that currently exists in your network. This application always downloads an image of a fixed size. You are interested in studying how the application will perform if a different image size is used. You can use Transaction&nbsp;Whiteboard to:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap;">a)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1079788">Open the existing Transaction&nbsp;Analyzer model of the transaction</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap;">b)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1079789">Change the image size</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap;">c)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1079507">Use QuickPredict or Discrete Event Simulation to predict performance</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><a name="1088254">An alternative approach is to parameterize the image size. This technique is shown in the tutorial </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('tutorials', 'ace_tut_wb_mod_ace_file.html#1089291', '');" title="Transaction Whiteboard: Modifying an Application Model">Transaction&nbsp;Whiteboard: Modifying an Application Model</a></span>.</div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	2)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1088258">You created a Transaction&nbsp;Analyzer model of a database application that currently exists on your network. This application has a variable number of SELECT statements, and the amount of data returned per statement is also variable. You can use Transaction&nbsp;Whiteboard to:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap;">a)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1079510">Open the existing Transaction&nbsp;Analyzer model of the transaction</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap;">b)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1079511">Use distributions for the number of requests and sizes of the responses</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap;">c)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1079512">Use Discrete Event Simulation to study the variability of the application’s response time</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	3)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1079513">You created a Transaction&nbsp;Analyzer model of an application that includes a significant amount of user think time. You want to study the response time of this application without user think time. You can use Transaction&nbsp;Whiteboard to:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap;">a)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1079514">Open the existing Transaction&nbsp;Analyzer model of the transaction</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap;">b)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1079515">Change the dependencies on the client to only reflect tier processing time</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap;">c)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1079516">Use QuickPredict or Discrete Event Simulation to predict performance</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	4)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1079517">You are planning to add more robust authentication to an existing login transaction. You have a Transaction&nbsp;Analyzer model of the existing login and a separate Transaction&nbsp;Analyzer model of the authentication transaction. You can use Transaction&nbsp;Whiteboard to:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap;">a)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1079518"> Open the two existing transactions into two separate Transaction&nbsp;Whiteboard models</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNumSub_inner" style="width: 14.399999999999998pt; white-space: nowrap;">b)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNumSub_inner"><a name="1079519"> Copy the first transaction and paste it into the second Transaction&nbsp;Whiteboard model</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumCont"><a name="1079520">A more advanced and flexible alternative is to use the Transaction&nbsp;Whiteboard Scripting API to dynamically invoke or call one transaction from the other. This technique is shown in the tutorial </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('tutorials', 'ace_tut_wb_mod_app.html#1081596', '');" title="Transaction Whiteboard: Modeling an Application with Logic Scripts (Advanced)">Transaction&nbsp;Whiteboard: Modeling an Application with Logic Scripts (Advanced)</a></span>.</div>
+      <div class="listNum_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listNum_inner" style="width: 21.6pt; white-space: nowrap;">	5)	</div>
+            </td>
+            <td width="100%">
+              <div class="listNum_inner"><a name="1079521">You are interested in predicting the response times for an application that either does not currently exist or cannot be captured in AppTransaction&nbsp;Xpert. Based on your knowledge of how the application behaves, you can graphically draw the application layer data exchange in Transaction&nbsp;Whiteboard. More advanced users can take advantage of Python scripting and the Transaction&nbsp;Whiteboard Scripting APIs to introduce sophisticated logic into the application definition.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listNumContLast"><a name="1079522">This last use case is the subject of this tutorial.</a></div>
+      <div class="h1TopNoBreak"><a name="1079523">Overview</a></div>
+      <div class="body"><a name="1079524">In this tutorial, you will use Transaction&nbsp;Whiteboard to model the behavior of the AppTransaction&nbsp;Xpert Capture Agent when finishing a capture.</a></div>
+      <div class="body"><a name="1079525">The AppTransaction&nbsp;Xpert Capture Agent is a utility for performing packet&nbsp;trace captures. When a user finishes a capture, the packet&nbsp;trace is automatically transferred to Capture&nbsp;Manager. However, if the capture is performed over a low-bandwidth link or on a heavily congested network, it may not be desirable to immediately transfer the packet&nbsp;trace from the agent to Capture&nbsp;Manager.</a></div>
+      <div class="h2NoBreak"><a name="1079868">Objectives</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1079869">Create a new Transaction&nbsp;Whiteboard model</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="1079870">Use QuickPredict to determine the expected response time to four remote locations</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="1079529">Understanding the Application’s Behavior</a></div>
+      <div class="bodyIntro"><a name="1079530">The following is a description of the application’s behavior:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1079531">Capture Manager sends a 50-byte message to the capture agent and receives a 100-byte response.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="1079532">Capture Manager sends a 600-byte request for the file; the Capture Agent responds by sending the packet&nbsp;trace.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h1TopNoBreak"><a name="1079533">Creating the Transaction</a><span style="font-size: 11.0pt; font-weight: normal">&nbsp;</span>Whiteboard Model</div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1085810&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1085810", false);</script>Procedure&nbsp;11-1   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="1085810">Creating the Transaction</a><span style="font-size: 11.0pt; font-weight: normal">&nbsp;</span>Whiteboard Model</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1085810", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079534">Choose </a><span class="bold">File&nbsp;&gt; Open&nbsp;Model&nbsp;&gt; Transaction&nbsp;Whiteboard</span>…</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079535">In the</a><span class="ftUserInput" style="font-weight: bold"> </span><span class="bold">Transaction&nbsp;Whiteboard Startup Wizard</span>, select <span class="bold">Create application manually</span><span class="ftUserInput"> </span>and click <span class="bold">Next&nbsp;&gt;</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079536">In the dialog box that displays, specify the names of the tiers; enter </a><span class="bold">capture_manager</span> in the first row, and <span class="bold">capture_agent</span><span style="font-weight: bold"> </span>in the<span style="font-weight: bold"> </span>second row, as shown in the following figure.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1079988"><img class="Default" src="images/ace_tut_wb_new_app_mod.15.1.1.jpg" width="384" height="197" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1079541">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1085975">Click </a><span class="bold">Next&nbsp;&gt;</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079542">Click </a><span class="bold">Finish</span><span style="font-weight: bold"> </span>to close the startup wizard.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><a name="1085994">Notice that the Transaction&nbsp;Whiteboard model now contains the two tiers specified in the wizard: capture_manager and capture_agent. Next you will add messages to the model.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079543">Choose </a><span class="bold">Insert</span><span style="font-weight: bold">&nbsp;&gt;</span> <span class="bold">Message</span>. <br /><br />Notice that the cursor in the <span class="bold">Data&nbsp;Exchange&nbsp;Chart</span> changes color from blue to green when you enter message creation mode.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	7	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079544">Create the first message from the capture_manager to the capture_agent:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1080063"><img class="Default" src="images/ace_tut_wb_new_app_mod.15.1.2.jpg" width="226" height="174" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1079552">&nbsp;</a></div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	7.1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1086021">Click the </a><span class="bold">capture_manager</span> line to specify the source tier and start time of the message.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	7.2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079553">Click the </a><span class="bold">capture_agent</span><span style="font-weight: bold"> </span>line to specify the destination tier. You should see a green arrow appear between capture_manager and capture_agent.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubCont"><span class="bold"><a name="1079554">Note—</a></span>Since this is the only message in the trace, the start time of the message is automatically shifted to 0.0 seconds.</div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	8	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079555">Create the response from the capture_agent to the capture_manager:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1080462"><img class="Default" src="images/ace_tut_wb_new_app_mod.15.1.3.jpg" width="250" height="187" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1079560">&nbsp;</a></div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	8.1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1086069">Click the </a><span class="bold">capture_agent</span><span style="font-weight: bold"> </span>line just to the right of the reception of the first message.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	8.2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079561">Click anywhere on the </a><span class="bold">capture_manager</span><span style="font-weight: bold"> </span>line to complete the second message. (The reception time for the newly drawn message is determined by the <span class="bold">Simple&nbsp;Network&nbsp;Estimation</span> settings in the lower-left corner of the Transaction&nbsp;Whiteboard window). Also note that each new message that is created is automatically added to the <span class="bold">Message&nbsp;Editor</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	8.3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079562">Right-click on a blank section of the </a><span class="bold">Data&nbsp;Exchange&nbsp;Chart</span> to exit message creation mode. The cursor changes from green to blue.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	9	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079563">Edit the sizes of and the dependency between the first two messages:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	9.1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079564">Verify that the two messages are displayed in the </a><span class="bold">Message&nbsp;Editor</span>.<br /><br />If the Message Editor is empty, select the two messages in the <span class="bold">Data&nbsp;Exchange&nbsp;Chart</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	9.2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079565">Click in the </a><span class="bold">Bytes</span><span style="font-weight: bold"> </span>cell for the first message (ID: 1). From the drop-down menu, choose <span class="bold">Edit…</span>, and then enter <span class="bold">50</span> as the new size.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubResult_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubResult_inner"><a name="1086995">The color of the arrow changes to orange.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	9.3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079566">For the second message (ID: 2), change the </a><span class="bold">Bytes</span> value to <span class="bold">100</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	9.4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079567">By looking at the value in the </a><span class="bold">Depends&nbsp;On</span> column for the second message, you can see that message 2 depends on message 1. Double-click on the <span class="bold">Processing&nbsp;Time</span> cell for the second message, and change the value to <span class="bold">0.005</span>, as shown in the following figure.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1080634"><img class="Default" src="images/ace_tut_wb_new_app_mod.15.1.4.jpg" width="509" height="60" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1079572">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	10	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1086208">Create the next request/response pattern between capture_manager and capture_agent:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	10.1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079576">Click the </a><span class="bold">Insert&nbsp;Message</span> toolbar button.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	10.2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079577">Create another request message from capture_manager to capture_agent, following the procedure outlined in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('tutorials', 'ace_tut_wb_new_app_mod.html#1079544', '');" title="Transaction Whiteboard: Creating an Application Model">step&nbsp;7</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	10.3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079578">Create the response message from capture_agent to capture_manager, following the procedure outlined in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('tutorials', 'ace_tut_wb_new_app_mod.html#1079555', '');" title="Transaction Whiteboard: Creating an Application Model">step&nbsp;8</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	10.4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079579">Right-click on a blank section of the </a><span class="bold">Data&nbsp;Exchange&nbsp;Chart</span> to exit message creation mode.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	10.5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079580">Change the size of message 3 to </a><span class="bold">600</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	10.6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079581">Change the size of message 4</a><span style="font-weight: bold"> </span>to <span class="bold">100,000</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	10.7	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079582">Change the Processing Time delay of message 3 to </a><span class="bold">0.01</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	10.8	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079583">Change the Processing Time delay of message 4 to </a><span class="bold">0.2</span>, as show in the following figure.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1080812"><img class="Default" src="images/ace_tut_wb_new_app_mod.15.1.5.jpg" width="509" height="81" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1079588">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	11	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1086307">Change the zoom level to Full Zoom by right-clicking on a blank portion of the </a><span class="bold">Data&nbsp;Exchange&nbsp;Chart</span>, and then choosing <span class="bold">Full&nbsp;Zoom</span> from the menu.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	12	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079589">At this point, the </a><span class="bold">Data&nbsp;Exchange&nbsp;Chart</span> should look similar to the following figure.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1080911"><img class="Default" src="images/ace_tut_wb_new_app_mod.15.1.6.jpg" width="503" height="216" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1079594">&nbsp;</a></div>
+      <div class="procStepCont"><a name="1086441">Notice that the large message from capture_agent to capture_manager takes longer to arrive than the three smaller messages. To make it easier to draw and edit messages, Transaction&nbsp;Whiteboard determines the reception time of each message based on a single bandwidth and latency value. This is known as </a><span class="bold">Simple&nbsp;Network&nbsp;Estimation</span>.</div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	13	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079595">Temporarily turn off </a><span class="bold">Simple&nbsp;Network&nbsp;Estimation</span>:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	13.1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079596">In the lower-left corner of the Transaction&nbsp;Whiteboard window, uncheck the </a><span class="bold">Simple&nbsp;Network&nbsp;Estimation</span> checkbox, as shown in the following figure.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1080974"><img class="Default" src="images/ace_tut_wb_new_app_mod.15.1.7.jpg" width="291" height="115" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1079601">&nbsp;</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	14	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1086496">The </a><span class="bold">Data Exchange Chart</span> should look similar to the following figure.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1081068"><img class="Default" src="images/ace_tut_wb_new_app_mod.15.1.8.jpg" width="506" height="211" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1079606">&nbsp;</a></div>
+      <div class="procStepCont"><a name="1086568">With Simple&nbsp;Network&nbsp;Estimation turned off, each message displays straight up-and-down.</a></div>
+      <div class="procStepCont"><span class="bold"><a name="1081094">Note—</a></span>The Simple&nbsp;Network&nbsp;Estimation settings can be used to make an application’s behavior easier to visualize. The settings do not impact any simulation results.</div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	14.1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="1079607">Recheck the </a><span class="bold">Simple Network Estimation</span> checkbox.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	15	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079608">Choose </a><span class="bold">File&nbsp;&gt; Save&nbsp;As…</span>to save the Transaction&nbsp;Whiteboard model as <span class="bold">&lt;</span><span class="boldItalic">initials</span><span class="bold" style="color: #000000; font-style: normal">&gt;_ tutorial_create_new_model</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 11-1</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1085822">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1085826">&nbsp;</a></div>
+      <div class="body"><a name="1079609">Using Transaction&nbsp;Whiteboard, you created an application model that defined the communication between Capture Manager and Capture Agent when downloading a file. Next, you will use QuickPredict to evaluate how this application will perform on a variety of network conditions.</a></div>
+      <div class="h1TopNoBreak"><a name="1079610">Using QuickPredict to Determine the Expected Response Time</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1085833&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1085833", false);</script>Procedure&nbsp;11-2   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="1085833">Determining the Expected Response Time with QuickPredict</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1085833", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079611">Choose </a><span class="bold">Prediction&nbsp;&gt; QuickPredict</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079612">Click</a><span class="bold"> Load Template…</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079613">Select the file </a><span class="bold">tutorial_new_model.ace.qpb</span><span class="ftUserInput"> </span>in &lt;reldir&gt;\sys\examples\AppTransaction&nbsp;Xpert\examples.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepCont"><span class="boldItalic"><a name="1082834">&lt;reldir&gt;</a></span> is the release directory where AppTransaction&nbsp;Xpert is installed. (In the Windows environment this is typically C:\Program Files\OPNET\&lt;<span class="italic">release number</span>&gt;.)</div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079615">Click the </a><span class="bold">Open</span> button. The specified template is applied to the QuickPredict results and the following bar chart displays.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1081184"><img class="Default" src="images/ace_tut_wb_new_app_mod.15.1.9.jpg" width="440" height="526" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1079620">&nbsp;</a></div>
+      <div class="procStepCont"><a name="1086687">This chart shows the results of running this application from the four locations with the specified bandwidth and latency values. Notice that it takes significantly longer to retrieve the packet&nbsp;trace when running across a low-bandwidth link.</a></div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079621">Click the </a><span class="bold">Close</span> button to close QuickPredict.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1079622">Save the model and close Transaction&nbsp;Whiteboard.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 11-2</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1085837">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1085841">&nbsp;</a></div>
+      <div class="h1NoBreak"><a name="1079623">Conclusion</a></div>
+      <div class="body"><a name="1079624">In this tutorial, you learned how to use Transaction&nbsp;Whiteboard to model the behavior of the AppTransaction&nbsp;Xpert Capture Agent when finishing a capture. You also learned how to use QuickPredict to determine the expected response time to four remote locations.</a></div>
+      <div class="h2NoBreak"><a name="1079625">Additional Details</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1079626">To add more flexibility to your Transaction&nbsp;Whiteboard model, you could have parameterized the size of the packet&nbsp;trace that the Capture Agent sends back to Capture Manager. You will see an example of this in the next tutorial.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1079627">Instead of creating messages 3 and 4 using the </a><span class="bold">Insert&nbsp;&gt; Message</span> operation, you could have copied and pasted messages 1 and 2, and then edited the message sizes and dependency values. This technique is useful when copying a large block of messages, especially when moving them from one file to another.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1079628">You can create messages using keyboard shortcuts using Rapid Message Creation. For example, to create a message that starts at tier 1 and ends at tier 2, press CTRL-1 then CTRL-2. To create a message from tier 3 to tier 2, press CTRL-3 then CTRL-2.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1079629">To create a repeating pattern of messages (such as a 120-byte SELECT statement and a 400-byte response, repeated 1,000 times), use a Message Group (</a><span class="ftUserInput" style="font-weight: bold">I</span><span class="bold">nsert&nbsp;&gt; Message Group</span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletCont"><a name="1085878">For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_73_Ae_Proc.32.7.html#132525', '');" title="Message Group Operations">Message Group Operations</a></span>.</div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1079630">To change the same value on many messages in the Message Editor, use multi-message editing. This can be used, for example, to move 30 messages from one connection to another connection.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletContLast"><a name="1085882">For more information, see </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_73_Ae_Proc.32.6.html#64970', '');" title="Message Operations">Multi-Message Editing</a></span>.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

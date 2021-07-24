@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>TCP Segmentation Offloading (TSO) in Packet&nbsp;Traces: What to Do</title>
+    <link rel="StyleSheet" href="css/ACE_24_Preview.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ACE_24_Preview.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">User Guide &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_preview_import_filter_traffic_splash.html#152707">Previewing, Importing, and Filtering Traffic</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="ACE_24_Preview.08.1.html#152707">Previewing and Extracting Traffic from Packet&nbsp;Traces</a> &gt; TCP Segmentation Offloading (TSO) in Packet&nbsp;Traces: What to Do</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="152707">TCP Segmentation Offloading (TSO) in Packet&nbsp;Traces: What to Do</a></div>
+      <div class="bodyIntro"><a name="155474">If you see a warning that a packet&nbsp;trace shows evidence of TCP Segmentation Offloading, it is good practice to create an alternative capture that has the TSO removed and then import the alternative file instead of the original.</a></div>
+      <div class="bodyNote">
+        <span class="bold">Note—</span><a name="155483">If you import “unsegmented” capture data, AppTransaction&nbsp;Xpert cannot correctly match the dataful packets with their corresponding ACK messages. As a result, the Transaction&nbsp;Analyzer model will not be as accurate as possible.</a></div>
+      <div class="bodyIntro"><a name="166819">This section includes the following topics:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_24_Preview.08.7.html#152710', '');" title="TCP Segmentation Offloading (TSO) in Packet Traces: What to Do" name="166823">Saving to a Packet&nbsp;Trace without TSO</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_24_Preview.08.7.html#152731', '');" title="TCP Segmentation Offloading (TSO) in Packet Traces: What to Do" name="166827">What is TSO?</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_24_Preview.08.7.html#152735', '');" title="TCP Segmentation Offloading (TSO) in Packet Traces: What to Do" name="166831">Why Did This Message Appear?</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><span class="HTBlue"><a href="javascript:WWHClickedPopup('main_doc', 'ACE_24_Preview.08.7.html#152739', '');" title="TCP Segmentation Offloading (TSO) in Packet Traces: What to Do" name="166835">Why is This a Problem?</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="152710">Saving to a Packet&nbsp;Trace without TSO</a></div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd152717&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd152717", false);</script>Procedure&nbsp;7-3   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="152717">Saving a Packet&nbsp;Trace without TCP Segmentation Offloading</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd152717", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="152718">If you are importing one or more packet&nbsp;traces and the message appears stating that one or more packet&nbsp;traces show signs of TCP Segmentation Offloading, do the following:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1.1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="152719">Note the packet&nbsp;traces indicated in the warning dialog box. If there are multiple files, you can generate a bitmap of this window (press Ctrl+T). </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1.2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="152720">Click OK to cancel the import process.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="152721">For each packet&nbsp;trace listed in the warning dialog box, do the following:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="152722">Choose File&nbsp;&gt; Open&nbsp;Packet&nbsp;Trace(s)&nbsp;&gt; In&nbsp;Trace&nbsp;Explorer.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="152723">Select the packet&nbsp;trace to open.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="152724">In the Trace&nbsp;Explorer window, choose Edit&nbsp;&gt; Include&nbsp;All.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="152725">In the Trace&nbsp;Explorer window, choose File&nbsp;&gt; Remove&nbsp;TCP&nbsp;Segmentation&nbsp;Offloading…</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSubResult_outer" style="margin-left: 43.2pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSubResult_inner" style="width: 10.799999999999997pt; white-space: nowrap;">
+                <img src="resultsarrow.gif" alt="*" border="0" width="12" height="7" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSubResult_inner"><a name="152726">A file browser appears and prompts for the location and name of the new packet&nbsp;trace. This new file will include all traffic in the original file, except for the removed offloading data.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepSub_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepSub_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2.5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepSub_inner"><a name="152727">Specify the location and filename (for example, </a><span class="code">&lt;</span><span class="italic">original_filename</span><span class="code" style="color: #000000; font-style: normal; font-weight: normal">&gt;_SEGMENTED.appcapture</span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="152728">Perform the original import, using the new “segmented” packet&nbsp;trace.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 7-3</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="152729">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="152730">&nbsp;</a></div>
+      <div class="h2NoBreak"><a name="152731">What is TSO?</a></div>
+      <div class="body"><a name="152732">TCP segmentation offloading (also referred to as</a><span class="glossterm"> large segment offloading</span>, or LSO) is a technique for reducing CPU overhead of TCP/IP on fast networks.</div>
+      <div class="body"><a name="152733">Before a host sends large amounts of data, it must divide the data into smaller segments that can pass through all the network elements (such as routers and switches) between the source and destination host.</a></div>
+      <div class="body"><a name="152734">This process is referred to as segmentation. Often the TCP protocol on the host computer segments the data. TCP Segmentation Offloading occurs when TCP offloads segmentation to the network card.</a></div>
+      <div class="h2NoBreak"><a name="152735">Why Did This Message Appear?</a></div>
+      <div class="body"><a name="152736">The capture agent (or a similar capture tool) records the packet data before it is passed to the network card where it is segmented.</a></div>
+      <div class="body"><span style="font-size: 10.0pt"><a name="152737">T</a></span>he warning message appears because the packet&nbsp;trace recorded a packet whose length was greater than the threshold of 9,500 bytes. (You can configure this threshold using the “TCP Segmentation Offloading Threshold” preference.)</div>
+      <div class="body"><a name="152738">Frequently when TSO is present, the capture agent might not capture the entire payload since the default maximum packet size is 2000 bytes. If this is the case, the warning mentions that one or more packets were sliced and you should use Capture&nbsp;Manager to increase the maximum packet size for the capture agent.</a></div>
+      <div class="h2NoBreak"><a name="152739">Why is This a Problem?</a></div>
+      <div class="body"><a name="152740">If the data is not re-segmented, the import engine cannot match the dataful packets and their corresponding ACKs accurately; as a result, the Transaction&nbsp;Analyzer model will not be as accurate as possible.</a></div>
+      <div class="bodyIntro"><a name="152741">For example, suppose a packet&nbsp;trace recorded the following situation:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="152742">Host A had TSO enabled and sent one “logical” 10Kb packet to host B.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="152743">The network card segmented the packet into N physical packets and then transmitted them.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="152744">When host B received the N physical packets, it returned multiple ACKs.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="152745">This sequence will </a><span class="italic">not</span> be consistent with the data that AppTransaction&nbsp;Xpert believes to have been sent.</div>
+      <div class="body"><a name="152746">If host B does not have TSO enabled, then consider what will happen when AppTransaction&nbsp;Xpert tries to merge the packets from the file captured on host A with the file captured on host B.</a></div>
+      <div class="h3NoBreak"><a name="152747">Host A Packet&nbsp;Trace (TSO enabled):</a></div>
+      <div class="body"><a name="152748">A&nbsp;-&gt;&nbsp;B&nbsp;=&nbsp;N packets (due to TSO, M applications messages become N physical packets on the wire) <br />B&nbsp;-&gt;&nbsp;A&nbsp;=&nbsp;X packets</a></div>
+      <div class="h3NoBreak"><a name="152749">Host B Packet&nbsp;Trace (no TSO):</a></div>
+      <div class="body"><a name="152750">A&nbsp;-&gt;&nbsp;B&nbsp;=&nbsp;M packets (where N&nbsp;&gt;&nbsp;M) <br />B&nbsp;-&gt;&nbsp;A&nbsp;=&nbsp;X packets (Recall, TSO ONLY effects packets SENT.)</a></div>
+      <div class="body"><a name="152751">The result is that, when AppTransaction&nbsp;Xpert tries to merge the two packet&nbsp;traces, it will not be able to match all packets even though all packets were captured on both sides.</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          // Add related topics
+          //
+          WWHAddRelatedTopic("Trace\u00A0Explorer", "main_doc", "ACE_24_Preview.08.3.html#145256");
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

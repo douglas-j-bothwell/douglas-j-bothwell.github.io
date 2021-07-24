@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Examining a Web-Based Oracle Application</title>
+    <link rel="StyleSheet" href="css/ace_ex_oracle_app.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        function  WWHPDFLink()
+        {
+          return "ace_ex_oracle_app.pdf";
+        }
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <div style="font-family: arial; float: right; height: 1px;"><a><img src="images/blank.gif" height="0" width="0" border="0" alt="skip to main content" /></a></div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">Tutorials and Examples &gt; <a class="WebWorks_Breadcrumb_Link" href="atx_tut_examples_splash.html#1001991">Transaction Analyzer Examples</a> &gt; Examining a Web-Based Oracle Application</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="hChapterNoNum"><a name="1001991">Examining a Web-Based Oracle Application</a></div>
+      <div class="bodyKeyConcept">
+        <span class="zBlueItalics">Key Concept—</span><a name="1001004">This example shows how AppTransaction&nbsp;Xpert diagnoses and visualizes application and network problems; it is not a step-by-step tutorial. If you have experience with AppTransaction&nbsp;Xpert, you can recreate this study by following the instructions in </a><span class="HTBlue"><a href="javascript:WWHClickedPopup('tutorials', 'ace_ex_oracle_app.html#999232', '');" title="Examining a Web-Based Oracle Application">Recreate the Example</a></span>. The screen images in this example were captured running AppTransaction&nbsp;Xpert in Windows with the AppTransaction&nbsp;Xpert Decode&nbsp;Module (ADM) installed. If you are working on Linux, or do not have ADM installed, some screens might look different.</div>
+      <div class="body"><a name="999153">In this network, the remote Client accesses an Oracle Application Server to retrieve information from the Oracle Database Server (DB&nbsp;Server). The connection is over a WAN through a T1 circuit.</a></div>
+      <div class="bodyIntro"><a name="999154">Possible causes for the slow response time fall into two general categories:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1004233">network bottlenecks</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="1004234">server bottlenecks</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="1004235">This study identifies the exact cause of the performance problems and recommends solutions.</a></div>
+      <div class="body"><a name="999155">We begin our investigation by identifying and capturing a typical transaction. Probes were placed on the Client, the Application Server, and the DB&nbsp;Server, as shown in the following figure.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;8-1   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="1000680">Network Diagram</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1000955"><img class="Default" src="images/ace_ex_oracle_app.11.1.1.jpg" width="317" height="200" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1000685">&nbsp;</a></div>
+      <div class="body"><a name="1004940">Packet&nbsp;trace captures were taken simultaneously at the probes, then merged and synchronized to get the most accurate measurements of delay at each tier and in the overall network.</a></div>
+      <div class="h1TopNoBreak"><a name="999162">Diagnosis</a></div>
+      <div class="body"><a name="999163">After opening the packet&nbsp;trace, we looked at the transaction in the Data Exchange Chart, which shows the flow of application messages between tiers over time.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;8-2   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="1002475">Data Exchange Chart (Application View)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1002479"><img class="Default" src="images/ace_ex_oracle_app.11.1.2.jpg" width="500" height="278" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="999169">&nbsp;</a></div>
+      <div class="body"><a name="1004988">The Data Exchange Chart shows objects of various sizes being transferred between the Client and Application Server and between the Application Server and DB&nbsp;Server. The overall transaction response time is about 0.5 seconds. When the “Show&nbsp;Dependencies” checkbox is selected, the white dependency lines indicate large processing delays on the Application Server and Client tiers.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;8-3   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="1003863">Data Exchange Chart with Dependencies</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1003867"><img class="Default" src="images/ace_ex_oracle_app.11.1.3.jpg" width="500" height="279" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="999170">&nbsp;</a></div>
+      <div class="body"><a name="1005001">AppDoctor’s Summary of Delays identifies the factors that contribute to application delay.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;8-4   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="999175">Summary of Delays for the Oracle Transaction</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1000746"><img class="Default" src="images/ace_ex_oracle_app.11.1.4.jpg" width="394" height="342" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="999176">&nbsp;</a></div>
+      <div class="body"><a name="1005014">Processing delay on the Application Server is the largest component of delay for this transaction.</a></div>
+      <div class="body"><a name="999177">The network-related delays (Latency, Bandwidth, Protocol, and Congestion) are small compared to the processing effects.</a></div>
+      <div class="body"><a name="1005515">AppDoctor’s Diagnosis provides a more granular analysis of possible bottlenecks. This feature tests the current transaction against factors that often cause performance problems in network-based applications. Values that cross a specified threshold are marked as bottlenecks or potential bottlenecks.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;8-5   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="999189">Diagnosis for the Oracle Transaction</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1000779"><img class="Default" src="images/ace_ex_oracle_app.11.1.5.jpg" width="404" height="277" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="999190">&nbsp;</a></div>
+      <div class="bodyIntro"><a name="1005036">Diagnosis confirms that the primary bottleneck is due to Processing Delay at the Application Server. The other potential bottlenecks are:</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1002080">Processing at Client</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="1002103">Protocol Overhead (Client &lt;-&gt; Application Server)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="1003619">Chattiness</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="h2NoBreak"><a name="999191">Processing at Client</a></div>
+      <div class="body"><a name="999192">Processing delay is due to the file Input/Output, CPU&nbsp;processing, memory access, and so on.</a></div>
+      <div class="h2NoBreak"><a name="999193">Protocol Overhead</a></div>
+      <div class="body"><a name="999194">Protocol headers add overhead to each application message. Protocols also send messages that have no application data, such as TCP acknowledgement packets. This overhead can introduce delays by increasing congestion in the network.</a></div>
+      <div class="h2NoBreak"><a name="999195">Chattiness</a></div>
+      <div class="body"><a name="999196">The data sent per application turn is small. The numeric value is the number of application bytes per application turn. This may cause significant network delay. Additionally, a significant portion of application processing time can be spent processing requests and responses.</a></div>
+      <div class="bodyIntro"><a name="1002033">If you have a Chattiness bottleneck without a Network Effects of Chattiness bottleneck, this means that</a></div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="999197">The application is not incurring significant network delays due to chattiness</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBullet_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBullet_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBullet_inner"><a name="999198">The application may be incurring significant processing delays due to overhead associated with handling many small application requests/responses</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="listBulletLast_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="listBulletLast_inner" style="width: 14.4pt; white-space: nowrap;">•	</div>
+            </td>
+            <td width="100%">
+              <div class="listBulletLast_inner"><a name="999199">The application’s Network Effects of Chattiness could dramatically increase in a higher-latency network</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="body"><a name="999216">In addition, the AppTransaction&nbsp;Xpert Decode&nbsp;Module (ADM) enables us to gain more insight into the application.</a></div>
+      <div class="figCaptionColumn_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="figCaptionColumn_inner" style="width: 63.7632pt; white-space: nowrap;">Figure&nbsp;8-6   </div>
+            </td>
+            <td width="100%">
+              <div class="figCaptionColumn_inner"><a name="1002493">SQL Decode for Frame 85</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figAnchor"><a name="1002497"><img class="Default" src="images/ace_ex_oracle_app.11.1.6.jpg" width="493" height="252" style="display: block; float: none; left: 0.0; top: 0.0" title="" /></a></div>
+      <div class="figSpaceAfter"><a name="1002500">&nbsp;</a></div>
+      <div class="body"><a name="1007446">ADM adds information about each packet that can help us understand the application itself. For example, in Frame 12, we can see an SQL statement.</a></div>
+      <div class="h1TopNoBreak"><a name="1007447">Conclusion</a></div>
+      <div class="body"><a name="999230">In this example, the application response time was about half a second. Perhaps not much improvement is necessary. However, using the analysis and diagnostic capabilities of AppTransaction&nbsp;Xpert, we can highlight areas that can be improved, supplying helpful information to the application developers.</a></div>
+      <div class="body"><a name="999231">AppTransaction&nbsp;Xpert with AppTransaction&nbsp;Xpert Decode&nbsp;Module lets you troubleshoot application performance and identify the potential causes.</a></div>
+      <div class="h1NoBreak"><a name="999232">Recreate the Example</a></div>
+      <div class="body"><a name="999233">Load the Transaction&nbsp;Analyzer model “Three_Tier_Oracle_Application” (from </a><span class="italic">&lt;reldir&gt;</span>\sys\examples\AppTransaction&nbsp;Xpert\examples) or perform the following procedure.</div>
+      <div class="procCaption_outer" style="margin-left: 0pt" onclick="WebWorks_ToggleDIV(WebWorksRootPath, &quot;wwdd1007594&quot;);">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procCaption_inner" style="width: 99.2pt; white-space: nowrap;">
+                <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteArrow(WebWorksRootPath, "wwdd1007594", false);</script>Procedure&nbsp;8-1   </div>
+            </td>
+            <td width="100%">
+              <div class="procCaption_inner"><a name="1007594">Recreating the Example</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVOpen("wwdd1007594", false);</script>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1007598">Open the following packet&nbsp;traces in AppTransaction&nbsp;Xpert:<br />(</a><span class="bold">File</span>&nbsp;&gt; <span class="bold">Open&nbsp;Packet&nbsp;Trace(s)</span>&nbsp;&gt; <span class="bold">In&nbsp;Transaction&nbsp;Analyzer&nbsp;(Simultaneous&nbsp;Captures)…</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1007552">Three_Tier_Oracle_Remote_Client.enc</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1005546">Three_Tier_Oracle_Application_Server.enc</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1005526">Three_Tier_Oracle_Database_Server.enc</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1005527">Rename the tiers:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1005528">Rename 192.168.50.170 to Client</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1005553">Rename 172.16.4.240 to Application&nbsp;Server</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1005529">Rename 172.16.4.52 to DB&nbsp;Server</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStep_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStep_inner" style="width: 21.6pt; white-space: nowrap;">
+                <span class="bold">	3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStep_inner"><a name="1005530">Set bandwidth and latency between tiers:<br />(</a><span class="bold">AppDoctor</span>&nbsp;&gt; <span class="bold">Refine&nbsp;Network&nbsp;Effects</span>…)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1005531">Set the remote bandwidth from “Site&nbsp;1” to “Site&nbsp;2” to T1 (1.544&nbsp;Mbps)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1005680">Set the remote bandwidth from “Site&nbsp;2” to “Site&nbsp;3” to 100,000 (100&nbsp;Mbps)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procStepBullet_outer" style="margin-left: 21.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procStepBullet_inner" style="width: 8.639999999999997pt; white-space: nowrap;">
+                <span class="bold">•&nbsp;</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="procStepBullet_inner"><a name="1005532">Latency between "Site&nbsp;1" and "Site&nbsp;3" should be detected as approximately 1.7&nbsp;ms</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="procEnd_outer" style="margin-left: 0pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="procEnd_inner" style="width: 32.4pt; white-space: nowrap;">End of Procedure 8-1</div>
+            </td>
+            <td width="100%">
+              <div class="procEnd_inner"><a name="1005537">&nbsp;</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">WebWorks_WriteDIVClose();</script>
+      <div class="procSpaceAfter"><a name="1005543">&nbsp;</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2013 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/aceanalyst_copy_info_wwp.html">Legal Notices</a> section.<br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support Center </a><br /></div>
+  </body>
+</html>

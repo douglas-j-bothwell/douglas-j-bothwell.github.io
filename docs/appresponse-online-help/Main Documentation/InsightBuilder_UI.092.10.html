@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Best Practices</title>
+    <link rel="StyleSheet" href="css/InsightBuilder_UI.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="margin-left: 2%; margin-right: 2%" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="_ace_live_idk_guide_splash.html">Insight Development Kit (IDK)</a> &gt; <a class="WebWorks_Breadcrumb_Link" href="InsightBuilder_UI.092.01.html">Insight Development Kit User Interface</a> &gt; Best Practices</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="h1Top"><a name="951287">Best Practices</a></div>
+      <div class="body"><a name="951289">Do not overlook these best practices! They can save you a lot of time.</a></div>
+      <div class="h4"><span class="Bold"><a name="951291">Planning </a></span></div>
+      <div class="body"><a name="971908">Sketch first. You'll find that you make fewer mistakes and overlook fewer needed Interactions if you make a rough sketch of how you want the Insight to look before you start. </a></div>
+      <div class="h4"><span class="Bold" style="color: #000000; font-weight: bold"><a name="975419">Saving and Versioning</a></span></div>
+      <div class="body"><a name="971909">Save early and often. There's no Undo function.</a></div>
+      <div class="body"><a name="951300">To prevent losing a lot of time if you take a wrong turn while constructing an Insight, consider versioning your saves every so often, so you have a point to return to and start again. This is most easily done from the Preview Insight Content window (invoked by clicking </a><span class="Online" style="font-weight: bold">Test/Layout</span>), which always asks you whether you want to overwrite the existing version of the Insight you’re working on.</div>
+      <div class="h4"><span class="Bold"><a name="951302">Fill out the Insight Properties Window</a></span></div>
+      <div class="body"><a name="971930">Do this at the beginning of creating your Insight.</a></div>
+      <div class="h4"><span class="Bold"><a name="951303">Follow a consistent work pattern</a></span></div>
+      <div class="body"><a name="971941">It's best to follow a consistent work pattern: either completing each row or each column before adding more rows or columns. Adding lots of rows and columns prevents saving until you're completely finished adding Components, which increases the chance of losing your work if something goes wrong.</a></div>
+      <div class="h4"><span class="Bold"><a name="951305">Always Rename Components as you Create Them and Use a Consistent Convention</a></span></div>
+      <div class="bodyIntro"><a name="971948">Always rename Components as you create them rather than accepting the numeric-increment default, and follow a consistent naming convention. It doesn't matter what convention you follow, as long as you're consistent. We suggest using colons to separate.</a></div>
+      <div class="bodyNote">
+        <span class="bold">Note: </span><a name="951306">Note: When renaming Hidden Visual Components, we suggest you use the word “hidden” in the name.</a></div>
+      <div class="body"><a name="951307">For instance, if you use a Favorites Table Component to display applications, rather than leaving it named </a><span class="bold">Table:favorite1</span>, name it something like <span class="bold">Table:Applications</span>. If a Multi-Group Chart Component is primarily intended to display Throughput, then name it <span class="bold">Chart:multigrp:Throughput</span>. It is useful to keep the Component type, in the Component name, i.e., a table is <span class="bold">Table:Applications</span>.</div>
+      <div class="body"><a name="951308">This is especially important given that Interaction’s names are automatically generated from the names given to Components.</a></div>
+      <div class="h4"><span class="Bold"><a name="951310">Build Insights on an Appliance and Test on a Director</a></span></div>
+      <div class="body"><a name="971966">Always build an Insight on an Appliance unless it uses Director groups. An Insight built on a Director does not run on an Appliance.</a></div>
+      <div class="h4"><span class="Bold"><a name="951312">Always Add a Box Control</a></span></div>
+      <div class="body"><a name="971977">The Box Toolbar Control is necessary if you want your Insight to be able to run on a Director; otherwise the Insight can't select which Appliance to pull data from when necessary.</a></div>
+      <div class="h4"><span class="Bold"><a name="951313">Consider Adding an Initializer</a></span></div>
+      <div class="body"><a name="971987">Always put an Initializer Analysis Component in an Insight so that it can be linked to from another Insight, if you decide to do so in the future.</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+    <div style="font-size: 8pt; font-family: arial; text-align: left; text-decoration: none;">
+      <a href="../wwhelp/wwhimpl/common/html/default.htm">Home</a> | <a href="#" title="To the top of this page">Back to Top</a><br /><br />© 2014 Riverbed Technology.
+  All Rights Reserved. This software may be covered by one or more U.S. Patents. See complete patent notice in the <a href="../Notices/ace_live_copy_info_wwp.html">Legal Notices</a> section. <br /><a href="http://www.riverbed.com/support/" style="text-decoration: none" target="_blank"> Riverbed Support</a><br /></div>
+  </body>
+</html>
