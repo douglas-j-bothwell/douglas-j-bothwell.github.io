@@ -7,7 +7,7 @@
 
 * Extensive experience designing and writing entire doc sets from scratch.
 
-* [Completed coursework](./cv/ucsc-sv-2021-07.png): Kubernetes Orchestration, Relational Databases and SQL Programming, DevOps Technologies, Cloud Programming with AWS, Designing and Building REST APIs, Python for Programmers, JavaScript, Java, Android, C++, C#, and Go.
+* [Completed coursework](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/cv/ucsc-sv-2021-07.png): Kubernetes Orchestration, Relational Databases and SQL Programming, DevOps Technologies, Cloud Programming with AWS, Designing and Building REST APIs, Python for Programmers, JavaScript, Java, Android, C++, C#, and Go.
 
 ## Experience
 
@@ -16,7 +16,7 @@
 
 * Currently the lead writer for Moogsoft's flagship product.  Wrote entire v1 doc set from scratch for Moogsoft Observability Cloud, which uses advanced AI-based algorithms to monitor, observe, filter, deduplicate, and correlate raw monitoring data into a single, interactive list of actionable incidents. This doc set is now the centerpiece of https://docs.moogsoft.com.
 
-* Named an [Employee of the Quarter](./cv/moogsoft-eotq-may-2021.png) for my revamp of the [Moogsoft API docs](https://api.docs.moogsoft.com/reference/overview).
+* Named an [Employee of the Quarter](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/cv/moogsoft-eotq-may-2021.png) for my revamp of the [Moogsoft API docs](https://api.docs.moogsoft.com/reference/overview).
 
 * API doc duties include: Update Java codebase to improve auto-generated Swagger specs. Writer API concept and reference docs. Test and review API specs for clarity, consistency, and usability. Write guided "hello-world" code samples to onboard users to specific APIs (in progress).
 
@@ -33,7 +33,7 @@
 
 * Wrote entire Network Visibility doc set from scratch for v1 release. Doc includes [Setup/Install Workflows](https://docs.appdynamics.com/display/PRO44/Set+Up+Network+Visibility), [Network Troubleshooting Workflows](https://docs.appdynamics.com/display/PRO44/Network+Visibility+Workflows+and+Example+Use+Cases), [Metric References](https://docs.appdynamics.com/display/PRO44/Network+Visibility+Metrics), and [Concepts](https://docs.appdynamics.com/display/PRO44/Network+Visibility+Concepts)
 
-* Documented [Tier Metric Correlator](https://docs.appdynamics.com/display/PRO44/Tier+Metric+Correlator) feature that enables DevOps engineers to identify performance outliers in blue-green deployment scenarios. Cited by a Product Manager as a "[model example of clear and useful documentation](./cv/cc-kudos.png)."
+* Documented [Tier Metric Correlator](https://docs.appdynamics.com/display/PRO44/Tier+Metric+Correlator) feature that enables DevOps engineers to identify performance outliers in blue-green deployment scenarios. Cited by a Product Manager as a "[model example of clear and useful documentation](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/cv/moogsoft-eotq-may-2021.png)."
 
 * Collected, edited, and organized new and legacy content into a new Monitoring Cloud Applications doc set to highlight AppDynamics cloud monitoring capabilities
 
@@ -88,9 +88,9 @@
 #### Certificate in Computer Programming
 
 
-* [Completed sections -- December 2020](ucsc-sv-2021-07.png)
+* [Completed sections -- December 2020](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/cv/ucsc-sv-2021-07.png)
 
-* [Certificate in Computer Programming -- April 2019](doug-bothwell-ucsc-certificate-computer-programming.png)
+* [Certificate in Computer Programming -- April 2019](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/cv/doug-bothwell-ucsc-certificate-computer-programming.png)
 
 
 ### Harvard University
