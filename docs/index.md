@@ -14,7 +14,7 @@
 ### Moogsoft
 #### Principal Technical Writer 2018-Present
 
-* Currently the lead writer for Moogsoft's flagship product.  Wrote entire v1 doc set from scratch for Moogsoft Observability Cloud, which uses advanced AI-based algorithms to monitor, observe, filter, deduplicate, and correlate raw monitoring data into a single, interactive list of actionable incidents. This doc set is now the centerpiece of https://docs.moogsoft.com.
+* Currently the lead writer for Moogsoft's flagship product.  Wrote entire v1 doc set from scratch for Moogsoft Observability Cloud, which uses advanced AI-based algorithms to monitor, observe, filter, deduplicate, and correlate raw monitoring data into a single, interactive list of actionable incidents. This doc set is now the centerpiece of [https://docs.moogsoft.com](https://docs.moogsoft.com).
 
 * Named an [Employee of the Quarter](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/cv/moogsoft-eotq-may-2021.png) for my revamp of the [Moogsoft API docs](https://api.docs.moogsoft.com/reference/overview).
 
