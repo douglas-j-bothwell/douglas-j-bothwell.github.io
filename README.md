@@ -33,7 +33,7 @@
 
 * Wrote entire Network Visibility doc set from scratch for v1 release. Doc includes [Setup/Install Workflows](https://docs.appdynamics.com/display/PRO44/Set+Up+Network+Visibility), [Network Troubleshooting Workflows](https://docs.appdynamics.com/display/PRO44/Network+Visibility+Workflows+and+Example+Use+Cases), [Metric References](https://docs.appdynamics.com/display/PRO44/Network+Visibility+Metrics), and [Concepts](https://docs.appdynamics.com/display/PRO44/Network+Visibility+Concepts)
 
-* Documented [Tier Metric Correlator](https://docs.appdynamics.com/display/PRO44/Tier+Metric+Correlator) feature that enables DevOps engineers to identify performance outliers in blue-green deployment scenarios. Cited by a Product Manager as a "[model example of clear and useful documentation](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/cv/moogsoft-eotq-may-2021.png)."
+* Documented [Tier Metric Correlator](https://docs.appdynamics.com/display/PRO44/Tier+Metric+Correlator) feature that enables DevOps engineers to identify performance outliers in blue-green deployment scenarios. Cited by a Product Manager as a "[model example of clear and useful documentation](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/cv/cc-kudos.png)."
 
 * Collected, edited, and organized new and legacy content into a new Monitoring Cloud Applications doc set to highlight AppDynamics cloud monitoring capabilities
 
