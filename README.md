@@ -39,7 +39,7 @@
 
 * Tested and documented workflows for monitoring applications in Pivotal Cloud Foundry using AppDynamics
 
-* Updated AppDynamics docs in [Pivotal Partner Documentation](https://docs.pivotal.io/partners/appdynamics/index.html) using markdown, git, and GitHub
+* Updated AppDynamics docs in Pivotal Partner Documentation using markdown, git, and GitHub
 
 * Refactored, organized, and collected [machine/server metric descriptions](https://docs.appdynamics.com/display/PRO44/Hardware+Resources+Metrics) in one central reference page
 
