@@ -35,7 +35,7 @@
 
 * Documented [Tier Metric Correlator](https://docs.appdynamics.com/display/PRO44/Tier+Metric+Correlator) feature that enables DevOps engineers to identify performance outliers in blue-green deployment scenarios. Cited by a Product Manager as a "[model example of clear and useful documentation](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/cv/cc-kudos.png)."
 
-* Collected, edited, and organized new and legacy content into a new Monitoring Cloud Applications doc set to highlight AppDynamics cloud monitoring capabilities
+* Collected, edited, and organized new and legacy content into a new [Monitoring Cloud Applications](https://docs.appdynamics.com/display/PRO44/Monitoring+Cloud+Applications) doc set to highlight AppDynamics cloud monitoring capabilities
 
 * Tested and documented workflows for monitoring applications in Pivotal Cloud Foundry using AppDynamics
 
