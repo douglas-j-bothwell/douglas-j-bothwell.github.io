@@ -11,10 +11,24 @@
 
 ## Experience
 
+### Harness.io
+
+#### Principal Technical Writer 2022-present
+
+* Led a department-wide effort to migrate all Harness docs from a web-based wiki to an [open-source GitHub repo](https://github.com/harness/developer-hub/).
+  - Wrote, tested, and deployed [set of automation scripts in Bash and Python](https://github.com/douglas-j-bothwell/hd-convert) that automated the conversion of HTML content to markdown, download images, and update cross-references.
+  - Wrote detailed instructions and supported other writers to migrate all content and transition to a Docs as Code environment.
+
+* Currently the writer for the Security Testing Orchestration module. Wrote the entire [STO doc set](https://developer.harness.io/docs/security-testing-orchestration) doc set from scratch. Topics include: Creating custom Docker images, automating security scans in CI pipelines, setting up automated build/scan/push pipelines, triggering security scans to block GitHub pull requests, blocking CI builds using OPA policies, and using regular expressions (regexes) to identify production baselines and tags.    
+
+* Lead writer for Harness Continuous Integration (CI) in 2022. Topics include: Looping strategies to run build steps in parallel, optimizing CI build times; setting up CI pipelines to run multiple builds; and setting up VM build infrastructures in AWS, Google Cloud Platform, Microsoft Azure, and MacOS (Anka Registry).
+
+* Promotion announcement: "Doug joined us from Moogsoft in Jan 2022. His initial focus was to re-build our CI docs after our first attempt proved to be low quality. Then he had to shift his focus to building STO docs from scratch in prep for the public preview. He had to again pickup CI when we were short on capacity. Think you can see the pattern here -- Doug has consistently put the company first and done whatever is necessary for its success! He also made a huge impact by leading the effort to migrate the docs to Markdown. He volunteered to write scripts to assist writers with the migration. He wrote detailed instructions for other writers to use his scripts and provided many hours of technical support to all. The migration was part of a company-wide initiative to create the HDH, so his work had a huge impact on both the docs team and the company as a whole. Congratulations & thanks for your contributions @douglas.bothwell!"
+
 ### Moogsoft
 #### Principal Technical Writer 2018-Present
 
-* Currently the lead writer for Moogsoft's flagship product.  Wrote entire v1 doc set from scratch for Moogsoft Observability Cloud, which uses advanced AI-based algorithms to monitor, observe, filter, deduplicate, and correlate raw monitoring data into a single, interactive list of actionable incidents. This doc set is now the centerpiece of https://docs.moogsoft.com.
+* Lead writer for Moogsoft's flagship product.  Wrote entire v1 doc set from scratch for Moogsoft Observability Cloud, which uses advanced AI-based algorithms to monitor, observe, filter, deduplicate, and correlate raw monitoring data into a single, interactive list of actionable incidents. This doc set is now the centerpiece of https://docs.moogsoft.com.
 
 * Named an [Employee of the Quarter](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/cv/moogsoft-eotq-may-2021.png) for my revamp of the [Moogsoft API docs](https://api.docs.moogsoft.com/reference/overview).
 
