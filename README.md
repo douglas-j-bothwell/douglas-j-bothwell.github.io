@@ -1,11 +1,11 @@
 
 # Doug Bothwell
 
-* 20+ years experience documenting highly complex topics with a focus on Observability, AI for IT Operations (AIOps),  Application Performance Monitoring (APM), DevOps, REST APIs, containerization, cloud technologies time series metrics, data correlation/deduplication,.
+* 25 years experience documenting highly complex topics with a focus on Observability, AI for IT Operations (AIOps),  Application Performance Monitoring (APM), DevOps, REST APIs, containerization, cloud technologies, time series metrics, and data correlation/deduplication.
 
-* Highly versatile, with contributions in bash/python scripting, automation, testing, UI design, QA, and tech support.
+* Highly versatile, with contributions in Bash/Python scripting, automation, testing, UI design, QA, and tech support.
 
-* Extensive experience designing and writing entire doc sets from scratch.
+* Extensive experience creating and writing entire doc sets from scratch.
 
 * [Completed coursework](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/cv/ucsc-sv-2021-07.png): Kubernetes Orchestration, Relational Databases and SQL Programming, DevOps Technologies, Cloud Programming with AWS, Designing and Building REST APIs, Python for Programmers, JavaScript, Java, Android, C++, C#, and Go.
 
