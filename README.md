@@ -1,20 +1,34 @@
 
 # Doug Bothwell
 
-* 20+ years experience documenting highly complex topics with a focus on application performance monitoring (APM), AI for IT Operations (AIOps), observability, DevOps, REST APIs, containerization, and cloud technologies.
+* 25 years experience documenting highly complex topics with a focus on Observability, AI for IT Operations (AIOps),  Application Performance Monitoring (APM), DevOps, REST APIs, containerization, cloud technologies, time series metrics, and data correlation/deduplication.
 
-* Highly versatile, with contributions in bash/python scripting, automation, testing, UI design, QA, and tech support.
+* Highly versatile, with contributions in Bash/Python scripting, automation, testing, UI design, QA, and tech support.
 
-* Extensive experience designing and writing entire doc sets from scratch.
+* Extensive experience creating and writing entire doc sets from scratch.
 
 * [Completed coursework](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/cv/ucsc-sv-2021-07.png): Kubernetes Orchestration, Relational Databases and SQL Programming, DevOps Technologies, Cloud Programming with AWS, Designing and Building REST APIs, Python for Programmers, JavaScript, Java, Android, C++, C#, and Go.
 
 ## Experience
 
+### Harness.io
+
+#### Principal Technical Writer 2022-present
+
+* Led a department-wide effort to migrate all Harness docs from a cloud-based wiki to an [open-source GitHub repo](https://github.com/harness/developer-hub/).
+  - Wrote, tested, and deployed a [set of automation scripts in Bash and Python](https://github.com/douglas-j-bothwell/hd-convert) that automated the conversion of HTML content to markdown, download images, and update cross-references.
+  - Wrote detailed instructions and supported other writers to migrate all content and transition to a Docs as Code environment.
+
+* Currently the writer for the Security Testing Orchestration module. Wrote the entire STO doc set doc set from scratch. Topics include: [Creating custom Docker images](https://developer.harness.io/docs/security-testing-orchestration/use-sto/set-up-sto-pipelines/create-custom-scan-images), [securing STO pipelines using SSL](https://developer.harness.io/docs/category/secure-your-sto-pipelines), [setting up automated build/scan/push pipelines](https://developer.harness.io/docs/security-testing-orchestration/use-sto/set-up-sto-pipelines/build-scan-push-sto-ci), [triggering security scans to block GitHub pull requests](https://developer.harness.io/docs/security-testing-orchestration/use-sto/stop-builds-based-on-scan-results/trigger-sto-scans-to-block-prs-with-vulnerabilities), [blocking CI builds using OPA policies](https://developer.harness.io/docs/security-testing-orchestration/use-sto/stop-builds-based-on-scan-results/stop-pipelines-using-opa), and [using regular expressions (regexes) to specify target baslines](https://developer.harness.io/docs/security-testing-orchestration/use-sto/set-up-sto-pipelines/set-up-baselines).    
+
+* Lead writer for Harness Continuous Integration (CI) in 2022. Topics included: Looping strategies to run build steps in parallel, optimizing CI build times; setting up CI pipelines to run multiple builds; and setting up VM build infrastructures in AWS, Google Cloud Platform, Microsoft Azure, and MacOS (Anka Registry).
+
+* [Promotion announcement](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/harness-update-may-2024/cv/dbothwell-harness-promotion.2023.png): _"Doug has consistently put the company first and done whatever is necessary for its success! He also made a huge impact by leading the effort to migrate the docs to Markdown. He volunteered to write scripts to assist writers with the migration. He wrote detailed instructions for other writers to use his scripts and provided many hours of technical support to all. The migration was part of a company-wide initiative to create the HDH, so his work had a huge impact on both the docs team and the company as a whole."_
+
 ### Moogsoft
 #### Principal Technical Writer 2018-Present
 
-* Currently the lead writer for Moogsoft's flagship product.  Wrote entire v1 doc set from scratch for Moogsoft Observability Cloud, which uses advanced AI-based algorithms to monitor, observe, filter, deduplicate, and correlate raw monitoring data into a single, interactive list of actionable incidents. This doc set is now the centerpiece of https://docs.moogsoft.com.
+* Lead writer for Moogsoft's flagship product.  Wrote entire v1 doc set from scratch for Moogsoft Observability Cloud, which uses advanced AI-based algorithms to monitor, observe, filter, deduplicate, and correlate raw monitoring data into a single, interactive list of actionable incidents. This doc set is now the centerpiece of https://docs.moogsoft.com.
 
 * Named an [Employee of the Quarter](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/cv/moogsoft-eotq-may-2021.png) for my revamp of the [Moogsoft API docs](https://api.docs.moogsoft.com/reference/overview).
 
