@@ -28,13 +28,13 @@
 ### Moogsoft
 #### Principal Technical Writer 2018-Present
 
-* Lead writer for Moogsoft's flagship product.  Wrote entire v1 doc set from scratch for Moogsoft Observability Cloud, which uses advanced AI-based algorithms to monitor, observe, filter, deduplicate, and correlate raw monitoring data into a single, interactive list of actionable incidents. This doc set is now the centerpiece of https://docs.moogsoft.com.
+* Lead writer for Moogsoft's flagship product.  Wrote entire v1 doc set from scratch for Moogsoft Observability Cloud, which used advanced AI-based algorithms to monitor, observe, filter, deduplicate, and correlate raw monitoring data into a single, interactive list of actionable incidents. 
 
 * Named an [Employee of the Quarter](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/cv/moogsoft-eotq-may-2021.png) for my revamp of the [Moogsoft API docs](https://api.docs.moogsoft.com/reference/overview).
 
 * API doc duties include: Update Java codebase to improve auto-generated Swagger specs. Writer API concept and reference docs. Test and review API specs for clarity, consistency, and usability. Write guided "hello-world" code samples to onboard users to specific APIs (in progress).
 
-* Manage the git repos and publishing processes for Tech Content group. Developed a fully-automated, end-to-end pipeline for publishing and updating docs using Python, bash, git, and REST calls.
+* Managed the Git repos and publishing processes for Tech Content group. Developed a fully-automated, end-to-end pipeline for publishing and updating docs using Python, bash, git, and REST calls.
 
 * Evaluated Jekyll as a possible publishing platform. Forked and modified a Jekyll doc theme and added Swagger UI functionality. Created a semi-automated pipeline to convert Moogsoft docs to markdown.
 
