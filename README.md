@@ -45,17 +45,17 @@
 
 * Primary writer for the Server Visibility, Network Visibility, and Docker Visibility products
 
-* Wrote entire Network Visibility doc set from scratch for v1 release. Doc includes [Setup/Install Workflows](https://docs.appdynamics.com/display/PRO44/Set+Up+Network+Visibility), [Network Troubleshooting Workflows](https://docs.appdynamics.com/display/PRO44/Network+Visibility+Workflows+and+Example+Use+Cases), [Metric References](https://docs.appdynamics.com/display/PRO44/Network+Visibility+Metrics), and [Concepts](https://docs.appdynamics.com/display/PRO44/Network+Visibility+Concepts)
+* Wrote entire Network Visibility doc set from scratch for v1 release, including [Workflows and use cases](https://docs.appdynamics.com/appd/24.x/24.6/en/infrastructure-visibility/network-visibility/workflows-and-example-use-cases), [Metric References](hhttps://docs.appdynamics.com/appd/24.x/24.6/en/infrastructure-visibility/network-visibility/network-visibility-metrics), and [Concepts](https://docs.appdynamics.com/appd/24.x/24.6/en/infrastructure-visibility/network-visibility/network-visibility-concepts)
 
-* Documented [Tier Metric Correlator](https://docs.appdynamics.com/display/PRO44/Tier+Metric+Correlator) feature that enables DevOps engineers to identify performance outliers in blue-green deployment scenarios. Cited by a Product Manager as a "[model example of clear and useful documentation](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/cv/cc-kudos.png)."
+* Documented [Tier Metric Correlator](https://docs.appdynamics.com/appd/24.x/24.5/en/infrastructure-visibility/server-visibility/tier-metric-correlator) feature that enables DevOps engineers to identify performance outliers in blue-green deployment scenarios. Cited by a Product Manager as a "[model example of clear and useful documentation](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/cv/cc-kudos.png)."
 
-* Collected, edited, and organized new and legacy content into a new [Monitoring Cloud Applications](https://docs.appdynamics.com/display/PRO44/Monitoring+Cloud+Applications) doc set to highlight AppDynamics cloud monitoring capabilities
+* Collected, edited, and organized new and legacy content into a new **Monitoring Cloud Applications** doc set to highlight AppDynamics cloud monitoring capabilities
 
 * Tested and documented workflows for monitoring applications in Pivotal Cloud Foundry using AppDynamics
 
-* Updated AppDynamics docs in Pivotal Partner Documentation using markdown, git, and GitHub
+* Updated AppDynamics docs in Pivotal Partner Documentation using markdown, Git, and GitHub
 
-* Refactored, organized, and collected [machine/server metric descriptions](https://docs.appdynamics.com/display/PRO44/Hardware+Resources+Metrics) in one central reference page
+* Refactored, organized, and collected [machine/server metric descriptions](https://docs.appdynamics.com/appd/24.x/24.5/en/infrastructure-visibility/hardware-resources-metrics) in one central reference page
 
 
 ### Riverbed Technology
