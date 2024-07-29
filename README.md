@@ -69,11 +69,11 @@
 
 * Lead writer for AppResponse Xpert, the highest-revenue product in SteelCentral product line for network and application performance monitoring. Topics include:
 
-     * Metrics Reference with in-depth explanations and graphics to describe exactly how application, transport, and network metrics are calculated
+     * [Metrics Reference](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/pdf/bothwell_doug_writing_sample1_appresponse_metric_concepts.pdf) with in-depth explanations and graphics to describe exactly how application, transport, and network metrics are calculated
 
      * Web Transaction Analysis to collect detailed metrics on web app usage and end-user behavior
 
-     * Steelflow WTA feature for studying the impact of WAN optimization on web application performance
+     * [Steelflow WTA](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/pdf/bothwell_doug_writing_sample4_appresponse_steelflow_wta.pdf) feature for studying the impact of WAN optimization on web application performance
 
 
 ### OPNET Technologies
@@ -85,9 +85,9 @@
 
 * Extensive experience writing documentation for application developers and other technical audiences. Topics include:
 
-     * Application troubleshooting by analyzing network and tier delays
+     * [Application troubleshooting](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/docs/apptransactionxpert/User%20Guide/ACE_46_Delay.pdf) by analyzing network and tier delays
 
-     * Running analytical network simulations to predict application performance
+     * [Running analytical network simulations](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/docs/apptransactionxpert/Tutorials%20and%20Examples/ace_tut_app_resp.pdf) to predict application performance
 
      * Using advanced protocol decodes from packet-trace data
 
