@@ -1,7 +1,8 @@
 
 # Doug Bothwell
 
-* 25 years experience documenting highly complex topics with a focus on Observability, AI for IT Operations (AIOps),  Application Performance Monitoring (APM), DevOps, REST APIs, containerization, cloud technologies, time series metrics, and data correlation/deduplication.
+* 25 years of experience documenting highly complex topics such as observability, application and network performance monitoring (APM and NPM), cloud technologies, containerization, capturing and analyzing packet-trace data, REST APIs, time series metrics, data correlation/deduplication, and security scanning for code repositories, container images, and
+applications.
 
 * Highly versatile, with contributions in Bash/Python scripting, automation, testing, UI design, QA, and tech support.
 
