@@ -85,12 +85,12 @@
 
 * Extensive experience writing documentation for application developers and other technical audiences. Topics include:
 
-     * [Application troubleshooting](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/docs/apptransactionxpert/User%20Guide/ACE_46_Delay.pdf) by analyzing network and tier delays
+     * [Application troubleshooting](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/docs/apptransactionxpert/User%20Guide/ACE_46_Delay.pdf) by analyzing network and tier delays  
 
-     * [Running analytical network simulations](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/docs/apptransactionxpert/Tutorials%20and%20Examples/ace_tut_app_resp.pdf) to predict application performance
+     *  [Running analytical network simulations](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/docs/apptransactionxpert/Tutorials%20and%20Examples/ace_tut_app_resp.pdf) to predict application performance
 
-     * Using advanced protocol decodes from packet-trace data
-
+     *  [Using advanced protocol decodes](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/docs/apptransactionxpert/User%20Guide/ACE_51_Protocol.pdf) from packet-trace data to analyze and troubleshoot web, SQL, VoIP, Citrix, and other applications
+  
      * Capturing application transactions in WAN-optimized environments to ensure visibility in both LAN and WAN segments
 
      * Optical network design for enterprise Service Providers
