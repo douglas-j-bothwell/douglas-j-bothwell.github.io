@@ -14,7 +14,7 @@ applications.
 
 ### Harness.io
 
-#### Principal Technical Writer 2022-present
+#### Principal Technical Writer 2022-2024
 
 * Led a department-wide effort to migrate all Harness docs from a cloud-based wiki to an [open-source GitHub repo](https://github.com/harness/developer-hub/).
   - Wrote, tested, and deployed a [set of automation scripts in Bash and Python](https://github.com/douglas-j-bothwell/hd-convert) that automated the conversion of HTML content to markdown, download images, and update cross-references.
@@ -29,7 +29,7 @@ applications.
 ### Moogsoft
 #### Principal Technical Writer 2018-Present
 
-* Lead writer for Moogsoft's flagship product.  Wrote entire v1 doc set from scratch for Moogsoft Observability Cloud, which used advanced AI-based algorithms to monitor, observe, filter, deduplicate, and correlate raw monitoring data into a single, interactive list of actionable incidents. 
+* Lead writer for Moogsoft's flagship product.  Wrote entire v1 doc set from scratch for Moogsoft Observability Cloud, which used advanced AI-based algorithms to monitor, observe, filter, deduplicate, and correlate raw monitoring data into a single, interactive list of actionable incidents. Topics included: [Event Enrichment Example: How it Works](https://storage.googleapis.com/dbothwell-docs-org/__moog-cloud-docs/staging_GA/en/event-enrichment-example--how-it-works.html), [Event deduplication: how-to and best practices](https://storage.googleapis.com/dbothwell-docs-org/__moog-cloud-docs/staging_GA/en/event-deduplication.html), [Correlating Alerts into Incidents](https://storage.googleapis.com/dbothwell-docs-org/__moog-cloud-docs/staging_GA/en/correlate-alerts-into-incidents.html), snf [Customizing Anomaly Detection for Individual Metrics (Advanced)](https://storage.googleapis.com/dbothwell-docs-org/__moog-cloud-docs/staging_GA/en/customizing-anomaly-detection-for-individual-metrics--advanced-.html) Also wrote a [Moogsoft/Webhook Integration](https://docs.cribl.io/stream/usecase-moogsoft/) topic for the Cribl docs in 2021. 
 
 * Named an [Employee of the Quarter](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/cv/moogsoft-eotq-may-2021.png) for my revamp of the [Moogsoft API docs](https://api.docs.moogsoft.com/reference/overview).
 
