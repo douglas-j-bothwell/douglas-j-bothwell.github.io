@@ -103,7 +103,7 @@ applications.
 #### Certificate in Computer Programming
 
 
-* [Completed sections -- December 2020](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/cv/ucsc-sv-2021-07.png)
+* [Completed sections -- June 2021](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/cv/ucsc-sv-2021-07.png)
 
 * [Certificate in Computer Programming -- April 2019](https://github.com/douglas-j-bothwell/douglas-j-bothwell.github.io/blob/master/cv/doug-bothwell-ucsc-certificate-computer-programming.png)
 
